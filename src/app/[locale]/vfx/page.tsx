@@ -1,5 +1,6 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -180,6 +181,22 @@ const contentEN = {
 
 export default function VFXPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
-  const content = locale === 'it' ? contentIT : contentEN;
-  return <ServicePageTemplate {...content} />;
+  const isIt = locale === 'it';
+  const content = isIt ? contentIT : contentEN;
+  return (
+    <>
+      <ServiceSchema
+        name={isIt ? 'Effetti Visivi (VFX) Professionali' : 'Professional Visual Effects (VFX)'}
+        description={isIt
+          ? 'Compositing, green screen, set extension, tracking e clean-up per cinema, spot e digital. Roma, Italia.'
+          : 'Compositing, green screen, set extension, tracking and clean-up for cinema, commercials and digital. Rome, Italy.'}
+        url={isIt ? '/vfx' : '/en/vfx'}
+      />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: isIt ? '/' : '/en' },
+        { name: 'VFX', url: isIt ? '/vfx' : '/en/vfx' },
+      ]} />
+      <ServicePageTemplate {...content} />
+    </>
+  );
 }

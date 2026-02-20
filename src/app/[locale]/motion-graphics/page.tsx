@@ -1,5 +1,6 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -152,6 +153,22 @@ const contentEN = {
 
 export default function MotionGraphicsPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
-  const content = locale === 'it' ? contentIT : contentEN;
-  return <ServicePageTemplate {...content} />;
+  const isIt = locale === 'it';
+  const content = isIt ? contentIT : contentEN;
+  return (
+    <>
+      <ServiceSchema
+        name={isIt ? 'Motion Graphics per Brand e Campagne' : 'Motion Graphics for Brands and Campaigns'}
+        description={isIt
+          ? 'Animazioni per brand, campagne pubblicitarie, titoli e grafiche animate. Roma, Italia.'
+          : 'Animations for brands, advertising campaigns, titles and animated graphics. Rome, Italy.'}
+        url={isIt ? '/motion-graphics' : '/en/motion-graphics'}
+      />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: isIt ? '/' : '/en' },
+        { name: 'Motion Graphics', url: isIt ? '/motion-graphics' : '/en/motion-graphics' },
+      ]} />
+      <ServicePageTemplate {...content} />
+    </>
+  );
 }

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Calendar, MessageCircle } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
+import { VideoObjectSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
 import { projects, getProject } from '@/data/projects';
 import { notFound } from 'next/navigation';
 
@@ -32,6 +33,27 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
 
     return (
         <article>
+            {/* Schema Markup */}
+            <BreadcrumbSchema items={[
+                { name: 'Home', url: isIt ? '/' : '/en' },
+                { name: 'Portfolio', url: isIt ? '/portfolio' : '/en/portfolio' },
+                { name: title, url: `${isIt ? '' : '/en'}/portfolio/${project.slug}` },
+            ]} />
+            {(project.videoEmbed || project.videoUrl) && (
+                <VideoObjectSchema
+                    name={title}
+                    description={isIt ? project.briefingIt : project.briefingEn}
+                    thumbnailUrl={`https://pieroperilli.com${project.thumbnail}`}
+                    uploadDate={project.year}
+                    contentUrl={project.videoUrl}
+                    embedUrl={project.videoEmbed
+                        ? (project.videoType === 'youtube'
+                            ? `https://www.youtube.com/embed/${project.videoEmbed}`
+                            : `https://player.vimeo.com/video/${project.videoEmbed}`)
+                        : undefined}
+                />
+            )}
+
             {/* Hero */}
             <section className="pt-24 pb-6 md:pt-32 md:pb-8 lg:pt-40 lg:pb-12">
                 <div className="section-container">

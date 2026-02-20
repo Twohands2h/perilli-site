@@ -1,5 +1,6 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -146,6 +147,22 @@ const contentEN = {
 
 export default function AIVideoPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
-  const content = locale === 'it' ? contentIT : contentEN;
-  return <ServicePageTemplate {...content} />;
+  const isIt = locale === 'it';
+  const content = isIt ? contentIT : contentEN;
+  return (
+    <>
+      <ServiceSchema
+        name={isIt ? 'AI Video Production Professionale' : 'Professional AI Video Production'}
+        description={isIt
+          ? 'Produzione video con AI generativa guidata da 20 anni di esperienza VFX. Workflow ibrido AI + tradizionale. Italia.'
+          : 'AI-powered video production guided by 20 years of VFX experience. Hybrid AI + traditional workflow. Italy.'}
+        url={isIt ? '/ai-video' : '/en/ai-video'}
+      />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: isIt ? '/' : '/en' },
+        { name: 'AI Video', url: isIt ? '/ai-video' : '/en/ai-video' },
+      ]} />
+      <ServicePageTemplate {...content} />
+    </>
+  );
 }

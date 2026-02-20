@@ -1,5 +1,6 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -152,6 +153,22 @@ const contentEN = {
 
 export default function Animazione3DPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
-  const content = locale === 'it' ? contentIT : contentEN;
-  return <ServicePageTemplate {...content} />;
+  const isIt = locale === 'it';
+  const content = isIt ? contentIT : contentEN;
+  return (
+    <>
+      <ServiceSchema
+        name={isIt ? 'Animazione 3D e Video Prodotto' : '3D Animation and Product Video'}
+        description={isIt
+          ? 'Animazione 3D, video prodotto, character animation e ambienti virtuali. Roma, Italia.'
+          : '3D animation, product video, character animation and virtual environments. Rome, Italy.'}
+        url={isIt ? '/animazione-3d' : '/en/animazione-3d'}
+      />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: isIt ? '/' : '/en' },
+        { name: isIt ? 'Animazione 3D' : '3D Animation', url: isIt ? '/animazione-3d' : '/en/animazione-3d' },
+      ]} />
+      <ServicePageTemplate {...content} />
+    </>
+  );
 }

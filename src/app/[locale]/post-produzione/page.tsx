@@ -1,5 +1,6 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -150,6 +151,22 @@ const contentEN = {
 
 export default function PostProduzionePage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
-  const content = locale === 'it' ? contentIT : contentEN;
-  return <ServicePageTemplate {...content} />;
+  const isIt = locale === 'it';
+  const content = isIt ? contentIT : contentEN;
+  return (
+    <>
+      <ServiceSchema
+        name={isIt ? 'Post Produzione Video Professionale' : 'Professional Video Post Production'}
+        description={isIt
+          ? 'Montaggio, color grading, finishing e workflow integrato per cinema e advertising. Roma, Italia.'
+          : 'Editing, color grading, finishing and integrated workflow for cinema and advertising. Rome, Italy.'}
+        url={isIt ? '/post-produzione' : '/en/post-produzione'}
+      />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: isIt ? '/' : '/en' },
+        { name: isIt ? 'Post Produzione' : 'Post Production', url: isIt ? '/post-produzione' : '/en/post-produzione' },
+      ]} />
+      <ServicePageTemplate {...content} />
+    </>
+  );
 }
