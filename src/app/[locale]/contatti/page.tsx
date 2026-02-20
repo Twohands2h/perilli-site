@@ -11,6 +11,7 @@ export default function ContattiPage() {
 
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [hp, setHp] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,7 +21,7 @@ export default function ContattiPage() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, _hp: hp }),
       });
 
       if (res.ok) {
@@ -103,6 +104,20 @@ export default function ContattiPage() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder={t('messagePlaceholder')}
                     className="w-full bg-surface border border-border rounded px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors resize-none"
+                  />
+                </div>
+
+                {/* Honeypot — hidden from humans, bots fill it */}
+                <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={hp}
+                    onChange={(e) => setHp(e.target.value)}
                   />
                 </div>
 

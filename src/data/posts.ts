@@ -6,6 +6,7 @@ export interface BlogPost {
     excerptIt: string;
     excerptEn: string;
     date: string;
+    draft?: boolean;
     readingTime: number;
     category: string;
     categoryLabel: { it: string; en: string };
@@ -324,6 +325,16 @@ export const posts: BlogPost[] = [
   <p><strong>The integrated workflow makes the difference.</strong> Having also managed the color grading for the short, I could work VFX and color together from the start. The space-time effect has its own color palette that dialogues with the scene grading — it's not an element pasted on top, it's part of the film's visual fabric. If you're interested, read more about my <a href="/en/vfx">VFX services</a> or my approach to <a href="/en/post-production">integrated post-production</a>.</p>`,
     },
 ];
+
+/**
+ * Returns posts that are not drafts.
+ * Date filtering is intentionally NOT applied at build time for SSG —
+ * all non-draft posts are included in the static build.
+ * When moving to ISR or server rendering, add: && p.date <= now
+ */
+export function getPublishedPosts(): BlogPost[] {
+    return posts.filter((p) => !p.draft);
+}
 
 export function getPost(slug: string): BlogPost | undefined {
     return posts.find((p) => p.slug === slug || p.slugEn === slug);

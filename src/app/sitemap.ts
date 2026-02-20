@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { projects } from '@/data/projects';
-import { posts } from '@/data/posts';
+import { getPublishedPosts } from '@/data/posts';
 
 const BASE_URL = 'https://pieroperilli.com';
 
@@ -91,7 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]);
 
   // Blog posts
-  const blogEntries: MetadataRoute.Sitemap = posts.flatMap((post) => [
+  const blogEntries: MetadataRoute.Sitemap = getPublishedPosts().flatMap((post) => [
     {
       url: `${BASE_URL}/blog/${post.slug}`,
       lastModified: new Date(post.date),

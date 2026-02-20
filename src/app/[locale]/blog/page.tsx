@@ -4,13 +4,14 @@ import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
-import { posts, getPostSlug } from '@/data/posts';
+import { getPublishedPosts, getPostSlug } from '@/data/posts';
 
 export default function BlogPage() {
   const locale = useLocale();
   const isIt = locale === 'it';
 
-  const sorted = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const published = getPublishedPosts();
+  const sorted = [...published].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <article>
