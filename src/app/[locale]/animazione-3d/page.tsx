@@ -16,7 +16,7 @@ const contentIT = {
   introText: `<p>L'animazione è l'arte di creare l'illusione della vita. Il mio lavoro è trasformare un'idea, un prodotto o un personaggio in una storia che emoziona e comunica, scegliendo lo stile perfetto tra il calore del 2D e la profondità del 3D.</p>
 <p>Lavoro in 3D da oltre quindici anni, con un approccio che parte sempre dall'obiettivo comunicativo. Prima di aprire il software, capisco cosa deve raccontare l'animazione, chi la vedrà e in quale contesto. Poi scelgo la tecnica — fotorealismo, stilizzazione, motion design ibrido — e la realizzo.</p>
 <p>Il mio background da VFX artist è un vantaggio concreto: so come il 3D si integra con le riprese reali, conosco le esigenze del compositing e posso gestire l'intero flusso dalla modellazione al render finale.</p>`,
-  introImage: '/images/services/3d-1.jpg',
+  introImage: '/images/services/animazione-3d-spline-guerciotti-product-visualization.jpg',
   introImageAlt: 'Animazione 3D spline per Guerciotti — Piero Perilli Roma',
 
   servicesTitle: 'Tecnica e creatività per le tue idee',
@@ -29,8 +29,8 @@ const contentIT = {
     {
       name: 'Product Visualization',
       tag: 'Visualizzazione di Prodotto',
-      description: `<p>Presento il tuo prodotto nel modo più efficace e accattivante. Creo animazioni 3D fotorealistiche che ne mostrano il design, le caratteristiche e il funzionamento da ogni angolazione — ideali per spot, campagne di marketing e lanci commerciali. Il prodotto viene modellato partendo da disegni tecnici o foto, texturizzato con materiali realistici, illuminato e animato per mostrarne ogni dettaglio.</p>`,
-      image: '/images/services/3d-2.jpg',
+      description: `<p>Presento il tuo prodotto nel modo più efficace e accattivante. Creo render fotorealistici e animazioni 3D che ne mostrano il design, le caratteristiche e il funzionamento da ogni angolazione — ideali per spot, campagne di marketing, e-commerce e lanci di prodotto. Il prodotto viene modellato partendo da disegni tecnici o foto, texturizzato con materiali realistici, illuminato e animato per mostrarne ogni dettaglio.</p>`,
+      image: '/images/services/product-visualization-3d-simulazione-tyflow-guerciotti.jpg',
       imageAlt: 'Product visualization 3D e simulazione tyFlow per Guerciotti',
     },
     {
@@ -41,7 +41,7 @@ const contentIT = {
     {
       name: 'Ambienti Digitali',
       tag: 'Set Extension',
-      description: `<p>Espando i confini delle tue scenografie fisiche, trasformando un set parziale in un mondo vasto e immersivo. Integro elementi 3D e matte painting fotorealistici per dare alla tua produzione una scala epica e cinematografica, superando i limiti di location e budget.</p>`,
+      description: `<p>Espando i confini delle tue scenografie fisiche, trasformando un set parziale in un mondo vasto e immersivo. Integro elementi 3D, matte painting fotorealistici e real-time rendering con Unreal Engine per dare alla tua produzione una scala epica e cinematografica, superando i limiti di location e budget.</p>`,
     },
     {
       name: 'Motion Design Ibrido',
@@ -85,7 +85,7 @@ const contentEN = {
   introText: `<p>Animation is the art of creating the illusion of life. My job is to transform an idea, a product or a character into a story that moves and communicates, choosing the perfect style between the warmth of 2D and the depth of 3D.</p>
 <p>I've been working in 3D for over fifteen years, with an approach that always starts from the communication objective. Before opening any software, I understand what the animation needs to tell, who will see it and in what context. Then I choose the technique — photorealism, stylization, hybrid motion design — and execute it.</p>
 <p>My VFX artist background is a concrete advantage: I know how 3D integrates with real footage, understand compositing requirements and can manage the entire flow from modeling to final render.</p>`,
-  introImage: '/images/services/3d-1.jpg',
+  introImage: '/images/services/animazione-3d-spline-guerciotti-product-visualization.jpg',
   introImageAlt: '3D animation spline for Guerciotti — Piero Perilli Rome',
 
   servicesTitle: 'Technique and creativity for your ideas',
@@ -98,8 +98,8 @@ const contentEN = {
     {
       name: 'Product Visualization',
       tag: '3D Product Video',
-      description: `<p>I present your product in the most effective and captivating way. I create photorealistic 3D animations showing its design, features and functionality from every angle — ideal for commercials, marketing campaigns and product launches. Products are modeled from technical drawings or photos, textured with realistic materials, lit and animated to show every detail.</p>`,
-      image: '/images/services/3d-2.jpg',
+      description: `<p>I present your product in the most effective and captivating way. I create photorealistic renders and 3D animations showing its design, features and functionality from every angle — ideal for commercials, marketing campaigns, e-commerce and product launches. Products are modeled from technical drawings or photos, textured with realistic materials, lit and animated to show every detail.</p>`,
+      image: '/images/services/product-visualization-3d-simulazione-tyflow-guerciotti.jpg',
       imageAlt: '3D product visualization and tyFlow simulation for Guerciotti',
     },
     {
@@ -110,7 +110,7 @@ const contentEN = {
     {
       name: 'Digital Environments',
       tag: 'Set Extension',
-      description: `<p>I expand the boundaries of your physical sets, transforming a partial set into a vast, immersive world. I integrate 3D elements and photorealistic matte paintings to give your production an epic, cinematic scale, going beyond location and budget limitations.</p>`,
+      description: `<p>I expand the boundaries of your physical sets, transforming a partial set into a vast, immersive world. I integrate 3D elements, photorealistic matte paintings and real-time rendering with Unreal Engine to give your production an epic, cinematic scale, going beyond location and budget limitations.</p>`,
     },
     {
       name: 'Hybrid Motion Design',

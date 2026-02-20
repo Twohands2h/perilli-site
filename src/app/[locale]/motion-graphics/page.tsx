@@ -13,9 +13,9 @@ const contentIT = {
   heroSubtitle: 'Animazioni grafiche dinamiche per brand, spot e contenuti digitali.',
 
   introTitle: 'Grafiche in Movimento che Danno Voce al Tuo Brand.',
-  introText: `<p>Il mio lavoro è catturare l'attenzione e trasformare messaggi complessi in storie animate chiare e coinvolgenti. Aiuto agenzie e brand a comunicare con impatto, dando vita a idee, dati e identità visive.</p>
+  introText: `<p>Il mio lavoro è catturare l'attenzione e trasformare messaggi complessi in storie animate chiare e coinvolgenti. Aiuto agenzie e brand a comunicare con impatto attraverso animazioni 2D e 3D per spot pubblicitari, campagne social media e contenuti digitali, dando vita a idee, dati e identità visive.</p>
 <p>Ogni progetto parte dalla comprensione dell'obiettivo. Chi deve vedere questa animazione? Cosa deve capire? Cosa deve sentire? Da qui si costruisce il concept visivo, si definisce lo stile, si anima. Non il contrario.</p>`,
-  introImage: '/images/services/motion-1.webp',
+  introImage: '/images/services/motion-graphics-mostra-ipotesi-metaverso-roma.webp',
   introImageAlt: 'Motion graphics per la mostra Ipotesi Metaverso — Piero Perilli Roma',
 
   servicesTitle: 'Le mie soluzioni per la tua comunicazione',
@@ -24,7 +24,7 @@ const contentIT = {
       name: 'Animazioni',
       tag: '2D, 3D e Particellari',
       description: `<p>Do vita alle tue idee attraverso un'ampia gamma di stili di animazione, creando composizioni visive che integrano effetti particellari e grafiche in movimento. Il mio obiettivo è scegliere il linguaggio visivo perfetto per comunicare il tuo messaggio con energia e impatto.</p>`,
-      image: '/images/services/motion-2.webp',
+      image: '/images/services/animazione-particellare-motion-graphics-eventi-roma.webp',
       imageAlt: 'Animazione particellare e motion graphics per eventi',
     },
     {
@@ -81,9 +81,9 @@ const contentEN = {
   heroSubtitle: 'Dynamic graphic animations for brands, commercials and digital content.',
 
   introTitle: 'Graphics in Motion that Give Voice to Your Brand.',
-  introText: `<p>My job is to capture attention and transform complex messages into clear, engaging animated stories. I help agencies and brands communicate with impact, bringing ideas, data and visual identities to life.</p>
+  introText: `<p>My job is to capture attention and transform complex messages into clear, engaging animated stories. I help agencies and brands communicate with impact through 2D and 3D animations for commercials, social media campaigns and digital content, bringing ideas, data and visual identities to life.</p>
 <p>Every project starts from understanding the goal. Who will see this animation? What should they understand? What should they feel? From there we build the visual concept, define the style, animate. Not the other way around.</p>`,
-  introImage: '/images/services/motion-1.webp',
+  introImage: '/images/services/motion-graphics-mostra-ipotesi-metaverso-roma.webp',
   introImageAlt: 'Motion graphics for the Ipotesi Metaverso exhibition — Piero Perilli Rome',
 
   servicesTitle: 'My solutions for your communication',
@@ -92,7 +92,7 @@ const contentEN = {
       name: 'Animations',
       tag: '2D, 3D & Particle',
       description: `<p>I bring your ideas to life through a wide range of animation styles, creating visual compositions integrating particle effects and graphics in motion. My goal is to choose the perfect visual language to communicate your message with energy and impact.</p>`,
-      image: '/images/services/motion-2.webp',
+      image: '/images/services/animazione-particellare-motion-graphics-eventi-roma.webp',
       imageAlt: 'Particle animation and motion graphics for events',
     },
     {

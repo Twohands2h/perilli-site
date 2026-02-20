@@ -15,8 +15,8 @@ const contentIT = {
   introTitle: 'Effetti Visivi che Trasformano la Tua Visione in Realtà.',
   introText: `<p>La mia missione è portare la tua produzione cinematografica, il tuo spot o il tuo video a un livello superiore, creando scene che lo spettatore percepisce come reali.</p>
 <p>Integro elementi digitali in riprese dal vivo con precisione fotorealistica — l'obiettivo è che chi guarda non pensi "bel compositing", ma semplicemente "bella scena". Quando gli effetti visivi funzionano davvero, sono invisibili.</p>
-<p>Lavoro su film, cortometraggi, spot pubblicitari e contenuti digitali a Roma e in tutta Italia. Ogni progetto ha tempi e standard diversi, ma la cura è la stessa. Che si tratti di rimuovere un cavo di sicurezza o di costruire un intero ambiente in CG, è il dettaglio a fare la differenza tra un lavoro professionale e uno che "si vede".</p>`,
-  introImage: '/images/services/vfx-1.webp',
+<p>Lavoro su film, cortometraggi, spot pubblicitari e contenuti digitali a Roma e in tutta Italia. Come VFX artist freelance, sono disponibile per progetti di qualsiasi scala — dalla singola shot alla supervisione VFX dell&apos;intero progetto. Ogni lavoro ha tempi e standard diversi, ma la cura è la stessa. Che si tratti di rimuovere un cavo di sicurezza o di costruire un intero ambiente in CG, è il dettaglio a fare la differenza tra un lavoro professionale e uno che "si vede".</p>`,
+  introImage: '/images/services/vfx-compositing-cortometraggio-along-came-ruby-roma.webp',
   introImageAlt: 'VFX compositing per il cortometraggio Along Came Ruby — Piero Perilli VFX artist Roma',
 
   servicesTitle: 'I miei servizi VFX per agenzie e produzioni',
@@ -25,7 +25,7 @@ const contentIT = {
       name: 'Compositing',
       tag: 'Integrazione CGI',
       description: `<p>Fondo elementi CGI e riprese live-action per creare un'unica, impeccabile scena. Il mio approccio si basa sull'ossessione per il dettaglio, puntando a un'integrazione fotorealistica che renda la finzione indistinguibile dalla realtà. Lavoro in After Effects e Nuke a seconda delle esigenze del progetto.</p>`,
-      image: '/images/services/vfx-2.jpg',
+      image: '/images/services/effetti-visivi-integrazione-cgi-cinema-roma.jpg',
       imageAlt: 'Compositing e integrazione CGI per produzioni cinematografiche',
     },
     {
@@ -51,7 +51,7 @@ const contentIT = {
     {
       name: 'Clean-Up',
       tag: 'Rimozione Oggetti',
-      description: `<p>Rendo perfetta ogni tua inquadratura, rimuovendo digitalmente gli elementi di disturbo. Intervengo in modo invisibile su cavi, microfoni, riflessi o attrezzatura — il lavoro che nessuno vede ma che tutti noterebbero se mancasse.</p>`,
+      description: `<p>Rendo perfetta ogni tua inquadratura, rimuovendo digitalmente gli elementi di disturbo. Intervengo con rotoscoping professionale e tecniche di rimozione su cavi, microfoni, riflessi o attrezzatura — il lavoro che nessuno vede ma che tutti noterebbero se mancasse.</p>`,
     },
   ],
 
@@ -97,8 +97,8 @@ const contentEN = {
   introTitle: 'Visual Effects that Transform Your Vision into Reality.',
   introText: `<p>My mission is to take your film production, commercial or video to the next level, creating scenes the audience perceives as real.</p>
 <p>I integrate digital elements into live footage with photorealistic precision — the goal is that the viewer doesn't think "nice compositing," but simply "great scene." When visual effects truly work, they're invisible.</p>
-<p>I work on films, short films, commercials and digital content from Rome, across Italy and for international productions. Each project has different timelines and standards, but the care is the same. Whether it's removing a safety wire or building an entire CG environment, it's the detail that makes the difference between professional work and work that "shows."</p>`,
-  introImage: '/images/services/vfx-1.webp',
+<p>I work on films, short films, commercials and digital content from Rome, across Italy and for international productions. As a freelance VFX artist, I&apos;m available for projects of any scale — from a single shot to full VFX supervision. Each project has different timelines and standards, but the care is the same. Whether it's removing a safety wire or building an entire CG environment, it's the detail that makes the difference between professional work and work that "shows."</p>`,
+  introImage: '/images/services/vfx-compositing-cortometraggio-along-came-ruby-roma.webp',
   introImageAlt: 'VFX compositing for the short film Along Came Ruby — Piero Perilli VFX artist Rome Italy',
 
   servicesTitle: 'My VFX services for agencies and productions',
@@ -107,7 +107,7 @@ const contentEN = {
       name: 'Compositing',
       tag: 'CGI Integration',
       description: `<p>I blend CGI elements and live-action footage to create a single, flawless scene. My approach is based on obsessive attention to detail, aiming for photorealistic integration that makes fiction indistinguishable from reality. I work in After Effects and Nuke depending on project requirements.</p>`,
-      image: '/images/services/vfx-2.jpg',
+      image: '/images/services/effetti-visivi-integrazione-cgi-cinema-roma.jpg',
       imageAlt: 'Compositing and CGI integration for film productions',
     },
     {
@@ -133,7 +133,7 @@ const contentEN = {
     {
       name: 'Clean-Up',
       tag: 'Object Removal',
-      description: `<p>I make every frame perfect by digitally removing unwanted elements. I intervene invisibly on wires, microphones, reflections or equipment — the work nobody sees but everyone would notice if it were missing.</p>`,
+      description: `<p>I make every frame perfect by digitally removing unwanted elements. I intervene with professional rotoscoping and removal techniques on wires, microphones, reflections or equipment — the work nobody sees but everyone would notice if it were missing.</p>`,
     },
   ],
 

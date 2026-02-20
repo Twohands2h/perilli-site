@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'AI Video Production Italia | Video Generati con AI Professionale | Piero Perilli',
-  description: 'AI video production in Italia. Generazione video con Runway, Veo e Kling guidata da 20 anni di esperienza VFX. Workflow ibrido AI + post-produzione tradizionale per risultati professionali.',
+  description: 'AI video production e generazione video con intelligenza artificiale in Italia. Workflow con Runway, Veo e Kling guidata da 20 anni di esperienza VFX. Workflow ibrido AI + post-produzione tradizionale per risultati professionali.',
 };
 
 const contentIT = {
@@ -79,7 +79,7 @@ const contentEN = {
 
   introTitle: "AI Doesn't Replace Experience. It Multiplies It.",
   introText: `<p>Anyone can generate a video with AI. Few know when the result is good enough, when manual work is needed and how to combine both. This is the difference between an "AI-generated video" and a professional video that uses AI as a tool.</p>
-<p>I integrate Runway, Veo, Kling and AI video generation tools into my professional workflow — the same workflow I've used on films and commercials for twenty years. AI produces the raw material, experience transforms it into a result that actually works.</p>
+<p>I integrate Runway, Veo, Kling and AI video generation tools into my AI-assisted video production workflow — the same workflow I've used on films and commercials for twenty years. AI produces the raw material, experience transforms it into a result that actually works.</p>
 <p>My advantage is context. Twenty years of post-production mean knowing how a final image should look, which artifacts are acceptable and which aren't, how to integrate AI output with real footage, how to maintain visual coherence between generated shots. This know-how can't be improvised.</p>`,
 
   servicesTitle: 'How I use AI in video production',

@@ -15,7 +15,7 @@ const services = [
     ctaIt: 'Scopri i VFX',
     ctaEn: 'Discover VFX',
     href: { it: '/vfx', en: '/en/vfx' },
-    image: '/images/services/vfx-1.webp',
+    image: '/images/services/vfx-compositing-cortometraggio-along-came-ruby-roma.webp',
   },
   {
     key: 'motion',
@@ -26,7 +26,7 @@ const services = [
     ctaIt: 'Esplora le Motion Graphics',
     ctaEn: 'Explore Motion Graphics',
     href: { it: '/motion-graphics', en: '/en/motion-graphics' },
-    image: '/images/services/motion-1.webp',
+    image: '/images/services/motion-graphics-mostra-ipotesi-metaverso-roma.webp',
   },
   {
     key: 'animation3d',
@@ -37,7 +37,7 @@ const services = [
     ctaIt: 'Vai all\'Animazione 3D',
     ctaEn: 'Go to 3D Animation',
     href: { it: '/animazione-3d', en: '/en/animazione-3d' },
-    image: '/images/services/3d-1.jpg',
+    image: '/images/services/animazione-3d-spline-guerciotti-product-visualization.jpg',
   },
   {
     key: 'post',
@@ -48,7 +48,7 @@ const services = [
     ctaIt: 'Servizi di Post-produzione',
     ctaEn: 'Post-production Services',
     href: { it: '/post-produzione', en: '/en/post-produzione' },
-    image: '/images/services/post-1.webp',
+    image: '/images/services/post-produzione-video-musicale-color-grading-roma.webp',
   },
   {
     key: 'ai',

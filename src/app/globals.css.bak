@@ -46,8 +46,9 @@
 
   /* Primary CTA button */
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-accent text-background 
-           px-6 py-3 text-sm font-semibold uppercase tracking-wider
+    @apply inline-flex items-center gap-2.5 bg-accent text-background 
+           px-7 py-3.5 text-xs font-bold uppercase tracking-[0.15em]
+           rounded-sm
            transition-all duration-300
            hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20
            active:scale-[0.98];
@@ -55,8 +56,9 @@
 
   /* Secondary/outline button */
   .btn-secondary {
-    @apply inline-flex items-center gap-2 border border-border-light text-text-primary
-           px-6 py-3 text-sm font-semibold uppercase tracking-wider
+    @apply inline-flex items-center gap-2.5 border border-border-light text-text-primary
+           px-7 py-3.5 text-xs font-bold uppercase tracking-[0.15em]
+           rounded-sm
            transition-all duration-300
            hover:border-accent hover:text-accent;
   }
@@ -64,14 +66,14 @@
   /* Ghost button */
   .btn-ghost {
     @apply inline-flex items-center gap-2 text-text-secondary
-           px-4 py-2 text-sm font-medium
+           px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.1em]
            transition-colors duration-300
            hover:text-accent;
   }
 
   /* Section title */
   .section-title {
-    @apply text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4;
+    @apply text-xs font-semibold uppercase tracking-[0.25em] text-accent mb-6;
   }
 
   /* Divider line */
@@ -85,4 +87,56 @@
   .text-gradient {
     @apply bg-gradient-to-r from-text-primary to-text-secondary bg-clip-text text-transparent;
   }
+}
+
+/* Blog article typography */
+.prose-custom {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+.prose-custom h2 {
+  color: var(--text-primary);
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+.prose-custom h3 {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.prose-custom p {
+  margin-bottom: 1.25rem;
+}
+.prose-custom strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.prose-custom a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.3s;
+}
+.prose-custom a:hover {
+  color: var(--text-primary);
+}
+.prose-custom ul, .prose-custom ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.prose-custom li {
+  margin-bottom: 0.5rem;
+}
+.prose-custom blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-muted);
 }
