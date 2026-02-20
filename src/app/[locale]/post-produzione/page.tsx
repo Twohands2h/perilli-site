@@ -2,20 +2,26 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Post Produzione Video Roma | Montaggio, Color Grading e Finishing | Piero Perilli',
-  description: 'Post-produzione video professionale a Roma. Montaggio, color grading certificato DaVinci Resolve, finishing per cinema, TV, documentari e spot. Colorist certificato Blackmagic Design.',
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  return locale === 'it' ? {
+    title: 'Post Produzione Video Roma | Montaggio, Color Grading e Finishing | Piero Perilli',
+    description: 'Post-produzione video professionale a Roma. Montaggio, color grading certificato DaVinci Resolve, finishing per cinema, TV, documentari e spot. Colorist certificato Blackmagic Design.',
+  } : {
+    title: 'Video Post Production Rome | Editing, Color Grading and Finishing | Piero Perilli',
+    description: 'Professional video post-production in Rome. Editing, DaVinci Resolve certified color grading, finishing for cinema, TV, documentaries and commercials. Blackmagic Design certified colorist.',
+  };
+}
 
 const contentIT = {
   sectionLabel: 'POST PRODUZIONE',
-  h1: 'Post-produzione Video',
+  h1: 'Post Produzione Video a Roma — Montaggio, Color Grading e Finishing',
   heroSubtitle: 'Montaggio, colore e ritmo per le tue storie.',
 
   introTitle: 'La Firma Finale per il Tuo Progetto.',
   introText: `<p>La post-produzione è la fase in cui la visione prende forma definitiva. Il mio lavoro è trasformare il girato grezzo in un racconto coerente ed emozionante, curando il ritmo attraverso il montaggio e definendo l'atmosfera con il colore.</p>
 <p>È qui che la narrazione trova la sua voce finale.</p>
-<p>Non gestisco solo un pezzo del processo — gestisco l'intero flusso. Montaggio, color grading e finishing in un unico workflow significa che le decisioni creative non si perdono nei passaggi di mano. Se il grading rivela che una scena funziona meglio con un taglio diverso, lo cambio subito. Non aspetto che qualcun altro se ne accorga.</p>`,
+<p>Non gestisco solo un pezzo del processo — gestisco l'intero flusso. Montaggio, color grading e finishing in un unico workflow significa che le decisioni creative non si perdono nei passaggi di mano. Se il grading rivela che una scena funziona meglio con un taglio diverso, lo cambio subito. Non aspetto che qualcun altro se ne accorga.</p>
+<p>Quando un progetto richiede <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a> o <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a>, non devo coordinarmi con altri — li realizzo io, nello stesso flusso.</p>`,
   introImage: '/images/services/post-produzione-video-musicale-color-grading-roma.webp',
   introImageAlt: 'Post-produzione video professionale Roma — montaggio e color grading',
 
@@ -58,8 +64,8 @@ const contentIT = {
 
   recentWorkTitle: 'Ultimi lavori di post-produzione',
   recentWork: [
-    { title: 'Radio Caterina — di David Orlandelli per History Channel', link: 'https://www.imdb.com/it/title/tt29257837/' },
-    { title: 'Breaking dalla strada alle olimpiadi — di Fabrizio Silvestri per RAI Documentari', link: 'https://www.raiplay.it/programmi/breakingdallastradaalleolimpiadi' },
+    { title: 'Radio Caterina — di David Orlandelli per History Channel', link: '/portfolio/radio-caterina' },
+    { title: 'Breaking dalla strada alle olimpiadi — di Fabrizio Silvestri per RAI Documentari', link: '/portfolio/breaking-olimpiadi' },
     { title: 'I Am Curious Johnny — di Julian Temple', link: 'https://www.imdb.com/it/title/tt35450650/' },
     { title: 'Non tutto è perduto — di Francesco Bellomo — Film Cinema', link: 'https://www.imdb.com/it/title/tt31173315/' },
     { title: 'A mamma non piace — di Gianni Leacche — Film', link: 'https://www.cinemaitaliano.info/amammanonpiace' },
@@ -76,13 +82,14 @@ const contentIT = {
 
 const contentEN = {
   sectionLabel: 'POST PRODUCTION',
-  h1: 'Video Post-production',
+  h1: 'Video Post Production in Rome — Editing, Color Grading and Finishing',
   heroSubtitle: 'Editing, color and rhythm for your stories.',
 
   introTitle: 'The Final Signature for Your Project.',
   introText: `<p>Post-production is where the vision takes its final form. My job is to transform raw footage into a coherent, moving narrative, shaping the rhythm through editing and defining the atmosphere with color.</p>
 <p>This is where the story finds its final voice.</p>
-<p>I don't just manage one piece of the process — I manage the entire pipeline. Editing, color grading and finishing in a single workflow means creative decisions don't get lost in handoffs. If grading reveals that a scene works better with a different cut, I change it immediately. I don't wait for someone else to notice.</p>`,
+<p>I don't just manage one piece of the process — I manage the entire pipeline. Editing, color grading and finishing in a single workflow means creative decisions don't get lost in handoffs. If grading reveals that a scene works better with a different cut, I change it immediately. I don't wait for someone else to notice.</p>
+<p>When a project requires <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a> or <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a>, I don't need to coordinate with others — I deliver them myself, in the same workflow.</p>`,
   introImage: '/images/services/post-produzione-video-musicale-color-grading-roma.webp',
   introImageAlt: 'Professional video post-production Rome — editing and color grading',
 
@@ -125,7 +132,7 @@ const contentEN = {
 
   recentWorkTitle: 'Recent post-production work',
   recentWork: [
-    { title: 'Radio Caterina — by David Orlandelli for History Channel', link: 'https://www.imdb.com/it/title/tt29257837/' },
+    { title: 'Radio Caterina — by David Orlandelli for History Channel', link: '/en/portfolio/radio-caterina' },
     { title: 'Breaking from the street to the Olympics — by Fabrizio Silvestri for RAI', link: 'https://www.raiplay.it/programmi/breakingdallastradaalleolimpiadi' },
     { title: 'I Am Curious Johnny — by Julian Temple', link: 'https://www.imdb.com/it/title/tt35450650/' },
     { title: 'Non tutto è perduto — by Francesco Bellomo — Theatrical', link: 'https://www.imdb.com/it/title/tt31173315/' },

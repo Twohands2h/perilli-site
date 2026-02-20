@@ -1,9 +1,14 @@
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-    title: 'Contatti | Piero Perilli — VFX Artist e Post Produzione Roma',
-    description: 'Contattami per il tuo progetto. VFX, motion graphics, color grading e post-produzione video a Roma. Rispondo personalmente entro 24 ore.',
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+    return locale === 'it' ? {
+        title: 'Contatti | Piero Perilli — VFX Artist e Post Produzione Roma',
+        description: 'Contattami per il tuo progetto. VFX, motion graphics, color grading e post-produzione video a Roma. Rispondo personalmente entro 24 ore.',
+    } : {
+        title: 'Contact | Piero Perilli — VFX Artist and Post Production Rome',
+        description: 'Get in touch about your project. VFX, motion graphics, color grading and video post-production in Rome. I personally reply within 24 hours.',
+    };
+}
 
 export default function ContattiLayout({ children }: { children: React.ReactNode }) {
     return children;

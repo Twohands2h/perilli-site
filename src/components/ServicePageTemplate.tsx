@@ -138,6 +138,58 @@ export default function ServicePageTemplate({
         </div>
       </section>
 
+      {/* === MID-PAGE CTA — conversion point between services and approach === */}
+      <section className="py-10 md:py-14 border-t border-border">
+        <div className="section-container text-center">
+          <AnimateOnScroll>
+            <p className="text-text-secondary text-sm mb-4 md:mb-5">
+              {locale === 'it' ? 'Hai un progetto in mente?' : 'Have a project in mind?'}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link href={locale === 'it' ? '/contatti' : '/en/contatti'} className="btn-primary w-full sm:w-auto justify-center">
+                {locale === 'it' ? 'Parliamone' : "Let's talk"}<ArrowRight size={16} />
+              </Link>
+              <a href="https://calendly.com/pieroperilli-info/30min" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto justify-center">
+                <Calendar size={16} />{locale === 'it' ? 'Prenota una call' : 'Book a call'}
+              </a>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* === MID-PAGE CTA — conversion point between services and approach === */}
+      <section className="py-10 md:py-14 border-t border-border">
+        <div className="section-container">
+          <AnimateOnScroll>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+              <p className="text-text-secondary text-sm md:text-base text-center sm:text-left">
+                {locale === 'it'
+                  ? 'Hai un progetto che richiede questo tipo di lavoro?'
+                  : 'Have a project that needs this kind of work?'}
+              </p>
+              <div className="flex items-center gap-3 shrink-0">
+                <Link
+                  href={locale === 'it' ? '/contatti' : '/en/contatti'}
+                  className="btn-primary text-xs py-2.5 px-5"
+                >
+                  {locale === 'it' ? 'Parliamone' : "Let's talk"}
+                  <ArrowRight size={14} />
+                </Link>
+                <a
+                  href="https://calendly.com/pieroperilli-info/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary text-xs py-2.5 px-5"
+                >
+                  <Calendar size={14} />
+                  {locale === 'it' ? 'Prenota call' : 'Book a call'}
+                </a>
+              </div>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
       {/* === APPROACH PILLARS — mobile: stack, md: 3 cols === */}
       <section className="py-12 md:py-20 lg:py-24 border-t border-border bg-surface">
         <div className="section-container">

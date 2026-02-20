@@ -2,14 +2,19 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Animazione 2D e 3D Roma | Video Prodotto, Character e Ambienti | Piero Perilli',
-  description: 'Animazione 2D e 3D professionale a Roma. Character animation, video prodotto 3D, simulazioni particellari, set extension e ambienti digitali per cinema, advertising e brand.',
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  return locale === 'it' ? {
+    title: 'Animazione 2D e 3D Roma | Video Prodotto, Character e Ambienti | Piero Perilli',
+    description: 'Animazione 2D e 3D professionale a Roma. Character animation, video prodotto 3D, simulazioni particellari, set extension e ambienti digitali per cinema, advertising e brand.',
+  } : {
+    title: '2D and 3D Animation Rome | Product Video, Character and Environments | Piero Perilli',
+    description: 'Professional 2D and 3D animation in Rome. Character animation, 3D product video, particle simulations, set extension and digital environments for cinema, advertising and brands.',
+  };
+}
 
 const contentIT = {
   sectionLabel: 'ANIMAZIONE',
-  h1: 'Animazione 2D e 3D',
+  h1: 'Animazione 2D e 3D — Video Prodotto, Character e Ambienti Digitali',
   heroSubtitle: 'Dai vita a personaggi, prodotti e ambienti con animazioni fluide e realistiche.',
 
   introTitle: 'Storie che Prendono Vita.',
@@ -29,14 +34,14 @@ const contentIT = {
     {
       name: 'Product Visualization',
       tag: 'Visualizzazione di Prodotto',
-      description: `<p>Presento il tuo prodotto nel modo più efficace e accattivante. Creo render fotorealistici e animazioni 3D che ne mostrano il design, le caratteristiche e il funzionamento da ogni angolazione — ideali per spot, campagne di marketing, e-commerce e lanci di prodotto. Il prodotto viene modellato partendo da disegni tecnici o foto, texturizzato con materiali realistici, illuminato e animato per mostrarne ogni dettaglio.</p>`,
+      description: `<p>Presento il tuo prodotto nel modo più efficace e accattivante. Un esempio è il progetto <a href="/portfolio/guerciotti-60-anni" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Guerciotti 60 Anni</a>, dove ho animato un telaio in carbonio dalla spline al render fotorealistico. Creo render fotorealistici e animazioni 3D che ne mostrano il design, le caratteristiche e il funzionamento da ogni angolazione — ideali per spot, campagne di marketing, e-commerce e lanci di prodotto. Il prodotto viene modellato partendo da disegni tecnici o foto, texturizzato con materiali realistici, illuminato e animato per mostrarne ogni dettaglio.</p>`,
       image: '/images/services/product-visualization-3d-simulazione-tyflow-guerciotti.jpg',
       imageAlt: 'Product visualization 3D e simulazione tyFlow per Guerciotti',
     },
     {
       name: 'Simulazioni 3D',
       tag: 'Fenomeni Fisici',
-      description: `<p>Ricreo fenomeni fisici e processi complessi attraverso simulazioni 3D. Fiamme, fumo, fluidi, distruzioni, sistemi particellari. Uso tyFlow in 3ds Max e Niagara in Unreal Engine per simulazioni fisicamente accurate o stilizzate. Il progetto Guerciotti, ad esempio, ha richiesto spline animate e simulazioni di fiamme che richiamano il processo di saldatura artigianale.</p>`,
+      description: `<p>Ricreo fenomeni fisici e processi complessi attraverso simulazioni 3D. Fiamme, fumo, fluidi, distruzioni, sistemi particellari. Uso tyFlow in 3ds Max e Niagara in Unreal Engine per simulazioni fisicamente accurate o stilizzate. Il progetto Guerciotti, ad esempio, ha richiesto spline animate e simulazioni di fiamme che richiamano il processo di saldatura artigianale. Queste simulazioni si integrano naturalmente nel workflow di <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a> e <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a>.</p>`,
     },
     {
       name: 'Ambienti Digitali',
@@ -78,7 +83,7 @@ const contentIT = {
 
 const contentEN = {
   sectionLabel: 'ANIMATION',
-  h1: '2D and 3D Animation',
+  h1: '2D and 3D Animation — Product Video, Character and Digital Environments',
   heroSubtitle: 'Bring characters, products and environments to life with fluid, realistic animations.',
 
   introTitle: 'Stories that Come to Life.',
@@ -98,7 +103,7 @@ const contentEN = {
     {
       name: 'Product Visualization',
       tag: '3D Product Video',
-      description: `<p>I present your product in the most effective and captivating way. I create photorealistic renders and 3D animations showing its design, features and functionality from every angle — ideal for commercials, marketing campaigns, e-commerce and product launches. Products are modeled from technical drawings or photos, textured with realistic materials, lit and animated to show every detail.</p>`,
+      description: `<p>I present your product in the most effective and captivating way. An example is the <a href="/en/portfolio/guerciotti-60-anni" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Guerciotti 60 Anni</a> project, where I animated a carbon frame from spline to photorealistic render. I create photorealistic renders and 3D animations showing its design, features and functionality from every angle — ideal for commercials, marketing campaigns, e-commerce and product launches. Products are modeled from technical drawings or photos, textured with realistic materials, lit and animated to show every detail.</p>`,
       image: '/images/services/product-visualization-3d-simulazione-tyflow-guerciotti.jpg',
       imageAlt: '3D product visualization and tyFlow simulation for Guerciotti',
     },

@@ -2,20 +2,26 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Effetti Visivi (VFX) Roma | Compositing e VFX per Cinema e Spot | Piero Perilli',
-  description: 'VFX artist a Roma con 20+ anni di esperienza. Compositing, green screen, set extension e tracking per film, spot pubblicitari e produzioni digitali. Portfolio verificabile su IMDB.',
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  return locale === 'it' ? {
+    title: 'Effetti Visivi (VFX) Roma | Compositing e VFX per Cinema e Spot | Piero Perilli',
+    description: 'VFX artist a Roma con 20+ anni di esperienza. Compositing, green screen, set extension e tracking per film, spot pubblicitari e produzioni digitali. Portfolio verificabile su IMDB.',
+  } : {
+    title: 'Visual Effects (VFX) Rome | Compositing & VFX for Film and Commercials | Piero Perilli',
+    description: 'VFX artist in Rome with 20+ years of experience. Compositing, green screen, set extension and tracking for films, commercials and digital productions. IMDB-verified portfolio.',
+  };
+}
 
 const contentIT = {
   sectionLabel: 'VFX',
-  h1: 'Visual Effects',
+  h1: 'Effetti Visivi (VFX) per Cinema e Spot — Roma',
   heroSubtitle: 'Effetti visivi creativi e realistici per cinema, advertising e digital content.',
 
   introTitle: 'Effetti Visivi che Trasformano la Tua Visione in Realtà.',
   introText: `<p>La mia missione è portare la tua produzione cinematografica, il tuo spot o il tuo video a un livello superiore, creando scene che lo spettatore percepisce come reali.</p>
 <p>Integro elementi digitali in riprese dal vivo con precisione fotorealistica — l'obiettivo è che chi guarda non pensi "bel compositing", ma semplicemente "bella scena". Quando gli effetti visivi funzionano davvero, sono invisibili.</p>
-<p>Lavoro su film, cortometraggi, spot pubblicitari e contenuti digitali a Roma e in tutta Italia. Come VFX artist freelance, sono disponibile per progetti di qualsiasi scala — dalla singola shot alla supervisione VFX dell&apos;intero progetto. Ogni lavoro ha tempi e standard diversi, ma la cura è la stessa. Che si tratti di rimuovere un cavo di sicurezza o di costruire un intero ambiente in CG, è il dettaglio a fare la differenza tra un lavoro professionale e uno che "si vede".</p>`,
+<p>Lavoro su film, cortometraggi, spot pubblicitari e contenuti digitali a Roma e in tutta Italia. Come VFX artist freelance, sono disponibile per progetti di qualsiasi scala — dalla singola shot alla supervisione VFX dell&apos;intero progetto. Ogni lavoro ha tempi e standard diversi, ma la cura è la stessa. Che si tratti di rimuovere un cavo di sicurezza o di costruire un intero ambiente in CG, è il dettaglio a fare la differenza tra un lavoro professionale e uno che "si vede".</p>
+<p>Spesso i VFX si integrano nel mio workflow di <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> e <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a> — un flusso unico che garantisce coerenza visiva dall&apos;inizio alla fine.</p>`,
   introImage: '/images/services/vfx-compositing-cortometraggio-along-came-ruby-roma.webp',
   introImageAlt: 'VFX compositing per il cortometraggio Along Came Ruby — Piero Perilli VFX artist Roma',
 
@@ -76,7 +82,7 @@ const contentIT = {
 
   recentWorkTitle: 'Progetti VFX recenti',
   recentWork: [
-    { title: 'Along Came Ruby — cortometraggio, VFX complessi', link: '' },
+    { title: 'Along Came Ruby — cortometraggio, VFX complessi', link: '/portfolio/along-came-ruby' },
     { title: 'I Am Curious Johnny — di Julian Temple, VFX e clean-up', link: 'https://www.imdb.com/it/title/tt35450650/' },
     { title: 'Floverr — film in produzione, supervisione VFX', link: '' },
     { title: 'Non tutto è perduto — film cinema, VFX e post-produzione', link: 'https://www.imdb.com/it/title/tt31173315/' },
@@ -91,13 +97,14 @@ const contentIT = {
 
 const contentEN = {
   sectionLabel: 'VFX',
-  h1: 'Visual Effects',
+  h1: 'Visual Effects (VFX) for Film and Commercials — Rome, Italy',
   heroSubtitle: 'Creative and realistic visual effects for cinema, advertising and digital content.',
 
   introTitle: 'Visual Effects that Transform Your Vision into Reality.',
   introText: `<p>My mission is to take your film production, commercial or video to the next level, creating scenes the audience perceives as real.</p>
 <p>I integrate digital elements into live footage with photorealistic precision — the goal is that the viewer doesn't think "nice compositing," but simply "great scene." When visual effects truly work, they're invisible.</p>
-<p>I work on films, short films, commercials and digital content from Rome, across Italy and for international productions. As a freelance VFX artist, I&apos;m available for projects of any scale — from a single shot to full VFX supervision. Each project has different timelines and standards, but the care is the same. Whether it's removing a safety wire or building an entire CG environment, it's the detail that makes the difference between professional work and work that "shows."</p>`,
+<p>I work on films, short films, commercials and digital content from Rome, across Italy and for international productions. As a freelance VFX artist, I&apos;m available for projects of any scale — from a single shot to full VFX supervision. Each project has different timelines and standards, but the care is the same. Whether it's removing a safety wire or building an entire CG environment, it's the detail that makes the difference between professional work and work that "shows."</p>
+<p>VFX often integrates into my <a href="/en/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> and <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a> workflow — a single flow that ensures visual coherence from start to finish.</p>`,
   introImage: '/images/services/vfx-compositing-cortometraggio-along-came-ruby-roma.webp',
   introImageAlt: 'VFX compositing for the short film Along Came Ruby — Piero Perilli VFX artist Rome Italy',
 
@@ -158,7 +165,7 @@ const contentEN = {
 
   recentWorkTitle: 'Recent VFX projects',
   recentWork: [
-    { title: 'Along Came Ruby — short film, complex VFX', link: '' },
+    { title: 'Along Came Ruby — short film, complex VFX', link: '/en/portfolio/along-came-ruby' },
     { title: 'I Am Curious Johnny — Julian Temple, VFX and clean-up', link: 'https://www.imdb.com/it/title/tt35450650/' },
     { title: 'Floverr — film in production, VFX supervision', link: '' },
     { title: 'Non tutto è perduto — theatrical film, VFX and post-production', link: 'https://www.imdb.com/it/title/tt31173315/' },

@@ -51,6 +51,8 @@ export const posts: BlogPost[] = [
   <p>Un progetto recente: il regista voleva un cielo apocalittico per una scena esterna. Soluzione tradizionale: matte painting in Photoshop, proiezione 3D, compositing in Nuke. Tempo stimato: due giorni. Soluzione ibrida: ho generato 20 varianti di cielo con AI, selezionato la migliore, poi l'ho raffinata in After Effects — color match, integrazione con la ripresa, correzione artefatti. Tempo reale: quattro ore. Risultato identico.</p>
   <p>L'AI ha fatto il lavoro "pesante" (generare la base), l'esperienza ha fatto il lavoro "intelligente" (selezionare, raffinare, integrare). Questo è il workflow del futuro — ed è già il mio presente.</p>
   
+  <p>Se vuoi capire meglio come funzionano i miei <a href="/vfx">effetti visivi tradizionali</a> o il mio approccio alla <a href="/ai-video">produzione video con AI</a>, ho pagine dedicate a entrambi.</p>
+  
   <h2>La regola che applico</h2>
   <p>Non è complicata: <strong>se il risultato AI è al 90% di qualità in un decimo del tempo, uso l'AI e porto quel 90% al 100% con gli strumenti tradizionali.</strong> Se il risultato AI è al 60%, uso direttamente i VFX tradizionali. La capacità di giudicare dove siamo su quella scala è ciò che fa la differenza — e viene solo dall'esperienza.</p>`,
 
@@ -75,6 +77,8 @@ export const posts: BlogPost[] = [
   <p>This is the interesting part — and why the hybrid profile is the strongest in the market.</p>
   <p>A recent project: the director wanted an apocalyptic sky for an exterior scene. Traditional solution: matte painting in Photoshop, 3D projection, compositing in Nuke. Estimated time: two days. Hybrid solution: I generated 20 sky variants with AI, selected the best, then refined it in After Effects — color match, integration with footage, artifact correction. Actual time: four hours. Identical result.</p>
   <p>AI did the "heavy" work (generating the base), experience did the "smart" work (selecting, refining, integrating). This is the future workflow — and it's already my present.</p>
+  
+  <p>If you want to learn more about my <a href="/en/vfx">traditional visual effects</a> or my approach to <a href="/en/ai-video">AI video production</a>, I have dedicated pages for both.</p>
   
   <h2>The rule I apply</h2>
   <p>It's not complicated: <strong>if the AI result is at 90% quality in a tenth of the time, I use AI and bring that 90% to 100% with traditional tools.</strong> If the AI result is at 60%, I go straight to traditional VFX. The ability to judge where we are on that scale is what makes the difference — and it only comes from experience.</p>`,
@@ -124,7 +128,7 @@ export const posts: BlogPost[] = [
   <h2>Quanto costa davvero</h2>
   <p>Un film indipendente con 20-30 shot VFX di complessità media (clean-up, set extension, compositing base) richiede indicativamente 3-4 settimane di lavoro. Meno di quanto si pensi — soprattutto se la pre-produzione è stata fatta bene.</p>
   <p>Il costo vero di VFX non pianificati è molto più alto: shot impossibili da salvare, tempi raddoppiati, compromessi sulla qualità che si vedono sullo schermo.</p>
-  <p>Il mio consiglio: coinvolgimi in pre-produzione. Costa poco (spesso solo una consulenza) e fa risparmiare molto in post.</p>`,
+  <p>Il mio consiglio: coinvolgimi in pre-produzione. Costa poco (spesso solo una consulenza) e fa risparmiare molto in post. Scopri i miei <a href="/vfx">servizi VFX</a> o guarda il caso studio <a href="/portfolio/along-came-ruby">Along Came Ruby</a> per vedere questo workflow in azione.</p>`,
 
         contentEn: `<h2>VFX in independent cinema isn't a luxury</h2>
   <p>There's a widespread prejudice: visual effects are blockbuster stuff. You need millions in budget and hundreds of artists. It's false. Some of the most effective VFX I've done were for short films and independent features with tiny budgets.</p>
@@ -158,7 +162,7 @@ export const posts: BlogPost[] = [
   <h2>What it actually costs</h2>
   <p>An indie film with 20-30 medium-complexity VFX shots (clean-up, set extension, basic compositing) requires roughly 3-4 weeks of work. Less than you'd think — especially if pre-production was done right.</p>
   <p>The real cost of unplanned VFX is much higher: unsalvageable shots, doubled timelines, quality compromises that show on screen.</p>
-  <p>My advice: involve me in pre-production. It costs little (often just a consultation) and saves a lot in post.</p>`,
+  <p>My advice: involve me in pre-production. It costs little (often just a consultation) and saves a lot in post. Check out my <a href="/en/vfx">VFX services</a> or see the <a href="/en/portfolio/along-came-ruby">Along Came Ruby</a> case study to see this workflow in action.</p>`,
     },
     {
         slug: 'color-grading-film-davinci-resolve-workflow',
@@ -210,7 +214,7 @@ export const posts: BlogPost[] = [
   
   <h2>Fase 7: Delivery</h2>
   <p>Il master finale dipende dalla destinazione: DCP per il cinema (P3 D65, gamma 2.6), Rec.709 per broadcast e streaming, HDR se richiesto (PQ o HLG). DaVinci gestisce tutto nativamente, incluse le versioni multiple per piattaforme diverse.</p>
-  <p>Se il film ha VFX, il grading e i VFX si parlano in continuazione — ed è qui che gestire entrambi fa risparmiare settimane. Non devo esportare shot, mandarle al VFX artist, aspettare il ritorno, rifare il match. È già tutto allineato.</p>`,
+  <p>Se il film ha VFX, il grading e i VFX si parlano in continuazione — ed è qui che gestire entrambi fa risparmiare settimane. Non devo esportare shot, mandarle al VFX artist, aspettare il ritorno, rifare il match. È già tutto allineato. Scopri di più sui miei servizi di <a href="/post-produzione">post-produzione</a> e <a href="/vfx">effetti visivi</a>.</p>`,
 
         contentEn: `<h2>Color isn't decoration</h2>
   <p>There's a widespread misconception about color grading: many consider it the last step, the "filter" to apply when everything else is done. It's not. Color is storytelling. It defines the emotional tone of every scene, guides the viewer's eye, separates time planes, distinguishes characters.</p>
@@ -249,12 +253,12 @@ export const posts: BlogPost[] = [
   
   <h2>Phase 7: Delivery</h2>
   <p>The final master depends on destination: DCP for cinema (P3 D65, gamma 2.6), Rec.709 for broadcast and streaming, HDR if required (PQ or HLG). DaVinci handles everything natively, including multiple versions for different platforms.</p>
-  <p>If the film has VFX, the grade and VFX are in constant conversation — and this is where managing both saves weeks. I don't need to export shots, send them to the VFX artist, wait for returns, redo the match. It's already aligned.</p>`,
+  <p>If the film has VFX, the grade and VFX are in constant conversation — and this is where managing both saves weeks. I don't need to export shots, send them to the VFX artist, wait for returns, redo the match. It's already aligned. Learn more about my <a href="/en/post-produzione">post-production</a> and <a href="/en/vfx">visual effects</a> services.</p>`,
     },
     {
         slug: 'breakdown-vfx-along-came-ruby',
-        titleIt: 'Breakdown: gli effetti visivi di Along Came Ruby',
-        titleEn: 'Breakdown: the visual effects of Along Came Ruby',
+        titleIt: 'Breakdown: gli effetti visivi di <a href="/portfolio/along-came-ruby">Along Came Ruby</a>',
+        titleEn: 'Breakdown: the visual effects of <a href="/en/portfolio/along-came-ruby">Along Came Ruby</a>',
         excerptIt: 'Come ho creato l\'effetto spazio-temporale di Along Came Ruby. Dal concept alla composizione finale: processo, strumenti e decisioni creative.',
         excerptEn: 'How I created the space-time effect for Along Came Ruby. From concept to final comp: process, tools and creative decisions.',
         date: '2026-03-22',
@@ -287,7 +291,7 @@ export const posts: BlogPost[] = [
   <h2>Cosa ho imparato (ancora)</h2>
   <p><strong>Il meno è più.</strong> Le prime versioni dell'effetto erano troppo evidenti. Il regista ha avuto ragione a chiedere di tirare indietro — l'effetto funziona meglio quando è al limite della percezione, quando lo spettatore non è sicuro di cosa ha visto.</p>
   <p><strong>Il dialogo col regista è il vero strumento.</strong> Nessun software sostituisce una conversazione chiara su cosa l'effetto deve far sentire al pubblico. "Due dimensioni che si toccano" è una frase — ma è la frase giusta, e da lì è nato tutto il look.</p>
-  <p><strong>Il workflow integrato fa la differenza.</strong> Avendo gestito anche il color grading del corto, ho potuto lavorare VFX e colore insieme fin dall'inizio. L'effetto spazio-temporale ha una sua palette cromatica che dialoga con il grading delle scene — non è un elemento incollato sopra, è parte del tessuto visivo del film.</p>`,
+  <p><strong>Il workflow integrato fa la differenza.</strong> Avendo gestito anche il color grading del corto, ho potuto lavorare VFX e colore insieme fin dall'inizio. L'effetto spazio-temporale ha una sua palette cromatica che dialoga con il grading delle scene — non è un elemento incollato sopra, è parte del tessuto visivo del film. Se ti interessa, scopri i miei <a href="/vfx">servizi VFX</a> o il mio approccio alla <a href="/post-produzione">post-produzione integrata</a>.</p>`,
 
         contentEn: `<h2>The project</h2>
   <p>Along Came Ruby is a drama/sci-fi short film directed by Riccardo Suriano. In a post-apocalyptic world, Ruby searches for her brother Henry and encounters an enigmatic woman who holds secrets of the past. The central narrative element is communication between present and future through space-time — and making it visually credible was my job.</p>
@@ -312,7 +316,7 @@ export const posts: BlogPost[] = [
   <h2>What I learned (again)</h2>
   <p><strong>Less is more.</strong> The first versions of the effect were too obvious. The director was right to ask me to pull back — the effect works better when it's at the edge of perception, when the viewer isn't sure what they saw.</p>
   <p><strong>Dialogue with the director is the real tool.</strong> No software replaces a clear conversation about what the effect should make the audience feel. "Two dimensions touching" is a phrase — but it's the right phrase, and from there the entire look was born.</p>
-  <p><strong>The integrated workflow makes the difference.</strong> Having also managed the color grading for the short, I could work VFX and color together from the start. The space-time effect has its own color palette that dialogues with the scene grading — it's not an element pasted on top, it's part of the film's visual fabric.</p>`,
+  <p><strong>The integrated workflow makes the difference.</strong> Having also managed the color grading for the short, I could work VFX and color together from the start. The space-time effect has its own color palette that dialogues with the scene grading — it's not an element pasted on top, it's part of the film's visual fabric. If you're interested, read more about my <a href="/en/vfx">VFX services</a> or my approach to <a href="/en/post-produzione">integrated post-production</a>.</p>`,
     },
 ];
 

@@ -2,18 +2,24 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Motion Graphics Roma | Animazioni per Brand, Spot e Campagne | Piero Perilli',
-  description: 'Motion graphics professionali a Roma per spot, sigle, campagne advertising e contenuti digitali. Animazione 2D/3D, titoli, infografiche animate, loghi e visual storytelling.',
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  return locale === 'it' ? {
+    title: 'Motion Graphics Roma | Animazioni per Brand, Spot e Campagne | Piero Perilli',
+    description: 'Motion graphics professionali a Roma per spot, sigle, campagne advertising e contenuti digitali. Animazione 2D/3D, titoli, infografiche animate, loghi e visual storytelling.',
+  } : {
+    title: 'Motion Graphics Rome | Animations for Brands, Commercials and Campaigns | Piero Perilli',
+    description: 'Professional motion graphics in Rome for commercials, title sequences, advertising campaigns and digital content. 2D/3D animation, infographics, logos and visual storytelling.',
+  };
+}
 
 const contentIT = {
   sectionLabel: 'MOTION GRAPHICS',
-  h1: 'Motion Graphics',
+  h1: 'Motion Graphics per Brand, Spot e Campagne — Roma',
   heroSubtitle: 'Animazioni grafiche dinamiche per brand, spot e contenuti digitali.',
 
   introTitle: 'Grafiche in Movimento che Danno Voce al Tuo Brand.',
   introText: `<p>Il mio lavoro è catturare l'attenzione e trasformare messaggi complessi in storie animate chiare e coinvolgenti. Aiuto agenzie e brand a comunicare con impatto attraverso animazioni 2D e 3D per spot pubblicitari, campagne social media e contenuti digitali, dando vita a idee, dati e identità visive.</p>
+<p>Un esempio concreto? Il progetto <a href="/portfolio/ipotesi-metaverso" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Ipotesi Metaverso</a> — ambienti particellari immersivi creati per una mostra d&apos;arte contemporanea.</p>
 <p>Ogni progetto parte dalla comprensione dell'obiettivo. Chi deve vedere questa animazione? Cosa deve capire? Cosa deve sentire? Da qui si costruisce il concept visivo, si definisce lo stile, si anima. Non il contrario.</p>`,
   introImage: '/images/services/motion-graphics-mostra-ipotesi-metaverso-roma.webp',
   introImageAlt: 'Motion graphics per la mostra Ipotesi Metaverso — Piero Perilli Roma',
@@ -77,11 +83,12 @@ const contentIT = {
 
 const contentEN = {
   sectionLabel: 'MOTION GRAPHICS',
-  h1: 'Motion Graphics',
+  h1: 'Motion Graphics for Brands, Commercials and Campaigns — Rome',
   heroSubtitle: 'Dynamic graphic animations for brands, commercials and digital content.',
 
   introTitle: 'Graphics in Motion that Give Voice to Your Brand.',
   introText: `<p>My job is to capture attention and transform complex messages into clear, engaging animated stories. I help agencies and brands communicate with impact through 2D and 3D animations for commercials, social media campaigns and digital content, bringing ideas, data and visual identities to life.</p>
+<p>A concrete example? The <a href="/en/portfolio/ipotesi-metaverso" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Ipotesi Metaverso</a> project — immersive particle environments created for a contemporary art exhibition.</p>
 <p>Every project starts from understanding the goal. Who will see this animation? What should they understand? What should they feel? From there we build the visual concept, define the style, animate. Not the other way around.</p>`,
   introImage: '/images/services/motion-graphics-mostra-ipotesi-metaverso-roma.webp',
   introImageAlt: 'Motion graphics for the Ipotesi Metaverso exhibition — Piero Perilli Rome',
