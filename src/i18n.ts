@@ -30,6 +30,7 @@ export const pathnames = {
     it: '/contatti',
     en: '/contact',
   },
+  '/privacy': '/privacy',
 } as const;
 
 export default getRequestConfig(async ({ locale }) => {

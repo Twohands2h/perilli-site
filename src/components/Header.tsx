@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Globe } from 'lucide-react';
 
 const navItems = [
@@ -16,13 +17,32 @@ const navItems = [
   { key: 'blog', href: { it: '/blog', en: '/en/blog' } },
 ] as const;
 
+function getAltLocaleHref(pathname: string, currentLocale: string): string {
+  const isIt = currentLocale === 'it';
+
+  if (isIt) {
+    // IT → EN: add /en/ prefix
+    // Homepage: / → /en
+    if (pathname === '/') return '/en';
+    // All other pages: /vfx → /en/vfx
+    return '/en' + pathname;
+  } else {
+    // EN → IT: remove /en prefix
+    // /en → /
+    if (pathname === '/en' || pathname === '/en/') return '/';
+    // /en/vfx → /vfx
+    return pathname.replace(/^\/en/, '');
+  }
+}
+
 export default function Header() {
   const t = useTranslations('nav');
   const locale = useLocale();
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const altLocale = locale === 'it' ? 'en' : 'it';
-  const altLocaleHref = locale === 'it' ? '/en' : '/';
+  const altLocaleHref = getAltLocaleHref(pathname, locale);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
