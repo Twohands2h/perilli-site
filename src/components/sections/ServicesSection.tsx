@@ -36,7 +36,7 @@ const services = [
     descEn: 'Bring characters, products and environments to life with custom 3D animations. Modeling, texturing, lighting and rendering for photorealistic or stylized results.',
     ctaIt: 'Vai all\'Animazione 3D',
     ctaEn: 'Go to 3D Animation',
-    href: { it: '/animazione-3d', en: '/en/animazione-3d' },
+    href: { it: '/animazione-3d', en: '/en/3d-animation' },
     image: '/images/services/animazione-3d-spline-guerciotti-product-visualization.jpg',
   },
   {
@@ -47,7 +47,7 @@ const services = [
     descEn: 'Editing, color grading and professional finishing for cinema, TV and digital. An integrated workflow that ensures stylistic coherence and optimized timelines.',
     ctaIt: 'Servizi di Post-produzione',
     ctaEn: 'Post-production Services',
-    href: { it: '/post-produzione', en: '/en/post-produzione' },
+    href: { it: '/post-produzione', en: '/en/post-production' },
     image: '/images/services/post-produzione-video-musicale-color-grading-roma.webp',
   },
   {

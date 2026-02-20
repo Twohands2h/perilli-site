@@ -160,11 +160,11 @@ export default function PostProduzionePage({ params: { locale } }: { params: { l
         description={isIt
           ? 'Montaggio, color grading, finishing e workflow integrato per cinema e advertising. Roma, Italia.'
           : 'Editing, color grading, finishing and integrated workflow for cinema and advertising. Rome, Italy.'}
-        url={isIt ? '/post-produzione' : '/en/post-produzione'}
+        url={isIt ? '/post-produzione' : '/en/post-production'}
       />
       <BreadcrumbSchema items={[
         { name: 'Home', url: isIt ? '/' : '/en' },
-        { name: isIt ? 'Post Produzione' : 'Post Production', url: isIt ? '/post-produzione' : '/en/post-produzione' },
+        { name: isIt ? 'Post Produzione' : 'Post Production', url: isIt ? '/post-produzione' : '/en/post-production' },
       ]} />
       <ServicePageTemplate {...content} />
     </>

@@ -4,10 +4,21 @@ import { posts } from '@/data/posts';
 
 const BASE_URL = 'https://pieroperilli.com';
 
+// IT path → EN path for localized URLs
+const enPaths: Record<string, string> = {
+  '/chi-sono': '/about',
+  '/post-produzione': '/post-production',
+  '/animazione-3d': '/3d-animation',
+  '/contatti': '/contact',
+};
+
+function getEnPath(itPath: string): string {
+  return enPaths[itPath] || itPath;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  // Static pages (IT default + EN)
   const staticPages = [
     { path: '/', priority: 1.0, changeFrequency: 'weekly' as const },
     { path: '/chi-sono', priority: 0.8, changeFrequency: 'monthly' as const },
@@ -21,32 +32,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/contatti', priority: 0.7, changeFrequency: 'monthly' as const },
   ];
 
-  const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) => [
-    {
-      url: `${BASE_URL}${page.path}`,
-      lastModified,
-      changeFrequency: page.changeFrequency,
-      priority: page.priority,
-      alternates: {
-        languages: {
-          it: `${BASE_URL}${page.path}`,
-          en: `${BASE_URL}/en${page.path}`,
+  const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) => {
+    const enPath = getEnPath(page.path);
+    return [
+      {
+        url: `${BASE_URL}${page.path}`,
+        lastModified,
+        changeFrequency: page.changeFrequency,
+        priority: page.priority,
+        alternates: {
+          languages: {
+            it: `${BASE_URL}${page.path}`,
+            en: `${BASE_URL}/en${enPath}`,
+          },
         },
       },
-    },
-    {
-      url: `${BASE_URL}/en${page.path}`,
-      lastModified,
-      changeFrequency: page.changeFrequency,
-      priority: page.priority,
-      alternates: {
-        languages: {
-          it: `${BASE_URL}${page.path}`,
-          en: `${BASE_URL}/en${page.path}`,
+      {
+        url: `${BASE_URL}/en${enPath}`,
+        lastModified,
+        changeFrequency: page.changeFrequency,
+        priority: page.priority,
+        alternates: {
+          languages: {
+            it: `${BASE_URL}${page.path}`,
+            en: `${BASE_URL}/en${enPath}`,
+          },
         },
       },
-    },
-  ]);
+    ];
+  });
 
   // Portfolio projects
   const portfolioEntries: MetadataRoute.Sitemap = projects.flatMap((project) => [

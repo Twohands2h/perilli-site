@@ -253,7 +253,7 @@ export const posts: BlogPost[] = [
   
   <h2>Phase 7: Delivery</h2>
   <p>The final master depends on destination: DCP for cinema (P3 D65, gamma 2.6), Rec.709 for broadcast and streaming, HDR if required (PQ or HLG). DaVinci handles everything natively, including multiple versions for different platforms.</p>
-  <p>If the film has VFX, the grade and VFX are in constant conversation — and this is where managing both saves weeks. I don't need to export shots, send them to the VFX artist, wait for returns, redo the match. It's already aligned. Learn more about my <a href="/en/post-produzione">post-production</a> and <a href="/en/vfx">visual effects</a> services.</p>`,
+  <p>If the film has VFX, the grade and VFX are in constant conversation — and this is where managing both saves weeks. I don't need to export shots, send them to the VFX artist, wait for returns, redo the match. It's already aligned. Learn more about my <a href="/en/post-production">post-production</a> and <a href="/en/vfx">visual effects</a> services.</p>`,
     },
     {
         slug: 'breakdown-vfx-along-came-ruby',
@@ -316,7 +316,7 @@ export const posts: BlogPost[] = [
   <h2>What I learned (again)</h2>
   <p><strong>Less is more.</strong> The first versions of the effect were too obvious. The director was right to ask me to pull back — the effect works better when it's at the edge of perception, when the viewer isn't sure what they saw.</p>
   <p><strong>Dialogue with the director is the real tool.</strong> No software replaces a clear conversation about what the effect should make the audience feel. "Two dimensions touching" is a phrase — but it's the right phrase, and from there the entire look was born.</p>
-  <p><strong>The integrated workflow makes the difference.</strong> Having also managed the color grading for the short, I could work VFX and color together from the start. The space-time effect has its own color palette that dialogues with the scene grading — it's not an element pasted on top, it's part of the film's visual fabric. If you're interested, read more about my <a href="/en/vfx">VFX services</a> or my approach to <a href="/en/post-produzione">integrated post-production</a>.</p>`,
+  <p><strong>The integrated workflow makes the difference.</strong> Having also managed the color grading for the short, I could work VFX and color together from the start. The space-time effect has its own color palette that dialogues with the scene grading — it's not an element pasted on top, it's part of the film's visual fabric. If you're interested, read more about my <a href="/en/vfx">VFX services</a> or my approach to <a href="/en/post-production">integrated post-production</a>.</p>`,
     },
 ];
 

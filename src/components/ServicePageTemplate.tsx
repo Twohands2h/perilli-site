@@ -146,7 +146,7 @@ export default function ServicePageTemplate({
               {locale === 'it' ? 'Hai un progetto in mente?' : 'Have a project in mind?'}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link href={locale === 'it' ? '/contatti' : '/en/contatti'} className="btn-primary w-full sm:w-auto justify-center">
+              <Link href={locale === 'it' ? '/contatti' : '/en/contact'} className="btn-primary w-full sm:w-auto justify-center">
                 {locale === 'it' ? 'Parliamone' : "Let's talk"}<ArrowRight size={16} />
               </Link>
               <a href="https://calendly.com/pieroperilli-info/30min" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto justify-center">
@@ -169,7 +169,7 @@ export default function ServicePageTemplate({
               </p>
               <div className="flex items-center gap-3 shrink-0">
                 <Link
-                  href={locale === 'it' ? '/contatti' : '/en/contatti'}
+                  href={locale === 'it' ? '/contatti' : '/en/contact'}
                   className="btn-primary text-xs py-2.5 px-5"
                 >
                   {locale === 'it' ? 'Parliamone' : "Let's talk"}
@@ -264,7 +264,7 @@ export default function ServicePageTemplate({
           </AnimateOnScroll>
           <AnimateOnScroll delay={100}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-              <Link href={locale === 'it' ? '/contatti' : '/en/contatti'} className="btn-primary w-full sm:w-auto justify-center">{locale === 'it' ? 'Parliamone' : "Let's talk"}<ArrowRight size={16} /></Link>
+              <Link href={locale === 'it' ? '/contatti' : '/en/contact'} className="btn-primary w-full sm:w-auto justify-center">{locale === 'it' ? 'Parliamone' : "Let's talk"}<ArrowRight size={16} /></Link>
               <a href="https://calendly.com/pieroperilli-info/30min" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto justify-center"><Calendar size={16} />{locale === 'it' ? 'Prenota una call' : 'Book a call'}</a>
               <a href="https://wa.me/393920187759" target="_blank" rel="noopener noreferrer" className="btn-ghost"><MessageCircle size={16} />WhatsApp</a>
             </div>

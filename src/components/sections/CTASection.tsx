@@ -33,7 +33,7 @@ export default function CTASection() {
         <AnimateOnScroll delay={200}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Link
-              href={locale === 'it' ? '/contatti' : '/en/contatti'}
+              href={locale === 'it' ? '/contatti' : '/en/contact'}
               className="btn-primary"
             >
               {t('ctaForm')}

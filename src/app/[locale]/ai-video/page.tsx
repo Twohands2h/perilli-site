@@ -86,7 +86,7 @@ const contentEN = {
 
   introTitle: "AI Doesn't Replace Experience. It Multiplies It.",
   introText: `<p>Anyone can generate a video with AI. Few know when the result is good enough, when manual work is needed and how to combine both. This is the difference between an "AI-generated video" and a professional video that uses AI as a tool.</p>
-<p>I integrate tools like Runway, Veo and Kling into my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX workflow</a> and <a href="/en/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> pipeline, combining AI generation and manual intervention for results that actually work.</p>
+<p>I integrate tools like Runway, Veo and Kling into my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX workflow</a> and <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> pipeline, combining AI generation and manual intervention for results that actually work.</p>
 <p>I integrate Runway, Veo, Kling and AI video generation tools into my AI-assisted video production workflow — the same workflow I've used on films and commercials for twenty years. AI produces the raw material, experience transforms it into a result that actually works.</p>
 <p>My advantage is context. Twenty years of post-production mean knowing how a final image should look, which artifacts are acceptable and which aren't, how to integrate AI output with real footage, how to maintain visual coherence between generated shots. This know-how can't be improvised.</p>`,
 

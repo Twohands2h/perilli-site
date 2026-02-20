@@ -6,34 +6,17 @@ import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Globe } from 'lucide-react';
+import { getAltLocaleHref } from '@/lib/routes';
 
 const navItems = [
-  { key: 'about', href: { it: '/chi-sono', en: '/en/chi-sono' } },
+  { key: 'about', href: { it: '/chi-sono', en: '/en/about' } },
   { key: 'vfx', href: { it: '/vfx', en: '/en/vfx' } },
   { key: 'motion', href: { it: '/motion-graphics', en: '/en/motion-graphics' } },
-  { key: 'postproduction', href: { it: '/post-produzione', en: '/en/post-produzione' } },
+  { key: 'postproduction', href: { it: '/post-produzione', en: '/en/post-production' } },
   { key: 'aivideo', href: { it: '/ai-video', en: '/en/ai-video' } },
   { key: 'portfolio', href: { it: '/portfolio', en: '/en/portfolio' } },
   { key: 'blog', href: { it: '/blog', en: '/en/blog' } },
 ] as const;
-
-function getAltLocaleHref(pathname: string, currentLocale: string): string {
-  const isIt = currentLocale === 'it';
-
-  if (isIt) {
-    // IT → EN: add /en/ prefix
-    // Homepage: / → /en
-    if (pathname === '/') return '/en';
-    // All other pages: /vfx → /en/vfx
-    return '/en' + pathname;
-  } else {
-    // EN → IT: remove /en prefix
-    // /en → /
-    if (pathname === '/en' || pathname === '/en/') return '/';
-    // /en/vfx → /vfx
-    return pathname.replace(/^\/en/, '');
-  }
-}
 
 export default function Header() {
   const t = useTranslations('nav');
@@ -87,7 +70,7 @@ export default function Header() {
 
           {/* CTA Desktop */}
           <Link
-            href={locale === 'it' ? '/contatti' : '/en/contatti'}
+            href={locale === 'it' ? '/contatti' : '/en/contact'}
             className="hidden md:inline-flex btn-primary text-xs py-2.5 px-5"
           >
             {t('contact')}
@@ -121,7 +104,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href={locale === 'it' ? '/contatti' : '/en/contatti'}
+              href={locale === 'it' ? '/contatti' : '/en/contact'}
               onClick={() => setMobileOpen(false)}
               className="btn-primary mt-6 justify-center"
             >

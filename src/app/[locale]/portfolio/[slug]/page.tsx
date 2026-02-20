@@ -269,7 +269,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
                     </AnimateOnScroll>
                     <AnimateOnScroll delay={100}>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link href={isIt ? '/contatti' : '/en/contatti'} className="btn-primary">
+                            <Link href={isIt ? '/contatti' : '/en/contact'} className="btn-primary">
                                 {isIt ? 'Parliamone' : "Let\u0027s talk"}
                                 <ArrowRight size={16} />
                             </Link>

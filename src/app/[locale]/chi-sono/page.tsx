@@ -222,7 +222,7 @@ export default function ChiSonoPage() {
           <AnimateOnScroll delay={100}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href={isIt ? '/contatti' : '/en/contatti'}
+                href={isIt ? '/contatti' : '/en/contact'}
                 className="btn-primary"
               >
                 {isIt ? 'Scrivimi' : 'Write me'}

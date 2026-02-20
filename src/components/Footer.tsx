@@ -11,17 +11,17 @@ export default function Footer() {
   const isIt = locale === 'it';
 
   const navLinks = [
-    { label: tNav('about'), href: isIt ? '/chi-sono' : '/en/chi-sono' },
+    { label: tNav('about'), href: isIt ? '/chi-sono' : '/en/about' },
     { label: tNav('portfolio'), href: isIt ? '/portfolio' : '/en/portfolio' },
     { label: tNav('blog'), href: isIt ? '/blog' : '/en/blog' },
-    { label: tNav('contact'), href: isIt ? '/contatti' : '/en/contatti' },
+    { label: tNav('contact'), href: isIt ? '/contatti' : '/en/contact' },
   ];
 
   const serviceLinks = [
     { label: tNav('vfx'), href: isIt ? '/vfx' : '/en/vfx' },
     { label: tNav('motion'), href: isIt ? '/motion-graphics' : '/en/motion-graphics' },
-    { label: tNav('postproduction'), href: isIt ? '/post-produzione' : '/en/post-produzione' },
-    { label: tNav('animation3d'), href: isIt ? '/animazione-3d' : '/en/animazione-3d' },
+    { label: tNav('postproduction'), href: isIt ? '/post-produzione' : '/en/post-production' },
+    { label: tNav('animation3d'), href: isIt ? '/animazione-3d' : '/en/3d-animation' },
     { label: tNav('aivideo'), href: isIt ? '/ai-video' : '/en/ai-video' },
   ];
 

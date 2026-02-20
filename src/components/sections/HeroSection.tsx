@@ -37,7 +37,7 @@ export default function HeroSection() {
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-text-secondary max-w-2xl mx-auto mb-8 md:mb-10 animate-fade-in" style={{ animationDelay: '0.2s', opacity: 0 }}>{t('subtitle')}</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in" style={{ animationDelay: '0.4s', opacity: 0 }}>
-              <Link href={locale === 'it' ? '/contatti' : '/en/contatti'} className="btn-primary w-full sm:w-auto justify-center">{t('cta')}<ArrowRight size={16} /></Link>
+              <Link href={locale === 'it' ? '/contatti' : '/en/contact'} className="btn-primary w-full sm:w-auto justify-center">{t('cta')}<ArrowRight size={16} /></Link>
               <button className="btn-secondary w-full sm:w-auto justify-center" onClick={() => openReel(SHOWREELS[0])}><Play size={16} />{t('showreel')}</button>
             </div>
           </div>
