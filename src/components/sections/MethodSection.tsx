@@ -94,7 +94,7 @@ export default function MethodSection() {
                                     <div className="hidden md:block absolute top-0 left-0 bottom-0 w-px bg-accent scale-y-0 origin-top
                                                     transition-transform duration-700 group-hover:scale-y-100" />
                                 )}
-                                <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider mb-2
+                                <h3 className="text-base font-bold text-text-primary uppercase tracking-wider mb-2
                                                transition-colors duration-500 group-hover:text-accent">
                                     {benefit.title}
                                 </h3>

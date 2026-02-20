@@ -17,11 +17,20 @@ export default function CTASection() {
       <div className="relative section-container text-center">
         <AnimateOnScroll>
           <h2
-            className="font-bold text-text-primary mb-4"
+            className="font-bold text-text-primary mb-3"
             style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}
           >
             {t('headline')}
           </h2>
+          {/* Claim */}
+          <p
+            className="font-bold mb-6"
+            style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}
+          >
+            <span className="text-accent">{locale === 'it' ? 'Ti serve ' : 'You need '}</span>
+            <span className="text-text-primary">Piero</span>
+            <span className="text-accent">.</span>
+          </p>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={100}>

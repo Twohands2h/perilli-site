@@ -65,7 +65,7 @@
 
   /* Section title */
   .section-title {
-    @apply text-xs font-semibold uppercase tracking-[0.25em] text-accent mb-6;
+    @apply text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-6;
   }
 
   /* Divider line */
