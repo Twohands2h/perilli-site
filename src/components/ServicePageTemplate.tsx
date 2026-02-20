@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import { useLocale } from 'next-intl';
-import { ArrowRight, Calendar, MessageCircle } from 'lucide-react';
+import { ArrowRight, Calendar, MessageCircle, ChevronDown } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 
 interface ServiceDetail {
@@ -43,6 +44,68 @@ interface ServicePageProps {
   ctaTitle: string;
   ctaSubtitle: string;
   ctaText: string;
+}
+
+function ServiceAccordion({ services }: { services: ServiceDetail[] }) {
+  const [openIndex, setOpenIndex] = useState<number>(0);
+
+  return (
+    <div className="divide-y divide-border/40">
+      {services.map((svc, i) => {
+        const isOpen = openIndex === i;
+        return (
+          <div key={i}>
+            <button
+              onClick={() => setOpenIndex(isOpen ? -1 : i)}
+              className="w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left group"
+            >
+              <div className="flex items-baseline gap-3">
+                <h3 className={`text-base md:text-lg font-bold transition-colors duration-300
+                               ${isOpen ? 'text-accent' : 'text-text-primary group-hover:text-accent'}`}>
+                  {svc.name}
+                </h3>
+                {svc.tag && (
+                  <span className="text-[10px] md:text-xs text-accent/60 font-semibold uppercase tracking-wider">
+                    {svc.tag}
+                  </span>
+                )}
+              </div>
+              <ChevronDown
+                size={18}
+                className={`text-text-muted shrink-0 transition-transform duration-300
+                           ${isOpen ? 'rotate-180 text-accent' : ''}`}
+              />
+            </button>
+
+            <div
+              className={`grid transition-all duration-500 ease-in-out
+                         ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-6 md:pb-8' : 'grid-rows-[0fr] opacity-0'}`}
+            >
+              <div className="overflow-hidden">
+                <div className={`grid grid-cols-1 ${svc.image ? 'md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px]' : ''} gap-5 md:gap-8 items-start`}>
+                  <div
+                    className="text-text-secondary text-sm leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: svc.description }}
+                  />
+                  {svc.image && (
+                    <div className="relative aspect-[16/10] rounded-lg overflow-hidden bg-surface-light">
+                      <Image
+                        src={svc.image}
+                        alt={svc.imageAlt || svc.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 340px"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default function ServicePageTemplate({
@@ -101,7 +164,7 @@ export default function ServicePageTemplate({
         </div>
       </section>
 
-      {/* === SERVICE DETAILS — mobile: stack, md: 2 cols alternating === */}
+      {/* === SERVICE DETAILS — Accordion === */}
       <section className="py-10 md:py-16 lg:py-20 border-t border-border">
         <div className="section-container">
           <AnimateOnScroll>
@@ -113,78 +176,36 @@ export default function ServicePageTemplate({
             </h2>
           </AnimateOnScroll>
 
-          <div className="space-y-10 md:space-y-16">
-            {serviceDetails.map((svc, i) => (
-              <AnimateOnScroll key={i} delay={i * 60}>
-                <div className={`grid grid-cols-1 ${svc.image ? 'md:grid-cols-2' : ''} gap-6 md:gap-10 lg:gap-12 items-start`}>
-                  <div className={svc.image && i % 2 !== 0 ? 'md:order-2' : ''}>
-                    <div className="flex items-baseline gap-3 mb-2 md:mb-3">
-                      <h3 className="text-base md:text-lg lg:text-xl font-bold text-text-primary">{svc.name}</h3>
-                      {svc.tag && <span className="text-[10px] md:text-xs text-accent font-semibold uppercase tracking-wider">{svc.tag}</span>}
-                    </div>
-                    <div className="text-text-secondary text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: svc.description }} />
-                  </div>
-                  {svc.image && (
-                    <div className={i % 2 !== 0 ? 'md:order-1' : ''}>
-                      <div className="relative aspect-[16/10] rounded-lg overflow-hidden bg-surface-light">
-                        <Image src={svc.image} alt={svc.imageAlt || svc.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </AnimateOnScroll>
-            ))}
-          </div>
+          <ServiceAccordion services={serviceDetails} />
         </div>
       </section>
 
-      {/* === MID-PAGE CTA — conversion point between services and approach === */}
+      {/* === MID-PAGE CTA — centered === */}
       <section className="py-10 md:py-14 border-t border-border">
         <div className="section-container text-center">
           <AnimateOnScroll>
-            <p className="text-text-secondary text-sm mb-4 md:mb-5">
-              {locale === 'it' ? 'Hai un progetto in mente?' : 'Have a project in mind?'}
+            <p className="text-text-secondary text-sm md:text-base mb-5">
+              {locale === 'it'
+                ? 'Hai un progetto che richiede questo tipo di lavoro?'
+                : 'Have a project that needs this kind of work?'}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link href={locale === 'it' ? '/contatti' : '/en/contact'} className="btn-primary w-full sm:w-auto justify-center">
-                {locale === 'it' ? 'Parliamone' : "Let's talk"}<ArrowRight size={16} />
+              <Link
+                href={locale === 'it' ? '/contatti' : '/en/contact'}
+                className="btn-primary w-full sm:w-auto justify-center"
+              >
+                {locale === 'it' ? 'Parliamone' : "Let's talk"}
+                <ArrowRight size={14} />
               </Link>
-              <a href="https://calendly.com/pieroperilli-info/30min" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto justify-center">
-                <Calendar size={16} />{locale === 'it' ? 'Prenota una call' : 'Book a call'}
+              <a
+                href="https://calendly.com/pieroperilli-info/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary w-full sm:w-auto justify-center"
+              >
+                <Calendar size={14} />
+                {locale === 'it' ? 'Prenota call' : 'Book a call'}
               </a>
-            </div>
-          </AnimateOnScroll>
-        </div>
-      </section>
-
-      {/* === MID-PAGE CTA — conversion point between services and approach === */}
-      <section className="py-10 md:py-14 border-t border-border">
-        <div className="section-container">
-          <AnimateOnScroll>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
-              <p className="text-text-secondary text-sm md:text-base text-center sm:text-left">
-                {locale === 'it'
-                  ? 'Hai un progetto che richiede questo tipo di lavoro?'
-                  : 'Have a project that needs this kind of work?'}
-              </p>
-              <div className="flex items-center gap-3 shrink-0">
-                <Link
-                  href={locale === 'it' ? '/contatti' : '/en/contact'}
-                  className="btn-primary text-xs py-2.5 px-5"
-                >
-                  {locale === 'it' ? 'Parliamone' : "Let's talk"}
-                  <ArrowRight size={14} />
-                </Link>
-                <a
-                  href="https://calendly.com/pieroperilli-info/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary text-xs py-2.5 px-5"
-                >
-                  <Calendar size={14} />
-                  {locale === 'it' ? 'Prenota call' : 'Book a call'}
-                </a>
-              </div>
             </div>
           </AnimateOnScroll>
         </div>

@@ -36,10 +36,7 @@ export default function PillarsSection() {
                 {/* Oversized number — no dot */}
                 <span
                   className="text-[3rem] md:text-[3.5rem] lg:text-[4.5rem] font-bold leading-none
-                             text-transparent tracking-tighter select-none block mb-3 md:mb-4"
-                  style={{
-                    WebkitTextStroke: '1px rgba(245,170,68,0.18)',
-                  }}
+                             text-accent/10 tracking-tighter select-none block mb-3 md:mb-4"
                 >
                   {num}
                 </span>

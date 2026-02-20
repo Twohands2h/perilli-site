@@ -207,16 +207,10 @@ export default function ChiSonoPage() {
             >
               {isIt ? 'è Semplice.' : 'is Simple.'}
             </h3>
-            <p className="text-text-secondary max-w-xl mx-auto mb-4 text-sm md:text-base">
+            <p className="text-text-secondary max-w-xl mx-auto mb-10 text-sm md:text-base">
               {isIt
                 ? 'Se la mia storia e il mio approccio al lavoro sono ciò di cui il tuo prossimo progetto ha bisogno, allora non serve aggiungere altro.'
                 : "If my story and my approach to work are what your next project needs, then there&apos;s nothing more to add."}
-            </p>
-            <p
-              className="font-bold text-accent mb-10"
-              style={{ fontSize: 'clamp(1.25rem, 3vw, 1.75rem)' }}
-            >
-              {isIt ? 'Ti serve Piero.' : 'You need Piero.'}
             </p>
           </AnimateOnScroll>
           <AnimateOnScroll delay={100}>

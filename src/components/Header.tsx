@@ -44,16 +44,21 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.key}
-              href={item.href[locale as 'it' | 'en']}
-              className="px-3 py-2 text-xs font-medium uppercase tracking-wider text-text-secondary
-                         transition-colors duration-300 hover:text-text-primary"
-            >
-              {t(item.key)}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const href = item.href[locale as 'it' | 'en'];
+            const isActive = pathname === href || pathname.startsWith(href + '/');
+            return (
+              <Link
+                key={item.key}
+                href={href}
+                className={`px-3 py-2 text-xs font-medium uppercase tracking-wider
+                           transition-colors duration-300
+                           ${isActive ? 'text-accent' : 'text-text-secondary hover:text-text-primary'}`}
+              >
+                {t(item.key)}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Right side: Language + CTA + Mobile toggle */}
@@ -91,18 +96,23 @@ export default function Header() {
       {mobileOpen && (
         <nav className="lg:hidden fixed inset-0 top-16 bg-background/98 backdrop-blur-lg z-40">
           <div className="section-container py-8 flex flex-col gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.key}
-                href={item.href[locale as 'it' | 'en']}
-                onClick={() => setMobileOpen(false)}
-                className="py-3 text-lg font-medium text-text-secondary
-                           transition-colors duration-300 hover:text-text-primary
-                           border-b border-border/30"
-              >
-                {t(item.key)}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const href = item.href[locale as 'it' | 'en'];
+              const isActive = pathname === href || pathname.startsWith(href + '/');
+              return (
+                <Link
+                  key={item.key}
+                  href={href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`py-3 text-lg font-medium
+                             transition-colors duration-300
+                             border-b border-border/30
+                             ${isActive ? 'text-accent' : 'text-text-secondary hover:text-text-primary'}`}
+                >
+                  {t(item.key)}
+                </Link>
+              );
+            })}
             <Link
               href={locale === 'it' ? '/contatti' : '/en/contact'}
               onClick={() => setMobileOpen(false)}

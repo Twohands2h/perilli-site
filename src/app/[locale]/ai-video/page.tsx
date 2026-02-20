@@ -20,7 +20,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 const contentIT = {
   sectionLabel: 'AI VIDEO',
-  h1: 'AI Video Production — L&apos;Intelligenza Artificiale Guidata dall&apos;Esperienza',
+  h1: "AI Video Production — L'Intelligenza Artificiale Guidata dall'Esperienza",
   heroSubtitle: 'L\'intelligenza artificiale guidata da 20 anni di occhio artigianale.',
 
   introTitle: 'L\'AI non Sostituisce l\'Esperienza. La Moltiplica.',
