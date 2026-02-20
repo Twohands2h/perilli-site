@@ -187,12 +187,12 @@ export const posts: BlogPost[] = [
   <p>Lavoro come colorist certificato DaVinci Resolve da diversi anni, su film, documentari e spot. In questo articolo condivido il workflow che applico su un progetto cinematografico — non la teoria, ma quello che faccio concretamente quando un regista mi consegna il girato.</p>
   
   <h2>Fase 1: Il dialogo iniziale</h2>
-  <p>Prima di toccare una node, parlo con il regista. A volte anche con il direttore della fotografia, se è disponibile. Questo è il passaggio più importante e il più sottovalutato.</p>
-  <p><strong>Cosa chiedo:</strong> qual è il tono emotivo del film? Ci sono reference visive (altri film, fotografi, pittori)? Ci sono scene che devono distinguersi dal resto? Ci sono elementi specifici di fotografia da preservare o correggere?</p>
+  <p>Prima di toccare una node, parlo con il regista e con il direttore della fotografia. Il DOP è l'artista che ha immaginato l'atmosfera del film — io sono il tecnico che deve tirarla fuori dal girato e portarla dove lui la vede. Questo dialogo è il passaggio più importante e il più sottovalutato.</p>
+  <p><strong>Cosa chiedo:</strong> qual è il tono emotivo del film? Ci sono reference visive (altri film, fotografi, pittori)? Ci sono scene che devono distinguersi dal resto? Quali scelte di fotografia vanno preservate e valorizzate? Spesso è con il DOP che entro più nel dettaglio tecnico — parliamo la stessa lingua quando si tratta di luce, contrasto, resa delle ottiche.</p>
   <p>Da questa conversazione nasce un documento di reference condiviso — una raccolta di frame, screenshot da altri film, palette cromatiche. È la bussola per tutto il lavoro che segue.</p>
   
   <h2>Fase 2: Conform e preparazione timeline</h2>
-  <p>Ricevo l'EDL o l'XML dal montaggio e faccio il conform in DaVinci. Verifico che tutti i file media siano collegati, che i metadata delle camere siano corretti (fondamentale per applicare le LUT di partenza giuste) e che la timeline corrisponda esattamente al montaggio approvato.</p>
+  <p>Ricevo l'EDL o l'XML dal montaggio e faccio il conform in DaVinci. Verifico che tutti i file media siano collegati, che i metadata delle camere siano corretti e che la timeline corrisponda esattamente al montaggio approvato.</p>
   <p><strong>Le camere che incontro più spesso:</strong> ARRI (LogC3 / LogC4), RED (IPP2 / Log3G10), Sony Venice (S-Log3), Blackmagic (BRAW / Film Gen 5). Ogni camera ha il suo spazio colore e il suo punto di partenza — conoscerli significa non perdere informazioni preziose nel primo passaggio.</p>
   
   <h2>Fase 3: Correzione primaria (balance)</h2>
@@ -226,12 +226,12 @@ export const posts: BlogPost[] = [
   <p>I've been working as a DaVinci Resolve certified colorist for several years, on films, documentaries and commercials. In this article I share the workflow I apply on a cinematic project — not theory, but what I actually do when a director delivers footage.</p>
   
   <h2>Phase 1: The initial dialogue</h2>
-  <p>Before touching a single node, I talk to the director. Sometimes with the DP too, if available. This is the most important and most undervalued step.</p>
-  <p><strong>What I ask:</strong> what's the emotional tone of the film? Are there visual references (other films, photographers, painters)? Are there scenes that need to stand apart from the rest? Are there specific photography elements to preserve or correct?</p>
+  <p>Before touching a single node, I talk to the director and the director of photography. The DP is the artist who imagined the film's atmosphere — I'm the technician who needs to pull it out of the footage and bring it where they see it. This dialogue is the most important and most undervalued step.</p>
+  <p><strong>What I ask:</strong> what's the emotional tone of the film? Are there visual references (other films, photographers, painters)? Are there scenes that need to stand apart from the rest? Which photography choices need to be preserved and enhanced? Often it's with the DP that I get into more technical detail — we speak the same language when it comes to light, contrast, lens rendering.</p>
   <p>From this conversation comes a shared reference document — a collection of frames, screenshots from other films, color palettes. It's the compass for all the work that follows.</p>
   
   <h2>Phase 2: Conform and timeline preparation</h2>
-  <p>I receive the EDL or XML from editing and conform in DaVinci. I verify all media files are linked, camera metadata is correct (essential for applying the right starting LUTs) and the timeline matches the approved edit exactly.</p>
+  <p>I receive the EDL or XML from editing and conform in DaVinci. I verify all media files are linked, camera metadata is correct and the timeline matches the approved edit exactly.</p>
   <p><strong>Cameras I encounter most:</strong> ARRI (LogC3 / LogC4), RED (IPP2 / Log3G10), Sony Venice (S-Log3), Blackmagic (BRAW / Film Gen 5). Each camera has its own color space and starting point — knowing them means not losing precious information in the first pass.</p>
   
   <h2>Phase 3: Primary correction (balance)</h2>
@@ -263,8 +263,8 @@ export const posts: BlogPost[] = [
     {
         slug: 'breakdown-vfx-along-came-ruby',
         slugEn: 'vfx-breakdown-along-came-ruby',
-        titleIt: 'Breakdown: gli effetti visivi di <a href="/portfolio/along-came-ruby">Along Came Ruby</a>',
-        titleEn: 'Breakdown: the visual effects of <a href="/en/portfolio/along-came-ruby">Along Came Ruby</a>',
+        titleIt: 'Breakdown: gli effetti visivi di Along Came Ruby',
+        titleEn: 'Breakdown: the visual effects of Along Came Ruby',
         excerptIt: 'Come ho creato l\'effetto spazio-temporale di Along Came Ruby. Dal concept alla composizione finale: processo, strumenti e decisioni creative.',
         excerptEn: 'How I created the space-time effect for Along Came Ruby. From concept to final comp: process, tools and creative decisions.',
         date: '2026-03-22',
@@ -286,7 +286,7 @@ export const posts: BlogPost[] = [
   <h2>Il processo tecnico</h2>
   <p><strong>Ripresa.</strong> Sul set ho chiesto tracking markers discreti negli ambienti esterni. Servivano per ancorare gli effetti 3D allo spazio reale. Ho anche chiesto al DOP di girare alcuni clean plate delle location — fondamentali per il compositing.</p>
   <p><strong>Camera tracking.</strong> Ho estratto i dati di camera da ogni shot VFX usando Mocha Pro per il tracking planare e PFTrack per il 3D matchmove sulle shot più complesse. La precisione del tracking è tutto — se l'effetto "scivola" anche di un pixel rispetto alla scena, il cervello dello spettatore lo percepisce come falso.</p>
-  <p><strong>Elementi 3D.</strong> Le distorsioni spazio-temporali sono state create in 3ds Max con sistemi particellari personalizzati. Volumi di luce, filamenti di energia, micro-particelle che seguono pattern organici. Ogni elemento è stato renderizzato su sfondo trasparente con canali di profondità e motion vector per il compositing.</p>
+  <p><strong>Elementi 3D e particellari.</strong> Le distorsioni spazio-temporali sono state create in 3ds Max con sistemi particellari personalizzati e in After Effects con Trapcode Particular di Red Giant per i sistemi particellari più complessi. Volumi di luce, filamenti di energia, micro-particelle che seguono pattern organici. Ogni elemento è stato renderizzato su sfondo trasparente con canali di profondità e motion vector per il compositing.</p>
   <p><strong>Compositing.</strong> In After Effects ho stratificato gli elementi: la shot originale come base, le distorsioni 3D integrate con blending mode e maschere animate, correzione colore locale per far sì che la luce dell'effetto "rimbalzi" sugli oggetti della scena, e infine un passaggio di grana e aberrazione cromatica per sporcare leggermente l'effetto e renderlo fotografico.</p>
   
   <h2>La shot più difficile</h2>
@@ -311,7 +311,7 @@ export const posts: BlogPost[] = [
   <h2>The technical process</h2>
   <p><strong>Shooting.</strong> On set I requested discreet tracking markers in exterior environments. They were needed to anchor 3D effects to real space. I also asked the DP to shoot clean plates of locations — essential for compositing.</p>
   <p><strong>Camera tracking.</strong> I extracted camera data from every VFX shot using Mocha Pro for planar tracking and PFTrack for 3D matchmove on more complex shots. Tracking precision is everything — if the effect "slides" even one pixel relative to the scene, the viewer's brain perceives it as false.</p>
-  <p><strong>3D elements.</strong> The space-time distortions were created in 3ds Max with custom particle systems. Light volumes, energy filaments, micro-particles following organic patterns. Each element was rendered on transparent background with depth channels and motion vectors for compositing.</p>
+  <p><strong>3D elements and particles.</strong> The space-time distortions were created in 3ds Max with custom particle systems and in After Effects with Red Giant's Trapcode Particular for the more complex particle systems. Light volumes, energy filaments, micro-particles following organic patterns. Each element was rendered on transparent background with depth channels and motion vectors for compositing.</p>
   <p><strong>Compositing.</strong> In After Effects I layered elements: the original shot as base, 3D distortions integrated with blending modes and animated masks, local color correction to make the effect's light "bounce" on scene objects, and finally a grain and chromatic aberration pass to slightly dirty the effect and make it photographic.</p>
   
   <h2>The hardest shot</h2>

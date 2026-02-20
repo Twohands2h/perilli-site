@@ -55,17 +55,22 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             )}
 
             {/* Hero */}
-            <section className="pt-24 pb-6 md:pt-32 md:pb-8 lg:pt-40 lg:pb-12">
+            {/* Sticky breadcrumb */}
+            <div className="sticky top-16 md:top-20 z-40 bg-background/90 backdrop-blur-md border-b border-border/30">
+                <div className="section-container py-3">
+                    <Link
+                        href={isIt ? '/portfolio' : '/en/portfolio'}
+                        className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-text-muted hover:text-accent transition-colors"
+                    >
+                        <ArrowLeft size={14} />
+                        {isIt ? 'Torna al portfolio' : 'Back to portfolio'}
+                    </Link>
+                </div>
+            </div>
+
+            <section className="pt-8 pb-6 md:pt-12 md:pb-8 lg:pt-16 lg:pb-12">
                 <div className="section-container">
                     <AnimateOnScroll>
-                        <Link
-                            href={isIt ? '/portfolio' : '/en/portfolio'}
-                            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-text-muted hover:text-accent transition-colors mb-8"
-                        >
-                            <ArrowLeft size={14} />
-                            {isIt ? 'Torna al portfolio' : 'Back to portfolio'}
-                        </Link>
-
                         <div className="flex items-baseline gap-4 mb-4">
                             <span className="text-xs font-semibold uppercase tracking-wider text-accent">
                                 {catLabel}

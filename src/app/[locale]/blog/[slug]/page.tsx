@@ -42,18 +42,23 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
                 { name: title, url: `${isIt ? '' : '/en'}/blog/${currentSlug}` },
             ]} />
 
+            {/* Sticky breadcrumb */}
+            <div className="sticky top-16 md:top-20 z-40 bg-background/90 backdrop-blur-md border-b border-border/30">
+                <div className="section-container py-3">
+                    <Link
+                        href={isIt ? '/blog' : '/en/blog'}
+                        className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-text-muted hover:text-accent transition-colors"
+                    >
+                        <ArrowLeft size={14} />
+                        {isIt ? 'Torna al blog' : 'Back to blog'}
+                    </Link>
+                </div>
+            </div>
+
             {/* Hero */}
-            <section className="pt-24 pb-6 md:pt-32 md:pb-8 lg:pt-40 lg:pb-12">
+            <section className="pt-8 pb-6 md:pt-12 md:pb-8 lg:pt-16 lg:pb-12">
                 <div className="section-container">
                     <AnimateOnScroll>
-                        <Link
-                            href={isIt ? '/blog' : '/en/blog'}
-                            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-text-muted hover:text-accent transition-colors mb-8"
-                        >
-                            <ArrowLeft size={14} />
-                            {isIt ? 'Torna al blog' : 'Back to blog'}
-                        </Link>
-
                         <div className="flex items-center gap-3 mb-4">
                             <span className="text-xs font-semibold uppercase tracking-wider text-accent">
                                 {isIt ? post.categoryLabel.it : post.categoryLabel.en}
