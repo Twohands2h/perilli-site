@@ -125,14 +125,14 @@ export default function ChiSonoPage() {
                     <p>Esperto di post-produzione video con oltre 20 anni di esperienza, specializzato in effetti visivi (VFX), montaggio per film, video musicali, cortometraggi e documentari, grafica animata 2D/3D e compositing.</p>
                     <p>Certificato in DaVinci Resolve per Color Correction e Fusion. Esperto in After Effects, 3ds Max, ZBrush, Character Creator, Unreal Engine e Premiere.</p>
                     <p>Sono un profilo ibrido che fonde 3D Generalist, VFX, Editing e Motion Design in un unico flusso di lavoro. Questo approccio mi permette di anticipare i problemi, ottimizzare i tempi e garantire coerenza stilistica.</p>
-                    <p>Di base a Roma con studio a Venezia, disponibile come VFX artist freelance per lavori in tutta Italia e per produzioni internazionali.</p>
+                    <p>Di base a Roma, disponibile come VFX artist freelance per lavori in tutta Italia e per produzioni internazionali.</p>
                   </>
                 ) : (
                   <>
                     <p>Video post-production expert with over 20 years of experience, specialized in visual effects (VFX), editing for films, music videos, short films and documentaries, 2D/3D motion graphics and compositing.</p>
                     <p>DaVinci Resolve certified for Color Correction and Fusion. Expert in After Effects, 3ds Max, ZBrush, Character Creator, Unreal Engine and Premiere.</p>
                     <p>I&apos;m a hybrid profile that merges 3D Generalist, VFX, Editing and Motion Design into a single workflow. This approach allows me to anticipate problems, optimize timelines and ensure stylistic coherence.</p>
-                    <p>Based in Rome with a studio in Venice, available as a freelance VFX artist throughout Italy and for international productions.</p>
+                    <p>Based in Rome, available as a freelance VFX artist throughout Italy and for international productions.</p>
                   </>
                 )}
               </div>

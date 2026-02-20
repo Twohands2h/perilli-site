@@ -24,13 +24,13 @@ export default function SocialProofSection() {
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={200}>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12 md:gap-y-5 mt-8 md:mt-12">
+          <div className="flex items-center justify-between gap-6 md:gap-8 mt-8 md:mt-12 overflow-x-auto scrollbar-hide">
             {clients.map((client) => (
               <span
                 key={client}
-                className="text-sm md:text-base lg:text-lg font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-text-muted/30
+                className="text-xs md:text-sm lg:text-base font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-text-muted/30
                            transition-all duration-500 hover:text-text-secondary hover:tracking-[0.25em]
-                           cursor-default select-none"
+                           cursor-default select-none whitespace-nowrap shrink-0"
               >
                 {client}
               </span>

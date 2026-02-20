@@ -110,10 +110,53 @@ export default function Footer() {
               <li>
                 <span className="flex items-center gap-2 text-sm text-text-muted">
                   <MapPin size={14} className="shrink-0" />
-                  Roma / Venezia
+                  Roma, Italia
                 </span>
               </li>
             </ul>
+
+            {/* Social links */}
+            <div className="flex items-center gap-3 mt-4">
+              <a
+                href="https://www.imdb.com/it/name/nm3859505/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold uppercase tracking-wider text-accent/70 transition-colors duration-300 hover:text-accent"
+                title="IMDB"
+              >
+                IMDB
+              </a>
+              <span className="text-border">·</span>
+              <a
+                href="https://www.linkedin.com/in/piero-perilli-26b26658/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium uppercase tracking-wider text-text-muted/50 transition-colors duration-300 hover:text-text-secondary"
+                title="LinkedIn"
+              >
+                LinkedIn
+              </a>
+              <span className="text-border">·</span>
+              <a
+                href="https://www.instagram.com/pieroperilli/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium uppercase tracking-wider text-text-muted/50 transition-colors duration-300 hover:text-text-secondary"
+                title="Instagram"
+              >
+                Instagram
+              </a>
+              <span className="text-border">·</span>
+              <a
+                href="https://www.behance.net/pieroperilli"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium uppercase tracking-wider text-text-muted/50 transition-colors duration-300 hover:text-text-secondary"
+                title="Behance"
+              >
+                Behance
+              </a>
+            </div>
           </div>
         </div>
 
@@ -124,7 +167,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Piero Perilli. {t('rights')}
           </span>
           <div className="flex items-center gap-4">
-            <span>{t('vat')} 0XXXXXXXXXXX</span>
+            <span>{t('vat')} IT10343871009</span>
             <Link
               href={isIt ? '/privacy' : '/en/privacy'}
               className="transition-colors hover:text-text-secondary"

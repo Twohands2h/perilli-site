@@ -4,6 +4,7 @@ import MethodSection from '@/components/sections/MethodSection';
 import PillarsSection from '@/components/sections/PillarsSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import SocialProofSection from '@/components/sections/SocialProofSection';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import CTASection from '@/components/sections/CTASection';
 
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
@@ -15,6 +16,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <PillarsSection />
       <ServicesSection />
       <SocialProofSection />
+      <TestimonialsSection />
       <CTASection />
     </>
   );

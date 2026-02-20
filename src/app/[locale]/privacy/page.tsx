@@ -20,9 +20,10 @@ export default function PrivacyPage({ params: { locale } }: { params: { locale: 
                             <p><strong>Ultimo aggiornamento:</strong> Febbraio 2026</p>
 
                             <h2>Titolare del trattamento</h2>
-                            <p>Piero Perilli — MM Productions<br />
+                            <p>Piero Perilli<br />
+                                P.IVA IT10343871009<br />
                                 Email: info@pieroperilli.com<br />
-                                Sede: Roma / Venezia, Italia</p>
+                                Sede: Roma, Italia</p>
 
                             <h2>Dati raccolti</h2>
                             <p>Questo sito raccoglie dati personali esclusivamente attraverso il form di contatto (nome, email, messaggio) e strumenti di analisi anonimi. Non utilizziamo cookie di profilazione.</p>
@@ -52,9 +53,10 @@ export default function PrivacyPage({ params: { locale } }: { params: { locale: 
                             <p><strong>Last updated:</strong> February 2026</p>
 
                             <h2>Data Controller</h2>
-                            <p>Piero Perilli — MM Productions<br />
+                            <p>Piero Perilli<br />
+                                VAT IT10343871009<br />
                                 Email: info@pieroperilli.com<br />
-                                Location: Rome / Venice, Italy</p>
+                                Location: Rome, Italy</p>
 
                             <h2>Data Collected</h2>
                             <p>This website collects personal data exclusively through the contact form (name, email, message) and anonymous analytics tools. We do not use profiling cookies.</p>

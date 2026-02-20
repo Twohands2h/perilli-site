@@ -199,7 +199,7 @@ export default function ContattiPage() {
                 <Phone size={14} className="shrink-0" /> +39 392 018 7759
               </a>
               <span className="flex items-center gap-2 text-sm text-text-muted">
-                <MapPin size={14} className="shrink-0" /> Roma / Venezia, Italia
+                <MapPin size={14} className="shrink-0" /> Roma, Italia
               </span>
             </div>
           </div>

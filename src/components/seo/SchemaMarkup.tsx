@@ -18,7 +18,7 @@ export function PersonSchema() {
     image: 'https://pieroperilli.com/images/piero-perilli-vfx-artist.jpg',
     jobTitle: 'VFX Artist & Post Production Supervisor',
     description:
-      'Artigiano digitale con oltre 20 anni di esperienza in VFX, motion graphics, color grading e post-produzione video. Base Roma/Venezia.',
+      'Artigiano digitale con oltre 20 anni di esperienza in VFX, motion graphics, color grading e post-produzione video. Base Roma.',
     knowsAbout: [
       'Visual Effects (VFX)',
       'Motion Graphics',
