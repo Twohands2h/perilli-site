@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "title": "Piero Perilli | VFX Artist & Post Produzione Video Roma | Effetti Visivi, Motion Graphics, AI",
+    "description": "VFX, motion graphics, color grading e post-produzione video a Roma. Piero Perilli: artigiano digitale con 20+ anni di esperienza per cinema, advertising e brand."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Chi Sono",
+    "vfx": "VFX",
+    "motion": "Motion Graphics",
+    "animation3d": "Animazione 3D",
+    "postproduction": "Post Produzione",
+    "aivideo": "AI Video",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contatti"
+  },
+  "hero": {
+    "headline": "20 anni di artigianato visivo.",
+    "headlineAccent": "Potenziato dall'AI.",
+    "subtitle": "VFX, motion graphics, color grading e post-produzione. Un unico interlocutore dal concept al master finale.",
+    "cta": "Parliamone",
+    "showreel": "Guarda lo showreel"
+  },
+  "pillars": {
+    "sectionTitle": "Il mio metodo",
+    "pillar1Title": "L'Artigiano",
+    "pillar1Text": "20+ anni di post-produzione professionale. Film, spot, brand di primo livello. La precisione di chi viene dal mondo degli ingranaggi, applicata ai pixel.",
+    "pillar2Title": "Workflow Integrato",
+    "pillar2Text": "VFX, motion graphics, color grading e montaggio in un unico flusso. Nessun passaggio di mano, nessun intermediario. Meno tempo, più coerenza creativa.",
+    "pillar3Title": "AI + Esperienza",
+    "pillar3Text": "L'intelligenza artificiale non sostituisce 20 anni di occhio. Li moltiplica. Strumenti AI integrati nel workflow professionale con la padronanza di chi sa cosa funziona."
+  },
+  "services": {
+    "sectionTitle": "Servizi",
+    "vfxTitle": "Effetti Visivi (VFX)",
+    "vfxText": "Compositing, green screen, set extension, tracking, clean-up. Per cinema, advertising e digital.",
+    "motionTitle": "Motion Graphics",
+    "motionText": "Animazioni per brand, campagne, titoli. Dal concept all'animazione finale.",
+    "animation3dTitle": "Animazione 3D",
+    "animation3dText": "Prodotto 3D, character animation, ambienti. Dal briefing al render.",
+    "postTitle": "Post Produzione",
+    "postText": "Montaggio, color grading, finishing. Workflow DaVinci Resolve certificato.",
+    "aiTitle": "AI Video Production",
+    "aiText": "Video generati con AI, workflow ibrido AI + tradizionale. L'esperienza guida la tecnologia.",
+    "cta": "Scopri di più"
+  },
+  "portfolio": {
+    "sectionTitle": "Lavori selezionati",
+    "cta": "Vedi tutti i progetti"
+  },
+  "socialProof": {
+    "sectionTitle": "Hanno scelto di lavorare con me"
+  },
+  "testimonials": {
+    "sectionTitle": "Cosa dicono"
+  },
+  "ctaSection": {
+    "headline": "Hai un progetto in mente?",
+    "text": "Raccontami cosa stai cercando. Prima call conoscitiva gratuita, senza impegno.",
+    "ctaForm": "Scrivimi",
+    "ctaCalendly": "Prenota una call",
+    "ctaWhatsapp": "WhatsApp"
+  },
+  "footer": {
+    "tagline": "Artigiano digitale. VFX, motion graphics, post-produzione e AI.",
+    "navigation": "Navigazione",
+    "services": "Servizi",
+    "contacts": "Contatti",
+    "privacy": "Privacy Policy",
+    "vat": "P.IVA",
+    "rights": "Tutti i diritti riservati."
+  },
+  "contact": {
+    "title": "Contatti",
+    "subtitle": "Raccontami il tuo progetto. Rispondo entro 24 ore.",
+    "nameLabel": "Nome",
+    "emailLabel": "Email",
+    "messageLabel": "Messaggio",
+    "messagePlaceholder": "Descrivi brevemente il tuo progetto, i tempi e il budget indicativo...",
+    "send": "Invia messaggio",
+    "orCall": "Oppure"
+  }
+}
