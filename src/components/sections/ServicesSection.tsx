@@ -68,7 +68,7 @@ export default function ServicesSection() {
   const isIt = locale === 'it';
 
   return (
-    <section className="py-12 md:py-16 lg:py-24">
+    <section className="py-12 md:py-16 lg:py-24 border-t border-border">
       {/* Section header */}
       <div className="section-container text-center mb-10 md:mb-16 lg:mb-24">
         <AnimateOnScroll>

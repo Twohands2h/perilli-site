@@ -28,7 +28,7 @@ export default function HeroSection() {
         </div>
         <div className="absolute inset-0 bg-background/65" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,168,83,0.06)_0%,_transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(245,170,68,0.06)_0%,_transparent_70%)]" />
 
         <div className="relative z-10 w-full px-5 md:px-8 lg:px-12 max-w-content mx-auto text-center">
           <div className="max-w-4xl mx-auto">

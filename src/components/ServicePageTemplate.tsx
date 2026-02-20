@@ -255,7 +255,7 @@ export default function ServicePageTemplate({
 
       {/* === CTA === */}
       <section className="relative py-16 md:py-24 lg:py-28 border-t border-border bg-surface overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,168,83,0.04)_0%,_transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(245,170,68,0.04)_0%,_transparent_60%)]" />
         <div className="relative section-container text-center">
           <AnimateOnScroll>
             <h2 className="font-bold text-text-primary mb-1 md:mb-2" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 2.5rem)' }}>{ctaTitle}</h2>

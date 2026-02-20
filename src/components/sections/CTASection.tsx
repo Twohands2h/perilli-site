@@ -12,7 +12,7 @@ export default function CTASection() {
   return (
     <section className="relative py-16 md:py-24 lg:py-32 border-t border-border bg-surface overflow-hidden">
       {/* Subtle radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,168,83,0.04)_0%,_transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(245,170,68,0.04)_0%,_transparent_60%)]" />
 
       <div className="relative section-container text-center">
         <AnimateOnScroll>

@@ -7,6 +7,34 @@ export default function MethodSection() {
     const locale = useLocale();
     const isIt = locale === 'it';
 
+    const benefits = isIt ? [
+        {
+            title: 'Slancio Creativo',
+            text: 'La visione rimane sempre "calda" e coerente, senza le pause forzate tra una fase e l\'altra.',
+        },
+        {
+            title: 'Visione d\'Insieme',
+            text: 'Vedere l\'immagine evolvere con montaggio, colore e VFX simultaneamente permette decisioni migliori e più consapevoli.',
+        },
+        {
+            title: 'Partner Attivo',
+            text: 'Non sono solo un esecutore, ma un partner strategico che, avendo il controllo di tutte le fasi, offre soluzioni creative integrate.',
+        },
+    ] : [
+        {
+            title: 'Creative Momentum',
+            text: 'The vision stays "warm" and coherent, without forced pauses between phases.',
+        },
+        {
+            title: 'Complete Overview',
+            text: 'Seeing the image evolve with editing, color and VFX simultaneously enables better, more informed decisions.',
+        },
+        {
+            title: 'Active Partner',
+            text: 'I\'m not just an executor, but a strategic partner who, controlling all phases, offers integrated creative solutions.',
+        },
+    ];
+
     return (
         <section className="py-14 md:py-20 lg:py-28 border-t border-border">
             <div className="section-container">
@@ -50,20 +78,24 @@ export default function MethodSection() {
                     </AnimateOnScroll>
                 </div>
 
-                {/* Benefits */}
+                {/* Benefits — compact single row, no numbers */}
                 <AnimateOnScroll delay={200}>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-10 md:mt-16 pt-10 md:pt-16 border-t border-border/50">
-                        {(isIt ? [
-                            { title: 'Slancio Creativo', text: 'La visione rimane sempre "calda" e coerente, senza le pause forzate tra una fase e l\'altra.' },
-                            { title: 'Visione d\'Insieme', text: 'Vedere l\'immagine evolvere con montaggio, colore e VFX simultaneamente permette decisioni migliori e più consapevoli.' },
-                            { title: 'Partner Attivo', text: 'Non sono solo un esecutore, ma un partner strategico che, avendo il controllo di tutte le fasi, offre soluzioni creative integrate.' },
-                        ] : [
-                            { title: 'Creative Momentum', text: 'The vision stays "warm" and coherent, without forced pauses between phases.' },
-                            { title: 'Complete Overview', text: 'Seeing the image evolve with editing, color and VFX simultaneously enables better, more informed decisions.' },
-                            { title: 'Active Partner', text: 'I\'m not just an executor, but a strategic partner who, controlling all phases, offers integrated creative solutions.' },
-                        ]).map((benefit, i) => (
-                            <div key={i}>
-                                <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider mb-2">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-10 md:mt-14">
+                        {benefits.map((benefit, i) => (
+                            <div
+                                key={i}
+                                className={`group relative py-5 md:py-0 md:px-6 lg:px-8
+                                            ${i > 0 ? 'border-t md:border-t-0 md:border-l border-border/40' : ''}
+                                            ${i === 0 ? 'md:pl-0' : ''}
+                                            transition-all duration-500`}
+                            >
+                                {/* Accent bar on hover */}
+                                {i > 0 && (
+                                    <div className="hidden md:block absolute top-0 left-0 bottom-0 w-px bg-accent scale-y-0 origin-top
+                                                    transition-transform duration-700 group-hover:scale-y-100" />
+                                )}
+                                <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider mb-2
+                                               transition-colors duration-500 group-hover:text-accent">
                                     {benefit.title}
                                 </h3>
                                 <p className="text-sm text-text-secondary leading-relaxed">
