@@ -68,9 +68,9 @@ export default function ServicesSection() {
   const isIt = locale === 'it';
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-16 lg:py-24">
       {/* Section header */}
-      <div className="section-container text-center mb-16 md:mb-24">
+      <div className="section-container text-center mb-10 md:mb-16 lg:mb-24">
         <AnimateOnScroll>
           <h2
             className="font-bold text-text-primary tracking-[0.05em] mb-4"
@@ -102,7 +102,7 @@ export default function ServicesSection() {
             <AnimateOnScroll key={service.key}>
               <div className="border-t border-border">
                 <div
-                  className={`grid grid-cols-1 md:grid-cols-2 min-h-[400px] md:min-h-[500px]
+                  className={`grid grid-cols-1 md:grid-cols-2 md:min-h-[400px] lg:min-h-[500px]
                     ${imageLeft ? '' : 'md:direction-rtl'}`}
                   style={!imageLeft ? { direction: 'rtl' } : undefined}
                 >
@@ -137,7 +137,7 @@ export default function ServicesSection() {
 
                   {/* Text side */}
                   <div
-                    className="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-12 md:py-16"
+                    className="flex flex-col justify-center px-5 py-8 md:px-12 md:py-12 lg:px-20 lg:py-16"
                     style={!imageLeft ? { direction: 'ltr' } : undefined}
                   >
                     {/* Service number */}

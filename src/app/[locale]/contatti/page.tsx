@@ -7,9 +7,9 @@ export default function ContattiPage() {
   const t = useTranslations('contact');
 
   return (
-    <section className="section-padding">
+    <section className="pt-24 pb-10 md:pt-32 md:pb-16 lg:pt-40 lg:pb-20">
       <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div>
             <p className="section-title">{t('title')}</p>
             <h1 className="text-display-sm font-bold text-text-primary mb-3">

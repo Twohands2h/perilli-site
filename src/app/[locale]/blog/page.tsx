@@ -14,7 +14,7 @@ export default function BlogPage() {
 
   return (
     <article>
-      <section className="pt-32 pb-12 md:pt-40 md:pb-16">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-12 lg:pt-40 lg:pb-16">
         <div className="section-container">
           <AnimateOnScroll>
             <h1
@@ -36,9 +36,9 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="pb-20 md:pb-28">
+      <section className="pb-14 md:pb-20 lg:pb-28">
         <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
             {sorted.map((post, i) => (
               <AnimateOnScroll key={post.slug} delay={i * 80}>
                 <Link

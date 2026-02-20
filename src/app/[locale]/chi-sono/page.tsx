@@ -23,7 +23,7 @@ export default function ChiSonoPage() {
   return (
     <article>
       {/* === HERO === */}
-      <section className="pt-32 pb-12 md:pt-40 md:pb-20">
+      <section className="pt-24 pb-8 md:pt-32 lg:pt-40 md:pb-20">
         <div className="section-container">
           <AnimateOnScroll>
             <h1
@@ -57,7 +57,7 @@ export default function ChiSonoPage() {
       <section className="py-12 md:py-20 border-t border-border">
         <div className="section-container">
           <AnimateOnScroll>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-start">
               {/* Photo */}
               <div>
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface">
@@ -118,7 +118,7 @@ export default function ChiSonoPage() {
             >
               {isIt ? 'Profilo' : 'Profile'}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16">
               <div className="text-text-secondary text-sm md:text-base leading-relaxed space-y-4">
                 {isIt ? (
                   <>
@@ -191,7 +191,7 @@ export default function ChiSonoPage() {
       </section>
 
       {/* === CTA === */}
-      <section className="relative py-20 md:py-28 border-t border-border bg-surface overflow-hidden">
+      <section className="relative py-14 md:py-20 lg:py-28 border-t border-border bg-surface overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,168,83,0.04)_0%,_transparent_60%)]" />
         <div className="relative section-container text-center">
           <AnimateOnScroll>

@@ -26,7 +26,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
     return (
         <article>
             {/* Hero */}
-            <section className="pt-32 pb-8 md:pt-40 md:pb-12">
+            <section className="pt-24 pb-6 md:pt-32 md:pb-8 lg:pt-40 lg:pb-12">
                 <div className="section-container">
                     <AnimateOnScroll>
                         <Link
@@ -65,7 +65,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
             </section>
 
             {/* Featured image */}
-            <section className="pb-12 md:pb-16">
+            <section className="pb-8 md:pb-12 lg:pb-16">
                 <div className="section-container">
                     <AnimateOnScroll>
                         <div className="relative aspect-[21/9] rounded-lg overflow-hidden bg-surface">
@@ -83,7 +83,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
             </section>
 
             {/* Article body */}
-            <section className="pb-16 md:pb-24">
+            <section className="pb-10 md:pb-16 lg:pb-24">
                 <div className="section-container">
                     <div
                         className="max-w-3xl mx-auto prose-custom"
@@ -94,7 +94,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
 
             {/* Related posts */}
             {related.length > 0 && (
-                <section className="py-12 md:py-16 border-t border-border">
+                <section className="py-8 md:py-12 lg:py-16 border-t border-border">
                     <div className="section-container">
                         <AnimateOnScroll>
                             <h2 className="text-sm font-bold uppercase tracking-[0.15em] text-text-primary mb-8">
@@ -132,7 +132,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
             )}
 
             {/* CTA */}
-            <section className="relative py-20 md:py-28 border-t border-border bg-surface overflow-hidden">
+            <section className="relative py-14 md:py-20 lg:py-28 border-t border-border bg-surface overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,168,83,0.04)_0%,_transparent_60%)]" />
                 <div className="relative section-container text-center">
                     <AnimateOnScroll>

@@ -19,7 +19,7 @@ export default function PortfolioPage() {
   return (
     <article>
       {/* Hero */}
-      <section className="pt-32 pb-12 md:pt-40 md:pb-16">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-12 lg:pt-40 lg:pb-16">
         <div className="section-container">
           <AnimateOnScroll>
             <h1
@@ -42,7 +42,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Filters */}
-      <section className="pb-12 md:pb-16">
+      <section className="pb-8 md:pb-12 lg:pb-16">
         <div className="section-container">
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
@@ -64,9 +64,9 @@ export default function PortfolioPage() {
       </section>
 
       {/* Grid */}
-      <section className="pb-20 md:pb-28">
+      <section className="pb-14 md:pb-20 lg:pb-28">
         <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
             {filtered.map((project, i) => (
               <AnimateOnScroll key={project.slug} delay={i * 80}>
                 <Link
@@ -87,7 +87,7 @@ export default function PortfolioPage() {
                                   opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
 
                   {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 lg:p-8">
                     <span className="text-xs font-semibold uppercase tracking-wider text-accent mb-2 block">
                       {isIt ? project.categoryLabel.it : project.categoryLabel.en}
                     </span>

@@ -27,10 +27,10 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border bg-surface">
-      <div className="section-container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="section-container py-10 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <Link href={isIt ? '/' : '/en'} className="inline-block mb-4">
               <Image
                 src="/images/logo-white.png"
@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="divider mt-12 mb-6" />
+        <div className="divider mt-8 md:mt-12 mb-4 md:mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
           <span>
             © {new Date().getFullYear()} Piero Perilli. {t('rights')}

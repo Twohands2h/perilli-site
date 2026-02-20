@@ -14,13 +14,13 @@ export default function PillarsSection() {
   const t = useTranslations('pillars');
 
   return (
-    <section className="py-24 md:py-32 border-t border-border">
+    <section className="py-14 md:py-24 lg:py-32 border-t border-border">
       <div className="section-container">
         <AnimateOnScroll>
           <p className="section-title">{t('sectionTitle')}</p>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mt-8 md:mt-12">
           {pillars.map(({ key, icon: Icon, num }, i) => (
             <AnimateOnScroll key={key} delay={i * 150}>
               <div className="group relative">

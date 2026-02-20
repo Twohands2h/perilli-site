@@ -10,25 +10,28 @@ export default function CTASection() {
   const locale = useLocale();
 
   return (
-    <section className="relative py-24 md:py-32 border-t border-border bg-surface overflow-hidden">
+    <section className="relative py-16 md:py-24 lg:py-32 border-t border-border bg-surface overflow-hidden">
       {/* Subtle radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,168,83,0.04)_0%,_transparent_60%)]" />
 
       <div className="relative section-container text-center">
         <AnimateOnScroll>
-          <h2 className="text-display-sm md:text-display-md font-bold text-text-primary mb-4">
+          <h2
+            className="font-bold text-text-primary mb-4"
+            style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}
+          >
             {t('headline')}
           </h2>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={100}>
-          <p className="text-text-secondary max-w-xl mx-auto mb-12">
+          <p className="text-text-secondary max-w-xl mx-auto mb-8 md:mb-12 text-sm md:text-base">
             {t('text')}
           </p>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={200}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Link
               href={locale === 'it' ? '/contatti' : '/en/contatti'}
               className="btn-primary"

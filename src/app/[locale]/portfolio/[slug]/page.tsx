@@ -33,7 +33,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
     return (
         <article>
             {/* Hero */}
-            <section className="pt-32 pb-8 md:pt-40 md:pb-12">
+            <section className="pt-24 pb-6 md:pt-32 md:pb-8 lg:pt-40 lg:pb-12">
                 <div className="section-container">
                     <AnimateOnScroll>
                         <Link
@@ -72,7 +72,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             </section>
 
             {/* Hero image */}
-            <section className="pb-12 md:pb-20">
+            <section className="pb-8 md:pb-12 lg:pb-20">
                 <div className="section-container">
                     <AnimateOnScroll>
                         <div className="relative aspect-video rounded-lg overflow-hidden bg-surface">
@@ -91,7 +91,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
 
             {/* Video */}
             {(project.videoEmbed || project.videoUrl) && (
-                <section className="pb-12 md:pb-20">
+                <section className="pb-8 md:pb-12 lg:pb-20">
                     <div className="section-container">
                         <AnimateOnScroll>
                             <div className="relative aspect-video rounded-lg overflow-hidden bg-black">
@@ -132,7 +132,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             )}
 
             {/* Case study sections */}
-            <section className="pb-12 md:pb-20">
+            <section className="pb-8 md:pb-12 lg:pb-20">
                 <div className="section-container">
                     <div className="max-w-3xl">
                         {sections.map((section, i) => (
@@ -153,9 +153,9 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
 
             {/* Images */}
             {project.images.length > 0 && (
-                <section className="pb-12 md:pb-20">
+                <section className="pb-8 md:pb-12 lg:pb-20">
                     <div className="section-container">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
                             {project.images.map((img, i) => (
                                 <AnimateOnScroll key={i} delay={i * 80}>
                                     <div className="relative aspect-[16/10] rounded-lg overflow-hidden bg-surface">
@@ -175,7 +175,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             )}
 
             {/* Tools + links */}
-            <section className="pb-12 md:pb-20 border-t border-border">
+            <section className="pb-8 md:pb-12 lg:pb-20 border-t border-border">
                 <div className="section-container pt-8">
                     <div className="flex flex-wrap gap-3 mb-6">
                         {project.tools.map((tool) => (
@@ -203,7 +203,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             </section>
 
             {/* Nav prev/next */}
-            <section className="py-12 md:py-16 border-t border-border">
+            <section className="py-8 md:py-12 lg:py-16 border-t border-border">
                 <div className="section-container">
                     <div className="flex items-center justify-between">
                         {prev ? (
@@ -229,7 +229,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
             </section>
 
             {/* CTA */}
-            <section className="relative py-20 md:py-28 border-t border-border bg-surface overflow-hidden">
+            <section className="relative py-14 md:py-20 lg:py-28 border-t border-border bg-surface overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,168,83,0.04)_0%,_transparent_60%)]" />
                 <div className="relative section-container text-center">
                     <AnimateOnScroll>

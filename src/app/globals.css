@@ -22,53 +22,45 @@
   ::-webkit-scrollbar {
     width: 6px;
   }
+
   ::-webkit-scrollbar-track {
     @apply bg-background;
   }
+
   ::-webkit-scrollbar-thumb {
     @apply bg-border-light rounded-full;
   }
+
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-text-muted;
   }
 }
 
 @layer components {
+
   /* Reusable section container */
   .section-container {
-    @apply mx-auto max-w-content px-6 md:px-8 lg:px-12;
+    @apply mx-auto max-w-content px-5 md:px-8 lg:px-12;
   }
 
   /* Section vertical padding */
   .section-padding {
-    @apply py-section-sm md:py-section;
+    @apply py-12 md:py-section-sm lg:py-section;
   }
 
   /* Primary CTA button */
   .btn-primary {
-    @apply inline-flex items-center gap-2.5 bg-accent text-background 
-           px-7 py-3.5 text-xs font-bold uppercase tracking-[0.15em]
-           rounded-sm
-           transition-all duration-300
-           hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20
-           active:scale-[0.98];
+    @apply inline-flex items-center gap-2.5 bg-accent text-background px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] rounded-sm transition-all duration-300 hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20 active:scale-[0.98];
   }
 
   /* Secondary/outline button */
   .btn-secondary {
-    @apply inline-flex items-center gap-2.5 border border-border-light text-text-primary
-           px-7 py-3.5 text-xs font-bold uppercase tracking-[0.15em]
-           rounded-sm
-           transition-all duration-300
-           hover:border-accent hover:text-accent;
+    @apply inline-flex items-center gap-2.5 border border-border-light text-text-primary px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] rounded-sm transition-all duration-300 hover:border-accent hover:text-accent;
   }
 
   /* Ghost button */
   .btn-ghost {
-    @apply inline-flex items-center gap-2 text-text-secondary
-           px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.1em]
-           transition-colors duration-300
-           hover:text-accent;
+    @apply inline-flex items-center gap-2 text-text-secondary px-4 py-3 text-xs font-semibold uppercase tracking-[0.1em] min-h-[44px] transition-colors duration-300 hover:text-accent;
   }
 
   /* Section title */
@@ -83,8 +75,93 @@
 }
 
 @layer utilities {
+
   /* Text gradient utility */
   .text-gradient {
     @apply bg-gradient-to-r from-text-primary to-text-secondary bg-clip-text text-transparent;
   }
+}
+
+/* Blog article typography */
+.prose-custom {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+
+@media (min-width: 768px) {
+  .prose-custom {
+    font-size: 0.9375rem;
+  }
+}
+
+.prose-custom h2 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.625rem;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .prose-custom h2 {
+    font-size: 1.375rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.prose-custom h3 {
+  color: var(--text-primary);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.375rem;
+}
+
+@media (min-width: 768px) {
+  .prose-custom h3 {
+    font-size: 1.125rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.prose-custom p {
+  margin-bottom: 1.25rem;
+}
+
+.prose-custom strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.prose-custom a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.3s;
+}
+
+.prose-custom a:hover {
+  color: var(--text-primary);
+}
+
+.prose-custom ul,
+.prose-custom ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-custom li {
+  margin-bottom: 0.5rem;
+}
+
+.prose-custom blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-muted);
 }
