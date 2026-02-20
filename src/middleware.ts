@@ -1,6 +1,7 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
 import { locales, defaultLocale } from './i18n';
+import { posts } from './data/posts';
 
 // EN slug → IT folder name (what Next.js actually has on disk)
 const enToItRewrites: Record<string, string> = {
@@ -17,6 +18,16 @@ const redirects: Record<string, string> = {
   '/en/animazione-3d': '/en/3d-animation',
   '/en/contatti': '/en/contact',
 };
+
+// Blog: build EN slug → IT slug mappings from posts data
+// Rewrite: /en/blog/ai-vs-traditional-vfx-how-to-choose → /en/blog/ai-vs-vfx-tradizionale-come-scegliere
+// Redirect: /en/blog/ai-vs-vfx-tradizionale-come-scegliere → /en/blog/ai-vs-traditional-vfx-how-to-choose
+for (const post of posts) {
+  if (post.slugEn !== post.slug) {
+    enToItRewrites[`/en/blog/${post.slugEn}`] = `/en/blog/${post.slug}`;
+    redirects[`/en/blog/${post.slug}`] = `/en/blog/${post.slugEn}`;
+  }
+}
 
 const intlMiddleware = createMiddleware({
   locales,

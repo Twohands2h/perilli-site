@@ -4,7 +4,7 @@ import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
-import { posts } from '@/data/posts';
+import { posts, getPostSlug } from '@/data/posts';
 
 export default function BlogPage() {
   const locale = useLocale();
@@ -42,7 +42,7 @@ export default function BlogPage() {
             {sorted.map((post, i) => (
               <AnimateOnScroll key={post.slug} delay={i * 80}>
                 <Link
-                  href={`${isIt ? '' : '/en'}/blog/${post.slug}`}
+                  href={`${isIt ? '' : '/en'}/blog/${getPostSlug(post, locale)}`}
                   className="group block"
                 >
                   <div className="relative aspect-[16/9] rounded-lg overflow-hidden bg-surface mb-5">

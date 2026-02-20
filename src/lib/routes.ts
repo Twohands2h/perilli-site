@@ -7,8 +7,10 @@
  * Usage:
  *   getLocalizedHref('/chi-sono', 'en') → '/en/about'
  *   getLocalizedHref('/chi-sono', 'it') → '/chi-sono'
- *   getLocalizedHref('/portfolio/along-came-ruby', 'en') → '/en/portfolio/along-came-ruby'
+ *   getLocalizedHref('/blog/breakdown-vfx-along-came-ruby', 'en') → '/en/blog/vfx-breakdown-along-came-ruby'
  */
+
+import { posts } from '@/data/posts';
 
 // Map of IT slug → EN slug (only pages that differ)
 const enPathMap: Record<string, string> = {
@@ -17,6 +19,16 @@ const enPathMap: Record<string, string> = {
   '/animazione-3d': '/3d-animation',
   '/contatti': '/contact',
 };
+
+// Blog slug mappings: IT slug → EN slug
+const blogSlugItToEn: Record<string, string> = {};
+const blogSlugEnToIt: Record<string, string> = {};
+for (const post of posts) {
+  if (post.slugEn !== post.slug) {
+    blogSlugItToEn[post.slug] = post.slugEn;
+    blogSlugEnToIt[post.slugEn] = post.slug;
+  }
+}
 
 // Reverse map: EN slug → IT slug
 const itPathMap: Record<string, string> = Object.fromEntries(
@@ -30,7 +42,13 @@ const itPathMap: Record<string, string> = Object.fromEntries(
 export function getLocalizedHref(itPath: string, locale: string): string {
   if (locale === 'it') return itPath;
   
-  // For EN: check if the base path (first segment) has a localized version
+  // Blog posts: /blog/it-slug → /en/blog/en-slug
+  const blogMatch = itPath.match(/^\/blog\/(.+)$/);
+  if (blogMatch && blogSlugItToEn[blogMatch[1]]) {
+    return '/en/blog/' + blogSlugItToEn[blogMatch[1]];
+  }
+
+  // Static pages with localized slugs
   for (const [itSlug, enSlug] of Object.entries(enPathMap)) {
     if (itPath === itSlug || itPath.startsWith(itSlug + '/')) {
       const enPath = itPath.replace(itSlug, enSlug);
@@ -51,7 +69,13 @@ export function toItPath(pathname: string): string {
   // Remove /en prefix
   const path = pathname.replace(/^\/en/, '') || '/';
   
-  // Check if any segment is an EN slug and convert back
+  // Blog posts: /blog/en-slug → /blog/it-slug
+  const blogMatch = path.match(/^\/blog\/(.+)$/);
+  if (blogMatch && blogSlugEnToIt[blogMatch[1]]) {
+    return '/blog/' + blogSlugEnToIt[blogMatch[1]];
+  }
+
+  // Static pages with localized slugs
   for (const [enSlug, itSlug] of Object.entries(itPathMap)) {
     if (path === enSlug || path.startsWith(enSlug + '/')) {
       return path.replace(enSlug, itSlug);

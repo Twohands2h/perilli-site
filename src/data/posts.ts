@@ -1,5 +1,6 @@
 export interface BlogPost {
     slug: string;
+    slugEn: string;
     titleIt: string;
     titleEn: string;
     excerptIt: string;
@@ -18,6 +19,7 @@ export interface BlogPost {
 export const posts: BlogPost[] = [
     {
         slug: 'ai-vs-vfx-tradizionale-come-scegliere',
+        slugEn: 'ai-vs-traditional-vfx-how-to-choose',
         titleIt: 'Come scelgo tra AI e VFX tradizionale per ogni shot',
         titleEn: 'How I choose between AI and traditional VFX for every shot',
         excerptIt: 'Non è una questione di AI contro VFX. È sapere quando usare cosa. Dopo 20 anni di post-produzione e un anno di AI generativa, ecco come decido.',
@@ -85,6 +87,7 @@ export const posts: BlogPost[] = [
     },
     {
         slug: 'vfx-cinema-indipendente-guida-workflow',
+        slugEn: 'vfx-independent-film-workflow-guide',
         titleIt: 'VFX per cinema indipendente: guida completa al workflow',
         titleEn: 'VFX for independent cinema: complete workflow guide',
         excerptIt: 'Come ottenere effetti visivi credibili con budget contenuti. Dalla pianificazione sul set alla consegna finale, il workflow che uso per i film indipendenti.',
@@ -166,6 +169,7 @@ export const posts: BlogPost[] = [
     },
     {
         slug: 'color-grading-film-davinci-resolve-workflow',
+        slugEn: 'color-grading-film-davinci-resolve-workflow',
         titleIt: 'Color Grading per film: il mio workflow in DaVinci Resolve',
         titleEn: 'Color Grading for film: my DaVinci Resolve workflow',
         excerptIt: 'Dal LOG al look finale: come lavoro il colore su un film. Il processo che uso come colorist certificato DaVinci Resolve, dalla prima correzione al delivery.',
@@ -257,6 +261,7 @@ export const posts: BlogPost[] = [
     },
     {
         slug: 'breakdown-vfx-along-came-ruby',
+        slugEn: 'vfx-breakdown-along-came-ruby',
         titleIt: 'Breakdown: gli effetti visivi di <a href="/portfolio/along-came-ruby">Along Came Ruby</a>',
         titleEn: 'Breakdown: the visual effects of <a href="/en/portfolio/along-came-ruby">Along Came Ruby</a>',
         excerptIt: 'Come ho creato l\'effetto spazio-temporale di Along Came Ruby. Dal concept alla composizione finale: processo, strumenti e decisioni creative.',
@@ -321,5 +326,9 @@ export const posts: BlogPost[] = [
 ];
 
 export function getPost(slug: string): BlogPost | undefined {
-    return posts.find((p) => p.slug === slug);
+    return posts.find((p) => p.slug === slug || p.slugEn === slug);
+}
+
+export function getPostSlug(post: BlogPost, locale: string): string {
+    return locale === 'en' ? post.slugEn : post.slug;
 }

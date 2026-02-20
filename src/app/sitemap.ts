@@ -100,19 +100,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: {
         languages: {
           it: `${BASE_URL}/blog/${post.slug}`,
-          en: `${BASE_URL}/en/blog/${post.slug}`,
+          en: `${BASE_URL}/en/blog/${post.slugEn}`,
         },
       },
     },
     {
-      url: `${BASE_URL}/en/blog/${post.slug}`,
+      url: `${BASE_URL}/en/blog/${post.slugEn}`,
       lastModified: new Date(post.date),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
       alternates: {
         languages: {
           it: `${BASE_URL}/blog/${post.slug}`,
-          en: `${BASE_URL}/en/blog/${post.slug}`,
+          en: `${BASE_URL}/en/blog/${post.slugEn}`,
         },
       },
     },

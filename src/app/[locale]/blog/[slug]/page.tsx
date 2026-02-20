@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Calendar } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
-import { posts, getPost } from '@/data/posts';
+import { posts, getPost, getPostSlug } from '@/data/posts';
 import { notFound } from 'next/navigation';
 
 export default function BlogPostPage({ params }: { params: { locale: string; slug: string } }) {
@@ -18,6 +18,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
 
     const title = isIt ? post.titleIt : post.titleEn;
     const content = isIt ? post.contentIt : post.contentEn;
+    const currentSlug = getPostSlug(post, locale);
 
     // Related posts (same category, excluding current)
     const related = posts
@@ -30,7 +31,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
             <ArticleSchema
                 headline={title}
                 description={isIt ? post.excerptIt : post.excerptEn}
-                url={`${isIt ? '' : '/en'}/blog/${post.slug}`}
+                url={`${isIt ? '' : '/en'}/blog/${currentSlug}`}
                 datePublished={post.date}
                 image={`https://pieroperilli.com${post.thumbnail}`}
                 keywords={post.keywordTarget ? post.keywordTarget.split(',').map(k => k.trim()) : undefined}
@@ -38,7 +39,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
             <BreadcrumbSchema items={[
                 { name: 'Home', url: isIt ? '/' : '/en' },
                 { name: 'Blog', url: isIt ? '/blog' : '/en/blog' },
-                { name: title, url: `${isIt ? '' : '/en'}/blog/${post.slug}` },
+                { name: title, url: `${isIt ? '' : '/en'}/blog/${currentSlug}` },
             ]} />
 
             {/* Hero */}
@@ -121,7 +122,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
                             {related.map((rel, i) => (
                                 <AnimateOnScroll key={rel.slug} delay={i * 80}>
                                     <Link
-                                        href={`${isIt ? '' : '/en'}/blog/${rel.slug}`}
+                                        href={`${isIt ? '' : '/en'}/blog/${getPostSlug(rel, locale)}`}
                                         className="group block"
                                     >
                                         <div className="relative aspect-[16/9] rounded-lg overflow-hidden bg-surface mb-4">
