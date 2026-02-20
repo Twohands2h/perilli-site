@@ -263,8 +263,8 @@ export const posts: BlogPost[] = [
     {
         slug: 'breakdown-vfx-along-came-ruby',
         slugEn: 'vfx-breakdown-along-came-ruby',
-        titleIt: 'Breakdown: gli effetti visivi di Along Came Ruby',
-        titleEn: 'Breakdown: the visual effects of Along Came Ruby',
+        titleIt: 'Breakdown VFX: gli effetti visivi di Along Came Ruby',
+        titleEn: 'VFX Breakdown: the visual effects of Along Came Ruby',
         excerptIt: 'Come ho creato l\'effetto spazio-temporale di Along Came Ruby. Dal concept alla composizione finale: processo, strumenti e decisioni creative.',
         excerptEn: 'How I created the space-time effect for Along Came Ruby. From concept to final comp: process, tools and creative decisions.',
         date: '2026-03-22',

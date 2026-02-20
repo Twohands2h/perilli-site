@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
     title: 'AI Video Production Italia | Video Generati con AI Professionale | Piero Perilli',
-    description: 'AI video production e generazione video con intelligenza artificiale in Italia. Workflow con Runway, Veo e Kling guidata da 20 anni di esperienza VFX. Workflow ibrido AI + post-produzione tradizionale per risultati professionali.',
+    description: 'AI video production e generazione video con intelligenza artificiale a Roma e in Italia. Runway, Veo e Kling guidati da 20 anni di esperienza VFX. Workflow ibrido AI + post-produzione tradizionale per risultati professionali.',
     alternates: getPageAlternates('/ai-video', locale),
     openGraph: getPageOpenGraph('/ai-video', locale),
   } : {
@@ -20,13 +20,12 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 const contentIT = {
   sectionLabel: 'AI VIDEO',
-  h1: "AI Video Production — L'Intelligenza Artificiale Guidata dall'Esperienza",
+  h1: "AI Video Production Roma — L'Intelligenza Artificiale Guidata dall'Esperienza",
   heroSubtitle: 'L\'intelligenza artificiale guidata da 20 anni di occhio artigianale.',
 
   introTitle: 'L\'AI non Sostituisce l\'Esperienza. La Moltiplica.',
   introText: `<p>Tutti possono generare un video con l'AI. Pochi sanno quando il risultato è sufficiente, quando serve intervento manuale e come combinare i due. Questa è la differenza tra un video "generato dall'AI" e un video professionale che usa l'AI come strumento.</p>
-<p>Integro strumenti come Runway, Veo e Kling nel mio <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow VFX</a> e di <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a>, unendo generazione AI e intervento manuale per risultati che funzionano davvero.</p>
-<p>Integro Runway, Veo, Kling e gli strumenti di generazione video AI nel mio workflow professionale — lo stesso workflow con cui lavoro su film e spot da vent'anni. L'AI produce la materia prima, l'esperienza la trasforma in un risultato che funziona davvero.</p>
+<p>Integro Runway, Veo, Kling e gli strumenti di generazione video AI nel mio <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow VFX</a> e di <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> — lo stesso workflow con cui lavoro su film e spot da vent'anni. L'AI produce la materia prima, l'esperienza la trasforma in un risultato che funziona davvero.</p>
 <p>Il mio vantaggio è il contesto. Venti anni di post-produzione significano sapere come deve apparire un'immagine finale, quali artefatti sono accettabili e quali no, come integrare output AI con riprese reali, come mantenere coerenza visiva tra shot generate. Questo know-how non si improvvisa.</p>`,
 
   servicesTitle: 'Come uso l\'AI nella produzione video',
@@ -86,13 +85,12 @@ const contentIT = {
 
 const contentEN = {
   sectionLabel: 'AI VIDEO',
-  h1: 'AI Video Production — Artificial Intelligence Guided by 20 Years of Experience',
+  h1: 'AI Video Production Italy — Artificial Intelligence Guided by 20 Years of Experience',
   heroSubtitle: 'Artificial intelligence guided by 20 years of artisan eye.',
 
   introTitle: "AI Doesn't Replace Experience. It Multiplies It.",
   introText: `<p>Anyone can generate a video with AI. Few know when the result is good enough, when manual work is needed and how to combine both. This is the difference between an "AI-generated video" and a professional video that uses AI as a tool.</p>
-<p>I integrate tools like Runway, Veo and Kling into my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX workflow</a> and <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> pipeline, combining AI generation and manual intervention for results that actually work.</p>
-<p>I integrate Runway, Veo, Kling and AI video generation tools into my AI-assisted video production workflow — the same workflow I've used on films and commercials for twenty years. AI produces the raw material, experience transforms it into a result that actually works.</p>
+<p>I integrate Runway, Veo, Kling and AI video generation tools into my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> and <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> workflow — the same workflow I've used on films and commercials for twenty years. AI produces the raw material, experience transforms it into a result that actually works.</p>
 <p>My advantage is context. Twenty years of post-production mean knowing how a final image should look, which artifacts are acceptable and which aren't, how to integrate AI output with real footage, how to maintain visual coherence between generated shots. This know-how can't be improvised.</p>`,
 
   servicesTitle: 'How I use AI in video production',

@@ -20,7 +20,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 const contentIT = {
   sectionLabel: 'ANIMAZIONE',
-  h1: 'Animazione 2D e 3D — Video Prodotto, Character e Ambienti Digitali',
+  h1: 'Animazione 2D e 3D a Roma — Video Prodotto, Character e Ambienti Digitali',
   heroSubtitle: 'Dai vita a personaggi, prodotti e ambienti con animazioni fluide e realistiche.',
 
   introTitle: 'Storie che Prendono Vita.',
@@ -89,7 +89,7 @@ const contentIT = {
 
 const contentEN = {
   sectionLabel: 'ANIMATION',
-  h1: '2D and 3D Animation — Product Video, Character and Digital Environments',
+  h1: '2D and 3D Animation in Rome — Product Video, Character and Digital Environments',
   heroSubtitle: 'Bring characters, products and environments to life with fluid, realistic animations.',
 
   introTitle: 'Stories that Come to Life.',
