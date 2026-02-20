@@ -1,15 +1,20 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
     title: 'AI Video Production Italia | Video Generati con AI Professionale | Piero Perilli',
     description: 'AI video production e generazione video con intelligenza artificiale in Italia. Workflow con Runway, Veo e Kling guidata da 20 anni di esperienza VFX. Workflow ibrido AI + post-produzione tradizionale per risultati professionali.',
+    alternates: getPageAlternates('/ai-video', locale),
+    openGraph: getPageOpenGraph('/ai-video', locale),
   } : {
     title: 'AI Video Production Italy | Professional AI-Generated Video | Piero Perilli',
     description: 'AI video production and AI-assisted video generation in Italy. Runway, Veo and Kling workflow guided by 20 years of VFX experience. Hybrid AI + traditional post-production for professional results.',
+    alternates: getPageAlternates('/ai-video', locale),
+    openGraph: getPageOpenGraph('/ai-video', locale),
   };
 }
 

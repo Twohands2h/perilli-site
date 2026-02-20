@@ -1,4 +1,5 @@
 import { posts, getPost } from '@/data/posts';
+import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export function generateStaticParams() {
@@ -14,6 +15,8 @@ export function generateMetadata({ params }: { params: { locale: string; slug: s
     return {
         title: `${isIt ? post.titleIt : post.titleEn} | Piero Perilli`,
         description: isIt ? post.excerptIt : post.excerptEn,
+        alternates: getPageAlternates(`/blog/${post.slug}`, params.locale),
+        openGraph: getPageOpenGraph(`/blog/${post.slug}`, params.locale),
     };
 }
 

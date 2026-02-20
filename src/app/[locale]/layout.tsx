@@ -6,6 +6,7 @@ import { locales, type Locale } from '@/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { PersonSchema, LocalBusinessSchema } from '@/components/seo/SchemaMarkup';
+import { getPageAlternates, getPageOgUrl } from '@/lib/seo';
 import '../../app/globals.css';
 
 export function generateStaticParams() {
@@ -27,19 +28,12 @@ export async function generateMetadata({
       ? 'VFX, motion graphics, color grading e post-produzione video a Roma. Piero Perilli: artigiano digitale con 20+ anni di esperienza per cinema, advertising e brand.'
       : 'VFX, motion graphics, color grading and video post-production in Rome, Italy. Piero Perilli: digital craftsman with 20+ years of experience for cinema, advertising and brands.',
     metadataBase: new URL('https://pieroperilli.com'),
-    alternates: {
-      canonical: isIt ? 'https://pieroperilli.com' : 'https://pieroperilli.com/en',
-      languages: {
-        'it-IT': 'https://pieroperilli.com',
-        'en': 'https://pieroperilli.com/en',
-        'x-default': 'https://pieroperilli.com',
-      },
-    },
+    alternates: getPageAlternates('/', locale),
     openGraph: {
       type: 'website',
       locale: isIt ? 'it_IT' : 'en_US',
       alternateLocale: isIt ? 'en_US' : 'it_IT',
-      url: isIt ? 'https://pieroperilli.com' : 'https://pieroperilli.com/en',
+      url: getPageOgUrl('/', locale),
       siteName: 'Piero Perilli — Artigiano Digitale',
       title: isIt
         ? 'Piero Perilli | VFX Artist & Post Produzione Video Roma'

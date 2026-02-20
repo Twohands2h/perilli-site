@@ -1,15 +1,20 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
     title: 'Motion Graphics Roma | Animazioni per Brand, Spot e Campagne | Piero Perilli',
     description: 'Motion graphics professionali a Roma per spot, sigle, campagne advertising e contenuti digitali. Animazione 2D/3D, titoli, infografiche animate, loghi e visual storytelling.',
+    alternates: getPageAlternates('/motion-graphics', locale),
+    openGraph: getPageOpenGraph('/motion-graphics', locale),
   } : {
     title: 'Motion Graphics Rome | Animations for Brands, Commercials and Campaigns | Piero Perilli',
     description: 'Professional motion graphics in Rome for commercials, title sequences, advertising campaigns and digital content. 2D/3D animation, infographics, logos and visual storytelling.',
+    alternates: getPageAlternates('/motion-graphics', locale),
+    openGraph: getPageOpenGraph('/motion-graphics', locale),
   };
 }
 

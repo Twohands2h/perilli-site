@@ -1,4 +1,5 @@
 import { projects, getProject } from '@/data/projects';
+import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export function generateStaticParams() {
@@ -18,6 +19,8 @@ export function generateMetadata({ params }: { params: { locale: string; slug: s
         description: isIt
             ? `Caso studio: ${title}. ${project.briefingIt.substring(0, 140)}...`
             : `Case study: ${title}. ${project.briefingEn.substring(0, 140)}...`,
+        alternates: getPageAlternates(`/portfolio/${project.slug}`, params.locale),
+        openGraph: getPageOpenGraph(`/portfolio/${project.slug}`, params.locale),
     };
 }
 

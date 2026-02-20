@@ -1,15 +1,20 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
     title: 'Animazione 2D e 3D Roma | Video Prodotto, Character e Ambienti | Piero Perilli',
     description: 'Animazione 2D e 3D professionale a Roma. Character animation, video prodotto 3D, simulazioni particellari, set extension e ambienti digitali per cinema, advertising e brand.',
+    alternates: getPageAlternates('/animazione-3d', locale),
+    openGraph: getPageOpenGraph('/animazione-3d', locale),
   } : {
     title: '2D and 3D Animation Rome | Product Video, Character and Environments | Piero Perilli',
     description: 'Professional 2D and 3D animation in Rome. Character animation, 3D product video, particle simulations, set extension and digital environments for cinema, advertising and brands.',
+    alternates: getPageAlternates('/animazione-3d', locale),
+    openGraph: getPageOpenGraph('/animazione-3d', locale),
   };
 }
 

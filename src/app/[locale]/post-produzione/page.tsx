@@ -1,15 +1,20 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
     title: 'Post Produzione Video Roma | Montaggio, Color Grading e Finishing | Piero Perilli',
     description: 'Post-produzione video professionale a Roma. Montaggio, color grading certificato DaVinci Resolve, finishing per cinema, TV, documentari e spot. Colorist certificato Blackmagic Design.',
+    alternates: getPageAlternates('/post-produzione', locale),
+    openGraph: getPageOpenGraph('/post-produzione', locale),
   } : {
     title: 'Video Post Production Rome | Editing, Color Grading and Finishing | Piero Perilli',
     description: 'Professional video post-production in Rome. Editing, DaVinci Resolve certified color grading, finishing for cinema, TV, documentaries and commercials. Blackmagic Design certified colorist.',
+    alternates: getPageAlternates('/post-produzione', locale),
+    openGraph: getPageOpenGraph('/post-produzione', locale),
   };
 }
 

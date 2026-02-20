@@ -1,15 +1,20 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
     title: 'Effetti Visivi (VFX) Roma | Compositing e VFX per Cinema e Spot | Piero Perilli',
     description: 'VFX artist a Roma con 20+ anni di esperienza. Compositing, green screen, set extension e tracking per film, spot pubblicitari e produzioni digitali. Portfolio verificabile su IMDB.',
+    alternates: getPageAlternates('/vfx', locale),
+    openGraph: getPageOpenGraph('/vfx', locale),
   } : {
     title: 'Visual Effects (VFX) Rome | Compositing & VFX for Film and Commercials | Piero Perilli',
     description: 'VFX artist in Rome with 20+ years of experience. Compositing, green screen, set extension and tracking for films, commercials and digital productions. IMDB-verified portfolio.',
+    alternates: getPageAlternates('/vfx', locale),
+    openGraph: getPageOpenGraph('/vfx', locale),
   };
 }
 
