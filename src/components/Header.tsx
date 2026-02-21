@@ -29,16 +29,17 @@ export default function Header() {
   const altLocaleHref = getAltLocaleHref(pathname, locale);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <header className={`fixed top-0 left-0 right-0 z-50 border-b border-border/50 transition-colors
+      ${mobileOpen ? 'bg-background' : 'bg-background/80 backdrop-blur-md'}`}>
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <Link href={locale === 'it' ? '/' : '/en'} className="relative z-50">
+        <Link href={locale === 'it' ? '/' : '/en'} className="relative z-50 shrink-0">
           <Image
             src="/images/logo-white.png"
             alt="PIERO."
             width={120}
             height={40}
-            className="h-8 w-auto"
+            className="h-8 w-auto object-contain"
             priority
           />
         </Link>
@@ -95,7 +96,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {mobileOpen && (
-        <nav className="lg:hidden fixed inset-0 top-16 bg-background/98 backdrop-blur-lg z-40">
+        <nav className="lg:hidden fixed inset-0 top-16 bg-background z-40 overflow-y-auto">
           <div className="section-container py-8 flex flex-col gap-1">
             {navItems.map((item) => {
               const href = item.href[locale as 'it' | 'en'];
