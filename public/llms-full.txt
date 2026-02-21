@@ -120,7 +120,7 @@ A: Costs depend on project complexity. A single basic compositing shot starts fr
 A: VFX encompasses all post-production image manipulation (compositing, green screen, rotoscoping, tracking). CGI is a subset specifically about fully computer-generated elements like 3D models. Piero's workflow integrates both.
 
 **Q: Do you work only in Rome or also remotely?**
-A: Both on-site in Rome/Venice and remotely for clients across Italy and internationally. VFX post-production is perfectly suited for remote collaboration.
+A: Based in Rome but regularly works remotely with clients across Italy and internationally, including frequent collaborations with productions in London and the United States. Available to travel for on-set supervision.
 
 ### Motion Graphics
 **Q: How much does a motion graphics video cost for a brand?**
@@ -135,7 +135,7 @@ A: Starting from €1,500-3,000 for a 15-30 second video including modeling, tex
 A: With separate specialists, each handoff adds time, costs and error risk. The integrated workflow manages everything from editing to final master in a single pipeline — more coherent, faster, and more cost-effective.
 
 **Q: How much does professional color grading cost?**
-A: Color grading for a short film (10-20 min) starts from €500-1,500. For a 30-60 second commercial, €300-800.
+A: Color grading for a commercial ranges from €800 to €1,200. For a short film, €3,000 to €5,000. Feature film costs depend on the project and cannot be estimated without analysis. Day rates also available.
 
 ### AI Video
 **Q: Can AI replace traditional video production?**

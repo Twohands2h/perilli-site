@@ -26,7 +26,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'Lavori solo a Roma o anche da remoto?',
-        answer: 'Lavoro sia in presenza a Roma e Venezia che da remoto per clienti in tutta Italia e all\'estero. La post-produzione VFX si presta perfettamente al lavoro remoto. Per progetti che richiedono supervisione sul set, sono disponibile a spostarmi.',
+        answer: 'Sono basato a Roma ma lavoro regolarmente da remoto con clienti in tutta Italia e all\'estero — collaboro spesso con produzioni a Londra e negli Stati Uniti senza problemi. La post-produzione VFX si presta perfettamente al lavoro remoto. Per progetti che richiedono supervisione sul set, mi sposto senza problemi.',
       },
       {
         question: 'Posso fare gli effetti visivi del mio film con l\'intelligenza artificiale?',
@@ -48,7 +48,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'Do you work only in Rome or also remotely?',
-        answer: 'I work both on-site in Rome and Venice and remotely for clients across Italy and internationally. VFX post-production is perfectly suited for remote work. For projects requiring on-set supervision, I am available to travel.',
+        answer: 'I am based in Rome but work regularly with clients remotely across Italy and internationally — I frequently collaborate with productions in London and the United States without issues. VFX post-production is perfectly suited for remote work. For projects requiring on-set supervision, I am happy to travel.',
       },
       {
         question: 'Can I create VFX for my film using AI?',
@@ -143,7 +143,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'Quanto costa il color grading professionale?',
-        answer: 'Il color grading per un cortometraggio (10-20 minuti) parte da circa €500-1.500. Per uno spot pubblicitario di 30-60 secondi, €300-800. Per un lungometraggio, il costo varia significativamente in base alla complessità. Lavoro con DaVinci Resolve (certificato) che è lo standard dell\'industria cinematografica.',
+        answer: 'Il color grading professionale per uno spot pubblicitario va dagli 800 ai 1.200 euro. Per un cortometraggio si parte da 3.000 fino a 5.000 euro a seconda della complessità. Per un lungometraggio il costo non è quantificabile senza analizzare il progetto — dipende dal genere, dal numero di scene e dalla look richiesta. Si può lavorare anche a giornata. Lavoro con DaVinci Resolve (certificato), lo standard dell\'industria cinematografica.',
       },
       {
         question: 'Perché scegliere un workflow integrato invece di specialisti separati?',
@@ -161,7 +161,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'How much does professional color grading cost?',
-        answer: 'Color grading for a short film (10-20 minutes) starts from approximately €500-1,500. For a 30-60 second commercial, €300-800. For a feature film, costs vary significantly based on complexity. I work with DaVinci Resolve (certified) which is the cinema industry standard.',
+        answer: 'Professional color grading for a commercial ranges from €800 to €1,200. For a short film, expect €3,000 to €5,000 depending on complexity. For a feature film, costs cannot be estimated without analyzing the project — it depends on genre, number of scenes and the required look. Day rates are also available. I work with DaVinci Resolve (certified), the cinema industry standard.',
       },
       {
         question: 'Why choose an integrated workflow instead of separate specialists?',
