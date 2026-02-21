@@ -51,11 +51,14 @@ export default function ContattiPage() {
           <div>
             <p className="section-title">{t('title')}</p>
             <h1
-              className="font-bold text-text-primary mb-3"
+              className="font-bold text-text-primary mb-2"
               style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)', lineHeight: '1.1' }}
             >
-              {t('subtitle')}
+              {isIt ? 'Contatti — VFX e Post Produzione a Roma' : 'Contact — VFX & Post Production in Rome'}
             </h1>
+            <p className="text-text-secondary text-sm md:text-base mb-3">
+              {t('subtitle')}
+            </p>
 
             {status === 'sent' ? (
               <div className="mt-8 p-6 bg-surface rounded border border-accent/30 text-center">

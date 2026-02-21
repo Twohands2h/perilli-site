@@ -6,13 +6,13 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
-    title: 'Post Produzione Video Roma | Montaggio, Color Grading e Finishing | Piero Perilli',
-    description: 'Post-produzione video professionale a Roma. Montaggio, color grading certificato DaVinci Resolve, finishing per cinema, TV, documentari e spot. Colorist certificato Blackmagic Design.',
+    title: 'Post Produzione Video Roma | Piero Perilli',
+    description: 'Post-produzione video a Roma. Montaggio, color grading certificato DaVinci Resolve e finishing per cinema, TV, documentari e spot.',
     alternates: getPageAlternates('/post-produzione', locale),
     openGraph: getPageOpenGraph('/post-produzione', locale),
   } : {
-    title: 'Video Post Production Rome | Editing, Color Grading and Finishing | Piero Perilli',
-    description: 'Professional video post-production in Rome. Editing, DaVinci Resolve certified color grading, finishing for cinema, TV, documentaries and commercials. Blackmagic Design certified colorist.',
+    title: 'Video Post Production Rome Italy | Piero Perilli',
+    description: 'Professional video post-production in Rome. Editing, DaVinci Resolve certified color grading and finishing for cinema, TV, documentaries and commercials.',
     alternates: getPageAlternates('/post-produzione', locale),
     openGraph: getPageOpenGraph('/post-produzione', locale),
   };
@@ -77,6 +77,7 @@ const contentIT = {
     { title: 'A mamma non piace — di Gianni Leacche — Film', link: 'https://www.cinemaitaliano.info/amammanonpiace' },
     { title: 'Giorni di Grazia — di Sofia Nacchia — Film Cinema' },
     { title: '72 ore — di Luciano Luminelli — Film' },
+    { title: '📖 Leggi: Color Grading per film — il mio workflow DaVinci Resolve', link: '/blog/color-grading-film-davinci-resolve-workflow' },
   ],
 
   tools: ['DaVinci Resolve (certificato Blackmagic)', 'Premiere Pro', 'After Effects'],
@@ -145,6 +146,7 @@ const contentEN = {
     { title: 'A mamma non piace — by Gianni Leacche — Film', link: 'https://www.cinemaitaliano.info/amammanonpiace' },
     { title: 'Giorni di Grazia — by Sofia Nacchia — Theatrical' },
     { title: '72 ore — by Luciano Luminelli — Film' },
+    { title: '📖 Read: Color Grading for film — my DaVinci Resolve workflow', link: '/en/blog/color-grading-film-davinci-resolve-workflow' },
   ],
 
   tools: ['DaVinci Resolve (Blackmagic certified)', 'Premiere Pro', 'After Effects'],

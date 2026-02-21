@@ -78,9 +78,9 @@ export const projects: Project[] = [
         client: 'Guerciotti',
         year: '2024',
         role: '3D Animator / VFX',
-        thumbnail: '/images/portfolio/animazione-3d-guerciotti-60-anni-thumb.jpg',
+        thumbnail: '/images/portfolio/animazione-3d-guerciotti-60-anni-thumb.webp',
         thumbnailAlt: { it: `Animazione 3D per Guerciotti 60 anni`, en: `3D animation for Guerciotti 60 years` },
-        heroImage: '/images/portfolio/video-prodotto-3d-guerciotti-telaio-carbonio.jpg',
+        heroImage: '/images/portfolio/video-prodotto-3d-guerciotti-telaio-carbonio.webp',
         images: [
             { src: '/images/portfolio/animazione-3d-spline-telaio-guerciotti-dettaglio.jpg', alt: { it: 'Spline 3D del telaio Guerciotti', en: '3D spline of Guerciotti frame' } },
             { src: '/images/portfolio/product-visualization-3d-guerciotti-render-finale.webp', alt: { it: 'Product visualization 3D Guerciotti', en: '3D product visualization Guerciotti' } },
@@ -99,9 +99,9 @@ export const projects: Project[] = [
             { type: 'image', src: '/images/portfolio/animazione-3d-spline-telaio-guerciotti-dettaglio.jpg', alt: { it: 'Spline 3D del telaio Guerciotti', en: '3D spline of Guerciotti frame' }, fullWidth: true },
             { type: 'gallery', images: [
                 { src: '/images/portfolio/product-visualization-3d-guerciotti-render-finale.webp', alt: { it: 'Product visualization 3D Guerciotti', en: '3D product visualization Guerciotti' } },
-                { src: '/images/portfolio/animazione-3d-guerciotti-60-anni-thumb.jpg', alt: { it: 'Animazione 3D Guerciotti 60 anni', en: '3D animation Guerciotti 60 years' } },
+                { src: '/images/portfolio/animazione-3d-guerciotti-60-anni-thumb.webp', alt: { it: 'Animazione 3D Guerciotti 60 anni', en: '3D animation Guerciotti 60 years' } },
             ], columns: 2 },
-            { type: 'image', src: '/images/portfolio/video-prodotto-3d-guerciotti-telaio-carbonio.jpg', alt: { it: 'Telaio in carbonio Guerciotti render 3D', en: 'Guerciotti carbon frame 3D render' }, fullWidth: true },
+            { type: 'image', src: '/images/portfolio/video-prodotto-3d-guerciotti-telaio-carbonio.webp', alt: { it: 'Telaio in carbonio Guerciotti render 3D', en: 'Guerciotti carbon frame 3D render' }, fullWidth: true },
         ],
     },
     {

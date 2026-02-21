@@ -26,7 +26,7 @@ export default function BlogPage() {
                 letterSpacing: '-0.025em',
               }}
             >
-              Blog
+              {isIt ? 'Blog — VFX, AI e Post Produzione' : 'Blog — VFX, AI & Post Production'}
             </h1>
             <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
               {isIt

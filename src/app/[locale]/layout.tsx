@@ -24,11 +24,11 @@ export async function generateMetadata({
 
   return {
     title: isIt
-      ? 'Piero Perilli | VFX Artist & Post Produzione Video Roma | Effetti Visivi, Motion Graphics, AI'
-      : 'Piero Perilli | VFX Artist & Video Post Production Rome | Visual Effects, Motion Graphics, AI',
+      ? 'Piero Perilli | VFX Artist e Post Produzione Roma'
+      : 'Piero Perilli | VFX Artist & Post Production Rome',
     description: isIt
-      ? 'VFX, motion graphics, color grading e post-produzione video a Roma. Piero Perilli: artigiano digitale con 20+ anni di esperienza per cinema, advertising e brand.'
-      : 'VFX, motion graphics, color grading and video post-production in Rome, Italy. Piero Perilli: digital craftsman with 20+ years of experience for cinema, advertising and brands.',
+      ? 'VFX, motion graphics, color grading e post-produzione video a Roma. Artigiano digitale con 20+ anni di esperienza per cinema e advertising.'
+      : 'VFX, motion graphics, color grading and video post-production in Rome. Digital craftsman with 20+ years of experience for film and advertising.',
     metadataBase: new URL('https://pieroperilli.com'),
     alternates: getPageAlternates('/', locale),
     openGraph: {
@@ -38,8 +38,8 @@ export async function generateMetadata({
       url: getPageOgUrl('/', locale),
       siteName: 'Piero Perilli — Artigiano Digitale',
       title: isIt
-        ? 'Piero Perilli | VFX Artist & Post Produzione Video Roma'
-        : 'Piero Perilli | VFX Artist & Video Post Production Rome',
+        ? 'Piero Perilli | VFX Artist e Post Produzione Roma'
+        : 'Piero Perilli | VFX Artist & Post Production Rome',
       description: isIt
         ? 'VFX, motion graphics, color grading e post-produzione video a Roma. 20+ anni di artigianato visivo.'
         : 'VFX, motion graphics, color grading and video post-production in Rome. 20+ years of visual craftsmanship.',
@@ -57,8 +57,8 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: isIt
-        ? 'Piero Perilli | VFX Artist & Post Produzione Video Roma'
-        : 'Piero Perilli | VFX Artist & Video Post Production Rome',
+        ? 'Piero Perilli | VFX Artist e Post Produzione Roma'
+        : 'Piero Perilli | VFX Artist & Post Production Rome',
       description: isIt
         ? 'Artigiano digitale con 20+ anni di esperienza. VFX, motion graphics, color grading per cinema e advertising.'
         : 'Digital craftsman with 20+ years of experience. VFX, motion graphics, color grading for cinema and advertising.',

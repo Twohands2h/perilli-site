@@ -6,13 +6,13 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
-    title: 'AI Video Production Italia | Video Generati con AI Professionale | Piero Perilli',
-    description: 'AI video production e generazione video con intelligenza artificiale in Italia. Workflow con Runway, Veo e Kling guidata da 20 anni di esperienza VFX. Workflow ibrido AI + post-produzione tradizionale per risultati professionali.',
+    title: 'AI Video Production Italia | Piero Perilli',
+    description: 'AI video production in Italia. Generazione video con Runway, Veo e Kling, guidata da 20 anni di esperienza VFX. Workflow ibrido AI + tradizionale.',
     alternates: getPageAlternates('/ai-video', locale),
     openGraph: getPageOpenGraph('/ai-video', locale),
   } : {
-    title: 'AI Video Production Italy | Professional AI-Generated Video | Piero Perilli',
-    description: 'AI video production and AI-assisted video generation in Italy. Runway, Veo and Kling workflow guided by 20 years of VFX experience. Hybrid AI + traditional post-production for professional results.',
+    title: 'AI Video Production Italy | Piero Perilli',
+    description: 'AI video production in Italy. Video generation with Runway, Veo and Kling, guided by 20 years of VFX experience. Hybrid AI + traditional workflow.',
     alternates: getPageAlternates('/ai-video', locale),
     openGraph: getPageOpenGraph('/ai-video', locale),
   };
@@ -84,6 +84,7 @@ const contentIT = {
   recentWork: [
     { title: 'Roche — Jingle natalizio AI-generated', link: '/portfolio/roche-jingle-ai' },
     { title: 'Guerciotti 60 Anni — Animazione 3D + AI post-processing', link: '/portfolio/guerciotti-60-anni' },
+    { title: '📖 Leggi: Come scelgo tra AI e VFX tradizionale per ogni shot', link: '/blog/ai-vs-vfx-tradizionale-come-scegliere' },
   ],
 
   ctaTitle: 'Vuoi esplorare l\'AI video',
@@ -157,6 +158,7 @@ const contentEN = {
   recentWork: [
     { title: 'Roche — AI-generated Christmas jingle', link: '/en/portfolio/roche-jingle-ai' },
     { title: 'Guerciotti 60 Years — 3D Animation + AI post-processing', link: '/en/portfolio/guerciotti-60-anni' },
+    { title: '📖 Read: How I choose between AI and traditional VFX for every shot', link: '/en/blog/ai-vs-traditional-vfx-how-to-choose' },
   ],
 
   ctaTitle: 'Want to explore AI video',

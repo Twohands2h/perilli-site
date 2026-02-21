@@ -6,13 +6,13 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
-    title: 'Effetti Visivi (VFX) Roma | Compositing e VFX per Cinema e Spot | Piero Perilli',
-    description: 'VFX artist a Roma con 20+ anni di esperienza. Compositing, green screen, set extension e tracking per film, spot pubblicitari e produzioni digitali. Portfolio verificabile su IMDB.',
+    title: 'VFX e Effetti Visivi Roma | Piero Perilli',
+    description: 'VFX artist a Roma con 20+ anni di esperienza. Compositing, green screen, set extension e tracking per cinema, spot e produzioni digitali.',
     alternates: getPageAlternates('/vfx', locale),
     openGraph: getPageOpenGraph('/vfx', locale),
   } : {
-    title: 'Visual Effects (VFX) Rome | Compositing & VFX for Film and Commercials | Piero Perilli',
-    description: 'VFX artist in Rome with 20+ years of experience. Compositing, green screen, set extension and tracking for films, commercials and digital productions. IMDB-verified portfolio.',
+    title: 'VFX & Visual Effects Rome | Piero Perilli',
+    description: 'VFX artist in Rome with 20+ years of experience. Compositing, green screen, set extension and tracking for film, commercials and digital productions.',
     alternates: getPageAlternates('/vfx', locale),
     openGraph: getPageOpenGraph('/vfx', locale),
   };
@@ -92,6 +92,8 @@ const contentIT = {
     { title: 'I Am Curious Johnny — di Julian Temple, VFX e clean-up', link: 'https://www.imdb.com/it/title/tt35450650/' },
     { title: 'Floverr — film in produzione, supervisione VFX', link: '' },
     { title: 'Non tutto è perduto — film cinema, VFX e post-produzione', link: 'https://www.imdb.com/it/title/tt31173315/' },
+    { title: '📖 Leggi: VFX per cinema indipendente — guida al workflow', link: '/blog/vfx-cinema-indipendente-guida-workflow' },
+    { title: '📖 Leggi: Breakdown VFX di Along Came Ruby', link: '/blog/breakdown-vfx-along-came-ruby' },
   ],
 
   tools: ['After Effects', 'Nuke', '3ds Max', 'Unreal Engine 5', 'DaVinci Resolve Fusion', 'Mocha Pro', 'ZBrush'],
@@ -175,6 +177,8 @@ const contentEN = {
     { title: 'I Am Curious Johnny — Julian Temple, VFX and clean-up', link: 'https://www.imdb.com/it/title/tt35450650/' },
     { title: 'Floverr — film in production, VFX supervision', link: '' },
     { title: 'Non tutto è perduto — theatrical film, VFX and post-production', link: 'https://www.imdb.com/it/title/tt31173315/' },
+    { title: '📖 Read: VFX for independent cinema — workflow guide', link: '/en/blog/vfx-independent-film-workflow-guide' },
+    { title: '📖 Read: VFX Breakdown of Along Came Ruby', link: '/en/blog/vfx-breakdown-along-came-ruby' },
   ],
 
   tools: ['After Effects', 'Nuke', '3ds Max', 'Unreal Engine 5', 'DaVinci Resolve Fusion', 'Mocha Pro', 'ZBrush'],
