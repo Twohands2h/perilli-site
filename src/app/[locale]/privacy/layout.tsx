@@ -7,11 +7,13 @@ export async function generateMetadata({ params: { locale } }: { params: { local
         description: 'Informativa sulla privacy e sul trattamento dei dati personali del sito pieroperilli.com.',
         alternates: getPageAlternates('/privacy', locale),
         openGraph: getPageOpenGraph('/privacy', locale),
+        robots: { index: false, follow: true },
     } : {
         title: 'Privacy Policy | Piero Perilli',
         description: 'Privacy policy and personal data processing information for pieroperilli.com.',
         alternates: getPageAlternates('/privacy', locale),
         openGraph: getPageOpenGraph('/privacy', locale),
+        robots: { index: false, follow: true },
     };
 }
 

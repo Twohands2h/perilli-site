@@ -15,7 +15,9 @@ export function generateMetadata({ params }: { params: { locale: string; slug: s
     const cat = isIt ? project.categoryLabel.it : project.categoryLabel.en;
 
     return {
-        title: `${title} | ${cat} — Piero Perilli`,
+        title: isIt
+            ? `${title} | ${cat} Roma — Piero Perilli`
+            : `${title} | ${cat} Rome — Piero Perilli`,
         description: isIt
             ? `Caso studio: ${title}. ${project.briefingIt.substring(0, 140)}...`
             : `Case study: ${title}. ${project.briefingEn.substring(0, 140)}...`,

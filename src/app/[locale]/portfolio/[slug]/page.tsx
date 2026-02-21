@@ -334,6 +334,7 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
                 { name: 'Portfolio', url: isIt ? '/portfolio' : '/en/portfolio' },
                 { name: title, url: `${isIt ? '' : '/en'}/portfolio/${project.slug}` },
             ]} />
+            {/* VideoObject from legacy fields */}
             {(project.videoEmbed || project.videoUrl) && (
                 <VideoObjectSchema
                     name={title}
@@ -348,6 +349,19 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
                         : undefined}
                 />
             )}
+            {/* VideoObject from contentBlocks */}
+            {project.contentBlocks?.filter((b): b is Extract<ContentBlock, { type: 'video' }> => b.type === 'video').map((block, i) => (
+                <VideoObjectSchema
+                    key={`video-schema-${i}`}
+                    name={block.title || `${title} — Video ${i + 1}`}
+                    description={isIt ? project.briefingIt : project.briefingEn}
+                    thumbnailUrl={`https://pieroperilli.com${project.thumbnail}`}
+                    uploadDate={project.year}
+                    embedUrl={block.platform === 'youtube'
+                        ? `https://www.youtube.com/embed/${block.embedId}`
+                        : `https://player.vimeo.com/video/${block.embedId}`}
+                />
+            ))}
 
             {/* Sticky breadcrumb */}
             <div className="sticky top-16 md:top-20 z-40 bg-background/90 backdrop-blur-md border-b border-border/30">

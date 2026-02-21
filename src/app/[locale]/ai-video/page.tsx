@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
     title: 'AI Video Production Italia | Video Generati con AI Professionale | Piero Perilli',
-    description: 'AI video production e generazione video con intelligenza artificiale a Roma e in Italia. Runway, Veo e Kling guidati da 20 anni di esperienza VFX. Workflow ibrido AI + post-produzione tradizionale per risultati professionali.',
+    description: 'AI video production e generazione video con intelligenza artificiale in Italia. Workflow con Runway, Veo e Kling guidata da 20 anni di esperienza VFX. Workflow ibrido AI + post-produzione tradizionale per risultati professionali.',
     alternates: getPageAlternates('/ai-video', locale),
     openGraph: getPageOpenGraph('/ai-video', locale),
   } : {
@@ -20,7 +20,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 const contentIT = {
   sectionLabel: 'AI VIDEO',
-  h1: "AI Video Production Roma — L'Intelligenza Artificiale Guidata dall'Esperienza",
+  h1: "AI Video Production — L'Intelligenza Artificiale Guidata dall'Esperienza",
   heroSubtitle: 'L\'intelligenza artificiale guidata da 20 anni di occhio artigianale.',
 
   introTitle: 'L\'AI non Sostituisce l\'Esperienza. La Moltiplica.',
@@ -85,7 +85,7 @@ const contentIT = {
 
 const contentEN = {
   sectionLabel: 'AI VIDEO',
-  h1: 'AI Video Production Italy — Artificial Intelligence Guided by 20 Years of Experience',
+  h1: 'AI Video Production — Artificial Intelligence Guided by 20 Years of Experience',
   heroSubtitle: 'Artificial intelligence guided by 20 years of artisan eye.',
 
   introTitle: "AI Doesn't Replace Experience. It Multiplies It.",

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
+import { BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
     return locale === 'it' ? {
@@ -15,6 +16,15 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     };
 }
 
-export default function BlogLayout({ children }: { children: React.ReactNode }) {
-    return children;
+export default function BlogLayout({ children, params: { locale } }: { children: React.ReactNode; params: { locale: string } }) {
+    const isIt = locale === 'it';
+    return (
+        <>
+            <BreadcrumbSchema items={[
+                { name: 'Home', url: isIt ? '/' : '/en' },
+                { name: 'Blog', url: isIt ? '/blog' : '/en/blog' },
+            ]} />
+            {children}
+        </>
+    );
 }

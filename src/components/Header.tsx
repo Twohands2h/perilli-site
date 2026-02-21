@@ -12,6 +12,7 @@ const navItems = [
   { key: 'about', href: { it: '/chi-sono', en: '/en/about' } },
   { key: 'vfx', href: { it: '/vfx', en: '/en/vfx' } },
   { key: 'motion', href: { it: '/motion-graphics', en: '/en/motion-graphics' } },
+  { key: 'animation3d', href: { it: '/animazione-3d', en: '/en/3d-animation' } },
   { key: 'postproduction', href: { it: '/post-produzione', en: '/en/post-production' } },
   { key: 'aivideo', href: { it: '/ai-video', en: '/en/ai-video' } },
   { key: 'portfolio', href: { it: '/portfolio', en: '/en/portfolio' } },
