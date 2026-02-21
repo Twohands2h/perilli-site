@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight, Calendar, MessageCircle, X, ChevronLeft, Chevron
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 import { VideoObjectSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
 import SafeImage from '@/components/SafeImage';
+import VideoThumbnail from '@/components/VideoThumbnail';
 import { projects, getProject, getRelatedProjects, type ContentBlock } from '@/data/projects';
 import { notFound } from 'next/navigation';
 
@@ -295,6 +296,28 @@ function BlockRenderer({
                 </div>
             );
 
+        case 'video-loop':
+            return (
+                <div className="section-container">
+                    {block.title && (
+                        <p className="text-xs font-semibold uppercase tracking-wider text-text-muted mb-3">{block.title}</p>
+                    )}
+                    <div className="relative aspect-video rounded-lg overflow-hidden bg-black">
+                        <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                            poster={block.poster}
+                            className="w-full h-full object-cover"
+                        >
+                            <source src={block.url} type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+            );
+
         default:
             return null;
     }
@@ -549,13 +572,24 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
                                             href={`${isIt ? '' : '/en'}/portfolio/${rel.slug}`}
                                             className="group block relative aspect-[16/10] rounded-lg overflow-hidden bg-surface"
                                         >
-                                            <SafeImage
-                                                src={rel.thumbnail}
-                                                alt={isIt ? rel.thumbnailAlt.it : rel.thumbnailAlt.en}
-                                                fill
-                                                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                                sizes="(max-width: 768px) 100vw, 33vw"
-                                            />
+                                            {rel.thumbnailVideo ? (
+                                                <VideoThumbnail
+                                                    src={rel.thumbnail}
+                                                    videoSrc={rel.thumbnailVideo}
+                                                    alt={isIt ? rel.thumbnailAlt.it : rel.thumbnailAlt.en}
+                                                    fill
+                                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                                />
+                                            ) : (
+                                                <SafeImage
+                                                    src={rel.thumbnail}
+                                                    alt={isIt ? rel.thumbnailAlt.it : rel.thumbnailAlt.en}
+                                                    fill
+                                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                                />
+                                            )}
                                             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                                             <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
                                                 <span className="text-[10px] font-semibold uppercase tracking-wider text-accent mb-1.5 block">

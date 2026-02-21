@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 import SafeImage from '@/components/SafeImage';
+import VideoThumbnail from '@/components/VideoThumbnail';
 import { projects } from '@/data/projects';
 
 // 4 strategic picks: brand name, 3D product, VFX cinema, AI
@@ -51,13 +52,24 @@ export default function PortfolioSection() {
                                     href={`${isIt ? '' : '/en'}/portfolio/${project.slug}`}
                                     className="group block relative aspect-[16/10] rounded-lg overflow-hidden bg-surface"
                                 >
-                                    <SafeImage
-                                        src={project.heroImage}
-                                        alt={isIt ? project.thumbnailAlt.it : project.thumbnailAlt.en}
-                                        fill
-                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                        sizes="(max-width: 768px) 100vw, 50vw"
-                                    />
+                                    {project.thumbnailVideo ? (
+                                        <VideoThumbnail
+                                            src={project.heroImage}
+                                            videoSrc={project.thumbnailVideo}
+                                            alt={isIt ? project.thumbnailAlt.it : project.thumbnailAlt.en}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                        />
+                                    ) : (
+                                        <SafeImage
+                                            src={project.heroImage}
+                                            alt={isIt ? project.thumbnailAlt.it : project.thumbnailAlt.en}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                        />
+                                    )}
                                     {/* Overlay gradient */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 

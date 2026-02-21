@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import SafeImage from '@/components/SafeImage';
+import VideoThumbnail from '@/components/VideoThumbnail';
 import Link from 'next/link';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 import { projects, categories } from '@/data/projects';
@@ -80,14 +81,25 @@ export default function PortfolioPage() {
                   href={`${isIt ? '' : '/en'}/portfolio/${project.slug}`}
                   className="group block relative aspect-[16/10] rounded-lg overflow-hidden bg-surface"
                 >
-                  {/* Image */}
-                  <SafeImage
-                    src={project.thumbnail}
-                    alt={isIt ? project.thumbnailAlt.it : project.thumbnailAlt.en}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+                  {/* Thumbnail — animated MP4 on hover if available */}
+                  {project.thumbnailVideo ? (
+                    <VideoThumbnail
+                      src={project.thumbnail}
+                      videoSrc={project.thumbnailVideo}
+                      alt={isIt ? project.thumbnailAlt.it : project.thumbnailAlt.en}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <SafeImage
+                      src={project.thumbnail}
+                      alt={isIt ? project.thumbnailAlt.it : project.thumbnailAlt.en}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  )}
 
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent

@@ -6,7 +6,8 @@ export type ContentBlock =
   | { type: 'image'; src: string; alt: { it: string; en: string }; fullWidth?: boolean }
   | { type: 'gallery'; images: { src: string; alt: { it: string; en: string } }[]; columns?: 2 | 3 }
   | { type: 'video'; embedId: string; platform: 'youtube' | 'vimeo'; title?: string }
-  | { type: 'video-mp4'; url: string; poster?: string; title?: string };
+  | { type: 'video-mp4'; url: string; poster?: string; title?: string }
+  | { type: 'video-loop'; url: string; poster?: string; title?: string };
 
 export interface Project {
     slug: string;
@@ -18,6 +19,7 @@ export interface Project {
     year: string;
     role: string;
     thumbnail: string;
+    thumbnailVideo?: string; // MP4 for animated preview on hover
     thumbnailAlt: { it: string; en: string };
     heroImage: string;
     images: { src: string; alt: { it: string; en: string } }[];
