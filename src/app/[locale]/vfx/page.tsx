@@ -94,7 +94,7 @@ const contentIT = {
     { title: 'Non tutto è perduto — film cinema, VFX e post-produzione', link: 'https://www.imdb.com/it/title/tt31173315/' },
   ],
 
-  tools: ['After Effects', 'Nuke', '3ds Max', 'Unreal Engine 5', 'DaVinci Resolve', 'Mocha Pro', 'PFTrack', 'ZBrush'],
+  tools: ['After Effects', 'Nuke', '3ds Max', 'Unreal Engine 5', 'DaVinci Resolve Fusion', 'Mocha Pro', 'ZBrush'],
 
   ctaTitle: 'Pronto a dare vita',
   ctaSubtitle: 'alla tua visione?',
@@ -177,7 +177,7 @@ const contentEN = {
     { title: 'Non tutto è perduto — theatrical film, VFX and post-production', link: 'https://www.imdb.com/it/title/tt31173315/' },
   ],
 
-  tools: ['After Effects', 'Nuke', '3ds Max', 'Unreal Engine 5', 'DaVinci Resolve', 'Mocha Pro', 'PFTrack', 'ZBrush'],
+  tools: ['After Effects', 'Nuke', '3ds Max', 'Unreal Engine 5', 'DaVinci Resolve Fusion', 'Mocha Pro', 'ZBrush'],
 
   ctaTitle: 'Ready to bring your',
   ctaSubtitle: 'vision to life?',

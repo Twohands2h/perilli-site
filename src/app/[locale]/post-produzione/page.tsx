@@ -79,7 +79,7 @@ const contentIT = {
     { title: '72 ore — di Luciano Luminelli — Film' },
   ],
 
-  tools: ['DaVinci Resolve (certificato Blackmagic)', 'Premiere Pro', 'After Effects', 'Media Encoder', 'Frame.io'],
+  tools: ['DaVinci Resolve (certificato Blackmagic)', 'Premiere Pro', 'After Effects'],
 
   ctaTitle: 'Hai una storia',
   ctaSubtitle: 'a cui dare forma?',
@@ -147,7 +147,7 @@ const contentEN = {
     { title: '72 ore — by Luciano Luminelli — Film' },
   ],
 
-  tools: ['DaVinci Resolve (Blackmagic certified)', 'Premiere Pro', 'After Effects', 'Media Encoder', 'Frame.io'],
+  tools: ['DaVinci Resolve (Blackmagic certified)', 'Premiere Pro', 'After Effects'],
 
   ctaTitle: 'Have a story',
   ctaSubtitle: 'that needs shaping?',

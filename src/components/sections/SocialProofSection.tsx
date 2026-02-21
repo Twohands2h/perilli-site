@@ -5,12 +5,14 @@ import AnimateOnScroll from '@/components/AnimateOnScroll';
 
 const clients = [
   'GUCCI',
-  'SAVE THE CHILDREN',
   'HISTORY CHANNEL',
   'RAIPLAY',
-  'GUERCIOTTI',
-  'VETRYA',
+  'FENDI',
   'BABINGTONS',
+  'SAVE THE CHILDREN',
+  'ACEA',
+  'ENEL',
+  'POSTE ITALIANE',
 ];
 
 export default function SocialProofSection() {
