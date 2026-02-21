@@ -1,6 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import HeroSection from '@/components/sections/HeroSection';
 import ServicesSection from '@/components/sections/ServicesSection';
+import PortfolioSection from '@/components/sections/PortfolioSection';
 import PillarsSection from '@/components/sections/PillarsSection';
 import MethodSection from '@/components/sections/MethodSection';
 import SocialProofSection from '@/components/sections/SocialProofSection';
@@ -13,6 +14,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
     <>
       <HeroSection />
       <ServicesSection />
+      <PortfolioSection />
       <PillarsSection />
       <MethodSection />
       <SocialProofSection />
