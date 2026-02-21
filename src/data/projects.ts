@@ -646,3 +646,17 @@ export const categories = [
 export function getProject(slug: string): Project | undefined {
     return projects.find((p) => p.slug === slug);
 }
+
+/**
+ * Get related projects: same category first, then others.
+ * Excludes the current project. Returns up to `count` projects.
+ */
+export function getRelatedProjects(currentSlug: string, count: number = 3): Project[] {
+    const current = getProject(currentSlug);
+    if (!current) return projects.filter(p => p.slug !== currentSlug).slice(0, count);
+
+    const sameCategory = projects.filter(p => p.slug !== currentSlug && p.category === current.category);
+    const otherCategory = projects.filter(p => p.slug !== currentSlug && p.category !== current.category);
+
+    return [...sameCategory, ...otherCategory].slice(0, count);
+}

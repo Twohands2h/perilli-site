@@ -30,12 +30,19 @@ export default function PortfolioPage() {
                 letterSpacing: '-0.025em',
               }}
             >
-              Portfolio
+              {isIt
+                ? 'Portfolio — VFX, Motion Graphics e Post Produzione a Roma'
+                : 'Portfolio — VFX, Motion Graphics and Post Production in Rome'}
             </h1>
-            <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
+            <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-2xl mb-4">
               {isIt
                 ? 'Questa è una selezione dei progetti a cui tengo di più, un mix di sfide tecniche e narrazioni creative. Ogni lavoro è il risultato di una stretta collaborazione con agenzie, registi e fotografi per trasformare una visione in realtà.'
                 : 'This is a selection of the projects I care most about, a mix of technical challenges and creative narratives. Each work is the result of close collaboration with agencies, directors and photographers to transform a vision into reality.'}
+            </p>
+            <p className="text-text-muted text-sm md:text-base leading-relaxed max-w-2xl">
+              {isIt
+                ? 'Dai VFX per il cinema alla motion graphics per campagne pubblicitarie, dall\'animazione 3D di prodotto al color grading in DaVinci Resolve — ogni caso studio racconta il briefing, la sfida tecnica, la soluzione e il risultato finale.'
+                : 'From VFX for cinema to motion graphics for advertising campaigns, from 3D product animation to color grading in DaVinci Resolve — each case study covers the briefing, technical challenge, solution and final result.'}
             </p>
           </AnimateOnScroll>
         </div>

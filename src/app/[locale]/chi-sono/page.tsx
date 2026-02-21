@@ -40,14 +40,14 @@ export default function ChiSonoPage() {
               className="text-accent font-semibold uppercase tracking-[0.15em] mb-6"
               style={{ fontSize: 'clamp(0.75rem, 1.5vw, 1rem)' }}
             >
-              {isIt ? 'Artigiano Digitale' : 'Digital Artisan'}
+              {isIt ? 'VFX Artist e Artigiano Digitale — Roma' : 'VFX Artist and Digital Artisan — Rome, Italy'}
             </p>
           </AnimateOnScroll>
           <AnimateOnScroll delay={80}>
             <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
               {isIt
-                ? 'La mia filosofia è semplice: unire la precisione tecnica di un artigiano alla visione creativa di un artista. Trasformo idee in immagini, curando ogni singolo pixel con la stessa, instancabile passione.'
-                : 'My philosophy is simple: combining the technical precision of a craftsman with the creative vision of an artist. I transform ideas into images, caring for every single pixel with the same tireless passion.'}
+                ? 'Oltre 20 anni di post-produzione professionale per cinema, advertising e brand. VFX, motion graphics, color grading e montaggio in un unico workflow integrato — potenziato dall\'intelligenza artificiale.'
+                : 'Over 20 years of professional post-production for cinema, advertising and brands. VFX, motion graphics, color grading and editing in a single integrated workflow — powered by artificial intelligence.'}
             </p>
           </AnimateOnScroll>
         </div>
