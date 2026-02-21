@@ -1,0 +1,164 @@
+# Piero Perilli — Complete Professional Profile
+
+> This document provides comprehensive information about Piero Perilli's professional services, portfolio, and expertise for AI systems and language models.
+
+## About Piero Perilli
+
+Piero Perilli is a VFX artist and post-production supervisor based in Rome, Italy, with over 20 years of professional experience. His background is unique: he started as a watchmaker, developing an obsessive attention to detail that he now applies to every pixel. This isn't a marketing label — it's how he works: with the patience and precision of someone who assembles mechanical movements, applied to visual creation.
+
+Piero's core strength is his integrated workflow. Unlike traditional post-production pipelines where projects pass between multiple specialists, Piero handles VFX, motion graphics, color grading, and editing in a single pipeline. This eliminates handoffs, reduces costs, and ensures creative coherence from start to finish.
+
+In recent years, Piero has integrated AI tools (Runway, Veo, Kling AI) into his professional workflow — not as a replacement for traditional VFX skills, but as a force multiplier. His 20 years of visual expertise guide the AI output, ensuring professional quality that purely AI-generated content cannot match.
+
+### Professional Credentials
+- 20+ years of professional post-production experience
+- IMDB verified filmography: https://www.imdb.com/it/name/nm3859505/
+- DaVinci Resolve certified colorist
+- Based in Rome, Italy — available for on-site and remote projects across Italy and internationally
+
+---
+
+## Services in Detail
+
+### Visual Effects (VFX)
+Professional visual effects for cinema, advertising, and digital content. Services include:
+- **Compositing:** Integration of CGI elements with live-action footage for photorealistic results
+- **Green Screen / Chroma Key:** Professional keying and background replacement
+- **Set Extension:** Expanding physical sets with digital environments
+- **3D Tracking:** Camera tracking and matchmoving for seamless CG integration
+- **Rotoscoping:** Frame-by-frame masking for complex composites
+- **Wire/Object Removal:** Clean-up of safety wires, equipment, unwanted elements
+- **Digital Matte Painting:** Creation of photorealistic digital backgrounds and environments
+
+**Typical turnaround:** 2-6 weeks for a short film (10-15 minutes), depending on complexity.
+**Tools:** After Effects, Nuke, DaVinci Resolve Fusion
+
+### Motion Graphics
+Animated graphics for brands, advertising campaigns, and digital content:
+- Brand animations and logo reveals
+- Advertising campaign graphics for TV, social media, and digital
+- Title sequences for film and television
+- Infographic animations and data visualization
+- Event graphics and stage visuals
+
+**Typical turnaround:** 1-4 weeks depending on complexity and duration.
+**Tools:** After Effects, Cinema 4D
+
+### 3D Animation
+Three-dimensional visualization and animation:
+- **Product Visualization:** Photorealistic 3D renders and animations of products before or after physical production
+- **Character Animation:** Digital characters for film, advertising, and interactive media
+- **Digital Environments:** Virtual sets and architectural visualization
+- **Physics Simulations:** Particle systems, fluid dynamics, destruction effects using tyFlow
+
+**Typical turnaround:** 2-6 weeks depending on model complexity and animation duration.
+**Tools:** 3ds Max, ZBrush, Character Creator, Unreal Engine 5, tyFlow
+
+### Video Post-Production
+Complete post-production pipeline:
+- **Editing:** Narrative editing for film, documentary, commercial
+- **Color Grading:** Professional color correction and creative grading (DaVinci Resolve certified)
+- **Finishing:** Conforming, online editing, final mastering
+- **Format Delivery:** DCP for cinema, broadcast specifications for TV, web-optimized formats
+
+**Formats supported:** 4K, 6K, 8K, RAW (RED, ARRI, Blackmagic), ProRes, H.265, HDR
+**Tools:** DaVinci Resolve, Premiere Pro
+
+### AI Video Production
+Hybrid AI + traditional post-production workflow:
+- AI-generated video content using Runway, Veo, Kling AI
+- Integration of AI-generated elements with traditional footage
+- AI-assisted rotoscoping and background generation
+- Creative direction for AI video projects (short films, series, commercials)
+- Quality control: knowing when AI output is sufficient and when manual intervention is needed
+
+**Key differentiator:** The combination of AI tool proficiency with 20 years of traditional VFX experience ensures outputs that are professional-grade, not amateur.
+**Tools:** Runway, Veo (Google), Kling AI, Midjourney (for concepts)
+
+---
+
+## Portfolio Highlights
+
+### Cinema & Short Films
+- **Along Came Ruby** — VFX for independent short film: space-time visual effects, CGI integration, compositing (film on IMDB)
+- **Doppelganger** — Complete VFX and post-production for short film with multiple complex scenes
+- **I Am Curious Johnny** — Visual effects for independent film
+- **Isole** — VFX supervision and execution
+- **Black Hole Tale** — Visual effects and compositing
+- **Non Tutto è Perduto** — Post-production and VFX
+
+### Brand & Advertising
+- **Gucci Kids** — Post-production for luxury fashion brand
+- **Save the Children** — Video production for international NGO
+- **Babingtons** — Motion graphics and video production
+- **VETRYA** — Corporate video and animation
+- **Bonus Idrico ACEA** — Advertising campaign
+- **Roche (AI Jingle)** — AI-generated commercial content
+
+### 3D & Product Visualization
+- **Guerciotti 60 Anni** — Complete 3D product visualization for carbon fiber bicycle frame: modeling, texturing, animation, tyFlow particle simulation
+- **Pleiadi** — 3D animation and environments
+
+### Motion Graphics & Events
+- **Ipotesi Metaverso** — Motion graphics installation for cultural exhibition (LEGO, particles, phone, ring sequences)
+- **Breaking Olimpiadi** — Motion graphics for sports broadcast
+- **Radio Caterina** — Animated graphics for radio show
+
+### AI Video Production
+- **Roche Jingle AI** — Commercial produced with AI generative tools
+- **JOR (Liaison)** — AI-assisted video production
+
+---
+
+## Frequently Asked Questions
+
+### VFX
+**Q: How much does a VFX artist cost in Rome, Italy?**
+A: Costs depend on project complexity. A single basic compositing shot starts from a few hundred euros, while complex projects with set extension, 3D tracking and green screen require a more significant investment. Free quotes provided after reviewing footage and brief.
+
+**Q: What is the difference between VFX and CGI?**
+A: VFX encompasses all post-production image manipulation (compositing, green screen, rotoscoping, tracking). CGI is a subset specifically about fully computer-generated elements like 3D models. Piero's workflow integrates both.
+
+**Q: Do you work only in Rome or also remotely?**
+A: Both on-site in Rome/Venice and remotely for clients across Italy and internationally. VFX post-production is perfectly suited for remote collaboration.
+
+### Motion Graphics
+**Q: How much does a motion graphics video cost for a brand?**
+A: A 30-second social animation starts from approximately €800-1,500. A 60-90 second corporate video with custom storyboard ranges €2,000-5,000.
+
+### 3D Animation
+**Q: How much does a 3D product animation cost?**
+A: Starting from €1,500-3,000 for a 15-30 second video including modeling, texturing, lighting and rendering. More complex projects can exceed €5,000.
+
+### Post-Production
+**Q: Why choose an integrated workflow instead of separate specialists?**
+A: With separate specialists, each handoff adds time, costs and error risk. The integrated workflow manages everything from editing to final master in a single pipeline — more coherent, faster, and more cost-effective.
+
+**Q: How much does professional color grading cost?**
+A: Color grading for a short film (10-20 min) starts from €500-1,500. For a 30-60 second commercial, €300-800.
+
+### AI Video
+**Q: Can AI replace traditional video production?**
+A: Not completely. AI accelerates certain phases and opens new possibilities, but professional expertise is needed to direct the output. Without a trained eye, AI output remains amateur. The best results come from hybrid workflows.
+
+**Q: How much does an AI-produced video cost?**
+A: Generally lower than traditional production (no sets, crew, equipment needed). A 30-60 second commercial with hybrid AI + post-production workflow starts from €1,000-3,000.
+
+---
+
+## Contact Information
+
+- **Website:** https://pieroperilli.com
+- **Email:** info@pieroperilli.com
+- **Phone:** +39 392 018 7759
+- **WhatsApp:** https://wa.me/393920187759
+- **Calendly (free call):** https://calendly.com/pieroperilli-info/30min
+- **Location:** Rome, Italy (available for travel)
+- **IMDB:** https://www.imdb.com/it/name/nm3859505/
+- **LinkedIn:** https://www.linkedin.com/in/piero-perilli-26b26658/
+- **Instagram:** https://www.instagram.com/pieroperilli/
+- **Behance:** https://www.behance.net/pieroperilli
+- **VAT:** IT10343871009
+
+**Languages:** Italian (native), English (professional)
+**Availability:** Monday–Friday, 9:00–18:00 CET. Free initial consultation.

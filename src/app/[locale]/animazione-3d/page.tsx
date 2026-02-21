@@ -1,8 +1,9 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
-import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { ServiceSchema, BreadcrumbSchema, FAQSchema, SpeakableSchema } from '@/components/seo/SchemaMarkup';
 import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
+import { serviceFAQs } from '@/data/faqs';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
@@ -173,7 +174,9 @@ export default function Animazione3DPage({ params: { locale } }: { params: { loc
         { name: 'Home', url: isIt ? '/' : '/en' },
         { name: isIt ? 'Animazione 3D' : '3D Animation', url: isIt ? '/animazione-3d' : '/en/3d-animation' },
       ]} />
-      <ServicePageTemplate {...content} />
+      <FAQSchema faqs={serviceFAQs['animazione-3d'][isIt ? 'it' : 'en']} />
+      <SpeakableSchema url={isIt ? '/animazione-3d' : '/en/3d-animation'} />
+      <ServicePageTemplate {...content} faqs={serviceFAQs['animazione-3d'][isIt ? 'it' : 'en']} faqTitle={isIt ? 'Domande frequenti sull\'animazione 3D' : 'Frequently asked questions about 3D animation'} />
     </>
   );
 }

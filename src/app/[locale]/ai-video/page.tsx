@@ -1,8 +1,9 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
-import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { ServiceSchema, BreadcrumbSchema, FAQSchema, SpeakableSchema } from '@/components/seo/SchemaMarkup';
 import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
+import { serviceFAQs } from '@/data/faqs';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
@@ -183,7 +184,9 @@ export default function AIVideoPage({ params: { locale } }: { params: { locale: 
         { name: 'Home', url: isIt ? '/' : '/en' },
         { name: 'AI Video', url: isIt ? '/ai-video' : '/en/ai-video' },
       ]} />
-      <ServicePageTemplate {...content} />
+      <FAQSchema faqs={serviceFAQs['ai-video'][isIt ? 'it' : 'en']} />
+      <SpeakableSchema url={isIt ? '/ai-video' : '/en/ai-video'} />
+      <ServicePageTemplate {...content} faqs={serviceFAQs['ai-video'][isIt ? 'it' : 'en']} faqTitle={isIt ? 'Domande frequenti sull\'AI video production' : 'Frequently asked questions about AI video production'} />
     </>
   );
 }

@@ -1,7 +1,8 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
-import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { ServiceSchema, BreadcrumbSchema, FAQSchema, SpeakableSchema } from '@/components/seo/SchemaMarkup';
 import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
+import { serviceFAQs } from '@/data/faqs';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -192,6 +193,7 @@ export default function VFXPage({ params: { locale } }: { params: { locale: stri
   unstable_setRequestLocale(locale);
   const isIt = locale === 'it';
   const content = isIt ? contentIT : contentEN;
+  const faqs = serviceFAQs.vfx[isIt ? 'it' : 'en'];
   return (
     <>
       <ServiceSchema
@@ -205,7 +207,9 @@ export default function VFXPage({ params: { locale } }: { params: { locale: stri
         { name: 'Home', url: isIt ? '/' : '/en' },
         { name: 'VFX', url: isIt ? '/vfx' : '/en/vfx' },
       ]} />
-      <ServicePageTemplate {...content} />
+      <FAQSchema faqs={faqs} />
+      <SpeakableSchema url={isIt ? '/vfx' : '/en/vfx'} />
+      <ServicePageTemplate {...content} faqs={faqs} faqTitle={isIt ? 'Domande frequenti sui VFX' : 'Frequently asked questions about VFX'} />
     </>
   );
 }

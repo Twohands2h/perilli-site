@@ -1,8 +1,9 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
-import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { ServiceSchema, BreadcrumbSchema, FAQSchema, SpeakableSchema } from '@/components/seo/SchemaMarkup';
 import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
+import { serviceFAQs } from '@/data/faqs';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
@@ -173,7 +174,9 @@ export default function PostProduzionePage({ params: { locale } }: { params: { l
         { name: 'Home', url: isIt ? '/' : '/en' },
         { name: isIt ? 'Post Produzione' : 'Post Production', url: isIt ? '/post-produzione' : '/en/post-production' },
       ]} />
-      <ServicePageTemplate {...content} />
+      <FAQSchema faqs={serviceFAQs['post-produzione'][isIt ? 'it' : 'en']} />
+      <SpeakableSchema url={isIt ? '/post-produzione' : '/en/post-production'} />
+      <ServicePageTemplate {...content} faqs={serviceFAQs['post-produzione'][isIt ? 'it' : 'en']} faqTitle={isIt ? 'Domande frequenti sulla post-produzione' : 'Frequently asked questions about post-production'} />
     </>
   );
 }

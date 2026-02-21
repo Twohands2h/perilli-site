@@ -75,6 +75,9 @@ export async function generateMetadata({
         'max-snippet': -1,
       },
     },
+    other: {
+      'llms.txt': 'https://pieroperilli.com/llms.txt',
+    },
   };
 }
 

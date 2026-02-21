@@ -7,6 +7,13 @@ import { useLocale } from 'next-intl';
 import { ArrowRight, Calendar, MessageCircle, ChevronDown } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 
+import FAQAccordion from '@/components/FAQAccordion';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 interface ServiceDetail {
   name: string;
   tag: string;
@@ -44,6 +51,8 @@ interface ServicePageProps {
   ctaTitle: string;
   ctaSubtitle: string;
   ctaText: string;
+  faqs?: FAQItem[];
+  faqTitle?: string;
 }
 
 function ServiceAccordion({ services }: { services: ServiceDetail[] }) {
@@ -111,7 +120,7 @@ function ServiceAccordion({ services }: { services: ServiceDetail[] }) {
 export default function ServicePageTemplate({
   sectionLabel, h1, heroSubtitle, introTitle, introText, introImage, introImageAlt,
   servicesTitle, services: serviceDetails, approachTitle, pillars,
-  recentWorkTitle, recentWork, tools, ctaTitle, ctaSubtitle, ctaText,
+  recentWorkTitle, recentWork, tools, ctaTitle, ctaSubtitle, ctaText, faqs, faqTitle,
 }: ServicePageProps) {
   const locale = useLocale();
 
@@ -272,6 +281,16 @@ export default function ServicePageTemplate({
             </AnimateOnScroll>
           </div>
         </section>
+      )}
+
+      {/* === FAQ (AI/LLM optimized) === */}
+      {faqs && faqs.length > 0 && (
+        <div className="border-t border-border">
+          <FAQAccordion
+            faqs={faqs}
+            title={faqTitle || (locale === 'it' ? 'Domande frequenti' : 'Frequently asked questions')}
+          />
+        </div>
       )}
 
       {/* === CTA === */}

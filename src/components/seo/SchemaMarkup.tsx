@@ -239,7 +239,53 @@ export function ArticleSchema({
   );
 }
 
-// ── BREADCRUMB ──────────────────────────────────────────────
+// ── FAQ PAGE (for AI/LLM discoverability) ──────────────────
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export function FAQSchema({ faqs }: { faqs: FAQItem[] }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// ── SPEAKABLE (voice assistants + AI answer engines) ────────
+export function SpeakableSchema({ url, cssSelectors = ['h1', '.speakable'] }: { url: string; cssSelectors?: string[] }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: cssSelectors,
+    },
+    url: `https://pieroperilli.com${url}`,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
 interface BreadcrumbItem {
   name: string;
   url: string;

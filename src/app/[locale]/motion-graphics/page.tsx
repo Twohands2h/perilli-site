@@ -1,8 +1,9 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
-import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { ServiceSchema, BreadcrumbSchema, FAQSchema, SpeakableSchema } from '@/components/seo/SchemaMarkup';
 import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
+import { serviceFAQs } from '@/data/faqs';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
@@ -173,7 +174,9 @@ export default function MotionGraphicsPage({ params: { locale } }: { params: { l
         { name: 'Home', url: isIt ? '/' : '/en' },
         { name: 'Motion Graphics', url: isIt ? '/motion-graphics' : '/en/motion-graphics' },
       ]} />
-      <ServicePageTemplate {...content} />
+      <FAQSchema faqs={serviceFAQs['motion-graphics'][isIt ? 'it' : 'en']} />
+      <SpeakableSchema url={isIt ? '/motion-graphics' : '/en/motion-graphics'} />
+      <ServicePageTemplate {...content} faqs={serviceFAQs['motion-graphics'][isIt ? 'it' : 'en']} faqTitle={isIt ? 'Domande frequenti sulla motion graphics' : 'Frequently asked questions about motion graphics'} />
     </>
   );
 }
