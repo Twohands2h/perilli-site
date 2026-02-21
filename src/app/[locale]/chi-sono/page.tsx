@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 import Link from 'next/link';
 import { ArrowRight, Calendar, MessageCircle } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
@@ -61,7 +61,7 @@ export default function ChiSonoPage() {
               {/* Photo */}
               <div>
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface">
-                  <Image
+                  <SafeImage
                     src="/images/piero-perilli-vfx-artist-artigiano-digitale-roma.jpg"
                     alt={isIt ? 'Piero Perilli — VFX Artist e Artigiano Digitale, Roma' : 'Piero Perilli — VFX Artist and Digital Artisan, Rome Italy'}
                     fill

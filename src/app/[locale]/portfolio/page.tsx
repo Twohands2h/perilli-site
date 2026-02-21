@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useLocale } from 'next-intl';
-import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 import Link from 'next/link';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 import { projects, categories } from '@/data/projects';
@@ -74,7 +74,7 @@ export default function PortfolioPage() {
                   className="group block relative aspect-[16/10] rounded-lg overflow-hidden bg-surface"
                 >
                   {/* Image */}
-                  <Image
+                  <SafeImage
                     src={project.thumbnail}
                     alt={isIt ? project.thumbnailAlt.it : project.thumbnailAlt.en}
                     fill

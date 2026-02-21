@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Calendar } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
@@ -91,7 +91,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
                 <div className="section-container">
                     <AnimateOnScroll>
                         <div className="relative aspect-[21/9] rounded-lg overflow-hidden bg-surface">
-                            <Image
+                            <SafeImage
                                 src={post.thumbnail}
                                 alt={isIt ? post.thumbnailAlt.it : post.thumbnailAlt.en}
                                 fill
@@ -131,7 +131,7 @@ export default function BlogPostPage({ params }: { params: { locale: string; slu
                                         className="group block"
                                     >
                                         <div className="relative aspect-[16/9] rounded-lg overflow-hidden bg-surface mb-4">
-                                            <Image
+                                            <SafeImage
                                                 src={rel.thumbnail}
                                                 alt={isIt ? rel.thumbnailAlt.it : rel.thumbnailAlt.en}
                                                 fill

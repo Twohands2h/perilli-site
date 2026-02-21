@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 import Link from 'next/link';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 import { getPublishedPosts, getPostSlug } from '@/data/posts';
@@ -47,7 +47,7 @@ export default function BlogPage() {
                   className="group block"
                 >
                   <div className="relative aspect-[16/9] rounded-lg overflow-hidden bg-surface mb-5">
-                    <Image
+                    <SafeImage
                       src={post.thumbnail}
                       alt={isIt ? post.thumbnailAlt.it : post.thumbnailAlt.en}
                       fill
