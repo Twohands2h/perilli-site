@@ -60,7 +60,7 @@ export default function ChiSonoPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-start">
               {/* Photo */}
               <div>
-                <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface">
+                <div className="relative aspect-square rounded-lg overflow-hidden bg-surface">
                   <SafeImage
                     src="/images/piero-perilli-vfx-artist-artigiano-digitale-roma.jpg"
                     alt={isIt ? 'Piero Perilli — VFX Artist e Artigiano Digitale, Roma' : 'Piero Perilli — VFX Artist and Digital Artisan, Rome Italy'}

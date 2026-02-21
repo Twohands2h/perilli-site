@@ -27,6 +27,8 @@ const contentIT = {
   introText: `<p>Tutti possono generare un video con l'AI. Pochi sanno quando il risultato è sufficiente, quando serve intervento manuale e come combinare i due. Questa è la differenza tra un video "generato dall'AI" e un video professionale che usa l'AI come strumento.</p>
 <p>Integro Runway, Veo, Kling e gli strumenti di generazione video AI nel mio <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow VFX</a> e di <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> — lo stesso workflow con cui lavoro su film e spot da vent'anni. L'AI produce la materia prima, l'esperienza la trasforma in un risultato che funziona davvero.</p>
 <p>Il mio vantaggio è il contesto. Venti anni di post-produzione significano sapere come deve apparire un'immagine finale, quali artefatti sono accettabili e quali no, come integrare output AI con riprese reali, come mantenere coerenza visiva tra shot generate. Questo know-how non si improvvisa.</p>`,
+  introImage: '/images/services/ai-video-production-workflow-professionale-roma.jpg',
+  introImageAlt: 'AI video production — workflow professionale con intelligenza artificiale, Roma',
 
   servicesTitle: 'Come uso l\'AI nella produzione video',
   services: [
@@ -92,6 +94,8 @@ const contentEN = {
   introText: `<p>Anyone can generate a video with AI. Few know when the result is good enough, when manual work is needed and how to combine both. This is the difference between an "AI-generated video" and a professional video that uses AI as a tool.</p>
 <p>I integrate Runway, Veo, Kling and AI video generation tools into my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> and <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> workflow — the same workflow I've used on films and commercials for twenty years. AI produces the raw material, experience transforms it into a result that actually works.</p>
 <p>My advantage is context. Twenty years of post-production mean knowing how a final image should look, which artifacts are acceptable and which aren't, how to integrate AI output with real footage, how to maintain visual coherence between generated shots. This know-how can't be improvised.</p>`,
+  introImage: '/images/services/ai-video-production-workflow-professionale-roma.jpg',
+  introImageAlt: 'AI video production — professional workflow with artificial intelligence, Rome Italy',
 
   servicesTitle: 'How I use AI in video production',
   services: [

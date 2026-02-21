@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CookieConsent, { ConsentProvider } from '@/components/CookieConsent';
 import { PersonSchema, LocalBusinessSchema } from '@/components/seo/SchemaMarkup';
 import { getPageAlternates, getPageOgUrl } from '@/lib/seo';
 import '../../app/globals.css';
@@ -94,11 +95,14 @@ export default async function LocaleLayout({
         <PersonSchema />
         <LocalBusinessSchema />
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main className="flex-1 pt-16 md:pt-20">
-            {children}
-          </main>
-          <Footer />
+          <ConsentProvider>
+            <Header />
+            <main className="flex-1 pt-16 md:pt-20">
+              {children}
+            </main>
+            <Footer />
+            <CookieConsent />
+          </ConsentProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,11 +1,16 @@
-// Root layout is intentionally minimal.
-// html/body tags are in [locale]/layout.tsx
-// This file just passes children through.
+// Root layout wraps non-locale pages (404, etc.)
+// The [locale]/layout.tsx handles locale-specific pages with full metadata.
+
+import './globals.css';
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <html lang="it">
+      <body>{children}</body>
+    </html>
+  );
 }

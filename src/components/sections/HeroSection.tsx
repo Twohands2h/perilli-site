@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Play, ArrowRight, X } from 'lucide-react';
 import Link from 'next/link';
+import { useConsent } from '@/components/CookieConsent';
 
 const SHOWREELS = [
   { id: 'motion', labelIt: 'Motion Graphics', labelEn: 'Motion Graphics', youtubeId: 'xIGeQyP2g6I', mp4Url: '' },
@@ -17,6 +18,7 @@ export default function HeroSection() {
   const locale = useLocale();
   const [showModal, setShowModal] = useState(false);
   const [activeReel, setActiveReel] = useState(SHOWREELS[0]);
+  const { consented } = useConsent();
 
   const openReel = (reel: (typeof SHOWREELS)[number]) => { setActiveReel(reel); setShowModal(true); };
 
@@ -24,7 +26,11 @@ export default function HeroSection() {
     <>
       <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 scale-[1.2]">
-          <iframe src={`https://www.youtube.com/embed/${BG_YOUTUBE_ID}?autoplay=1&mute=1&loop=1&playlist=${BG_YOUTUBE_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`} className="absolute inset-0 w-full h-full pointer-events-none" style={{ border: 0 }} allow="autoplay; encrypted-media" tabIndex={-1} aria-hidden="true" />
+          {consented ? (
+            <iframe src={`https://www.youtube.com/embed/${BG_YOUTUBE_ID}?autoplay=1&mute=1&loop=1&playlist=${BG_YOUTUBE_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`} className="absolute inset-0 w-full h-full pointer-events-none" style={{ border: 0 }} allow="autoplay; encrypted-media" tabIndex={-1} aria-hidden="true" />
+          ) : (
+            <div className="absolute inset-0 bg-background" />
+          )}
         </div>
         <div className="absolute inset-0 bg-background/65" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background" />
