@@ -508,25 +508,27 @@ export default function CaseStudyPage({ params }: { params: { locale: string; sl
                 </div>
             </section>
 
-            {/* Prev/Next */}
-            <section className="py-8 md:py-12 lg:py-16 border-t border-border">
-                <div className="section-container">
+            {/* Prev/Next — sticky bottom */}
+            <div className="sticky bottom-0 z-40 bg-background/90 backdrop-blur-md border-t border-border/30">
+                <div className="section-container py-3">
                     <div className="flex items-center justify-between">
                         {prev ? (
-                            <Link href={`${isIt ? '' : '/en'}/portfolio/${prev.slug}`} className="group flex items-center gap-3 text-sm text-text-muted hover:text-text-primary transition-colors">
-                                <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
-                                <span>{isIt ? prev.titleIt : prev.titleEn}</span>
+                            <Link href={`${isIt ? '' : '/en'}/portfolio/${prev.slug}`} className="group flex items-center gap-2 text-xs text-text-muted hover:text-accent transition-colors">
+                                <ArrowLeft size={14} className="transition-transform group-hover:-translate-x-1" />
+                                <span className="hidden sm:inline truncate max-w-[200px]">{isIt ? prev.titleIt : prev.titleEn}</span>
+                                <span className="sm:hidden">{isIt ? 'Prec.' : 'Prev'}</span>
                             </Link>
                         ) : <div />}
                         {next ? (
-                            <Link href={`${isIt ? '' : '/en'}/portfolio/${next.slug}`} className="group flex items-center gap-3 text-sm text-text-muted hover:text-text-primary transition-colors">
-                                <span>{isIt ? next.titleIt : next.titleEn}</span>
-                                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                            <Link href={`${isIt ? '' : '/en'}/portfolio/${next.slug}`} className="group flex items-center gap-2 text-xs text-text-muted hover:text-accent transition-colors">
+                                <span className="hidden sm:inline truncate max-w-[200px] text-right">{isIt ? next.titleIt : next.titleEn}</span>
+                                <span className="sm:hidden">{isIt ? 'Succ.' : 'Next'}</span>
+                                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                             </Link>
                         ) : <div />}
                     </div>
                 </div>
-            </section>
+            </div>
 
             {/* Related Projects */}
             {(() => {

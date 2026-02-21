@@ -6,6 +6,7 @@ import { locales, type Locale } from '@/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieConsent, { ConsentProvider } from '@/components/CookieConsent';
+import ScrollToTop from '@/components/ScrollToTop';
 import { PersonSchema, LocalBusinessSchema } from '@/components/seo/SchemaMarkup';
 import { getPageAlternates, getPageOgUrl } from '@/lib/seo';
 import '../../app/globals.css';
@@ -101,6 +102,7 @@ export default async function LocaleLayout({
               {children}
             </main>
             <Footer />
+            <ScrollToTop />
             <CookieConsent />
           </ConsentProvider>
         </NextIntlClientProvider>
