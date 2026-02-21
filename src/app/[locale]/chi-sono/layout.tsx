@@ -10,7 +10,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
         openGraph: getPageOpenGraph('/chi-sono', locale),
     } : {
         title: 'About Piero Perilli | Digital Artisan & VFX Artist Rome',
-        description: 'From watchmaker to VFX artist: 20+ years of professional post-production in Rome. Visual effects, color grading and motion graphics for film and advertising.',
+        description: 'From watchmaker to VFX artist: 20+ years of professional post-production in Rome. Visual effects, color grading and motion graphics for film and ads.',
         alternates: getPageAlternates('/chi-sono', locale),
         openGraph: getPageOpenGraph('/chi-sono', locale),
     };

@@ -41,11 +41,26 @@ export function getPageOgUrl(itPath: string, locale: string): string {
 }
 
 /**
- * Get a partial openGraph object with the correct per-page URL.
- * Merge this into the page's openGraph to override the layout's url.
+ * Get a complete openGraph object for any page.
+ * Includes url, image, type, locale — so subpages don't miss OG tags.
  */
 export function getPageOpenGraph(itPath: string, locale: string) {
+  const isIt = locale === 'it';
   return {
     url: getPageOgUrl(itPath, locale),
+    type: 'website' as const,
+    locale: isIt ? 'it_IT' : 'en_US',
+    alternateLocale: isIt ? 'en_US' : 'it_IT',
+    siteName: 'Piero Perilli — Artigiano Digitale',
+    images: [
+      {
+        url: `${BASE_URL}/images/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: isIt
+          ? 'Piero Perilli — VFX Artist e Artigiano Digitale, Roma'
+          : 'Piero Perilli — VFX Artist and Digital Craftsman, Rome',
+      },
+    ],
   };
 }

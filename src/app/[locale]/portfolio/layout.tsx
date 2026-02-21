@@ -10,7 +10,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
         openGraph: getPageOpenGraph('/portfolio', locale),
     } : {
         title: 'VFX & Post Production Portfolio | Piero Perilli',
-        description: 'Selected works: VFX for cinema, motion graphics for brands, 3D animation, color grading and post-production. Case studies with creative process and results.',
+        description: 'Selected works: VFX for cinema, motion graphics for brands, 3D animation, color grading and post-production. Case studies with process and results.',
         alternates: getPageAlternates('/portfolio', locale),
         openGraph: getPageOpenGraph('/portfolio', locale),
     };

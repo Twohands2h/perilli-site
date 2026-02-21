@@ -100,8 +100,9 @@ export function toEnPath(pathname: string): string {
  */
 export function getAltLocaleHref(pathname: string, currentLocale: string): string {
   if (currentLocale === 'it') {
-    // IT → EN
-    return toEnPath(pathname);
+    // IT → EN: strip /it prefix if present (Next.js internal routing)
+    const cleanPath = pathname.replace(/^\/it(\/|$)/, '/$1').replace(/^\/\//, '/') || '/';
+    return toEnPath(cleanPath);
   } else {
     // EN → IT: strip /en, convert EN slugs to IT slugs
     return toItPath(pathname);
