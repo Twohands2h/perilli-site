@@ -1,5 +1,6 @@
-// Root layout wraps non-locale pages (404, etc.)
-// The [locale]/layout.tsx handles locale-specific pages with full metadata.
+// Root layout — pass-through for next-intl.
+// html/body tags are in [locale]/layout.tsx.
+// This is the recommended pattern for next-intl with App Router.
 
 import './globals.css';
 
@@ -8,9 +9,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="it">
-      <body>{children}</body>
-    </html>
-  );
+  return children;
 }

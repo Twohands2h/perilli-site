@@ -80,6 +80,12 @@ const contentIT = {
 
   tools: ['Runway Gen-3', 'Veo 3.1', 'Kling AI', 'Midjourney', 'ComfyUI', 'After Effects', 'DaVinci Resolve', 'Unreal Engine 5'],
 
+  recentWorkTitle: 'Progetti AI Video',
+  recentWork: [
+    { title: 'Roche — Jingle natalizio AI-generated', link: '/portfolio/roche-jingle-ai' },
+    { title: 'Guerciotti 60 Anni — Animazione 3D + AI post-processing', link: '/portfolio/guerciotti-60-anni' },
+  ],
+
   ctaTitle: 'Vuoi esplorare l\'AI video',
   ctaSubtitle: 'per il tuo progetto?',
   ctaText: 'Raccontami cosa hai in mente. Ti dico subito se l\'AI è lo strumento giusto e cosa possiamo ottenere realisticamente — senza promesse vuote, senza hype.',
@@ -146,6 +152,12 @@ const contentEN = {
   ],
 
   tools: ['Runway Gen-3', 'Veo 3.1', 'Kling AI', 'Midjourney', 'ComfyUI', 'After Effects', 'DaVinci Resolve', 'Unreal Engine 5'],
+
+  recentWorkTitle: 'AI Video Projects',
+  recentWork: [
+    { title: 'Roche — AI-generated Christmas jingle', link: '/en/portfolio/roche-jingle-ai' },
+    { title: 'Guerciotti 60 Years — 3D Animation + AI post-processing', link: '/en/portfolio/guerciotti-60-anni' },
+  ],
 
   ctaTitle: 'Want to explore AI video',
   ctaSubtitle: 'for your project?',
