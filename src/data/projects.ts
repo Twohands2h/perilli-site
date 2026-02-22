@@ -2,12 +2,12 @@ export type ProjectCategory = 'vfx' | 'motion' | 'animation' | 'post' | 'ai';
 
 // Content blocks for rich project pages (Behance-style)
 export type ContentBlock =
-    | { type: 'text'; textIt: string; textEn: string }
-    | { type: 'image'; src: string; alt: { it: string; en: string }; fullWidth?: boolean }
-    | { type: 'gallery'; images: { src: string; alt: { it: string; en: string } }[]; columns?: 2 | 3 }
-    | { type: 'video'; embedId: string; platform: 'youtube' | 'vimeo'; title?: string }
-    | { type: 'video-mp4'; url: string; poster?: string; title?: string }
-    | { type: 'video-loop'; url: string; poster?: string; title?: string };
+  | { type: 'text'; textIt: string; textEn: string }
+  | { type: 'image'; src: string; alt: { it: string; en: string }; fullWidth?: boolean }
+  | { type: 'gallery'; images: { src: string; alt: { it: string; en: string } }[]; columns?: 2 | 3 | 4 }
+  | { type: 'video'; embedId: string; platform: 'youtube' | 'vimeo'; title?: string }
+  | { type: 'video-mp4'; url: string; poster?: string; title?: string }
+  | { type: 'video-loop'; url: string; poster?: string; title?: string };
 
 export interface Project {
     slug: string;
@@ -84,7 +84,6 @@ export const projects: Project[] = [
         thumbnail: '/images/portfolio/guerciotti-sixty-telaio-carbonio-hero.webp',
         thumbnailAlt: { it: `Animazione 3D telaio carbonio Guerciotti Sixty — video prodotto`, en: `3D animation Guerciotti Sixty carbon frame — product video` },
         heroImage: '/images/portfolio/guerciotti-sixty-telaio-carbonio-hero.webp',
-        heroAlt: { it: 'Animazione 3D telaio carbonio Guerciotti Sixty — video prodotto lancio', en: '3D animation Guerciotti Sixty carbon frame — product launch video' },
         images: [
             { src: '/images/portfolio/guerciotti-sixty-saldatura-tubo-carbonio-simulazione.webp', alt: { it: 'Simulazione saldatura tubo carbonio Guerciotti Sixty', en: 'Carbon tube welding simulation Guerciotti Sixty' } },
             { src: '/images/portfolio/guerciotti-sixty-telaio-completo-render-3d.webp', alt: { it: 'Render 3D telaio completo Guerciotti Sixty', en: 'Complete frame 3D render Guerciotti Sixty' } },
@@ -102,22 +101,18 @@ export const projects: Project[] = [
         contentBlocks: [
             { type: 'video', embedId: '1018292404', platform: 'vimeo', title: 'Guerciotti 60 Anni \u2014 Video Animazione 3D Prodotto' },
             { type: 'image', src: '/images/portfolio/guerciotti-sixty-saldatura-tubo-carbonio-simulazione.webp', alt: { it: 'Simulazione saldatura tubo carbonio Guerciotti Sixty \u2014 Unreal Engine 5.6', en: 'Carbon tube welding simulation Guerciotti Sixty \u2014 Unreal Engine 5.6' }, fullWidth: true },
-            {
-                type: 'gallery', images: [
-                    { src: '/images/portfolio/guerciotti-sixty-dettaglio-sterzo-render-3d.webp', alt: { it: 'Render 3D serie sterzo Guerciotti Sixty \u2014 dettaglio componenti', en: '3D render Guerciotti Sixty headset \u2014 component detail' } },
-                    { src: '/images/portfolio/guerciotti-sixty-giunzione-telaio-carbonio-dettaglio.webp', alt: { it: 'Dettaglio giunzione telaio carbonio Guerciotti Sixty', en: 'Carbon frame junction detail Guerciotti Sixty' } },
-                    { src: '/images/portfolio/guerciotti-sixty-forcellino-posteriore-render-3d.webp', alt: { it: 'Render 3D forcellino posteriore Guerciotti Sixty', en: '3D render Guerciotti Sixty rear dropout' } },
-                ], columns: 3
-            },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/guerciotti-sixty-dettaglio-sterzo-render-3d.webp', alt: { it: 'Render 3D serie sterzo Guerciotti Sixty \u2014 dettaglio componenti', en: '3D render Guerciotti Sixty headset \u2014 component detail' } },
+                { src: '/images/portfolio/guerciotti-sixty-giunzione-telaio-carbonio-dettaglio.webp', alt: { it: 'Dettaglio giunzione telaio carbonio Guerciotti Sixty', en: 'Carbon frame junction detail Guerciotti Sixty' } },
+                { src: '/images/portfolio/guerciotti-sixty-forcellino-posteriore-render-3d.webp', alt: { it: 'Render 3D forcellino posteriore Guerciotti Sixty', en: '3D render Guerciotti Sixty rear dropout' } },
+            ], columns: 3 },
             { type: 'text', textIt: 'Dal modello CAD al prodotto finito: remesh della geometria, UV mapping, animazione procedurale in tyFlow e rendering real-time in Unreal Engine 5.6. Ogni fase della costruzione del telaio \u00E8 stata animata per raccontare il valore di ogni singolo passaggio produttivo.', textEn: 'From CAD model to finished product: geometry remesh, UV mapping, procedural animation in tyFlow and real-time rendering in Unreal Engine 5.6. Every phase of the frame construction was animated to convey the value of each production step.' },
             { type: 'image', src: '/images/portfolio/guerciotti-sixty-fibra-carbonio-tyflow-simulazione.webp', alt: { it: 'Simulazione fibra carbonio tyFlow \u2014 processo costruttivo telaio Guerciotti Sixty', en: 'Carbon fiber tyFlow simulation \u2014 Guerciotti Sixty frame construction process' }, fullWidth: true },
-            {
-                type: 'gallery', images: [
-                    { src: '/images/portfolio/guerciotti-sixty-telaio-completo-render-3d.webp', alt: { it: 'Render 3D telaio completo Guerciotti Sixty \u2014 product visualization', en: 'Complete frame 3D render Guerciotti Sixty \u2014 product visualization' } },
-                    { src: '/images/portfolio/guerciotti-sixty-foderi-posteriori-dettaglio.webp', alt: { it: 'Render 3D foderi posteriori Guerciotti Sixty \u2014 dettaglio telaio', en: '3D render Guerciotti Sixty rear stays \u2014 frame detail' } },
-                    { src: '/images/portfolio/guerciotti-sixty-spline-fibre-saldatura-tyflow.webp', alt: { it: 'Simulazione spline e fibre tyFlow \u2014 saldatura telaio Guerciotti Sixty', en: 'tyFlow spline and fiber simulation \u2014 Guerciotti Sixty frame welding' } },
-                ], columns: 3
-            },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/guerciotti-sixty-telaio-completo-render-3d.webp', alt: { it: 'Render 3D telaio completo Guerciotti Sixty \u2014 product visualization', en: 'Complete frame 3D render Guerciotti Sixty \u2014 product visualization' } },
+                { src: '/images/portfolio/guerciotti-sixty-foderi-posteriori-dettaglio.webp', alt: { it: 'Render 3D foderi posteriori Guerciotti Sixty \u2014 dettaglio telaio', en: '3D render Guerciotti Sixty rear stays \u2014 frame detail' } },
+                { src: '/images/portfolio/guerciotti-sixty-spline-fibre-saldatura-tyflow.webp', alt: { it: 'Simulazione spline e fibre tyFlow \u2014 saldatura telaio Guerciotti Sixty', en: 'tyFlow spline and fiber simulation \u2014 Guerciotti Sixty frame welding' } },
+            ], columns: 3 },
             { type: 'text', textIt: 'Software: 3ds Max (remesh, UV mapping, animazione), tyFlow (simulazioni procedurali \u2014 spline, fibre, particelle), Unreal Engine 5.6 (rendering real-time, illuminazione, simulazione saldatura), DaVinci Resolve (color grading e finishing).\n\nEditing e sound design: Nicolas Vanegas Sanchez.', textEn: 'Software: 3ds Max (remesh, UV mapping, animation), tyFlow (procedural simulations \u2014 splines, fibers, particles), Unreal Engine 5.6 (real-time rendering, lighting, welding simulation), DaVinci Resolve (color grading and finishing).\n\nEditing and sound design: Nicolas Vanegas Sanchez.' },
             { type: 'image', src: '/images/portfolio/guerciotti-sixty-avantreno-integrato-render-3d.webp', alt: { it: 'Render 3D avantreno integrato Guerciotti Sixty \u2014 illuminazione cinematografica', en: '3D render integrated front end Guerciotti Sixty \u2014 cinematic lighting' }, fullWidth: true },
         ],
@@ -128,25 +123,45 @@ export const projects: Project[] = [
         titleEn: 'Ipotesi Metaverso',
         category: 'motion',
         categoryLabel: { it: `Motion Graphics`, en: `Motion Graphics` },
-        client: 'Mostra d&apos;arte, Roma',
-        year: '2024',
-        role: 'Motion Designer / VFX',
-        thumbnail: '/images/portfolio/motion-graphics-mostra-ipotesi-metaverso-thumb.webp',
-        thumbnailAlt: { it: `Motion graphics per la mostra Ipotesi Metaverso`, en: `Motion graphics for the Ipotesi Metaverso exhibition` },
-        heroImage: '/images/portfolio/animazione-particellare-mostra-arte-roma.webp',
+        client: 'Palazzo Cipolla, Roma',
+        year: '2023',
+        role: 'Motion Designer',
+        thumbnail: '/images/portfolio/ipotesi-metaverso-poster-mostra-palazzo-cipolla.webp',
+        thumbnailAlt: { it: `Motion graphics e video installazioni per la mostra Ipotesi Metaverso`, en: `Motion graphics and video installations for Ipotesi Metaverso exhibition` },
+        heroImage: '/images/portfolio/ipotesi-metaverso-iride-particellare-stardust.webp',
+        heroAlt: { it: 'Animazione particellare iride \u2014 video installazione Ipotesi Metaverso Palazzo Cipolla Roma', en: 'Particle iris animation \u2014 video installation Ipotesi Metaverso Palazzo Cipolla Rome' },
         images: [
-            { src: '/images/portfolio/ambiente-particellare-immersivo-ipotesi-metaverso.webp', alt: { it: 'Ambiente particellare immersivo', en: 'Immersive particle environment' } },
-            { src: '/images/portfolio/motion-graphics-cerchio-luminoso-ipotesi-metaverso.webp', alt: { it: 'Cerchio luminoso Ipotesi Metaverso', en: 'Light circle Ipotesi Metaverso' } },
+            { src: '/images/portfolio/ipotesi-metaverso-vortice-particellare-pink.webp', alt: { it: 'Vortice particellare \u2014 animazione logo Ipotesi Metaverso', en: 'Particle vortex \u2014 Ipotesi Metaverso logo animation' } },
+            { src: '/images/portfolio/ipotesi-metaverso-portale-particellare-ring.webp', alt: { it: 'Portale particellare \u2014 motion graphics mostra arte Roma', en: 'Particle portal \u2014 motion graphics art exhibition Rome' } },
+            { src: '/images/portfolio/ipotesi-metaverso-onde-luminose-motion.webp', alt: { it: 'Onde luminose \u2014 animazione particelle After Effects Stardust', en: 'Light waves \u2014 particle animation After Effects Stardust' } },
         ],
-        tools: ['After Effects', '3ds Max', 'DaVinci Resolve'],
-        briefingIt: 'Creazione di contenuti visivi immersivi per la mostra d&apos;arte "Ipotesi Metaverso" a Roma — animazioni particellari e ambienti digitali proiettati nello spazio espositivo.',
-        briefingEn: 'Creation of immersive visual content for the "Ipotesi Metaverso" art exhibition in Rome — particle animations and digital environments projected in the exhibition space.',
-        challengeIt: 'Creare ambienti particellari che funzionassero sia come opere autonome che come sfondo immersivo per la mostra. Le animazioni dovevano essere loop continui di lunga durata, visivamente ipnotici e tecnicamente impeccabili su schermi di grande formato.',
-        challengeEn: 'Creating particle environments that worked both as standalone works and as immersive backdrop for the exhibition. Animations needed to be long-duration continuous loops, visually hypnotic and technically flawless on large-format screens.',
-        solutionIt: 'Ho applicato le mie competenze di <a href="/motion-graphics">motion graphics</a> progettando sistemi particellari complessi che simulano flussi di energia, vortici luminosi e strutture organiche in costante trasformazione. Ogni animazione è stata ottimizzata per la proiezione su larga scala, con particolare attenzione alla fluidità e alla resa cromatica.',
-        solutionEn: 'I applied my <a href="/en/motion-graphics">motion graphics</a> expertise designing complex particle systems simulating energy flows, light vortexes and organic structures in constant transformation. Each animation was optimized for large-scale projection, with particular attention to fluidity and color rendering.',
-        resultIt: 'Le animazioni hanno trasformato lo spazio espositivo in un ambiente immersivo che ha coinvolto i visitatori. Il progetto ha dimostrato come le motion graphics possano uscire dallo schermo e diventare esperienza fisica.',
-        resultEn: 'The animations transformed the exhibition space into an immersive environment that engaged visitors. The project demonstrated how motion graphics can leave the screen and become a physical experience.',
+        tools: ['After Effects', 'Stardust'],
+        briefingIt: 'Palazzo Cipolla, Via del Corso, Roma. Da aprile a luglio 2023, il palazzo ottocentesco ospita Ipotesi Metaverso \u2014 una delle prime mostre internazionali a esplorare il concetto di metaverso tra arte, tecnologia e filosofia digitale.\n\nIl brief iniziale: animare il logo della mostra.',
+        briefingEn: 'Palazzo Cipolla, Via del Corso, Rome. From April to July 2023, the 19th-century palazzo hosted Ipotesi Metaverso \u2014 one of the first international exhibitions exploring the metaverse concept through art, technology and digital philosophy.\n\nThe initial brief: animate the exhibition logo.',
+        challengeIt: 'Il progetto della mostra e le opere esposte mi hanno ispirato al punto da andare oltre il brief. Invece di una sola animazione del logo, ho immaginato quattro variazioni \u2014 quattro interpretazioni visive del concetto di metaverso, pensate come video installazioni autonome.\n\nLa sfida: creare sistemi particellari complessi in loop continuo, visivamente ipnotici e tecnicamente impeccabili per la proiezione su schermi di grande formato.',
+        challengeEn: 'The exhibition project and the artworks on display inspired me to go beyond the brief. Instead of a single logo animation, I envisioned four variations \u2014 four visual interpretations of the metaverse concept, designed as standalone video installations.\n\nThe challenge: creating complex particle systems in continuous loops, visually hypnotic and technically flawless for large-format screen projection.',
+        solutionIt: 'Ho progettato quattro animazioni in <a href="/motion-graphics">After Effects con Stardust</a>, costruendo sistemi particellari che simulano vortici, portali, onde di energia e strutture organiche in trasformazione. Ogni variazione esplora un aspetto diverso del tema \u2014 dal cosmico al microscopico \u2014 mantenendo coerenza visiva con il logo e l\u2019identit\u00E0 della mostra.\n\nOgni animazione \u00E8 stata ottimizzata come loop seamless per la riproduzione continua su schermi di grande formato.',
+        solutionEn: 'I designed four animations in <a href="/en/motion-graphics">After Effects with Stardust</a>, building particle systems that simulate vortexes, portals, energy waves and transforming organic structures. Each variation explores a different aspect of the theme \u2014 from cosmic to microscopic \u2014 while maintaining visual coherence with the logo and exhibition identity.\n\nEach animation was optimized as a seamless loop for continuous playback on large-format screens.',
+        resultIt: 'La galleria ha scelto di esporre tutti e quattro i video in loop all\u2019ingresso della mostra, come se fossero parte dell\u2019esposizione stessa. Da un brief per un\u2019animazione logo a quattro installazioni video che accolgono i visitatori \u2014 il tipo di risultato che nasce quando un progetto ti ispira al punto da spingerti oltre.',
+        resultEn: 'The gallery chose to display all four looping videos at the exhibition entrance, as if they were part of the show itself. From a logo animation brief to four video installations welcoming visitors \u2014 the kind of result that happens when a project inspires you to push beyond.',
+        contentBlocks: [
+            { type: 'image', src: '/images/portfolio/ipotesi-metaverso-poster-mostra-palazzo-cipolla.webp', alt: { it: 'Poster mostra Ipotesi Metaverso \u2014 Palazzo Cipolla Roma 2023', en: 'Ipotesi Metaverso exhibition poster \u2014 Palazzo Cipolla Rome 2023' }, fullWidth: true },
+            { type: 'text', textIt: 'Quattro interpretazioni visive del concetto di metaverso, pensate come video installazioni. Sistemi particellari complessi costruiti in After Effects con Stardust \u2014 vortici, portali, onde di energia e strutture organiche in loop continuo.', textEn: 'Four visual interpretations of the metaverse concept, designed as video installations. Complex particle systems built in After Effects with Stardust \u2014 vortexes, portals, energy waves and organic structures in continuous loops.' },
+            { type: 'gallery', images: [
+                { src: '/videos/portfolio/ipotesi-metaverso-logo-particle.mp4', alt: { it: 'Animazione logo particellare Ipotesi Metaverso \u2014 vortice', en: 'Particle logo animation Ipotesi Metaverso \u2014 vortex' } },
+                { src: '/videos/portfolio/ipotesi-metaverso-logo-lego.mp4', alt: { it: 'Animazione logo Ipotesi Metaverso \u2014 struttura modulare', en: 'Logo animation Ipotesi Metaverso \u2014 modular structure' } },
+                { src: '/videos/portfolio/ipotesi-metaverso-logo-ring.mp4', alt: { it: 'Animazione logo Ipotesi Metaverso \u2014 portale anello', en: 'Logo animation Ipotesi Metaverso \u2014 ring portal' } },
+                { src: '/videos/portfolio/ipotesi-metaverso-logo-phone.mp4', alt: { it: 'Animazione logo Ipotesi Metaverso \u2014 onde digitali', en: 'Logo animation Ipotesi Metaverso \u2014 digital waves' } },
+            ], columns: 4 },
+            { type: 'image', src: '/images/portfolio/ipotesi-metaverso-iride-particellare-stardust.webp', alt: { it: 'Animazione particellare iride \u2014 Stardust After Effects dettaglio', en: 'Particle iris animation \u2014 Stardust After Effects detail' }, fullWidth: true },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/ipotesi-metaverso-vortice-particellare-pink.webp', alt: { it: 'Vortice particellare rosa \u2014 motion graphics mostra arte', en: 'Pink particle vortex \u2014 motion graphics art exhibition' } },
+                { src: '/images/portfolio/ipotesi-metaverso-portale-particellare-ring.webp', alt: { it: 'Portale particellare anello \u2014 animazione logo Stardust', en: 'Ring particle portal \u2014 Stardust logo animation' } },
+                { src: '/images/portfolio/ipotesi-metaverso-onde-luminose-motion.webp', alt: { it: 'Onde luminose motion graphics \u2014 Ipotesi Metaverso installazione', en: 'Light waves motion graphics \u2014 Ipotesi Metaverso installation' } },
+            ], columns: 3 },
+            { type: 'image', src: '/images/portfolio/ipotesi-metaverso-cascata-particelle-luminose.webp', alt: { it: 'Cascata di particelle luminose \u2014 dettaglio animazione After Effects', en: 'Luminous particle cascade \u2014 After Effects animation detail' }, fullWidth: true },
+            { type: 'text', textIt: 'Software: After Effects con Stardust per i sistemi particellari. Ogni animazione \u00E8 stata progettata come loop seamless per la riproduzione continua su schermi di grande formato all\u2019ingresso di Palazzo Cipolla.', textEn: 'Software: After Effects with Stardust for particle systems. Each animation was designed as a seamless loop for continuous playback on large-format screens at the entrance of Palazzo Cipolla.' },
+        ],
     },
     {
         slug: 'radio-caterina',

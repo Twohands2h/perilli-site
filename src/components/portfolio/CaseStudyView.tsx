@@ -136,14 +136,44 @@ function BlockRenderer({ block, locale, vm, lightbox }: {
             );
         case 'gallery': {
             const cols = block.columns || 2;
+            const colClass = cols === 4 ? 'md:grid-cols-4' : cols === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2';
+            const sizeHint = cols === 4 ? '(max-width: 768px) 50vw, 25vw' : cols === 3 ? '(max-width: 768px) 100vw, 33vw' : '(max-width: 768px) 100vw, 50vw';
             return (
                 <div className="section-container">
-                    <div className={`grid grid-cols-1 ${cols === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-3 md:gap-4`}>
-                        {block.images.map((img, i) => (
-                            <div key={i} className="relative aspect-[16/10] rounded-lg overflow-hidden bg-surface">
-                                <LightboxImage src={img.src} alt={isIt ? img.alt.it : img.alt.en} fill className="object-cover"
-                                    sizes={cols === 3 ? '(max-width: 768px) 100vw, 33vw' : '(max-width: 768px) 100vw, 50vw'} lightbox={lightbox} />
-                            </div>
+                    <div className={`grid grid-cols-2 ${colClass} gap-3 md:gap-4`}>
+                        {block.images.map((img: { src: string; alt: { it: string; en: string } }, i: number) => (
+                            img.src.endsWith('.mp4') ? (
+                                <div key={i} className="relative aspect-[9/16] rounded-lg overflow-hidden bg-black cursor-pointer"
+                                    onClick={(e) => {
+                                        const video = e.currentTarget.querySelector('video');
+                                        if (video) {
+                                            if (video.paused) {
+                                                // Pause all other videos in this gallery
+                                                e.currentTarget.parentElement?.querySelectorAll('video').forEach((v: HTMLVideoElement) => {
+                                                    if (v !== video) { v.pause(); v.currentTime = 0; }
+                                                });
+                                                video.play();
+                                            } else {
+                                                video.pause();
+                                                video.currentTime = 0;
+                                            }
+                                        }
+                                    }}>
+                                    <video muted loop playsInline preload="metadata" className="w-full h-full object-cover">
+                                        <source src={img.src} type="video/mp4" />
+                                    </video>
+                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <div className="w-12 h-12 rounded-full bg-black/40 flex items-center justify-center backdrop-blur-sm opacity-80 hover:opacity-100 transition-opacity">
+                                            <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div key={i} className="relative aspect-[16/10] rounded-lg overflow-hidden bg-surface">
+                                    <LightboxImage src={img.src} alt={isIt ? img.alt.it : img.alt.en} fill className="object-cover"
+                                        sizes={sizeHint} lightbox={lightbox} />
+                                </div>
+                            )
                         ))}
                     </div>
                 </div>
@@ -274,7 +304,7 @@ export default function CaseStudyView({
                 <div className="section-container">
                     <AnimateOnScroll>
                         <div className="relative aspect-video rounded-lg overflow-hidden bg-surface">
-                            <LightboxImage src={project.heroImage} alt={project.heroAlt ? (locale === 'it' ? project.heroAlt.it : project.heroAlt.en) : title} fill className="object-cover" sizes="100vw" priority lightbox={lightbox} />
+                            <LightboxImage src={project.heroImage} alt={title} fill className="object-cover" sizes="100vw" priority lightbox={lightbox} />
                         </div>
                     </AnimateOnScroll>
                 </div>
