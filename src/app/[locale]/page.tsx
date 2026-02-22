@@ -7,7 +7,6 @@ import MethodSection from '@/components/sections/MethodSection';
 import SocialProofSection from '@/components/sections/SocialProofSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import CTASection from '@/components/sections/CTASection';
-import { getTestimonials, SanityTestimonial } from '@/sanity/queries';
 
 function WebSiteSchema() {
   const schema = {
@@ -30,16 +29,8 @@ function WebSiteSchema() {
   );
 }
 
-export default async function HomePage({ params: { locale } }: { params: { locale: string } }) {
+export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
-
-  // Fetch testimonials from Sanity (fallback to placeholder if empty)
-  let testimonials: SanityTestimonial[] = [];
-  try {
-    testimonials = await getTestimonials();
-  } catch {
-    testimonials = [];
-  }
 
   return (
     <>
@@ -50,7 +41,7 @@ export default async function HomePage({ params: { locale } }: { params: { local
       <PillarsSection />
       <MethodSection />
       <SocialProofSection />
-      <TestimonialsSection testimonials={testimonials} />
+      <TestimonialsSection />
       <CTASection />
     </>
   );
