@@ -76,7 +76,7 @@ export default function ServicesSection() {
             className="font-bold text-text-primary tracking-[0.05em] mb-4"
             style={{ fontSize: 'clamp(1.25rem, 3.5vw, 2.25rem)' }}
           >
-            VFX \ MOTION GRAPHIC \ ANIMAZIONE
+            VFX <span className="text-accent">\</span> MOTION GRAPHIC <span className="text-accent">\</span> ANIMAZIONE
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             <strong className="text-text-primary">

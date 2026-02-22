@@ -10,8 +10,12 @@ export default function ContattiPage() {
   const isIt = locale === 'it';
 
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', projectType: '', message: '' });
   const [hp, setHp] = useState('');
+
+  const projectTypes = isIt
+    ? ['Spot / Pubblicità', 'Film / Cortometraggio', 'Contenuti social / Digital', 'Animazione 3D / Prodotto', 'AI Video', 'Altro']
+    : ['Commercial / Advertising', 'Film / Short film', 'Social / Digital content', '3D Animation / Product', 'AI Video', 'Other'];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,18 +30,18 @@ export default function ContattiPage() {
 
       if (res.ok) {
         setStatus('sent');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', projectType: '', message: '' });
       } else {
         // Fallback: open mailto
         const subject = encodeURIComponent(`Nuovo contatto da ${formData.name}`);
-        const body = encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
+        const body = encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\nProgetto: ${formData.projectType || 'Non specificato'}\n\n${formData.message}`);
         window.open(`mailto:info@pieroperilli.com?subject=${subject}&body=${body}`, '_self');
         setStatus('sent');
       }
     } catch {
       // Fallback: open mailto
       const subject = encodeURIComponent(`Nuovo contatto da ${formData.name}`);
-      const body = encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
+      const body = encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\nProgetto: ${formData.projectType || 'Non specificato'}\n\n${formData.message}`);
       window.open(`mailto:info@pieroperilli.com?subject=${subject}&body=${body}`, '_self');
       setStatus('sent');
     }
@@ -95,6 +99,22 @@ export default function ContattiPage() {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full bg-surface border border-border rounded px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                   />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium uppercase tracking-wider text-text-secondary mb-2">
+                    {isIt ? 'Tipo di progetto' : 'Project type'}
+                  </label>
+                  <select
+                    value={formData.projectType}
+                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                    className="w-full bg-surface border border-border rounded px-4 py-3 text-sm text-text-primary focus:outline-none focus:border-accent transition-colors appearance-none"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 5l3 3 3-3' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 16px center' }}
+                  >
+                    <option value="" className="bg-surface">{isIt ? 'Seleziona...' : 'Select...'}</option>
+                    {projectTypes.map((type) => (
+                      <option key={type} value={type} className="bg-surface">{type}</option>
+                    ))}
+                  </select>
                 </div>
                 <div>
                   <label className="block text-xs font-medium uppercase tracking-wider text-text-secondary mb-2">

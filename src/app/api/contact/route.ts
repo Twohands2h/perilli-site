@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const { name, email, message, _hp } = body;
+    const { name, email, message, projectType, _hp } = body;
 
     // Honeypot check — if filled, it's a bot
     if (_hp) {
@@ -82,6 +82,7 @@ export async function POST(request: Request) {
           <h2>Nuovo messaggio dal sito</h2>
           <p><strong>Nome:</strong> ${sanitize(name)}</p>
           <p><strong>Email:</strong> ${sanitize(email)}</p>
+          ${projectType ? `<p><strong>Tipo progetto:</strong> ${sanitize(projectType)}</p>` : ''}
           <p><strong>Messaggio:</strong></p>
           <p>${sanitize(message).replace(/\n/g, '<br>')}</p>
         `,
