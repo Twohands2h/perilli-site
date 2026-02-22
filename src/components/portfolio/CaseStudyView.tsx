@@ -274,7 +274,7 @@ export default function CaseStudyView({
                 <div className="section-container">
                     <AnimateOnScroll>
                         <div className="relative aspect-video rounded-lg overflow-hidden bg-surface">
-                            <LightboxImage src={project.heroImage} alt={title} fill className="object-cover" sizes="100vw" priority lightbox={lightbox} />
+                            <LightboxImage src={project.heroImage} alt={project.heroAlt ? (locale === 'it' ? project.heroAlt.it : project.heroAlt.en) : title} fill className="object-cover" sizes="100vw" priority lightbox={lightbox} />
                         </div>
                     </AnimateOnScroll>
                 </div>
