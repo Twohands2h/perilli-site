@@ -236,7 +236,16 @@ export const projects: Project[] = [
         resultIt: 'Una campagna di 15 compositing fotografici e 8 video loop che ha definito l\u2019identit\u00E0 visiva della stagione Doppelg\u00E4nger \u2014 un universo onirico e surreale costruito interamente in post-produzione, dove ogni scena \u00E8 un piccolo mondo a s\u00E9.',
         resultEn: 'A campaign of 15 photo composites and 8 video loops that defined the Doppelg\u00E4nger seasonal visual identity \u2014 a dreamlike, surreal universe built entirely in post-production, where each scene is a little world of its own.',
         contentBlocks: [
-            { type: 'image', src: '/images/portfolio/doppelganger-campagna-completa-15-compositing.webp', alt: { it: 'Campagna completa Doppelg\u00E4nger \u2014 15 compositing fotografici', en: 'Complete Doppelg\u00E4nger campaign \u2014 15 photo composites' }, fullWidth: true },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/doppelganger-scena-museo-compositing.webp', alt: { it: 'Compositing scena museo \u2014 campagna Doppelg\u00E4nger', en: 'Museum scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                { src: '/images/portfolio/doppelganger-scena-scacchi-compositing.webp', alt: { it: 'Compositing scena scacchi \u2014 campagna Doppelg\u00E4nger', en: 'Chess scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                { src: '/images/portfolio/doppelganger-scena-garage-compositing.webp', alt: { it: 'Compositing scena garage \u2014 campagna Doppelg\u00E4nger', en: 'Garage scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+            ], columns: 3 },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/doppelganger-scena-matrimonio-compositing.webp', alt: { it: 'Compositing scena matrimonio \u2014 campagna Doppelg\u00E4nger', en: 'Wedding scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                { src: '/images/portfolio/doppelganger-scena-cinema-compositing.webp', alt: { it: 'Compositing scena cinema \u2014 campagna Doppelg\u00E4nger', en: 'Cinema scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                { src: '/images/portfolio/doppelganger-scena-bar-compositing.webp', alt: { it: 'Compositing scena bar \u2014 campagna Doppelg\u00E4nger', en: 'Bar scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+            ], columns: 3 },
             { type: 'text', textIt: 'Otto video loop della campagna. Ogni scena \u00E8 costruita in compositing partendo dallo shooting in studio: estrazione soggetti, costruzione ambiente, animazione elementi, color grading unificato.', textEn: 'Eight campaign video loops. Each scene is built through compositing from the studio shoot: subject extraction, environment construction, element animation, unified color grading.' },
             { type: 'gallery', images: [
                 { src: '/videos/portfolio/doppelganger-compositing-scacchi-loop.mp4', alt: { it: 'Video compositing scena scacchi \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing chess scene \u2014 Doppelg\u00E4nger campaign' } },
@@ -250,6 +259,16 @@ export const projects: Project[] = [
                 { src: '/videos/portfolio/doppelganger-compositing-stazione-loop.mp4', alt: { it: 'Video compositing scena stazione \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing station scene \u2014 Doppelg\u00E4nger campaign' } },
                 { src: '/videos/portfolio/doppelganger-compositing-tv-loop.mp4', alt: { it: 'Video compositing scena TV \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing TV scene \u2014 Doppelg\u00E4nger campaign' } },
             ], columns: 4 },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/doppelganger-scena-specchio-compositing.webp', alt: { it: 'Compositing scena specchio \u2014 campagna Doppelg\u00E4nger', en: 'Mirror scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                { src: '/images/portfolio/doppelganger-scena-teatro-compositing.webp', alt: { it: 'Compositing scena teatro \u2014 campagna Doppelg\u00E4nger', en: 'Theater scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                { src: '/images/portfolio/doppelganger-scena-salone-compositing.webp', alt: { it: 'Compositing scena salone \u2014 campagna Doppelg\u00E4nger', en: 'Drawing room scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+            ], columns: 3 },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/doppelganger-scena-tv-compositing.webp', alt: { it: 'Compositing scena TV \u2014 campagna Doppelg\u00E4nger', en: 'TV scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                { src: '/images/portfolio/doppelganger-scena-bagno-compositing.webp', alt: { it: 'Compositing scena bagno \u2014 campagna Doppelg\u00E4nger', en: 'Bathroom scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                { src: '/images/portfolio/doppelganger-scena-ufficio-compositing.webp', alt: { it: 'Compositing scena ufficio \u2014 campagna Doppelg\u00E4nger', en: 'Office scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+            ], columns: 3 },
             { type: 'text', textIt: 'Il processo creativo: dalla richiesta del cliente allo scatto in studio, fino al compositing finale. Ogni elemento dell\u2019ambiente \u00E8 costruito intorno ai soggetti reali \u2014 sfondi AI, elementi dipinti, atmosfere e luci ricreate in post-produzione.', textEn: 'The creative process: from client request to studio shoot, to final compositing. Every environment element is built around real subjects \u2014 AI backgrounds, hand-painted elements, atmospheres and lighting recreated in post-production.' },
             { type: 'gallery', images: [
                 { src: '/images/portfolio/doppelganger-scacchi-reference-cliente.webp', alt: { it: 'Reference richiesta cliente \u2014 scena scacchi Doppelg\u00E4nger', en: 'Client reference request \u2014 chess scene Doppelg\u00E4nger' } },
