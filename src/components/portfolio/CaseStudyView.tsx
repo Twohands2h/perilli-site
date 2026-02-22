@@ -143,28 +143,35 @@ function BlockRenderer({ block, locale, vm, lightbox }: {
                     <div className={`grid grid-cols-2 ${colClass} gap-3 md:gap-4`}>
                         {block.images.map((img: { src: string; alt: { it: string; en: string } }, i: number) => (
                             img.src.endsWith('.mp4') ? (
-                                <div key={i} className="relative aspect-[9/16] rounded-lg overflow-hidden bg-black cursor-pointer"
+                                <div key={i} className="relative aspect-[9/16] rounded-lg overflow-hidden bg-black cursor-pointer group"
                                     onClick={(e) => {
                                         const video = e.currentTarget.querySelector('video');
+                                        const playIcon = e.currentTarget.querySelector('.play-icon') as HTMLElement;
                                         if (video) {
                                             if (video.paused) {
                                                 // Pause all other videos in this gallery
                                                 e.currentTarget.parentElement?.querySelectorAll('video').forEach((v: HTMLVideoElement) => {
                                                     if (v !== video) { v.pause(); v.currentTime = 0; }
                                                 });
+                                                // Hide all play icons, show on others
+                                                e.currentTarget.parentElement?.querySelectorAll('.play-icon').forEach((el: Element) => {
+                                                    (el as HTMLElement).style.opacity = '0.8';
+                                                });
+                                                if (playIcon) playIcon.style.opacity = '0';
                                                 video.play();
                                             } else {
                                                 video.pause();
                                                 video.currentTime = 0;
+                                                if (playIcon) playIcon.style.opacity = '0.8';
                                             }
                                         }
                                     }}>
-                                    <video muted loop playsInline preload="metadata" className="w-full h-full object-cover">
+                                    <video loop playsInline preload="metadata" className="w-full h-full object-cover">
                                         <source src={img.src} type="video/mp4" />
                                     </video>
-                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                        <div className="w-12 h-12 rounded-full bg-black/40 flex items-center justify-center backdrop-blur-sm opacity-80 hover:opacity-100 transition-opacity">
-                                            <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    <div className="play-icon absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300" style={{ opacity: 0.8 }}>
+                                        <div className="w-14 h-14 rounded-full bg-black/50 flex items-center justify-center backdrop-blur-sm">
+                                            <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                         </div>
                                     </div>
                                 </div>
