@@ -1,13 +1,15 @@
-import { posts, getPost } from '@/data/posts';
+import { posts } from '@/data/posts';
+import { getPostBySlug } from '@/lib/data';
 import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export function generateStaticParams() {
+    // Use static list for build-time params (Sanity data comes via ISR at runtime)
     return posts.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { locale: string; slug: string } }): Metadata {
-    const post = getPost(params.slug);
+export async function generateMetadata({ params }: { params: { locale: string; slug: string } }): Promise<Metadata> {
+    const post = await getPostBySlug(params.slug);
     if (!post) return {};
 
     const isIt = params.locale === 'it';

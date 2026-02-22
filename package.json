@@ -18,7 +18,8 @@
     "next-intl": "^3.26.5",
     "next-sanity": "^7.1.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sanity": "^5.11.0"
   },
   "devDependencies": {
     "@types/node": "^20",
