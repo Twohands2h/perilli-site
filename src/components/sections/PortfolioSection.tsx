@@ -9,7 +9,7 @@ import VideoThumbnail from '@/components/VideoThumbnail';
 import { projects } from '@/data/projects';
 
 // 4 strategic picks: brand name, 3D product, VFX cinema, AI
-const FEATURED_SLUGS = ['doppelganger', 'guerciotti-60-anni', 'along-came-ruby', 'ipotesi-metaverso'];
+const FEATURED_SLUGS = ['guerciotti-60-anni', 'ipotesi-metaverso', 'along-came-ruby', 'doppelganger'];
 
 export default function PortfolioSection() {
     const locale = useLocale();
