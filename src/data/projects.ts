@@ -890,26 +890,88 @@ export const projects: Project[] = [
     },
     {
         slug: 'non-tutto-e-perduto',
-        titleIt: `Non Tutto è Perduto`,
-        titleEn: `Non Tutto è Perduto`,
+        titleIt: 'Non Tutto \u00C8 Perduto',
+        titleEn: 'Non Tutto \u00C8 Perduto',
         category: 'post',
-        categoryLabel: { it: `Post Produzione`, en: `Post Production` },
-        client: 'Produzione indipendente',
+        categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
+        client: 'Romana Film',
         year: '2023',
-        role: 'Editor / Colorist',
-        thumbnail: '/images/portfolio/post-produzione-non-tutto-e-perduto-thumb.jpg',
-        thumbnailAlt: { it: `Post produzione film Non Tutto è Perduto`, en: `Post production for Non Tutto è Perduto film` },
-        heroImage: '/images/portfolio/post-produzione-non-tutto-e-perduto-hero.jpg',
-        images: [],
+        role: 'Montaggio, Color Correction, Mastering DCP',
+        thumbnail: '/images/portfolio/non-tutto-e-perduto/non-tutto-e-perduto-hero.webp',
+        thumbnailAlt: { it: 'Non Tutto \u00C8 Perduto \u2014 film di Francesco Bellomo con Gioele Dix', en: 'Non Tutto \u00C8 Perduto \u2014 film by Francesco Bellomo with Gioele Dix' },
+        heroImage: '/images/portfolio/non-tutto-e-perduto/non-tutto-e-perduto-hero.webp',
+        heroAlt: { it: 'Non Tutto \u00C8 Perduto \u2014 montaggio e color correction Piero Perilli, film al cinema e Amazon Prime', en: 'Non Tutto \u00C8 Perduto \u2014 editing and color correction by Piero Perilli, theatrical and Amazon Prime release' },
+        images: [
+            { src: '/images/portfolio/non-tutto-e-perduto/non-tutto-e-perduto-francesco-protagonista.webp', alt: { it: 'Francesco protagonista \u2014 Non Tutto \u00C8 Perduto', en: 'Francesco protagonist \u2014 Non Tutto \u00C8 Perduto' } },
+            { src: '/images/portfolio/non-tutto-e-perduto/non-tutto-e-perduto-confronto-notturno.webp', alt: { it: 'Scena notturna \u2014 Non Tutto \u00C8 Perduto color correction', en: 'Night scene \u2014 Non Tutto \u00C8 Perduto color correction' } },
+        ],
         tools: ['DaVinci Resolve', 'Premiere Pro'],
-        briefingIt: `Film indipendente che richiedeva montaggio completo e color grading cinematografico.`,
-        briefingEn: `Independent film requiring complete editing and cinematic color grading.`,
-        challengeIt: `Costruire il ritmo narrativo di un lungometraggio e definirne l'identità visiva attraverso il colore — un lavoro che richiede resistenza, visione d'insieme e attenzione ossessiva alla coerenza scena per scena.`,
-        challengeEn: `Building the narrative rhythm of a feature film and defining its visual identity through color — work that requires endurance, overall vision and obsessive attention to scene-by-scene coherence.`,
-        solutionIt: `Ho lavorato al <a href="/post-produzione">montaggio</a> costruendo la struttura narrativa in stretta collaborazione con il regista, poi ho applicato il color grading in DaVinci Resolve — definendo una palette cinematografica coerente che supporta il tono emotivo di ogni atto del film.`,
-        solutionEn: `I worked on <a href="/en/post-production">editing</a> building the narrative structure in close collaboration with the director, then applied color grading in DaVinci Resolve — defining a coherent cinematic palette that supports the emotional tone of each act of the film.`,
-        resultIt: `Un film dove montaggio e colore raccontano quanto le immagini — ogni taglio e ogni sfumatura cromatica è una scelta narrativa.`,
-        resultEn: `A film where editing and color tell as much as the images — every cut and every chromatic nuance is a narrative choice.`,
+        briefingIt: 'Opera prima di Francesco Bellomo, prodotta da Romana Film con il contributo del Ministero della Cultura. Dall\'omonima commedia teatrale di Giuseppe Manfridi. Cast: Gioele Dix, Brenno Placido, Maurizio Micheli, Paolo Calissano. Progetto realizzato da Roma.',
+        briefingEn: 'Francesco Bellomo\'s debut feature, produced by Romana Film with support from Italy\'s Ministry of Culture. Based on Giuseppe Manfridi\'s play of the same name. Cast: Gioele Dix, Brenno Placido, Maurizio Micheli, Paolo Calissano. Project based in Rome.',
+        challengeIt: '86 minuti di film drammatico con scene notturne sul campo da calcio e interni domestici. Due mondi visivi opposti da tenere in equilibrio. Export finale per distribuzione sala (DCP) e piattaforme streaming (Amazon Prime Video).',
+        challengeEn: '86 minutes of dramatic film with nighttime football pitch scenes and domestic interiors. Two opposing visual worlds to balance. Final mastering for theatrical distribution (DCP) and streaming platforms (Amazon Prime Video).',
+        solutionIt: 'Ho curato <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">montaggio e color correction</a> completi. Per il color ho costruito due atmosfere: il blu freddo delle scene notturne al campo, il calore degli interni. Gli export hanno richiesto master separati \u2014 DCP per la sala, file ottimizzati per Amazon Prime Video.',
+        solutionEn: 'I handled complete <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">editing and color correction</a>. For the color I built two atmospheres: the cold blue of the nighttime pitch scenes, the warmth of the interiors. The exports required separate masters \u2014 DCP for theatrical, optimized files for Amazon Prime Video.',
+        resultIt: 'Uscito al cinema il 9 novembre 2023 (distribuzione Romana Film). Disponibile su Amazon Prime Video. IMDB: tt31173315.',
+        resultEn: 'Theatrical release November 9, 2023 (distributed by Romana Film). Available on Amazon Prime Video. IMDB: tt31173315.',
+        videoUrl: 'https://www.primevideo.com/detail/Non-tutto-%C3%A8-perduto/0FTQDCNLMKOT0NAPS8F3CH841Y',
+        imdbLink: 'https://www.imdb.com/title/tt31173315/',
+        contentBlocks: [
+            {
+                type: 'video-mp4',
+                url: '/videos/portfolio/non-tutto-e-perduto-trailer.mp4',
+                title: 'Non Tutto \u00C8 Perduto \u2014 Trailer'
+            },
+            {
+                type: 'text',
+                textIt: 'Francesco \u00E8 un\'ex promessa del calcio. Il padre lo ha costretto a mollare. Poi incontra Bala, che gestisce un campetto e vede in lui qualcosa che gli altri non vedono pi\u00F9. Una storia di seconde possibilit\u00E0 ambientata nel microcosmo della partitella \u2014 dove il laureato gioca gomito a gomito con l\'analfabeta.',
+                textEn: 'Francesco is a former football prodigy. His father forced him to quit. Then he meets Bala, who runs a local pitch and sees something in him that everyone else has stopped seeing. A story about second chances set in the microcosm of the pickup game \u2014 where the graduate plays shoulder to shoulder with the illiterate.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/non-tutto-e-perduto/non-tutto-e-perduto-francesco-protagonista.webp',
+                        alt: { it: 'Andrea Beruatto \u2014 Francesco, protagonista di Non Tutto \u00C8 Perduto', en: 'Andrea Beruatto \u2014 Francesco, protagonist of Non Tutto \u00C8 Perduto' }
+                    },
+                    {
+                        src: '/images/portfolio/non-tutto-e-perduto/non-tutto-e-perduto-calcio-notturno.webp',
+                        alt: { it: 'Scena calcio notturno \u2014 Non Tutto \u00C8 Perduto color correction Piero Perilli', en: 'Night football scene \u2014 Non Tutto \u00C8 Perduto color correction by Piero Perilli' }
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: 'Il film vive di due luci. Le scene al campo sono notturne, fari al sodio, blu freddo che taglia le facce. Gli interni domestici sono caldi, avvolgenti \u2014 il mondo da cui Francesco cerca di uscire. In color correction ho tenuto questa tensione senza mai farla diventare didascalica.\n\nIl montaggio ha dovuto trovare il ritmo di un film che passa dalla commedia al dramma senza strappi. Gioele Dix e Brenno Placido ti danno materiale su cui lavorare \u2014 il mio lavoro era non sprecare nemmeno una battuta.',
+                textEn: 'The film lives on two lights. The pitch scenes are nocturnal, sodium floodlights, cold blue cutting across faces. The domestic interiors are warm, enveloping \u2014 the world Francesco is trying to escape. In color correction I held this tension without ever making it heavy-handed.\n\nThe editing had to find the rhythm of a film that shifts from comedy to drama without jarring. Gioele Dix and Brenno Placido give you material to work with \u2014 my job was not to waste a single beat.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/non-tutto-e-perduto/non-tutto-e-perduto-bala-campo-calcio.webp',
+                        alt: { it: 'Brenno Placido \u2014 Bala al campo da calcio, Non Tutto \u00C8 Perduto', en: 'Brenno Placido \u2014 Bala at the football pitch, Non Tutto \u00C8 Perduto' }
+                    },
+                    {
+                        src: '/images/portfolio/non-tutto-e-perduto/non-tutto-e-perduto-confronto-notturno.webp',
+                        alt: { it: 'Confronto notturno \u2014 Brenno Placido e Gioele Dix, color correction cinematografica', en: 'Night confrontation \u2014 Brenno Placido and Gioele Dix, cinematic color correction' }
+                    }
+                ]
+            },
+            {
+                type: 'image',
+                src: '/images/portfolio/non-tutto-e-perduto/non-tutto-e-perduto-procuratore.webp',
+                alt: { it: 'Maurizio Micheli \u2014 il procuratore, Non Tutto \u00C8 Perduto', en: 'Maurizio Micheli \u2014 the agent, Non Tutto \u00C8 Perduto' },
+                fullWidth: false
+            },
+            {
+                type: 'text',
+                textIt: 'L\'export per la sala \u00E8 un mondo a parte. DCP con specifiche precise, color space diverso dallo streaming. Poi il master per Amazon Prime Video con i suoi requisiti tecnici. Due destinazioni, due rese \u2014 il film deve funzionare su entrambe.\n\n**Crediti**\nRegia: Francesco Bellomo\nSceneggiatura: Mauro Graiani, dall\'opera teatrale di Giuseppe Manfridi\nMontaggio e Color Correction: Piero Perilli\nFotografia: Bruno Cascio\nMusica: Cris Ciampoli\nProduzione: Romana Film, con il contributo del Ministero della Cultura\n\nAl cinema dal 9 novembre 2023 \u2014 disponibile su <a href="https://www.primevideo.com/detail/Non-tutto-%C3%A8-perduto/0FTQDCNLMKOT0NAPS8F3CH841Y" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Amazon Prime Video</a>\n<a href="https://www.imdb.com/title/tt31173315/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>',
+                textEn: 'The theatrical export is a world of its own. DCP with precise specifications, different color space from streaming. Then the Amazon Prime Video master with its own technical requirements. Two destinations, two renderings \u2014 the film has to work on both.\n\n**Credits**\nDirector: Francesco Bellomo\nScreenplay: Mauro Graiani, from the play by Giuseppe Manfridi\nEditing and Color Correction: Piero Perilli\nCinematography: Bruno Cascio\nMusic: Cris Ciampoli\nProduction: Romana Film, supported by Italy\'s Ministry of Culture\n\nTheatrical release November 9, 2023 \u2014 available on <a href="https://www.primevideo.com/detail/Non-tutto-%C3%A8-perduto/0FTQDCNLMKOT0NAPS8F3CH841Y" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Amazon Prime Video</a>\n<a href="https://www.imdb.com/title/tt31173315/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>'
+            }
+        ],
     },
 
     // ──────────────────── BRAND / ADVERTISING ────────────────────
