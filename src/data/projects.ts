@@ -208,7 +208,7 @@ export const projects: Project[] = [
             { type: 'text', textIt: 'Software: DaVinci Resolve per montaggio e color grading, After Effects per le animazioni grafiche, Premiere Pro per il conform.\n\nRegia: David Orlandelli. Produzione: History Channel / MM Productions.\n\n<a href="https://www.radiocaterinamovie.com/" target="_blank" rel="noopener">Sito ufficiale del film</a> \u2014 <a href="https://www.imdb.com/it/title/tt29257837/">IMDB</a>', textEn: 'Software: DaVinci Resolve for editing and color grading, After Effects for graphic animations, Premiere Pro for conform.\n\nDirected by David Orlandelli. Produced by History Channel / MM Productions.\n\n<a href="https://www.radiocaterinamovie.com/" target="_blank" rel="noopener">Official film website</a> \u2014 <a href="https://www.imdb.com/it/title/tt29257837/">IMDB</a>' },
         ],
     },
-        {
+            {
         slug: 'breaking-olimpiadi',
         titleIt: 'Breaking: dalla strada alle Olimpiadi',
         titleEn: 'Breaking: from the street to the Olympics',
@@ -221,10 +221,7 @@ export const projects: Project[] = [
         thumbnailAlt: { it: `Post-produzione documentario Breaking \u2014 RaiPlay`, en: `Post-production Breaking documentary \u2014 RaiPlay` },
         heroImage: '/images/portfolio/breaking-olimpiadi-documentario-raiplay.webp',
         heroAlt: { it: 'Breaking: dalla strada alle Olimpiadi \u2014 documentario RaiPlay diretto da Fabrizio Silvestri', en: 'Breaking: from the street to the Olympics \u2014 RaiPlay documentary directed by Fabrizio Silvestri' },
-        images: [
-            { src: '/images/portfolio/breaking-olimpiadi-poster-locandina.webp', alt: { it: 'Locandina Breaking: dalla strada alle Olimpiadi', en: 'Poster Breaking: from the street to the Olympics' } },
-            { src: '/images/portfolio/breaking-olimpiadi-qualificazioni-shanghai.webp', alt: { it: 'Qualificazioni olimpiche breaking Shanghai \u2014 documentario RaiPlay', en: 'Olympic breaking qualifiers Shanghai \u2014 RaiPlay documentary' } },
-        ],
+        images: [],
         tools: ['DaVinci Resolve', 'Premiere Pro'],
         briefingIt: 'L\u2019evoluzione della breakdance dalla sua origine nelle strade fino a diventare disciplina olimpica riconosciuta a livello internazionale. Attraverso i protagonisti della scena nazionale, il documentario offre uno sguardo approfondito sulla cultura, la storia e l\u2019impatto sociale di questa forma d\u2019arte. 52 minuti, per RAI Documentari / RaiPlay. Regia di Fabrizio Silvestri.',
         briefingEn: 'The evolution of breakdancing from its street origins to becoming an internationally recognized Olympic discipline. Through the protagonists of the Italian scene, the documentary offers an in-depth look at the culture, history and social impact of this art form. 52 minutes, for RAI Documentari / RaiPlay. Directed by Fabrizio Silvestri.',
@@ -236,11 +233,6 @@ export const projects: Project[] = [
         resultEn: 'A 52-minute documentary available on <a href="https://www.raiplay.it/programmi/breakingdallastradaalleolimpiadi" target="_blank" rel="noopener">RaiPlay</a>. The project demonstrated how the integrated editing-color workflow is particularly effective for documentaries with heterogeneous material and complex narrative rhythm.',
         contentBlocks: [
             { type: 'video-mp4', url: '/videos/portfolio/breaking-olimpiadi-trailer-documentario.mp4', title: 'Trailer \u2014 Breaking: dalla strada alle Olimpiadi' },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/breaking-olimpiadi-poster-locandina.webp', alt: { it: 'Locandina Breaking: dalla strada alle Olimpiadi', en: 'Poster Breaking: from the street to the Olympics' } },
-                { src: '/images/portfolio/breaking-olimpiadi-qualificazioni-shanghai.webp', alt: { it: 'Qualificazioni olimpiche breaking \u2014 Shanghai', en: 'Olympic breaking qualifiers \u2014 Shanghai' } },
-            ], columns: 2 },
-            { type: 'image', src: '/images/portfolio/breaking-olimpiadi-titolo-grafica.webp', alt: { it: 'Titolo grafico Breaking: dalla strada alle Olimpiadi', en: 'Title card Breaking: from the street to the Olympics' }, fullWidth: true },
             { type: 'text', textIt: 'Software: DaVinci Resolve per montaggio e color grading, Premiere Pro per il conform e l\u2019export broadcast.\n\nRegia: Fabrizio Silvestri. Produzione: RAI Documentari.\n\n<a href="https://www.raiplay.it/programmi/breakingdallastradaalleolimpiadi" target="_blank" rel="noopener">Guarda su RaiPlay</a>', textEn: 'Software: DaVinci Resolve for editing and color grading, Premiere Pro for conform and broadcast export.\n\nDirected by Fabrizio Silvestri. Produced by RAI Documentari.\n\n<a href="https://www.raiplay.it/programmi/breakingdallastradaalleolimpiadi" target="_blank" rel="noopener">Watch on RaiPlay</a>' },
         ],
     },
