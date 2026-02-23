@@ -846,28 +846,53 @@ export const projects: Project[] = [
 
     // ──────────────────── AI VIDEO ────────────────────
 
-    {
+        {
         slug: 'roche-jingle-ai',
-        titleIt: `Roche — Jingle AI Milano Cortina`,
-        titleEn: `Roche — AI Jingle Milano Cortina`,
+        titleIt: 'Roche \u2014 Jingle AI Milano Cortina',
+        titleEn: 'Roche \u2014 AI Jingle Milano Cortina',
         category: 'ai',
-        categoryLabel: { it: `AI Video`, en: `AI Video` },
+        categoryLabel: { it: 'AI Video', en: 'AI Video' },
         client: 'Roche',
         year: '2025',
-        role: 'AI Video Producer / Editor',
-        thumbnail: '/images/portfolio/ai-video-roche-jingle-thumb.jpg',
-        thumbnailAlt: { it: `AI video production per Roche`, en: `AI video production for Roche` },
-        heroImage: '/images/portfolio/ai-video-roche-jingle-hero.jpg',
-        images: [],
-        tools: ['Runway', 'Kling AI', 'After Effects', 'DaVinci Resolve'],
-        briefingIt: `Realizzazione di un jingle video per i dipendenti Roche, in stile Milano Cortina / Olimpiadi. Il materiale di partenza: solo foto in bassa qualità dei dipendenti. Il budget: minimo. L'aspettativa: un video divertente e coinvolgente.`,
-        briefingEn: `Creation of a video jingle for Roche employees, in Milano Cortina / Olympics style. The starting material: only low-quality photos of employees. The budget: minimal. The expectation: a fun, engaging video.`,
-        challengeIt: `Trasformare foto sgranate e in bassa risoluzione in video dinamici e coinvolgenti. Con un approccio tradizionale sarebbe stato impossibile nei tempi e nel budget. L'AI era l'unica strada — ma serviva l'occhio per guidarla.`,
-        challengeEn: `Transforming grainy, low-resolution photos into dynamic, engaging videos. With a traditional approach it would have been impossible within the time and budget. AI was the only path — but the eye to guide it was essential.`,
-        solutionIt: `Ho utilizzato strumenti di <a href="/ai-video">generazione video AI</a> (Runway, Kling) per trasformare le foto dei dipendenti in brevi clip animate nello stile olimpico richiesto. L'esperienza VFX è stata fondamentale per selezionare gli output migliori, correggere gli artefatti e montare il tutto in un video coerente e divertente con il giusto ritmo musicale.`,
-        solutionEn: `I used <a href="/en/ai-video">AI video generation</a> tools (Runway, Kling) to transform employee photos into short animated clips in the requested Olympic style. VFX experience was essential for selecting the best outputs, correcting artifacts and editing everything into a coherent, fun video with the right musical rhythm.`,
-        resultIt: `Un video che ha centrato l'obiettivo — divertente, coinvolgente, realizzato in tempi e budget che sarebbero stati impossibili senza AI. L'esempio perfetto del mio approccio: l'AI produce, l'esperienza seleziona e rifinisce.`,
-        resultEn: `A video that hit the mark — fun, engaging, delivered within timelines and budgets that would have been impossible without AI. The perfect example of my approach: AI produces, experience selects and refines.`,
+        role: 'AI Video Producer, Editor',
+        thumbnail: '/images/portfolio/roche-jingle-ai-hero.webp',
+        thumbnailAlt: { it: 'AI video production per Roche \u2014 jingle olimpico', en: 'AI video production for Roche \u2014 Olympic jingle' },
+        heroImage: '/images/portfolio/roche-jingle-ai-hero.webp',
+        heroAlt: { it: 'Roche Jingle AI \u2014 ritratto generato con AI per evento aziendale olimpico', en: 'Roche AI Jingle \u2014 AI-generated portrait for Olympic corporate event' },
+        images: [
+            { src: '/images/portfolio/roche-jingle-ai-relatrice-montagne.webp', alt: { it: 'Relatrice Roche \u2014 ritratto AI con montagne innevate', en: 'Roche speaker \u2014 AI portrait with snowy mountains' } },
+            { src: '/images/portfolio/roche-jingle-ai-relatore-bandiere.webp', alt: { it: 'Relatore Roche \u2014 ritratto AI con bandiere italiane', en: 'Roche speaker \u2014 AI portrait with Italian flags' } },
+            { src: '/images/portfolio/roche-jingle-ai-relatrice-sorriso.webp', alt: { it: 'Relatrice Roche \u2014 ritratto AI primo piano', en: 'Roche speaker \u2014 AI close-up portrait' } },
+        ],
+        tools: ['Veo', 'Higgsfield', 'Runway', 'Nano Banana', 'After Effects', 'DaVinci Resolve'],
+        briefingIt: 'Realizzazione di jingle video per un evento annuale Roche \u2014 presentazione dei relatori sul palco in stile Milano Cortina 2026. Il materiale di partenza: solo foto dei dipendenti. Il risultato richiesto: video dinamici e coinvolgenti che trasformano ogni relatore in un atleta olimpico. Progetto realizzato da Roma.',
+        briefingEn: 'Creation of video jingles for an annual Roche event \u2014 speaker introductions on stage in Milano Cortina 2026 style. Starting material: only employee photos. Required result: dynamic, engaging videos transforming each speaker into an Olympic athlete. Project developed from Rome.',
+        challengeIt: 'Trasformare semplici foto dei dipendenti in video credibili e spettacolari in stile olimpico. Con un approccio tradizionale sarebbe stato impossibile nei tempi e nel budget. L\u2019AI era l\u2019unica strada \u2014 ma serviva l\u2019occhio per guidarla e l\u2019esperienza per selezionare e correggere.',
+        challengeEn: 'Transforming simple employee photos into believable, spectacular Olympic-style videos. With a traditional approach it would have been impossible within time and budget. AI was the only path \u2014 but the eye to guide it and the experience to select and correct were essential.',
+        solutionIt: 'Ho utilizzato un mix di strumenti di <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">generazione video e immagini AI</a>: Nano Banana per i ritratti, Veo e Higgsfield per la generazione video, Runway per le animazioni. Ogni relatore \u00E8 stato trasformato in un atleta olimpico \u2014 sciatore, saltatore, giocatore di hockey \u2014 con ambientazioni invernali realistiche e divise della nazionale italiana. L\u2019esperienza <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> \u00E8 stata fondamentale per selezionare gli output migliori tra decine di generazioni, correggere artefatti e montare il tutto con il giusto ritmo.',
+        solutionEn: 'I used a mix of <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video and image generation</a> tools: Nano Banana for portraits, Veo and Higgsfield for video generation, Runway for animations. Each speaker was transformed into an Olympic athlete \u2014 skier, ski jumper, hockey player \u2014 with realistic winter settings and Italian national team uniforms. <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> experience was essential for selecting the best outputs from dozens of generations, correcting artifacts and editing everything with the right rhythm.',
+        resultIt: 'Jingle che hanno centrato l\u2019obiettivo \u2014 spettacolari, divertenti, realizzati in tempi e budget impossibili senza AI. L\u2019esempio perfetto del mio approccio: l\u2019AI produce la materia prima, l\u2019esperienza seleziona e rifinisce.',
+        resultEn: 'Jingles that hit the mark \u2014 spectacular, fun, delivered within timelines and budgets impossible without AI. The perfect example of my approach: AI produces the raw material, experience selects and refines.',
+        contentBlocks: [
+            { type: 'video-mp4', url: '/videos/portfolio/roche-jingle-olimpiadi-ai.mp4', title: 'Roche \u2014 Jingle AI Milano Cortina (compilation)' },
+            { type: 'video-loop-gallery', videos: [
+                { url: '/videos/portfolio/roche-jingle-hockey-ai.mp4' },
+                { url: '/videos/portfolio/roche-jingle-skijump-ai.mp4' },
+            ], columns: 2 },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/roche-jingle-ai-relatrice-montagne.webp', alt: { it: 'Relatrice Roche con montagne innevate', en: 'Roche speaker with snowy mountains' } },
+                { src: '/images/portfolio/roche-jingle-ai-relatore-bandiere.webp', alt: { it: 'Relatore Roche con bandiere italiane', en: 'Roche speaker with Italian flags' } },
+            ], columns: 2 },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/roche-jingle-ai-sciatore-slalom.webp', alt: { it: 'Sciatore slalom AI \u2014 Roche jingle olimpico', en: 'AI slalom skier \u2014 Roche Olympic jingle' } },
+                { src: '/images/portfolio/roche-jingle-ai-snowboard-halfpipe.webp', alt: { it: 'Snowboarder halfpipe AI \u2014 Roche jingle olimpico', en: 'AI halfpipe snowboarder \u2014 Roche Olympic jingle' } },
+            ], columns: 2 },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/roche-jingle-ai-slittino-olimpiadi.webp', alt: { it: 'Slittino olimpico AI \u2014 Roche jingle', en: 'AI Olympic luge \u2014 Roche jingle' } },
+                { src: '/images/portfolio/roche-jingle-ai-dettaglio-guanto.webp', alt: { it: 'Dettaglio guanto \u2014 realismo AI generativa', en: 'Glove detail \u2014 generative AI realism' } },
+            ], columns: 2 },
+            { type: 'text', textIt: 'Software: Veo e Higgsfield per la generazione video AI, Runway per le animazioni, Nano Banana per i ritratti. After Effects per il compositing e il montaggio, DaVinci Resolve per il color grading finale.\n\nCliente: Roche.', textEn: 'Software: Veo and Higgsfield for AI video generation, Runway for animations, Nano Banana for portraits. After Effects for compositing and editing, DaVinci Resolve for final color grading.\n\nClient: Roche.' },
+        ],
     },
 
 ];
