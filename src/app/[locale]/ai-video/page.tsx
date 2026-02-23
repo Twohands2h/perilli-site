@@ -85,7 +85,7 @@ const contentIT = {
   recentWorkTitle: 'Progetti AI Video',
   recentWork: [
     { title: 'Roche — Jingle natalizio AI-generated', link: '/portfolio/roche-jingle-ai' },
-    { title: 'Guerciotti 60 Anni — Animazione 3D + AI post-processing', link: '/portfolio/guerciotti-60-anni' },
+    { title: 'Doppelganger — Campagna AI per Bando 2025', link: '/portfolio/doppelganger' },
     { title: '📖 Leggi: Come scelgo tra AI e VFX tradizionale per ogni shot', link: '/blog/ai-vs-vfx-tradizionale-come-scegliere' },
   ],
 
@@ -160,7 +160,7 @@ const contentEN = {
   recentWorkTitle: 'AI Video Projects',
   recentWork: [
     { title: 'Roche — AI-generated Christmas jingle', link: '/en/portfolio/roche-jingle-ai' },
-    { title: 'Guerciotti 60 Years — 3D Animation + AI post-processing', link: '/en/portfolio/guerciotti-60-anni' },
+    { title: 'Doppelganger — AI Campaign for Bando 2025', link: '/en/portfolio/doppelganger' },
     { title: '📖 Read: How I choose between AI and traditional VFX for every shot', link: '/en/blog/ai-vs-traditional-vfx-how-to-choose' },
   ],
 
