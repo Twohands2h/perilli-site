@@ -45,7 +45,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-    {
+        {
         slug: 'along-came-ruby',
         titleIt: 'Along Came Ruby',
         titleEn: 'Along Came Ruby',
@@ -56,21 +56,31 @@ export const projects: Project[] = [
         role: 'VFX Artist',
         thumbnail: '/images/portfolio/vfx-cortometraggio-along-came-ruby-thumb.webp',
         thumbnailAlt: { it: `VFX per il cortometraggio Along Came Ruby`, en: `VFX for Along Came Ruby short film` },
-        heroImage: '/images/portfolio/vfx-effetti-visivi-along-came-ruby-hero.webp',
+        heroImage: '/images/portfolio/along-came-ruby-cover-cortometraggio.webp',
+        heroAlt: { it: 'Along Came Ruby \u2014 cortometraggio sci-fi diretto da Riccardo Suriano', en: 'Along Came Ruby \u2014 sci-fi short film directed by Riccardo Suriano' },
         images: [
-            { src: '/images/portfolio/vfx-effetto-spazio-temporale-along-came-ruby.webp', alt: { it: 'Effetto spazio-temporale Along Came Ruby', en: 'Space-time effect Along Came Ruby' } },
-            { src: '/images/portfolio/compositing-vfx-cortometraggio-along-came-ruby.webp', alt: { it: 'Compositing VFX Along Came Ruby', en: 'VFX compositing Along Came Ruby' } },
+            { src: '/images/portfolio/along-came-ruby-vfx-effetti-energia-fulmini.webp', alt: { it: 'VFX effetti energia e fulmini \u2014 Along Came Ruby', en: 'VFX energy and lightning effects \u2014 Along Came Ruby' } },
+            { src: '/images/portfolio/along-came-ruby-vfx-portale-spazio-temporale.webp', alt: { it: 'VFX portale spazio-temporale \u2014 Along Came Ruby', en: 'VFX space-time portal \u2014 Along Came Ruby' } },
         ],
         tools: ['After Effects', 'Mocha Pro', '3ds Max', 'DaVinci Resolve'],
         briefingIt: 'Un cortometraggio drammatico/sci-fi diretto da Riccardo Suriano, con Alexandra Boulas e Liz Kastner. In un mondo post-apocalittico, Ruby intraprende un viaggio alla ricerca del fratello Henry, incontrando una donna enigmatica che custodisce segreti del passato.',
         briefingEn: 'A drama/sci-fi short film directed by Riccardo Suriano, starring Alexandra Boulas and Liz Kastner. In a post-apocalyptic world, Ruby embarks on a journey to find her brother Henry, encountering an enigmatic woman who holds secrets of the past.',
-        challengeIt: 'La sfida principale era creare l&apos;effetto visivo che illustra la comunicazione tra presente e futuro attraverso lo spazio-tempo. Questo elemento narrativo chiave doveva essere credibile, emotivamente potente e integrato perfettamente con le riprese live in ambienti naturali.',
+        challengeIt: 'La sfida principale era creare l\u2019effetto visivo che illustra la comunicazione tra presente e futuro attraverso lo spazio-tempo. Questo elemento narrativo chiave doveva essere credibile, emotivamente potente e integrato perfettamente con le riprese live in ambienti naturali.',
         challengeEn: 'The main challenge was creating the visual effect illustrating communication between present and future through space-time. This key narrative element needed to be credible, emotionally powerful and seamlessly integrated with live footage in natural environments.',
-        solutionIt: 'Ho sviluppato un sistema di particelle e distorsioni luminose che evocano il passaggio dimensionale, combinando <a href="/vfx">compositing multilayer</a> con elementi 3D. Ogni shot è stata lavorata frame-by-frame per garantire un&apos;integrazione fotorealistica con l&apos;atmosfera distopica del film.',
-        solutionEn: 'I developed a system of particles and light distortions evoking dimensional passage, combining multilayer <a href="/en/vfx">compositing</a> with 3D elements. Every shot was worked frame-by-frame to ensure photorealistic integration with the film&apos;s dystopian atmosphere.',
-        resultIt: 'Gli effetti visivi hanno dato vita alla visione del regista, trasformando location reali in un mondo post-apocalittico credibile. Il cortometraggio ha completato la post-produzione ed è in fase di distribuzione festival.',
-        resultEn: 'The visual effects brought the director&apos;s vision to life, transforming real locations into a credible post-apocalyptic world. The short film has completed post-production and is in festival distribution.',
+        solutionIt: 'Ho sviluppato un sistema di particelle e distorsioni luminose che evocano il passaggio dimensionale, combinando <a href="/vfx">compositing multilayer</a> con elementi 3D. Ogni shot \u00E8 stata lavorata frame-by-frame per garantire un\u2019integrazione fotorealistica con l\u2019atmosfera distopica del film.\n\nRegia: Riccardo Suriano.',
+        solutionEn: 'I developed a system of particles and light distortions evoking dimensional passage, combining multilayer <a href="/en/vfx">compositing</a> with 3D elements. Every shot was worked frame-by-frame to ensure photorealistic integration with the film\u2019s dystopian atmosphere.\n\nDirected by Riccardo Suriano.',
+        resultIt: 'Gli effetti visivi hanno dato vita alla visione del regista, trasformando location reali in un mondo post-apocalittico credibile. Il cortometraggio ha completato la post-produzione ed \u00E8 in fase di distribuzione festival. Leggi il <a href="/blog/breakdown-vfx-along-came-ruby">breakdown VFX completo</a> di questo progetto.',
+        resultEn: 'The visual effects brought the director\u2019s vision to life, transforming real locations into a credible post-apocalyptic world. The short film has completed post-production and is in festival distribution. Read the <a href="/en/blog/vfx-breakdown-along-came-ruby">complete VFX breakdown</a> of this project.',
         imdbLink: 'https://pro.imdb.com/title/tt28106482/',
+        contentBlocks: [
+            { type: 'text', textIt: 'VFX breakdown: il processo di creazione degli effetti visivi per Along Came Ruby, dalla previsualizzazione al compositing finale.', textEn: 'VFX breakdown: the visual effects creation process for Along Came Ruby, from previsualization to final compositing.' },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/along-came-ruby-vfx-effetti-energia-fulmini.webp', alt: { it: 'VFX effetti energia e fulmini \u2014 compositing Along Came Ruby', en: 'VFX energy and lightning effects \u2014 Along Came Ruby compositing' } },
+                { src: '/images/portfolio/along-came-ruby-vfx-portale-spazio-temporale.webp', alt: { it: 'VFX portale spazio-temporale \u2014 compositing Along Came Ruby', en: 'VFX space-time portal \u2014 Along Came Ruby compositing' } },
+            ], columns: 2 },
+            { type: 'video-mp4', url: '/videos/portfolio/along-came-ruby-vfx-breakdown.mp4', title: 'VFX Breakdown \u2014 Along Came Ruby' },
+            { type: 'text', textIt: 'Software: After Effects per il compositing multilayer, Mocha Pro per il tracking, 3ds Max per gli elementi 3D, DaVinci Resolve per il color grading finale.\n\nRegia: Riccardo Suriano. Cast: Alexandra Boulas, Liz Kastner.\n\nLeggi il <a href="/blog/breakdown-vfx-along-came-ruby">breakdown VFX completo</a> sul blog.', textEn: 'Software: After Effects for multilayer compositing, Mocha Pro for tracking, 3ds Max for 3D elements, DaVinci Resolve for final color grading.\n\nDirected by Riccardo Suriano. Cast: Alexandra Boulas, Liz Kastner.\n\nRead the <a href="/en/blog/vfx-breakdown-along-came-ruby">complete VFX breakdown</a> on the blog.' },
+        ],
     },
     {
         slug: 'guerciotti-60-anni',
