@@ -7,7 +7,8 @@ export type ContentBlock =
   | { type: 'gallery'; images: { src: string; alt: { it: string; en: string } }[]; columns?: 2 | 3 | 4 }
   | { type: 'video'; embedId: string; platform: 'youtube' | 'vimeo'; title?: string }
   | { type: 'video-mp4'; url: string; poster?: string; title?: string }
-  | { type: 'video-loop'; url: string; poster?: string; title?: string };
+  | { type: 'video-loop'; url: string; poster?: string; title?: string }
+  | { type: 'video-loop-gallery'; videos: { url: string; title?: string }[]; columns?: number; title?: string };
 
 export interface Project {
     slug: string;
@@ -563,28 +564,47 @@ export const projects: Project[] = [
             { type: 'text', textIt: 'Software: After Effects per il compositing e l\u2019integrazione delle meduse 3D, Photoshop per la preparazione degli ambienti, DaVinci Resolve per il color grading.\n\nArt direction: Prospero Di Veroli.', textEn: 'Software: After Effects for compositing and 3D jellyfish integration, Photoshop for environment preparation, DaVinci Resolve for color grading.\n\nArt direction: Prospero Di Veroli.' },
         ],
     },
-    {
+        {
         slug: 'pmi',
-        titleIt: `Abbiamo Cura di Te — PMI`,
-        titleEn: `Abbiamo Cura di Te — PMI`,
+        titleIt: 'Abbiamo Cura di Te \u2014 PMI',
+        titleEn: 'Abbiamo Cura di Te \u2014 PMI',
         category: 'motion',
-        categoryLabel: { it: `Motion Graphics`, en: `Motion Graphics` },
+        categoryLabel: { it: 'Motion Graphics', en: 'Motion Graphics' },
         client: 'PMI',
         year: '2022',
-        role: 'Motion Designer / Animator',
-        thumbnail: '/images/portfolio/motion-graphics-pmi-thumb.jpg',
-        thumbnailAlt: { it: `Motion graphics per PMI - Abbiamo Cura di Te`, en: `Motion graphics for PMI - We Take Care of You` },
-        heroImage: '/images/portfolio/motion-graphics-pmi-hero.jpg',
-        images: [],
+        role: 'Motion Designer, Animator',
+        thumbnail: '/images/portfolio/pmi-abbiamo-cura-di-te-animazione.webp',
+        thumbnailAlt: { it: 'Motion graphics per PMI \u2014 Abbiamo Cura di Te', en: 'Motion graphics for PMI \u2014 We Take Care of You' },
+        heroImage: '/images/portfolio/pmi-abbiamo-cura-di-te-animazione.webp',
+        heroAlt: { it: 'Abbiamo Cura di Te \u2014 animazione a tratto continuo per PMI', en: 'Abbiamo Cura di Te \u2014 continuous line animation for PMI' },
+        images: [
+            { src: '/images/portfolio/pmi-animazione-albero-tratto.webp', alt: { it: 'Albero disegnato a tratto continuo \u2014 PMI', en: 'Tree drawn with continuous line \u2014 PMI' } },
+            { src: '/images/portfolio/pmi-animazione-famiglia-mela.webp', alt: { it: 'Famiglia con mela \u2014 animazione PMI', en: 'Family with apple \u2014 PMI animation' } },
+        ],
         tools: ['After Effects', 'Illustrator'],
-        briefingIt: `Video animato per PMI. Il concept: un unico tratto continuo che disegna una storia di due minuti, raccontando la missione e i valori di PMI attraverso un'animazione fluida e ininterrotta.`,
-        briefingEn: `Animated video for PMI. The concept: a single continuous line that draws a two-minute story, telling PMI's mission and values through a fluid, uninterrupted animation.`,
-        challengeIt: `Realizzare un'animazione dove un unico tratto si trasforma continuamente per due minuti senza interruzioni — ogni transizione doveva essere naturale, ogni elemento doveva nascere dal precedente. Zero tagli, zero stacchi.`,
-        challengeEn: `Creating an animation where a single stroke continuously transforms for two minutes without breaks — every transition had to be natural, every element had to be born from the previous one. Zero cuts, zero breaks.`,
-        solutionIt: `Ho progettato l'intero storyboard come un'unica linea narrativa, poi animato in After Effects frame per frame le transizioni tra un soggetto e l'altro. Il tratto continuo guida lo spettatore attraverso la storia di PMI — dalla cura della persona alla visione aziendale — in un flusso visivo ipnotico.`,
-        solutionEn: `I designed the entire storyboard as a single narrative line, then animated the transitions between subjects frame by frame in After Effects. The continuous stroke guides the viewer through PMI's story — from personal care to corporate vision — in a hypnotic visual flow.`,
-        resultIt: `Un video dove il medium è il messaggio: la continuità del tratto comunica la continuità della cura. Due minuti senza un solo stacco visivo.`,
-        resultEn: `A video where the medium is the message: the continuity of the stroke communicates the continuity of care. Two minutes without a single visual break.`,
+        briefingIt: 'Video animato per PMI. Il concept: un unico tratto continuo che disegna una storia di due minuti, raccontando la missione e i valori di PMI attraverso un\u2019animazione fluida e ininterrotta. Progetto realizzato da Roma.',
+        briefingEn: 'Animated video for PMI. The concept: a single continuous line that draws a two-minute story, telling PMI\u2019s mission and values through a fluid, uninterrupted animation. Project developed from Rome.',
+        challengeIt: 'Realizzare un\u2019animazione dove un unico tratto si trasforma continuamente per due minuti senza interruzioni \u2014 ogni transizione doveva essere naturale, ogni elemento doveva nascere dal precedente. Zero tagli, zero stacchi. Il risultato doveva comunicare cura e attenzione attraverso la delicatezza del segno.',
+        challengeEn: 'Creating an animation where a single stroke continuously transforms for two minutes without breaks \u2014 every transition had to be natural, every element had to be born from the previous one. Zero cuts, zero breaks. The result had to communicate care and attention through the delicacy of the line.',
+        solutionIt: 'Ho progettato l\u2019intero storyboard come un\u2019unica linea narrativa, poi animato in After Effects frame per frame le transizioni tra un soggetto e l\u2019altro. Il tratto continuo guida lo spettatore attraverso la storia di PMI \u2014 dalla cura della persona alla visione aziendale \u2014 in un flusso visivo ipnotico. Tocchi di acquerello aggiungono emozione senza interrompere la linea. <a href="/motion-graphics">Scopri i miei servizi di motion graphics</a>.',
+        solutionEn: 'I designed the entire storyboard as a single narrative line, then animated the transitions between subjects frame by frame in After Effects. The continuous stroke guides the viewer through PMI\u2019s story \u2014 from personal care to corporate vision \u2014 in a hypnotic visual flow. Watercolor touches add emotion without interrupting the line. <a href="/en/motion-graphics">Discover my motion graphics services</a>.',
+        resultIt: 'Un video dove il medium \u00E8 il messaggio: la continuit\u00E0 del tratto comunica la continuit\u00E0 della cura. Due minuti senza un solo stacco visivo.',
+        resultEn: 'A video where the medium is the message: the continuity of the stroke communicates the continuity of care. Two minutes without a single visual break.',
+        contentBlocks: [
+            { type: 'video-loop-gallery', videos: [
+                { url: '/videos/portfolio/pmi-animazione-tratto-profilo.mp4' },
+                { url: '/videos/portfolio/pmi-animazione-tratto-mani.mp4' },
+            ], columns: 2 },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/pmi-animazione-annaffiatoio.webp', alt: { it: 'Annaffiatoio e piantina \u2014 animazione a tratto continuo PMI', en: 'Watering can and seedling \u2014 continuous line animation PMI' } },
+                { src: '/images/portfolio/pmi-animazione-bambino-fiore.webp', alt: { it: 'Bambino che annusa un fiore \u2014 animazione PMI', en: 'Child smelling a flower \u2014 PMI animation' } },
+            ], columns: 2 },
+            { type: 'gallery', images: [
+                { src: '/images/portfolio/pmi-animazione-famiglia-mela.webp', alt: { it: 'Famiglia con mela \u2014 animazione PMI', en: 'Family with apple \u2014 PMI animation' } },
+                { src: '/images/portfolio/pmi-animazione-albero-tratto.webp', alt: { it: 'Albero con nuvole \u2014 animazione a tratto continuo PMI', en: 'Tree with clouds \u2014 continuous line animation PMI' } },
+            ], columns: 2 },
+            { type: 'text', textIt: 'Software: After Effects per l\u2019animazione frame per frame, Illustrator per il design del tratto continuo e degli elementi illustrativi.', textEn: 'Software: After Effects for frame-by-frame animation, Illustrator for continuous line design and illustrative elements.' },
+        ],
     },
     {
         slug: 'klinamen-orion',

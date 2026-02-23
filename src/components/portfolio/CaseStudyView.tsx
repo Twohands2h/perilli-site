@@ -47,7 +47,7 @@ function Lightbox({
             {hasMultiple && <span className="absolute top-5 left-1/2 -translate-x-1/2 text-xs text-white/50 font-mono">{index + 1} / {images.length}</span>}
             {hasMultiple && <button onClick={(e) => { e.stopPropagation(); goPrev(); }} className="absolute left-3 md:left-6 z-10 p-2 text-white/50 hover:text-white transition-colors" aria-label="Previous"><ChevronLeft size={36} /></button>}
             <div className="relative w-[90vw] h-[85vh] max-w-6xl" onClick={(e) => e.stopPropagation()}>
-                <Image src={images[index].src} alt={images[index].alt} fill className="object-contain" sizes="90vw" quality={90} priority />
+                <Image src={images[index].src} alt={images[index].alt} fill className="object-contain" sizes="90vw" quality={100} priority />
             </div>
             {hasMultiple && <button onClick={(e) => { e.stopPropagation(); goNext(); }} className="absolute right-3 md:right-6 z-10 p-2 text-white/50 hover:text-white transition-colors" aria-label="Next"><ChevronRight size={36} /></button>}
         </div>
@@ -209,6 +209,21 @@ function BlockRenderer({ block, locale, vm, lightbox }: {
                             onPlay={(e) => vm.stopOthers(e.currentTarget)}>
                             <source src={block.url} type="video/mp4" />
                         </video>
+                    </div>
+                </div>
+            );
+        case 'video-loop-gallery':
+            return (
+                <div className="section-container">
+                    {block.title && <p className="text-xs font-semibold uppercase tracking-wider text-text-muted mb-3">{block.title}</p>}
+                    <div className={`grid grid-cols-1 md:grid-cols-${block.columns || 2} gap-4 md:gap-6`}>
+                        {(block.videos as { url: string; title?: string }[])?.map((v: { url: string; title?: string }, vi: number) => (
+                            <div key={vi} className="relative aspect-video rounded-lg overflow-hidden bg-black">
+                                <video autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
+                                    <source src={v.url} type="video/mp4" />
+                                </video>
+                            </div>
+                        ))}
                     </div>
                 </div>
             );
