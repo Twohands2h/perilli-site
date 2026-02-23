@@ -324,6 +324,146 @@ export const posts: BlogPost[] = [
   <p><strong>Dialogue with the director is the real tool.</strong> No software replaces a clear conversation about what the effect should make the audience feel. "Two dimensions touching" is a phrase — but it's the right phrase, and from there the entire look was born.</p>
   <p><strong>The integrated workflow makes the difference.</strong> Having also managed the color grading for the short, I could work VFX and color together from the start. The space-time effect has its own color palette that dialogues with the scene grading — it's not an element pasted on top, it's part of the film's visual fabric. If you're interested, read more about my <a href="/en/vfx">VFX services</a>, my approach to <a href="/en/post-production">integrated post-production</a>, or check out the <a href="/en/portfolio/along-came-ruby">full Along Came Ruby case study</a> in my portfolio.</p>`,
     },
+    {
+        slug: 'animazione-3d-prodotto-presentazione-cinematografica',
+        slugEn: '3d-product-animation-cinematic-presentation',
+        titleIt: 'Animazione 3D di prodotto: come presentare oggetti in modo cinematografico',
+        titleEn: '3D product animation: how to present objects cinematically',
+        excerptIt: 'Dal briefing al render finale. Come trasformo un oggetto fisico in un protagonista visivo con animazione 3D, illuminazione cinematografica e ambienti costruiti su misura.',
+        excerptEn: 'From briefing to final render. How I transform a physical object into a visual protagonist with 3D animation, cinematic lighting and custom-built environments.',
+        date: '2026-03-10',
+        readingTime: 8,
+        category: '3d',
+        categoryLabel: { it: 'Animazione 3D', en: '3D Animation' },
+        keywordTarget: 'animazione 3D prodotto',
+        thumbnail: '/images/portfolio/jor-liaison-colosseo-anelli-3d.webp',
+        thumbnailAlt: { it: 'Animazione 3D gioielli \u2014 JOR Collezione Liaison', en: '3D jewelry animation \u2014 JOR Liaison Collection' },
+        contentIt: `<h2>L\u2019oggetto come protagonista</h2>
+<p>Quando un brand mi chiede un video di prodotto in 3D, la prima cosa che dico \u00E8: non stiamo facendo un catalogo. Un oggetto animato in 3D deve raccontare una storia \u2014 deve avere un ambiente, una luce, un movimento che comunichi qualcosa di pi\u00F9 delle sue specifiche tecniche.</p>
+<p>La differenza tra un render di prodotto e un\u2019<a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">animazione 3D cinematografica</a> \u00E8 la stessa che c\u2019\u00E8 tra una foto prodotto su sfondo bianco e una campagna pubblicitaria: entrambe mostrano lo stesso oggetto, ma una lo presenta, l\u2019altra lo fa desiderare.</p>
+
+<h2>Il processo: dal disegno tecnico al mondo costruito</h2>
+<p>Ogni progetto segue un flusso preciso che ho affinato in anni di lavoro.</p>
+<p><strong>Fase 1 \u2014 Studio dell\u2019oggetto.</strong> Ricevo i disegni tecnici, le foto di riferimento, i campioni fisici quando possibile. Studio i materiali: come riflette la luce il metallo? Quanto \u00E8 trasparente il vetro? Come si comporta la superficie? Questi dettagli fanno la differenza tra un render che sembra finto e uno che sembra fotografato.</p>
+<p><strong>Fase 2 \u2014 Modellazione e materiali.</strong> Costruisco il modello 3D in 3ds Max partendo dai disegni tecnici originali. I materiali sono fisicamente accurati \u2014 non basta che \u201Csembrino\u201D metallo, devono reagire alla luce come il metallo vero: riflessi, rifrazione, microimperfezioni superficiali. Per i gioielli, ad esempio, i diamanti hanno bisogno di indici di rifrazione specifici perch\u00E9 la dispersione della luce sia credibile.</p>
+<p><strong>Fase 3 \u2014 Ambiente e illuminazione.</strong> Qui si gioca la partita. L\u2019oggetto esiste in uno spazio \u2014 e quello spazio comunica il posizionamento del brand. Per un brand di lusso, costruisco ambienti con materiali nobili: marmo, acqua, luce naturale morbida. Per un prodotto tecnico, ambienti industriali con luci nette e contrasti forti. L\u2019illuminazione \u00E8 cinematografica: key light, fill, rim \u2014 esattamente come su un set reale.</p>
+<p><strong>Fase 4 \u2014 Animazione e camera.</strong> I movimenti di camera guidano lo sguardo: dal panorama generale al dettaglio del prodotto. Ogni movimento ha un ritmo preciso. La camera non si muove a caso \u2014 rivela progressivamente, crea aspettativa, porta l\u2019occhio dove deve andare.</p>
+<p><strong>Fase 5 \u2014 Render e color grading.</strong> Il render produce i frame grezzi. Il <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">color grading in DaVinci Resolve</a> li trasforma nel look finale: contrasto, tonalit\u00E0, atmosfera. \u00C8 la stessa fase finale che applico ai film \u2014 e fa la stessa differenza.</p>
+
+<h2>Due esempi concreti dal mio portfolio</h2>
+<p><strong>JOR \u2014 Collezione Liaison.</strong> Per questo brand di gioielli ho costruito un intero mondo onirico in Unreal Engine 5: il Colosseo, statue classiche, superfici d\u2019acqua riflettente. I gioielli sono i protagonisti \u2014 la camera li attraversa, ci gira attorno, li rivela tra colonne e archi. Ogni anello con diamanti ha materiali fisicamente accurati: la luce si disperde attraverso le pietre esattamente come nella realt\u00E0. Il risultato non \u00E8 un catalogo: \u00E8 un viaggio. <a href="/portfolio/jor" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Guarda il caso studio completo</a>.</p>
+<p><strong>Guerciotti 60 Anni.</strong> Per i sessant\u2019anni di Guerciotti ho animato il telaio in carbonio della bicicletta da corsa: un oggetto tecnico che doveva comunicare precisione ingegneristica e passione artigianale insieme. La camera esplora ogni dettaglio costruttivo \u2014 le fibre di carbonio, le saldature, le geometrie \u2014 in un ambiente scuro e cinematografico che esalta le forme. <a href="/portfolio/guerciotti-60-anni" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Guarda il caso studio completo</a>.</p>
+
+<h2>Perch\u00E9 il 3D e non una foto?</h2>
+<p>La domanda \u00E8 legittima. Un fotografo bravo pu\u00F2 fare foto prodotto straordinarie. Ma l\u2019animazione 3D offre cose che la fotografia non pu\u00F2:</p>
+<p><strong>Movimenti impossibili.</strong> La camera pu\u00F2 attraversare l\u2019oggetto, entrarci dentro, orbitargli attorno a velocit\u00E0 controllata. Non ci sono limiti fisici.</p>
+<p><strong>Ambienti su misura.</strong> Vuoi il tuo prodotto in un palazzo del Rinascimento? In orbita? Sott\u2019acqua? Nel 3D l\u2019ambiente si costruisce esattamente come serve il racconto.</p>
+<p><strong>Controllo totale sull\u2019illuminazione.</strong> Ogni luce \u00E8 posizionabile al millimetro. Ogni riflesso \u00E8 controllabile. Nessun compromesso con la luce ambiente o i limiti dello studio.</p>
+<p><strong>Versioni e varianti.</strong> Colore diverso? Materiale diverso? Ambientazione diversa? Si cambia il parametro e si rilancia il render. Non si riorganizza un set fotografico.</p>
+
+<h2>Cosa serve per partire</h2>
+<p>Se stai valutando un\u2019animazione 3D per il tuo prodotto, ecco cosa mi \u00E8 utile per darti un preventivo accurato:</p>
+<p>Disegni tecnici o file CAD dell\u2019oggetto (se disponibili), foto di riferimento del prodotto reale, un\u2019idea del tono che vuoi comunicare (lusso, tecnico, giocoso, istituzionale), la destinazione del video (social, sito web, fiera, spot TV) e la durata indicativa.</p>
+<p>Da l\u00EC costruisco una proposta con storyboard, tempistiche e costi. Il mio approccio \u00E8 diretto: un unico referente che gestisce modellazione, animazione, illuminazione e color grading in un <a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow integrato</a>. Meno passaggi, pi\u00F9 coerenza, tempi pi\u00F9 rapidi.</p>`,
+
+        contentEn: `<h2>The object as protagonist</h2>
+<p>When a brand asks me for a 3D product video, the first thing I say is: we\u2019re not making a catalogue. A 3D animated object must tell a story \u2014 it needs an environment, lighting, movement that communicates something beyond its technical specifications.</p>
+<p>The difference between a product render and a <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">cinematic 3D animation</a> is the same as between a product photo on white background and an advertising campaign: both show the same object, but one presents it, the other makes you want it.</p>
+
+<h2>The process: from technical drawing to built world</h2>
+<p>Every project follows a precise flow I\u2019ve refined over years of work.</p>
+<p><strong>Phase 1 \u2014 Studying the object.</strong> I receive technical drawings, reference photos, physical samples when possible. I study the materials: how does the metal reflect light? How transparent is the glass? How does the surface behave? These details make the difference between a render that looks fake and one that looks photographed.</p>
+<p><strong>Phase 2 \u2014 Modeling and materials.</strong> I build the 3D model in 3ds Max from original technical drawings. Materials are physically accurate \u2014 it\u2019s not enough that they \u201Clook like\u201D metal, they must react to light like real metal: reflections, refraction, surface micro-imperfections. For jewelry, diamonds need specific refraction indices for believable light dispersion.</p>
+<p><strong>Phase 3 \u2014 Environment and lighting.</strong> This is where the game is played. The object exists in a space \u2014 and that space communicates the brand\u2019s positioning. For a luxury brand, I build environments with noble materials: marble, water, soft natural light. For a technical product, industrial environments with sharp lights and strong contrasts. Lighting is cinematic: key light, fill, rim \u2014 exactly like on a real set.</p>
+<p><strong>Phase 4 \u2014 Animation and camera.</strong> Camera movements guide the eye: from overview to product detail. Every movement has a precise rhythm. The camera doesn\u2019t move randomly \u2014 it reveals progressively, builds anticipation, leads the eye where it needs to go.</p>
+<p><strong>Phase 5 \u2014 Render and color grading.</strong> Rendering produces raw frames. <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Color grading in DaVinci Resolve</a> transforms them into the final look: contrast, tonality, atmosphere. It\u2019s the same final phase I apply to films \u2014 and it makes the same difference.</p>
+
+<h2>Two concrete examples from my portfolio</h2>
+<p><strong>JOR \u2014 Liaison Collection.</strong> For this jewelry brand I built an entire dreamlike world in Unreal Engine 5: the Colosseum, classical statues, reflective water surfaces. The jewels are the protagonists \u2014 the camera passes through them, orbits around them, reveals them between columns and arches. Every diamond ring has physically accurate materials: light disperses through the stones exactly as in reality. The result isn\u2019t a catalogue: it\u2019s a journey. <a href="/en/portfolio/jor" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">See the full case study</a>.</p>
+<p><strong>Guerciotti 60 Years.</strong> For Guerciotti\u2019s sixtieth anniversary I animated the carbon fiber racing bicycle frame: a technical object that needed to communicate engineering precision and artisanal passion together. The camera explores every constructive detail \u2014 carbon fibers, welds, geometries \u2014 in a dark, cinematic environment that enhances the forms. <a href="/en/portfolio/guerciotti-60-anni" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">See the full case study</a>.</p>
+
+<h2>Why 3D and not a photo?</h2>
+<p>It\u2019s a fair question. A skilled photographer can take extraordinary product photos. But 3D animation offers things photography cannot:</p>
+<p><strong>Impossible movements.</strong> The camera can pass through the object, enter inside it, orbit at controlled speed. No physical limits.</p>
+<p><strong>Custom environments.</strong> Want your product in a Renaissance palace? In orbit? Underwater? In 3D, the environment is built exactly as the story requires.</p>
+<p><strong>Total lighting control.</strong> Every light is positionable to the millimeter. Every reflection is controllable. No compromises with ambient light or studio limitations.</p>
+<p><strong>Versions and variants.</strong> Different color? Different material? Different setting? Change the parameter and relaunch the render. No reorganizing a photo set.</p>
+
+<h2>What you need to get started</h2>
+<p>If you\u2019re considering a 3D animation for your product, here\u2019s what I need for an accurate quote:</p>
+<p>Technical drawings or CAD files of the object (if available), reference photos of the actual product, an idea of the tone you want to communicate (luxury, technical, playful, institutional), the video\u2019s destination (social, website, trade fair, TV spot) and approximate duration.</p>
+<p>From there I build a proposal with storyboard, timeline and costs. My approach is direct: a single point of contact managing modeling, animation, lighting and color grading in an <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">integrated workflow</a>. Fewer handoffs, more coherence, faster turnaround.</p>`,
+    },
+    {
+        slug: 'motion-graphics-spot-istituzionali-tratto-continuo-2d',
+        slugEn: 'motion-graphics-institutional-spots-line-animation-2d',
+        titleIt: 'Motion graphics per spot istituzionali: dal tratto continuo all\u2019animazione 2.5D',
+        titleEn: 'Motion graphics for institutional spots: from line animation to 2.5D',
+        excerptIt: 'Come trasformo temi complessi in racconti visivi chiari e coinvolgenti. Due approcci diversi \u2014 tratto continuo e animazione 2.5D \u2014 per due clienti istituzionali.',
+        excerptEn: 'How I transform complex topics into clear, engaging visual stories. Two different approaches \u2014 continuous line and 2.5D animation \u2014 for two institutional clients.',
+        date: '2026-03-15',
+        readingTime: 7,
+        category: 'motion',
+        categoryLabel: { it: 'Motion Graphics', en: 'Motion Graphics' },
+        keywordTarget: 'motion graphics spot istituzionale',
+        thumbnail: '/images/portfolio/pmi-abbiamo-cura-di-te-animazione.webp',
+        thumbnailAlt: { it: 'Motion graphics PMI \u2014 animazione tratto continuo', en: 'PMI motion graphics \u2014 continuous line animation' },
+        contentIt: `<h2>Il problema di sempre: rendere interessante ci\u00F2 che \u00E8 complesso</h2>
+<p>Bonus fiscali, welfare aziendale, procedure burocratiche. Ogni azienda e istituzione ha messaggi importanti da comunicare che per\u00F2 \u2014 diciamolo \u2014 non sono esattamente avvincenti. Il testo scritto non basta, il video parlato annoia. La <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a> risolve questo problema: trasforma concetti astratti in immagini che si seguono con piacere.</p>
+<p>In questo articolo racconto due progetti dove ho affrontato la stessa sfida \u2014 comunicare un tema istituzionale \u2014 con due approcci visivi completamente diversi.</p>
+
+<h2>PMI \u2014 Il tratto continuo che non si interrompe mai</h2>
+<p>PMI mi ha chiesto un video per raccontare la propria missione: \u201CAbbiamo cura di te\u201D. Il messaggio parla di attenzione, di cura, di un percorso che accompagna la persona. Serviva uno stile visivo che incarnasse questi valori.</p>
+<p><strong>La scelta: un unico tratto continuo per due minuti.</strong> Zero tagli, zero stacchi. Una linea che si trasforma continuamente \u2014 diventa un profilo, poi delle mani, poi un albero, poi una famiglia \u2014 guidando lo spettatore in un flusso ininterrotto. \u00C8 la traduzione visiva della cura: qualcosa che non si interrompe, che accompagna dall\u2019inizio alla fine.</p>
+<p>La sfida tecnica era seria. Ogni transizione doveva essere naturale \u2014 ogni elemento doveva nascere dal precedente senza forzature. Ho progettato l\u2019intero storyboard come un\u2019unica linea narrativa, poi animato in After Effects frame per frame le transizioni critiche. Tocchi di acquerello aggiungono emozione senza interrompere il flusso della linea.</p>
+<p>Il risultato \u00E8 un video ipnotico dove il messaggio arriva senza fatica. <a href="/portfolio/pmi" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Guarda il caso studio completo</a>.</p>
+
+<h2>Acea Acqua \u2014 La mascotte 2.5D che guida il racconto</h2>
+<p>Acea Acqua doveva comunicare il Bonus Idrico \u2014 un tema burocratico per definizione. La sfida: mantenere la seriet\u00E0 istituzionale di Acea rendendo il contenuto accessibile e perfino simpatico.</p>
+<p><strong>La scelta: animazione 2.5D con una goccia d\u2019acqua come mascotte.</strong> Il 2.5D \u00E8 una tecnica che d\u00E0 alle illustrazioni 2D le sembianze del 3D attraverso profondit\u00E0, ombre e movimenti su pi\u00F9 piani. La goccia ha personalit\u00E0 ed espressivit\u00E0 \u2014 strizza l\u2019occhio, gesticola, guida lo spettatore attraverso i passaggi del bonus con transizioni fluide e tipografia animata.</p>
+<p>Lo stile grafico \u00E8 pulito e in linea con il brand Acea: palette azzurra, illustrazioni flat con quel tocco di volume dato dal 2.5D, animazione morbida. Il risultato \u00E8 uno spot dove un tema complesso diventa semplice da capire. <a href="/portfolio/bonus-idrico-acea" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Guarda il caso studio completo</a>.</p>
+
+<h2>Due approcci, una filosofia</h2>
+<p>PMI e Acea sono progetti molto diversi nello stile, ma condividono lo stesso principio: <strong>il linguaggio visivo deve servire il messaggio, non decorarlo.</strong></p>
+<p>Per PMI il tratto continuo non \u00E8 un vezzo grafico \u2014 \u00E8 la traduzione visiva della continuit\u00E0 della cura. Per Acea la mascotte 2.5D non \u00E8 un\u2019aggiunta carina \u2014 \u00E8 lo strumento che rende umano un tema burocratico. In entrambi i casi, lo stile nasce dal brief, non da una scelta estetica a priori.</p>
+
+<h2>Quando la motion graphics \u00E8 la scelta giusta</h2>
+<p>La motion graphics istituzionale funziona quando il contenuto \u00E8 concettuale piuttosto che visivo. Se devi mostrare un prodotto fisico, probabilmente ti serve un video girato o un\u2019<a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">animazione 3D</a>. Ma se devi spiegare un processo, raccontare valori, comunicare dati o procedure \u2014 la motion graphics trasforma l\u2019astratto in concreto.</p>
+<p>I vantaggi rispetto al video girato per questo tipo di comunicazione: nessun set, nessun cast, nessun vincolo meteo. Modifiche e aggiornamenti sono semplici. Il messaggio arriva anche senza audio (fondamentale per i social). E soprattutto: il livello di controllo su ogni frame \u00E8 totale.</p>
+
+<h2>Il mio processo per spot istituzionali</h2>
+<p>Ogni progetto inizia con una domanda: qual \u00E8 la singola cosa che lo spettatore deve capire alla fine del video? Da l\u00EC costruisco il racconto a ritroso.</p>
+<p>Lo storyboard viene prima di tutto. Non parto mai dall\u2019animazione \u2014 parto dalla struttura narrativa. Poi definisco lo stile: illustrativo, geometrico, tipografico, misto? Dipende dal brand, dal target, dal canale di distribuzione. Solo dopo passo all\u2019animazione vera e propria in After Effects, dove il ritmo e il timing fanno la differenza tra un video che si guarda e uno che si subisce.</p>
+<p>La <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> finale \u2014 color, sound design, export ottimizzato per ogni piattaforma \u2014 chiude il ciclo in un <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow integrato</a> dove tutto passa per le stesse mani.</p>`,
+
+        contentEn: `<h2>The eternal problem: making complex things interesting</h2>
+<p>Tax bonuses, corporate welfare, bureaucratic procedures. Every company and institution has important messages to communicate that \u2014 let\u2019s be honest \u2014 aren\u2019t exactly thrilling. Written text isn\u2019t enough, talking-head videos bore people. <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Motion graphics</a> solves this problem: it transforms abstract concepts into images people actually enjoy watching.</p>
+<p>In this article I share two projects where I faced the same challenge \u2014 communicating an institutional topic \u2014 with two completely different visual approaches.</p>
+
+<h2>PMI \u2014 The continuous line that never breaks</h2>
+<p>PMI asked me for a video to tell their mission: \u201CWe take care of you.\u201D The message speaks of attention, care, a journey that accompanies the person. I needed a visual style that embodied these values.</p>
+<p><strong>The choice: a single continuous line for two minutes.</strong> Zero cuts, zero breaks. A line that continuously transforms \u2014 becomes a profile, then hands, then a tree, then a family \u2014 guiding the viewer in an uninterrupted flow. It\u2019s the visual translation of care: something that doesn\u2019t stop, that accompanies from beginning to end.</p>
+<p>The technical challenge was serious. Every transition had to feel natural \u2014 every element had to be born from the previous one without forcing. I designed the entire storyboard as a single narrative line, then animated the critical transitions frame by frame in After Effects. Watercolor touches add emotion without breaking the line\u2019s flow.</p>
+<p>The result is a hypnotic video where the message arrives effortlessly. <a href="/en/portfolio/pmi" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">See the full case study</a>.</p>
+
+<h2>Acea Acqua \u2014 The 2.5D mascot that guides the story</h2>
+<p>Acea Acqua needed to communicate the Water Bonus \u2014 a bureaucratic topic by definition. The challenge: maintain Acea\u2019s institutional seriousness while making the content accessible and even likeable.</p>
+<p><strong>The choice: 2.5D animation with a water drop as mascot.</strong> 2.5D is a technique that gives 2D illustrations a 3D appearance through depth, shadows and multi-plane movements. The drop has personality and expressiveness \u2014 it winks, gestures, guides the viewer through the bonus steps with fluid transitions and animated typography.</p>
+<p>The graphic style is clean and aligned with the Acea brand: blue palette, flat illustrations with that touch of volume from 2.5D, smooth animation. The result is a spot where a complex topic becomes simple to understand. <a href="/en/portfolio/bonus-idrico-acea" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">See the full case study</a>.</p>
+
+<h2>Two approaches, one philosophy</h2>
+<p>PMI and Acea are very different projects in style, but share the same principle: <strong>the visual language must serve the message, not decorate it.</strong></p>
+<p>For PMI, the continuous line isn\u2019t a graphic whim \u2014 it\u2019s the visual translation of continuity of care. For Acea, the 2.5D mascot isn\u2019t a cute addition \u2014 it\u2019s the tool that makes a bureaucratic topic human. In both cases, the style is born from the brief, not from an a priori aesthetic choice.</p>
+
+<h2>When motion graphics is the right choice</h2>
+<p>Institutional motion graphics works when the content is conceptual rather than visual. If you need to show a physical product, you probably need filmed video or <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">3D animation</a>. But if you need to explain a process, tell values, communicate data or procedures \u2014 motion graphics transforms the abstract into concrete.</p>
+<p>Advantages over filmed video for this type of communication: no set, no cast, no weather constraints. Changes and updates are simple. The message arrives even without sound (essential for social media). And above all: control over every frame is total.</p>
+
+<h2>My process for institutional spots</h2>
+<p>Every project starts with a question: what is the single thing the viewer must understand at the end of the video? From there I build the story backwards.</p>
+<p>Storyboard comes first. I never start from animation \u2014 I start from narrative structure. Then I define the style: illustrative, geometric, typographic, mixed? It depends on the brand, the target, the distribution channel. Only then do I move to actual animation in After Effects, where rhythm and timing make the difference between a video you watch and one you endure.</p>
+<p>Final <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> \u2014 color, sound design, optimized export for each platform \u2014 closes the cycle in an <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">integrated workflow</a> where everything passes through the same hands.</p>`,
+    },
 ];
 
 /**
