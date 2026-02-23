@@ -30,6 +30,7 @@ const contentIT = {
 <p>Il mio vantaggio è il contesto. Venti anni di post-produzione significano sapere come deve apparire un'immagine finale, quali artefatti sono accettabili e quali no, come integrare output AI con riprese reali, come mantenere coerenza visiva tra shot generate. Questo know-how non si improvvisa.</p>`,
   introImage: '/images/services/ai-video-production-workflow-professionale-roma.jpg',
   introImageAlt: 'AI video production — workflow professionale con intelligenza artificiale, Roma',
+  introVideo: '/videos/ai-video-showreel.mp4',
 
   servicesTitle: 'Come uso l\'AI nella produzione video',
   services: [
@@ -104,6 +105,7 @@ const contentEN = {
 <p>My advantage is context. Twenty years of post-production mean knowing how a final image should look, which artifacts are acceptable and which aren't, how to integrate AI output with real footage, how to maintain visual coherence between generated shots. This know-how can't be improvised.</p>`,
   introImage: '/images/services/ai-video-production-workflow-professionale-roma.jpg',
   introImageAlt: 'AI video production — professional workflow with artificial intelligence, Rome Italy',
+  introVideo: '/videos/ai-video-showreel.mp4',
 
   servicesTitle: 'How I use AI in video production',
   services: [

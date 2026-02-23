@@ -60,6 +60,7 @@ const services = [
     ctaEn: 'Discover AI Video',
     href: { it: '/ai-video', en: '/en/ai-video' },
     image: '',
+    video: '/videos/ai-video-showreel.mp4',
   },
 ];
 
@@ -119,6 +120,13 @@ export default function ServicesSection() {
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
+                    ) : service.video ? (
+                      <video
+                        autoPlay muted loop playsInline preload="metadata"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      >
+                        <source src={service.video} type="video/mp4" />
+                      </video>
                     ) : (
                       <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] to-[#0d0d1a] flex items-center justify-center">
                         <div className="text-center">
