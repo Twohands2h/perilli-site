@@ -469,66 +469,25 @@ export const projects: Project[] = [
         year: '2020',
         role: 'Cinematografia, Color Correction, VFX',
         thumbnail: '/images/portfolio/frangiamore/frangiamore-sylvio-giardina-hero.webp',
-        thumbnailAlt: { it: 'Frangiamore \u2014 fashion film per Sylvio Giardina Haute Couture, Roma', en: 'Frangiamore \u2014 fashion film for Sylvio Giardina Haute Couture, Rome' },
+        thumbnailAlt: { it: 'Frangiamore \u2014 fashion film Sylvio Giardina Haute Couture, Roma', en: 'Frangiamore \u2014 fashion film Sylvio Giardina Haute Couture, Rome' },
         heroImage: '/images/portfolio/frangiamore/frangiamore-sylvio-giardina-hero.webp',
         heroAlt: { it: 'Frangiamore \u2014 fashion film Sylvio Giardina, Scala del Vignola Roma', en: 'Frangiamore \u2014 Sylvio Giardina fashion film, Scala del Vignola Rome' },
         images: [
-            { src: '/images/portfolio/frangiamore/frangiamore-tulle-scalinata-campidoglio.webp', alt: { it: 'Abito in tulle bianco sulla scalinata del Campidoglio \u2014 Frangiamore', en: 'White tulle gown on the Campidoglio staircase \u2014 Frangiamore' } },
-            { src: '/images/portfolio/frangiamore/frangiamore-pantheon-roma.webp', alt: { it: 'Modella davanti al Pantheon \u2014 Frangiamore Sylvio Giardina', en: 'Model in front of the Pantheon \u2014 Frangiamore Sylvio Giardina' } },
+            { src: '/images/portfolio/frangiamore/frangiamore-tulle-scalinata-campidoglio.webp', alt: { it: 'Abito tulle bianco sulla scalinata del Campidoglio \u2014 Frangiamore', en: 'White tulle gown on the Campidoglio staircase \u2014 Frangiamore' } },
+            { src: '/images/portfolio/frangiamore/frangiamore-pantheon-roma.webp', alt: { it: 'Modella al Pantheon \u2014 Frangiamore Sylvio Giardina', en: 'Model at the Pantheon \u2014 Frangiamore Sylvio Giardina' } },
         ],
         tools: ['DaVinci Resolve', 'After Effects'],
-        briefingIt: 'Il couturier Sylvio Giardina \u2014 formatosi all\'Accademia di Costume e Moda con apprendistato da Gattinoni \u2014 voleva un cortometraggio che celebrasse il dialogo tra le sue collezioni di alta moda e le bellezze architettoniche di Roma. Il progetto \u00E8 stato patrocinato dal Comune di Roma e presentato in Campidoglio alla presenza della Sindaca Virginia Raggi. Progetto realizzato da Roma.',
-        briefingEn: 'Couturier Sylvio Giardina \u2014 trained at the Accademia di Costume e Moda with an apprenticeship at Gattinoni \u2014 wanted a short film celebrating the dialogue between his haute couture collections and Rome\'s architectural beauty. The project was sponsored by the City of Rome and premiered at the Campidoglio in the presence of Mayor Virginia Raggi.',
-        challengeIt: 'Girare in location monumentali romane (Campidoglio, Pantheon, Villa Torlonia) con tempi strettissimi e luce naturale, costruendo un look cinematografico che esaltasse contemporaneamente i dettagli sartoriali degli abiti e la grandiosit\u00E0 delle architetture. Tre collezioni diverse \u2014 Vertigo, Monocromo e Dark Celebration \u2014 con palette cromatiche distinte da armonizzare in un unico racconto visivo.',
-        challengeEn: 'Shooting in monumental Roman locations (Campidoglio, Pantheon, Villa Torlonia) within very tight timeframes using natural light, building a cinematic look that simultaneously enhanced the sartorial details of the garments and the grandeur of the architecture. Three different collections \u2014 Vertigo, Monocromo and Dark Celebration \u2014 with distinct color palettes to harmonize into a single visual narrative.',
-        solutionIt: 'Ho curato cinematografia, <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">color correction</a> e VFX. Riprese all\'alba e al tramonto per catturare la luce migliore nelle location a disponibilit\u00E0 limitata. La color correction ha costruito tre atmosfere distinte per le tre collezioni \u2014 il bianco puro del tulle, il nero misterioso e il rosso fuoco \u2014 mantenendo coerenza narrativa attraverso le transizioni. Interventi VFX mirati per le dissolvenze evocative tra passato e presente che caratterizzano il film.',
-        solutionEn: 'I handled cinematography, <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">color correction</a> and VFX. Shooting at dawn and dusk to capture optimal light in locations with limited availability. The color correction built three distinct atmospheres for the three collections \u2014 pure white tulle, mysterious black and fiery red \u2014 maintaining narrative coherence through transitions. Targeted VFX work for the evocative dissolves between past and present that characterize the film.',
-        resultIt: 'Un fashion film presentato ufficialmente nella Sala della Protomoteca in Campidoglio il 14 settembre 2020. Copertura stampa su ANSA, Adnkronos e testate di settore. Un esempio di come cinematografia e <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> possono elevare la moda a racconto cinematografico.',
-        resultEn: 'A fashion film officially premiered at the Sala della Protomoteca in the Campidoglio on September 14, 2020. Press coverage on ANSA, Adnkronos and industry publications. An example of how cinematography and <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> can elevate fashion into cinematic storytelling.',
+        briefingIt: 'Un cortometraggio per il couturier Sylvio Giardina \u2014 formatosi all\u2019Accademia di Costume e Moda, apprendistato da Gattinoni \u2014 che voleva raccontare il dialogo tra le sue collezioni di alta moda e l\u2019architettura monumentale di Roma. Patrocinato dal Comune di Roma, presentato in Campidoglio alla presenza della Sindaca Virginia Raggi. Progetto realizzato da Roma.',
+        briefingEn: 'A short film for couturier Sylvio Giardina \u2014 trained at the Accademia di Costume e Moda, apprenticeship at Gattinoni \u2014 who wanted to tell the dialogue between his haute couture collections and Rome\u2019s monumental architecture. Sponsored by the City of Rome, premiered at the Campidoglio in the presence of Mayor Virginia Raggi. Project based in Rome.',
+        challengeIt: 'Tre collezioni diverse \u2014 Vertigo, Monocromo, Dark Celebration \u2014 con palette cromatiche distinte, da armonizzare in un unico racconto. Riprese in location monumentali (Campidoglio, Pantheon, Villa Torlonia) con tempi strettissimi e sola luce naturale. Il look doveva esaltare contemporaneamente i dettagli sartoriali e la grandiosit\u00E0 delle architetture.',
+        challengeEn: 'Three different collections \u2014 Vertigo, Monocromo, Dark Celebration \u2014 with distinct color palettes to harmonize into a single narrative. Shooting in monumental locations (Campidoglio, Pantheon, Villa Torlonia) within very tight timeframes using only natural light. The look had to simultaneously enhance sartorial details and architectural grandeur.',
+        solutionIt: 'Ho curato cinematografia, <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">color correction</a> e VFX. Riprese all\u2019alba e al tramonto per la luce migliore. In color correction ho costruito tre atmosfere \u2014 il bianco puro del tulle, il nero misterioso, il rosso fuoco \u2014 mantenendo coerenza narrativa nelle transizioni. Interventi <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> mirati per le dissolvenze evocative tra passato e presente.',
+        solutionEn: 'I handled cinematography, <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">color correction</a> and VFX. Shooting at dawn and dusk for optimal light. In color correction I built three distinct atmospheres \u2014 pure white tulle, mysterious black, fiery red \u2014 maintaining narrative coherence through transitions. Targeted <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> work for the evocative dissolves between past and present.',
+        resultIt: 'Presentato nella Sala della Protomoteca in Campidoglio, 14 settembre 2020. Copertura stampa su ANSA, Adnkronos e testate di settore.',
+        resultEn: 'Premiered at the Sala della Protomoteca in the Campidoglio, September 14, 2020. Press coverage on ANSA, Adnkronos and industry publications.',
         videoUrl: 'https://youtu.be/mowfqwBd_Tc',
         imdbLink: 'https://www.imdb.com/title/tt13472468/',
         contentBlocks: [
-            {
-                type: 'text',
-                textIt: 'Un cortometraggio che nasce come dichiarazione d\'amore per Roma e per l\'alta moda. Sylvio Giardina ha selezionato capi dalle collezioni Vertigo, Monocromo e Dark Celebration del suo archivio storico per creare un dialogo visivo tra artigianato sartoriale e architettura monumentale.\n\nIl titolo \u201CFrangiamore\u201D \u00E8 un omaggio alla madre dello stilista \u2014 il suo cognome da nubile. Un gesto intimo che racconta quanto la passione per la moda sia radicata nella storia personale.',
-                textEn: 'A short film conceived as a love letter to Rome and haute couture. Sylvio Giardina selected pieces from his archive\'s Vertigo, Monocromo and Dark Celebration collections to create a visual dialogue between sartorial craftsmanship and monumental architecture.\n\nThe title \u201CFrangiamore\u201D is a tribute to the designer\'s mother \u2014 her maiden name. An intimate gesture revealing how deeply the passion for fashion is rooted in personal history.'
-            },
-            {
-                type: 'image',
-                src: '/images/portfolio/frangiamore/frangiamore-tulle-scalinata-campidoglio.webp',
-                alt: { it: 'Abito in tulle bianco sulla scalinata del Campidoglio \u2014 Frangiamore Sylvio Giardina', en: 'White tulle gown on the Campidoglio staircase \u2014 Frangiamore Sylvio Giardina' },
-                fullWidth: false
-            },
-            {
-                type: 'text',
-                textIt: 'Il mio ruolo \u00E8 stato quello di direttore della fotografia, colorist e VFX artist. Ho curato l\'intero look cinematografico del film \u2014 dalla scelta dell\'illuminazione naturale nelle location romane alla color correction finale, costruendo una palette che esaltasse i tre colori dominanti delle collezioni: il bianco puro del tulle, il nero misterioso e il rosso fuoco.\n\nLe riprese si sono svolte all\'alba e al tramonto per catturare la luce migliore nei luoghi monumentali, lavorando con tempi strettissimi in location a disponibilit\u00E0 limitata.',
-                textEn: 'My role encompassed director of photography, colorist and VFX artist. I shaped the entire cinematic look of the film \u2014 from leveraging natural light across Rome\'s monumental locations to the final color correction, building a palette that enhanced the three dominant collection colors: pure white tulle, mysterious black and fiery red.\n\nShooting took place at dawn and dusk to capture optimal light in the monumental locations, working within very tight windows of availability.'
-            },
-            {
-                type: 'gallery',
-                columns: 2,
-                images: [
-                    {
-                        src: '/images/portfolio/frangiamore/frangiamore-pantheon-roma.webp',
-                        alt: { it: 'Modella davanti al portone del Pantheon \u2014 Frangiamore cinematografia Piero Perilli', en: 'Model in front of the Pantheon entrance \u2014 Frangiamore cinematography by Piero Perilli' }
-                    },
-                    {
-                        src: '/images/portfolio/frangiamore/frangiamore-palazzo-conservatori-roma.webp',
-                        alt: { it: 'Abito haute couture nel Cortile dei Musei Capitolini \u2014 Frangiamore Sylvio Giardina', en: 'Haute couture gown in the Capitoline Museums courtyard \u2014 Frangiamore Sylvio Giardina' }
-                    }
-                ]
-            },
-            {
-                type: 'text',
-                textIt: 'Roma stessa diventa protagonista: Piazza del Campidoglio, la Scala del Vignola, il Cortile di Palazzo dei Conservatori, Piazza della Rotonda al Pantheon e Villa Torlonia. Ogni location \u00E8 stata scelta per creare un contrappunto architettonico con gli abiti \u2014 le geometrie rinascimentali dei palazzi che dialogano con le strutture architettoniche dei capi in tulle e goffrature.\n\nIl cortometraggio si chiude con un omaggio alle sarte della Maison: mani artigiane che custodiscono il patrimonio dell\'alta moda italiana. Un tema che sento profondamente vicino \u2014 l\'artigianato come valore, la precisione del fare.',
-                textEn: 'Rome itself becomes a protagonist: Piazza del Campidoglio, the Scala del Vignola, the Palazzo dei Conservatori courtyard, Piazza della Rotonda at the Pantheon and Villa Torlonia. Each location was chosen to create an architectural counterpoint with the garments \u2014 Renaissance geometries in dialogue with the architectural structures of the tulle and goffr\u00E9 pieces.\n\nThe film closes with a tribute to the Maison\'s seamstresses: artisan hands preserving Italy\'s haute couture heritage. A theme that resonates deeply with me \u2014 craftsmanship as value, the precision of making.'
-            },
-            {
-                type: 'image',
-                src: '/images/portfolio/frangiamore/frangiamore-haute-couture-roma.webp',
-                alt: { it: 'Abito haute couture Sylvio Giardina con frammenti del Colosso di Costantino \u2014 Frangiamore Roma', en: 'Sylvio Giardina haute couture gown with fragments of the Colossus of Constantine \u2014 Frangiamore Rome' },
-                fullWidth: false
-            },
             {
                 type: 'video',
                 embedId: 'mowfqwBd_Tc',
@@ -537,8 +496,44 @@ export const projects: Project[] = [
             },
             {
                 type: 'text',
-                textIt: '**Crediti**\nRegia: Riccardo Suriano\nCinematografia: Piero Perilli\nArt Director: Tania Alineri\nStylist: Valeria J. Marchetti\nModella: Serena Archetti\nHairstylist: Alessandro Messina\nMake-up: Antonia Pappalardo\n\nPresentato in Campidoglio, Roma \u2014 14 Settembre 2020\n<a href="https://www.imdb.com/title/tt13472468/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>',
-                textEn: '**Credits**\nDirector: Riccardo Suriano\nCinematography: Piero Perilli\nArt Director: Tania Alineri\nStylist: Valeria J. Marchetti\nModel: Serena Archetti\nHairstylist: Alessandro Messina\nMake-up: Antonia Pappalardo\n\nPremiered at Campidoglio, Rome \u2014 September 14, 2020\n<a href="https://www.imdb.com/title/tt13472468/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>'
+                textIt: 'Il titolo \u201CFrangiamore\u201D \u00E8 il cognome da nubile della madre dello stilista. Un gesto intimo che dice molto: questa non \u00E8 una sfilata filmata, \u00E8 un racconto personale vestito di tulle e pietra romana.\n\nTre collezioni dall\u2019archivio storico di Giardina \u2014 il bianco architettonico di Vertigo, il nero assoluto di Monocromo, il rosso viscerale di Dark Celebration \u2014 attraversano i monumenti di Roma come fantasmi eleganti.',
+                textEn: 'The title \u201CFrangiamore\u201D is the designer\u2019s mother\u2019s maiden name. An intimate gesture that says a lot: this isn\u2019t a filmed runway show, it\u2019s a personal story dressed in tulle and Roman stone.\n\nThree collections from Giardina\u2019s historical archive \u2014 the architectural white of Vertigo, the absolute black of Monocromo, the visceral red of Dark Celebration \u2014 move through Rome\u2019s monuments like elegant ghosts.'
+            },
+            {
+                type: 'image',
+                src: '/images/portfolio/frangiamore/frangiamore-tulle-scalinata-campidoglio.webp',
+                alt: { it: 'Abito tulle bianco sulla scalinata del Campidoglio \u2014 Frangiamore Sylvio Giardina', en: 'White tulle gown on the Campidoglio staircase \u2014 Frangiamore Sylvio Giardina' },
+                fullWidth: true
+            },
+            {
+                type: 'text',
+                textIt: 'Abbiamo girato all\u2019alba e al tramonto \u2014 le uniche finestre possibili in location a disponibilit\u00E0 limitata. Campidoglio, Pantheon, Villa Torlonia: la luce naturale era l\u2019unica opzione, e doveva funzionare.\n\nIn color correction ho dato a ogni collezione la sua atmosfera senza spezzare il racconto. Il bianco del tulle \u00E8 puro, quasi sovraesposto. Il nero assorbe tutto tranne le geometrie degli abiti. Il rosso brucia. Ma le transizioni tengono insieme tutto \u2014 \u00E8 un film, non tre video attaccati.',
+                textEn: 'We shot at dawn and dusk \u2014 the only possible windows in locations with limited availability. Campidoglio, Pantheon, Villa Torlonia: natural light was the only option, and it had to work.\n\nIn color correction I gave each collection its own atmosphere without breaking the narrative. The white tulle is pure, almost overexposed. The black absorbs everything except the garment geometries. The red burns. But the transitions hold it all together \u2014 it\u2019s a film, not three videos stitched together.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/frangiamore/frangiamore-pantheon-roma.webp',
+                        alt: { it: 'Modella al portone del Pantheon \u2014 Frangiamore cinematografia Piero Perilli', en: 'Model at the Pantheon entrance \u2014 Frangiamore cinematography by Piero Perilli' }
+                    },
+                    {
+                        src: '/images/portfolio/frangiamore/frangiamore-palazzo-conservatori-roma.webp',
+                        alt: { it: 'Abito haute couture nel Cortile dei Musei Capitolini \u2014 Frangiamore', en: 'Haute couture gown in the Capitoline Museums courtyard \u2014 Frangiamore' }
+                    }
+                ]
+            },
+            {
+                type: 'image',
+                src: '/images/portfolio/frangiamore/frangiamore-haute-couture-roma.webp',
+                alt: { it: 'Abito haute couture Sylvio Giardina con frammenti del Colosso di Costantino \u2014 Frangiamore', en: 'Sylvio Giardina haute couture gown with fragments of the Colossus of Constantine \u2014 Frangiamore' },
+                fullWidth: false
+            },
+            {
+                type: 'text',
+                textIt: 'Il film si chiude sulle mani delle sarte della Maison. Artigianato che custodisce artigianato \u2014 un tema che sento mio.\n\n**Crediti**\nRegia: Riccardo Suriano\nCinematografia e Color Correction: Piero Perilli\nArt Director: Tania Alineri\nStylist: Valeria J. Marchetti\nModella: Serena Archetti\n\nPresentato in Campidoglio, Roma \u2014 14 Settembre 2020\n<a href="https://www.imdb.com/title/tt13472468/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>',
+                textEn: 'The film closes on the hands of the Maison\u2019s seamstresses. Craftsmanship preserving craftsmanship \u2014 a theme I feel as my own.\n\n**Credits**\nDirector: Riccardo Suriano\nCinematography and Color Correction: Piero Perilli\nArt Director: Tania Alineri\nStylist: Valeria J. Marchetti\nModel: Serena Archetti\n\nPremiered at Campidoglio, Rome \u2014 September 14, 2020\n<a href="https://www.imdb.com/title/tt13472468/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>'
             }
         ],
     },
