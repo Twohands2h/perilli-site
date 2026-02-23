@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useLocale } from 'next-intl';
 import SafeImage from '@/components/SafeImage';
 import VideoThumbnail from '@/components/VideoThumbnail';
@@ -24,6 +24,12 @@ export default function PortfolioGrid({
   const locale = useLocale();
   const isIt = locale === 'it';
   const [activeFilter, setActiveFilter] = useState('all');
+  const filtersRef = useRef<HTMLElement>(null);
+
+  const handleFilter = (key: string) => {
+    setActiveFilter(key);
+    filtersRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const filtered = activeFilter === 'all'
     ? projects
@@ -62,13 +68,13 @@ export default function PortfolioGrid({
       </section>
 
       {/* Filters */}
-      <section className="pb-8 md:pb-12 lg:pb-16">
+      <section ref={filtersRef} className="pb-8 md:pb-12 lg:pb-16 scroll-mt-24">
         <div className="section-container">
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
               <button
                 key={cat.key}
-                onClick={() => setActiveFilter(cat.key)}
+                onClick={() => handleFilter(cat.key)}
                 className={`px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] rounded-sm
                            transition-all duration-300 border
                            ${activeFilter === cat.key
