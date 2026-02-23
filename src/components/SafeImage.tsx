@@ -17,6 +17,7 @@ export default function SafeImage(props: ImageProps) {
     return (
         <Image
             {...props}
+            quality={props.quality ?? 90}
             onError={() => setFailed(true)}
         />
     );

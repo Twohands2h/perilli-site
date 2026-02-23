@@ -47,7 +47,7 @@ function Lightbox({
             {hasMultiple && <span className="absolute top-5 left-1/2 -translate-x-1/2 text-xs text-white/50 font-mono">{index + 1} / {images.length}</span>}
             {hasMultiple && <button onClick={(e) => { e.stopPropagation(); goPrev(); }} className="absolute left-3 md:left-6 z-10 p-2 text-white/50 hover:text-white transition-colors" aria-label="Previous"><ChevronLeft size={36} /></button>}
             <div className="relative w-[90vw] h-[85vh] max-w-6xl" onClick={(e) => e.stopPropagation()}>
-                <Image src={images[index].src} alt={images[index].alt} fill className="object-contain" sizes="90vw" priority />
+                <Image src={images[index].src} alt={images[index].alt} fill className="object-contain" sizes="90vw" quality={90} priority />
             </div>
             {hasMultiple && <button onClick={(e) => { e.stopPropagation(); goNext(); }} className="absolute right-3 md:right-6 z-10 p-2 text-white/50 hover:text-white transition-colors" aria-label="Next"><ChevronRight size={36} /></button>}
         </div>
@@ -171,7 +171,7 @@ function BlockRenderer({ block, locale, vm, lightbox }: {
                                     </video>
                                     <div className="play-icon absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300" style={{ opacity: 0.8 }}>
                                         <div className="w-14 h-14 rounded-full bg-black/50 flex items-center justify-center backdrop-blur-sm">
-                                            <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                                            <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                         </div>
                                     </div>
                                 </div>
@@ -311,7 +311,7 @@ export default function CaseStudyView({
                 <div className="section-container">
                     <AnimateOnScroll>
                         <div className="relative aspect-video rounded-lg overflow-hidden bg-surface">
-                            <LightboxImage src={project.heroImage} alt={project.heroAlt ? (locale === 'it' ? project.heroAlt.it : project.heroAlt.en) : title} fill className="object-cover" sizes="100vw" priority lightbox={lightbox} />
+                            <LightboxImage src={project.heroImage} alt={title} fill className="object-cover" sizes="100vw" priority lightbox={lightbox} />
                         </div>
                     </AnimateOnScroll>
                 </div>

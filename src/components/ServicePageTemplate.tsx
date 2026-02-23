@@ -165,7 +165,7 @@ export default function ServicePageTemplate({
               </div>
               {introImage && (
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-surface">
-                  <Image src={introImage} alt={introImageAlt || introTitle} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                  <Image src={introImage} alt={introImageAlt || introTitle} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" quality={90} />
                 </div>
               )}
             </div>
