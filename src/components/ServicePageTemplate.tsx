@@ -41,6 +41,7 @@ interface ServicePageProps {
   introText: string;
   introImage?: string;
   introImageAlt?: string;
+  introVideo?: string;
   servicesTitle: string;
   services: ServiceDetail[];
   approachTitle: string;
@@ -118,7 +119,7 @@ function ServiceAccordion({ services }: { services: ServiceDetail[] }) {
 }
 
 export default function ServicePageTemplate({
-  sectionLabel, h1, heroSubtitle, introTitle, introText, introImage, introImageAlt,
+  sectionLabel, h1, heroSubtitle, introTitle, introText, introImage, introImageAlt, introVideo,
   servicesTitle, services: serviceDetails, approachTitle, pillars,
   recentWorkTitle, recentWork, tools, ctaTitle, ctaSubtitle, ctaText, faqs, faqTitle,
 }: ServicePageProps) {
@@ -149,7 +150,7 @@ export default function ServicePageTemplate({
       <section className="py-10 md:py-16 lg:py-20 border-t border-border">
         <div className="section-container">
           <AnimateOnScroll>
-            <div className={`grid grid-cols-1 ${introImage ? 'md:grid-cols-2' : ''} gap-8 md:gap-12 lg:gap-16 items-center`}>
+            <div className={`grid grid-cols-1 ${(introImage || introVideo) ? 'md:grid-cols-2' : ''} gap-8 md:gap-12 lg:gap-16 items-center`}>
               <div>
                 <p className="section-title">{sectionLabel}</p>
                 <h2
@@ -163,11 +164,17 @@ export default function ServicePageTemplate({
                   dangerouslySetInnerHTML={{ __html: introText }}
                 />
               </div>
-              {introImage && (
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-surface">
-                  <Image src={introImage} alt={introImageAlt || introTitle} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" quality={90} />
+              {introVideo ? (
+                <div className="relative aspect-video rounded-lg overflow-hidden bg-black">
+                  <video controls preload="metadata" className="w-full h-full object-cover" playsInline>
+                    <source src={introVideo} type="video/mp4" />
+                  </video>
                 </div>
-              )}
+              ) : introImage ? (
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-surface">
+                  <Image src={introImage} alt={introImageAlt || introTitle} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" quality={100} />
+                </div>
+              ) : null}
             </div>
           </AnimateOnScroll>
         </div>
