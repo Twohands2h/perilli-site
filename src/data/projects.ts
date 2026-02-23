@@ -591,6 +591,7 @@ export const projects: Project[] = [
         resultIt: 'Un video dove il medium \u00E8 il messaggio: la continuit\u00E0 del tratto comunica la continuit\u00E0 della cura. Due minuti senza un solo stacco visivo.',
         resultEn: 'A video where the medium is the message: the continuity of the stroke communicates the continuity of care. Two minutes without a single visual break.',
         contentBlocks: [
+            { type: 'video-mp4', url: '/videos/portfolio/pmi-abbiamo-cura-di-te-spot.mp4', title: 'Abbiamo Cura di Te \u2014 spot PMI' },
             { type: 'video-loop-gallery', videos: [
                 { url: '/videos/portfolio/pmi-animazione-tratto-profilo.mp4' },
                 { url: '/videos/portfolio/pmi-animazione-tratto-mani.mp4' },
