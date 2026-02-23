@@ -464,6 +464,144 @@ export const posts: BlogPost[] = [
 <p>Storyboard comes first. I never start from animation \u2014 I start from narrative structure. Then I define the style: illustrative, geometric, typographic, mixed? It depends on the brand, the target, the distribution channel. Only then do I move to actual animation in After Effects, where rhythm and timing make the difference between a video you watch and one you endure.</p>
 <p>Final <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> \u2014 color, sound design, optimized export for each platform \u2014 closes the cycle in an <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">integrated workflow</a> where everything passes through the same hands.</p>`,
     },
+    {
+        slug: 'vfx-compositing-integrare-elementi-3d-scene-reali',
+        slugEn: 'vfx-compositing-integrating-3d-elements-real-scenes',
+        titleIt: 'VFX compositing: integrare elementi 3D in scene reali',
+        titleEn: 'VFX compositing: integrating 3D elements into real scenes',
+        excerptIt: 'Come integro elementi tridimensionali in riprese live mantenendo credibilit\u00E0 totale. Due progetti diversi \u2014 meduse bioluminescenti e mascheramenti invisibili \u2014 stesso principio: l\u2019effetto migliore \u00E8 quello che non si nota.',
+        excerptEn: 'How I integrate three-dimensional elements into live footage while maintaining total believability. Two different projects \u2014 bioluminescent jellyfish and invisible masking \u2014 same principle: the best effect is the one you don\u2019t notice.',
+        date: '2026-03-20',
+        readingTime: 7,
+        category: 'vfx',
+        categoryLabel: { it: 'VFX', en: 'VFX' },
+        keywordTarget: 'compositing VFX elementi 3D',
+        thumbnail: '/images/portfolio/om-floating-ufficio-meduse-compositing.webp',
+        thumbnailAlt: { it: 'VFX compositing \u2014 meduse 3D in scena reale', en: 'VFX compositing \u2014 3D jellyfish in real scene' },
+        contentIt: `<h2>L\u2019effetto invisibile</h2>
+<p>Il compositing \u00E8 il cuore degli <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a>. \u00C8 il processo di combinare elementi diversi \u2014 riprese live, modelli 3D, matte painting, particelle \u2014 in un\u2019unica immagine che sembra reale. La parola chiave \u00E8 \u201Csembra\u201D: il compositing riuscito \u00E8 quello che lo spettatore non nota.</p>
+<p>In vent\u2019anni di lavoro su film, spot e produzioni di ogni tipo, ho sviluppato un principio semplice: <strong>non \u00E8 la complessit\u00E0 dell\u2019effetto che conta, \u00E8 la credibilit\u00E0 dell\u2019integrazione.</strong> Un elemento 3D perfettamente renderizzato ma mal integrato \u00E8 peggio di un effetto semplice che si fonde nella scena.</p>
+
+<h2>I pilastri del compositing credibile</h2>
+<p><strong>Luce coerente.</strong> L\u2019elemento inserito deve reagire alla luce della scena esattamente come farebbe se fosse l\u00EC davvero. Questo significa analizzare la direzione, l\u2019intensit\u00E0 e il colore della luce ambiente, e replicarla sull\u2019elemento 3D. Non basta illuminare \u201Cbene\u201D \u2014 bisogna illuminare \u201Ccome la scena\u201D.</p>
+<p><strong>Interazione con l\u2019ambiente.</strong> Un oggetto reale non galleggia nel vuoto. Proietta ombre, crea riflessi sulle superfici vicine, \u00E8 parzialmente occluso da elementi in primo piano. Ogni interazione mancante \u00E8 un indizio che il cervello dello spettatore coglie, anche inconsciamente.</p>
+<p><strong>Matching del grana e della texture.</strong> La pellicola ha grana, il digitale ha rumore. Se l\u2019elemento inserito \u00E8 perfettamente pulito in una ripresa granulosa, salta all\u2019occhio immediatamente. Aggiungo sempre grana, aberrazione cromatica e imperfezioni che matchano il footage originale.</p>
+<p><strong>Color grading integrato.</strong> L\u2019elemento 3D e la ripresa devono vivere nella stessa palette. Il vantaggio del mio <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow integrato</a> \u00E8 che gestisco compositing e color grading insieme \u2014 non come due fasi separate ma come un processo unico dove ogni scelta di colore influenza l\u2019integrazione.</p>
+
+<h2>OM Floating \u2014 Meduse bioluminescenti in un ufficio</h2>
+<p>Il progetto OM richiedeva di raccontare una transizione societaria con un\u2019immagine forte. Il concept: meduse bioluminescenti che fluttuano negli spazi reali degli uffici, come metafora di trasformazione e nuovo inizio.</p>
+<p>La sfida era duplice. Primo: le meduse dovevano sembrare fisicamente presenti nello spazio \u2014 non sovrapposte, ma immerse. Secondo: essendo creature luminose, dovevano influenzare l\u2019illuminazione circostante.</p>
+<p>Ho costruito le meduse in 3D e le ho integrate scena per scena in After Effects. Ogni medusa ha luce propria che interagisce con l\u2019ambiente: riflessi sui vetri delle pareti, alone luminoso sulle superfici, ombre coerenti con la geometria dello spazio. Il color grading in DaVinci Resolve ha uniformato il look in una palette blu-verde cinematografica che trasforma l\u2019ufficio in qualcosa che somiglia a un acquario.</p>
+<p>Il risultato: meduse che sembrano davvero galleggiare tra le scrivanie. <a href="/portfolio/om-olivia-mariotti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Guarda il caso studio completo</a>.</p>
+
+<h2>Stalking \u2014 L\u2019effetto che non deve esistere</h2>
+<p>Lo spot per il Ministero delle Pari Opportunit\u00E0 sul tema dello stalking presentava una sfida opposta: gli effetti visivi dovevano essere completamente invisibili. Nessun elemento fantastico da aggiungere \u2014 solo la realt\u00E0 da manipolare in modo che lo spettatore non si accorgesse di nulla.</p>
+<p>Il lavoro di compositing qui \u00E8 stato di pulizia e mascheramento: rimuovere elementi indesiderati, uniformare le scene girate in condizioni diverse, creare continuit\u00E0 visiva dove non c\u2019era. \u00C8 il tipo di VFX che non finir\u00E0 mai su un reel spettacolare, ma che fa la differenza tra uno spot che funziona e uno che distrae.</p>
+<p>Quando il regista Paolo Scarf\u00F2 ha visto il risultato, il commento \u00E8 stato il miglior complimento possibile per un VFX artist: non ha commentato gli effetti. Non li ha visti. <a href="/portfolio/stalking-spot" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Guarda il caso studio completo</a>.</p>
+
+<h2>Strumenti e workflow</h2>
+<p>Il mio setup per il compositing ruota attorno ad After Effects per la maggior parte dei progetti, con Mocha Pro per il tracking planare e il rotoscoping avanzato. Per progetti cinematografici pi\u00F9 complessi uso Nuke, che offre un workflow node-based ideale per compositing multilayer.</p>
+<p>Ma lo strumento \u00E8 solo met\u00E0 dell\u2019equazione. L\u2019altra met\u00E0 \u00E8 l\u2019occhio \u2014 la capacit\u00E0 di guardare un frame e sentire cosa non funziona prima ancora di analizzarlo tecnicamente. Questa sensibilit\u00E0 viene dall\u2019esperienza, dal vedere migliaia di shot composite nel corso di vent\u2019anni, e dal lavorare a stretto contatto con direttori della fotografia e registi che pretendono perfezione.</p>
+
+<h2>Quando serve il compositing</h2>
+<p>Il compositing entra in gioco ogni volta che la ripresa da sola non basta. Pu\u00F2 essere spettacolare \u2014 creature fantastiche, ambienti impossibili, esplosioni \u2014 o pu\u00F2 essere silenzioso: rimuovere un cavo, estendere un set, sostituire un cielo. In entrambi i casi, il principio resta lo stesso: l\u2019integrazione deve essere impeccabile.</p>
+<p>Se hai un progetto che richiede <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a> \u2014 che siano visibili o invisibili \u2014 parliamone. Vent\u2019anni di esperienza significano sapere esattamente cosa \u00E8 possibile, cosa \u00E8 realistico nei tempi e nel budget, e come arrivarci nel modo pi\u00F9 efficiente.</p>`,
+
+        contentEn: `<h2>The invisible effect</h2>
+<p>Compositing is the heart of <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a>. It\u2019s the process of combining different elements \u2014 live footage, 3D models, matte paintings, particles \u2014 into a single image that looks real. The key word is \u201Clooks\u201D: successful compositing is the kind the viewer doesn\u2019t notice.</p>
+<p>In twenty years of work on films, commercials and productions of every kind, I\u2019ve developed a simple principle: <strong>it\u2019s not the complexity of the effect that matters, it\u2019s the believability of the integration.</strong> A perfectly rendered 3D element that\u2019s poorly integrated is worse than a simple effect that blends into the scene.</p>
+
+<h2>The pillars of believable compositing</h2>
+<p><strong>Coherent lighting.</strong> The inserted element must react to the scene\u2019s light exactly as it would if it were really there. This means analyzing the direction, intensity and color of ambient light, and replicating it on the 3D element. It\u2019s not enough to light it \u201Cwell\u201D \u2014 you must light it \u201Clike the scene.\u201D</p>
+<p><strong>Environmental interaction.</strong> A real object doesn\u2019t float in a void. It casts shadows, creates reflections on nearby surfaces, is partially occluded by foreground elements. Every missing interaction is a clue the viewer\u2019s brain catches, even subconsciously.</p>
+<p><strong>Grain and texture matching.</strong> Film has grain, digital has noise. If the inserted element is perfectly clean in grainy footage, it jumps out immediately. I always add grain, chromatic aberration and imperfections that match the original footage.</p>
+<p><strong>Integrated color grading.</strong> The 3D element and the footage must live in the same palette. The advantage of my <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">integrated workflow</a> is that I manage compositing and color grading together \u2014 not as two separate phases but as a single process where every color choice influences the integration.</p>
+
+<h2>OM Floating \u2014 Bioluminescent jellyfish in an office</h2>
+<p>The OM project required telling a corporate transition story with a powerful image. The concept: bioluminescent jellyfish floating in the real office spaces, as a metaphor for transformation and new beginnings.</p>
+<p>The challenge was twofold. First: the jellyfish had to seem physically present in the space \u2014 not overlaid, but immersed. Second: being luminous creatures, they had to influence the surrounding lighting.</p>
+<p>I built the jellyfish in 3D and integrated them scene by scene in After Effects. Each jellyfish has its own light that interacts with the environment: reflections on glass walls, luminous halos on surfaces, shadows coherent with the space\u2019s geometry. Color grading in DaVinci Resolve unified the look into a cinematic blue-green palette that transforms the office into something resembling an aquarium.</p>
+<p>The result: jellyfish that truly seem to float between desks. <a href="/en/portfolio/om-olivia-mariotti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">See the full case study</a>.</p>
+
+<h2>Stalking \u2014 The effect that must not exist</h2>
+<p>The spot for Italy\u2019s Ministry of Equal Opportunities on stalking presented the opposite challenge: visual effects had to be completely invisible. No fantastic elements to add \u2014 just reality to manipulate so the viewer wouldn\u2019t notice anything.</p>
+<p>The compositing work here was about cleanup and masking: removing unwanted elements, unifying scenes shot in different conditions, creating visual continuity where there was none. It\u2019s the kind of VFX that will never end up on a spectacular reel, but that makes the difference between a spot that works and one that distracts.</p>
+<p>When director Paolo Scarf\u00F2 saw the result, his comment was the best possible compliment for a VFX artist: he didn\u2019t comment on the effects. He didn\u2019t see them. <a href="/en/portfolio/stalking-spot" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">See the full case study</a>.</p>
+
+<h2>Tools and workflow</h2>
+<p>My compositing setup revolves around After Effects for most projects, with Mocha Pro for planar tracking and advanced rotoscoping. For more complex cinematic projects I use Nuke, which offers a node-based workflow ideal for multilayer compositing.</p>
+<p>But the tool is only half the equation. The other half is the eye \u2014 the ability to look at a frame and feel what\u2019s wrong before even analyzing it technically. This sensitivity comes from experience, from seeing thousands of composite shots over twenty years, and from working closely with cinematographers and directors who demand perfection.</p>
+
+<h2>When compositing is needed</h2>
+<p>Compositing comes into play whenever the footage alone isn\u2019t enough. It can be spectacular \u2014 fantastic creatures, impossible environments, explosions \u2014 or it can be silent: removing a cable, extending a set, replacing a sky. In both cases, the principle remains the same: integration must be flawless.</p>
+<p>If you have a project that requires <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a> \u2014 whether visible or invisible \u2014 let\u2019s talk. Twenty years of experience mean knowing exactly what\u2019s possible, what\u2019s realistic within time and budget, and how to get there most efficiently.</p>`,
+    },
+    {
+        slug: 'come-vfx-artist-usa-ai-workflow-2026',
+        slugEn: 'how-vfx-artist-uses-ai-workflow-2026',
+        titleIt: 'Come un VFX artist usa l\u2019AI nel 2026: il mio workflow quotidiano',
+        titleEn: 'How a VFX artist uses AI in 2026: my daily workflow',
+        excerptIt: 'Non \u00E8 teoria. \u00C8 quello che faccio ogni giorno. Dove l\u2019AI entra nel mio lavoro, dove non entra, e perch\u00E9 vent\u2019anni di post-produzione sono il vero vantaggio competitivo nell\u2019era dell\u2019intelligenza artificiale.',
+        excerptEn: 'This isn\u2019t theory. It\u2019s what I do every day. Where AI enters my work, where it doesn\u2019t, and why twenty years of post-production are the real competitive advantage in the age of artificial intelligence.',
+        date: '2026-03-25',
+        readingTime: 8,
+        category: 'ai',
+        categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
+        keywordTarget: 'VFX artist AI workflow 2026',
+        thumbnail: '/images/portfolio/doppelganger-scacchi-compositing-finale.webp',
+        thumbnailAlt: { it: 'VFX artist e AI \u2014 workflow professionale 2026', en: 'VFX artist and AI \u2014 professional workflow 2026' },
+        contentIt: `<h2>La domanda sbagliata e quella giusta</h2>
+<p>\u201CL\u2019AI sostituir\u00E0 i VFX artist?\u201D \u00C8 la domanda che sento da due anni. La risposta breve \u00E8 no. La risposta lunga \u00E8 che la domanda stessa \u00E8 sbagliata. Quella giusta \u00E8: come cambia il lavoro di un <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX artist</a> quando ha a disposizione strumenti di AI generativa?</p>
+<p>Uso Runway, Veo, Kling e altri strumenti di <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a> ogni giorno. Non come esperimento \u2014 come parte del mio workflow produttivo reale, per clienti reali, con deadline reali. Ecco cosa ho imparato.</p>
+
+<h2>Dove l\u2019AI entra nel mio lavoro</h2>
+<p><strong>Pre-visualizzazione e concept.</strong> Prima dell\u2019AI, esplorare dieci direzioni creative per una scena significava giorni di lavoro. Oggi genero varianti in ore. Per Doppelganger \u2014 una campagna per un bando creativo \u2014 ho usato l\u2019AI per generare l\u2019intera base visiva del progetto, poi ho raffinato tutto in <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a>. <a href="/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Il caso studio completo mostra il processo</a>.</p>
+<p><strong>Generazione di elementi ambientali.</strong> Cieli, texture, sfondi, elementi organici. L\u2019AI produce materiale di base eccellente che poi integro nelle scene con le stesse tecniche di compositing che uso da vent\u2019anni. La differenza \u00E8 che prima passavo ore a cercare stock footage o a dipingere matte painting \u2014 ora ho una base in minuti.</p>
+<p><strong>Contenuti completamente AI-generated.</strong> Per Roche ho creato un jingle natalizio interamente con AI generativa \u2014 video e audio. \u00C8 il tipo di progetto che prima avrebbe richiesto un budget significativo tra produzione, animazione e post. Con l\u2019AI, il costo si riduce drasticamente mantenendo un risultato professionale. <a href="/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Guarda il risultato</a>.</p>
+<p><strong>Prototyping rapido.</strong> Un cliente vuole capire se un\u2019idea funziona prima di investire in produzione? Genero un concept visivo in AI in poche ore. Se funziona, procediamo con la produzione completa. Se non funziona, abbiamo risparmiato settimane e migliaia di euro.</p>
+
+<h2>Dove l\u2019AI non entra (ancora)</h2>
+<p><strong>Integrazione con riprese live.</strong> Devo inserire un elemento 3D in una ripresa reale con camera in movimento? Serve camera tracking, lighting match, compositing multilayer. L\u2019AI non fa questo con la precisione necessaria per un prodotto professionale.</p>
+<p><strong>Coerenza su sequenze lunghe.</strong> L\u2019AI fatica a mantenere coerenza visiva tra shot consecutive. Stesso personaggio, stessa luce, stesso ambiente \u2014 frame dopo frame per trenta secondi o pi\u00F9. Per questo servono ancora gli strumenti tradizionali e l\u2019occhio di chi sa cosa cercare.</p>
+<p><strong>Controllo al pixel.</strong> Spot per brand di lusso, film per il cinema \u2014 ogni frame deve essere perfetto. L\u2019AI produce artefatti sottili che un pubblico distratto non nota, ma un direttore creativo s\u00EC. Quando serve perfezione assoluta, servono mani esperte e strumenti precisi.</p>
+<p><strong>La direzione creativa.</strong> L\u2019AI genera immagini, non racconta storie. La capacit\u00E0 di costruire una narrazione visiva, di guidare l\u2019occhio dello spettatore, di creare emozione attraverso il montaggio e il ritmo \u2014 questo resta profondamente umano.</p>
+
+<h2>Il vero vantaggio competitivo</h2>
+<p>Chiunque pu\u00F2 generare un video con l\u2019AI. La barriera d\u2019ingresso \u00E8 quasi zero. Ma ecco cosa succede nella pratica: il 90% di chi usa questi strumenti non sa giudicare se il risultato \u00E8 buono. Non sa riconoscere gli artefatti. Non sa come raffinare l\u2019output. Non sa integrarlo in un workflow professionale.</p>
+<p>Vent\u2019anni di post-produzione mi hanno dato qualcosa che l\u2019AI non pu\u00F2 replicare: <strong>l\u2019occhio.</strong> So guardare un frame generato e capire in un secondo se funziona, cosa va corretto, come integrarlo con il resto del progetto. So quando l\u2019output AI \u00E8 sufficiente e quando serve intervento manuale. So combinare AI e strumenti tradizionali nello stesso progetto senza che si noti il passaggio.</p>
+<p>Questa \u00E8 la differenza tra un \u201Cvideo fatto con l\u2019AI\u201D e un video professionale che usa l\u2019AI come strumento. La stessa differenza che c\u2019\u00E8 tra chi compra una fotocamera e un fotografo.</p>
+
+<h2>Come cambier\u00E0 nei prossimi anni</h2>
+<p>Gli strumenti migliorano ogni mese. Runway Gen-4, Veo, Kling \u2014 ogni release chiude gap che sembravano insormontabili sei mesi prima. La coerenza temporale migliora, il controllo sulla camera migliora, la qualit\u00E0 dell\u2019output si alza.</p>
+<p>Ma il principio non cambia: servir\u00E0 sempre qualcuno che sappia cosa fare con questi strumenti. Qualcuno con l\u2019esperienza per giudicare, dirigere, raffinare. Il mercato non cerca \u201Chi sa usare Runway\u201D \u2014 cerca chi sa produrre un risultato professionale usando tutti gli strumenti disponibili, AI inclusa.</p>
+<p>Io mi sono posizionato l\u00EC. Non come \u201CAI artist\u201D ma come professionista con vent\u2019anni di esperienza che ha integrato l\u2019AI nel proprio workflow prima degli altri. Ed \u00E8 esattamente la figura che il mercato sta cercando.</p>`,
+
+        contentEn: `<h2>The wrong question and the right one</h2>
+<p>\u201CWill AI replace VFX artists?\u201D It\u2019s the question I\u2019ve been hearing for two years. The short answer is no. The long answer is that the question itself is wrong. The right one is: how does a <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX artist\u2019s</a> work change when generative AI tools are available?</p>
+<p>I use Runway, Veo, Kling and other <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a> tools every day. Not as an experiment \u2014 as part of my real production workflow, for real clients, with real deadlines. Here\u2019s what I\u2019ve learned.</p>
+
+<h2>Where AI enters my work</h2>
+<p><strong>Pre-visualization and concept.</strong> Before AI, exploring ten creative directions for a scene meant days of work. Today I generate variants in hours. For Doppelganger \u2014 a campaign for a creative grant \u2014 I used AI to generate the project\u2019s entire visual base, then refined everything in <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a>. <a href="/en/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">The full case study shows the process</a>.</p>
+<p><strong>Environmental element generation.</strong> Skies, textures, backgrounds, organic elements. AI produces excellent base material that I then integrate into scenes with the same compositing techniques I\u2019ve used for twenty years. The difference is that I used to spend hours searching stock footage or painting matte paintings \u2014 now I have a base in minutes.</p>
+<p><strong>Fully AI-generated content.</strong> For Roche I created a Christmas jingle entirely with generative AI \u2014 video and audio. It\u2019s the kind of project that would previously have required a significant budget across production, animation and post. With AI, cost drops dramatically while maintaining a professional result. <a href="/en/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">See the result</a>.</p>
+<p><strong>Rapid prototyping.</strong> A client wants to understand if an idea works before investing in production? I generate a visual concept in AI in a few hours. If it works, we proceed with full production. If not, we\u2019ve saved weeks and thousands of euros.</p>
+
+<h2>Where AI doesn\u2019t enter (yet)</h2>
+<p><strong>Live footage integration.</strong> Need to insert a 3D element into real footage with camera movement? That requires camera tracking, lighting match, multilayer compositing. AI doesn\u2019t do this with the precision needed for a professional product.</p>
+<p><strong>Long sequence coherence.</strong> AI struggles to maintain visual coherence across consecutive shots. Same character, same light, same environment \u2014 frame after frame for thirty seconds or more. For this, traditional tools and the eye of someone who knows what to look for are still essential.</p>
+<p><strong>Pixel-level control.</strong> Luxury brand commercials, cinema films \u2014 every frame must be perfect. AI produces subtle artifacts that a distracted audience won\u2019t notice, but a creative director will. When absolute perfection is needed, expert hands and precise tools are required.</p>
+<p><strong>Creative direction.</strong> AI generates images, it doesn\u2019t tell stories. The ability to build a visual narrative, to guide the viewer\u2019s eye, to create emotion through editing and rhythm \u2014 this remains deeply human.</p>
+
+<h2>The real competitive advantage</h2>
+<p>Anyone can generate a video with AI. The barrier to entry is nearly zero. But here\u2019s what happens in practice: 90% of people using these tools can\u2019t judge if the result is good. They can\u2019t recognize artifacts. They don\u2019t know how to refine output. They don\u2019t know how to integrate it into a professional workflow.</p>
+<p>Twenty years of post-production have given me something AI can\u2019t replicate: <strong>the eye.</strong> I can look at a generated frame and understand in a second whether it works, what needs correcting, how to integrate it with the rest of the project. I know when AI output is sufficient and when manual work is needed. I know how to combine AI and traditional tools in the same project without the transition being noticeable.</p>
+<p>This is the difference between a \u201Cvideo made with AI\u201D and a professional video that uses AI as a tool. The same difference between someone who buys a camera and a photographer.</p>
+
+<h2>How it will change in the coming years</h2>
+<p>The tools improve every month. Runway Gen-4, Veo, Kling \u2014 every release closes gaps that seemed insurmountable six months earlier. Temporal coherence improves, camera control improves, output quality rises.</p>
+<p>But the principle doesn\u2019t change: someone who knows what to do with these tools will always be needed. Someone with the experience to judge, direct, refine. The market isn\u2019t looking for \u201Csomeone who can use Runway\u201D \u2014 it\u2019s looking for someone who can produce a professional result using all available tools, AI included.</p>
+<p>That\u2019s where I\u2019ve positioned myself. Not as an \u201CAI artist\u201D but as a professional with twenty years of experience who integrated AI into his workflow before others. And it\u2019s exactly the figure the market is looking for.</p>`,
+    },
 ];
 
 /**
