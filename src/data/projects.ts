@@ -2,13 +2,13 @@ export type ProjectCategory = 'vfx' | 'motion' | 'animation' | 'post' | 'ai';
 
 // Content blocks for rich project pages (Behance-style)
 export type ContentBlock =
-  | { type: 'text'; textIt: string; textEn: string }
-  | { type: 'image'; src: string; alt: { it: string; en: string }; fullWidth?: boolean }
-  | { type: 'gallery'; images: { src: string; alt: { it: string; en: string } }[]; columns?: 2 | 3 | 4 }
-  | { type: 'video'; embedId: string; platform: 'youtube' | 'vimeo'; title?: string }
-  | { type: 'video-mp4'; url: string; poster?: string; title?: string }
-  | { type: 'video-loop'; url: string; poster?: string; title?: string }
-  | { type: 'video-loop-gallery'; videos: { url: string; title?: string }[]; columns?: number; title?: string };
+    | { type: 'text'; textIt: string; textEn: string }
+    | { type: 'image'; src: string; alt: { it: string; en: string }; fullWidth?: boolean }
+    | { type: 'gallery'; images: { src: string; alt: { it: string; en: string } }[]; columns?: 2 | 3 | 4 }
+    | { type: 'video'; embedId: string; platform: 'youtube' | 'vimeo'; title?: string }
+    | { type: 'video-mp4'; url: string; poster?: string; title?: string }
+    | { type: 'video-loop'; url: string; poster?: string; title?: string }
+    | { type: 'video-loop-gallery'; videos: { url: string; title?: string }[]; columns?: number; title?: string };
 
 export interface Project {
     slug: string;
@@ -46,7 +46,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-        {
+    {
         slug: 'along-came-ruby',
         titleIt: 'Along Came Ruby',
         titleEn: 'Along Came Ruby',
@@ -75,10 +75,12 @@ export const projects: Project[] = [
         imdbLink: 'https://pro.imdb.com/title/tt28106482/',
         contentBlocks: [
             { type: 'text', textIt: 'VFX breakdown: il processo di creazione degli effetti visivi per Along Came Ruby, dalla previsualizzazione al compositing finale.', textEn: 'VFX breakdown: the visual effects creation process for Along Came Ruby, from previsualization to final compositing.' },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/along-came-ruby-vfx-effetti-energia-fulmini.webp', alt: { it: 'VFX effetti energia e fulmini \u2014 compositing Along Came Ruby', en: 'VFX energy and lightning effects \u2014 Along Came Ruby compositing' } },
-                { src: '/images/portfolio/along-came-ruby-vfx-portale-spazio-temporale.webp', alt: { it: 'VFX portale spazio-temporale \u2014 compositing Along Came Ruby', en: 'VFX space-time portal \u2014 Along Came Ruby compositing' } },
-            ], columns: 2 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/along-came-ruby-vfx-effetti-energia-fulmini.webp', alt: { it: 'VFX effetti energia e fulmini \u2014 compositing Along Came Ruby', en: 'VFX energy and lightning effects \u2014 Along Came Ruby compositing' } },
+                    { src: '/images/portfolio/along-came-ruby-vfx-portale-spazio-temporale.webp', alt: { it: 'VFX portale spazio-temporale \u2014 compositing Along Came Ruby', en: 'VFX space-time portal \u2014 Along Came Ruby compositing' } },
+                ], columns: 2
+            },
             { type: 'video-mp4', url: '/videos/portfolio/along-came-ruby-vfx-breakdown.mp4', title: 'VFX Breakdown \u2014 Along Came Ruby' },
             { type: 'text', textIt: 'Software: After Effects per il compositing multilayer, Mocha Pro per il tracking, 3ds Max per gli elementi 3D, DaVinci Resolve per il color grading finale.\n\nRegia: Riccardo Suriano. Cast: Alexandra Boulas, Liz Kastner.\n\nLeggi il <a href="/blog/breakdown-vfx-along-came-ruby">breakdown VFX completo</a> sul blog.', textEn: 'Software: After Effects for multilayer compositing, Mocha Pro for tracking, 3ds Max for 3D elements, DaVinci Resolve for final color grading.\n\nDirected by Riccardo Suriano. Cast: Alexandra Boulas, Liz Kastner.\n\nRead the <a href="/en/blog/vfx-breakdown-along-came-ruby">complete VFX breakdown</a> on the blog.' },
         ],
@@ -112,18 +114,22 @@ export const projects: Project[] = [
         contentBlocks: [
             { type: 'video', embedId: '1018292404', platform: 'vimeo', title: 'Guerciotti 60 Anni \u2014 Video Animazione 3D Prodotto' },
             { type: 'image', src: '/images/portfolio/guerciotti-sixty-saldatura-tubo-carbonio-simulazione.webp', alt: { it: 'Simulazione saldatura tubo carbonio Guerciotti Sixty \u2014 Unreal Engine 5.6', en: 'Carbon tube welding simulation Guerciotti Sixty \u2014 Unreal Engine 5.6' }, fullWidth: true },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/guerciotti-sixty-dettaglio-sterzo-render-3d.webp', alt: { it: 'Render 3D serie sterzo Guerciotti Sixty \u2014 dettaglio componenti', en: '3D render Guerciotti Sixty headset \u2014 component detail' } },
-                { src: '/images/portfolio/guerciotti-sixty-giunzione-telaio-carbonio-dettaglio.webp', alt: { it: 'Dettaglio giunzione telaio carbonio Guerciotti Sixty', en: 'Carbon frame junction detail Guerciotti Sixty' } },
-                { src: '/images/portfolio/guerciotti-sixty-forcellino-posteriore-render-3d.webp', alt: { it: 'Render 3D forcellino posteriore Guerciotti Sixty', en: '3D render Guerciotti Sixty rear dropout' } },
-            ], columns: 3 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/guerciotti-sixty-dettaglio-sterzo-render-3d.webp', alt: { it: 'Render 3D serie sterzo Guerciotti Sixty \u2014 dettaglio componenti', en: '3D render Guerciotti Sixty headset \u2014 component detail' } },
+                    { src: '/images/portfolio/guerciotti-sixty-giunzione-telaio-carbonio-dettaglio.webp', alt: { it: 'Dettaglio giunzione telaio carbonio Guerciotti Sixty', en: 'Carbon frame junction detail Guerciotti Sixty' } },
+                    { src: '/images/portfolio/guerciotti-sixty-forcellino-posteriore-render-3d.webp', alt: { it: 'Render 3D forcellino posteriore Guerciotti Sixty', en: '3D render Guerciotti Sixty rear dropout' } },
+                ], columns: 3
+            },
             { type: 'text', textIt: 'Dal modello CAD al prodotto finito: remesh della geometria, UV mapping, animazione procedurale in tyFlow e rendering real-time in Unreal Engine 5.6. Ogni fase della costruzione del telaio \u00E8 stata animata per raccontare il valore di ogni singolo passaggio produttivo.', textEn: 'From CAD model to finished product: geometry remesh, UV mapping, procedural animation in tyFlow and real-time rendering in Unreal Engine 5.6. Every phase of the frame construction was animated to convey the value of each production step.' },
             { type: 'image', src: '/images/portfolio/guerciotti-sixty-fibra-carbonio-tyflow-simulazione.webp', alt: { it: 'Simulazione fibra carbonio tyFlow \u2014 processo costruttivo telaio Guerciotti Sixty', en: 'Carbon fiber tyFlow simulation \u2014 Guerciotti Sixty frame construction process' }, fullWidth: true },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/guerciotti-sixty-telaio-completo-render-3d.webp', alt: { it: 'Render 3D telaio completo Guerciotti Sixty \u2014 product visualization', en: 'Complete frame 3D render Guerciotti Sixty \u2014 product visualization' } },
-                { src: '/images/portfolio/guerciotti-sixty-foderi-posteriori-dettaglio.webp', alt: { it: 'Render 3D foderi posteriori Guerciotti Sixty \u2014 dettaglio telaio', en: '3D render Guerciotti Sixty rear stays \u2014 frame detail' } },
-                { src: '/images/portfolio/guerciotti-sixty-spline-fibre-saldatura-tyflow.webp', alt: { it: 'Simulazione spline e fibre tyFlow \u2014 saldatura telaio Guerciotti Sixty', en: 'tyFlow spline and fiber simulation \u2014 Guerciotti Sixty frame welding' } },
-            ], columns: 3 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/guerciotti-sixty-telaio-completo-render-3d.webp', alt: { it: 'Render 3D telaio completo Guerciotti Sixty \u2014 product visualization', en: 'Complete frame 3D render Guerciotti Sixty \u2014 product visualization' } },
+                    { src: '/images/portfolio/guerciotti-sixty-foderi-posteriori-dettaglio.webp', alt: { it: 'Render 3D foderi posteriori Guerciotti Sixty \u2014 dettaglio telaio', en: '3D render Guerciotti Sixty rear stays \u2014 frame detail' } },
+                    { src: '/images/portfolio/guerciotti-sixty-spline-fibre-saldatura-tyflow.webp', alt: { it: 'Simulazione spline e fibre tyFlow \u2014 saldatura telaio Guerciotti Sixty', en: 'tyFlow spline and fiber simulation \u2014 Guerciotti Sixty frame welding' } },
+                ], columns: 3
+            },
             { type: 'text', textIt: 'Software: 3ds Max (remesh, UV mapping, animazione), tyFlow (simulazioni procedurali \u2014 spline, fibre, particelle), Unreal Engine 5.6 (rendering real-time, illuminazione, simulazione saldatura), DaVinci Resolve (color grading e finishing).\n\nEditing e sound design: Nicolas Vanegas Sanchez.', textEn: 'Software: 3ds Max (remesh, UV mapping, animation), tyFlow (procedural simulations \u2014 splines, fibers, particles), Unreal Engine 5.6 (real-time rendering, lighting, welding simulation), DaVinci Resolve (color grading and finishing).\n\nEditing and sound design: Nicolas Vanegas Sanchez.' },
             { type: 'image', src: '/images/portfolio/guerciotti-sixty-avantreno-integrato-render-3d.webp', alt: { it: 'Render 3D avantreno integrato Guerciotti Sixty \u2014 illuminazione cinematografica', en: '3D render integrated front end Guerciotti Sixty \u2014 cinematic lighting' }, fullWidth: true },
         ],
@@ -158,22 +164,26 @@ export const projects: Project[] = [
         contentBlocks: [
             { type: 'image', src: '/images/portfolio/ipotesi-metaverso-poster-mostra-palazzo-cipolla.webp', alt: { it: 'Poster mostra Ipotesi Metaverso \u2014 Palazzo Cipolla Roma 2023', en: 'Ipotesi Metaverso exhibition poster \u2014 Palazzo Cipolla Rome 2023' }, fullWidth: true },
             { type: 'text', textIt: 'Quattro interpretazioni visive del concetto di metaverso, pensate come video installazioni. Sistemi particellari complessi costruiti in After Effects con Stardust \u2014 vortici, portali, onde di energia e strutture organiche in loop continuo.', textEn: 'Four visual interpretations of the metaverse concept, designed as video installations. Complex particle systems built in After Effects with Stardust \u2014 vortexes, portals, energy waves and organic structures in continuous loops.' },
-            { type: 'gallery', images: [
-                { src: '/videos/portfolio/ipotesi-metaverso-logo-particle.mp4', alt: { it: 'Animazione logo particellare Ipotesi Metaverso \u2014 vortice', en: 'Particle logo animation Ipotesi Metaverso \u2014 vortex' } },
-                { src: '/videos/portfolio/ipotesi-metaverso-logo-lego.mp4', alt: { it: 'Animazione logo Ipotesi Metaverso \u2014 struttura modulare', en: 'Logo animation Ipotesi Metaverso \u2014 modular structure' } },
-                { src: '/videos/portfolio/ipotesi-metaverso-logo-ring.mp4', alt: { it: 'Animazione logo Ipotesi Metaverso \u2014 portale anello', en: 'Logo animation Ipotesi Metaverso \u2014 ring portal' } },
-                { src: '/videos/portfolio/ipotesi-metaverso-logo-phone.mp4', alt: { it: 'Animazione logo Ipotesi Metaverso \u2014 onde digitali', en: 'Logo animation Ipotesi Metaverso \u2014 digital waves' } },
-            ], columns: 4 },
+            {
+                type: 'gallery', images: [
+                    { src: '/videos/portfolio/ipotesi-metaverso-logo-particle.mp4', alt: { it: 'Animazione logo particellare Ipotesi Metaverso \u2014 vortice', en: 'Particle logo animation Ipotesi Metaverso \u2014 vortex' } },
+                    { src: '/videos/portfolio/ipotesi-metaverso-logo-lego.mp4', alt: { it: 'Animazione logo Ipotesi Metaverso \u2014 struttura modulare', en: 'Logo animation Ipotesi Metaverso \u2014 modular structure' } },
+                    { src: '/videos/portfolio/ipotesi-metaverso-logo-ring.mp4', alt: { it: 'Animazione logo Ipotesi Metaverso \u2014 portale anello', en: 'Logo animation Ipotesi Metaverso \u2014 ring portal' } },
+                    { src: '/videos/portfolio/ipotesi-metaverso-logo-phone.mp4', alt: { it: 'Animazione logo Ipotesi Metaverso \u2014 onde digitali', en: 'Logo animation Ipotesi Metaverso \u2014 digital waves' } },
+                ], columns: 4
+            },
             { type: 'image', src: '/images/portfolio/ipotesi-metaverso-cascata-particelle-luminose.webp', alt: { it: 'Cascata di particelle luminose \u2014 dettaglio animazione After Effects Stardust', en: 'Luminous particle cascade \u2014 After Effects Stardust animation detail' }, fullWidth: true },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/ipotesi-metaverso-vortice-particellare-pink.webp', alt: { it: 'Vortice particellare rosa \u2014 motion graphics mostra arte', en: 'Pink particle vortex \u2014 motion graphics art exhibition' } },
-                { src: '/images/portfolio/ipotesi-metaverso-portale-particellare-ring.webp', alt: { it: 'Portale particellare anello \u2014 animazione logo Stardust', en: 'Ring particle portal \u2014 Stardust logo animation' } },
-                { src: '/images/portfolio/ipotesi-metaverso-onde-luminose-motion.webp', alt: { it: 'Onde luminose motion graphics \u2014 Ipotesi Metaverso installazione', en: 'Light waves motion graphics \u2014 Ipotesi Metaverso installation' } },
-            ], columns: 3 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/ipotesi-metaverso-vortice-particellare-pink.webp', alt: { it: 'Vortice particellare rosa \u2014 motion graphics mostra arte', en: 'Pink particle vortex \u2014 motion graphics art exhibition' } },
+                    { src: '/images/portfolio/ipotesi-metaverso-portale-particellare-ring.webp', alt: { it: 'Portale particellare anello \u2014 animazione logo Stardust', en: 'Ring particle portal \u2014 Stardust logo animation' } },
+                    { src: '/images/portfolio/ipotesi-metaverso-onde-luminose-motion.webp', alt: { it: 'Onde luminose motion graphics \u2014 Ipotesi Metaverso installazione', en: 'Light waves motion graphics \u2014 Ipotesi Metaverso installation' } },
+                ], columns: 3
+            },
             { type: 'text', textIt: 'Software: After Effects con Stardust per i sistemi particellari. Ogni animazione \u00E8 stata progettata come loop seamless per la riproduzione continua su schermi di grande formato all\u2019ingresso di Palazzo Cipolla.\n\nCompositore: Marco ‘Korben’ del Bene.', textEn: 'Software: After Effects with Stardust for particle systems. Each animation was designed as a seamless loop for continuous playback on large-format screens at the entrance of Palazzo Cipolla.\n\nComposer: Marco ‘Korben’ del Bene.' },
         ],
     },
-        {
+    {
         slug: 'radio-caterina',
         titleIt: 'Radio Caterina',
         titleEn: 'Radio Caterina',
@@ -202,14 +212,16 @@ export const projects: Project[] = [
         imdbLink: 'https://www.imdb.com/it/title/tt29257837/',
         contentBlocks: [
             { type: 'video-mp4', url: '/videos/portfolio/radio-caterina-trailer-documentario.mp4', title: 'Trailer \u2014 Radio Caterina' },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/radio-caterina-award-portugal-indie-film-festival.webp', alt: { it: 'Award Winner \u2014 Portugal Indie Film Festival 2025', en: 'Award Winner \u2014 Portugal Indie Film Festival 2025' } },
-                { src: '/images/portfolio/radio-caterina-finalist-arff-berlin-best-documentary.webp', alt: { it: 'Finalist ARFF Berlin \u2014 Best Documentary 2024', en: 'Finalist ARFF Berlin \u2014 Best Documentary 2024' } },
-            ], columns: 2 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/radio-caterina-award-portugal-indie-film-festival.webp', alt: { it: 'Award Winner \u2014 Portugal Indie Film Festival 2025', en: 'Award Winner \u2014 Portugal Indie Film Festival 2025' } },
+                    { src: '/images/portfolio/radio-caterina-finalist-arff-berlin-best-documentary.webp', alt: { it: 'Finalist ARFF Berlin \u2014 Best Documentary 2024', en: 'Finalist ARFF Berlin \u2014 Best Documentary 2024' } },
+                ], columns: 2
+            },
             { type: 'text', textIt: 'Software: DaVinci Resolve per montaggio e color grading, After Effects per le animazioni grafiche, Premiere Pro per il conform.\n\nRegia: David Orlandelli. Produzione: History Channel / MM Productions.\n\n<a href="https://www.radiocaterinamovie.com/" target="_blank" rel="noopener">Sito ufficiale del film</a> \u2014 <a href="https://www.imdb.com/it/title/tt29257837/">IMDB</a>', textEn: 'Software: DaVinci Resolve for editing and color grading, After Effects for graphic animations, Premiere Pro for conform.\n\nDirected by David Orlandelli. Produced by History Channel / MM Productions.\n\n<a href="https://www.radiocaterinamovie.com/" target="_blank" rel="noopener">Official film website</a> \u2014 <a href="https://www.imdb.com/it/title/tt29257837/">IMDB</a>' },
         ],
     },
-            {
+    {
         slug: 'breaking-olimpiadi',
         titleIt: 'Breaking: dalla strada alle Olimpiadi',
         titleEn: 'Breaking: from the street to the Olympics',
@@ -264,45 +276,59 @@ export const projects: Project[] = [
         resultIt: 'Una campagna di 15 compositing fotografici e 8 video loop che ha definito l\u2019identit\u00E0 visiva della stagione Doppelg\u00E4nger \u2014 un universo onirico e surreale costruito interamente in post-produzione, dove ogni scena \u00E8 un piccolo mondo a s\u00E9.',
         resultEn: 'A campaign of 15 photo composites and 8 video loops that defined the Doppelg\u00E4nger seasonal visual identity \u2014 a dreamlike, surreal universe built entirely in post-production, where each scene is a little world of its own.',
         contentBlocks: [
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/doppelganger-scena-museo-compositing.webp', alt: { it: 'Compositing scena museo \u2014 campagna Doppelg\u00E4nger', en: 'Museum scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/images/portfolio/doppelganger-scena-scacchi-compositing.webp', alt: { it: 'Compositing scena scacchi \u2014 campagna Doppelg\u00E4nger', en: 'Chess scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/images/portfolio/doppelganger-scena-garage-compositing.webp', alt: { it: 'Compositing scena garage \u2014 campagna Doppelg\u00E4nger', en: 'Garage scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-            ], columns: 3 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/doppelganger-scena-matrimonio-compositing.webp', alt: { it: 'Compositing scena matrimonio \u2014 campagna Doppelg\u00E4nger', en: 'Wedding scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/images/portfolio/doppelganger-scena-cinema-compositing.webp', alt: { it: 'Compositing scena cinema \u2014 campagna Doppelg\u00E4nger', en: 'Cinema scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/images/portfolio/doppelganger-scena-bar-compositing.webp', alt: { it: 'Compositing scena bar \u2014 campagna Doppelg\u00E4nger', en: 'Bar scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-            ], columns: 3 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/doppelganger-scena-museo-compositing.webp', alt: { it: 'Compositing scena museo \u2014 campagna Doppelg\u00E4nger', en: 'Museum scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/images/portfolio/doppelganger-scena-scacchi-compositing.webp', alt: { it: 'Compositing scena scacchi \u2014 campagna Doppelg\u00E4nger', en: 'Chess scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/images/portfolio/doppelganger-scena-garage-compositing.webp', alt: { it: 'Compositing scena garage \u2014 campagna Doppelg\u00E4nger', en: 'Garage scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                ], columns: 3
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/doppelganger-scena-matrimonio-compositing.webp', alt: { it: 'Compositing scena matrimonio \u2014 campagna Doppelg\u00E4nger', en: 'Wedding scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/images/portfolio/doppelganger-scena-cinema-compositing.webp', alt: { it: 'Compositing scena cinema \u2014 campagna Doppelg\u00E4nger', en: 'Cinema scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/images/portfolio/doppelganger-scena-bar-compositing.webp', alt: { it: 'Compositing scena bar \u2014 campagna Doppelg\u00E4nger', en: 'Bar scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                ], columns: 3
+            },
             { type: 'text', textIt: 'Otto video loop della campagna. Ogni scena \u00E8 costruita in compositing partendo dallo shooting in studio: estrazione soggetti, costruzione ambiente, animazione elementi, color grading unificato.', textEn: 'Eight campaign video loops. Each scene is built through compositing from the studio shoot: subject extraction, environment construction, element animation, unified color grading.' },
-            { type: 'gallery', images: [
-                { src: '/videos/portfolio/doppelganger-compositing-scacchi-loop.mp4', alt: { it: 'Video compositing scena scacchi \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing chess scene \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/videos/portfolio/doppelganger-compositing-museo-loop.mp4', alt: { it: 'Video compositing scena museo \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing museum scene \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/videos/portfolio/doppelganger-compositing-bar-loop.mp4', alt: { it: 'Video compositing scena bar \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing bar scene \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/videos/portfolio/doppelganger-compositing-teatro-loop.mp4', alt: { it: 'Video compositing scena teatro \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing theater scene \u2014 Doppelg\u00E4nger campaign' } },
-            ], columns: 4 },
-            { type: 'gallery', images: [
-                { src: '/videos/portfolio/doppelganger-compositing-vigile-loop.mp4', alt: { it: 'Video compositing scena vigile \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing traffic cop scene \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/videos/portfolio/doppelganger-compositing-bagno-loop.mp4', alt: { it: 'Video compositing scena bagno \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing bathroom scene \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/videos/portfolio/doppelganger-compositing-stazione-loop.mp4', alt: { it: 'Video compositing scena stazione \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing station scene \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/videos/portfolio/doppelganger-compositing-tv-loop.mp4', alt: { it: 'Video compositing scena TV \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing TV scene \u2014 Doppelg\u00E4nger campaign' } },
-            ], columns: 4 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/doppelganger-scena-specchio-compositing.webp', alt: { it: 'Compositing scena specchio \u2014 campagna Doppelg\u00E4nger', en: 'Mirror scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/images/portfolio/doppelganger-scena-teatro-compositing.webp', alt: { it: 'Compositing scena teatro \u2014 campagna Doppelg\u00E4nger', en: 'Theater scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/images/portfolio/doppelganger-scena-salone-compositing.webp', alt: { it: 'Compositing scena salone \u2014 campagna Doppelg\u00E4nger', en: 'Drawing room scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-            ], columns: 3 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/doppelganger-scena-tv-compositing.webp', alt: { it: 'Compositing scena TV \u2014 campagna Doppelg\u00E4nger', en: 'TV scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/images/portfolio/doppelganger-scena-bagno-compositing.webp', alt: { it: 'Compositing scena bagno \u2014 campagna Doppelg\u00E4nger', en: 'Bathroom scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-                { src: '/images/portfolio/doppelganger-scena-ufficio-compositing.webp', alt: { it: 'Compositing scena ufficio \u2014 campagna Doppelg\u00E4nger', en: 'Office scene compositing \u2014 Doppelg\u00E4nger campaign' } },
-            ], columns: 3 },
+            {
+                type: 'gallery', images: [
+                    { src: '/videos/portfolio/doppelganger-compositing-scacchi-loop.mp4', alt: { it: 'Video compositing scena scacchi \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing chess scene \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/videos/portfolio/doppelganger-compositing-museo-loop.mp4', alt: { it: 'Video compositing scena museo \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing museum scene \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/videos/portfolio/doppelganger-compositing-bar-loop.mp4', alt: { it: 'Video compositing scena bar \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing bar scene \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/videos/portfolio/doppelganger-compositing-teatro-loop.mp4', alt: { it: 'Video compositing scena teatro \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing theater scene \u2014 Doppelg\u00E4nger campaign' } },
+                ], columns: 4
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/videos/portfolio/doppelganger-compositing-vigile-loop.mp4', alt: { it: 'Video compositing scena vigile \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing traffic cop scene \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/videos/portfolio/doppelganger-compositing-bagno-loop.mp4', alt: { it: 'Video compositing scena bagno \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing bathroom scene \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/videos/portfolio/doppelganger-compositing-stazione-loop.mp4', alt: { it: 'Video compositing scena stazione \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing station scene \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/videos/portfolio/doppelganger-compositing-tv-loop.mp4', alt: { it: 'Video compositing scena TV \u2014 campagna Doppelg\u00E4nger', en: 'Video compositing TV scene \u2014 Doppelg\u00E4nger campaign' } },
+                ], columns: 4
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/doppelganger-scena-specchio-compositing.webp', alt: { it: 'Compositing scena specchio \u2014 campagna Doppelg\u00E4nger', en: 'Mirror scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/images/portfolio/doppelganger-scena-teatro-compositing.webp', alt: { it: 'Compositing scena teatro \u2014 campagna Doppelg\u00E4nger', en: 'Theater scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/images/portfolio/doppelganger-scena-salone-compositing.webp', alt: { it: 'Compositing scena salone \u2014 campagna Doppelg\u00E4nger', en: 'Drawing room scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                ], columns: 3
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/doppelganger-scena-tv-compositing.webp', alt: { it: 'Compositing scena TV \u2014 campagna Doppelg\u00E4nger', en: 'TV scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/images/portfolio/doppelganger-scena-bagno-compositing.webp', alt: { it: 'Compositing scena bagno \u2014 campagna Doppelg\u00E4nger', en: 'Bathroom scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                    { src: '/images/portfolio/doppelganger-scena-ufficio-compositing.webp', alt: { it: 'Compositing scena ufficio \u2014 campagna Doppelg\u00E4nger', en: 'Office scene compositing \u2014 Doppelg\u00E4nger campaign' } },
+                ], columns: 3
+            },
             { type: 'text', textIt: 'Il processo creativo: dalla richiesta del cliente allo scatto in studio, fino al compositing finale. Ogni elemento dell\u2019ambiente \u00E8 costruito intorno ai soggetti reali \u2014 sfondi AI, elementi dipinti, atmosfere e luci ricreate in post-produzione.', textEn: 'The creative process: from client request to studio shoot, to final compositing. Every environment element is built around real subjects \u2014 AI backgrounds, hand-painted elements, atmospheres and lighting recreated in post-production.' },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/doppelganger-scacchi-reference-cliente.webp', alt: { it: 'Reference richiesta cliente \u2014 scena scacchi Doppelg\u00E4nger', en: 'Client reference request \u2014 chess scene Doppelg\u00E4nger' } },
-                { src: '/images/portfolio/doppelganger-scacchi-before-after-compositing.webp', alt: { it: 'Before/after compositing scena scacchi \u2014 studio vs risultato finale', en: 'Before/after compositing chess scene \u2014 studio vs final result' } },
-                { src: '/images/portfolio/doppelganger-scacchi-set-fotografico-bts.webp', alt: { it: 'Scatto in studio set fotografico \u2014 scena scacchi Doppelg\u00E4nger', en: 'Studio shoot behind the scenes \u2014 chess scene Doppelg\u00E4nger' } },
-            ], columns: 3 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/doppelganger-scacchi-reference-cliente.webp', alt: { it: 'Reference richiesta cliente \u2014 scena scacchi Doppelg\u00E4nger', en: 'Client reference request \u2014 chess scene Doppelg\u00E4nger' } },
+                    { src: '/images/portfolio/doppelganger-scacchi-before-after-compositing.webp', alt: { it: 'Before/after compositing scena scacchi \u2014 studio vs risultato finale', en: 'Before/after compositing chess scene \u2014 studio vs final result' } },
+                    { src: '/images/portfolio/doppelganger-scacchi-set-fotografico-bts.webp', alt: { it: 'Scatto in studio set fotografico \u2014 scena scacchi Doppelg\u00E4nger', en: 'Studio shoot behind the scenes \u2014 chess scene Doppelg\u00E4nger' } },
+                ], columns: 3
+            },
             { type: 'text', textIt: 'Making of: due video che mostrano il processo di compositing dalla ripresa in studio al risultato finale.', textEn: 'Making of: two videos showing the compositing process from studio shoot to final result.' },
             { type: 'video-mp4', url: '/videos/portfolio/doppelganger-bts-scacchi-making-of.mp4', title: 'Making of \u2014 Scena Scacchi' },
             { type: 'video-mp4', url: '/videos/portfolio/doppelganger-bts-vigile-making-of.mp4', title: 'Making of \u2014 Scena Vigile' },
@@ -312,7 +338,7 @@ export const projects: Project[] = [
     },
     // ──────────────────── VFX / CINEMA ────────────────────
 
-        {
+    {
         slug: 'i-am-curious-johnny',
         titleIt: 'I Am Curious Johnny',
         titleEn: 'I Am Curious Johnny',
@@ -347,7 +373,7 @@ export const projects: Project[] = [
             { type: 'text', textIt: 'Software: After Effects per compositing e animazione, Mocha Pro per il tracking del volto, Photoshop per la ricostruzione digitale dei fonemi e delle espressioni.\n\nRegia: Julien Temple. In onda su <a href="https://www.primevideo.com/-/it/detail/I-Am-Curious-Johnny/0R68GPJN6AC0HDNJ3498QHBU89" target="_blank" rel="noopener">Prime Video</a> \u2014 <a href="https://www.imdb.com/it/title/tt35450650/">IMDB</a>', textEn: 'Software: After Effects for compositing and animation, Mocha Pro for face tracking, Photoshop for digital reconstruction of phonemes and expressions.\n\nDirected by Julien Temple. Streaming on <a href="https://www.primevideo.com/-/it/detail/I-Am-Curious-Johnny/0R68GPJN6AC0HDNJ3498QHBU89" target="_blank" rel="noopener">Prime Video</a> \u2014 <a href="https://www.imdb.com/it/title/tt35450650/">IMDB</a>' },
         ],
     },
-        {
+    {
         slug: 'roche-jingle-ai',
         titleIt: 'Roche \u2014 Jingle AI Milano Cortina',
         titleEn: 'Roche \u2014 AI Jingle Milano Cortina',
@@ -376,22 +402,30 @@ export const projects: Project[] = [
         resultEn: 'Jingles that hit the mark \u2014 spectacular, fun, delivered within timelines and budgets impossible without AI. The perfect example of my approach: AI produces the raw material, experience selects and refines.',
         contentBlocks: [
             { type: 'video-mp4', url: '/videos/portfolio/roche-jingle-olimpiadi-ai.mp4', title: 'Roche \u2014 Jingle AI Milano Cortina (compilation)' },
-            { type: 'video-loop-gallery', videos: [
-                { url: '/videos/portfolio/roche-jingle-hockey-ai.mp4' },
-                { url: '/videos/portfolio/roche-jingle-skijump-ai.mp4' },
-            ], columns: 2 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/roche-jingle-ai-relatrice-montagne.webp', alt: { it: 'Relatrice Roche con montagne innevate', en: 'Roche speaker with snowy mountains' } },
-                { src: '/images/portfolio/roche-jingle-ai-relatore-bandiere.webp', alt: { it: 'Relatore Roche con bandiere italiane', en: 'Roche speaker with Italian flags' } },
-            ], columns: 2 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/roche-jingle-ai-sciatore-slalom.webp', alt: { it: 'Sciatore slalom AI \u2014 Roche jingle olimpico', en: 'AI slalom skier \u2014 Roche Olympic jingle' } },
-                { src: '/images/portfolio/roche-jingle-ai-snowboard-halfpipe.webp', alt: { it: 'Snowboarder halfpipe AI \u2014 Roche jingle olimpico', en: 'AI halfpipe snowboarder \u2014 Roche Olympic jingle' } },
-            ], columns: 2 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/roche-jingle-ai-slittino-olimpiadi.webp', alt: { it: 'Slittino olimpico AI \u2014 Roche jingle', en: 'AI Olympic luge \u2014 Roche jingle' } },
-                { src: '/images/portfolio/roche-jingle-ai-dettaglio-guanto.webp', alt: { it: 'Dettaglio guanto \u2014 realismo AI generativa', en: 'Glove detail \u2014 generative AI realism' } },
-            ], columns: 2 },
+            {
+                type: 'video-loop-gallery', videos: [
+                    { url: '/videos/portfolio/roche-jingle-hockey-ai.mp4' },
+                    { url: '/videos/portfolio/roche-jingle-skijump-ai.mp4' },
+                ], columns: 2
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/roche-jingle-ai-relatrice-montagne.webp', alt: { it: 'Relatrice Roche con montagne innevate', en: 'Roche speaker with snowy mountains' } },
+                    { src: '/images/portfolio/roche-jingle-ai-relatore-bandiere.webp', alt: { it: 'Relatore Roche con bandiere italiane', en: 'Roche speaker with Italian flags' } },
+                ], columns: 2
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/roche-jingle-ai-sciatore-slalom.webp', alt: { it: 'Sciatore slalom AI \u2014 Roche jingle olimpico', en: 'AI slalom skier \u2014 Roche Olympic jingle' } },
+                    { src: '/images/portfolio/roche-jingle-ai-snowboard-halfpipe.webp', alt: { it: 'Snowboarder halfpipe AI \u2014 Roche jingle olimpico', en: 'AI halfpipe snowboarder \u2014 Roche Olympic jingle' } },
+                ], columns: 2
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/roche-jingle-ai-slittino-olimpiadi.webp', alt: { it: 'Slittino olimpico AI \u2014 Roche jingle', en: 'AI Olympic luge \u2014 Roche jingle' } },
+                    { src: '/images/portfolio/roche-jingle-ai-dettaglio-guanto.webp', alt: { it: 'Dettaglio guanto \u2014 realismo AI generativa', en: 'Glove detail \u2014 generative AI realism' } },
+                ], columns: 2
+            },
             { type: 'text', textIt: 'Software: Veo e Higgsfield per la generazione video AI, Runway per le animazioni, Nano Banana per i ritratti. After Effects per il compositing e il montaggio, DaVinci Resolve per il color grading finale.\n\nCliente: Roche.', textEn: 'Software: Veo and Higgsfield for AI video generation, Runway for animations, Nano Banana for portraits. After Effects for compositing and editing, DaVinci Resolve for final color grading.\n\nClient: Roche.' },
         ],
     },
@@ -422,29 +456,84 @@ export const projects: Project[] = [
     // ──────────────────── ANIMAZIONE 3D / 2D / PRODOTTO ────────────────────
 
     {
-        slug: 'black-hole-tale',
-        titleIt: `Black Hole Tale`,
-        titleEn: `Black Hole Tale`,
-        category: 'animation',
-        categoryLabel: { it: `Animazione 2D`, en: `2D Animation` },
-        client: 'Andrea Casta',
-        year: '2023',
-        role: 'Animator / Editor',
-        thumbnail: '/images/portfolio/animazione-2d-black-hole-tale-thumb.jpg',
-        thumbnailAlt: { it: `Animazione 2D per Black Hole Tale di Andrea Casta`, en: `2D animation for Andrea Casta's Black Hole Tale` },
-        heroImage: '/images/portfolio/animazione-2d-black-hole-tale-hero.jpg',
-        images: [],
-        tools: ['After Effects', 'Photoshop', 'DaVinci Resolve'],
-        briefingIt: `Video musicale per il violinista Andrea Casta. Il concept: dare vita alle illustrazioni di un artista attraverso l'animazione 2D, montandole insieme a riprese dal vero del musicista.`,
-        briefingEn: `Music video for violinist Andrea Casta. The concept: bring an artist's illustrations to life through 2D animation, editing them together with live-action footage of the musician.`,
-        challengeIt: `Animare illustrazioni statiche mantenendo lo stile originale dell'illustratore, creando transizioni fluide tra il mondo animato e le riprese dal vero. Il ritmo dell'animazione doveva seguire la musica senza mai sembrare un semplice slideshow.`,
-        challengeEn: `Animating static illustrations while maintaining the illustrator's original style, creating fluid transitions between the animated world and live-action footage. The animation rhythm had to follow the music without ever feeling like a simple slideshow.`,
-        solutionIt: `Ho separato ogni illustrazione in layer animabili, creando movimenti di camera, parallasse e transizioni organiche che danno profondità alle immagini piatte. Il <a href="/motion-graphics">montaggio</a> alterna le sequenze animate alle riprese dal vero, costruendo un flusso narrativo guidato dalla musica.`,
-        solutionEn: `I separated each illustration into animatable layers, creating camera movements, parallax and organic transitions that give depth to flat images. The <a href="/en/motion-graphics">editing</a> alternates animated sequences with live-action footage, building a narrative flow driven by the music.`,
-        resultIt: `Un video musicale che fonde due mondi visivi in un racconto unico — dove le illustrazioni prendono vita e dialogano con la performance dal vivo.`,
-        resultEn: `A music video that merges two visual worlds into a unique narrative — where illustrations come to life and dialogue with live performance.`,
+        slug: 'frangiamore',
+        slugEn: 'frangiamore',
+        title: 'Frangiamore',
+        titleEn: 'Frangiamore',
+        subtitle: 'Fashion Film per Sylvio Giardina Haute Couture',
+        subtitleEn: 'Fashion Film for Sylvio Giardina Haute Couture',
+        category: 'post-produzione',
+        categoryEn: 'post-production',
+        client: 'Sylvio Giardina',
+        year: '2020',
+        image: '/images/portfolio/frangiamore/frangiamore-sylvio-giardina-hero.webp',
+        description: 'Cinematografia, color correction e VFX per il fashion film "Frangiamore" dello stilista Sylvio Giardina. Presentato in Campidoglio alla presenza della Sindaca Virginia Raggi, il cortometraggio celebra il dialogo tra alta moda e le bellezze architettoniche di Roma. Girato in location iconiche: Piazza del Campidoglio, Scala del Vignola, Pantheon e Villa Torlonia.',
+        descriptionEn: 'Cinematography, color correction and VFX for "Frangiamore", a fashion film by couturier Sylvio Giardina. Premiered at Rome\'s Campidoglio in the presence of Mayor Virginia Raggi, the short film celebrates the dialogue between haute couture and Rome\'s architectural heritage. Shot in iconic locations: Piazza del Campidoglio, Scala del Vignola, the Pantheon and Villa Torlonia.',
+        videoUrl: 'https://youtu.be/mowfqwBd_Tc',
+        services: ['Cinematografia', 'Color Correction', 'VFX'],
+        servicesEn: ['Cinematography', 'Color Correction', 'VFX'],
+        tools: ['DaVinci Resolve', 'After Effects'],
+        imdbUrl: 'https://www.imdb.com/title/tt13472468/',
+        contentBlocks: [
+            {
+                type: 'text',
+                textIt: 'Un cortometraggio che nasce come dichiarazione d\'amore per Roma e per l\'alta moda. Il couturier Sylvio Giardina — formatosi all\'Accademia di Costume e Moda con apprendistato da Gattinoni — ha selezionato capi dalle collezioni Vertigo, Monocromo e Dark Celebration del suo archivio storico per creare un dialogo visivo tra artigianato sartoriale e architettura monumentale.\n\nIl progetto è stato patrocinato dal Comune di Roma e presentato il 14 settembre 2020 nella Sala della Protomoteca in Campidoglio.',
+                textEn: 'A short film conceived as a love letter to Rome and haute couture. Couturier Sylvio Giardina — trained at the Accademia di Costume e Moda with an apprenticeship at Gattinoni — selected pieces from his archive\'s Vertigo, Monocromo and Dark Celebration collections to create a visual dialogue between sartorial craftsmanship and monumental architecture.\n\nThe project was sponsored by the City of Rome and premiered on September 14, 2020 at the Sala della Protomoteca in the Campidoglio.'
+            },
+            {
+                type: 'image',
+                src: '/images/portfolio/frangiamore/frangiamore-tulle-scalinata-campidoglio.webp',
+                alt: 'Abito in tulle bianco sulla scalinata del Campidoglio — Frangiamore Sylvio Giardina',
+                altEn: 'White tulle gown on the Campidoglio staircase — Frangiamore Sylvio Giardina',
+                fullWidth: false
+            },
+            {
+                type: 'text',
+                textIt: 'Il mio ruolo è stato quello di direttore della fotografia, colorist e VFX artist. Ho curato l\'intero look cinematografico del film — dalla scelta dell\'illuminazione naturale nelle location romane alla color correction finale, costruendo una palette che esaltasse i tre colori dominanti delle collezioni: il bianco puro del tulle, il nero misterioso e il rosso fuoco.\n\nLe riprese si sono svolte all\'alba e al tramonto per catturare la luce migliore nei luoghi monumentali, lavorando con tempi strettissimi in location a disponibilità limitata.',
+                textEn: 'My role encompassed director of photography, colorist and VFX artist. I shaped the entire cinematic look of the film — from leveraging natural light across Rome\'s monumental locations to the final color correction, building a palette that enhanced the three dominant collection colors: pure white tulle, mysterious black and fiery red.\n\nShooting took place at dawn and dusk to capture optimal light in the monumental locations, working within very tight windows of availability.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/frangiamore/frangiamore-pantheon-roma.webp',
+                        alt: 'Modella davanti al portone del Pantheon — Frangiamore cinematografia Piero Perilli',
+                        altEn: 'Model in front of the Pantheon entrance — Frangiamore cinematography by Piero Perilli'
+                    },
+                    {
+                        src: '/images/portfolio/frangiamore/frangiamore-palazzo-conservatori-roma.webp',
+                        alt: 'Abito haute couture nel Cortile dei Musei Capitolini — Frangiamore Sylvio Giardina Roma',
+                        altEn: 'Haute couture gown in the Capitoline Museums courtyard — Frangiamore Sylvio Giardina Rome'
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: 'Roma stessa diventa protagonista: Piazza del Campidoglio, la Scala del Vignola, il Cortile di Palazzo dei Conservatori, Piazza della Rotonda al Pantheon e Villa Torlonia. Ogni location è stata scelta per creare un contrappunto architettonico con gli abiti — le geometrie rinascimentali dei palazzi che dialogano con le strutture architettoniche dei capi in tulle e goffrature.\n\nIl cortometraggio si chiude con un omaggio alle sarte della Maison: mani artigiane che custodiscono il patrimonio dell\'alta moda italiana. Un tema che sento profondamente vicino — l\'artigianato come valore, la precisione del fare.',
+                textEn: 'Rome itself becomes a protagonist: Piazza del Campidoglio, the Scala del Vignola, the Palazzo dei Conservatori courtyard, Piazza della Rotonda at the Pantheon and Villa Torlonia. Each location was chosen to create an architectural counterpoint with the garments — Renaissance geometries in dialogue with the architectural structures of the tulle and goffré pieces.\n\nThe film closes with a tribute to the Maison\'s seamstresses: artisan hands preserving Italy\'s haute couture heritage. A theme that resonates deeply with me — craftsmanship as value, the precision of making.'
+            },
+            {
+                type: 'image',
+                src: '/images/portfolio/frangiamore/frangiamore-haute-couture-roma.webp',
+                alt: 'Abito haute couture Sylvio Giardina con frammenti del Colosso di Costantino — Frangiamore Roma',
+                altEn: 'Sylvio Giardina haute couture gown with fragments of the Colossus of Constantine — Frangiamore Rome',
+                fullWidth: false
+            },
+            {
+                type: 'video',
+                url: 'https://youtu.be/mowfqwBd_Tc',
+                titleIt: 'Frangiamore — Cortometraggio completo',
+                titleEn: 'Frangiamore — Full Short Film'
+            },
+            {
+                type: 'text',
+                textIt: '**Crediti**\nRegia: Riccardo Suriano\nCinematografia: Piero Perilli\nArt Director: Tania Alineri\nStylist: Valeria J. Marchetti\nModella: Serena Archetti\nHairstylist: Alessandro Messina\nMake-up: Antonia Pappalardo\n\nPresentato in Campidoglio, Roma — 14 Settembre 2020\nIMDB: tt13472468',
+                textEn: '**Credits**\nDirector: Riccardo Suriano\nCinematography: Piero Perilli\nArt Director: Tania Alineri\nStylist: Valeria J. Marchetti\nModel: Serena Archetti\nHairstylist: Alessandro Messina\nMake-up: Antonia Pappalardo\n\nPremiered at Campidoglio, Rome — September 14, 2020\nIMDB: tt13472468'
+            }
+        ]
     },
-        {
+    {
         slug: 'stalking-spot',
         titleIt: 'Stalking',
         titleEn: 'Stalking',
@@ -472,7 +561,7 @@ export const projects: Project[] = [
             { type: 'text', textIt: 'Software: 3ds Max per modellazione e animazione 3D, After Effects per compositing e integrazione, DaVinci Resolve per il color grading.\n\nRegia: Paolo Scarf\u00F2. Committente: Ministero delle Pari Opportunit\u00E0.', textEn: 'Software: 3ds Max for 3D modeling and animation, After Effects for compositing and integration, DaVinci Resolve for color grading.\n\nDirected by Paolo Scarf\u00F2. Client: Italian Ministry of Equal Opportunities.' },
         ],
     },
-        {
+    {
         slug: 'wonder-alba',
         titleIt: 'Wonder Alba',
         titleEn: 'Wonder Alba',
@@ -510,7 +599,7 @@ export const projects: Project[] = [
             { type: 'text', textIt: 'La chicca del progetto: Wonder Alba \u00E8 un avatar AI conversazionale. Ascolta, comprende e risponde vocalmente seguendo le linee guida aziendali di Medlogix. Integrazione con Convai e NVIDIA per l\u2019intelligenza artificiale conversazionale in tempo reale.\n\nSoftware: Character Creator per il personaggio, 3ds Max per modellazione e animazione, Unreal Engine 5 per il rendering in tempo reale, Convai e NVIDIA per l\u2019AI conversazionale.\n\n<a href="https://connector.eagle3dstreaming.com/v5/Piero/WonderAlbaDesktop/mic" target="_blank" rel="noopener">Prova la demo: parla con Wonder Alba</a>', textEn: 'The project highlight: Wonder Alba is a conversational AI avatar. She listens, understands and responds vocally following Medlogix corporate guidelines. Integration with Convai and NVIDIA for real-time conversational artificial intelligence.\n\nSoftware: Character Creator for the character, 3ds Max for modeling and animation, Unreal Engine 5 for real-time rendering, Convai and NVIDIA for conversational AI.\n\n<a href="https://connector.eagle3dstreaming.com/v5/Piero/WonderAlbaDesktop/mic" target="_blank" rel="noopener">Try the demo: talk to Wonder Alba</a>' },
         ],
     },
-        {
+    {
         slug: 'jor',
         titleIt: 'JOR \u2014 Collezione Liaison',
         titleEn: 'JOR \u2014 Liaison Collection',
@@ -538,14 +627,18 @@ export const projects: Project[] = [
         resultEn: 'A commercial that presents JOR Liaison jewelry as objects of desire \u2014 immersed in a world that doesn\u2019t exist but feels tangible. Every ring shines with the same intensity it would have in a real display.',
         contentBlocks: [
             { type: 'video-mp4', url: '/videos/portfolio/jor-collezione-liaison-animazione-3d.mp4', title: 'Spot JOR \u2014 Collezione Liaison' },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/jor-liaison-anello-colonna-3d.webp', alt: { it: 'Anello su colonna romana \u2014 JOR Liaison', en: 'Ring on Roman column \u2014 JOR Liaison' } },
-                { src: '/images/portfolio/jor-liaison-vista-anello-colosseo.webp', alt: { it: 'Vista attraverso l\u2019anello \u2014 Colosseo JOR Liaison', en: 'View through the ring \u2014 Colosseum JOR Liaison' } },
-            ], columns: 2 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/jor-liaison-collezione-anelli-diamanti.webp', alt: { it: 'Collezione anelli diamanti JOR Liaison', en: 'JOR Liaison diamond ring collection' } },
-                { src: '/images/portfolio/jor-liaison-statua-tramonto-anelli.webp', alt: { it: 'Statua e anelli al tramonto \u2014 JOR Liaison', en: 'Statue and rings at sunset \u2014 JOR Liaison' } },
-            ], columns: 2 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/jor-liaison-anello-colonna-3d.webp', alt: { it: 'Anello su colonna romana \u2014 JOR Liaison', en: 'Ring on Roman column \u2014 JOR Liaison' } },
+                    { src: '/images/portfolio/jor-liaison-vista-anello-colosseo.webp', alt: { it: 'Vista attraverso l\u2019anello \u2014 Colosseo JOR Liaison', en: 'View through the ring \u2014 Colosseum JOR Liaison' } },
+                ], columns: 2
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/jor-liaison-collezione-anelli-diamanti.webp', alt: { it: 'Collezione anelli diamanti JOR Liaison', en: 'JOR Liaison diamond ring collection' } },
+                    { src: '/images/portfolio/jor-liaison-statua-tramonto-anelli.webp', alt: { it: 'Statua e anelli al tramonto \u2014 JOR Liaison', en: 'Statue and rings at sunset \u2014 JOR Liaison' } },
+                ], columns: 2
+            },
             { type: 'image', src: '/images/portfolio/jor-liaison-statua-mare-anelli.webp', alt: { it: 'Statua con anelli JOR Liaison \u2014 controluce sul mare', en: 'Statue with JOR Liaison rings \u2014 backlit over the sea' }, fullWidth: true },
             { type: 'text', textIt: 'Software: Unreal Engine 5 per ambiente e rendering in tempo reale, 3ds Max per modellazione gioielli dai disegni tecnici, DaVinci Resolve per il color grading finale.', textEn: 'Software: Unreal Engine 5 for environment and real-time rendering, 3ds Max for jewelry modeling from technical drawings, DaVinci Resolve for final color grading.' },
         ],
@@ -553,7 +646,7 @@ export const projects: Project[] = [
 
     // ──────────────────── MOTION GRAPHICS ────────────────────
 
-        {
+    {
         slug: 'om-olivia-mariotti',
         titleIt: 'OM Floating',
         titleEn: 'OM Floating',
@@ -581,15 +674,17 @@ export const projects: Project[] = [
         resultEn: 'A video where jellyfish float naturally through OM spaces, transforming a real office into a surreal, poetic environment. The visual metaphor for corporate transition is immediate: something new and luminous inhabits a familiar space.',
         contentBlocks: [
             { type: 'video-mp4', url: '/videos/portfolio/om-floating-meduse-compositing.mp4', title: 'OM Floating \u2014 meduse in compositing' },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/om-floating-medusa-ufficio-vetro.webp', alt: { it: 'Medusa nell\u2019ufficio OM \u2014 compositing su vetro', en: 'Jellyfish in OM office \u2014 compositing on glass' } },
-                { src: '/images/portfolio/om-floating-medusa-specchio-obl\u00F2.webp', alt: { it: 'Medusa vista dall\u2019obl\u00F2 \u2014 OM Floating', en: 'Jellyfish seen through porthole \u2014 OM Floating' } },
-            ], columns: 2 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/om-floating-medusa-ufficio-vetro.webp', alt: { it: 'Medusa nell\u2019ufficio OM \u2014 compositing su vetro', en: 'Jellyfish in OM office \u2014 compositing on glass' } },
+                    { src: '/images/portfolio/om-floating-medusa-specchio-obl\u00F2.webp', alt: { it: 'Medusa vista dall\u2019obl\u00F2 \u2014 OM Floating', en: 'Jellyfish seen through porthole \u2014 OM Floating' } },
+                ], columns: 2
+            },
             { type: 'image', src: '/images/portfolio/om-floating-meduse-vetrata-esterno.webp', alt: { it: 'Meduse visibili dall\u2019esterno attraverso la vetrata \u2014 OM Floating', en: 'Jellyfish visible from outside through glass wall \u2014 OM Floating' }, fullWidth: true },
             { type: 'text', textIt: 'Software: After Effects per il compositing e l\u2019integrazione delle meduse 3D, Photoshop per la preparazione degli ambienti, DaVinci Resolve per il color grading.\n\nArt direction: Prospero Di Veroli.', textEn: 'Software: After Effects for compositing and 3D jellyfish integration, Photoshop for environment preparation, DaVinci Resolve for color grading.\n\nArt direction: Prospero Di Veroli.' },
         ],
     },
-        {
+    {
         slug: 'pmi',
         titleIt: 'Abbiamo Cura di Te \u2014 PMI',
         titleEn: 'Abbiamo Cura di Te \u2014 PMI',
@@ -617,22 +712,28 @@ export const projects: Project[] = [
         resultEn: 'A video where the medium is the message: the continuity of the stroke communicates the continuity of care. Two minutes without a single visual break.',
         contentBlocks: [
             { type: 'video-mp4', url: '/videos/portfolio/pmi-abbiamo-cura-di-te-spot.mp4', title: 'Abbiamo Cura di Te \u2014 spot PMI' },
-            { type: 'video-loop-gallery', videos: [
-                { url: '/videos/portfolio/pmi-animazione-tratto-profilo.mp4' },
-                { url: '/videos/portfolio/pmi-animazione-tratto-mani.mp4' },
-            ], columns: 2 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/pmi-animazione-annaffiatoio.webp', alt: { it: 'Annaffiatoio e piantina \u2014 animazione a tratto continuo PMI', en: 'Watering can and seedling \u2014 continuous line animation PMI' } },
-                { src: '/images/portfolio/pmi-animazione-bambino-fiore.webp', alt: { it: 'Bambino che annusa un fiore \u2014 animazione PMI', en: 'Child smelling a flower \u2014 PMI animation' } },
-            ], columns: 2 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/pmi-animazione-famiglia-mela.webp', alt: { it: 'Famiglia con mela \u2014 animazione PMI', en: 'Family with apple \u2014 PMI animation' } },
-                { src: '/images/portfolio/pmi-animazione-albero-tratto.webp', alt: { it: 'Albero con nuvole \u2014 animazione a tratto continuo PMI', en: 'Tree with clouds \u2014 continuous line animation PMI' } },
-            ], columns: 2 },
+            {
+                type: 'video-loop-gallery', videos: [
+                    { url: '/videos/portfolio/pmi-animazione-tratto-profilo.mp4' },
+                    { url: '/videos/portfolio/pmi-animazione-tratto-mani.mp4' },
+                ], columns: 2
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/pmi-animazione-annaffiatoio.webp', alt: { it: 'Annaffiatoio e piantina \u2014 animazione a tratto continuo PMI', en: 'Watering can and seedling \u2014 continuous line animation PMI' } },
+                    { src: '/images/portfolio/pmi-animazione-bambino-fiore.webp', alt: { it: 'Bambino che annusa un fiore \u2014 animazione PMI', en: 'Child smelling a flower \u2014 PMI animation' } },
+                ], columns: 2
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/pmi-animazione-famiglia-mela.webp', alt: { it: 'Famiglia con mela \u2014 animazione PMI', en: 'Family with apple \u2014 PMI animation' } },
+                    { src: '/images/portfolio/pmi-animazione-albero-tratto.webp', alt: { it: 'Albero con nuvole \u2014 animazione a tratto continuo PMI', en: 'Tree with clouds \u2014 continuous line animation PMI' } },
+                ], columns: 2
+            },
             { type: 'text', textIt: 'Software: After Effects per l\u2019animazione frame per frame, Illustrator per il design del tratto continuo e degli elementi illustrativi.', textEn: 'Software: After Effects for frame-by-frame animation, Illustrator for continuous line design and illustrative elements.' },
         ],
     },
-        {
+    {
         slug: 'klinamen-orion',
         titleIt: 'Klinamen \u2014 Orion',
         titleEn: 'Klinamen \u2014 Orion',
@@ -660,14 +761,18 @@ export const projects: Project[] = [
         resultEn: 'A video where the viewer enters the narrative without knowing where it leads \u2014 and in the end discovers that initial chaos was the genesis of a real architectural project: the Orion Business & Health Complex.',
         contentBlocks: [
             { type: 'video-mp4', url: '/videos/portfolio/klinamen-orion-animazione-3d.mp4', title: 'Klinamen \u2014 Orion Business & Health Complex' },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/klinamen-orion-esplosione-particelle.webp', alt: { it: 'Esplosione particellare \u2014 nascita del nucleo', en: 'Particle explosion \u2014 nucleus birth' } },
-                { src: '/images/portfolio/klinamen-orion-detriti-luce.webp', alt: { it: 'Detriti e luce \u2014 materia in formazione', en: 'Debris and light \u2014 matter forming' } },
-            ], columns: 2 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/klinamen-orion-esplosione-closeup.webp', alt: { it: 'Esplosione closeup \u2014 energia astratta', en: 'Explosion closeup \u2014 abstract energy' } },
-                { src: '/images/portfolio/klinamen-orion-citta-notturna-3d.webp', alt: { it: 'Citt\u00E0 notturna 3D \u2014 Orion Complex', en: 'Night city 3D \u2014 Orion Complex' } },
-            ], columns: 2 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/klinamen-orion-esplosione-particelle.webp', alt: { it: 'Esplosione particellare \u2014 nascita del nucleo', en: 'Particle explosion \u2014 nucleus birth' } },
+                    { src: '/images/portfolio/klinamen-orion-detriti-luce.webp', alt: { it: 'Detriti e luce \u2014 materia in formazione', en: 'Debris and light \u2014 matter forming' } },
+                ], columns: 2
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/klinamen-orion-esplosione-closeup.webp', alt: { it: 'Esplosione closeup \u2014 energia astratta', en: 'Explosion closeup \u2014 abstract energy' } },
+                    { src: '/images/portfolio/klinamen-orion-citta-notturna-3d.webp', alt: { it: 'Citt\u00E0 notturna 3D \u2014 Orion Complex', en: 'Night city 3D \u2014 Orion Complex' } },
+                ], columns: 2
+            },
             { type: 'image', src: '/images/portfolio/klinamen-orion-complesso-notturno.webp', alt: { it: 'Orion Business & Health Complex \u2014 rendering finale', en: 'Orion Business & Health Complex \u2014 final rendering' }, fullWidth: true },
             { type: 'text', textIt: 'Software: After Effects con Element 3D per compositing e animazione particellare, 3ds Max per la modellazione architettonica, DaVinci Resolve per il color grading.\n\nArt direction: Luigi Rascaglia.', textEn: 'Software: After Effects with Element 3D for compositing and particle animation, 3ds Max for architectural modeling, DaVinci Resolve for color grading.\n\nArt direction: Luigi Rascaglia.' },
         ],
@@ -675,7 +780,7 @@ export const projects: Project[] = [
 
     // ──────────────────── POST PRODUZIONE / COLOR ────────────────────
 
-        {
+    {
         slug: 'pleiadi',
         titleIt: 'Pleiadi',
         titleEn: 'Pleiadi',
@@ -703,18 +808,22 @@ export const projects: Project[] = [
         resultEn: 'A music video where every technical element serves the music \u2014 the concrete advantage of an integrated workflow applied to a complete creative project.',
         contentBlocks: [
             { type: 'video-mp4', url: '/videos/portfolio/pleiadi-videoclip-musicale.mp4', title: 'Pleiadi \u2014 Marco \u201CKorben\u201D del Bene' },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/pleiadi-cantante-primo-piano.webp', alt: { it: 'Primo piano cantante \u2014 Pleiadi', en: 'Singer close-up \u2014 Pleiadi' } },
-                { src: '/images/portfolio/pleiadi-fender-jazz-bass.webp', alt: { it: 'Fender Jazz Bass \u2014 Pleiadi', en: 'Fender Jazz Bass \u2014 Pleiadi' } },
-            ], columns: 2 },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/pleiadi-cantante-microfono.webp', alt: { it: 'Cantante al microfono \u2014 Pleiadi', en: 'Singer at microphone \u2014 Pleiadi' } },
-                { src: '/images/portfolio/pleiadi-bassista-live.webp', alt: { it: 'Bassista live \u2014 Pleiadi', en: 'Bassist live \u2014 Pleiadi' } },
-            ], columns: 2 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/pleiadi-cantante-primo-piano.webp', alt: { it: 'Primo piano cantante \u2014 Pleiadi', en: 'Singer close-up \u2014 Pleiadi' } },
+                    { src: '/images/portfolio/pleiadi-fender-jazz-bass.webp', alt: { it: 'Fender Jazz Bass \u2014 Pleiadi', en: 'Fender Jazz Bass \u2014 Pleiadi' } },
+                ], columns: 2
+            },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/pleiadi-cantante-microfono.webp', alt: { it: 'Cantante al microfono \u2014 Pleiadi', en: 'Singer at microphone \u2014 Pleiadi' } },
+                    { src: '/images/portfolio/pleiadi-bassista-live.webp', alt: { it: 'Bassista live \u2014 Pleiadi', en: 'Bassist live \u2014 Pleiadi' } },
+                ], columns: 2
+            },
             { type: 'text', textIt: 'Software: DaVinci Resolve per montaggio e color grading, After Effects per gli interventi VFX.\n\nArtista: Marco \u201CKorben\u201D del Bene.', textEn: 'Software: DaVinci Resolve for editing and color grading, After Effects for VFX work.\n\nArtist: Marco \u201CKorben\u201D del Bene.' },
         ],
     },
-        {
+    {
         slug: 'bonus-idrico-acea',
         titleIt: 'Bonus Idrico \u2014 Acea Acqua',
         titleEn: 'Bonus Idrico \u2014 Acea Acqua',
@@ -742,10 +851,12 @@ export const projects: Project[] = [
         resultEn: 'A spot where a complex topic becomes simple to understand \u2014 the power of motion graphics applied to institutional communication.',
         contentBlocks: [
             { type: 'video-mp4', url: '/videos/portfolio/acea-bonus-idrico-animazione.mp4', title: 'Bonus Idrico \u2014 Acea Acqua' },
-            { type: 'gallery', images: [
-                { src: '/images/portfolio/acea-bonus-idrico-nuclei-familiari.webp', alt: { it: 'Nuclei familiari \u2014 Bonus Idrico Acea', en: 'Family households \u2014 Acea Water Bonus' } },
-                { src: '/images/portfolio/acea-bonus-idrico-nazionale.webp', alt: { it: 'Bonus Idrico Nazionale e Integrativo', en: 'National and Supplementary Water Bonus' } },
-            ], columns: 2 },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/acea-bonus-idrico-nuclei-familiari.webp', alt: { it: 'Nuclei familiari \u2014 Bonus Idrico Acea', en: 'Family households \u2014 Acea Water Bonus' } },
+                    { src: '/images/portfolio/acea-bonus-idrico-nazionale.webp', alt: { it: 'Bonus Idrico Nazionale e Integrativo', en: 'National and Supplementary Water Bonus' } },
+                ], columns: 2
+            },
             { type: 'image', src: '/images/portfolio/acea-acqua-logo-goccia.webp', alt: { it: 'Logo Acea Acqua con goccia mascotte animata', en: 'Acea Acqua logo with animated water drop mascot' }, fullWidth: true },
             { type: 'text', textIt: 'Software: After Effects per l\u2019animazione 2.5D e il compositing, Illustrator per le illustrazioni e il design dei personaggi.\n\nCliente: Acea Acqua.', textEn: 'Software: After Effects for 2.5D animation and compositing, Illustrator for illustrations and character design.\n\nClient: Acea Acqua.' },
         ],
