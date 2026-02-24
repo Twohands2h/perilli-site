@@ -64,10 +64,11 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
               <button
                 key={cat.key}
                 onClick={() => handleFilter(cat.key)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
+                className={`px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] rounded-sm
+                  transition-all duration-300 border
                   ${activeFilter === cat.key
-                    ? 'bg-accent text-background'
-                    : 'bg-surface text-text-secondary hover:text-text-primary border border-border'
+                    ? 'bg-accent text-background border-accent'
+                    : 'bg-transparent text-text-muted border-border hover:border-text-secondary hover:text-text-secondary'
                   }`}
               >
                 {isIt ? cat.labelIt : cat.labelEn}
