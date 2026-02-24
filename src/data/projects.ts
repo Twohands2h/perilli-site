@@ -1212,26 +1212,82 @@ export const projects: Project[] = [
     },
     {
         slug: 'vetrya',
-        titleIt: `Vetrya`,
-        titleEn: `Vetrya`,
+        titleIt: 'Vetrya',
+        titleEn: 'Vetrya',
         category: 'post',
-        categoryLabel: { it: `Post Produzione`, en: `Post Production` },
+        categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
         client: 'Vetrya',
-        year: '2021',
-        role: 'Editor / Colorist',
-        thumbnail: '/images/portfolio/post-produzione-vetrya-thumb.jpg',
-        thumbnailAlt: { it: `Post produzione video Vetrya`, en: `Post production Vetrya video` },
-        heroImage: '/images/portfolio/post-produzione-vetrya-hero.jpg',
-        images: [],
-        tools: ['DaVinci Resolve', 'Premiere Pro'],
-        briefingIt: `Video corporate per Vetrya, azienda tecnologica italiana. Montaggio e color grading per un racconto aziendale che doveva comunicare innovazione senza retorica.`,
-        briefingEn: `Corporate video for Vetrya, an Italian tech company. Editing and color grading for a corporate story that had to communicate innovation without rhetoric.`,
-        challengeIt: `I video corporate rischiano sempre di essere generici. La sfida: costruire un racconto con ritmo, personalità e un grading che distingua Vetrya dalla massa di video aziendali tutti uguali.`,
-        challengeEn: `Corporate videos always risk being generic. The challenge: building a story with rhythm, personality and a grade that distinguishes Vetrya from the mass of identical corporate videos.`,
-        solutionIt: `<a href="/post-produzione">Montaggio</a> con ritmo dinamico e tagli precisi che mantengono alta l'attenzione. Color grading in DaVinci Resolve con toni che comunicano tecnologia e visione — senza cadere nel blu generico del "corporate tech".`,
-        solutionEn: `<a href="/en/post-production">Editing</a> with dynamic rhythm and precise cuts that maintain attention. Color grading in DaVinci Resolve with tones communicating technology and vision — without falling into the generic blue of "corporate tech."`,
-        resultIt: `Un video corporate che non sembra un video corporate — perché ha personalità, ritmo e un'identità visiva propria.`,
-        resultEn: `A corporate video that doesn't feel like a corporate video — because it has personality, rhythm and its own visual identity.`,
+        year: '2015',
+        role: 'Montaggio, Color Correction',
+        thumbnail: '/images/portfolio/vetrya/vetrya-hero.webp',
+        thumbnailAlt: { it: 'Vetrya \u2014 video corporate aziendale, montaggio e color correction', en: 'Vetrya \u2014 corporate video, editing and color correction' },
+        heroImage: '/images/portfolio/vetrya/vetrya-hero.webp',
+        heroAlt: { it: 'Vetrya \u2014 video corporate, montaggio e color Piero Perilli', en: 'Vetrya \u2014 corporate video, editing and color by Piero Perilli' },
+        images: [
+            { src: '/images/portfolio/vetrya/vetrya-pianoforte.webp', alt: { it: 'Vetrya corporate \u2014 dettaglio pianoforte, color grading cinematografico', en: 'Vetrya corporate \u2014 piano detail, cinematic color grading' } },
+            { src: '/images/portfolio/vetrya/vetrya-sede-notte.webp', alt: { it: 'Vetrya \u2014 sede di Orvieto di notte con coordinate GPS', en: 'Vetrya \u2014 Orvieto headquarters at night with GPS coordinates' } },
+            { src: '/images/portfolio/vetrya/vetrya-team-volti.webp', alt: { it: 'Vetrya \u2014 mosaico volti del team aziendale', en: 'Vetrya \u2014 mosaic of team faces' } },
+            { src: '/images/portfolio/vetrya/vetrya-presentazione.webp', alt: { it: 'Vetrya \u2014 presentazione interna nella sede di Orvieto', en: 'Vetrya \u2014 internal presentation at Orvieto headquarters' } },
+        ],
+        tools: ['Premiere Pro', 'DaVinci Resolve'],
+        briefingIt: 'Video corporate per Vetrya, gruppo tech specializzato in digital communication e piattaforme innovative. Regia di Daniele Fiore, produzione MM Productions. Girato nella sede di Orvieto.',
+        briefingEn: 'Corporate video for Vetrya, a tech group specializing in digital communication and innovative platforms. Directed by Daniele Fiore, produced by MM Productions. Shot at the Orvieto headquarters.',
+        challengeIt: 'Raccontare un\'azienda tech senza cadere nel video aziendale standard: slide animate, voiceover generico, musica di stock. Il video doveva mostrare le persone e lo spazio, non i prodotti.',
+        challengeEn: 'Telling the story of a tech company without falling into the standard corporate video: animated slides, generic voiceover, stock music. The video had to show the people and the space, not the products.',
+        solutionIt: '<a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Montaggio e color correction</a> che privilegiano il ritmo cinematografico: dettagli ravvicinati, luci naturali della sede, volti del team. Il color grading caldo e avvolgente trasforma un ambiente corporate in qualcosa di pi\u00F9 intimo.',
+        solutionEn: '<a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Editing and color correction</a> favoring a cinematic rhythm: close-up details, natural light from the headquarters, team faces. The warm, enveloping color grading transforms a corporate environment into something more intimate.',
+        resultIt: 'Video corporate per la comunicazione istituzionale di Vetrya.',
+        resultEn: 'Corporate video for Vetrya\'s institutional communication.',
+        contentBlocks: [
+            {
+                type: 'video-mp4',
+                url: '/videos/portfolio/vetrya-corporate.mp4',
+                title: 'Vetrya \u2014 Corporate Video'
+            },
+            {
+                type: 'text',
+                textIt: 'La sede di Vetrya a Orvieto \u00E8 un edificio di vetro in mezzo alla campagna umbra. Di notte sembra una lanterna. Abbiamo costruito il video partendo da l\u00EC \u2014 dalle coordinate GPS, dalla luce che esce dalle finestre, dal contrasto tra la tecnologia dentro e il paesaggio fuori.\n\nPoi le persone. Il mosaico di volti del team, i dettagli delle mani sul pianoforte, le riunioni con le sedie colorate. Il montaggio alterna macro e grandangolo: il dettaglio intimo e la visione d\'insieme.',
+                textEn: 'Vetrya\'s headquarters in Orvieto is a glass building in the middle of the Umbrian countryside. At night it looks like a lantern. We built the video starting from there \u2014 from the GPS coordinates, from the light coming through the windows, from the contrast between the technology inside and the landscape outside.\n\nThen the people. The mosaic of team faces, the detail of hands on the piano, meetings with colorful chairs. The editing alternates macro and wide angle: the intimate detail and the overall vision.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/vetrya/vetrya-sede-notte.webp',
+                        alt: { it: 'Vetrya \u2014 sede Orvieto di notte, coordinate GPS', en: 'Vetrya \u2014 Orvieto headquarters at night, GPS coordinates' }
+                    },
+                    {
+                        src: '/images/portfolio/vetrya/vetrya-pianoforte.webp',
+                        alt: { it: 'Vetrya \u2014 mani sul pianoforte, color grading caldo', en: 'Vetrya \u2014 hands on piano, warm color grading' }
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: 'Il <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">color grading</a> gioca su toni caldi e ambrati \u2014 legno, pelle, luce dorata. Anche gli ambienti pi\u00F9 tecnologici (schermi, proiettori, postazioni) vengono avvolti in questa palette calda. Il messaggio visivo: qui la tecnologia ha un volto umano.',
+                textEn: 'The <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">color grading</a> plays on warm amber tones \u2014 wood, skin, golden light. Even the most technological environments (screens, projectors, workstations) are wrapped in this warm palette. The visual message: here technology has a human face.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/vetrya/vetrya-team-volti.webp',
+                        alt: { it: 'Vetrya \u2014 mosaico volti team, montaggio Piero Perilli', en: 'Vetrya \u2014 team faces mosaic, editing by Piero Perilli' }
+                    },
+                    {
+                        src: '/images/portfolio/vetrya/vetrya-ragazza-blabel.webp',
+                        alt: { it: 'Vetrya \u2014 team al lavoro su Blabel', en: 'Vetrya \u2014 team working on Blabel' }
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: '**Crediti**\nRegia: Daniele Fiore\nMontaggio e Color: Piero Perilli\nProduzione: MM Productions srl\nLocation: Orvieto',
+                textEn: '**Credits**\nDirector: Daniele Fiore\nEditing and Color: Piero Perilli\nProduction: MM Productions srl\nLocation: Orvieto'
+            }
+        ],
     },
 
     // ──────────────────── AI VIDEO ────────────────────
