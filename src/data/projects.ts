@@ -55,9 +55,9 @@ export const projects: Project[] = [
         client: 'Riccardo Suriano (regista)',
         year: '2024',
         role: 'VFX Artist',
-        thumbnail: '/images/portfolio/vfx-cortometraggio-along-came-ruby-thumb.webp',
+        thumbnail: '/images/portfolio/along-came-ruby/along-came-ruby-hero.webp',
         thumbnailAlt: { it: `VFX per il cortometraggio Along Came Ruby`, en: `VFX for Along Came Ruby short film` },
-        heroImage: '/images/portfolio/along-came-ruby-cover-cortometraggio.webp',
+        heroImage: '/images/portfolio/along-came-ruby/along-came-ruby-hero.webp',
         heroAlt: { it: 'Along Came Ruby \u2014 cortometraggio sci-fi diretto da Riccardo Suriano', en: 'Along Came Ruby \u2014 sci-fi short film directed by Riccardo Suriano' },
         images: [
             { src: '/images/portfolio/along-came-ruby-vfx-effetti-energia-fulmini.webp', alt: { it: 'VFX effetti energia e fulmini \u2014 Along Came Ruby', en: 'VFX energy and lightning effects \u2014 Along Came Ruby' } },
