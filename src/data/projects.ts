@@ -577,6 +577,64 @@ export const projects: Project[] = [
         ],
     },
     {
+        slug: 'giardina-haute-couture-summer-22',
+        titleIt: 'Sylvio Giardina \u2014 Haute Couture Summer 22',
+        titleEn: 'Sylvio Giardina \u2014 Haute Couture Summer 22',
+        category: 'post',
+        categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
+        client: 'Sylvio Giardina',
+        year: '2022',
+        role: 'Video Artist',
+        thumbnail: '/images/portfolio/giardina-haute-couture-summer-22/giardina-haute-couture-summer-22-hero.webp',
+        thumbnailAlt: { it: 'Sylvio Giardina Haute Couture Summer 22 \u2014 fashion film', en: 'Sylvio Giardina Haute Couture Summer 22 \u2014 fashion film' },
+        heroImage: '/images/portfolio/giardina-haute-couture-summer-22/giardina-haute-couture-summer-22-hero.webp',
+        heroAlt: { it: 'Sylvio Giardina Haute Couture Summer 22 \u2014 fashion film, video artist Piero Perilli', en: 'Sylvio Giardina Haute Couture Summer 22 \u2014 fashion film, video artist Piero Perilli' },
+        images: [
+            { src: '/images/portfolio/giardina-haute-couture-summer-22/giardina-haute-couture-summer-22-blur-nero.webp', alt: { it: 'Sylvio Giardina Haute Couture \u2014 abito nero sfocato', en: 'Sylvio Giardina Haute Couture \u2014 blurred black dress' } },
+            { src: '/images/portfolio/giardina-haute-couture-summer-22/giardina-haute-couture-summer-22-blur-verde.webp', alt: { it: 'Sylvio Giardina Haute Couture \u2014 abito verde sfocato', en: 'Sylvio Giardina Haute Couture \u2014 blurred green dress' } },
+        ],
+        tools: ['After Effects', 'DaVinci Resolve', 'Blackmagic Cinema Camera'],
+        briefingIt: 'Fashion film per la collezione Haute Couture Summer 2022 di Sylvio Giardina. Regia di Tania Alineri. Il mio ruolo: video artist \u2014 riprese, montaggio, color, <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a>. Progetto realizzato da Roma.',
+        briefingEn: 'Fashion film for Sylvio Giardina\'s Haute Couture Summer 2022 collection. Directed by Tania Alineri. My role: video artist \u2014 shooting, editing, color, <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a>. Project based in Rome.',
+        challengeIt: 'Raccontare l\'haute couture senza mostrare gli abiti a fuoco. La regia di Tania Alineri punta tutto sul blur \u2014 i capi diventano forme, colori, movimenti. Il video deve comunicare l\'essenza della collezione senza mai rivelare i dettagli.',
+        challengeEn: 'Telling haute couture without showing the garments in focus. Tania Alineri\'s direction is all about blur \u2014 the pieces become shapes, colors, movements. The video must communicate the collection\'s essence without ever revealing the details.',
+        solutionIt: 'Ho lavorato come video artist curando riprese con Blackmagic Cinema Camera, <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">montaggio e color correction</a> in DaVinci Resolve. Il blur non \u00E8 un effetto aggiunto in post \u2014 \u00E8 il linguaggio visivo del film, costruito in camera e perfezionato in <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a>.',
+        solutionEn: 'I worked as video artist handling shooting with Blackmagic Cinema Camera, <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">editing and color correction</a> in DaVinci Resolve. The blur isn\'t an effect added in post \u2014 it\'s the visual language of the film, built in-camera and refined in <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a>.',
+        resultIt: 'Fashion film per la presentazione della collezione Haute Couture Summer 2022 di Sylvio Giardina.',
+        resultEn: 'Fashion film for the presentation of Sylvio Giardina\'s Haute Couture Summer 2022 collection.',
+        contentBlocks: [
+            {
+                type: 'video-mp4',
+                url: '/videos/portfolio/giardina-haute-couture-summer-22.mp4',
+                title: 'Sylvio Giardina \u2014 Haute Couture Summer 22'
+            },
+            {
+                type: 'text',
+                textIt: 'Tutto fuori fuoco. \u00C8 la scelta radicale di questo fashion film: non mostrare i capi, ma farli sentire. Le forme degli abiti emergono dal blur come sagome in movimento \u2014 il corpo della modella diventa architettura astratta. Il nero assorbe, il verde acqua galleggia, la pelle \u00E8 una superficie morbida tra i tessuti.\n\nSeconda collaborazione con Sylvio Giardina dopo <a href="/portfolio/frangiamore" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Frangiamore</a>. Due approcci opposti: l\u00E0 Roma monumentale e abiti nitidi, qui studio grigio e sfocatura totale. Lo stesso stilista, due linguaggi.',
+                textEn: 'Everything out of focus. That\'s the radical choice of this fashion film: don\'t show the garments, make them felt. The shapes of the dresses emerge from the blur like silhouettes in motion \u2014 the model\'s body becomes abstract architecture. Black absorbs, aqua green floats, skin is a soft surface between fabrics.\n\nSecond collaboration with Sylvio Giardina after <a href="/en/portfolio/frangiamore" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Frangiamore</a>. Two opposite approaches: there monumental Rome and sharp garments, here a gray studio and total blur. Same designer, two languages.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/giardina-haute-couture-summer-22/giardina-haute-couture-summer-22-blur-nero.webp',
+                        alt: { it: 'Sylvio Giardina Haute Couture Summer 22 \u2014 abito nero, blur cinematografico', en: 'Sylvio Giardina Haute Couture Summer 22 \u2014 black dress, cinematic blur' }
+                    },
+                    {
+                        src: '/images/portfolio/giardina-haute-couture-summer-22/giardina-haute-couture-summer-22-blur-verde.webp',
+                        alt: { it: 'Sylvio Giardina Haute Couture Summer 22 \u2014 abito verde acqua, fashion film Piero Perilli', en: 'Sylvio Giardina Haute Couture Summer 22 \u2014 aqua green dress, fashion film by Piero Perilli' }
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: '**Crediti**\nRegia: Tania Alineri\nVideo Artist: Piero Perilli\nStylist: Veronica Bergamini\nModella: Alexandra Molchanova\nHairstylist: Domenico Papa\nMake-up: Beatrice Contino\nSoundtrack: "Dewed" by TENP\nPress-office: Raffaele Granato',
+                textEn: '**Credits**\nDirector: Tania Alineri\nVideo Artist: Piero Perilli\nStylist: Veronica Bergamini\nModel: Alexandra Molchanova\nHairstylist: Domenico Papa\nMake-up: Beatrice Contino\nSoundtrack: "Dewed" by TENP\nPress-office: Raffaele Granato'
+            }
+        ],
+    },
+    {
         slug: 'stalking-spot',
         titleIt: 'Stalking',
         titleEn: 'Stalking',
