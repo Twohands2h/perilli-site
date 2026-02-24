@@ -1007,26 +1007,65 @@ export const projects: Project[] = [
 
     {
         slug: 'gucci-kids',
-        titleIt: `Gucci Kids`,
-        titleEn: `Gucci Kids`,
+        titleIt: 'Gucci Kids',
+        titleEn: 'Gucci Kids',
         category: 'post',
-        categoryLabel: { it: `Post Produzione`, en: `Post Production` },
+        categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
         client: 'Gucci',
-        year: '2021',
-        role: 'Compositor / Editor / Colorist',
-        thumbnail: '/images/portfolio/post-produzione-gucci-kids-thumb.jpg',
-        thumbnailAlt: { it: `Post produzione video Gucci Kids`, en: `Post production Gucci Kids video` },
-        heroImage: '/images/portfolio/post-produzione-gucci-kids-hero.jpg',
-        images: [],
+        year: '2012',
+        role: 'Compositing, Montaggio, Color Correction',
+        thumbnail: '/images/portfolio/gucci-kids/gucci-kids-bambina-fiori.webp',
+        thumbnailAlt: { it: 'Gucci Kids \u2014 spot campagna 2012, compositing e color correction', en: 'Gucci Kids \u2014 2012 campaign spot, compositing and color correction' },
+        heroImage: '/images/portfolio/gucci-kids/gucci-kids-bambina-fiori.webp',
+        heroAlt: { it: 'Gucci Kids \u2014 spot campagna 2012, post produzione Piero Perilli', en: 'Gucci Kids \u2014 2012 campaign spot, post production by Piero Perilli' },
+        images: [
+            { src: '/images/portfolio/gucci-kids/gucci-kids-cappello-rosso.webp', alt: { it: 'Gucci Kids campagna 2012 \u2014 bambina cappello rosso', en: 'Gucci Kids 2012 campaign \u2014 girl with red hat' } },
+            { src: '/images/portfolio/gucci-kids/gucci-kids-occhiali-rosa.webp', alt: { it: 'Gucci Kids campagna 2012 \u2014 occhiali da sole rosa', en: 'Gucci Kids 2012 campaign \u2014 pink sunglasses' } },
+        ],
         tools: ['After Effects', 'DaVinci Resolve', 'Premiere Pro'],
-        briefingIt: `Video per la linea Gucci Kids, girato interamente in green screen. Il mio ruolo: compositing completo delle scene, montaggio e color grading.`,
-        briefingEn: `Video for the Gucci Kids line, shot entirely on green screen. My role: complete scene compositing, editing and color grading.`,
-        challengeIt: `Lavorare su un brand del calibro di Gucci significa zero margine di errore. Il compositing green screen doveva essere impeccabile, il montaggio doveva riflettere l'estetica del brand e il color grading doveva essere coerente con l'identità visiva Gucci.`,
-        challengeEn: `Working on a brand of Gucci's caliber means zero margin for error. The green screen compositing had to be impeccable, the editing had to reflect the brand's aesthetic and the color grading had to be consistent with Gucci's visual identity.`,
-        solutionIt: `<a href="/vfx">Compositing green screen</a> in After Effects con attenzione maniacale ai bordi, ai capelli e ai riflessi — elementi critici quando il soggetto sono bambini in movimento. <a href="/post-produzione">Montaggio e color grading</a> in DaVinci Resolve, con una palette che rispetta il DNA visivo di Gucci.`,
-        solutionEn: `<a href="/en/vfx">Green screen compositing</a> in After Effects with obsessive attention to edges, hair and reflections — critical elements when the subjects are children in motion. <a href="/en/post-production">Editing and color grading</a> in DaVinci Resolve, with a palette respecting Gucci's visual DNA.`,
-        resultIt: `Un video che soddisfa gli standard qualitativi di uno dei brand più esigenti al mondo — dove il compositing è invisibile e l'estetica parla il linguaggio Gucci.`,
-        resultEn: `A video meeting the quality standards of one of the world's most demanding brands — where compositing is invisible and the aesthetic speaks the Gucci language.`,
+        briefingIt: 'Spot per la campagna Gucci Kids 2012. Girato interamente in green screen con bambini in movimento. Progetto realizzato da Roma.',
+        briefingEn: 'Spot for the Gucci Kids 2012 campaign. Shot entirely on green screen with children in motion. Project based in Rome.',
+        challengeIt: 'Green screen con bambini: capelli che volano, movimenti imprevedibili, margine di errore zero. Il compositing doveva essere invisibile, il color coerente con l\'identit\u00E0 visiva Gucci.',
+        challengeEn: 'Green screen with children: flying hair, unpredictable movements, zero margin for error. The compositing had to be invisible, the color consistent with Gucci\'s visual identity.',
+        solutionIt: '<a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Compositing green screen</a> in After Effects con attenzione maniacale ai bordi e ai capelli. <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Montaggio e color correction</a> in DaVinci Resolve con palette che rispetta il DNA visivo Gucci.',
+        solutionEn: '<a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Green screen compositing</a> in After Effects with obsessive attention to edges and hair. <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Editing and color correction</a> in DaVinci Resolve with a palette respecting Gucci\'s visual DNA.',
+        resultIt: 'Spot per la campagna internazionale Gucci Kids 2012.',
+        resultEn: 'Spot for the Gucci Kids 2012 international campaign.',
+        contentBlocks: [
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/gucci-kids/gucci-kids-bambina-fiori.webp',
+                        alt: { it: 'Gucci Kids \u2014 bambina con abito a fiori, compositing green screen', en: 'Gucci Kids \u2014 girl with floral dress, green screen compositing' }
+                    },
+                    {
+                        src: '/images/portfolio/gucci-kids/gucci-kids-cappello-rosso.webp',
+                        alt: { it: 'Gucci Kids \u2014 bambina cappello rosso e mantella, color correction', en: 'Gucci Kids \u2014 girl with red hat and cape, color correction' }
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: 'Green screen con bambini. Chiunque abbia fatto compositing sa che i capelli sono il test definitivo \u2014 e con i bambini che si muovono, saltano, girano, ogni frame \u00E8 una sfida diversa. I bordi devono sparire. Il risultato deve sembrare che fossero l\u00EC dall\'inizio.\n\nQuando lavori per Gucci il margine di errore \u00E8 zero. Ogni dettaglio \u00E8 sotto la lente. Il color grading deve parlare il linguaggio del brand senza eccezioni.',
+                textEn: 'Green screen with kids. Anyone who has done compositing knows that hair is the ultimate test \u2014 and with children jumping, spinning, moving, every frame is a different challenge. The edges must disappear. The result must look like they were always there.\n\nWhen you work for Gucci the margin for error is zero. Every detail is under scrutiny. The color grading must speak the brand\'s language without exception.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/gucci-kids/gucci-kids-bambini-giacca.webp',
+                        alt: { it: 'Gucci Kids \u2014 due bambini con giacca, spot campagna 2012', en: 'Gucci Kids \u2014 two children with jackets, 2012 campaign spot' }
+                    },
+                    {
+                        src: '/images/portfolio/gucci-kids/gucci-kids-occhiali-rosa.webp',
+                        alt: { it: 'Gucci Kids \u2014 bambina occhiali da sole rosa, post produzione Piero Perilli', en: 'Gucci Kids \u2014 girl with pink sunglasses, post production by Piero Perilli' }
+                    }
+                ]
+            },
+        ],
     },
     {
         slug: 'save-the-children',
