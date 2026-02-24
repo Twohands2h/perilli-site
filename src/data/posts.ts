@@ -602,6 +602,312 @@ export const posts: BlogPost[] = [
 <p>But the principle doesn\u2019t change: someone who knows what to do with these tools will always be needed. Someone with the experience to judge, direct, refine. The market isn\u2019t looking for \u201Csomeone who can use Runway\u201D \u2014 it\u2019s looking for someone who can produce a professional result using all available tools, AI included.</p>
 <p>That\u2019s where I\u2019ve positioned myself. Not as an \u201CAI artist\u201D but as a professional with twenty years of experience who integrated AI into his workflow before others. And it\u2019s exactly the figure the market is looking for.</p>`,
     },
+    // ====== POST 9: Green Screen Professionale ======
+    {
+        slug: 'green-screen-professionale-guida-definitiva',
+        slugEn: 'professional-green-screen-definitive-guide',
+        titleIt: 'Green screen professionale: la guida definitiva per risultati cinematografici',
+        titleEn: 'Professional green screen: the definitive guide for cinematic results',
+        excerptIt: 'Il green screen non è premere un bottone. È illuminazione, distanza, tessuto, spill suppression e ore di compositing. Dopo centinaia di shot, ecco cosa fa la differenza tra un chroma key amatoriale e uno invisibile.',
+        excerptEn: 'Green screen isn\'t pressing a button. It\'s lighting, distance, fabric, spill suppression and hours of compositing. After hundreds of shots, here\'s what makes the difference between amateur and invisible chroma keying.',
+        date: '2026-04-01',
+        readingTime: 9,
+        category: 'vfx',
+        categoryLabel: { it: 'VFX', en: 'VFX' },
+        keywordTarget: 'green screen professionale guida',
+        thumbnail: '/images/portfolio/gucci-kids-hero.webp',
+        thumbnailAlt: { it: 'Green screen professionale — guida compositing', en: 'Professional green screen — compositing guide' },
+        contentIt: `<h2>Il problema non è il green screen. È come lo usi.</h2>
+<p>Ogni settimana ricevo materiale girato su green screen che dovrebbe essere "facile da scontornare". Quasi mai lo è. Il problema non è lo strumento — è che la catena di lavoro dal set al compositing finale ha anelli deboli che nessuno ha controllato.</p>
+<p>Ho lavorato su centinaia di shot in chroma key: spot per <a href="/portfolio/gucci-kids" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Gucci Kids</a>, <a href="/portfolio/floverr" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">campagne prodotto come Floverr</a>, videoclip, film. In ogni progetto, la qualità del risultato finale si decide prima ancora di accendere la camera.</p>
+
+<h2>Sul set: dove si vince o si perde</h2>
+<p><strong>Il tessuto conta più di quanto pensi.</strong> Un green screen economico con pieghe e zone d'ombra crea variazioni di luminosità che il keyer non può compensare. Serve un fondale uniforme, teso, illuminato separatamente dal soggetto. Il blue screen è preferibile quando il soggetto ha elementi verdi — capelli rossi, abiti, vegetazione in scena.</p>
+<p><strong>La distanza soggetto-fondale.</strong> Almeno due metri. Sembra banale, ma la metà dei problemi di spill verde sul soggetto nasce da un fondale troppo vicino. Più distanza significa meno contaminazione di colore e più controllo sulla profondità di campo.</p>
+<p><strong>L'illuminazione è tutto.</strong> Due set di luci completamente separati: uno per il fondale (uniforme, senza hotspot), uno per il soggetto (che replica l'illuminazione della scena finale). Se la luce del fondale e quella del soggetto si mescolano, il compositing sarà una battaglia.</p>
+<p><strong>Il codec di acquisizione.</strong> Girare in 4:2:0 su green screen è come dipingere con i guanti da boxe. Serve almeno 4:2:2, idealmente 4:4:4 o RAW. La sottocampionatura del colore distrugge le informazioni proprio dove servono di più — ai bordi tra soggetto e fondale.</p>
+
+<h2>In post-produzione: il workflow</h2>
+<p>Il mio workflow di <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">compositing VFX</a> per green screen segue sempre la stessa sequenza, progetto dopo progetto.</p>
+<p><strong>1. Keying primario.</strong> In After Effects uso Keylight come base, ma il key perfetto al primo passaggio non esiste. Il primo key è sempre un punto di partenza — elimina il grosso del verde e definisce i bordi principali.</p>
+<p><strong>2. Keying secondario.</strong> Le zone problematiche (capelli fini, semitrasparenze, motion blur) richiedono un secondo passaggio dedicato, spesso con un keyer diverso. Li combino in maschera per ottenere un matte pulito su ogni zona.</p>
+<p><strong>3. Spill suppression.</strong> Anche con il key perfetto, il verde si riflette sulla pelle, sui vestiti, sui capelli. La spill suppression rimuove questa contaminazione senza alterare i colori naturali del soggetto. È il passaggio che fa la differenza tra "sembra finto" e "non ti accorgi".</p>
+<p><strong>4. Edge treatment.</strong> I bordi sono dove il chroma key si rivela. Servo choking, edge blur e spesso un leggero color correction sui bordi per integrarli con lo sfondo finale. Un bordo troppo netto grida "compositing". Un bordo troppo morbido perde definizione.</p>
+<p><strong>5. Integrazione con lo sfondo.</strong> Il soggetto isolato va nella scena finale. Qui entra il <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">color grading</a>: la luce del soggetto deve corrispondere alla luce dell'ambiente. Aggiungo ombre di contatto, riflessi ambientali, grain matching. Ogni elemento dice al cervello dello spettatore "questo è reale".</p>
+
+<h2>Gli errori che vedo più spesso</h2>
+<p><strong>Fondale non uniforme.</strong> Pieghe, ombre, angoli scuri — il keyer impazzisce e serve un lavoro di rotoscoping manuale che moltiplica i tempi.</p>
+<p><strong>Soggetto troppo vicino al fondale.</strong> Spill verde ovunque, ombre del soggetto proiettate sul green — irrecuperabile in post senza intervento pesante.</p>
+<p><strong>Motion blur ignorato.</strong> Un gesto rapido crea motion blur che mescola soggetto e fondale. Servono frame rate adeguato e shutter angle calcolato. Se non ci pensi in ripresa, in post non c'è soluzione pulita.</p>
+<p><strong>Aspettarsi il "un click" del keyer automatico.</strong> Non esiste. Nessun software fa un key perfetto automaticamente su materiale reale. Serve sempre intervento manuale, e il tempo di quel intervento dipende dalla qualità del girato.</p>
+
+<h2>Quando l'AI aiuta (e quando no)</h2>
+<p>Strumenti come Runway e altri tool di <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a> stanno migliorando la segmentazione automatica — isolare soggetti senza green screen, direttamente dal footage. Per contenuti social e web, funziona già bene. Per spot televisivi e cinema, non siamo ancora al livello di qualità richiesto.</p>
+<p>La mia previsione: tra due anni l'AI ridurrà significativamente il bisogno di green screen per molte applicazioni. Ma per lavoro ad alta qualità — <a href="/portfolio/stalking-spot" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">spot istituzionali</a>, film, pubblicità di lusso — la ripresa controllata su fondale resterà lo standard.</p>
+
+<h2>La regola d'oro</h2>
+<p>Ogni ora investita sul set per un green screen fatto bene risparmia dieci ore in post-produzione. Lo ripeto a ogni produzione: datemi un fondale uniforme, un soggetto a distanza, un codec decente — e vi restituisco un compositing invisibile. Datemi un green screen improvvisato — e preparatevi a pagare il doppio in post.</p>`,
+
+        contentEn: `<h2>The problem isn't the green screen. It's how you use it.</h2>
+<p>Every week I receive footage shot on green screen that should be "easy to key." It almost never is. The problem isn't the tool — it's that the chain from set to final compositing has weak links that nobody checked.</p>
+<p>I've worked on hundreds of chroma key shots: commercials for <a href="/en/portfolio/gucci-kids" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Gucci Kids</a>, <a href="/en/portfolio/floverr" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">product campaigns like Floverr</a>, music videos, films. In every project, the quality of the final result is decided before the camera even turns on.</p>
+
+<h2>On set: where you win or lose</h2>
+<p><strong>Fabric matters more than you think.</strong> A cheap green screen with wrinkles and shadow zones creates luminosity variations that the keyer can't compensate for. You need a uniform backdrop, stretched flat, lit separately from the subject. Blue screen is preferable when the subject has green elements — red hair, clothing, vegetation in scene.</p>
+<p><strong>Subject-to-backdrop distance.</strong> At least two meters. Sounds basic, but half of green spill problems come from a backdrop that's too close. More distance means less color contamination and more depth of field control.</p>
+<p><strong>Lighting is everything.</strong> Two completely separate lighting setups: one for the backdrop (uniform, no hotspots), one for the subject (replicating the final scene's lighting). If backdrop and subject lighting mix, compositing becomes a battle.</p>
+<p><strong>Acquisition codec.</strong> Shooting 4:2:0 on green screen is like painting with boxing gloves. You need at least 4:2:2, ideally 4:4:4 or RAW. Color subsampling destroys information precisely where it's needed most — at the edges between subject and backdrop.</p>
+
+<h2>In post-production: the workflow</h2>
+<p>My <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX compositing</a> workflow for green screen follows the same sequence, project after project.</p>
+<p><strong>1. Primary keying.</strong> In After Effects I use Keylight as a base, but the perfect key on first pass doesn't exist. The first key is always a starting point — it removes the bulk of the green and defines main edges.</p>
+<p><strong>2. Secondary keying.</strong> Problem areas (fine hair, semi-transparencies, motion blur) require a dedicated second pass, often with a different keyer. I combine them in mask to get a clean matte across every zone.</p>
+<p><strong>3. Spill suppression.</strong> Even with the perfect key, green reflects onto skin, clothing, hair. Spill suppression removes this contamination without altering the subject's natural colors. It's the step that makes the difference between "looks fake" and "you don't notice."</p>
+<p><strong>4. Edge treatment.</strong> Edges are where chroma key reveals itself. I use choking, edge blur and often a slight color correction on edges to integrate them with the final background. An edge that's too sharp screams "compositing." An edge that's too soft loses definition.</p>
+<p><strong>5. Background integration.</strong> The isolated subject goes into the final scene. This is where <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">color grading</a> comes in: the subject's light must match the environment's light. I add contact shadows, ambient reflections, grain matching. Every element tells the viewer's brain "this is real."</p>
+
+<h2>The mistakes I see most often</h2>
+<p><strong>Non-uniform backdrop.</strong> Wrinkles, shadows, dark corners — the keyer goes haywire and manual rotoscoping is needed, multiplying work time.</p>
+<p><strong>Subject too close to backdrop.</strong> Green spill everywhere, subject shadows projected onto the green — unrecoverable in post without heavy intervention.</p>
+<p><strong>Motion blur ignored.</strong> A fast gesture creates motion blur that blends subject and backdrop. Adequate frame rate and calculated shutter angle are needed. If you don't plan for it on set, there's no clean solution in post.</p>
+<p><strong>Expecting the keyer's "one click" magic.</strong> It doesn't exist. No software does a perfect key automatically on real footage. Manual work is always needed, and the time for that work depends on footage quality.</p>
+
+<h2>When AI helps (and when it doesn't)</h2>
+<p>Tools like Runway and other <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a> tools are improving automatic segmentation — isolating subjects without green screen, directly from footage. For social and web content, it already works well. For TV commercials and cinema, we're not yet at the required quality level.</p>
+<p>My prediction: in two years AI will significantly reduce the need for green screen in many applications. But for high-quality work — <a href="/en/portfolio/stalking-spot" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">institutional commercials</a>, films, luxury advertising — controlled backdrop shooting will remain the standard.</p>
+
+<h2>The golden rule</h2>
+<p>Every hour invested on set for a proper green screen saves ten hours in post-production. I say it to every production: give me a uniform backdrop, a subject at distance, a decent codec — and I'll return invisible compositing. Give me an improvised green screen — and prepare to pay double in post.</p>`,
+    },
+    // ====== POST 10: Post-produzione workflow integrato ======
+    {
+        slug: 'post-produzione-video-workflow-integrato-risparmio',
+        slugEn: 'video-post-production-integrated-workflow-savings',
+        titleIt: 'Post-produzione video: perché un workflow integrato ti fa risparmiare tempo e budget',
+        titleEn: 'Video post-production: why an integrated workflow saves you time and budget',
+        excerptIt: 'Montaggio a uno, color a un altro, VFX a un terzo. Tre professionisti, tre passaggi di mano, tre possibilità di errore. Oppure un unico flusso di lavoro dove tutto è sotto controllo. Ecco perché cambia tutto.',
+        excerptEn: 'Editing to one person, color to another, VFX to a third. Three professionals, three handoffs, three chances for error. Or a single workflow where everything is under control. Here\'s why it changes everything.',
+        date: '2026-04-08',
+        readingTime: 7,
+        category: 'post',
+        categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
+        keywordTarget: 'post produzione video workflow integrato',
+        thumbnail: '/images/portfolio/pleiadi-hero.webp',
+        thumbnailAlt: { it: 'Post-produzione video — workflow integrato', en: 'Video post-production — integrated workflow' },
+        contentIt: `<h2>Il collo di bottiglia che nessuno vede</h2>
+<p>La post-produzione tradizionale funziona così: il montatore monta, passa il progetto al colorist che fa il grading, poi il progetto va al VFX artist per gli effetti, poi torna al montatore per il conform, poi magari torna al colorist per aggiustamenti. Ogni passaggio è un export, un upload, una riunione, una possibilità di errore.</p>
+<p>Ho visto progetti dove il 30% del tempo totale di post-produzione se ne andava nei passaggi di mano tra professionisti. Non nel lavoro creativo — nella logistica.</p>
+
+<h2>Cosa significa "workflow integrato"</h2>
+<p>Gestisco l'intero flusso di <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> in un unico ambiente: montaggio, <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a>, <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a>, color grading, finishing. Non significa che faccio tutto in un solo software — significa che un'unica persona controlla l'intero percorso dall'inizio alla fine.</p>
+<p>Concretamente: monto in Premiere o DaVinci Resolve, creo gli effetti visivi in After Effects e 3ds Max, faccio il color grading in DaVinci, consegno il master finale. Tutto sotto lo stesso tetto. Nessun passaggio di mano, nessun briefing perso nella traduzione, nessun "non era questo che intendevo".</p>
+
+<h2>I tre vantaggi concreti per il cliente</h2>
+<p><strong>Tempo.</strong> Un progetto che con il workflow tradizionale richiede sei settimane di post-produzione, con un workflow integrato ne richiede tre o quattro. Non perché lavoro più veloce — perché non ci sono tempi morti tra un passaggio e l'altro. Quando finisco il montaggio e vedo che una scena ha bisogno di un effetto visivo, lo faccio subito. Non scrivo un brief, non aspetto il VFX artist, non faccio una call di allineamento.</p>
+<p><strong>Budget.</strong> Un professionista invece di tre. Non serve coordinamento esterno, non servono project manager per tenere allineati i fornitori. Per produzioni mid-budget — spot, cortometraggi, contenuti corporate — questo può significare un risparmio del 30-40% sulla post-produzione.</p>
+<p><strong>Coerenza creativa.</strong> Questo è il vantaggio che i clienti sottovalutano sempre. Quando la stessa persona monta, crea gli effetti e fa il color, ogni decisione creativa è coerente con le altre. Il montaggio è già pensato per gli effetti che verranno. Il grading tiene conto degli elementi VFX. Non ci sono "sorprese" al momento del conform.</p>
+
+<h2>Quando funziona e quando no</h2>
+<p>Il workflow integrato funziona perfettamente per spot pubblicitari, cortometraggi, documentari, contenuti corporate, videoclip, <a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">animazioni 3D</a> di prodotto — la stragrande maggioranza dei progetti che agenzie, brand e produzioni mid-budget gestiscono ogni giorno.</p>
+<p>Dove non funziona: lungometraggi con centinaia di shot VFX che richiedono un team di dieci persone, produzioni Marvel-level con pipeline industriali. Per quei progetti servono studi grandi con reparti dedicati — ed è giusto così.</p>
+<p>Ma la verità è che il 90% dei progetti che circolano nel mercato italiano — e la maggior parte di quelli internazionali mid-budget — non ha bisogno di una pipeline industriale. Ha bisogno di un professionista competente che gestisca tutto il flusso con precisione.</p>
+
+<h2>Esempi concreti dal mio portfolio</h2>
+<p>Per <a href="/portfolio/pleiadi" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Pleiadi</a> ho curato regia, montaggio, color grading e VFX in un unico flusso. Ogni decisione di montaggio era già pensata per il grading e gli effetti. Il risultato: un videoclip con una coerenza visiva che sarebbe stata impossibile con tre professionisti separati.</p>
+<p>Per <a href="/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a>, un cortometraggio con effetti visivi complessi — portali dimensionali, energia, particelle — ho gestito tutto il VFX e la post-produzione. Il regista aveva un unico interlocutore per tutto: dalla timeline al compositing finale.</p>
+<p>Per gli <a href="/portfolio/stalking-spot" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">spot per il Ministero delle Pari Opportunità</a>, montaggio, effetti e color in un flusso unico con tempi stretti. Nessun passaggio di mano, nessun ritardo.</p>
+
+<h2>L'AI come acceleratore del workflow integrato</h2>
+<p>L'arrivo degli strumenti di <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a> ha reso il workflow integrato ancora più potente. Posso generare elementi visivi con AI, integrarli nel compositing, montarli nella timeline e fare il grading — tutto senza mai uscire dal mio flusso di lavoro.</p>
+<p>Per <a href="/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Roche</a> ho creato un intero video con AI generativa e poi ho gestito tutto il finishing in post-produzione. Un progetto che in un workflow frammentato avrebbe coinvolto quattro o cinque professionisti.</p>
+
+<h2>La domanda giusta non è "quanto costa"</h2>
+<p>La domanda giusta è: quante persone stanno toccando il mio progetto, e ogni passaggio di mano sta aggiungendo valore o solo complessità? Se la risposta è "complessità", un workflow integrato è la soluzione.</p>`,
+
+        contentEn: `<h2>The bottleneck nobody sees</h2>
+<p>Traditional post-production works like this: the editor cuts, passes the project to the colorist for grading, then the project goes to the VFX artist for effects, then back to the editor for conform, then maybe back to the colorist for adjustments. Every handoff is an export, an upload, a meeting, a chance for error.</p>
+<p>I've seen projects where 30% of total post-production time went to handoffs between professionals. Not creative work — logistics.</p>
+
+<h2>What "integrated workflow" means</h2>
+<p>I manage the entire <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> flow in a single environment: editing, <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a>, <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a>, color grading, finishing. This doesn't mean I do everything in one piece of software — it means one person controls the entire path from start to finish.</p>
+<p>In practice: I edit in Premiere or DaVinci Resolve, create visual effects in After Effects and 3ds Max, do color grading in DaVinci, deliver the final master. Everything under the same roof. No handoffs, no briefs lost in translation, no "that's not what I meant."</p>
+
+<h2>Three concrete advantages for the client</h2>
+<p><strong>Time.</strong> A project that takes six weeks of post-production with a traditional workflow takes three to four with an integrated one. Not because I work faster — because there's no dead time between steps. When I finish editing and see that a scene needs a visual effect, I do it immediately. I don't write a brief, don't wait for the VFX artist, don't schedule an alignment call.</p>
+<p><strong>Budget.</strong> One professional instead of three. No external coordination needed, no project managers to keep vendors aligned. For mid-budget productions — commercials, short films, corporate content — this can mean 30-40% savings on post-production.</p>
+<p><strong>Creative coherence.</strong> This is the advantage clients always underestimate. When the same person edits, creates effects and does color, every creative decision is coherent with the others. The edit is already designed for the effects to come. The grade accounts for VFX elements. There are no "surprises" at conform.</p>
+
+<h2>When it works and when it doesn't</h2>
+<p>The integrated workflow works perfectly for commercials, short films, documentaries, corporate content, music videos, <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">3D product animation</a> — the vast majority of projects that agencies, brands and mid-budget productions handle every day.</p>
+<p>Where it doesn't work: feature films with hundreds of VFX shots requiring a ten-person team, Marvel-level productions with industrial pipelines. Those projects need large studios with dedicated departments — and that's as it should be.</p>
+<p>But the truth is that 90% of projects circulating in the Italian market — and most international mid-budget ones — don't need an industrial pipeline. They need a competent professional who manages the entire flow with precision.</p>
+
+<h2>Concrete examples from my portfolio</h2>
+<p>For <a href="/en/portfolio/pleiadi" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Pleiadi</a> I handled direction, editing, color grading and VFX in a single flow. Every editing decision was already designed for the grading and effects. The result: a music video with visual coherence that would have been impossible with three separate professionals.</p>
+<p>For <a href="/en/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a>, a short film with complex visual effects — dimensional portals, energy, particles — I managed all VFX and post-production. The director had a single point of contact for everything: from timeline to final compositing.</p>
+<p>For the <a href="/en/portfolio/stalking-spot" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">spots for Italy's Equal Opportunities Ministry</a>, editing, effects and color in a single flow with tight deadlines. No handoffs, no delays.</p>
+
+<h2>AI as an integrated workflow accelerator</h2>
+<p>The arrival of <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a> tools has made the integrated workflow even more powerful. I can generate visual elements with AI, integrate them in compositing, edit them into the timeline and do the grade — all without ever leaving my workflow.</p>
+<p>For <a href="/en/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Roche</a> I created an entire video with generative AI then managed all the finishing in post-production. A project that in a fragmented workflow would have involved four or five professionals.</p>
+
+<h2>The right question isn't "how much does it cost"</h2>
+<p>The right question is: how many people are touching my project, and is each handoff adding value or just complexity? If the answer is "complexity," an integrated workflow is the solution.</p>`,
+    },
+    // ====== POST 11: AI Video Generation 2026 ======
+    {
+        slug: 'ai-video-generation-2026-cosa-funziona',
+        slugEn: 'ai-video-generation-2026-what-actually-works',
+        titleIt: 'AI video generation nel 2026: cosa funziona davvero (e cosa no)',
+        titleEn: 'AI video generation in 2026: what actually works (and what doesn\'t)',
+        excerptIt: 'Runway Gen-4, Veo 3, Kling 2.0, Sora — li uso tutti nel mio lavoro quotidiano. Ecco una mappa onesta di cosa produce risultati professionali, cosa è ancora acerbo e dove stiamo andando.',
+        excerptEn: 'Runway Gen-4, Veo 3, Kling 2.0, Sora — I use them all in my daily work. Here\'s an honest map of what produces professional results, what\'s still immature and where we\'re headed.',
+        date: '2026-04-15',
+        readingTime: 8,
+        category: 'ai',
+        categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
+        keywordTarget: 'AI video generation 2026',
+        thumbnail: '/images/portfolio/roche-jingle-ai-hero.webp',
+        thumbnailAlt: { it: 'AI video generation 2026 — strumenti professionali', en: 'AI video generation 2026 — professional tools' },
+        contentIt: `<h2>Lo stato dell'arte, senza hype</h2>
+<p>Il mercato dell'AI video generation è esploso. Ogni mese esce un nuovo modello, ogni settimana qualcuno dichiara che "il cinema tradizionale è morto". Uso questi strumenti ogni giorno nel mio <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow di AI video production</a> per clienti reali. Ecco cosa funziona davvero nel 2026, senza proclami.</p>
+
+<h2>Gli strumenti che uso e come li giudico</h2>
+<p><strong>Runway Gen-4.</strong> Il più versatile per lavoro professionale. Il controllo sulla camera è il migliore in circolazione: pan, tilt, zoom, dolly — risposte coerenti e prevedibili. Lo uso per generare elementi ambientali, sfondi e sequenze dove serve controllo preciso sul movimento. Il punto debole resta la coerenza sui volti umani in sequenze lunghe.</p>
+<p><strong>Veo (Google).</strong> Qualità visiva impressionante — i frame singoli sono spesso indistinguibili da footage reale. L'ho usato estesamente per <a href="/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">il progetto Roche</a>, dove la qualità del singolo frame era prioritaria. Il limite: meno controllo sulla camera rispetto a Runway e tempi di generazione più lunghi.</p>
+<p><strong>Kling AI.</strong> Eccellente per il movimento di soggetti umani — camminate, gesti, espressioni facciali. Dove Runway e Veo producono movimenti rigidi sui corpi umani, Kling genera fluidità naturale. Lo uso quando il protagonista del video è una persona in movimento.</p>
+<p><strong>Sora (OpenAI).</strong> Potente sulla qualità cinematografica e sulla comprensione delle fisiche reali — acqua, fumo, luce che rimbalza. Ma il workflow è meno flessibile per la produzione professionale. Lo uso per concept e pre-visualizzazione più che per output finali.</p>
+<p><strong>Midjourney (per frame di riferimento).</strong> Non genera video, ma resta insostituibile per creare frame chiave che poi uso come riferimento per i video generativi. La qualità estetica di Midjourney è ancora superiore a qualsiasi frame estratto da video AI.</p>
+
+<h2>Cosa funziona per la produzione professionale</h2>
+<p><strong>Concept e pre-visualizzazione.</strong> Qui l'AI è già insostituibile. Devo esplorare dieci direzioni creative per un regista o un'agenzia? Genero varianti visive in ore, non giorni. Per <a href="/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Doppelganger</a> l'AI ha generato l'intera base visiva del progetto.</p>
+<p><strong>Elementi ambientali e sfondi.</strong> Cieli drammatici, paesaggi, ambienti fantastici — l'AI produce materiale eccellente che poi integro nel compositing con tecniche tradizionali di <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a>.</p>
+<p><strong>Contenuti completamente AI-generated.</strong> Per progetti dove il budget non permette una produzione tradizionale, l'AI produce risultati professionali. Il progetto Roche ne è la dimostrazione: un video completo con qualità broadcast, realizzato interamente con strumenti AI e poi rifinito in <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a>.</p>
+<p><strong>Prototyping per pitch commerciali.</strong> Un'agenzia deve vendere un concept a un cliente? Invece di un mood board statico, consegno un video concept AI in pochi giorni. Il tasso di approvazione è incomparabilmente più alto.</p>
+
+<h2>Cosa non funziona (ancora)</h2>
+<p><strong>Coerenza di personaggio.</strong> Stessa persona, stesso volto, stessi vestiti per trenta secondi di video. Nessuno strumento lo fa in modo affidabile. Servono workaround — face swap, compositing, generazione frame-by-frame con riferimento — e tutti richiedono ore di lavoro manuale.</p>
+<p><strong>Testo leggibile.</strong> L'AI genera testo nei video come un ubriaco scrive sulla lavagna. Per qualsiasi contenuto con testo on-screen — titoli, lower thirds, sottopancia — serve ancora <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a> tradizionale.</p>
+<p><strong>Interazione soggetto-oggetto precisa.</strong> Una mano che afferra un oggetto specifico, un dito che preme un bottone, un prodotto manipolato da mani umane. L'AI produce artefatti evidenti. Per video di prodotto con interazione umana, serve <a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">animazione 3D</a> tradizionale.</p>
+<p><strong>Audio sincronizzato.</strong> Lipsync, suoni ambientali coerenti, Foley — l'audio generato da AI è ancora primitivo per standard professionali. Il video AI va sempre abbinato a una produzione audio separata.</p>
+
+<h2>Il fattore che nessuno menziona: il post-processing</h2>
+<p>Ecco la verità che i demo reel degli strumenti AI non mostrano: il video AI grezzo non è mai il video finale. Ogni clip generata passa per il mio workflow di post-produzione — color correction, stabilizzazione, pulizia artefatti, compositing con elementi reali, grading per coerenza con il resto del progetto.</p>
+<p>Questo è il motivo per cui vent'anni di esperienza in post-produzione sono il mio vero vantaggio competitivo nell'era dell'AI. Chiunque può generare un video. Pochissimi sanno trasformarlo in un prodotto professionale.</p>
+
+<h2>Dove andiamo</h2>
+<p>Tra un anno, la coerenza dei personaggi sarà risolta. Tra due, il controllo frame-by-frame sarà lo standard. Tra tre, la distinzione tra "girato" e "generato" sarà irrilevante per il 90% delle applicazioni.</p>
+<p>Ma il principio non cambia: servirà sempre qualcuno con l'occhio, l'esperienza e il gusto per dirigere questi strumenti. Non "usarli" — dirigerli. Come un regista dirige una troupe, un professionista esperto dirige l'AI. E il risultato è incomparabilmente diverso.</p>`,
+
+        contentEn: `<h2>The state of the art, without hype</h2>
+<p>The AI video generation market has exploded. Every month a new model drops, every week someone declares "traditional cinema is dead." I use these tools daily in my <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production workflow</a> for real clients. Here's what actually works in 2026, without proclamations.</p>
+
+<h2>The tools I use and how I judge them</h2>
+<p><strong>Runway Gen-4.</strong> The most versatile for professional work. Camera control is the best available: pan, tilt, zoom, dolly — coherent and predictable responses. I use it for generating environmental elements, backgrounds and sequences where precise movement control is needed. The weak point remains face coherence in long sequences.</p>
+<p><strong>Veo (Google).</strong> Impressive visual quality — individual frames are often indistinguishable from real footage. I used it extensively for <a href="/en/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">the Roche project</a>, where single-frame quality was the priority. The limitation: less camera control than Runway and longer generation times.</p>
+<p><strong>Kling AI.</strong> Excellent for human subject movement — walks, gestures, facial expressions. Where Runway and Veo produce rigid body movements, Kling generates natural fluidity. I use it when the video protagonist is a person in motion.</p>
+<p><strong>Sora (OpenAI).</strong> Powerful on cinematic quality and real physics understanding — water, smoke, bouncing light. But the workflow is less flexible for professional production. I use it for concept and pre-visualization more than final output.</p>
+<p><strong>Midjourney (for reference frames).</strong> It doesn't generate video, but remains irreplaceable for creating key frames I then use as reference for generative video. Midjourney's aesthetic quality is still superior to any frame extracted from AI video.</p>
+
+<h2>What works for professional production</h2>
+<p><strong>Concept and pre-visualization.</strong> Here AI is already irreplaceable. Need to explore ten creative directions for a director or agency? I generate visual variants in hours, not days. For <a href="/en/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Doppelganger</a> AI generated the project's entire visual base.</p>
+<p><strong>Environmental elements and backgrounds.</strong> Dramatic skies, landscapes, fantastic environments — AI produces excellent material I then integrate in compositing with traditional <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> techniques.</p>
+<p><strong>Fully AI-generated content.</strong> For projects where the budget doesn't allow traditional production, AI produces professional results. The Roche project demonstrates this: a complete video with broadcast quality, entirely made with AI tools then refined in <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a>.</p>
+<p><strong>Prototyping for commercial pitches.</strong> An agency needs to sell a concept to a client? Instead of a static mood board, I deliver an AI video concept in a few days. The approval rate is incomparably higher.</p>
+
+<h2>What doesn't work (yet)</h2>
+<p><strong>Character coherence.</strong> Same person, same face, same clothes for thirty seconds of video. No tool does this reliably. Workarounds are needed — face swap, compositing, frame-by-frame generation with reference — and all require hours of manual work.</p>
+<p><strong>Readable text.</strong> AI generates text in video like a drunk writes on a blackboard. For any content with on-screen text — titles, lower thirds, name straps — traditional <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a> is still needed.</p>
+<p><strong>Precise subject-object interaction.</strong> A hand gripping a specific object, a finger pressing a button, a product manipulated by human hands. AI produces obvious artifacts. For product videos with human interaction, traditional <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">3D animation</a> is needed.</p>
+<p><strong>Synchronized audio.</strong> Lipsync, coherent ambient sounds, Foley — AI-generated audio is still primitive by professional standards. AI video always needs to be paired with separate audio production.</p>
+
+<h2>The factor nobody mentions: post-processing</h2>
+<p>Here's the truth that AI tool demo reels don't show: raw AI video is never the final video. Every generated clip goes through my post-production workflow — color correction, stabilization, artifact cleanup, compositing with real elements, grading for coherence with the rest of the project.</p>
+<p>This is why twenty years of post-production experience are my real competitive advantage in the AI era. Anyone can generate a video. Very few know how to transform it into a professional product.</p>
+
+<h2>Where we're heading</h2>
+<p>In one year, character coherence will be solved. In two, frame-by-frame control will be standard. In three, the distinction between "shot" and "generated" will be irrelevant for 90% of applications.</p>
+<p>But the principle doesn't change: someone with the eye, experience and taste to direct these tools will always be needed. Not "use them" — direct them. Like a director directs a crew, an experienced professional directs AI. And the result is incomparably different.</p>`,
+    },
+    // ====== POST 12: Cortometraggi AI futuro ======
+    {
+        slug: 'cortometraggi-ai-futuro-opportunita-registi',
+        slugEn: 'ai-short-films-future-opportunities-directors',
+        titleIt: 'Il futuro dei cortometraggi AI: opportunità per registi e producer nel 2026',
+        titleEn: 'The future of AI short films: opportunities for directors and producers in 2026',
+        excerptIt: 'I festival stanno aprendo categorie AI. I brand cercano contenuti AI-native. Il budget di un corto AI è una frazione di uno tradizionale. Ecco perché questo è il momento giusto per registi e producer.',
+        excerptEn: 'Festivals are opening AI categories. Brands want AI-native content. An AI short\'s budget is a fraction of a traditional one. Here\'s why this is the right moment for directors and producers.',
+        date: '2026-04-22',
+        readingTime: 7,
+        category: 'ai',
+        categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
+        keywordTarget: 'cortometraggi AI futuro',
+        thumbnail: '/images/portfolio/doppelganger-compositing-stazione-hero.webp',
+        thumbnailAlt: { it: 'Cortometraggi AI — futuro produzione cinematografica', en: 'AI short films — future of film production' },
+        contentIt: `<h2>Un nuovo mercato, adesso</h2>
+<p>Nei primi mesi del 2026, tre cose sono successe simultaneamente: i principali festival internazionali hanno creato categorie dedicate ai cortometraggi AI, i brand hanno iniziato a commissionare contenuti AI-native per le loro campagne, e i costi di produzione di un corto AI sono scesi sotto la soglia dei 5.000 euro per un prodotto di qualità professionale.</p>
+<p>Per registi e producer, questo apre un mercato che un anno fa non esisteva.</p>
+
+<h2>Perché i cortometraggi AI sono diversi</h2>
+<p>Un cortometraggio tradizionale da 10 minuti richiede: troupe, location, attori, giorni di ripresa, settimane di post-produzione. Budget minimo: 15-30mila euro per qualcosa di presentabile a un festival. Tempi: 3-6 mesi.</p>
+<p>Un cortometraggio AI richiede: una visione chiara, padronanza degli strumenti generativi, competenze di post-produzione per il finishing. Budget: 2-10mila euro a seconda della complessità. Tempi: 4-8 settimane.</p>
+<p>Ma attenzione: "costi bassi" non significa "facile". Significa che la barriera economica è più bassa. La barriera creativa e tecnica resta alta — anzi, è diversa e per certi aspetti più esigente.</p>
+
+<h2>Cosa serve davvero per un corto AI professionale</h2>
+<p><strong>Visione registica.</strong> L'AI genera immagini, non racconta storie. Serve un regista che sappia costruire una narrazione, definire un ritmo, creare emozione. Gli strumenti AI amplificano la visione — non la sostituiscono.</p>
+<p><strong>Padronanza tecnica ibrida.</strong> Il corto AI professionale non è "tutto generato". È un mix di AI generativa, <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">compositing VFX</a>, <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a>, color grading e montaggio. Le scene generate vanno integrate, corrette, raffinate. Chi conosce solo l'AI produce materiale grezzo. Chi conosce l'AI e la <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> produce un film.</p>
+<p><strong>Gestione dei limiti.</strong> L'AI nel 2026 non mantiene coerenza di personaggio per più di qualche secondo, non genera testo leggibile, non produce lip-sync affidabile. Un buon regista AI sa scrivere intorno a questi limiti — li trasforma in scelte estetiche.</p>
+<p><strong>Post-produzione professionale.</strong> È qui che il 90% dei corti AI fallisce. Il materiale generato grezzo ha artefatti, incoerenze cromatiche, problemi di ritmo. Serve qualcuno che sappia fare <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">finishing professionale su materiale AI</a> — ed è esattamente il tipo di competenza ibrida che il mercato cerca.</p>
+
+<h2>Dove si monetizza</h2>
+<p><strong>Festival e premi.</strong> Tribeca, SXSW, Cannes Court Métrage hanno tutti sezioni dedicate o aperte a contenuti AI. Un corto AI selezionato a un festival internazionale ha lo stesso valore di credibilità di uno tradizionale — e costa una frazione.</p>
+<p><strong>Brand content.</strong> I brand vogliono contenuti AI non perché costano meno, ma perché comunicano innovazione. Un fashion brand che commissiona un cortometraggio AI per una campagna comunica al suo pubblico: "siamo avanti". Per un regista, questo è un mercato in espansione.</p>
+<p><strong>Pitch e concept.</strong> Un regista può usare l'AI per produrre un concept visivo convincente da presentare a produttori e finanziatori. Invece di un pitch deck statico, un teaser AI di 60 secondi. Il tasso di interesse è incomparabile.</p>
+
+<h2>Un esempio concreto</h2>
+<p><a href="/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Doppelganger</a> è un progetto che ho realizzato per un bando creativo — una campagna visiva completa generata con AI e rifinita con tecniche tradizionali di compositing e post-produzione. Il risultato è un prodotto che regge il confronto con una produzione tradizionale, a una frazione del budget.</p>
+<p>Il processo: concept e storyboard, generazione delle basi visive con AI (Runway, Veo, Midjourney per i frame di riferimento), compositing in After Effects, color grading in DaVinci Resolve, montaggio e sound design. Vent'anni di esperienza in ogni passaggio — l'AI come strumento, non come scorciatoia.</p>
+
+<h2>La figura professionale che manca</h2>
+<p>Il mercato cerca una figura che ancora non ha un nome codificato: qualcuno che sappia dirigere l'AI con l'occhio di un professionista esperto. Non un "prompt engineer" — un supervisore creativo che conosca sia gli strumenti generativi che le tecniche tradizionali di post-produzione.</p>
+<p>È la convergenza tra esperienza e innovazione: chi ha passato vent'anni a fare VFX, compositing e finishing ha l'occhio per giudicare, dirigere e raffinare l'output AI. Chi viene solo dal mondo AI produce materiale impressionante ma spesso grezzo, incoerente e non finito.</p>
+<p>Per registi e producer: se state pensando a un progetto AI, il partner giusto non è "chi sa usare Runway". È chi sa trasformare l'output di Runway in un prodotto cinematografico. La differenza è enorme.</p>
+
+<h2>Il momento è adesso</h2>
+<p>Tra due anni il mercato sarà saturo. Ora è il momento in cui qualità e visione fanno la differenza, perché la competizione è ancora bassa e la domanda è alta. Registi e producer che investono ora nella comprensione di questo linguaggio — e si alleano con professionisti che sanno trasformarlo in prodotto — hanno un vantaggio temporale significativo.</p>`,
+
+        contentEn: `<h2>A new market, right now</h2>
+<p>In the first months of 2026, three things happened simultaneously: major international festivals created dedicated categories for AI short films, brands started commissioning AI-native content for their campaigns, and production costs for an AI short dropped below 5,000 euros for professional-quality output.</p>
+<p>For directors and producers, this opens a market that didn't exist a year ago.</p>
+
+<h2>Why AI short films are different</h2>
+<p>A traditional 10-minute short film requires: crew, locations, actors, shooting days, weeks of post-production. Minimum budget: 15-30 thousand euros for something presentable at a festival. Timeline: 3-6 months.</p>
+<p>An AI short film requires: a clear vision, mastery of generative tools, post-production skills for finishing. Budget: 2-10 thousand euros depending on complexity. Timeline: 4-8 weeks.</p>
+<p>But note: "low cost" doesn't mean "easy." It means the economic barrier is lower. The creative and technical barrier remains high — in fact, it's different and in some ways more demanding.</p>
+
+<h2>What you actually need for a professional AI short</h2>
+<p><strong>Directorial vision.</strong> AI generates images, it doesn't tell stories. You need a director who can build a narrative, define a rhythm, create emotion. AI tools amplify the vision — they don't replace it.</p>
+<p><strong>Hybrid technical mastery.</strong> The professional AI short isn't "all generated." It's a mix of generative AI, <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX compositing</a>, <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a>, color grading and editing. Generated scenes need to be integrated, corrected, refined. Those who know only AI produce raw material. Those who know AI and <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> produce a film.</p>
+<p><strong>Limitation management.</strong> AI in 2026 can't maintain character coherence for more than a few seconds, can't generate readable text, can't produce reliable lip-sync. A good AI director writes around these limits — turns them into aesthetic choices.</p>
+<p><strong>Professional post-production.</strong> This is where 90% of AI shorts fail. Raw generated material has artifacts, chromatic inconsistencies, rhythm problems. You need someone who can do <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">professional finishing on AI material</a> — and that's exactly the hybrid skill set the market is looking for.</p>
+
+<h2>Where it monetizes</h2>
+<p><strong>Festivals and awards.</strong> Tribeca, SXSW, Cannes Court Métrage all have dedicated sections or are open to AI content. An AI short selected at an international festival has the same credibility value as a traditional one — at a fraction of the cost.</p>
+<p><strong>Brand content.</strong> Brands want AI content not because it costs less, but because it communicates innovation. A fashion brand commissioning an AI short film for a campaign tells its audience: "we're ahead." For a director, this is an expanding market.</p>
+<p><strong>Pitch and concept.</strong> A director can use AI to produce a convincing visual concept to present to producers and financiers. Instead of a static pitch deck, a 60-second AI teaser. The interest rate is incomparable.</p>
+
+<h2>A concrete example</h2>
+<p><a href="/en/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Doppelganger</a> is a project I created for a creative grant — a complete visual campaign generated with AI and refined with traditional compositing and post-production techniques. The result is a product that stands up to traditional production, at a fraction of the budget.</p>
+<p>The process: concept and storyboard, visual base generation with AI (Runway, Veo, Midjourney for reference frames), compositing in After Effects, color grading in DaVinci Resolve, editing and sound design. Twenty years of experience in every step — AI as a tool, not a shortcut.</p>
+
+<h2>The professional figure that's missing</h2>
+<p>The market is looking for a figure that doesn't have a codified name yet: someone who can direct AI with an experienced professional's eye. Not a "prompt engineer" — a creative supervisor who knows both generative tools and traditional post-production techniques.</p>
+<p>It's the convergence of experience and innovation: someone who has spent twenty years doing VFX, compositing and finishing has the eye to judge, direct and refine AI output. Those coming only from the AI world produce impressive but often raw, inconsistent and unfinished material.</p>
+<p>For directors and producers: if you're thinking about an AI project, the right partner isn't "someone who can use Runway." It's someone who can transform Runway's output into a cinematic product. The difference is enormous.</p>
+
+<h2>The moment is now</h2>
+<p>In two years the market will be saturated. Now is when quality and vision make the difference, because competition is still low and demand is high. Directors and producers who invest now in understanding this language — and ally with professionals who can turn it into product — have a significant time advantage.</p>`,
+    },
 ];
 
 /**
