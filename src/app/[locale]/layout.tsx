@@ -8,6 +8,8 @@ import Footer from '@/components/Footer';
 import CookieConsent, { ConsentProvider } from '@/components/CookieConsent';
 import ScrollToTop from '@/components/ScrollToTop';
 import ScrollRestoration from '@/components/ScrollRestoration';
+import LanguageSuggestion from '@/components/LanguageSuggestion';
+
 import { PersonSchema, LocalBusinessSchema } from '@/components/seo/SchemaMarkup';
 import { getPageAlternates, getPageOgUrl } from '@/lib/seo';
 import '../../app/globals.css';
@@ -108,6 +110,8 @@ export default async function LocaleLayout({
             <Footer />
             <ScrollToTop />
             <ScrollRestoration />
+            <LanguageSuggestion />
+
             <CookieConsent />
           </ConsentProvider>
         </NextIntlClientProvider>
