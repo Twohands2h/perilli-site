@@ -24,23 +24,30 @@ export default function SocialProofSection() {
         <AnimateOnScroll>
           <p className="section-title text-center">{t('sectionTitle')}</p>
         </AnimateOnScroll>
+      </div>
 
-        <AnimateOnScroll delay={200}>
-          <div className="flex items-center justify-between gap-6 md:gap-8 mt-8 md:mt-12 overflow-x-auto scrollbar-hide">
-            {clients.map((client) => (
+      <AnimateOnScroll delay={200}>
+        <div className="relative mt-8 md:mt-12">
+          {/* Fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+          {/* Scrolling marquee */}
+          <div className="flex animate-marquee">
+            {[...clients, ...clients].map((client, i) => (
               <span
-                key={client}
+                key={`${client}-${i}`}
                 className="text-xs md:text-sm lg:text-base font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-text-muted/30
-                           transition-all duration-500 hover:text-text-secondary hover:tracking-[0.25em]
-                           cursor-default select-none whitespace-nowrap shrink-0"
+                           cursor-default select-none whitespace-nowrap px-5 md:px-8 lg:px-10"
               >
                 {client}
               </span>
             ))}
           </div>
-        </AnimateOnScroll>
+        </div>
+      </AnimateOnScroll>
 
-        {/* Divider accent */}
+      <div className="section-container">
         <div className="flex justify-center mt-8 md:mt-12">
           <div className="w-12 h-px bg-accent/40" />
         </div>
