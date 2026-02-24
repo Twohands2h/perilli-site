@@ -4,13 +4,26 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 /**
- * Saves scroll position for list pages (portfolio, blog) so that
- * when returning from a detail page, the user lands where they left off.
+ * Saves scroll position for:
+ * 1. List pages (portfolio, blog) → detail page navigation
+ * 2. Language switch → preserves scroll position across locale change
  */
 const LIST_PAGES = ['/portfolio', '/en/portfolio', '/blog', '/en/blog'];
 
 export default function ScrollRestoration() {
   const pathname = usePathname();
+
+  // Restore scroll after language switch
+  useEffect(() => {
+    const saved = sessionStorage.getItem('lang-switch-scroll');
+    if (saved) {
+      const timer = setTimeout(() => {
+        window.scrollTo(0, parseInt(saved, 10));
+        sessionStorage.removeItem('lang-switch-scroll');
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     // On mount: if this is a list page and we have a saved position, restore it
