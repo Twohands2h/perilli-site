@@ -1069,26 +1069,65 @@ export const projects: Project[] = [
     },
     {
         slug: 'save-the-children',
-        titleIt: `Save the Children`,
-        titleEn: `Save the Children`,
+        titleIt: 'Save the Children',
+        titleEn: 'Save the Children',
         category: 'post',
-        categoryLabel: { it: `Post Produzione`, en: `Post Production` },
+        categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
         client: 'Save the Children',
-        year: '2022',
-        role: 'Editor / Colorist',
-        thumbnail: '/images/portfolio/post-produzione-save-the-children-thumb.jpg',
-        thumbnailAlt: { it: `Post produzione spot Save the Children`, en: `Post production Save the Children spot` },
-        heroImage: '/images/portfolio/post-produzione-save-the-children-hero.jpg',
-        images: [],
-        tools: ['DaVinci Resolve', 'Premiere Pro'],
-        briefingIt: `Spot per Save the Children. Montaggio e color grading per un video che doveva emozionare e spingere all'azione — ogni frame al servizio del messaggio.`,
-        briefingEn: `Spot for Save the Children. Editing and color grading for a video that had to move and push to action — every frame serving the message.`,
-        challengeIt: `Uno spot sociale deve trovare il bilanciamento tra impatto emotivo e rispetto. Il montaggio non può manipolare — deve far sentire. Il color grading deve supportare l'emozione senza risultare artificioso.`,
-        challengeEn: `A social spot must find the balance between emotional impact and respect. The editing can't manipulate — it must make you feel. The color grading must support the emotion without feeling artificial.`,
-        solutionIt: `<a href="/post-produzione">Montaggio e color grading</a> focalizzati sull'essenziale: ritmo che costruisce progressivamente l'emozione, palette cromatica naturale che non distrae dal contenuto umano. Nessun effetto — solo le immagini, nel giusto ordine, con il giusto colore.`,
-        solutionEn: `<a href="/en/post-production">Editing and color grading</a> focused on the essential: rhythm that progressively builds emotion, natural color palette that doesn't distract from the human content. No effects — just images, in the right order, with the right color.`,
-        resultIt: `Uno spot che fa il suo lavoro: emoziona, informa e spinge all'azione. Quando la post-produzione è invisibile, il messaggio arriva diretto.`,
-        resultEn: `A spot that does its job: moves, informs and drives to action. When post-production is invisible, the message arrives directly.`,
+        year: '2013',
+        role: 'Montaggio, Color Correction',
+        thumbnail: '/images/portfolio/save-the-children/save-the-children-hero.webp',
+        thumbnailAlt: { it: 'Save the Children \u2014 spot campagna nazionale "Non lasciarli andare"', en: 'Save the Children \u2014 national campaign spot "Don\'t let them go"' },
+        heroImage: '/images/portfolio/save-the-children/save-the-children-hero.webp',
+        heroAlt: { it: 'Save the Children \u2014 spot 30" campagna nazionale, montaggio e color Piero Perilli', en: 'Save the Children \u2014 30" national campaign spot, editing and color by Piero Perilli' },
+        images: [
+            { src: '/images/portfolio/save-the-children/save-the-children-coda-traffico.webp', alt: { it: 'Save the Children spot \u2014 1 ora in coda, 720 bambini', en: 'Save the Children spot \u2014 1 hour in traffic, 720 children' } },
+            { src: '/images/portfolio/save-the-children/save-the-children-computer.webp', alt: { it: 'Save the Children spot \u2014 3 ore al computer, 2.160 bambini', en: 'Save the Children spot \u2014 3 hours on computer, 2,160 children' } },
+        ],
+        tools: ['Premiere Pro', 'DaVinci Resolve'],
+        briefingIt: 'Spot 30" per la campagna nazionale Save the Children "Non lasciarli andare". Regia di Daniele Fiore. Progetto realizzato da Roma.',
+        briefingEn: '30" spot for the Save the Children national campaign "Don\'t let them go". Directed by Daniele Fiore. Project based in Rome.',
+        challengeIt: 'Trenta secondi per fare arrivare un messaggio che deve colpire senza manipolare. Il montaggio doveva costruire un crescendo emotivo preciso: scene di vita quotidiana affiancate ai numeri sulla mortalit\u00E0 infantile. Ogni secondo conta.',
+        challengeEn: 'Thirty seconds to deliver a message that must hit hard without manipulating. The editing had to build a precise emotional crescendo: everyday life scenes paired with child mortality numbers. Every second counts.',
+        solutionIt: '<a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Montaggio e color correction</a> calibrati per uno spot che vive di contrasto: la normalit\u00E0 della vita quotidiana contro l\'urgenza dei dati. Il color caldo e naturale rende le scene familiari \u2014 i numeri in sovrimpressione fanno il resto.',
+        solutionEn: '<a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Editing and color correction</a> calibrated for a spot that lives on contrast: the normality of everyday life against the urgency of the data. The warm, natural color makes the scenes familiar \u2014 the superimposed numbers do the rest.',
+        resultIt: 'Spot trasmesso nella campagna nazionale Save the Children.',
+        resultEn: 'Spot broadcast in the Save the Children national campaign.',
+        contentBlocks: [
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/save-the-children/save-the-children-hero.webp',
+                        alt: { it: 'Save the Children \u2014 ogni 5 secondi muore un bambino nel mondo', en: 'Save the Children \u2014 every 5 seconds a child dies in the world' }
+                    },
+                    {
+                        src: '/images/portfolio/save-the-children/save-the-children-mano-bicchiere.webp',
+                        alt: { it: 'Save the Children spot \u2014 dettaglio mano, color correction cinematografica', en: 'Save the Children spot \u2014 hand detail, cinematic color correction' }
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: 'Ogni 5 secondi muore un bambino nel mondo. Lo spot mette questo dato accanto ai gesti pi\u00F9 ordinari: un\u2019ora in coda nel traffico, tre ore al computer. Il contrasto \u00E8 tutto. Non serve urlare quando i numeri parlano da soli.\n\nIl montaggio costruisce il ritmo su questo contrasto: scene lente, quotidiane, poi il dato che taglia. Il color resta caldo e naturale \u2014 deve sembrare la tua giornata, non un servizio giornalistico.',
+                textEn: 'Every 5 seconds a child dies somewhere in the world. The spot places this fact alongside the most ordinary gestures: an hour stuck in traffic, three hours on the computer. The contrast is everything. No need to shout when the numbers speak for themselves.\n\nThe editing builds its rhythm on this contrast: slow, everyday scenes, then the data that cuts through. The color stays warm and natural \u2014 it has to feel like your day, not a news report.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/save-the-children/save-the-children-coda-traffico.webp',
+                        alt: { it: 'Save the Children \u2014 1 ora in coda, 720 bambini, montaggio Piero Perilli', en: 'Save the Children \u2014 1 hour in traffic, 720 children, editing by Piero Perilli' }
+                    },
+                    {
+                        src: '/images/portfolio/save-the-children/save-the-children-computer.webp',
+                        alt: { it: 'Save the Children \u2014 3 ore al computer, 2.160 bambini', en: 'Save the Children \u2014 3 hours on computer, 2,160 children' }
+                    }
+                ]
+            },
+        ],
     },
     {
         slug: 'babingtons',
