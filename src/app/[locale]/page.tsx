@@ -41,7 +41,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <PillarsSection />
       <MethodSection />
       <SocialProofSection />
-      <TestimonialsSection />
+      {/*<TestimonialsSection />*/}
       <CTASection />
     </>
   );
