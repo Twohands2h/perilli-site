@@ -1,14 +1,14 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Play, ArrowRight, X } from 'lucide-react';
 import Link from 'next/link';
 
 const SHOWREELS = [
-  { id: 'motion', labelIt: 'Motion Graphics', labelEn: 'Motion Graphics', mp4Url: '/videos/showreel-motion-graphics.mp4' },
-  { id: '3d', labelIt: 'Animazione 2D & 3D', labelEn: '2D & 3D Animation', mp4Url: '/videos/showreel-animazione-2d-3d.mp4' },
-  { id: 'full', labelIt: 'Showreel Completo', labelEn: 'Full Showreel', mp4Url: '/videos/showreel-vfx-post-produzione.mp4' },
+  { id: 'motion', labelIt: 'Motion Graphics', labelEn: 'Motion Graphics', youtubeId: 'xIGeQyP2g6I' },
+  { id: '3d', labelIt: 'Animazione 2D & 3D', labelEn: '2D & 3D Animation', youtubeId: 'ogr_oPb4drE' },
+  { id: 'full', labelIt: 'Showreel Completo', labelEn: 'Full Showreel', youtubeId: '0PMmLjg3FgU' },
 ];
 
 export default function HeroSection() {
@@ -16,7 +16,6 @@ export default function HeroSection() {
   const locale = useLocale();
   const [showModal, setShowModal] = useState(false);
   const [activeReel, setActiveReel] = useState(SHOWREELS[0]);
-  const bgVideoRef = useRef<HTMLVideoElement>(null);
 
   const openReel = (reel: (typeof SHOWREELS)[number]) => { setActiveReel(reel); setShowModal(true); };
 
@@ -25,7 +24,6 @@ export default function HeroSection() {
       <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 scale-[1.2]">
           <video
-            ref={bgVideoRef}
             autoPlay
             muted
             loop
@@ -33,7 +31,7 @@ export default function HeroSection() {
             className="absolute inset-0 w-full h-full object-cover"
             aria-hidden="true"
           >
-            <source src={SHOWREELS[0].mp4Url} type="video/mp4" />
+            <source src="/videos/hero-showreel-bg.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="absolute inset-0 bg-background/65" />
@@ -64,9 +62,7 @@ export default function HeroSection() {
             ))}
           </div>
           <div className="w-full max-w-5xl aspect-video" onClick={(e) => e.stopPropagation()}>
-            <video key={activeReel.id} autoPlay controls playsInline className="w-full h-full rounded-lg">
-              <source src={activeReel.mp4Url} type="video/mp4" />
-            </video>
+            <iframe key={activeReel.youtubeId} src={`https://www.youtube.com/embed/${activeReel.youtubeId}?autoplay=1&rel=0&modestbranding=1`} className="w-full h-full rounded-lg" style={{ border: 0 }} allow="autoplay; encrypted-media; fullscreen" allowFullScreen />
           </div>
         </div>
       )}
