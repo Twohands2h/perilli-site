@@ -1,24 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Play, ArrowRight, X } from 'lucide-react';
 import Link from 'next/link';
-import { useConsent } from '@/components/CookieConsent';
 
 const SHOWREELS = [
-  { id: 'motion', labelIt: 'Motion Graphics', labelEn: 'Motion Graphics', youtubeId: 'xIGeQyP2g6I', mp4Url: '' },
-  { id: '3d', labelIt: 'Animazione 2D & 3D', labelEn: '2D & 3D Animation', youtubeId: 'ogr_oPb4drE', mp4Url: '' },
-  { id: 'full', labelIt: 'Showreel Completo', labelEn: 'Full Showreel', youtubeId: '', mp4Url: 'https://cdn.myportfolio.com/v1/ccvproxy/UJRSc5PAXqq?width=1920&type=mp4&h=3413b8caa8233f17a09d816f792121bf' },
+  { id: 'motion', labelIt: 'Motion Graphics', labelEn: 'Motion Graphics', mp4Url: '/videos/showreel-motion-graphics.mp4' },
+  { id: '3d', labelIt: 'Animazione 2D & 3D', labelEn: '2D & 3D Animation', mp4Url: '/videos/showreel-animazione-2d-3d.mp4' },
+  { id: 'full', labelIt: 'Showreel Completo', labelEn: 'Full Showreel', mp4Url: '/videos/showreel-vfx-post-produzione.mp4' },
 ];
-const BG_YOUTUBE_ID = SHOWREELS[0].youtubeId;
 
 export default function HeroSection() {
   const t = useTranslations('hero');
   const locale = useLocale();
   const [showModal, setShowModal] = useState(false);
   const [activeReel, setActiveReel] = useState(SHOWREELS[0]);
-  const { consented } = useConsent();
+  const bgVideoRef = useRef<HTMLVideoElement>(null);
 
   const openReel = (reel: (typeof SHOWREELS)[number]) => { setActiveReel(reel); setShowModal(true); };
 
@@ -26,11 +24,17 @@ export default function HeroSection() {
     <>
       <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 scale-[1.2]">
-          {consented ? (
-            <iframe src={`https://www.youtube.com/embed/${BG_YOUTUBE_ID}?autoplay=1&mute=1&loop=1&playlist=${BG_YOUTUBE_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`} className="absolute inset-0 w-full h-full pointer-events-none" style={{ border: 0 }} allow="autoplay; encrypted-media" tabIndex={-1} aria-hidden="true" />
-          ) : (
-            <div className="absolute inset-0 bg-background" />
-          )}
+          <video
+            ref={bgVideoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            aria-hidden="true"
+          >
+            <source src={SHOWREELS[0].mp4Url} type="video/mp4" />
+          </video>
         </div>
         <div className="absolute inset-0 bg-background/65" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background" />
@@ -60,7 +64,9 @@ export default function HeroSection() {
             ))}
           </div>
           <div className="w-full max-w-5xl aspect-video" onClick={(e) => e.stopPropagation()}>
-            {activeReel.mp4Url ? (<video key={activeReel.id} autoPlay controls playsInline className="w-full h-full rounded-lg"><source src={activeReel.mp4Url} type="video/mp4" /></video>) : (<iframe key={activeReel.youtubeId} src={`https://www.youtube.com/embed/${activeReel.youtubeId}?autoplay=1&rel=0&modestbranding=1`} className="w-full h-full rounded-lg" style={{ border: 0 }} allow="autoplay; encrypted-media; fullscreen" allowFullScreen />)}
+            <video key={activeReel.id} autoPlay controls playsInline className="w-full h-full rounded-lg">
+              <source src={activeReel.mp4Url} type="video/mp4" />
+            </video>
           </div>
         </div>
       )}
