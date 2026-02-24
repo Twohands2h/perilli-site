@@ -21,7 +21,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 const contentIT = {
   sectionLabel: 'AI VIDEO',
-  h1: "AI Video Production — L'Intelligenza Artificiale Guidata dall'Esperienza",
+  h1: "AI Video Production a Roma — L'Intelligenza Artificiale Guidata dall'Esperienza",
   heroSubtitle: 'L\'intelligenza artificiale guidata da 20 anni di occhio artigianale.',
 
   introTitle: 'L\'AI non Sostituisce l\'Esperienza. La Moltiplica.',
@@ -97,7 +97,7 @@ const contentIT = {
 
 const contentEN = {
   sectionLabel: 'AI VIDEO',
-  h1: 'AI Video Production — Artificial Intelligence Guided by 20 Years of Experience',
+  h1: 'AI Video Production in Rome — Artificial Intelligence Guided by 20 Years of Experience',
   heroSubtitle: 'Artificial intelligence guided by 20 years of artisan eye.',
 
   introTitle: "AI Doesn't Replace Experience. It Multiplies It.",

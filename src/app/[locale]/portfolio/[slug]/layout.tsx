@@ -4,7 +4,7 @@ import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export function generateStaticParams() {
-    // Use static list for build-time params (Sanity data comes via ISR at runtime)
+    // Generate params from static data
     return projects.map((p) => ({ slug: p.slug }));
 }
 
