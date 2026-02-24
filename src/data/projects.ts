@@ -1060,7 +1060,84 @@ export const projects: Project[] = [
             }
         ],
     },
-
+    {
+        slug: 'granroma-fresia',
+        titleIt: 'GRAnROMA \u2014 Fresia',
+        titleEn: 'GRAnROMA \u2014 Fresia',
+        category: 'animation',
+        categoryLabel: { it: 'Animazione 3D', en: '3D Animation' },
+        client: 'Gruppo Fresia',
+        year: '2019',
+        role: 'Regia, VFX, Animazione 3D, Montaggio',
+        thumbnail: '/images/portfolio/granroma-fresia/granroma-facciata-frontale.webp',
+        thumbnailAlt: { it: 'GRAnROMA Fresia \u2014 film presentazione centro commerciale, regia e 3D Piero Perilli', en: 'GRAnROMA Fresia \u2014 shopping center presentation film, directed and 3D by Piero Perilli' },
+        heroImage: '/images/portfolio/granroma-fresia/granroma-facciata-frontale.webp',
+        heroAlt: { it: 'GRAnROMA Fresia \u2014 render 3D architettonico, regia e VFX Piero Perilli', en: 'GRAnROMA Fresia \u2014 architectural 3D render, directed and VFX by Piero Perilli' },
+        images: [
+            { src: '/images/portfolio/granroma-fresia/granroma-ingresso-dettaglio.webp', alt: { it: 'GRAnROMA \u2014 ingresso principale render 3D', en: 'GRAnROMA \u2014 main entrance 3D render' } },
+            { src: '/images/portfolio/granroma-fresia/granroma-angolo-vetrate.webp', alt: { it: 'GRAnROMA \u2014 vetrate e struttura, animazione 3D architettonica', en: 'GRAnROMA \u2014 glass facades and structure, architectural 3D animation' } },
+            { src: '/images/portfolio/granroma-fresia/granroma-panoramica.webp', alt: { it: 'GRAnROMA \u2014 vista panoramica del centro commerciale, render 3D', en: 'GRAnROMA \u2014 shopping center panoramic view, 3D render' } },
+        ],
+        tools: ['3ds Max', 'After Effects', 'DaVinci Resolve', 'Premiere Pro'],
+        briefingIt: 'Film di presentazione per il nuovo centro commerciale GRAnROMA del Gruppo Fresia. Agenzia OM, direttore creativo Prospero Di Veroli. Il mio ruolo: regia, <a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">animazione 3D</a>, <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> e <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">montaggio</a>. Progetto realizzato da Roma.',
+        briefingEn: 'Presentation film for the new GRAnROMA shopping center by Gruppo Fresia. Agency OM, creative director Prospero Di Veroli. My role: direction, <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">3D animation</a>, <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> and <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">editing</a>. Project based in Rome.',
+        challengeIt: 'Presentare un centro commerciale che non esiste ancora. Il film doveva far vedere la struttura come se fosse gi\u00E0 costruita \u2014 render 3D fotorealistici integrati con riprese drone del sito reale. Il tutto in un formato che convincesse investitori e stakeholder.',
+        challengeEn: 'Presenting a shopping center that doesn\'t exist yet. The film had to show the structure as if it were already built \u2014 photorealistic 3D renders integrated with drone footage of the actual site. All in a format that would convince investors and stakeholders.',
+        solutionIt: 'Modellazione e rendering in 3ds Max partendo dai progetti architettonici. Compositing in After Effects per integrare i render con le riprese drone aeree del sito. Montaggio e color in DaVinci Resolve per dare coerenza visiva tra 3D e riprese reali.',
+        solutionEn: 'Modeling and rendering in 3ds Max from architectural plans. Compositing in After Effects to integrate renders with aerial drone footage of the site. Editing and color in DaVinci Resolve to give visual coherence between 3D and real footage.',
+        resultIt: 'Film di presentazione per investitori e stakeholder del progetto GRAnROMA.',
+        resultEn: 'Presentation film for investors and stakeholders of the GRAnROMA project.',
+        contentBlocks: [
+            {
+                type: 'video-mp4',
+                url: '/videos/portfolio/granroma-fresia.mp4',
+                title: 'GRAnROMA \u2014 Fresia'
+            },
+            {
+                type: 'text',
+                textIt: 'Un centro commerciale che ancora non c\u2019\u00E8. Dai disegni architettonici ho costruito l\u2019intera struttura in 3ds Max: facciate di vetro, la pensilina arancione, le sagome dei visitatori che attraversano gli spazi. Il render doveva sembrare una foto aerea scattata dopo la costruzione, non un\u2019illustrazione.\n\nLe riprese drone di Fabio Zazzaretta mostravano il sito com\u2019era \u2014 un terreno, una strada, il cielo di Roma. Il mio lavoro era far convivere queste due realt\u00E0: il 3D della struttura futura e il video del luogo presente.',
+                textEn: 'A shopping center that doesn\'t exist yet. From architectural drawings I built the entire structure in 3ds Max: glass facades, the orange canopy, silhouettes of visitors crossing the spaces. The render had to look like an aerial photo taken after construction, not an illustration.\n\nFabio Zazzaretta\'s drone footage showed the site as it was \u2014 a plot of land, a road, Rome\'s sky. My job was to make these two realities coexist: the 3D of the future structure and the video of the present location.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/granroma-fresia/granroma-ingresso-dettaglio.webp',
+                        alt: { it: 'GRAnROMA \u2014 dettaglio ingresso, render 3D fotorealistico in 3ds Max', en: 'GRAnROMA \u2014 entrance detail, photorealistic 3D render in 3ds Max' }
+                    },
+                    {
+                        src: '/images/portfolio/granroma-fresia/granroma-angolo-vetrate.webp',
+                        alt: { it: 'GRAnROMA \u2014 vetrate e facciata, animazione 3D architettonica Piero Perilli', en: 'GRAnROMA \u2014 glass facades, architectural 3D animation by Piero Perilli' }
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: 'Questo \u00E8 un progetto dove il <a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">3D</a> non \u00E8 decorazione: \u00E8 lo strumento che fa esistere qualcosa prima che esista. Ho curato ogni fase \u2014 dalla regia alla modellazione, dal compositing al montaggio finale. Lavorare con Prospero Di Veroli come direttore creativo significava avere una visione chiara e standard alti.',
+                textEn: 'This is a project where <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">3D</a> isn\'t decoration: it\'s the tool that makes something exist before it exists. I handled every phase \u2014 from direction to modeling, from compositing to final editing. Working with Prospero Di Veroli as creative director meant having a clear vision and high standards.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/granroma-fresia/granroma-panoramica.webp',
+                        alt: { it: 'GRAnROMA \u2014 vista panoramica centro commerciale, render 3D e compositing', en: 'GRAnROMA \u2014 shopping center panoramic view, 3D render and compositing' }
+                    },
+                    {
+                        src: '/images/portfolio/granroma-fresia/granroma-rampa-laterale.webp',
+                        alt: { it: 'GRAnROMA \u2014 rampa laterale e ingresso, animazione 3D architettonica', en: 'GRAnROMA \u2014 side ramp and entrance, architectural 3D animation' }
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: '**Crediti**\nRegia: Piero Perilli\nDirettore Creativo: Prospero Di Veroli\nAgenzia: OM\nProduzione: MM Productions srl\nVFX, Animazione 3D, Montaggio: Piero Perilli\nOrganizzazione: Francesca Straffi\nRiprese Drone: Flycam \u2014 Fabio Zazzaretta',
+                textEn: '**Credits**\nDirector: Piero Perilli\nCreative Director: Prospero Di Veroli\nAgency: OM\nProduction: MM Productions srl\nVFX, 3D Animation, Editing: Piero Perilli\nOrganization: Francesca Straffi\nDrone Footage: Flycam \u2014 Fabio Zazzaretta'
+            }
+        ],
+    },
     // ──────────────────── BRAND / ADVERTISING ────────────────────
 
     {
