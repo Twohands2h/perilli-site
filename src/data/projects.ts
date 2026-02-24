@@ -431,26 +431,65 @@ export const projects: Project[] = [
     },
     {
         slug: 'isole',
-        titleIt: `Isole`,
-        titleEn: `Isole`,
+        titleIt: 'Isole',
+        titleEn: 'Islands',
         category: 'post',
-        categoryLabel: { it: `Post Produzione`, en: `Post Production` },
+        categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
         client: 'Valerio de Berardinis (regista)',
-        year: '2023',
-        role: 'Editor / Colorist / VFX Artist',
-        thumbnail: '/images/portfolio/post-produzione-isole-thumb.jpg',
-        thumbnailAlt: { it: `Post produzione cortometraggio Isole`, en: `Post production for Isole short film` },
-        heroImage: '/images/portfolio/post-produzione-isole-hero.jpg',
-        images: [],
+        year: '2016',
+        role: 'Fotografia, VFX, Montaggio, Color Correction',
+        thumbnail: '/images/portfolio/isole/isole-prua-nave-hero.webp',
+        thumbnailAlt: { it: 'Isole \u2014 cortometraggio selezionato al Festival di Cannes 2016', en: 'Islands \u2014 short film selected at Cannes Film Festival 2016' },
+        heroImage: '/images/portfolio/isole/isole-prua-nave-hero.webp',
+        heroAlt: { it: 'Isole \u2014 cortometraggio Valerio de Berardinis, selezione Festival di Cannes 2016', en: 'Islands \u2014 short film by Valerio de Berardinis, Cannes Film Festival 2016 selection' },
+        images: [
+            { src: '/images/portfolio/isole/isole-protagonisti-bianco-nero.webp', alt: { it: 'Protagonisti di Isole \u2014 cortometraggio selezionato a Cannes', en: 'Protagonists of Islands \u2014 short film selected at Cannes' } },
+            { src: '/images/portfolio/isole/isole-selezione-cannes-2016.webp', alt: { it: 'Isole \u2014 selezione Festival di Cannes 2016, CinemadaMare, Cerano Film', en: 'Islands \u2014 Cannes Film Festival 2016 selection, CinemadaMare, Cerano Film' } },
+        ],
         tools: ['DaVinci Resolve', 'After Effects', 'Mocha Pro'],
-        briefingIt: `Cortometraggio diretto da Valerio de Berardinis che racconta la storia della femmina accabadora — una figura della tradizione sarda: la donna che poneva fine alle sofferenze dei malati terminali nei piccoli paesi isolati della Sardegna. Un atto considerato pietoso, non criminale, dalla comunità.`,
-        briefingEn: `Short film directed by Valerio de Berardinis telling the story of the femmina accabadora — a figure from Sardinian tradition: the woman who ended the suffering of terminally ill people in isolated Sardinian villages. An act considered merciful, not criminal, by the community.`,
-        challengeIt: `Un racconto che si muove tra passato arcaico e presente, tra rituale e intimità domestica. Il montaggio doveva costruire la tensione narrativa senza mai cadere nel macabro. Il color grading doveva separare visivamente i due piani temporali mantenendo un'atmosfera sospesa e rispettosa del tema.`,
-        challengeEn: `A story moving between archaic past and present, between ritual and domestic intimacy. The editing had to build narrative tension without ever falling into the macabre. Color grading had to visually separate the two time planes while maintaining a suspended atmosphere respectful of the subject.`,
-        solutionIt: `Ho gestito l'intera <a href="/post-produzione">post-produzione</a>: montaggio, color grading in DaVinci Resolve e piccoli interventi VFX. Il grading gioca su palette desaturate e terre per il passato, con toni leggermente più freddi per il presente. Il montaggio alterna ritmi lenti e contemplativi a tagli più secchi nei momenti di tensione.`,
-        solutionEn: `I managed the entire <a href="/en/post-production">post-production</a>: editing, color grading in DaVinci Resolve and small VFX interventions. The grading plays on desaturated, earthy palettes for the past, with slightly cooler tones for the present. The editing alternates slow, contemplative rhythms with sharper cuts in moments of tension.`,
-        resultIt: `Un cortometraggio che tratta un tema delicato con rispetto e potenza visiva — dove montaggio e colore lavorano insieme per guidare lo spettatore in una storia che interroga il confine tra pietà e violenza.`,
-        resultEn: `A short film that handles a delicate subject with respect and visual power — where editing and color work together to guide the viewer through a story questioning the boundary between mercy and violence.`,
+        briefingIt: 'Cortometraggio diretto da Valerio de Berardinis ambientato sull\'isola abbandonata di Santo Stefano e sull\'isola di Ventotene. La storia ruota attorno alla figura della Femina Accabadora \u2014 nella tradizione sarda, colei che poneva fine alle sofferenze dei malati terminali. Il protagonista \u00E8 Anselmo De Girolamo, cinquantenne, vedovo, che soffre il mal di mare e il dolore di vivere. Produzione MM Productions. Progetto realizzato da Roma.',
+        briefingEn: 'Short film directed by Valerio de Berardinis set on the abandoned island of Santo Stefano and on the island of Ventotene. The story revolves around the figure of the Femina Accabadora \u2014 in Sardinian tradition, the woman who ended the suffering of the terminally ill. The protagonist is Anselmo De Girolamo, a fifty-year-old widower suffering from seasickness and the pain of living. Produced by MM Productions. Project based in Rome.',
+        challengeIt: 'Girare su un\'isola abbandonata con una troupe ridotta all\'essenziale. Ho coperto fotografia, VFX, montaggio e color \u2014 tutto il flusso di post-produzione. Il montaggio doveva costruire la tensione narrativa senza mai cadere nel macabro, rispettando un tema che interroga il confine tra piet\u00E0 e violenza.',
+        challengeEn: 'Shooting on an abandoned island with a skeleton crew. I covered cinematography, VFX, editing and color \u2014 the entire post-production pipeline. The editing had to build narrative tension without ever falling into the macabre, respecting a subject that questions the boundary between mercy and violence.',
+        solutionIt: 'Ho gestito l\'intera <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a>: montaggio, color grading in DaVinci Resolve e interventi <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a>. Il grading lavora su palette desaturate e terre \u2014 l\'isola, il mare, la pietra. Il montaggio alterna ritmi lenti e contemplativi a tagli pi\u00F9 secchi nei momenti di tensione.',
+        solutionEn: 'I managed the entire <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a>: editing, color grading in DaVinci Resolve and <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> work. The grading plays on desaturated, earthy palettes \u2014 the island, the sea, the stone. The editing alternates slow, contemplative rhythms with sharper cuts in moments of tension.',
+        resultIt: 'Selezionato al Festival di Cannes 2016 (Court M\u00E9trage). Selezionato a CinemadaMare e Cerano Film.',
+        resultEn: 'Selected at the Cannes Film Festival 2016 (Court M\u00E9trage). Selected at CinemadaMare and Cerano Film.',
+        imdbLink: 'https://www.imdb.com/title/tt6058478/',
+        contentBlocks: [
+            {
+                type: 'video-mp4',
+                url: '/videos/portfolio/isole-trailer.mp4',
+                title: 'Isole (Islands) \u2014 Trailer'
+            },
+            {
+                type: 'text',
+                textIt: 'Santo Stefano \u00E8 un\'isola abbandonata a 20 km dalle coste laziali. Ci arrivi solo via mare, e non c\'\u00E8 niente \u2014 solo il carcere borbonico vuoto e il vento. Abbiamo girato l\u00EC con una troupe ridotta all\'osso. Io facevo fotografia, e poi tutto il resto: montaggio, color, VFX.\n\n\u201CNon aveva scelto lui quel mestiere, il caso lo aveva scelto per alleviare tutte le sofferenze e liberare le anime. E ne aveva liberate tante.\u201D',
+                textEn: 'Santo Stefano is an abandoned island 20 km off the Lazio coast. You can only reach it by sea, and there\u2019s nothing there \u2014 just the empty Bourbon prison and the wind. We shot there with a skeleton crew. I handled cinematography, and then everything else: editing, color, VFX.\n\n\u201CHe hadn\u2019t chosen that job himself, chance had chosen it to relieve all suffering and free the souls. And it had freed many.\u201D'
+            },
+            {
+                type: 'image',
+                src: '/images/portfolio/isole/isole-protagonisti-bianco-nero.webp',
+                alt: { it: 'Protagonisti di Isole \u2014 ritratto in bianco e nero', en: 'Protagonists of Islands \u2014 black and white portrait' },
+                fullWidth: false
+            },
+            {
+                type: 'text',
+                textIt: 'Il color grading lavora su terre e grigi desaturati. L\'isola, il mare grigio, la pietra del carcere \u2014 tutto concorre a un\'atmosfera sospesa. Il montaggio alterna silenzi lunghi a tagli secchi. Non \u00E8 un film che grida. \u00C8 un film che ti guarda e aspetta.\n\nQuesto progetto \u00E8 completamente autoprodotto, con la partecipazione libera di tutti gli artisti coinvolti. Artigianato puro.',
+                textEn: 'The color grading works on desaturated earth tones and grays. The island, the gray sea, the prison stone \u2014 everything contributes to a suspended atmosphere. The editing alternates long silences with sharp cuts. It\u2019s not a film that shouts. It\u2019s a film that looks at you and waits.\n\nThis project is entirely self-produced, with the free participation of all the artists involved. Pure craftsmanship.'
+            },
+            {
+                type: 'image',
+                src: '/images/portfolio/isole/isole-selezione-cannes-2016.webp',
+                alt: { it: 'Isole \u2014 selezione ufficiale Festival di Cannes 2016, CinemadaMare, Cerano Film', en: 'Islands \u2014 official selection Cannes Film Festival 2016, CinemadaMare, Cerano Film' },
+                fullWidth: true
+            },
+            {
+                type: 'text',
+                textIt: '**Crediti**\nRegia: Valerio de Berardinis\nFotografia, VFX, Montaggio, Color: Piero Perilli\nGrafiche: Riccardo Bizziccari\nMusica: Paolo Pecorelli\nProduzione: MM Productions\n\nSelezione Festival di Cannes 2016 (Court M\u00E9trage) \u2014 CinemadaMare \u2014 Cerano Film\n<a href="https://www.imdb.com/title/tt6058478/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>',
+                textEn: '**Credits**\nDirector: Valerio de Berardinis\nCinematography, VFX, Editing, Color: Piero Perilli\nGraphics: Riccardo Bizziccari\nMusic: Paolo Pecorelli\nProduction: MM Productions\n\nCannes Film Festival 2016 selection (Court M\u00E9trage) \u2014 CinemadaMare \u2014 Cerano Film\n<a href="https://www.imdb.com/title/tt6058478/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>'
+            }
+        ],
     },
 
     // ──────────────────── ANIMAZIONE 3D / 2D / PRODOTTO ────────────────────
