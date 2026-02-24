@@ -1189,26 +1189,82 @@ export const projects: Project[] = [
     },
     {
         slug: 'babingtons',
-        titleIt: `Babingtons`,
-        titleEn: `Babingtons`,
+        titleIt: 'Babingtons \u2014 125\u00B0 Anniversario',
+        titleEn: 'Babingtons \u2014 125th Anniversary',
         category: 'motion',
-        categoryLabel: { it: `Motion Graphics`, en: `Motion Graphics` },
+        categoryLabel: { it: 'Motion Graphics', en: 'Motion Graphics' },
         client: 'Babingtons',
-        year: '2021',
-        role: 'Motion Designer',
-        thumbnail: '/images/portfolio/motion-graphics-babingtons-thumb.jpg',
-        thumbnailAlt: { it: `Motion graphics per Babingtons`, en: `Motion graphics for Babingtons` },
-        heroImage: '/images/portfolio/motion-graphics-babingtons-hero.jpg',
-        images: [],
-        tools: ['After Effects', 'Photoshop'],
-        briefingIt: `Video in motion graphics per Babingtons, la storica sala da tè di Piazza di Spagna a Roma. Comunicare l'eleganza e la tradizione del brand attraverso un linguaggio visivo contemporaneo.`,
-        briefingEn: `Motion graphics video for Babingtons, the historic tearoom in Piazza di Spagna, Rome. Communicating the brand's elegance and tradition through a contemporary visual language.`,
-        challengeIt: `Bilanciare la tradizione centenaria del brand con un linguaggio visivo moderno e dinamico, senza perdere l'eleganza che contraddistingue Babingtons.`,
-        challengeEn: `Balancing the brand's century-old tradition with a modern, dynamic visual language, without losing the elegance that distinguishes Babingtons.`,
-        solutionIt: `Ho sviluppato <a href="/motion-graphics">motion graphics</a> che fondono elementi classici del brand — tipografia elegante, palette raffinata — con transizioni e animazioni contemporanee. Il ritmo è misurato e sofisticato, come l'esperienza Babingtons.`,
-        solutionEn: `I developed <a href="/en/motion-graphics">motion graphics</a> blending classic brand elements — elegant typography, refined palette — with contemporary transitions and animations. The rhythm is measured and sophisticated, like the Babingtons experience.`,
-        resultIt: `Un video che parla il linguaggio di un brand storico romano con gli strumenti visivi del presente.`,
-        resultEn: `A video that speaks the language of a historic Roman brand with the visual tools of the present.`,
+        year: '2018',
+        role: 'Video, Motion Graphics, Montaggio, Color Correction',
+        thumbnail: '/images/portfolio/babingtons/babingtons-hero.webp',
+        thumbnailAlt: { it: 'Babingtons 125\u00B0 anniversario \u2014 video celebrativo, motion graphics e montaggio', en: 'Babingtons 125th anniversary \u2014 celebratory video, motion graphics and editing' },
+        heroImage: '/images/portfolio/babingtons/babingtons-hero.webp',
+        heroAlt: { it: 'Babingtons 125\u00B0 anniversario \u2014 video celebrativo, Piero Perilli', en: 'Babingtons 125th anniversary \u2014 celebratory video, Piero Perilli' },
+        images: [
+            { src: '/images/portfolio/babingtons/babingtons-teiera-ombrello.webp', alt: { it: 'Babingtons \u2014 illustrazione teiera e ombrello, motion graphics', en: 'Babingtons \u2014 teapot and umbrella illustration, motion graphics' } },
+            { src: '/images/portfolio/babingtons/babingtons-cupcake.webp', alt: { it: 'Babingtons \u2014 cupcake lampone su sfondo rosa', en: 'Babingtons \u2014 raspberry cupcake on pink background' } },
+            { src: '/images/portfolio/babingtons/babingtons-7-te-roma.webp', alt: { it: 'Babingtons \u2014 i 7 t\u00E8 di Roma, illustrazione animata', en: 'Babingtons \u2014 the 7 teas of Rome, animated illustration' } },
+            { src: '/images/portfolio/babingtons/babingtons-facciata-scalinata.webp', alt: { it: 'Babingtons \u2014 facciata Tea Rooms Piazza di Spagna, compositing', en: 'Babingtons \u2014 Tea Rooms facade Piazza di Spagna, compositing' } },
+        ],
+        tools: ['After Effects', 'DaVinci Resolve', 'Premiere Pro'],
+        briefingIt: 'Video celebrativo per il 125\u00B0 anniversario di Babingtons, la storica sala da t\u00E8 di Piazza di Spagna a Roma. Fotografia di Valerio de Berardinis. Progetto realizzato da Roma.',
+        briefingEn: 'Celebratory video for the 125th anniversary of Babingtons, the historic tea room at Piazza di Spagna in Rome. Photography by Valerio de Berardinis. Project based in Rome.',
+        challengeIt: 'Raccontare 125 anni di storia in un video che doveva essere moderno ma rispettare l\u2019identit\u00E0 di un\u2019istituzione. Illustrazioni d\'epoca, riprese del locale, food photography \u2014 materiali diversi da fondere in un linguaggio unico.',
+        challengeEn: 'Telling 125 years of history in a video that had to be modern yet respect the identity of an institution. Period illustrations, venue footage, food photography \u2014 different materials to blend into a single language.',
+        solutionIt: '<a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Motion graphics</a> sulle illustrazioni d\'epoca animate in After Effects, <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">montaggio e color correction</a> per integrare riprese live e grafiche. <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Compositing</a> con sovrapposizioni che mescolano passato e presente.',
+        solutionEn: '<a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Motion graphics</a> on period illustrations animated in After Effects, <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">editing and color correction</a> to integrate live footage and graphics. <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Compositing</a> with overlays blending past and present.',
+        resultIt: 'Video per la celebrazione del 125\u00B0 anniversario di Babingtons Tea Rooms, Piazza di Spagna, Roma.',
+        resultEn: 'Video for the celebration of Babingtons Tea Rooms\' 125th anniversary, Piazza di Spagna, Rome.',
+        contentBlocks: [
+            {
+                type: 'video-mp4',
+                url: '/videos/portfolio/babingtons-125-anniversario.mp4',
+                title: 'Babingtons \u2014 125\u00B0 Anniversario'
+            },
+            {
+                type: 'text',
+                textIt: 'Babingtons \u00E8 a Piazza di Spagna dal 1893. Fondata da due donne inglesi, gestita da donne ancora oggi \u2014 dalla sala alla cucina. Un luogo che Balthus chiamava "un vecchio amico". Per il 125\u00B0 anniversario serviva un video che onorasse questa storia senza trasformarla in un documentario.\n\nHo lavorato sulle illustrazioni d\'epoca \u2014 teiere, tazze, dame vittoriane \u2014 animandole in After Effects con movimenti misurati. Niente effetti vistosi: le grafiche entrano ed escono con la stessa eleganza del locale. Il compositing mescola la facciata storica con sovrapposizioni cromatiche che portano il passato nel presente.',
+                textEn: 'Babingtons has been at Piazza di Spagna since 1893. Founded by two English women, still run by women today \u2014 from the dining room to the kitchen. A place Balthus called "an old friend." For the 125th anniversary they needed a video that would honor this history without turning it into a documentary.\n\nI worked on the period illustrations \u2014 teapots, cups, Victorian ladies \u2014 animating them in After Effects with measured movements. No flashy effects: the graphics enter and exit with the same elegance as the venue. The compositing blends the historic facade with chromatic overlays that bring the past into the present.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/babingtons/babingtons-teiera-ombrello.webp',
+                        alt: { it: 'Babingtons \u2014 illustrazione teiera e ombrello animata in After Effects', en: 'Babingtons \u2014 teapot and umbrella illustration animated in After Effects' }
+                    },
+                    {
+                        src: '/images/portfolio/babingtons/babingtons-cupcake.webp',
+                        alt: { it: 'Babingtons \u2014 cupcake lampone, food photography e color grading', en: 'Babingtons \u2014 raspberry cupcake, food photography and color grading' }
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: 'I 7 t\u00E8 di Roma, le citazioni di Balthus, il cupcake sospeso su sfondo rosa \u2014 ogni elemento ha un suo registro visivo e il montaggio li alterna senza strappi. Il color grading cambia con le epoche: seppia e grana per le origini, colori saturi e puliti per il presente. La musica tiene tutto insieme.',
+                textEn: 'The 7 teas of Rome, Balthus quotes, the cupcake suspended on a pink background \u2014 each element has its own visual register and the editing alternates between them seamlessly. The color grading shifts with the eras: sepia and grain for the origins, saturated clean colors for the present. The music holds it all together.'
+            },
+            {
+                type: 'gallery',
+                columns: 2,
+                images: [
+                    {
+                        src: '/images/portfolio/babingtons/babingtons-donne-tazze.webp',
+                        alt: { it: 'Babingtons \u2014 illustrazioni vittoriane animate, tutte donne dalla sala alla cucina', en: 'Babingtons \u2014 animated Victorian illustrations, all women from dining room to kitchen' }
+                    },
+                    {
+                        src: '/images/portfolio/babingtons/babingtons-facciata-scalinata.webp',
+                        alt: { it: 'Babingtons \u2014 facciata Piazza di Spagna con compositing passato e presente', en: 'Babingtons \u2014 Piazza di Spagna facade with past and present compositing' }
+                    }
+                ]
+            },
+            {
+                type: 'text',
+                textIt: '**Crediti**\nVideo: Piero Perilli\nFotografia: Valerio de Berardinis',
+                textEn: '**Credits**\nVideo: Piero Perilli\nPhotography: Valerio de Berardinis'
+            }
+        ],
     },
     {
         slug: 'vetrya',
