@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useRef } from 'react';
 import { useLocale } from 'next-intl';
 import SafeImage from '@/components/SafeImage';
 import Link from 'next/link';
@@ -7,11 +8,30 @@ import AnimateOnScroll from '@/components/AnimateOnScroll';
 import type { BlogPost } from '@/data/posts';
 import { getPostSlug } from '@/lib/data';
 
+const categories = [
+  { key: 'all', labelIt: 'Tutti', labelEn: 'All' },
+  { key: 'vfx', labelIt: 'VFX', labelEn: 'VFX' },
+  { key: 'post', labelIt: 'Post Produzione', labelEn: 'Post Production' },
+  { key: 'motion', labelIt: 'Motion Graphics', labelEn: 'Motion Graphics' },
+  { key: '3d', labelIt: 'Animazione 3D', labelEn: '3D Animation' },
+  { key: 'ai', labelIt: 'AI & VFX', labelEn: 'AI & VFX' },
+];
+
 export default function BlogList({ posts }: { posts: BlogPost[] }) {
   const locale = useLocale();
   const isIt = locale === 'it';
+  const [activeFilter, setActiveFilter] = useState('all');
+  const filtersRef = useRef<HTMLElement>(null);
+
+  const handleFilter = (key: string) => {
+    setActiveFilter(key);
+    filtersRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const sorted = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const filtered = activeFilter === 'all'
+    ? sorted
+    : sorted.filter((p) => p.category === activeFilter);
 
   return (
     <article>
@@ -37,10 +57,30 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
         </div>
       </section>
 
+      <section ref={filtersRef} className="pb-8 md:pb-12 lg:pb-16 scroll-mt-24">
+        <div className="section-container">
+          <div className="flex flex-wrap gap-2 md:gap-3">
+            {categories.map((cat) => (
+              <button
+                key={cat.key}
+                onClick={() => handleFilter(cat.key)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
+                  ${activeFilter === cat.key
+                    ? 'bg-accent text-background'
+                    : 'bg-surface text-text-secondary hover:text-text-primary border border-border'
+                  }`}
+              >
+                {isIt ? cat.labelIt : cat.labelEn}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="pb-14 md:pb-20 lg:pb-28">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
-            {sorted.map((post, i) => (
+            {filtered.map((post, i) => (
               <AnimateOnScroll key={post.slug} delay={i * 80}>
                 <Link
                   href={`${isIt ? '' : '/en'}/blog/${getPostSlug(post, locale)}`}
