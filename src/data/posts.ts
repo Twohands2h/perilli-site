@@ -548,8 +548,8 @@ export const posts: BlogPost[] = [
         category: 'ai',
         categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
         keywordTarget: 'VFX artist AI workflow 2026',
-        thumbnail: '/images/portfolio/doppelganger-scacchi-compositing-finale.webp',
-        thumbnailAlt: { it: 'VFX artist e AI \u2014 workflow professionale 2026', en: 'VFX artist and AI \u2014 professional workflow 2026' },
+        thumbnail: '/images/portfolio/roche-jingle-ai-sciatore-slalom.webp',
+        thumbnailAlt: { it: 'VFX artist e AI — workflow professionale 2026', en: 'VFX artist and AI — professional workflow 2026' },
         contentIt: `<h2>La domanda sbagliata e quella giusta</h2>
 <p>\u201CL\u2019AI sostituir\u00E0 i VFX artist?\u201D \u00C8 la domanda che sento da due anni. La risposta breve \u00E8 no. La risposta lunga \u00E8 che la domanda stessa \u00E8 sbagliata. Quella giusta \u00E8: come cambia il lavoro di un <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX artist</a> quando ha a disposizione strumenti di AI generativa?</p>
 <p>Uso Runway, Veo, Kling e altri strumenti di <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a> ogni giorno. Non come esperimento \u2014 come parte del mio workflow produttivo reale, per clienti reali, con deadline reali. Ecco cosa ho imparato.</p>
@@ -615,8 +615,8 @@ export const posts: BlogPost[] = [
         category: 'vfx',
         categoryLabel: { it: 'VFX', en: 'VFX' },
         keywordTarget: 'green screen professionale guida',
-        thumbnail: '/images/portfolio/gucci-kids-hero.webp',
-        thumbnailAlt: { it: 'Green screen professionale — guida compositing', en: 'Professional green screen — compositing guide' },
+        thumbnail: '/images/portfolio/doppelganger-scacchi-compositing-finale.webp',
+        thumbnailAlt: { it: 'Green screen professionale — compositing scena scacchi', en: 'Professional green screen — chess scene compositing' },
         contentIt: `<h2>Il problema non è il green screen. È come lo usi.</h2>
 <p>Ogni settimana ricevo materiale girato su green screen che dovrebbe essere "facile da scontornare". Quasi mai lo è. Il problema non è lo strumento — è che la catena di lavoro dal set al compositing finale ha anelli deboli che nessuno ha controllato.</p>
 <p>Ho lavorato su centinaia di shot in chroma key: spot per <a href="/portfolio/gucci-kids" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Gucci Kids</a>, <a href="/portfolio/floverr" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">campagne prodotto come Floverr</a>, videoclip, film. In ogni progetto, la qualità del risultato finale si decide prima ancora di accendere la camera.</p>
@@ -692,8 +692,8 @@ export const posts: BlogPost[] = [
         category: 'post',
         categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
         keywordTarget: 'post produzione video workflow integrato',
-        thumbnail: '/images/portfolio/pleiadi-hero.webp',
-        thumbnailAlt: { it: 'Post-produzione video — workflow integrato', en: 'Video post-production — integrated workflow' },
+        thumbnail: '/images/portfolio/frangiamore/frangiamore-sylvio-giardina-hero.webp',
+        thumbnailAlt: { it: 'Post-produzione video — workflow integrato Frangiamore', en: 'Video post-production — integrated workflow Frangiamore' },
         contentIt: `<h2>Il collo di bottiglia che nessuno vede</h2>
 <p>La post-produzione tradizionale funziona così: il montatore monta, passa il progetto al colorist che fa il grading, poi il progetto va al VFX artist per gli effetti, poi torna al montatore per il conform, poi magari torna al colorist per aggiustamenti. Ogni passaggio è un export, un upload, una riunione, una possibilità di errore.</p>
 <p>Ho visto progetti dove il 30% del tempo totale di post-produzione se ne andava nei passaggi di mano tra professionisti. Non nel lavoro creativo — nella logistica.</p>
