@@ -7,13 +7,16 @@ import { ArrowRight, Calendar, MessageCircle } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 
 const filmography = [
-  { title: 'I Am Curious Johnny', role: 'VFX', detail: 'Film di Julian Temple', link: 'https://pro.imdb.com/title/tt35450650/' },
-  { title: 'Floverr', role: 'VFX', detail: 'Film', link: 'https://pro.imdb.com/title/tt36724898/' },
-  { title: 'Non tutto è perduto', role: 'Montaggio e Color', detail: 'Film cinema', link: 'https://pro.imdb.com/title/tt31173315/' },
-  { title: 'A mamma non piace', role: 'Color', detail: 'Film cinema', link: 'https://pro.imdb.com/title/tt38095764/' },
+  { title: 'I Am Curious Johnny', role: 'VFX', detail: 'Film di Julian Temple', link: 'https://www.imdb.com/title/tt35450650/' },
+  { title: 'Floverr', role: 'VFX', detail: 'Film', link: 'https://www.imdb.com/title/tt36724898/' },
+  { title: 'Non tutto è perduto', role: 'Montaggio e Color', detail: 'Film cinema', link: 'https://www.imdb.com/title/tt31173315/' },
+  { title: 'A mamma non piace', role: 'Color', detail: 'Film cinema', link: 'https://www.imdb.com/title/tt38095764/' },
   { title: 'Breaking dalla strada alle olimpiadi', role: 'Montaggio e Color', detail: 'Documentario RaiPlay', link: 'https://www.raiplay.it/programmi/breakingdallastradaalleolimpiadi' },
-  { title: 'Radio Caterina', role: 'Montaggio, Color, Animazioni', detail: 'Documentario History Channel', link: 'https://pro.imdb.com/title/tt29257837/' },
-  { title: 'Along Came Ruby', role: 'VFX', detail: 'Cortometraggio', link: 'https://pro.imdb.com/title/tt28106482/' },
+  { title: 'Radio Caterina', role: 'Montaggio, Color, Animazioni', detail: 'Documentario History Channel', link: 'https://www.imdb.com/title/tt29257837/' },
+  { title: 'Along Came Ruby', role: 'VFX', detail: 'Cortometraggio', link: 'https://www.imdb.com/title/tt28106482/' },
+  { title: 'Isole', role: 'Post-produzione', detail: 'Film', link: 'https://www.imdb.com/it/title/tt5429970/' },
+  { title: 'Frangiamore', role: 'Post-produzione', detail: 'Fashion Film', link: 'https://www.imdb.com/it/title/tt13472468/' },
+  { title: 'Pleiadi', role: 'Regia, Montaggio, Color, VFX', detail: 'Videoclip', link: 'https://www.imdb.com/it/title/tt33739333/' },
 ];
 
 export default function ChiSonoPage() {
@@ -168,7 +171,7 @@ export default function ChiSonoPage() {
                 </div>
                 <div className="flex gap-6 mt-6">
                   <a
-                    href="https://pro.imdb.com/name/nm3859505/credits"
+                    href="https://www.imdb.com/name/nm3859505/credits"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-bold text-accent hover:text-text-primary transition-colors uppercase tracking-wider"

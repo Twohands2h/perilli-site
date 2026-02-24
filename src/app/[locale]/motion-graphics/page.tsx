@@ -82,7 +82,14 @@ const contentIT = {
   ],
 
   tools: ['After Effects', 'Cinema 4D', '3ds Max', 'Illustrator', 'Photoshop', 'DaVinci Resolve Fusion', 'Premiere Pro'],
-
+  recentWorkTitle: 'Progetti motion graphics recenti',
+  recentWork: [
+    { title: 'Ipotesi Metaverso — installazione particellare per Triennale Milano', link: '/portfolio/ipotesi-metaverso' },
+    { title: 'PMI Abbiamo Cura di Te — animazione tratto continuo', link: '/portfolio/pmi' },
+    { title: 'Babingtons 125° Anniversario — illustrazioni animate e compositing', link: '/portfolio/babingtons' },
+    { title: 'Bonus Idrico Acea — animazione 2.5D', link: '/portfolio/bonus-idrico-acea' },
+    { title: '📖 Leggi: Motion graphics per spot istituzionali', link: '/blog/motion-graphics-spot-istituzionali-tratto-continuo-2d' },
+  ],
   ctaTitle: 'Pronto a dare voce',
   ctaSubtitle: 'al tuo design?',
   ctaText: 'Che tu sia un\'agenzia in cerca di un partner affidabile o un\'azienda che vuole potenziare il proprio marketing, raccontami il tuo progetto e troviamo insieme la soluzione visiva perfetta.',
@@ -151,7 +158,14 @@ const contentEN = {
   ],
 
   tools: ['After Effects', 'Cinema 4D', '3ds Max', 'Illustrator', 'Photoshop', 'DaVinci Resolve Fusion', 'Premiere Pro'],
-
+  recentWorkTitle: 'Recent motion graphics projects',
+  recentWork: [
+    { title: 'Ipotesi Metaverso — particle installation for Triennale Milano', link: '/en/portfolio/ipotesi-metaverso' },
+    { title: 'PMI Abbiamo Cura di Te — continuous stroke animation', link: '/en/portfolio/pmi' },
+    { title: 'Babingtons 125th Anniversary — animated illustrations and compositing', link: '/en/portfolio/babingtons' },
+    { title: 'Bonus Idrico Acea — 2.5D animation', link: '/en/portfolio/bonus-idrico-acea' },
+    { title: '📖 Read: Motion graphics for institutional commercials', link: '/en/blog/motion-graphics-institutional-commercials-continuous-stroke-2d' },
+  ],
   ctaTitle: 'Ready to give voice',
   ctaSubtitle: 'to your design?',
   ctaText: "Whether you're an agency looking for a reliable partner or a company wanting to enhance your marketing, tell me about your project and let's find the perfect visual solution together.",

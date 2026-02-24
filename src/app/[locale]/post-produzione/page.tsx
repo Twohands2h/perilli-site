@@ -75,9 +75,8 @@ const contentIT = {
     { title: 'Breaking dalla strada alle olimpiadi — di Fabrizio Silvestri per RAI Documentari', link: '/portfolio/breaking-olimpiadi' },
     { title: 'I Am Curious Johnny — di Julian Temple', link: 'https://www.imdb.com/it/title/tt35450650/' },
     { title: 'Non tutto è perduto — di Francesco Bellomo — Film Cinema', link: 'https://www.imdb.com/it/title/tt31173315/' },
-    { title: 'A mamma non piace — di Gianni Leacche — Film', link: 'https://www.cinemaitaliano.info/amammanonpiace' },
-    { title: 'Giorni di Grazia — di Sofia Nacchia — Film Cinema' },
-    { title: '72 ore — di Luciano Luminelli — Film' },
+    { title: 'Vetrya — video corporate, regia Daniele Fiore', link: '/portfolio/vetrya' },
+    { title: 'Save the Children — spot campagna nazionale', link: '/portfolio/save-the-children' },
     { title: '📖 Leggi: Color Grading per film — il mio workflow DaVinci Resolve', link: '/blog/color-grading-film-davinci-resolve-workflow' },
   ],
 
@@ -144,9 +143,8 @@ const contentEN = {
     { title: 'Breaking from the street to the Olympics — by Fabrizio Silvestri for RAI', link: 'https://www.raiplay.it/programmi/breakingdallastradaalleolimpiadi' },
     { title: 'I Am Curious Johnny — by Julian Temple', link: 'https://www.imdb.com/it/title/tt35450650/' },
     { title: 'Non tutto è perduto — by Francesco Bellomo — Theatrical', link: 'https://www.imdb.com/it/title/tt31173315/' },
-    { title: 'A mamma non piace — by Gianni Leacche — Film', link: 'https://www.cinemaitaliano.info/amammanonpiace' },
-    { title: 'Giorni di Grazia — by Sofia Nacchia — Theatrical' },
-    { title: '72 ore — by Luciano Luminelli — Film' },
+    { title: 'Vetrya — corporate video, directed by Daniele Fiore', link: '/en/portfolio/vetrya' },
+    { title: 'Save the Children — national campaign commercial', link: '/en/portfolio/save-the-children' },
     { title: '📖 Read: Color Grading for film — my DaVinci Resolve workflow', link: '/en/blog/color-grading-film-davinci-resolve-workflow' },
   ],
 

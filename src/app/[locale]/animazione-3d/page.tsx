@@ -82,7 +82,14 @@ const contentIT = {
   ],
 
   tools: ['3ds Max', 'ZBrush', 'Character Creator', 'Unreal Engine 5', 'tyFlow', 'V-Ray', 'Substance Painter', 'After Effects'],
-
+  recentWorkTitle: 'Progetti di animazione recenti',
+  recentWork: [
+    { title: 'Guerciotti 60 Anni — telaio carbonio, animazione 3D fotorealistica', link: '/portfolio/guerciotti-60-anni' },
+    { title: 'JOR Collezione Liaison — gioielli 3D in Unreal Engine 5', link: '/portfolio/jor' },
+    { title: 'GRAnROMA Fresia — render architettonico 3D per centro commerciale', link: '/portfolio/granroma-fresia' },
+    { title: 'Klinamen Orion — animazione 3D particellare', link: '/portfolio/klinamen-orion' },
+    { title: '📖 Leggi: Animazione 3D di prodotto — presentazione cinematografica', link: '/blog/animazione-3d-prodotto-presentazione-cinematografica' },
+  ],
   ctaTitle: 'Hai una storia',
   ctaSubtitle: 'da animare?',
   ctaText: 'Che tu abbia bisogno di un video di prodotto che venda, di un personaggio che emozioni o di una narrazione che catturi l\'attenzione — raccontami il progetto e daremo vita insieme alla tua idea.',
@@ -151,7 +158,14 @@ const contentEN = {
   ],
 
   tools: ['3ds Max', 'ZBrush', 'Character Creator', 'Unreal Engine 5', 'tyFlow', 'V-Ray', 'Substance Painter', 'After Effects'],
-
+  recentWorkTitle: 'Recent animation projects',
+  recentWork: [
+    { title: 'Guerciotti 60 Years — carbon frame, photorealistic 3D animation', link: '/en/portfolio/guerciotti-60-anni' },
+    { title: 'JOR Liaison Collection — 3D jewelry in Unreal Engine 5', link: '/en/portfolio/jor' },
+    { title: 'GRAnROMA Fresia — 3D architectural render for shopping center', link: '/en/portfolio/granroma-fresia' },
+    { title: 'Klinamen Orion — 3D particle animation', link: '/en/portfolio/klinamen-orion' },
+    { title: '📖 Read: 3D product animation — cinematic presentation', link: '/en/blog/3d-product-animation-cinematic-presentation' },
+  ],
   ctaTitle: 'Have a story',
   ctaSubtitle: 'that needs animating?',
   ctaText: "Whether you need a product video that sells, a character that moves people or a narrative that captures attention — tell me about the project and we'll bring your idea to life together.",

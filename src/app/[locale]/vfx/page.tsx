@@ -91,10 +91,11 @@ const contentIT = {
   recentWork: [
     { title: 'Along Came Ruby — cortometraggio, VFX complessi', link: '/portfolio/along-came-ruby' },
     { title: 'I Am Curious Johnny — di Julian Temple, VFX e clean-up', link: 'https://www.imdb.com/it/title/tt35450650/' },
-    { title: 'Floverr — film in produzione, supervisione VFX', link: '' },
-    { title: 'Non tutto è perduto — film cinema, VFX e post-produzione', link: 'https://www.imdb.com/it/title/tt31173315/' },
+    { title: 'Floverr — film in produzione, supervisione VFX', link: '/portfolio/floverr' },
+    { title: 'Gucci Kids — compositing green screen per campagna Gucci', link: '/portfolio/gucci-kids' },
     { title: '📖 Leggi: VFX per cinema indipendente — guida al workflow', link: '/blog/vfx-cinema-indipendente-guida-workflow' },
     { title: '📖 Leggi: Breakdown VFX di Along Came Ruby', link: '/blog/breakdown-vfx-along-came-ruby' },
+    { title: '📖 Leggi: VFX compositing — integrare elementi 3D in scene reali', link: '/blog/vfx-compositing-integrare-elementi-3d-scene-reali' },
   ],
 
   tools: ['After Effects', 'Nuke', '3ds Max', 'Unreal Engine 5', 'DaVinci Resolve Fusion', 'Mocha Pro', 'ZBrush'],
@@ -176,10 +177,11 @@ const contentEN = {
   recentWork: [
     { title: 'Along Came Ruby — short film, complex VFX', link: '/en/portfolio/along-came-ruby' },
     { title: 'I Am Curious Johnny — Julian Temple, VFX and clean-up', link: 'https://www.imdb.com/it/title/tt35450650/' },
-    { title: 'Floverr — film in production, VFX supervision', link: '' },
-    { title: 'Non tutto è perduto — theatrical film, VFX and post-production', link: 'https://www.imdb.com/it/title/tt31173315/' },
+    { title: 'Floverr — film in production, VFX supervision', link: '/en/portfolio/floverr' },
+    { title: 'Gucci Kids — green screen compositing for Gucci campaign', link: '/en/portfolio/gucci-kids' },
     { title: '📖 Read: VFX for independent cinema — workflow guide', link: '/en/blog/vfx-independent-film-workflow-guide' },
     { title: '📖 Read: VFX Breakdown of Along Came Ruby', link: '/en/blog/vfx-breakdown-along-came-ruby' },
+    { title: '📖 Read: VFX compositing — integrating 3D elements in real scenes', link: '/en/blog/vfx-compositing-integrating-3d-elements-real-scenes' },
   ],
 
   tools: ['After Effects', 'Nuke', '3ds Max', 'Unreal Engine 5', 'DaVinci Resolve Fusion', 'Mocha Pro', 'ZBrush'],

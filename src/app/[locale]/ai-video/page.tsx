@@ -87,6 +87,7 @@ const contentIT = {
     { title: 'Roche — Jingle natalizio AI-generated', link: '/portfolio/roche-jingle-ai' },
     { title: 'Doppelganger — Campagna AI per Bando 2025', link: '/portfolio/doppelganger' },
     { title: '📖 Leggi: Come scelgo tra AI e VFX tradizionale per ogni shot', link: '/blog/ai-vs-vfx-tradizionale-come-scegliere' },
+    { title: '📖 Leggi: Come un VFX artist usa l\'AI nel 2026', link: '/blog/come-vfx-artist-usa-ai-workflow-2026' },
   ],
 
   ctaTitle: 'Vuoi esplorare l\'AI video',
@@ -162,6 +163,7 @@ const contentEN = {
     { title: 'Roche — AI-generated Christmas jingle', link: '/en/portfolio/roche-jingle-ai' },
     { title: 'Doppelganger — AI Campaign for Bando 2025', link: '/en/portfolio/doppelganger' },
     { title: '📖 Read: How I choose between AI and traditional VFX for every shot', link: '/en/blog/ai-vs-traditional-vfx-how-to-choose' },
+    { title: '📖 Read: How a VFX artist uses AI in 2026', link: '/en/blog/how-vfx-artist-uses-ai-workflow-2026' },
   ],
 
   ctaTitle: 'Want to explore AI video',
