@@ -35,18 +35,20 @@ export default function ContattiPage() {
         router.push(isIt ? '/grazie' : '/en/thank-you');
         return;
       } else {
-        // Fallback: open mailto
+        // Fallback: open mailto then redirect
         const subject = encodeURIComponent(`Nuovo contatto da ${formData.name}`);
         const body = encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\nProgetto: ${formData.projectType || 'Non specificato'}\n\n${formData.message}`);
         window.open(`mailto:info@pieroperilli.com?subject=${subject}&body=${body}`, '_self');
-        setStatus('sent');
+        router.push(isIt ? '/grazie' : '/en/thank-you');
+        return;
       }
     } catch {
-      // Fallback: open mailto
+      // Fallback: open mailto then redirect
       const subject = encodeURIComponent(`Nuovo contatto da ${formData.name}`);
       const body = encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\nProgetto: ${formData.projectType || 'Non specificato'}\n\n${formData.message}`);
       window.open(`mailto:info@pieroperilli.com?subject=${subject}&body=${body}`, '_self');
-      setStatus('sent');
+      router.push(isIt ? '/grazie' : '/en/thank-you');
+      return;
     }
   };
 
