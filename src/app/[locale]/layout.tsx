@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -114,7 +115,7 @@ export default async function LocaleLayout({
             <LanguageSuggestion />
 
             <CookieConsent />
-            <AnalyticsScripts />
+            <AnalyticsScripts /><Analytics />
           </ConsentProvider>
         </NextIntlClientProvider>
       </body>
