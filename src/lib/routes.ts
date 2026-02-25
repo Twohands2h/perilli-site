@@ -18,6 +18,7 @@ const enPathMap: Record<string, string> = {
   '/post-produzione': '/post-production',
   '/animazione-3d': '/3d-animation',
   '/contatti': '/contact',
+  '/grazie': '/thank-you',
 };
 
 // Blog slug mappings: IT slug → EN slug

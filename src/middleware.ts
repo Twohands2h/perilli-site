@@ -9,6 +9,7 @@ const enToItRewrites: Record<string, string> = {
   '/en/post-production': '/en/post-produzione',
   '/en/3d-animation': '/en/animazione-3d',
   '/en/contact': '/en/contatti',
+  '/en/thank-you': '/en/grazie',
 };
 
 // Old EN URLs (IT slugs with /en/) → new EN URLs (EN slugs)
@@ -17,6 +18,7 @@ const redirects: Record<string, string> = {
   '/en/post-produzione': '/en/post-production',
   '/en/animazione-3d': '/en/3d-animation',
   '/en/contatti': '/en/contact',
+  '/en/grazie': '/en/thank-you',
 };
 
 // Blog: build EN slug → IT slug mappings from posts data

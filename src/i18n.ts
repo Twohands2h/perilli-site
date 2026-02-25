@@ -30,6 +30,10 @@ export const pathnames = {
     it: '/contatti',
     en: '/contact',
   },
+  '/grazie': {
+    it: '/grazie',
+    en: '/thank-you',
+  },
   '/privacy': '/privacy',
 } as const;
 

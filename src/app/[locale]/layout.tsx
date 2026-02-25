@@ -9,6 +9,7 @@ import CookieConsent, { ConsentProvider } from '@/components/CookieConsent';
 import ScrollToTop from '@/components/ScrollToTop';
 import ScrollRestoration from '@/components/ScrollRestoration';
 import LanguageSuggestion from '@/components/LanguageSuggestion';
+import AnalyticsScripts from '@/components/AnalyticsScripts';
 
 import { PersonSchema, LocalBusinessSchema } from '@/components/seo/SchemaMarkup';
 import { getPageAlternates, getPageOgUrl } from '@/lib/seo';
@@ -113,6 +114,7 @@ export default async function LocaleLayout({
             <LanguageSuggestion />
 
             <CookieConsent />
+            <AnalyticsScripts />
           </ConsentProvider>
         </NextIntlClientProvider>
       </body>

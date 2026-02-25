@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import { Mail, Phone, MapPin, Calendar, MessageCircle, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function ContattiPage() {
   const t = useTranslations('contact');
   const locale = useLocale();
+  const router = useRouter();
   const isIt = locale === 'it';
 
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -29,8 +31,9 @@ export default function ContattiPage() {
       });
 
       if (res.ok) {
-        setStatus('sent');
-        setFormData({ name: '', email: '', projectType: '', message: '' });
+        // Redirect to thank-you page for GA4 conversion tracking
+        router.push(isIt ? '/grazie' : '/en/thank-you');
+        return;
       } else {
         // Fallback: open mailto
         const subject = encodeURIComponent(`Nuovo contatto da ${formData.name}`);
