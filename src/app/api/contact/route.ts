@@ -27,6 +27,113 @@ function sanitize(str: string): string {
         .replace(/"/g, '&quot;');
 }
 
+// Confirmation email template for the visitor
+function getConfirmationEmailHtml(name: string): string {
+    const firstName = sanitize(name.split(' ')[0]);
+    return `
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; background-color: #0a0a0a; font-family: Arial, Helvetica, sans-serif;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #0a0a0a;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="520" style="max-width: 520px;">
+          
+          <!-- Logo -->
+          <tr>
+            <td align="left" style="padding-bottom: 32px;">
+              <img src="https://pieroperilli.com/images/PieroLogo-white.png" alt="PIERO." width="100" style="display: block; border: 0;" />
+            </td>
+          </tr>
+
+          <!-- Divider top -->
+          <tr>
+            <td style="border-top: 2px solid #f5aa44; padding-top: 32px;">
+            </td>
+          </tr>
+
+          <!-- Greeting -->
+          <tr>
+            <td style="padding-bottom: 24px;">
+              <p style="margin: 0; font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.3;">
+                Ciao ${firstName},
+              </p>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding-bottom: 16px;">
+              <p style="margin: 0; font-size: 15px; color: #cccccc; line-height: 1.6;">
+                grazie per avermi contattato. Ho ricevuto il tuo messaggio e ti risponderò il prima possibile.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 32px;">
+              <p style="margin: 0; font-size: 15px; color: #cccccc; line-height: 1.6;">
+                Nel frattempo, puoi dare un'occhiata al mio portfolio e ai miei lavori recenti.
+              </p>
+            </td>
+          </tr>
+
+          <!-- CTA Button -->
+          <tr>
+            <td align="left" style="padding-bottom: 40px;">
+              <a href="https://pieroperilli.com/portfolio" 
+                 style="display: inline-block; background-color: #f5aa44; color: #0a0a0a; font-size: 13px; font-weight: 700; text-decoration: none; padding: 12px 28px; letter-spacing: 0.5px;">
+                VEDI IL PORTFOLIO
+              </a>
+            </td>
+          </tr>
+
+          <!-- Divider bottom -->
+          <tr>
+            <td style="border-top: 1px solid #222222; padding-top: 24px;">
+            </td>
+          </tr>
+
+          <!-- Signature -->
+          <tr>
+            <td style="padding-bottom: 8px;">
+              <p style="margin: 0; font-size: 14px; font-weight: 700; color: #ffffff;">
+                Piero Perilli
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 16px;">
+              <p style="margin: 0; font-size: 12px; color: #888888; line-height: 1.5;">
+                VFX Artist & Post Produzione Video<br>
+                <a href="https://pieroperilli.com" style="color: #f5aa44; text-decoration: none;">pieroperilli.com</a>
+                &nbsp;&middot;&nbsp;
+                <a href="tel:+393920187759" style="color: #888888; text-decoration: none;">+39 392 018 7759</a>
+                &nbsp;&middot;&nbsp;
+                <span style="color: #888888;">Roma</span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p style="margin: 0; font-size: 10px; color: #555555; letter-spacing: 0.3px;">
+                VFX&nbsp;&nbsp;&middot;&nbsp;&nbsp;Motion Graphics&nbsp;&nbsp;&middot;&nbsp;&nbsp;Color Grading&nbsp;&nbsp;&middot;&nbsp;&nbsp;Animazione 3D&nbsp;&nbsp;&middot;&nbsp;&nbsp;AI Video
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
+
 export async function POST(request: Request) {
     // Rate limit by IP
     const forwarded = request.headers.get('x-forwarded-for');
@@ -67,6 +174,7 @@ export async function POST(request: Request) {
     }
 
     try {
+        // 1. Send notification to Piero
         const res = await fetch('https://api.resend.com/emails', {
             method: 'POST',
             headers: {
@@ -89,13 +197,34 @@ export async function POST(request: Request) {
             }),
         });
 
-        if (res.ok) {
-            return NextResponse.json({ success: true });
-        } else {
+        if (!res.ok) {
             const error = await res.json();
             console.error('Resend error:', error);
             return NextResponse.json({ error: 'Send failed' }, { status: 500 });
         }
+
+        // 2. Send confirmation email to visitor (fire-and-forget, don't block on failure)
+        try {
+            await fetch('https://api.resend.com/emails', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${RESEND_API_KEY}`,
+                },
+                body: JSON.stringify({
+                    from: 'Piero Perilli <noreply@pieroperilli.com>',
+                    to: [email],
+                    reply_to: 'info@pieroperilli.com',
+                    subject: 'Grazie per avermi contattato — Piero Perilli',
+                    html: getConfirmationEmailHtml(name),
+                }),
+            });
+        } catch (confirmErr) {
+            // Log but don't fail the whole request if confirmation email fails
+            console.error('Confirmation email error:', confirmErr);
+        }
+
+        return NextResponse.json({ success: true });
     } catch (err) {
         console.error('Contact form error:', err);
         return NextResponse.json({ error: 'Server error' }, { status: 500 });
