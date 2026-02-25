@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 /**
  * Image wrapper that:
- * - Shows a subtle placeholder while loading (prevents black flash)
+ * - Shows a shimmer placeholder while loading (prevents black flash)
  * - Shows a dark background (#131313) if the image fails to load
  * Drop-in replacement for next/image — same props.
  */
@@ -18,18 +18,24 @@ export default function SafeImage(props: ImageProps) {
     }
 
     return (
-        <div className="relative w-full h-full">
-            {/* Placeholder background — visible until image loads */}
+        <>
             {!loaded && (
-                <div className="absolute inset-0 bg-[#1a1a1a] animate-pulse" />
+                <div
+                    className="absolute inset-0 z-[1]"
+                    style={{
+                        background: 'linear-gradient(110deg, #1a1a1a 30%, #2a2a2a 50%, #1a1a1a 70%)',
+                        backgroundSize: '200% 100%',
+                        animation: 'shimmer 1.5s ease-in-out infinite',
+                    }}
+                />
             )}
             <Image
                 {...props}
                 quality={props.quality ?? 90}
                 onError={() => setFailed(true)}
                 onLoad={() => setLoaded(true)}
-                className={`${props.className || ''} transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`${props.className || ''} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
             />
-        </div>
+        </>
     );
 }
