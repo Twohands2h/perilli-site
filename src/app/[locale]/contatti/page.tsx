@@ -53,7 +53,8 @@ export default function ContattiPage() {
   };
 
   return (
-    <section className="pt-24 pb-10 md:pt-32 md:pb-16 lg:pt-40 lg:pb-20">
+    <section className="pt-8 pb-10 md:pt-12 md:pb-16 lg:pt-16 lg:pb-20"
+    >
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left — Form */}
