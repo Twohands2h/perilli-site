@@ -86,6 +86,24 @@ const nextConfig = {
       // Altre pagine
       { source: '/cookie', destination: '/privacy', permanent: true },
       { source: '/cookie/', destination: '/privacy', permanent: true },
+
+      // Soft 404 — vecchi URL da redirectare
+      { source: '/contact', destination: '/contatti', permanent: true },
+      { source: '/contact/', destination: '/contatti', permanent: true },
+      { source: '/wonder-alba', destination: '/portfolio/wonder-alba', permanent: true },
+      { source: '/wonder-alba/', destination: '/portfolio/wonder-alba', permanent: true },
+      { source: '/babingtons', destination: '/portfolio/babingtons', permanent: true },
+      { source: '/babingtons/', destination: '/portfolio/babingtons', permanent: true },
+      { source: '/projects', destination: '/portfolio', permanent: true },
+      { source: '/projects/', destination: '/portfolio', permanent: true },
+      { source: '/acea-bonus-idrico', destination: '/portfolio/bonus-idrico-acea-acqua', permanent: true },
+      { source: '/acea-bonus-idrico/', destination: '/portfolio/bonus-idrico-acea-acqua', permanent: true },
+      { source: '/gucci-kids', destination: '/portfolio/gucci-kids', permanent: true },
+      { source: '/gucci-kids/', destination: '/portfolio/gucci-kids', permanent: true },
+      { source: '/jon-martin-house-collection-voli', destination: '/portfolio', permanent: true },
+      { source: '/jon-martin-house-collection-voli/', destination: '/portfolio', permanent: true },
+      { source: '/valtur-vita-da-gatto', destination: '/portfolio', permanent: true },
+      { source: '/valtur-vita-da-gatto/', destination: '/portfolio', permanent: true },
     ];
   },
 };
