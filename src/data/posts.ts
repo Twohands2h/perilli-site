@@ -767,8 +767,11 @@ export const posts: BlogPost[] = [
         category: 'ai',
         categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
         keywordTarget: 'AI video generation 2026',
-        thumbnail: '/images/portfolio/roche-jingle-ai-hero.webp',
-        thumbnailAlt: { it: 'AI video generation 2026 — strumenti professionali', en: 'AI video generation 2026 — professional tools' },
+        thumbnail: '/images/blog/ai-video-generation-2026-hero.webp',
+        thumbnailAlt: {
+            it: 'AI video generation 2026 — dettaglio guanto da un video generato con Veo',
+            en: 'AI video generation 2026 — glove detail from a Veo-generated video',
+        },
         contentIt: `<p><em>Ultimo aggiornamento: Marzo 2026</em></p>
 
 <p>Il mercato dell'AI video generation è esploso. Ogni mese esce un nuovo modello, ogni settimana qualcuno dichiara che "il cinema tradizionale è morto". Uso questi strumenti ogni giorno nel mio <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow di AI video production</a> per clienti reali. Ecco cosa funziona davvero nel 2026, senza proclami.</p>
