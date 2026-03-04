@@ -760,16 +760,17 @@ export const posts: BlogPost[] = [
         slugEn: 'ai-video-generation-2026-what-actually-works',
         titleIt: 'AI video generation nel 2026: cosa funziona davvero (e cosa no)',
         titleEn: 'AI video generation in 2026: what actually works (and what doesn\'t)',
-        excerptIt: 'Runway Gen-4, Veo 3, Kling 2.0, Sora — li uso tutti nel mio lavoro quotidiano. Ecco una mappa onesta di cosa produce risultati professionali, cosa è ancora acerbo e dove stiamo andando.',
-        excerptEn: 'Runway Gen-4, Veo 3, Kling 2.0, Sora — I use them all in my daily work. Here\'s an honest map of what produces professional results, what\'s still immature and where we\'re headed.',
-        date: '2026-04-15',
-        readingTime: 8,
+        excerptIt: 'Runway Gen-4, Veo, Kling, Sora, Seedance 2.0, Higgsfield, Nano Banana — li uso tutti nel mio lavoro quotidiano. Ecco una mappa onesta di cosa produce risultati professionali e dove stiamo andando. Aggiornato a marzo 2026.',
+        excerptEn: 'Runway Gen-4, Veo, Kling, Sora, Seedance 2.0, Higgsfield, Nano Banana — I use them all in my daily work. Here\'s an honest map of what produces professional results and where we\'re headed. Updated March 2026.',
+        date: '2026-03-04',
+        readingTime: 10,
         category: 'ai',
         categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
         keywordTarget: 'AI video generation 2026',
         thumbnail: '/images/portfolio/roche-jingle-ai-hero.webp',
         thumbnailAlt: { it: 'AI video generation 2026 — strumenti professionali', en: 'AI video generation 2026 — professional tools' },
-        contentIt: `<h2>Lo stato dell'arte, senza hype</h2>
+        contentIt: `<p><em>Ultimo aggiornamento: Marzo 2026</em></p>
+
 <p>Il mercato dell'AI video generation è esploso. Ogni mese esce un nuovo modello, ogni settimana qualcuno dichiara che "il cinema tradizionale è morto". Uso questi strumenti ogni giorno nel mio <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow di AI video production</a> per clienti reali. Ecco cosa funziona davvero nel 2026, senza proclami.</p>
 
 <h2>Gli strumenti che uso e come li giudico</h2>
@@ -777,7 +778,9 @@ export const posts: BlogPost[] = [
 <p><strong>Veo (Google).</strong> Qualità visiva impressionante — i frame singoli sono spesso indistinguibili da footage reale. L'ho usato estesamente per <a href="/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">il progetto Roche</a>, dove la qualità del singolo frame era prioritaria. Il limite: meno controllo sulla camera rispetto a Runway e tempi di generazione più lunghi.</p>
 <p><strong>Kling AI.</strong> Eccellente per il movimento di soggetti umani — camminate, gesti, espressioni facciali. Dove Runway e Veo producono movimenti rigidi sui corpi umani, Kling genera fluidità naturale. Lo uso quando il protagonista del video è una persona in movimento.</p>
 <p><strong>Sora (OpenAI).</strong> Potente sulla qualità cinematografica e sulla comprensione delle fisiche reali — acqua, fumo, luce che rimbalza. Ma il workflow è meno flessibile per la produzione professionale. Lo uso per concept e pre-visualizzazione più che per output finali.</p>
-<p><strong>Midjourney (per frame di riferimento).</strong> Non genera video, ma resta insostituibile per creare frame chiave che poi uso come riferimento per i video generativi. La qualità estetica di Midjourney è ancora superiore a qualsiasi frame estratto da video AI.</p>
+<p><strong>Seedance 2.0 (ByteDance).</strong> Il nuovo arrivato che ha fatto rumore — a ragione. Il motion dei soggetti umani è il più realistico che abbia visto: peso, gravità, fisica credibile su corpi in movimento. I personaggi corrono, cadono, combattono con una naturalezza che gli altri modelli ancora non raggiungono. Il sistema multi-shot mantiene coerenza visiva tra clip diverse, e il lip-sync nativo con audio integrato apre possibilità interessanti per contenuti narrativi. I limiti: la risoluzione nativa è ancora 720p — su uno schermo grande gli artefatti si vedono, e serve upscaling. L'accesso fuori dalla Cina passa per piattaforme terze, e la censura sui volti reali è aggressiva. Per ora lo uso soprattutto per previsualization e contenuti social dove il realismo del movimento conta più della risoluzione.</p>
+<p><strong>Higgsfield.</strong> Più che un singolo modello, è una piattaforma che aggrega i migliori — Sora 2, Kling, Veo 3.1 — sotto un'unica interfaccia con controlli cinematografici. Il Cinema Studio permette di impostare movimenti di camera specifici (dolly, tracking, steadicam) e il sistema di preset replica la grammatica del cinema reale. Il generatore interno non è il più forte, ma il valore è nel workflow: scegli il modello giusto per ogni shot, applichi i controlli, e lavori in un ambiente unico senza saltare tra cinque piattaforme diverse. Per chi produce volumi alti di contenuti — social, advertising, varianti creative — è un moltiplicatore di efficienza.</p>
+<p><strong>Per i frame di riferimento: Nano Banana e Midjourney.</strong> Il frame chiave — l'immagine di partenza che guida la generazione video — è il passaggio più importante del workflow. Midjourney resta un riferimento per qualità estetica, soprattutto su atmosfere cinematografiche e illuminazione. Ma Nano Banana 2 di Google ha cambiato la partita: genera immagini di qualità Pro a velocità istantanea, mantiene la consistenza del personaggio su più immagini, e rende testo leggibile — un punto debole storico di tutti i generatori. Lo uso sempre più spesso per iterare velocemente sulle direzioni creative prima di passare alla generazione video.</p>
 
 <h2>Cosa funziona per la produzione professionale</h2>
 <p><strong>Concept e pre-visualizzazione.</strong> Qui l'AI è già insostituibile. Devo esplorare dieci direzioni creative per un regista o un'agenzia? Genero varianti visive in ore, non giorni. Per <a href="/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Doppelganger</a> l'AI ha generato l'intera base visiva del progetto.</p>
@@ -786,20 +789,22 @@ export const posts: BlogPost[] = [
 <p><strong>Prototyping per pitch commerciali.</strong> Un'agenzia deve vendere un concept a un cliente? Invece di un mood board statico, consegno un video concept AI in pochi giorni. Il tasso di approvazione è incomparabilmente più alto.</p>
 
 <h2>Cosa non funziona (ancora)</h2>
-<p><strong>Coerenza di personaggio.</strong> Stessa persona, stesso volto, stessi vestiti per trenta secondi di video. Nessuno strumento lo fa in modo affidabile. Servono workaround — face swap, compositing, generazione frame-by-frame con riferimento — e tutti richiedono ore di lavoro manuale.</p>
+<p><strong>Coerenza di personaggio.</strong> Stessa persona, stesso volto, stessi vestiti per trenta secondi di video. Nessuno strumento lo fa in modo affidabile — Seedance 2.0 ha fatto passi avanti con il multi-shot, ma non siamo ancora alla coerenza totale. Servono workaround — face swap, compositing, generazione frame-by-frame con riferimento — e tutti richiedono ore di lavoro manuale.</p>
 <p><strong>Testo leggibile.</strong> L'AI genera testo nei video come un ubriaco scrive sulla lavagna. Per qualsiasi contenuto con testo on-screen — titoli, lower thirds, sottopancia — serve ancora <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a> tradizionale.</p>
 <p><strong>Interazione soggetto-oggetto precisa.</strong> Una mano che afferra un oggetto specifico, un dito che preme un bottone, un prodotto manipolato da mani umane. L'AI produce artefatti evidenti. Per video di prodotto con interazione umana, serve <a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">animazione 3D</a> tradizionale.</p>
-<p><strong>Audio sincronizzato.</strong> Lipsync, suoni ambientali coerenti, Foley — l'audio generato da AI è ancora primitivo per standard professionali. Il video AI va sempre abbinato a una produzione audio separata.</p>
+<p><strong>Audio sincronizzato.</strong> Lipsync, suoni ambientali coerenti, Foley — l'audio generato da AI è ancora primitivo per standard professionali. Seedance 2.0 ha il lip-sync nativo più avanzato, ma per una produzione seria il video AI va ancora abbinato a una produzione audio separata.</p>
 
 <h2>Il fattore che nessuno menziona: il post-processing</h2>
 <p>Ecco la verità che i demo reel degli strumenti AI non mostrano: il video AI grezzo non è mai il video finale. Ogni clip generata passa per il mio workflow di post-produzione — color correction, stabilizzazione, pulizia artefatti, compositing con elementi reali, grading per coerenza con il resto del progetto.</p>
 <p>Questo è il motivo per cui vent'anni di esperienza in post-produzione sono il mio vero vantaggio competitivo nell'era dell'AI. Chiunque può generare un video. Pochissimi sanno trasformarlo in un prodotto professionale.</p>
 
 <h2>Dove andiamo</h2>
-<p>Tra un anno, la coerenza dei personaggi sarà risolta. Tra due, il controllo frame-by-frame sarà lo standard. Tra tre, la distinzione tra "girato" e "generato" sarà irrilevante per il 90% delle applicazioni.</p>
+<p>Il ritmo è accelerato rispetto a sei mesi fa. Seedance 2.0 ha dimostrato che il realismo del motion umano è a portata — tra un anno la coerenza dei personaggi sarà risolta. Piattaforme come Higgsfield stanno trasformando l'AI video da singoli strumenti isolati a ecosistemi di produzione completi. Nano Banana 2 ha reso la generazione di frame di riferimento istantanea e quasi gratuita.</p>
+<p>Tra due anni, il controllo frame-by-frame sarà lo standard. Tra tre, la distinzione tra "girato" e "generato" sarà irrilevante per il 90% delle applicazioni.</p>
 <p>Ma il principio non cambia: servirà sempre qualcuno con l'occhio, l'esperienza e il gusto per dirigere questi strumenti. Non "usarli" — dirigerli. Come un regista dirige una troupe, un professionista esperto dirige l'AI. E il risultato è incomparabilmente diverso.</p>`,
 
-        contentEn: `<h2>The state of the art, without hype</h2>
+        contentEn: `<p><em>Last updated: March 2026</em></p>
+
 <p>The AI video generation market has exploded. Every month a new model drops, every week someone declares "traditional cinema is dead." I use these tools daily in my <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production workflow</a> for real clients. Here's what actually works in 2026, without proclamations.</p>
 
 <h2>The tools I use and how I judge them</h2>
@@ -807,7 +812,9 @@ export const posts: BlogPost[] = [
 <p><strong>Veo (Google).</strong> Impressive visual quality — individual frames are often indistinguishable from real footage. I used it extensively for <a href="/en/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">the Roche project</a>, where single-frame quality was the priority. The limitation: less camera control than Runway and longer generation times.</p>
 <p><strong>Kling AI.</strong> Excellent for human subject movement — walks, gestures, facial expressions. Where Runway and Veo produce rigid body movements, Kling generates natural fluidity. I use it when the video protagonist is a person in motion.</p>
 <p><strong>Sora (OpenAI).</strong> Powerful on cinematic quality and real physics understanding — water, smoke, bouncing light. But the workflow is less flexible for professional production. I use it for concept and pre-visualization more than final output.</p>
-<p><strong>Midjourney (for reference frames).</strong> It doesn't generate video, but remains irreplaceable for creating key frames I then use as reference for generative video. Midjourney's aesthetic quality is still superior to any frame extracted from AI video.</p>
+<p><strong>Seedance 2.0 (ByteDance).</strong> The newcomer that made noise — for good reason. Human subject motion is the most realistic I've seen: weight, gravity, believable physics on moving bodies. Characters run, fall, fight with a naturalness other models still can't match. The multi-shot system maintains visual coherence across different clips, and native lip-sync with integrated audio opens interesting possibilities for narrative content. The limits: native resolution is still 720p — on a large screen the artifacts show, and upscaling is needed. Access outside China goes through third-party platforms, and censorship on real faces is aggressive. For now I use it mostly for previsualization and social content where motion realism matters more than resolution.</p>
+<p><strong>Higgsfield.</strong> More than a single model, it's a platform that aggregates the best — Sora 2, Kling, Veo 3.1 — under a single interface with cinematic controls. Cinema Studio lets you set specific camera movements (dolly, tracking, steadicam) and the preset system replicates real cinema grammar. The internal generator isn't the strongest, but the value is in the workflow: choose the right model for each shot, apply controls, and work in a single environment without jumping between five different platforms. For those producing high volumes of content — social, advertising, creative variants — it's an efficiency multiplier.</p>
+<p><strong>For reference frames: Nano Banana and Midjourney.</strong> The key frame — the starting image that guides video generation — is the most important step in the workflow. Midjourney remains a reference for aesthetic quality, especially for cinematic atmospheres and lighting. But Google's Nano Banana 2 has changed the game: it generates Pro-quality images at instant speed, maintains character consistency across multiple images, and renders readable text — a historic weak point of all generators. I use it increasingly to iterate quickly on creative directions before moving to video generation.</p>
 
 <h2>What works for professional production</h2>
 <p><strong>Concept and pre-visualization.</strong> Here AI is already irreplaceable. Need to explore ten creative directions for a director or agency? I generate visual variants in hours, not days. For <a href="/en/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Doppelganger</a> AI generated the project's entire visual base.</p>
@@ -816,17 +823,18 @@ export const posts: BlogPost[] = [
 <p><strong>Prototyping for commercial pitches.</strong> An agency needs to sell a concept to a client? Instead of a static mood board, I deliver an AI video concept in a few days. The approval rate is incomparably higher.</p>
 
 <h2>What doesn't work (yet)</h2>
-<p><strong>Character coherence.</strong> Same person, same face, same clothes for thirty seconds of video. No tool does this reliably. Workarounds are needed — face swap, compositing, frame-by-frame generation with reference — and all require hours of manual work.</p>
+<p><strong>Character coherence.</strong> Same person, same face, same clothes for thirty seconds of video. No tool does this reliably — Seedance 2.0 has made strides with multi-shot, but we're not at total coherence yet. Workarounds are needed — face swap, compositing, frame-by-frame generation with reference — and all require hours of manual work.</p>
 <p><strong>Readable text.</strong> AI generates text in video like a drunk writes on a blackboard. For any content with on-screen text — titles, lower thirds, name straps — traditional <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a> is still needed.</p>
 <p><strong>Precise subject-object interaction.</strong> A hand gripping a specific object, a finger pressing a button, a product manipulated by human hands. AI produces obvious artifacts. For product videos with human interaction, traditional <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">3D animation</a> is needed.</p>
-<p><strong>Synchronized audio.</strong> Lipsync, coherent ambient sounds, Foley — AI-generated audio is still primitive by professional standards. AI video always needs to be paired with separate audio production.</p>
+<p><strong>Synchronized audio.</strong> Lipsync, coherent ambient sounds, Foley — AI-generated audio is still primitive by professional standards. Seedance 2.0 has the most advanced native lip-sync, but for serious production AI video still needs to be paired with separate audio production.</p>
 
 <h2>The factor nobody mentions: post-processing</h2>
 <p>Here's the truth that AI tool demo reels don't show: raw AI video is never the final video. Every generated clip goes through my post-production workflow — color correction, stabilization, artifact cleanup, compositing with real elements, grading for coherence with the rest of the project.</p>
 <p>This is why twenty years of post-production experience are my real competitive advantage in the AI era. Anyone can generate a video. Very few know how to transform it into a professional product.</p>
 
 <h2>Where we're heading</h2>
-<p>In one year, character coherence will be solved. In two, frame-by-frame control will be standard. In three, the distinction between "shot" and "generated" will be irrelevant for 90% of applications.</p>
+<p>The pace has accelerated compared to six months ago. Seedance 2.0 has shown that realistic human motion is within reach — in one year character coherence will be solved. Platforms like Higgsfield are transforming AI video from isolated individual tools into complete production ecosystems. Nano Banana 2 has made reference frame generation instant and nearly free.</p>
+<p>In two years, frame-by-frame control will be standard. In three, the distinction between "shot" and "generated" will be irrelevant for 90% of applications.</p>
 <p>But the principle doesn't change: someone with the eye, experience and taste to direct these tools will always be needed. Not "use them" — direct them. Like a director directs a crew, an experienced professional directs AI. And the result is incomparably different.</p>`,
     },
     // ====== POST 12: Cortometraggi AI futuro ======
