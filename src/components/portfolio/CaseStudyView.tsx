@@ -205,8 +205,8 @@ function BlockRenderer({ block, locale, vm, lightbox }: {
                 <div className="section-container">
                     {block.title && <p className="text-xs font-semibold uppercase tracking-wider text-text-muted mb-3">{block.title}</p>}
                     <div className="relative aspect-video rounded-lg overflow-hidden bg-black">
-                        <video ref={vm.registerVideo} controls playsInline preload="metadata" poster={block.poster} className="w-full h-full"
-                            onPlay={(e) => vm.stopOthers(e.currentTarget)}>
+                        <video ref={vm.registerVideo} controls controlsList="nodownload" playsInline preload="metadata" poster={block.poster} className="w-full h-full"
+                            onContextMenu={(e) => e.preventDefault()} onPlay={(e) => vm.stopOthers(e.currentTarget)}>
                             <source src={block.url} type="video/mp4" />
                         </video>
                     </div>
@@ -375,7 +375,8 @@ export default function CaseStudyView({
                                                 allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title={title} />
                                         )}
                                         {project.videoType === 'mp4' && project.videoUrl && (
-                                            <video controls playsInline preload="metadata" className="w-full h-full">
+                                            <video controls controlsList="nodownload" playsInline preload="metadata" className="w-full h-full"
+                                                onContextMenu={(e) => e.preventDefault()}>
                                                 <source src={project.videoUrl} type="video/mp4" />
                                             </video>
                                         )}
