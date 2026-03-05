@@ -263,66 +263,104 @@ export const posts: BlogPost[] = [
     {
         slug: 'breakdown-vfx-along-came-ruby',
         slugEn: 'vfx-breakdown-along-came-ruby',
-        titleIt: 'Breakdown VFX: gli effetti visivi di Along Came Ruby',
-        titleEn: 'VFX Breakdown: the visual effects of Along Came Ruby',
-        excerptIt: 'Come ho creato l\'effetto spazio-temporale di Along Came Ruby. Dal concept alla composizione finale: processo, strumenti e decisioni creative.',
-        excerptEn: 'How I created the space-time effect for Along Came Ruby. From concept to final comp: process, tools and creative decisions.',
+        titleIt: 'Breakdown VFX: Along Came Ruby — effetti visivi e pipeline con un colorist di Hollywood',
+        titleEn: 'VFX Breakdown: Along Came Ruby — visual effects and pipeline with a Hollywood colorist',
+        excerptIt: 'Come ho creato gli effetti dello spaziotempo per un cortometraggio sci-fi, lavorando in DaVinci Cloud con Walter Volpatto — il colorist di Star Wars, Dunkirk e Megalopolis.',
+        excerptEn: 'How I created the spacetime effects for a sci-fi short film, working in DaVinci Cloud with Walter Volpatto — the colorist behind Star Wars, Dunkirk and Megalopolis.',
         date: '2026-03-22',
-        readingTime: 6,
+        readingTime: 9,
         category: 'vfx',
         categoryLabel: { it: 'VFX Breakdown', en: 'VFX Breakdown' },
         keywordTarget: 'VFX breakdown cortometraggio',
         thumbnail: '/images/blog/breakdown-vfx-along-came-ruby-effetto-spazio-temporale.jpg',
         thumbnailAlt: { it: 'Breakdown VFX Along Came Ruby - effetto spazio-temporale', en: 'VFX breakdown Along Came Ruby - space-time effect' },
-        contentIt: `<h2>Il progetto</h2>
-  <p>Along Came Ruby è un cortometraggio drammatico/sci-fi diretto da Riccardo Suriano. In un mondo post-apocalittico, Ruby cerca il fratello Henry e incontra una donna enigmatica che custodisce segreti del passato. L'elemento narrativo centrale è la comunicazione tra presente e futuro attraverso lo spazio-tempo — e renderlo visivamente credibile era il mio lavoro.</p>
-  <p>Questo è il tipo di progetto che amo: un budget contenuto, una sfida creativa enorme e la libertà di proporre soluzioni. Nessuno mi ha detto "fai questo effetto in questo modo". Il regista mi ha detto "voglio che il pubblico senta che due dimensioni si stanno toccando" — e da lì ho costruito tutto.</p>
-  
-  <h2>Il concept visivo</h2>
-  <p>La prima decisione è stata: niente portali rotondi, niente cerchi luminosi, niente "Stargate". Troppo visto, troppo didascalico. L'effetto doveva essere organico, sottile nei momenti di calma e devastante nei momenti chiave.</p>
-  <p>Ho proposto al regista un approccio basato su <strong>distorsioni atmosferiche e particellari luminose</strong> — come se l'aria stessa si strappasse e da quello strappo filtrasse luce di un altro tempo. L'idea era rendere l'effetto parte dell'ambiente, non un elemento sovrapposto.</p>
-  <p>Le reference visive che abbiamo condiviso spaziavano da Arrival (la nebbia che avvolge le navi) a Stalker di Tarkovskij (la zona come luogo dove le regole fisiche si piegano). Non copiare — ma capire il principio: gli effetti migliori sono quelli che il pubblico sente prima di vedere.</p>
-  
-  <h2>Il processo tecnico</h2>
-  <p><strong>Ripresa.</strong> Sul set ho chiesto tracking markers discreti negli ambienti esterni. Servivano per ancorare gli effetti 3D allo spazio reale. Ho anche chiesto al DOP di girare alcuni clean plate delle location — fondamentali per il compositing.</p>
-  <p><strong>Camera tracking.</strong> Ho estratto i dati di camera da ogni shot VFX usando Mocha Pro per il tracking planare e PFTrack per il 3D matchmove sulle shot più complesse. La precisione del tracking è tutto — se l'effetto "scivola" anche di un pixel rispetto alla scena, il cervello dello spettatore lo percepisce come falso.</p>
-  <p><strong>Elementi 3D e particellari.</strong> Le distorsioni spazio-temporali sono state create in 3ds Max con sistemi particellari personalizzati e in After Effects con Trapcode Particular di Red Giant per i sistemi particellari più complessi. Volumi di luce, filamenti di energia, micro-particelle che seguono pattern organici. Ogni elemento è stato stratificato direttamente nella scena, integrato con la ripresa live attraverso blending mode, maschere animate e correzione colore locale.</p>
-  <p><strong>Compositing.</strong> In After Effects ho stratificato gli elementi: la shot originale come base, le distorsioni 3D integrate con blending mode e maschere animate, correzione colore locale per far sì che la luce dell'effetto "rimbalzi" sugli oggetti della scena, e infine un passaggio di grana e aberrazione cromatica per sporcare leggermente l'effetto e renderlo fotografico.</p>
-  
-  <h2>La shot più difficile</h2>
-  <p>C'è una sequenza dove Ruby è in primo piano e dietro di lei lo spazio si deforma. La camera è in movimento, lei si muove, l'ambiente è l'interno del rifugio — legno, oggetti, ombre. Tutto si muove.</p>
-  <p>Ho dovuto rotoscopare Ruby frame per frame per separare il primo piano dallo sfondo, poi applicare la distorsione solo allo sfondo mantenendo il primo piano intatto. Il tracking doveva essere perfetto perché qualsiasi errore sarebbe stato visibile immediatamente — il volto umano è la prima cosa che il nostro cervello controlla.</p>
-  <p>Tempo su questa shot: circa un giorno e mezzo. Il risultato: nessuno nota l'effetto come "effetto" — vedono una scena dove qualcosa di strano sta succedendo all'aria dietro Ruby. Esattamente l'obiettivo.</p>
-  
-  <h2>Cosa ho imparato (ancora)</h2>
-  <p><strong>Il meno è più.</strong> Le prime versioni dell'effetto erano troppo evidenti. Il regista ha avuto ragione a chiedere di tirare indietro — l'effetto funziona meglio quando è al limite della percezione, quando lo spettatore non è sicuro di cosa ha visto.</p>
-  <p><strong>Il dialogo col regista è il vero strumento.</strong> Nessun software sostituisce una conversazione chiara su cosa l'effetto deve far sentire al pubblico. "Due dimensioni che si toccano" è una frase — ma è la frase giusta, e da lì è nato tutto il look.</p>
-  <p><strong>Il workflow integrato fa la differenza.</strong> Avendo gestito anche il color grading del corto, ho potuto lavorare VFX e colore insieme fin dall'inizio. L'effetto spazio-temporale ha una sua palette cromatica che dialoga con il grading delle scene — non è un elemento incollato sopra, è parte del tessuto visivo del film. Se ti interessa, scopri i miei <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">servizi VFX</a>, il mio approccio alla <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione integrata</a>, o guarda il <a href="/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">caso studio completo di Along Came Ruby</a> nel portfolio.</p>`,
+        contentIt: `<h2>Il progetto e il team</h2>
+<p><a href="https://www.youtube.com/watch?v=_TWrVQ-43uk" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a> è un cortometraggio sci-fi diretto da <a href="https://www.imdb.com/name/nm5388996/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Riccardo Suriano</a>, girato a Sacramento e ambientato in un mondo post-apocalittico. Ruby, una ragazza di 18 anni, attraversa un paesaggio devastato in cerca del fratello. Durante il viaggio incontra una donna anziana misteriosa — e scopre che passato e futuro sono più vicini di quanto pensasse.</p>
+<p>Collaboro con Riccardo da tempo. Su questo progetto ho curato gli effetti visivi. La color è stata fatta da <a href="https://www.imdb.com/name/nm2164371/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Walter Volpatto</a> — colorist di Hollywood con crediti su Star Wars: The Last Jedi, Dunkirk, Megalopolis, Green Book, Interstellar. Membro dell'Academy, consulente del Science and Technology Council. La fotografia è di Joey Katches, il montaggio di Bryan A. Mackenzie.</p>
+<p>Se ho avuto l'opportunità di lavorare con Walter, il merito è di Riccardo. La sua visione per il film e il suo standard qualitativo hanno portato a costruire un team di quel calibro anche su un cortometraggio indipendente.</p>
 
-        contentEn: `<h2>The project</h2>
-  <p>Along Came Ruby is a drama/sci-fi short film directed by Riccardo Suriano. In a post-apocalyptic world, Ruby searches for her brother Henry and encounters an enigmatic woman who holds secrets of the past. The central narrative element is communication between present and future through space-time — and making it visually credible was my job.</p>
-  <p>This is the type of project I love: a contained budget, an enormous creative challenge and the freedom to propose solutions. Nobody told me "make this effect this way." The director told me "I want the audience to feel that two dimensions are touching" — and from there I built everything.</p>
-  
-  <h2>The visual concept</h2>
-  <p>The first decision was: no round portals, no glowing circles, no "Stargate." Too familiar, too literal. The effect needed to be organic, subtle in calm moments and devastating in key moments.</p>
-  <p>I proposed to the director an approach based on <strong>atmospheric distortions and light particles</strong> — as if the air itself were tearing and through that tear, light from another time filtered in. The idea was making the effect part of the environment, not an overlaid element.</p>
-  <p>The visual references we shared ranged from Arrival (the fog enveloping the ships) to Tarkovsky's Stalker (the zone as a place where physical rules bend). Not copying — but understanding the principle: the best effects are those the audience feels before seeing.</p>
-  
-  <h2>The technical process</h2>
-  <p><strong>Shooting.</strong> On set I requested discreet tracking markers in exterior environments. They were needed to anchor 3D effects to real space. I also asked the DP to shoot clean plates of locations — essential for compositing.</p>
-  <p><strong>Camera tracking.</strong> I extracted camera data from every VFX shot using Mocha Pro for planar tracking and PFTrack for 3D matchmove on more complex shots. Tracking precision is everything — if the effect "slides" even one pixel relative to the scene, the viewer's brain perceives it as false.</p>
-  <p><strong>3D elements and particles.</strong> The space-time distortions were created in 3ds Max with custom particle systems and in After Effects with Red Giant's Trapcode Particular for the more complex particle systems. Light volumes, energy filaments, micro-particles following organic patterns. Each element was layered directly into the scene, integrated with the live footage through blending modes, animated masks and local color correction.</p>
-  <p><strong>Compositing.</strong> In After Effects I layered elements: the original shot as base, 3D distortions integrated with blending modes and animated masks, local color correction to make the effect's light "bounce" on scene objects, and finally a grain and chromatic aberration pass to slightly dirty the effect and make it photographic.</p>
-  
-  <h2>The hardest shot</h2>
-  <p>There's a sequence where Ruby is in the foreground and behind her space deforms. The camera is moving, she's moving, the environment is the interior of the shelter — wood, objects, shadows. Everything is moving.</p>
-  <p>I had to rotoscope Ruby frame by frame to separate foreground from background, then apply distortion only to the background while keeping the foreground intact. Tracking had to be perfect because any error would be immediately visible — the human face is the first thing our brain checks.</p>
-  <p>Time on this shot: about a day and a half. The result: nobody notices the effect as an "effect" — they see a scene where something strange is happening to the air behind Ruby. Exactly the goal.</p>
-  
-  <h2>What I learned (again)</h2>
-  <p><strong>Less is more.</strong> The first versions of the effect were too obvious. The director was right to ask me to pull back — the effect works better when it's at the edge of perception, when the viewer isn't sure what they saw.</p>
-  <p><strong>Dialogue with the director is the real tool.</strong> No software replaces a clear conversation about what the effect should make the audience feel. "Two dimensions touching" is a phrase — but it's the right phrase, and from there the entire look was born.</p>
-  <p><strong>The integrated workflow makes the difference.</strong> Having also managed the color grading for the short, I could work VFX and color together from the start. The space-time effect has its own color palette that dialogues with the scene grading — it's not an element pasted on top, it's part of the film's visual fabric. If you're interested, read more about my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX services</a>, my approach to <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">integrated post-production</a>, or check out the <a href="/en/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">full Along Came Ruby case study</a> in my portfolio.</p>`,
+<h2>La scena: quando passato e futuro si toccano</h2>
+<p>Il momento chiave del film è l'incontro tra Ruby giovane e Ruby vecchia nello stesso spazio fisico. Passato e futuro si sovrappongono, lo spaziotempo si piega. Le due versioni dello stesso personaggio si guardano, si avvicinano, si toccano — e l'energia di quel contatto è visibile, fisica, reale.</p>
+<p>La sfida era creare un effetto che fosse credibile senza sembrare generico. Non volevamo il solito portale circolare blu — volevamo qualcosa che sembrasse una frattura nello spazio, organica, instabile, viva. Qualcosa che il pubblico sentisse prima di capirla razionalmente.</p>
+
+<h2>La preparazione: reference e visione condivisa</h2>
+<p>Prima di toccare After Effects, io e Riccardo abbiamo passato tempo a parlare. Abbiamo guardato film e serie con sequenze di manipolazione temporale, analizzato cosa funzionava e cosa no, discusso il tono che volevamo. Le reference spaziavano da Arrival a Stalker di Tarkovskij — non per copiare, ma per capire il principio: gli effetti migliori sono quelli che il pubblico sente prima di vedere.</p>
+<p>Non stavamo cercando un effetto spettacolare — cercavamo un effetto che servisse la storia. Questa fase è spesso sottovalutata. Quando un regista e un VFX artist sono allineati sulla visione prima di iniziare, il lavoro tecnico diventa molto più efficiente. Non stai cercando di interpretare un'indicazione vaga — sai esattamente dove andare.</p>
+
+<h2>La pipeline Roma-Hollywood: DaVinci Cloud ed EXR</h2>
+<p>Ecco la parte che rende questo progetto speciale dal punto di vista tecnico. La color grading era nelle mani di Walter Volpatto a Los Angeles. Io ero a Roma. Lavoravamo sulla stessa timeline in DaVinci Cloud.</p>
+<p>Il workflow funzionava così: Walter applicava la sua color sulla timeline. Io prendevo le scene che richiedevano <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a> dalla timeline in formato EXR — un formato che preserva tutti i metadata, comprese le informazioni di color. Lavoravo sugli effetti in After Effects, esportavo nuovamente in EXR e ricaricavo sulla timeline condivisa. Walter sostituiva le clip e la sua color rimaneva intatta — nessun nodo perso, nessuna informazione degradata.</p>
+<p>Questo è possibile perché l'EXR è un formato a virgola mobile che mantiene tutta la gamma dinamica e i metadata del progetto. Se avessimo lavorato con ProRes o H.264, ogni passaggio avrebbe compresso l'immagine e distrutto informazioni. Con gli EXR, il passaggio VFX è trasparente — come se l'effetto fosse sempre stato lì.</p>
+<p>Abbiamo testato la pipeline prima di iniziare il lavoro vero. Un test su una scena semplice per verificare che il roundtrip EXR funzionasse senza intoppi — export, lavorazione in After Effects, reimport, verifica della color. Tutto ha filato liscio. Quando la pipeline è solida, ti puoi concentrare sulla creatività.</p>
+
+<h2>Gli effetti: creare uno spaziotempo credibile</h2>
+<p>Per gli effetti della sequenza ho usato After Effects e Maxon One. L'obiettivo era creare una frattura spaziotemporale che avesse qualità fisiche: energia, instabilità, luce che si comporta in modo anomalo.</p>
+<p>L'effetto finale è un insieme di elementi sovrapposti: distorsioni spaziali nell'aria, particelle luminose che fluttuano come polvere in un raggio di sole, scariche di energia simili a fulmini che si manifestano quando le due Ruby si avvicinano, aberrazioni cromatiche e lens flare che suggeriscono un'interferenza sulla "pellicola" stessa del film.</p>
+<p>Ogni elemento è stato animato a mano — niente preset, niente plugin one-click. Quando usi elementi preconfezionati per effetti come questi, il risultato è immediatamente riconoscibile come "effetto stock". Per renderlo credibile devi costruirlo da zero, strato per strato, e integrarlo con l'illuminazione e la color della scena.</p>
+<p>Il momento più delicato è quello in cui le dita si toccano e l'energia si scarica tra le due mani. Quel fulmine tra le dita doveva sembrare reale — doveva seguire il movimento delle mani, reagire al contatto, avere un comportamento fisico coerente. L'ho animato frame-by-frame per i momenti più critici.</p>
+<p>Oltre alla scena principale dello spaziotempo, ho lavorato su altri effetti nel film: uno schermo TV che si deteriora, rimozione di oggetti dal set e altri interventi di clean-up che servivano la narrazione.</p>
+
+<h2>La shot più difficile</h2>
+<p>C'è una sequenza dove Ruby è in primo piano e dietro di lei lo spazio si deforma. La camera è in movimento, lei si muove, l'ambiente è l'interno del rifugio — legno, oggetti, ombre. Tutto si muove.</p>
+<p>Ho dovuto rotoscopare Ruby frame per frame per separare il primo piano dallo sfondo, poi applicare la distorsione solo allo sfondo mantenendo il primo piano intatto. Il tracking doveva essere perfetto perché qualsiasi errore sarebbe stato visibile immediatamente — il volto umano è la prima cosa che il nostro cervello controlla.</p>
+<p>Il risultato: nessuno nota l'effetto come "effetto" — vedono una scena dove qualcosa di strano sta succedendo all'aria dietro Ruby. Esattamente l'obiettivo.</p>
+
+<h2>Lavorare con un colorist di quel livello</h2>
+<p>Walter Volpatto ha fatto la color per alcuni dei film visivamente più memorabili degli ultimi vent'anni. Lavorare sulla stessa timeline di chi ha fatto il grading di Star Wars e Dunkirk ti dà una prospettiva molto chiara su cosa significa qualità a quel livello.</p>
+<p>Per i miei VFX, questo significava che non potevo permettermi approssimazioni. Gli effetti dovevano integrarsi perfettamente con una color di livello cinematografico — se avessi sbagliato luminanza, saturazione o temperatura colore, sarebbe saltato all'occhio immediatamente. La pipeline EXR era fondamentale proprio per questo: mi permetteva di lavorare nello stesso spazio colore di Walter, senza conversioni che avrebbero introdotto errori.</p>
+
+<h2>Cosa ho imparato</h2>
+<p><strong>Testa la pipeline prima di iniziare.</strong> Non importa quanto sei sicuro che funzionerà. Un test di roundtrip completo — export, lavorazione, reimport, verifica — costa un'ora e può salvarne cento.</p>
+<p><strong>Il tempo in preparazione col regista non è mai sprecato.</strong> Le ore che io e Riccardo abbiamo passato a guardare reference e discutere il tono dell'effetto si sono tradotte in un processo di produzione lineare, senza ripensamenti o direzioni cambiate a metà.</p>
+<p><strong>Il meno è più.</strong> Le prime versioni dell'effetto erano troppo evidenti. Riccardo ha avuto ragione a chiedere di tirare indietro — l'effetto funziona meglio quando è al limite della percezione, quando lo spettatore non è sicuro di cosa ha visto.</p>
+<p><strong>Il formato conta.</strong> L'EXR ha reso possibile una collaborazione tra Roma e Hollywood senza perdita di qualità. La scelta del formato è una decisione creativa, non solo tecnica.</p>
+<p>Il film è disponibile su <a href="https://www.youtube.com/watch?v=_TWrVQ-43uk" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">YouTube</a> e <a href="https://filmshortage.com/dailyshortpicks/along-came-ruby/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Film Shortage</a>. Puoi vedere il mio lavoro nel <a href="/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">caso studio nel portfolio</a>.</p>
+<p>Scopri i miei <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">servizi VFX</a> o il mio approccio alla <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione integrata</a>.</p>
+<p><strong>Crediti:</strong> Regia <a href="https://www.imdb.com/name/nm5388996/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Riccardo Suriano</a> — Fotografia Joey Katches — Color <a href="https://www.imdb.com/name/nm2164371/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Walter Volpatto</a> — VFX Piero Perilli — Montaggio Bryan A. Mackenzie — Con Alexandra Boulas e Liz Kastner.</p>`,
+
+        contentEn: `<h2>The project and the team</h2>
+<p><a href="https://www.youtube.com/watch?v=_TWrVQ-43uk" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a> is a sci-fi short film directed by <a href="https://www.imdb.com/name/nm5388996/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Riccardo Suriano</a>, shot in Sacramento and set in a post-apocalyptic world. Ruby, an 18-year-old, crosses a devastated landscape searching for her brother. Along the way she meets a mysterious elderly woman — and discovers that past and future are closer than she thought.</p>
+<p>I've been collaborating with Riccardo for a long time. On this project I handled the visual effects. Color grading was done by <a href="https://www.imdb.com/name/nm2164371/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Walter Volpatto</a> — a Hollywood colorist with credits on Star Wars: The Last Jedi, Dunkirk, Megalopolis, Green Book, Interstellar. An Academy Member and consultant to the Science and Technology Council. Cinematography by Joey Katches, editing by Bryan A. Mackenzie.</p>
+<p>If I had the opportunity to work with Walter, the credit goes to Riccardo. His vision for the film and his quality standards led to building a team of that caliber even on an independent short.</p>
+
+<h2>The scene: when past and future touch</h2>
+<p>The film's key moment is the encounter between young Ruby and old Ruby in the same physical space. Past and future overlap, spacetime bends. The two versions of the same character look at each other, approach each other, touch — and the energy of that contact is visible, physical, real.</p>
+<p>The challenge was creating an effect that felt believable without looking generic. We didn't want the usual blue circular portal — we wanted something that looked like a fracture in space, organic, unstable, alive. Something the audience would feel before understanding it rationally.</p>
+
+<h2>Preparation: references and shared vision</h2>
+<p>Before touching After Effects, Riccardo and I spent time talking. We watched films and series with time manipulation sequences, analyzed what worked and what didn't, discussed the tone we wanted. References ranged from Arrival to Tarkovsky's Stalker — not to copy, but to understand the principle: the best effects are those the audience feels before seeing.</p>
+<p>We weren't looking for a spectacular effect — we were looking for an effect that served the story. This phase is often undervalued. When a director and a VFX artist are aligned on the vision before starting, the technical work becomes much more efficient. You're not trying to interpret a vague direction — you know exactly where to go.</p>
+
+<h2>The Rome-Hollywood pipeline: DaVinci Cloud and EXR</h2>
+<p>Here's what makes this project special from a technical standpoint. Color grading was in Walter Volpatto's hands in Los Angeles. I was in Rome. We worked on the same timeline in DaVinci Cloud.</p>
+<p>The workflow worked like this: Walter applied his color on the timeline. I took the scenes requiring <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a> from the timeline in EXR format — a format that preserves all metadata, including color information. I worked on the effects in After Effects, exported back to EXR and re-uploaded to the shared timeline. Walter swapped the clips and his color remained intact — no nodes lost, no information degraded.</p>
+<p>This is possible because EXR is a floating-point format that maintains the full dynamic range and project metadata. Had we worked with ProRes or H.264, each pass would have compressed the image and destroyed information. With EXR, the VFX pass is transparent — as if the effect had always been there.</p>
+<p>We tested the pipeline before starting the actual work. A test on a simple scene to verify that the EXR roundtrip worked without issues — export, processing in After Effects, reimport, color verification. Everything went smoothly. When the pipeline is solid, you can focus on creativity.</p>
+
+<h2>The effects: creating a believable spacetime</h2>
+<p>For the sequence effects I used After Effects and Maxon One. The goal was creating a spacetime fracture with physical qualities: energy, instability, light behaving anomalously.</p>
+<p>The final effect is a combination of layered elements: spatial distortions in the air, luminous particles floating like dust in a sunbeam, lightning-like energy discharges that manifest when the two Rubys approach each other, chromatic aberrations and lens flares suggesting interference on the film's "emulsion" itself.</p>
+<p>Every element was hand-animated — no presets, no one-click plugins. When you use pre-packaged elements for effects like these, the result is immediately recognizable as "stock effect." To make it believable you have to build it from scratch, layer by layer, and integrate it with the scene's lighting and color.</p>
+<p>The most delicate moment is when their fingers touch and energy discharges between the two hands. That lightning between fingers had to feel real — it needed to follow the hands' movement, react to the contact, have coherent physical behavior. I animated it frame-by-frame for the most critical moments.</p>
+<p>Beyond the main spacetime scene, I worked on other effects in the film: a TV screen deteriorating, removal of objects from the set and other clean-up work that served the narrative.</p>
+
+<h2>The hardest shot</h2>
+<p>There's a sequence where Ruby is in the foreground and behind her space deforms. The camera is moving, she's moving, the environment is the interior of the shelter — wood, objects, shadows. Everything is moving.</p>
+<p>I had to rotoscope Ruby frame by frame to separate foreground from background, then apply distortion only to the background while keeping the foreground intact. Tracking had to be perfect because any error would be immediately visible — the human face is the first thing our brain checks.</p>
+<p>The result: nobody notices the effect as an "effect" — they see a scene where something strange is happening to the air behind Ruby. Exactly the goal.</p>
+
+<h2>Working with a colorist at that level</h2>
+<p>Walter Volpatto has graded some of the most visually memorable films of the past twenty years. Working on the same timeline as someone who has colored Star Wars and Dunkirk gives you a very clear perspective on what quality means at that level.</p>
+<p>For my VFX, this meant I couldn't afford approximations. The effects had to integrate seamlessly with cinematic-level color — if I got the luminance, saturation or color temperature wrong, it would be immediately obvious. The EXR pipeline was essential precisely for this: it allowed me to work in the same color space as Walter, without conversions that would have introduced errors.</p>
+
+<h2>What I learned</h2>
+<p><strong>Test the pipeline before you start.</strong> No matter how confident you are it will work. A complete roundtrip test — export, processing, reimport, verification — costs an hour and can save a hundred.</p>
+<p><strong>Time spent in preparation with the director is never wasted.</strong> The hours Riccardo and I spent watching references and discussing the effect's tone translated into a linear production process, with no second-guessing or mid-course direction changes.</p>
+<p><strong>Less is more.</strong> The first versions of the effect were too obvious. Riccardo was right to ask me to pull back — the effect works better when it's at the edge of perception, when the viewer isn't sure what they saw.</p>
+<p><strong>Format matters.</strong> EXR made a Rome-to-Hollywood collaboration possible without quality loss. The format choice is a creative decision, not just a technical one.</p>
+<p>The film is available on <a href="https://www.youtube.com/watch?v=_TWrVQ-43uk" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">YouTube</a> and <a href="https://filmshortage.com/dailyshortpicks/along-came-ruby/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Film Shortage</a>. You can see my work in the <a href="/en/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">portfolio case study</a>.</p>
+<p>Learn more about my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX services</a> or my approach to <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">integrated post-production</a>.</p>
+<p><strong>Credits:</strong> Director <a href="https://www.imdb.com/name/nm5388996/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Riccardo Suriano</a> — Cinematography Joey Katches — Color <a href="https://www.imdb.com/name/nm2164371/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Walter Volpatto</a> — VFX Piero Perilli — Editor Bryan A. Mackenzie — Starring Alexandra Boulas and Liz Kastner.</p>`,
     },
     {
         slug: 'animazione-3d-prodotto-presentazione-cinematografica',
@@ -767,8 +805,8 @@ export const posts: BlogPost[] = [
         category: 'ai',
         categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
         keywordTarget: 'AI video generation 2026',
-        thumbnail: '/images/portfolio/roche-jingle-ai-hero.webp',
-        thumbnailAlt: { it: 'AI video generation 2026 — strumenti professionali', en: 'AI video generation 2026 — professional tools' },
+        thumbnail: '/images/blog/ai-video-generation-2026-hero.webp',
+        thumbnailAlt: { it: 'AI video generation 2026 — dettaglio guanto da un video generato con Veo', en: 'AI video generation 2026 — glove detail from a Veo-generated video' },
         contentIt: `<p><em>Ultimo aggiornamento: Marzo 2026</em></p>
 
 <p>Il mercato dell'AI video generation è esploso. Ogni mese esce un nuovo modello, ogni settimana qualcuno dichiara che "il cinema tradizionale è morto". Uso questi strumenti ogni giorno nel mio <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow di AI video production</a> per clienti reali. Ecco cosa funziona davvero nel 2026, senza proclami.</p>
