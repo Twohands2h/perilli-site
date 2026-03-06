@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import CookiePreferencesButton from './CookiePreferencesButton';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -174,6 +175,7 @@ export default function Footer() {
             >
               {t('privacy')}
             </Link>
+            <CookiePreferencesButton />
           </div>
         </div>
       </div>
