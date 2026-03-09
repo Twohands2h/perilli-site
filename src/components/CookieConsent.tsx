@@ -63,7 +63,7 @@ export function ConsentProvider({ children }: { children: React.ReactNode }) {
 export default function CookieConsent() {
   const locale = useLocale();
   const isIt = locale === 'it';
-  const { consented, setConsented } = useConsent();
+  const { setConsented } = useConsent();
   const [visible, setVisible] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [analyticsChecked, setAnalyticsChecked] = useState(false);
