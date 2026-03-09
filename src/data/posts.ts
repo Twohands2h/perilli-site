@@ -799,7 +799,7 @@ export const posts: BlogPost[] = [
         titleIt: 'AI video generation nel 2026: cosa funziona davvero (e cosa no)',
         titleEn: 'AI video generation in 2026: what actually works (and what doesn\'t)',
         excerptIt: 'Runway Gen-4, Veo, Kling, Sora, Seedance 2.0, Higgsfield, Nano Banana — li uso tutti nel mio lavoro quotidiano. Ecco una mappa onesta di cosa produce risultati professionali e dove stiamo andando. Aggiornato a marzo 2026.',
-        excerptEn: 'Runway Gen-4, Veo, Kling, Sora, Seedance 2.0, Higgsfield, Nano Banana — I use them all in my daily work. Here\'s an honest map of what produces professional results and where we\'re headed. Updated March 2026.',
+        excerptEn: 'Current limitations of AI video generation in 2026: an honest comparison of Runway Gen-4, Veo, Kling, Sora and Seedance 2.0 by a VFX artist who uses them daily for real clients. What works, what doesn\'t, where we\'re headed.',
         date: '2026-03-04',
         readingTime: 10,
         category: 'ai',
