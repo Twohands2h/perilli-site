@@ -35,6 +35,9 @@ export async function generateMetadata({
       ? 'VFX, motion graphics, color grading e post-produzione video a Roma. Artigiano digitale con 20+ anni di esperienza per cinema e advertising.'
       : 'VFX, motion graphics, color grading and video post-production in Rome. Digital craftsman with 20+ years of experience for film and advertising.',
     metadataBase: new URL('https://pieroperilli.com'),
+    verification: {
+      google: 'VTP3HuN2_S1wnwOPyS_RcthDI7UZXCcwuxjkMHk-Oc8',
+    },
     alternates: getPageAlternates('/', locale),
     openGraph: {
       type: 'website',
