@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garanzia 10+ · Proposta Video Ads — Piero Perilli</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:      #1A1A1A;
+    --bg2:     #222222;
+    --bg3:     #2A2A2A;
+    --bg4:     #1E1E1E;
+    --white:   #FFFFFF;
+    --off:     #E8E4DE;
+    --muted:   #999999;
+    --muted2:  #666666;
+    --border:  #333333;
+    --orange:  #F5A623;
+    --orange2: #E09515;
+    --text:    #D4D0CA;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0; z-index: 100;
+    height: 68px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    background: rgba(26,26,26,0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    display: flex; align-items: center;
+    text-decoration: none;
+  }
+  .nav-logo img { height: 28px; width: auto; }
+  .nav-center { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .nav-right { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted2); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 140px 48px 80px;
+    border-bottom: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 40%, rgba(245,166,35,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 20% 70%, rgba(245,166,35,0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-size: clamp(52px, 10vw, 128px); font-weight: 800;
+    line-height: 1.0; letter-spacing: -0.02em; color: var(--white); margin-bottom: 16px;
+  }
+  .hero h1 .accent { color: var(--orange); }
+  .hero-sub {
+    font-size: 17px; font-weight: 300; color: var(--muted);
+    margin-bottom: 56px; max-width: 580px; line-height: 1.6;
+  }
+  .hero-meta { display: flex; gap: 48px; flex-wrap: wrap; }
+  .hm-item label {
+    display: block; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted2); margin-bottom: 6px;
+  }
+  .hm-item span { font-size: 14px; font-weight: 400; color: var(--off); }
+
+  /* ─── SEZIONE ─── */
+  .section { padding: 96px 48px; border-bottom: 1px solid var(--border); }
+
+  .sec-label {
+    display: flex; align-items: center; gap: 16px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 56px;
+  }
+  .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .sec-title {
+    font-size: clamp(36px, 6vw, 72px); font-weight: 800;
+    line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 28px;
+  }
+  .sec-title .accent { color: var(--orange); }
+
+  .sec-intro {
+    font-size: 16px; line-height: 1.8; color: var(--text);
+    max-width: 660px; margin-bottom: 64px; font-weight: 400;
+  }
+  .sec-intro strong { color: var(--white); font-weight: 600; }
+
+  /* ─── COMPARE ─── */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .c-card { background: var(--bg2); padding: 44px 40px; border-top: 3px solid transparent; }
+  .c-card.good { border-top-color: var(--orange); background: var(--bg3); }
+  .c-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
+  }
+  .c-card.good .c-badge { color: var(--orange); }
+  .c-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+  .c-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--white); letter-spacing: -0.01em; }
+  .c-card p { font-size: 15px; line-height: 1.75; color: var(--text); font-weight: 400; }
+
+  /* ─── VIDEO CONCEPT BOX ─── */
+  .concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 0; }
+  .concept-card {
+    background: var(--bg2); padding: 44px 40px;
+    border-top: 3px solid var(--border);
+    position: relative;
+  }
+  .concept-card.primary { border-top-color: var(--orange); background: var(--bg3); }
+  .concept-card.secondary { border-top-color: var(--muted2); }
+
+  .concept-pill {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    border-radius: 2px; margin-bottom: 20px;
+  }
+  .concept-pill.orange { background: rgba(245,166,35,0.15); color: var(--orange); }
+  .concept-pill.grey   { background: rgba(255,255,255,0.06); color: var(--muted); }
+
+  .concept-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: var(--white); letter-spacing: -0.01em; }
+  .concept-card p { font-size: 15px; line-height: 1.8; color: var(--text); font-weight: 400; }
+  .concept-card p + p { margin-top: 14px; }
+
+  .concept-note {
+    display: flex; align-items: flex-start; gap: 10px;
+    margin-top: 20px; padding: 14px 16px;
+    background: rgba(245,166,35,0.07);
+    border-left: 2px solid var(--orange);
+    font-size: 13px; color: var(--muted); line-height: 1.6;
+  }
+  .concept-note strong { color: var(--off); font-weight: 500; }
+
+  /* ─── SCRIPT ─── */
+  .script-outer { max-width: 980px; }
+  .script-thead {
+    display: grid; grid-template-columns: 88px 1fr 1fr 168px;
+    gap: 2px; margin-bottom: 2px;
+  }
+  .script-th {
+    background: var(--bg3); padding: 12px 18px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .script-th:first-child { background: var(--orange); color: var(--bg); }
+
+  .script-tr { display: grid; grid-template-columns: 88px 1fr 1fr 168px; gap: 2px; margin-bottom: 2px; }
+  .script-tr:last-child { margin-bottom: 0; }
+
+  .st {
+    background: var(--bg4); padding: 22px 18px;
+    font-size: 16px; font-weight: 800; color: var(--white); line-height: 1.1; letter-spacing: -0.01em;
+  }
+  .st-beat {
+    display: block; font-size: 9px; font-weight: 600;
+    letter-spacing: 0.25em; text-transform: uppercase; color: var(--orange); margin-top: 7px;
+  }
+  .sv { background: var(--bg2); padding: 22px 18px; font-size: 15px; line-height: 1.72; color: var(--off); font-style: italic; font-weight: 300; }
+  .sv strong { font-style: normal; font-weight: 600; color: var(--white); }
+  .svis { background: var(--bg3); padding: 22px 18px; font-size: 13px; line-height: 1.65; color: var(--muted); font-weight: 400; }
+  .sn { background: var(--bg4); padding: 22px 18px; font-size: 12px; line-height: 1.6; color: var(--muted2); font-weight: 400; }
+
+  .script-note {
+    margin-top: 32px; padding: 22px 28px;
+    border-left: 3px solid var(--orange); background: var(--bg2);
+    font-size: 15px; color: var(--text); line-height: 1.7; max-width: 700px;
+  }
+  .script-note strong { color: var(--white); font-weight: 600; }
+
+  /* ─── RATIONALE ─── */
+  .rat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .rat-card { background: var(--bg2); padding: 44px 36px; }
+  .rat-num { font-size: 52px; font-weight: 800; color: var(--orange); opacity: 0.22; line-height: 1; margin-bottom: 24px; display: block; letter-spacing: -0.02em; }
+  .rat-card h4 { font-size: 14px; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 14px; color: var(--white); text-transform: uppercase; }
+  .rat-card p { font-size: 15px; line-height: 1.75; color: var(--text); font-weight: 400; }
+
+  /* ─── PREVENTIVO ─── */
+  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
+
+  .price-card {
+    background: var(--bg2); padding: 44px 40px;
+    border-top: 3px solid var(--border);
+    position: relative;
+  }
+  .price-card.featured { border-top-color: var(--orange); background: var(--bg3); }
+
+  .price-badge {
+    display: inline-block; padding: 4px 12px; border-radius: 2px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .price-badge.orange { background: rgba(245,166,35,0.15); color: var(--orange); }
+  .price-badge.grey   { background: rgba(255,255,255,0.06); color: var(--muted); }
+
+  .price-card h3 { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.01em; }
+  .price-card .price-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; font-weight: 400; }
+
+  .price-amount {
+    font-size: 56px; font-weight: 800; color: var(--white);
+    letter-spacing: -0.03em; line-height: 1; margin-bottom: 6px;
+  }
+  .price-amount .currency { font-size: 28px; vertical-align: super; margin-right: 2px; color: var(--muted); font-weight: 600; }
+  .price-amount .accent { color: var(--orange); }
+
+  .price-label { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+
+  .price-includes { list-style: none; }
+  .price-includes li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14px; color: var(--text); line-height: 1.55;
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+  }
+  .price-includes li:last-child { border-bottom: none; }
+  .price-includes li::before { content: '✓'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .price-disclaimer {
+    margin-top: 16px; padding: 18px 22px;
+    background: rgba(245,166,35,0.06); border-left: 2px solid var(--orange);
+    font-size: 13px; color: var(--muted); line-height: 1.6;
+    grid-column: 1 / -1;
+  }
+  .price-disclaimer strong { color: var(--off); font-weight: 500; }
+
+  .scale-note {
+    margin-top: 2px; padding: 22px 32px;
+    background: var(--bg2);
+    font-size: 14px; color: var(--text); line-height: 1.75;
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .scale-note-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+
+  /* ─── VIDEO REF ─── */
+  .video-intro {
+    padding: 28px 32px; margin-bottom: 48px;
+    background: var(--bg2); border-left: 3px solid var(--orange);
+    font-size: 15px; color: var(--text); line-height: 1.75; max-width: 780px;
+  }
+  .video-intro strong { color: var(--white); font-weight: 600; }
+
+  .video-section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .video-section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 48px; }
+  .video-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+
+  .video-card { background: var(--bg2); overflow: hidden; }
+
+  .video-thumb {
+    width: 100%; aspect-ratio: 16/9;
+    background: var(--bg3);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+
+  .video-thumb iframe {
+    width: 100%; height: 100%; border: none;
+    pointer-events: none;
+  }
+
+  .video-thumb-placeholder {
+    width: 100%; aspect-ratio: 16/9;
+    background: var(--bg3);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .video-thumb-placeholder:hover { background: var(--bg4); }
+  .video-thumb-placeholder .play-icon {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--orange);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .video-thumb-placeholder .play-icon svg { width: 20px; height: 20px; fill: var(--bg); margin-left: 3px; }
+  .video-thumb-placeholder span { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.05em; }
+
+  .video-info { padding: 20px 24px; }
+  .video-info .video-type {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 6px;
+  }
+  .video-info h4 { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 6px; letter-spacing: -0.01em; }
+  .video-info p { font-size: 13px; color: var(--muted); line-height: 1.55; font-weight: 400; }
+
+  .video-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin: 12px 24px 20px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--orange); text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .video-link:hover { opacity: 0.75; }
+  .video-link svg { width: 12px; height: 12px; }
+
+  /* ─── FOOTER CTA ─── */
+  .footer-cta {
+    padding: 96px 48px; border-bottom: 1px solid var(--border);
+  }
+  .footer-cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
+  .footer-cta h2 { font-size: clamp(30px, 5vw, 58px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+  .footer-cta h2 .accent { color: var(--orange); }
+  .footer-cta p { margin-top: 14px; font-size: 16px; color: var(--muted); font-weight: 400; max-width: 500px; line-height: 1.65; }
+
+  .btn-group { display: flex; flex-direction: column; gap: 12px; min-width: 220px; }
+  .btn-orange {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--orange); color: var(--bg);
+    padding: 14px 28px; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .btn-orange:hover { background: var(--orange2); }
+  .btn-outline {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    border: 1px solid var(--border); color: var(--muted);
+    padding: 13px 28px; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+  /* ─── COLOPHON ─── */
+  .colophon {
+    padding: 32px 48px;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  }
+  .col-logo { display: flex; align-items: center; text-decoration: none; }
+  .col-logo img { height: 24px; width: auto; }
+
+  /* prezzi barrati */
+  .price-strike { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .price-original { font-size: 26px; font-weight: 600; color: var(--muted2); text-decoration: line-through; letter-spacing: -0.01em; }
+  .price-original .currency { font-size: 14px; }
+
+  /* thumbnail video reali */
+  .video-thumb-img {
+    width: 100%; aspect-ratio: 16/9;
+    position: relative; overflow: hidden; display: block;
+    background: var(--bg3); text-decoration: none;
+  }
+  .video-thumb-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+  .video-thumb-img:hover img { transform: scale(1.04); }
+  .video-thumb-img .play-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.38); transition: background 0.2s;
+  }
+  .video-thumb-img:hover .play-overlay { background: rgba(0,0,0,0.55); }
+  .video-thumb-img .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--orange);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s;
+  }
+  .video-thumb-img:hover .play-btn { transform: scale(1.1); }
+  .video-thumb-img .play-btn svg { width: 20px; height: 20px; fill: var(--bg); margin-left: 3px; }
+  .col-tag { font-size: 12px; color: var(--muted); font-weight: 400; }
+  .col-contact { font-size: 12px; color: var(--muted); text-align: right; line-height: 1.7; }
+  .col-contact a { color: var(--muted); text-decoration: none; }
+  .col-contact a:hover { color: var(--orange); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-center { display: none; }
+    .hero, .section, .footer-cta, .colophon { padding-left: 20px; padding-right: 20px; }
+    .compare-grid, .concept-grid, .price-grid { grid-template-columns: 1fr; }
+    .price-disclaimer { grid-column: 1; }
+    .rat-grid { grid-template-columns: 1fr; }
+    .video-grid, .video-grid.two-col { grid-template-columns: 1fr; }
+    .script-thead, .script-tr { grid-template-columns: 72px 1fr; }
+    .svis, .sn, .script-th:nth-child(3), .script-th:nth-child(4) { display: none; }
+    .footer-cta-inner { flex-direction: column; }
+    .btn-group { flex-direction: row; flex-wrap: wrap; }
+    .colophon { flex-direction: column; text-align: center; }
+    .col-contact { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://pieroperilli.com" class="nav-logo">
+    <img src="/images/logo-white.png" alt="PIERO." />
+  </a>
+  <span class="nav-center">Proposta Strategica · Garanzia 10+</span>
+  <span class="nav-right">Video Ads · 2026</span>
+</nav>
+
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">— Proposta Strategica · Video Ads · 2026</div>
+  <h1>Convertire<br>la paura in<br><span class="accent">preventivo.</span></h1>
+  <p class="hero-sub">Strategia, script e formato per la campagna Google Ads di Garanzia 10+. Un documento di lavoro — da qui costruiremo tutto insieme.</p>
+  <div class="hero-meta">
+    <div class="hm-item"><label>Cliente</label><span>Garanzia 10+ S.r.l.</span></div>
+    <div class="hm-item"><label>Canale</label><span>Google Ads · YouTube Pre-roll</span></div>
+    <div class="hm-item"><label>Formato</label><span>Motion Graphics · Animation</span></div>
+    <div class="hm-item"><label>Durata target</label><span>30 – 40 secondi</span></div>
+    <div class="hm-item"><label>Obiettivo</label><span>Lead Generation · Preventivo</span></div>
+  </div>
+</section>
+
+
+<!-- ══════════ 01 · STRATEGIA ══════════ -->
+<section class="section">
+  <div class="sec-label">01 · Posizionamento Strategico</div>
+  <div class="sec-title">Il problema<br>prima della <span class="accent">soluzione.</span></div>
+  <p class="sec-intro">
+    Su Google Ads il target è <strong>freddo</strong> — non cerca Garanzia 10+, sta cercando un'auto usata.
+    Il video deve <strong>creare consapevolezza del rischio</strong> prima di proporsi come risposta.
+    L'emozione che converte non è il calore familiare: è l'<strong>ansia da costo imprevisto.</strong>
+  </p>
+
+  <div class="compare-grid">
+    <div class="c-card">
+      <div class="c-badge"><span class="c-badge-dot"></span> Approccio scartato</div>
+      <h3>Emozionale diretto</h3>
+      <p>Donna, famiglia, cura. Problema introdotto dopo 40 secondi. Il cervello dell'utente riconosce il pattern "pubblicità generica" e skippa entro i primi 5 secondi. Zero conversioni, zero brand recall.</p>
+    </div>
+    <div class="c-card good">
+      <div class="c-badge"><span class="c-badge-dot"></span> Approccio scelto</div>
+      <h3>Problema → Soluzione</h3>
+      <p>Domanda scomoda a 0 secondi. Amplificazione numerica del rischio. Soluzione chiara. Il momento emozionale arriva come conseguenza della garanzia — non come premessa. Struttura che converte.</p>
+    </div>
+    <div class="c-card">
+      <div class="c-badge"><span class="c-badge-dot"></span> Formato scartato</div>
+      <h3>AI Realistica</h3>
+      <p>Alto costo di revisione. Ogni cambio di copy o adattamento per moto/van richiede rigenerare intere scene. Pattern visivo troppo simile agli spot assicurativi che gli utenti ignorano per abitudine.</p>
+    </div>
+    <div class="c-card good">
+      <div class="c-badge"><span class="c-badge-dot"></span> Formato scelto</div>
+      <h3>Animation · Motion Graphics</h3>
+      <p>Rompe il pattern visivo — crea micro-curiosità. Adatta perfettamente testi, numeri, icone meccaniche. Asset modulari: i successivi spot costano significativamente meno del primo.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ 02 · SCRIPT ══════════ -->
+<section class="section">
+  <div class="sec-label">02 · Script · Video 01 — Auto Usata</div>
+  <div class="sec-title">30 secondi.<br>Ogni secondo <span class="accent">conta.</span></div>
+
+  <div class="script-outer">
+    <div class="script-thead">
+      <div class="script-th">Tempo</div>
+      <div class="script-th">Voiceover</div>
+      <div class="script-th">Visual · Animazione</div>
+      <div class="script-th">Note Regia</div>
+    </div>
+
+    <div class="script-tr">
+      <div class="st">0–3"<span class="st-beat">Hook</span></div>
+      <div class="sv">"Hai comprato un'auto usata. Ma chi ti <strong>garantisce il motore</strong>?"</div>
+      <div class="svis">Nero. Testo che appare parola per parola. Silhouette auto con punto interrogativo sul cofano.</div>
+      <div class="sn">Non skippabile. Domanda aperta = uncompleted loop cognitivo. Ritmo secco.</div>
+    </div>
+
+    <div class="script-tr">
+      <div class="st">3–10"<span class="st-beat">Problema</span></div>
+      <div class="sv">"Una riparazione al motore può costare <strong>3.000, 5.000 euro</strong>. Il cambio? Anche di più. Senza preavviso."</div>
+      <div class="svis">Contatore che sale veloce. Icone meccaniche che si illuminano in sequenza. Numeri grandi, palette tesa.</div>
+      <div class="sn">Numeri reali = credibilità immediata. Ritmo accelerato. Musica in crescendo.</div>
+    </div>
+
+    <div class="script-tr">
+      <div class="st">10–20"<span class="st-beat">Soluzione</span></div>
+      <div class="sv">"Garanzia 10+: la protezione estesa per auto usate. Copre motore, cambio ed elettronica. <strong>Attivazione immediata online.</strong>"</div>
+      <div class="svis">Logo Garanzia 10+ entra con nettezza. Check animati sulle coperture. Auto "scudata" da shield grafico.</div>
+      <div class="sn">Transizione cromatica da tensione a risoluzione. Musica si distende.</div>
+    </div>
+
+    <div class="script-tr">
+      <div class="st">20–28"<span class="st-beat">Proof</span></div>
+      <div class="sv">"Nessun limite di chilometraggio. Assistenza in tutta Italia. Recesso gratuito entro 30 giorni."</div>
+      <div class="svis">3 card in sequenza rapida. Icone pulite, testo bold. Stile infografica.</div>
+      <div class="sn">Velocità alta. L'utente percepisce sicurezza senza leggere ogni parola.</div>
+    </div>
+
+    <div class="script-tr">
+      <div class="st">28–38"<span class="st-beat">CTA</span></div>
+      <div class="sv">"Calcola subito il tuo preventivo. <strong>Sconto 20% con il codice BENVENUTO20.</strong>"</div>
+      <div class="svis">Mock del sito con pulsante animato. URL garanzia10piu.it prominente. Codice sconto grande.</div>
+      <div class="sn">Codice ripetuto visivo + voiceover. Urgenza dalla deadline nella hero del sito.</div>
+    </div>
+  </div>
+
+  <div class="script-note">
+    <strong>Adattabilità radio:</strong> Il voiceover funziona anche come spot da 30" su Radio Subasio — nessun testo dipende visivamente dalle immagini. Aggiungere una ripetizione del codice e dell'URL in chiusura.
+  </div>
+</section>
+
+
+<!-- ══════════ 03 · DUE CONCEPT ══════════ -->
+<section class="section">
+  <div class="sec-label">03 · Due Concept a Confronto</div>
+  <div class="sec-title">Quale strada<br><span class="accent">prendiamo?</span></div>
+  <p class="sec-intro">
+    Lo script funziona con entrambi gli approcci. La scelta del formato determina il costo, la scalabilità e il tono del brand nel tempo. Discutiamola insieme prima di procedere.
+  </p>
+
+  <div class="concept-grid">
+    <div class="concept-card primary">
+      <div class="concept-pill orange">Opzione A · Consigliata</div>
+      <h3>Pure Motion Graphics</h3>
+      <p>Tutto il video è fatto di grafiche animate, testi in movimento, icone stilizzate, numeri che scorrono. Nessun personaggio fisso — solo il linguaggio visivo del brand Garanzia 10+.</p>
+      <p>Lo stile è pulito, diretto, professionale. Le grafiche si muovono con ritmo e intenzione. Questo è il formato che garantisce la massima leggibilità del messaggio e la più alta replicabilità per i video successivi.</p>
+      <div class="concept-note">
+        <strong>✓ Punto di forza:</strong> nessun rischio di esecuzione. Il risultato finale è esattamente quello che si progetta. Asset completamente riutilizzabili.
+      </div>
+    </div>
+
+    <div class="concept-card secondary">
+      <div class="concept-pill grey">Opzione B · Da valutare</div>
+      <h3>Mascot Animata (Rig)</h3>
+      <p>Un personaggio — "Mr. Motore" o simile — costruito con puppet rig in After Effects o illustrato e animato in 2.5D, che guida lo spettatore attraverso il video. Un volto memorabile per il brand.</p>
+      <p>Se il personaggio è progettato bene diventa un asset potentissimo e distintivo. Se viene approssimato, rischia di abbassare la qualità percepita del video e del brand. Richiede una fase di design dedicata prima dell'animazione.</p>
+      <div class="concept-note">
+        <strong>⚠ Attenzione:</strong> un mascot funziona solo se studiato a fondo — proporzioni, espressività, coerenza con il brand. Aggiungerlo come ripensamento sarebbe controproducente.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ 04 · PERCHÉ L'ANIMAZIONE ══════════ -->
+<section class="section">
+  <div class="sec-label">04 · Perché l'Animazione</div>
+  <div class="sec-title">Un formato.<br><span class="accent">Tre ragioni.</span></div>
+
+  <div class="rat-grid">
+    <div class="rat-card">
+      <span class="rat-num">01</span>
+      <h4>Pattern Interrupt</h4>
+      <p>L'animazione stilizzata rompe il flusso visivo del feed YouTube. Il cervello si ferma per disorientamento percettivo — non per empatia generica. Recupera i 5 secondi non-skippabili e spesso anche oltre.</p>
+    </div>
+    <div class="rat-card">
+      <span class="rat-num">02</span>
+      <h4>Dati Leggibili</h4>
+      <p>Il prodotto si spiega con numeri: costi di riparazione, coperture, chilometraggi. La motion graphics rende questi dati immediatamente percepibili e memorabili. Il video live-action o AI realistico no.</p>
+    </div>
+    <div class="rat-card">
+      <span class="rat-num">03</span>
+      <h4>Asset Modulare</h4>
+      <p>Icone, template, struttura narrativa costruiti una volta. I video successivi (moto, veicoli commerciali) si realizzano riutilizzando il sistema. Meno ore di lavoro, più coerenza visiva.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ 05 · PREVENTIVO ══════════ -->
+<section class="section">
+  <div class="sec-label">05 · Preventivo</div>
+  <div class="sec-title">Investimento<br><span class="accent">chiaro.</span></div>
+  <p class="sec-intro">
+    Il prezzo finale dipende dal concept scelto e dalla struttura che definiremo insieme.
+  </p>
+
+  <div class="price-grid">
+    <div class="price-card featured">
+      <div class="price-badge orange">Opzione A · Pure Motion Graphics</div>
+      <h3>Video Ads — Motion Only</h3>
+      <p class="price-sub">Grafiche animate, testi in movimento, nessun personaggio rig</p>
+      <div class="price-strike">
+        <span class="price-original"><span class="currency">€</span>900</span>
+        <div class="price-amount"><span class="currency">€</span><span class="accent">600</span></div>
+      </div>
+      <p class="price-label">video singolo, 30–40 secondi</p>
+      <ul class="price-includes">
+        <li>Script e storyboard testuale</li>
+        <li>Design grafico allineato al brand Garanzia 10+</li>
+        <li>Animazione in After Effects</li>
+        <li>Voiceover professionista e musica inclusi</li>
+        <li>Formato ottimizzato Google Ads (16:9 + 9:16)</li>
+        <li>1 ciclo di revisioni</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <div class="price-badge grey">Opzione B · Con Mascot Animata</div>
+      <h3>Video Ads — Mascot + Motion</h3>
+      <p class="price-sub">Personaggio progettato, rigato e animato in 2.5D</p>
+      <div class="price-strike">
+        <span class="price-original"><span class="currency">€</span>1.500</span>
+        <div class="price-amount">€900</div>
+      </div>
+      <p class="price-label">video singolo, 30–40 secondi</p>
+      <ul class="price-includes">
+        <li>Script e storyboard testuale</li>
+        <li>Design e sviluppo del personaggio (mascot)</li>
+        <li>Puppet rig e animazione 2.5D in After Effects</li>
+        <li>Voiceover professionista e musica inclusi</li>
+        <li>Formato ottimizzato Google Ads (16:9 + 9:16)</li>
+        <li>1 ciclo di revisioni</li>
+      </ul>
+    </div>
+
+    <div class="price-disclaimer">
+      <strong>Nota:</strong> Questo tipo di produzione — script, design, animazione professionale, voiceover e musica — ha un valore di mercato che parte da €1.500. Il prezzo qui indicato è riservato a questo primo progetto. È un'opportunità di collaborazione su cui voglio investire: dal secondo lavoro in poi si lavora con i listini standard.
+    </div>
+  </div>
+
+  <div class="scale-note">
+    <span class="scale-note-icon">↗</span>
+    <div>
+      <strong style="color:var(--white);font-weight:600;">Scalabilità:</strong> una volta costruito il primo video con il suo sistema di asset, i successivi (moto, veicoli commerciali) si realizzano con un risparmio stimato del <strong style="color:var(--orange);">25–30%</strong> — perché struttura, stile e componenti grafici sono già pronti e riutilizzabili.
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ 06 · VIDEO DI RIFERIMENTO ══════════ -->
+<section class="section">
+  <div class="sec-label">06 · Ispirazione Visiva</div>
+  <div class="sec-title">Come potrebbe<br><span class="accent">sembrare.</span></div>
+
+  <div class="video-intro">
+    <strong>Attenzione:</strong> questi video non sono come sarà il video di Garanzia 10+. Sono una base di ispirazione — un punto di partenza per ragionare insieme su stile, ritmo, tipo di animazione e registro visivo. Il video vero lo costruiremo da zero, su misura, dopo aver definito il concept. Questo documento è solo l'inizio.
+  </div>
+
+  <!-- I miei lavori -->
+  <div class="video-section-label">Lavori di Piero Perilli — Riferimento stile</div>
+  <div class="video-grid">
+
+    <div class="video-card">
+      <a href="https://pieroperilli.com/portfolio/bonus-idrico-acea" target="_blank" class="video-thumb-img">
+        <img src="/images/portfolio/acea-acqua-bonus-idrico-hero.webp" alt="Bonus Idrico Acea" loading="lazy">
+        <div class="play-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </a>
+      <div class="video-info">
+        <div class="video-type">Motion Graphics · 2.5D · Mascot</div>
+        <h4>Bonus Idrico — Acea Acqua</h4>
+        <p>Il caso più vicino all'opzione B: una mascot animata (la goccia d'acqua) che guida lo spettatore. Tema tecnico-burocratico reso semplice e piacevole. Mostra il potenziale — e la complessità — di un personaggio fatto bene.</p>
+      </div>
+      <a href="https://pieroperilli.com/portfolio/bonus-idrico-acea" target="_blank" class="video-link">
+        Vedi nel portfolio <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
+      </a>
+    </div>
+
+    <div class="video-card">
+      <a href="https://pieroperilli.com/portfolio/pmi" target="_blank" class="video-thumb-img">
+        <img src="/images/portfolio/pmi-abbiamo-cura-di-te-animazione.webp" alt="PMI Abbiamo Cura di Te" loading="lazy">
+        <div class="play-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </a>
+      <div class="video-info">
+        <div class="video-type">Motion Graphics · Tratto Continuo</div>
+        <h4>Abbiamo Cura di Te — PMI</h4>
+        <p>Un unico tratto che si trasforma per due minuti senza interruzioni. Puro motion graphics, zero personaggi. Dimostra come un video senza mascot possa essere ipnotico, elegante e narrativamente potente.</p>
+      </div>
+      <a href="https://pieroperilli.com/portfolio/pmi" target="_blank" class="video-link">
+        Vedi nel portfolio <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
+      </a>
+    </div>
+
+    <div class="video-card">
+      <a href="https://youtu.be/JbCkwKTv_3E" target="_blank" class="video-thumb-img">
+        <img src="https://i.ytimg.com/vi/JbCkwKTv_3E/hqdefault.jpg" alt="Poste Italiane — Punto Poste da Te" loading="lazy">
+        <div class="play-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </a>
+      <div class="video-info">
+        <div class="video-type">Motion Graphics · Istituzionale</div>
+        <h4>Punto Poste da Te — Poste Italiane</h4>
+        <p>Motion graphics istituzionale per Poste Italiane. Ritmo visivo serrato, tipografia animata, grafica in movimento. Esempio diretto di come si comunica un servizio complesso in modo chiaro e veloce — esattamente il registro che cercheremo per Garanzia 10+.</p>
+      </div>
+      <a href="https://youtu.be/JbCkwKTv_3E" target="_blank" class="video-link">
+        Guarda su YouTube <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Video di altri -->
+  <div class="video-section-label">Riferimenti Esterni — Ispirazione di mercato</div>
+  <div class="video-grid">
+
+    <div class="video-card">
+      <a href="https://www.youtube.com/watch?v=L3l4ePO6-5g" target="_blank" class="video-thumb-img">
+        <img src="https://i.ytimg.com/vi/L3l4ePO6-5g/hqdefault.jpg" alt="High-End SaaS Motion Graphics Explainer" loading="lazy">
+        <div class="play-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </a>
+      <div class="video-info">
+        <div class="video-type">Riferimento Esterno · Pure Motion · SaaS</div>
+        <h4>Creative Force — SaaS Explainer</h4>
+        <p>Benchmark di alta qualità per motion graphics nel settore B2B. Guarda il ritmo, la tipografia e la chiarezza con cui viene comunicato un servizio complesso. Il livello visivo a cui puntiamo.</p>
+      </div>
+      <a href="https://www.youtube.com/watch?v=L3l4ePO6-5g" target="_blank" class="video-link">
+        Guarda su YouTube <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
+      </a>
+    </div>
+
+    <div class="video-card">
+      <a href="https://vimeo.com/423675629" target="_blank" class="video-thumb-img">
+        <img src="https://i.vimeocdn.com/video/900230818-b85a24ea969014ee137c103cec328505459abff35b6bf61a5b006610a267dd1f-d_640?region=us" alt="Explainer Video Cryptocurrency Exchange" loading="lazy">
+        <div class="play-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </a>
+      <div class="video-info">
+        <div class="video-type">Riferimento Esterno · Mascot · 2D Animata</div>
+        <h4>Cryptocurrency Exchange — Explainer</h4>
+        <p>Personaggio animato di qualità professionale su argomento tecnico-finanziario. Il riferimento diretto per l'Opzione B: guarda il livello di design e fluidità che serve perché una mascot funzioni davvero.</p>
+      </div>
+      <a href="https://vimeo.com/423675629" target="_blank" class="video-link">
+        Guarda su Vimeo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
+      </a>
+    </div>
+
+    <div class="video-card">
+      <a href="https://vimeo.com/405387370" target="_blank" class="video-thumb-img">
+        <img src="https://i.vimeocdn.com/video/875558358-41601511f354bd578c3b8cd3868d6f54c30c35c612a9fbd04af9879ef9ad3a3a-d_640?region=us" alt="ZdalnaPrzychodnia — Explainer Video" loading="lazy">
+        <div class="play-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </a>
+      <div class="video-info">
+        <div class="video-type">Riferimento Esterno · Pure Motion · Healthcare</div>
+        <h4>ZdalnaPrzychodnia — Explainer</h4>
+        <p>Motion graphics pura su tema sanitario — vicino al settore di Garanzia 10+. Zero personaggi: solo ritmo, tipografia, colore e transizioni come strumenti narrativi. Il riferimento diretto per l'Opzione A.</p>
+      </div>
+      <a href="https://vimeo.com/405387370" target="_blank" class="video-link">
+        Guarda su Vimeo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════ FOOTER CTA ══════════ -->
+<div class="footer-cta">
+  <div class="footer-cta-inner">
+    <div>
+      <h2>Questo è il punto<br>di <span class="accent">partenza.</span></h2>
+      <p>Da qui definiamo il concept, allineiamo lo stile visivo e mettiamo in moto la produzione. Il prossimo passo è tuo.</p>
+    </div>
+    <div class="btn-group">
+      <a href="/cdn-cgi/l/email-protection#40292e262f00302925322f302532292c2c296e232f2d" class="btn-orange">Scrivimi →</a>
+      <a href="https://wa.me/393920187759" class="btn-outline">💬 WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- COLOPHON -->
+<div class="colophon">
+  <a href="https://pieroperilli.com" class="col-logo">
+    <img src="/images/logo-white.png" alt="PIERO." />
+  </a>
+  <span class="col-tag">Dal concept al master finale. Sempre.</span>
+  <div class="col-contact">
+    <a href="/cdn-cgi/l/email-protection#066f68606946766f6374697663746f
