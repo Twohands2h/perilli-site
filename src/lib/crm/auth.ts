@@ -10,7 +10,7 @@ const SESSION_VALUE = 'authenticated'
 export function isAuthenticated(): boolean {
   try {
     const cookieStore = cookies()
-    const session = (cookieStore as any).get(SESSION_COOKIE)
+    const session = cookieStore.get(SESSION_COOKIE)
     return session?.value === SESSION_VALUE
   } catch {
     return false

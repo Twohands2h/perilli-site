@@ -38,11 +38,11 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     const { data, error } = await supabase
       .from('crm_files')
       .insert({
-        client_id:    params.id,
-        name:         name || file.name,
-        type:         type || 'Documento',
-        mime:         file.type,
-        size:         file.size,
+        client_id: params.id,
+        name: name || file.name,
+        type: type || 'Documento',
+        mime: file.type,
+        size: file.size,
         storage_path: storagePath,
       })
       .select()
@@ -58,9 +58,9 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     .from('crm_files')
     .insert({
       client_id: params.id,
-      name:      body.name,
-      type:      body.type || 'Documento',
-      url:       body.url,
+      name: body.name,
+      type: body.type || 'Documento',
+      url: body.url,
     })
     .select()
     .single()
@@ -70,7 +70,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
 }
 
 // DELETE /api/crm/clients/[id]/files?fileId=xxx
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest, _ctx: { params: { id: string } }) {
   if (!isAuthenticatedFromRequest(req)) return unauth()
 
   const fileId = new URL(req.url).searchParams.get('fileId')
@@ -92,7 +92,7 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
 }
 
 // GET /api/crm/clients/[id]/files?fileId=xxx — genera URL firmato per download
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest, _ctx: { params: { id: string } }) {
   if (!isAuthenticatedFromRequest(req)) return unauth()
 
   const fileId = new URL(req.url).searchParams.get('fileId')

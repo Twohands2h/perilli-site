@@ -17,9 +17,9 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     .from('crm_logs')
     .insert({
       client_id: params.id,
-      type:      body.type || 'Nota',
-      log_date:  body.log_date || new Date().toISOString().slice(0, 10),
-      text:      body.text,
+      type: body.type || 'Nota',
+      log_date: body.log_date || new Date().toISOString().slice(0, 10),
+      text: body.text,
     })
     .select()
     .single()
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
 }
 
 // DELETE /api/crm/clients/[id]/logs?logId=xxx
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest, _ctx: { params: { id: string } }) {
   if (!isAuthenticatedFromRequest(req)) return unauth()
 
   const logId = new URL(req.url).searchParams.get('logId')

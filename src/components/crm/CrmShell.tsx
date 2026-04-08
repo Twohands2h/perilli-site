@@ -1,9 +1,9 @@
 'use client'
 // src/components/crm/CrmShell.tsx
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import type { CrmClient, CrmLog, CrmFile, ClientFormData, ClientStatus, LogType, FileType } from '@/lib/crm/types'
+import type { CrmClient, CrmFile, ClientFormData, ClientStatus, LogType, FileType } from '@/lib/crm/types'
 
 // ─── CONSTANTS ───────────────────────────────────────────────────────────────
 
@@ -406,7 +406,7 @@ export default function CrmShell({ initialClients, initialView }: Props) {
             { id: 'dashboard', label: 'Dashboard' },
             { id: 'clients', label: 'Tutti i clienti' },
           ].map(item => (
-            <div key={item.id} onClick={() => { setView(item.id as any); setActiveClient(null) }}
+            <div key={item.id} onClick={() => { setView(item.id as 'dashboard' | 'clients' | 'detail'); setActiveClient(null) }}
               style={{ padding: '8px 10px', borderRadius: '7px', cursor: 'pointer', fontSize: '13px', fontWeight: 500, marginBottom: '2px', background: view === item.id && !activeClient ? 'rgba(245,170,68,0.15)' : 'transparent', color: view === item.id && !activeClient ? C.orange : C.off }}>
               {item.label}
             </div>
