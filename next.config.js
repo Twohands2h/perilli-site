@@ -21,6 +21,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // === Pagine proposta clienti ===
+      { source: '/garanzia', destination: '/garanzia/index.html', permanent: false },
+
       // === Redirect 301 da vecchie pagine WordPress / Adobe Portfolio ===
 
       // Pagine servizio
