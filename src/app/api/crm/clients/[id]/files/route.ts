@@ -26,7 +26,6 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       return NextResponse.json({ error: 'File troppo grande (max 20MB)' }, { status: 400 })
     }
 
-    const ext = file.name.split('.').pop()
     const storagePath = `${params.id}/${Date.now()}-${file.name}`
 
     const { error: uploadError } = await supabase.storage
@@ -70,7 +69,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
 }
 
 // DELETE /api/crm/clients/[id]/files?fileId=xxx
-export async function DELETE(req: NextRequest, _ctx: { params: { id: string } }) {
+export async function DELETE(req: NextRequest) {
   if (!isAuthenticatedFromRequest(req)) return unauth()
 
   const fileId = new URL(req.url).searchParams.get('fileId')
@@ -92,7 +91,7 @@ export async function DELETE(req: NextRequest, _ctx: { params: { id: string } })
 }
 
 // GET /api/crm/clients/[id]/files?fileId=xxx — genera URL firmato per download
-export async function GET(req: NextRequest, _ctx: { params: { id: string } }) {
+export async function GET(req: NextRequest) {
   if (!isAuthenticatedFromRequest(req)) return unauth()
 
   const fileId = new URL(req.url).searchParams.get('fileId')

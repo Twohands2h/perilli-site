@@ -29,7 +29,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
 }
 
 // DELETE /api/crm/clients/[id]/logs?logId=xxx
-export async function DELETE(req: NextRequest, _ctx: { params: { id: string } }) {
+export async function DELETE(req: NextRequest) {
   if (!isAuthenticatedFromRequest(req)) return unauth()
 
   const logId = new URL(req.url).searchParams.get('logId')
