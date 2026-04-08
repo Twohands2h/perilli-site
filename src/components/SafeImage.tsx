@@ -3,12 +3,6 @@
 import Image, { type ImageProps } from 'next/image';
 import { useState } from 'react';
 
-/**
- * Image wrapper that:
- * - Shows a shimmer placeholder while loading (prevents black flash)
- * - Shows a dark background (#131313) if the image fails to load
- * Drop-in replacement for next/image — same props.
- */
 export default function SafeImage(props: ImageProps) {
     const [failed, setFailed] = useState(false);
     const [loaded, setLoaded] = useState(false);
@@ -29,8 +23,9 @@ export default function SafeImage(props: ImageProps) {
                     }}
                 />
             )}
-            <Image alt=""
+            <Image
                 {...props}
+                alt={props.alt ?? ''}
                 quality={props.quality ?? 90}
                 onError={() => setFailed(true)}
                 onLoad={() => setLoaded(true)}
