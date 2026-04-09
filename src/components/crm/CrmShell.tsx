@@ -70,9 +70,9 @@ function Btn({ v = 'default', sz = 'md', children, ...p }: { v?: 'default' | 'pr
 
 function Modal({ title, children, onClose, wide }: { title: string; children: React.ReactNode; onClose: () => void; wide?: boolean }) {
   return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', zIndex: 1000, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '30px 20px', overflowY: 'auto' }}
+    <div className="crm-modal-bg" style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', zIndex: 1000, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '30px 20px', overflowY: 'auto' }}
       onClick={e => { if (e.target === e.currentTarget) onClose() }}>
-      <div style={{ background: C.bg2, border: `1px solid ${C.border}`, borderRadius: '14px', padding: '24px', width: '100%', maxWidth: wide ? '680px' : '520px', margin: 'auto' }}>
+      <div className="crm-modal-inner" style={{ background: C.bg2, border: `1px solid ${C.border}`, borderRadius: '14px', padding: '24px', width: '100%', maxWidth: wide ? '680px' : '520px', margin: 'auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
           <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff' }}>{title}</h3>
           <Btn v="ghost" sz="sm" onClick={onClose}>✕</Btn>
@@ -234,7 +234,7 @@ function ProjectForm({ init, onSave, onCancel, loading }: { init?: Partial<Proje
       {isClosed && (
         <div style={{ background: C.bg3, border: `1px solid ${C.border}`, borderRadius: '8px', padding: '12px 14px', marginBottom: '11px' }}>
           <div style={{ fontSize: '10px', color: C.muted, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '10px', fontWeight: 700 }}>Fatturazione</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px' }}>
+          <div className="crm-project-form-3col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px' }}>
             <Field label="Stato">
               <Sel value={f.billing_status || 'Da fatturare'} onChange={set('billing_status')}>
                 {BILLING_STATUSES.map(s => <option key={s}>{s}</option>)}
@@ -382,7 +382,7 @@ function DashboardView() {
 
       {/* Finanze */}
       <SL>Finanze</SL>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '10px' }}>
+      <div className="crm-dash-finance" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '10px' }}>
         {[
           { label: 'Da fatturare', value: stats.totalDaFatturare as number, color: C.amber, bg: C.amberbg },
           { label: 'Fatturato (in attesa)', value: stats.totalFatturato as number, color: C.blue, bg: C.bluebg },
@@ -424,7 +424,7 @@ function DashboardView() {
         </>
       )}
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '18px', marginBottom: '18px' }}>
+      <div className="crm-dash-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '18px', marginBottom: '18px' }}>
         {/* Top clienti */}
         <div>
           <SL>Top clienti per valore</SL>
@@ -606,7 +606,7 @@ function ProjectDetail({
 
         {/* Info grid */}
         <SL>Dettagli progetto</SL>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px' }}>
+        <div className="crm-info-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px' }}>
           <InfoItem label="Budget">{fm(project.budget)}</InfoItem>
           <InfoItem label="Scadenza"><DeadlineBadge deadline={project.deadline} />{!project.deadline && '—'}</InfoItem>
           <InfoItem label="Primo contatto">{fd(project.first_contact)}</InfoItem>
@@ -772,7 +772,7 @@ function ClientDetail({ clientId, onBack, onClientUpdate }: { clientId: string; 
         </div>
 
         {/* Anagrafica */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px', marginBottom: '4px' }}>
+        <div className="crm-info-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px', marginBottom: '4px' }}>
           <InfoItem label="Email">{client.email ? <a href={`mailto:${client.email}`} style={{ color: C.orange }}>{client.email}</a> : '—'}</InfoItem>
           <InfoItem label="Telefono">{client.phone ? <a href={`tel:${client.phone}`} style={{ color: C.orange }}>{client.phone}</a> : '—'}</InfoItem>
           <InfoItem label="Fonte">
@@ -784,7 +784,7 @@ function ClientDetail({ clientId, onBack, onClientUpdate }: { clientId: string; 
         {(client.vat_number || client.sdi_code || client.pec || client.address || client.website) && (
           <>
             <SL>Dati fatturazione</SL>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px' }}>
+            <div className="crm-info-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px' }}>
               {client.vat_number && <InfoItem label="P.IVA / CF">{client.vat_number}</InfoItem>}
               {client.sdi_code && <InfoItem label="Codice SDI">{client.sdi_code}</InfoItem>}
               {client.pec && <InfoItem label="PEC"><a href={`mailto:${client.pec}`} style={{ color: C.orange }}>{client.pec}</a></InfoItem>}
@@ -907,125 +907,175 @@ export default function CrmShell({ initialClients, initialView }: Props) {
       return new Date(a.deadline).getTime() - new Date(b.deadline).getTime()
     })
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '270px 1fr', minHeight: '100vh' }}>
-      {/* SIDEBAR */}
-      <div style={{ background: C.bg2, borderRight: `1px solid ${C.border}`, display: 'flex', flexDirection: 'column', position: 'sticky', top: 0, height: '100vh', overflowY: 'auto' }}>
-        <div style={{ padding: '16px 18px 12px', borderBottom: `1px solid ${C.border}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div><div style={{ fontSize: '20px', fontWeight: 800, color: C.orange }}>PIERO.</div><div style={{ fontSize: '10px', color: C.muted }}>CRM</div></div>
-          <button onClick={handleLogout} style={{ fontSize: '11px', color: C.muted, background: 'none', border: `1px solid ${C.border}`, borderRadius: '6px', padding: '4px 8px', cursor: 'pointer', fontFamily: 'inherit' }}>esci</button>
-        </div>
+    <>
+      {/* ── MOBILE BOTTOM NAV ── */}
+      <style>{`
+      @media (max-width: 767px) {
+        .crm-app { display: flex !important; flex-direction: column !important; }
+        .crm-sidebar { display: none !important; }
+        .crm-main { padding: 16px 14px 80px !important; max-height: none !important; }
+        .crm-bottom-nav { display: flex !important; }
+        .crm-modal-inner { max-width: 100% !important; margin: 0 !important; border-radius: 16px 16px 0 0 !important; position: fixed !important; bottom: 0 !important; left: 0 !important; right: 0 !important; max-height: 92vh !important; overflow-y: auto !important; }
+        .crm-modal-bg { align-items: flex-end !important; padding: 0 !important; }
+        .crm-info-grid { grid-template-columns: 1fr !important; }
+        .crm-dash-finance { grid-template-columns: 1fr !important; }
+        .crm-dash-split { grid-template-columns: 1fr !important; }
+        .crm-project-form-3col { grid-template-columns: 1fr !important; }
+      }
+      @media (min-width: 768px) {
+        .crm-bottom-nav { display: none !important; }
+        .crm-app { display: grid !important; grid-template-columns: 270px 1fr !important; }
+      }
+    `}</style>
+      <div className="crm-app" style={{ minHeight: '100vh' }}>
+        {/* SIDEBAR — desktop only */}
+        <div className="crm-sidebar" style={{ background: C.bg2, borderRight: `1px solid ${C.border}`, display: 'flex', flexDirection: 'column', position: 'sticky', top: 0, height: '100vh', overflowY: 'auto' }}>
+          <div style={{ padding: '16px 18px 12px', borderBottom: `1px solid ${C.border}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div><div style={{ fontSize: '20px', fontWeight: 800, color: C.orange }}>PIERO.</div><div style={{ fontSize: '10px', color: C.muted }}>CRM</div></div>
+            <button onClick={handleLogout} style={{ fontSize: '11px', color: C.muted, background: 'none', border: `1px solid ${C.border}`, borderRadius: '6px', padding: '4px 8px', cursor: 'pointer', fontFamily: 'inherit' }}>esci</button>
+          </div>
 
-        {/* Stats mini */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', padding: '10px 14px', borderBottom: `1px solid ${C.border}` }}>
-          {[{ n: clients.length, l: 'clienti' }, { n: pipelineItems.length, l: 'attivi' }].map(s => (
-            <div key={s.l} style={{ background: C.bg3, borderRadius: '7px', padding: '8px 10px' }}>
-              <div style={{ fontSize: '20px', fontWeight: 700 }}>{s.n}</div>
-              <div style={{ fontSize: '10px', color: C.muted, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{s.l}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Nav */}
-        <div style={{ padding: '8px 8px', borderBottom: `1px solid ${C.border}` }}>
-          {[{ id: 'dashboard', label: 'Dashboard' }, { id: 'clients', label: 'Tutti i clienti' }, { id: 'projects', label: 'Progetti' }].map(item => (
-            <div key={item.id} onClick={() => { setView(item.id as 'dashboard' | 'clients' | 'projects'); setActiveClientId(null) }}
-              style={{ padding: '8px 10px', borderRadius: '7px', cursor: 'pointer', fontSize: '13px', fontWeight: 500, marginBottom: '2px', background: view === item.id && !activeClientId ? 'rgba(245,170,68,0.15)' : 'transparent', color: view === item.id && !activeClientId ? C.orange : C.off }}>
-              {item.label}
-            </div>
-          ))}
-        </div>
-
-        {/* Pipeline */}
-        <div style={{ fontSize: '10px', color: C.muted, textTransform: 'uppercase', letterSpacing: '0.07em', padding: '10px 14px 4px' }}>Pipeline</div>
-        <div style={{ flex: 1, overflowY: 'auto', padding: '4px 8px' }}>
-          {pipelineItems.length === 0 && <div style={{ padding: '10px', fontSize: '12px', color: C.muted }}>nessun progetto attivo</div>}
-          {pipelineItems.map(p => {
-            const diff = deadlineDiff(p.deadline)
-            return (
-              <div key={p.id} onClick={() => { setActiveClientId(p.client_id); setView('detail') }}
-                style={{ padding: '8px 10px', borderRadius: '7px', cursor: 'pointer', marginBottom: '1px', background: activeClientId === p.client_id ? 'rgba(245,170,68,0.1)' : 'transparent', borderLeft: activeClientId === p.client_id ? `3px solid ${C.orange}` : '3px solid transparent' }}>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: '#fff' }}>{p.title}</div>
-                <div style={{ fontSize: '11px', color: C.muted, marginTop: '1px' }}>{p.client_name}</div>
-                {diff !== null && (
-                  <div style={{ fontSize: '10px', marginTop: '2px', color: diff < 0 ? C.red : diff <= 7 ? C.amber : C.muted }}>
-                    {diff < 0 ? `⚠ scad. ${fd(p.deadline)}` : diff <= 7 ? `⏰ ${diff}gg` : `📅 ${fd(p.deadline)}`}
-                  </div>
-                )}
+          {/* Stats mini */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', padding: '10px 14px', borderBottom: `1px solid ${C.border}` }}>
+            {[{ n: clients.length, l: 'clienti' }, { n: pipelineItems.length, l: 'attivi' }].map(s => (
+              <div key={s.l} style={{ background: C.bg3, borderRadius: '7px', padding: '8px 10px' }}>
+                <div style={{ fontSize: '20px', fontWeight: 700 }}>{s.n}</div>
+                <div style={{ fontSize: '10px', color: C.muted, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{s.l}</div>
               </div>
-            )
-          })}
-        </div>
+            ))}
+          </div>
 
-        <div style={{ padding: '12px 14px', borderTop: `1px solid ${C.border}` }}>
-          <Btn v="primary" style={{ width: '100%' }} onClick={() => setModal('newClient')}>+ nuovo cliente</Btn>
-        </div>
-      </div>
+          {/* Nav */}
+          <div style={{ padding: '8px 8px', borderBottom: `1px solid ${C.border}` }}>
+            {[{ id: 'dashboard', label: 'Dashboard' }, { id: 'clients', label: 'Tutti i clienti' }, { id: 'projects', label: 'Progetti' }].map(item => (
+              <div key={item.id} onClick={() => { setView(item.id as 'dashboard' | 'clients' | 'projects'); setActiveClientId(null) }}
+                style={{ padding: '8px 10px', borderRadius: '7px', cursor: 'pointer', fontSize: '13px', fontWeight: 500, marginBottom: '2px', background: view === item.id && !activeClientId ? 'rgba(245,170,68,0.15)' : 'transparent', color: view === item.id && !activeClientId ? C.orange : C.off }}>
+                {item.label}
+              </div>
+            ))}
+          </div>
 
-      {/* MAIN */}
-      <div style={{ padding: '28px 32px', overflowY: 'auto', maxHeight: '100vh' }}>
-
-        {view === 'dashboard' && !activeClientId && <DashboardView />}
-
-        {view === 'projects' && !activeClientId && (
-          <ProjectsView clients={clients} onRefresh={refreshClients} />
-        )}
-
-        {view === 'clients' && !activeClientId && (
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px' }}>
-              <h1 style={{ fontSize: '22px', fontWeight: 700 }}>Clienti</h1>
-              <Btn v="primary" onClick={() => setModal('newClient')}>+ nuovo</Btn>
-            </div>
-            <input value={search} onChange={e => setSearch(e.target.value)} placeholder="cerca…"
-              style={{ width: '100%', padding: '9px 14px', fontSize: '13px', border: `1px solid ${C.border}`, borderRadius: '9px', background: C.bg3, color: C.off, marginBottom: '14px', fontFamily: 'inherit', boxSizing: 'border-box' }} />
-            {filtered.length === 0 && <div style={{ textAlign: 'center', padding: '40px', color: C.muted }}>{search ? 'nessun risultato' : 'Nessun cliente ancora.'}</div>}
-            {filtered.map(c => {
-              const totalBudget = (c.projects || []).reduce((a, p) => a + (p.budget || 0), 0)
-              const activeP = (c.projects || []).filter(p => p.status !== 'Chiuso').length
-              const toInvoice = (c.projects || []).filter(p => p.billing_status === 'Da fatturare').length
+          {/* Pipeline */}
+          <div style={{ fontSize: '10px', color: C.muted, textTransform: 'uppercase', letterSpacing: '0.07em', padding: '10px 14px 4px' }}>Pipeline</div>
+          <div style={{ flex: 1, overflowY: 'auto', padding: '4px 8px' }}>
+            {pipelineItems.length === 0 && <div style={{ padding: '10px', fontSize: '12px', color: C.muted }}>nessun progetto attivo</div>}
+            {pipelineItems.map(p => {
+              const diff = deadlineDiff(p.deadline)
               return (
-                <div key={c.id} onClick={() => { setActiveClientId(c.id); setView('detail') }}
-                  style={{ background: C.bg2, border: `1px solid ${C.border}`, borderRadius: '12px', padding: '16px 20px', marginBottom: '10px', cursor: 'pointer' }}
-                  onMouseEnter={e => (e.currentTarget.style.borderColor = C.orange)}
-                  onMouseLeave={e => (e.currentTarget.style.borderColor = C.border)}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '10px', marginBottom: '10px' }}>
-                    <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                      <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(245,170,68,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', fontWeight: 700, color: C.orange, flexShrink: 0 }}>{ini(c.name)}</div>
-                      <div>
-                        <div style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>{c.name}</div>
-                        <div style={{ fontSize: '12px', color: C.muted }}>{c.company || '—'}</div>
-                      </div>
+                <div key={p.id} onClick={() => { setActiveClientId(p.client_id); setView('detail') }}
+                  style={{ padding: '8px 10px', borderRadius: '7px', cursor: 'pointer', marginBottom: '1px', background: activeClientId === p.client_id ? 'rgba(245,170,68,0.1)' : 'transparent', borderLeft: activeClientId === p.client_id ? `3px solid ${C.orange}` : '3px solid transparent' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#fff' }}>{p.title}</div>
+                  <div style={{ fontSize: '11px', color: C.muted, marginTop: '1px' }}>{p.client_name}</div>
+                  {diff !== null && (
+                    <div style={{ fontSize: '10px', marginTop: '2px', color: diff < 0 ? C.red : diff <= 7 ? C.amber : C.muted }}>
+                      {diff < 0 ? `⚠ scad. ${fd(p.deadline)}` : diff <= 7 ? `⏰ ${diff}gg` : `📅 ${fd(p.deadline)}`}
                     </div>
-                    <div style={{ fontSize: '16px', fontWeight: 700, color: C.orange }}>{fm(totalBudget)}</div>
-                  </div>
-                  <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-                    <span style={{ fontSize: '12px', color: C.muted }}>{(c.projects || []).length} progett{(c.projects || []).length === 1 ? 'o' : 'i'}</span>
-                    {activeP > 0 && <span style={{ fontSize: '11px', padding: '2px 8px', borderRadius: '5px', background: C.purplebg, color: C.purple }}>{activeP} attiv{activeP === 1 ? 'o' : 'i'}</span>}
-                    {toInvoice > 0 && <span style={{ fontSize: '11px', padding: '2px 8px', borderRadius: '5px', background: C.amberbg, color: C.amber }}>🟡 {toInvoice} da fatturare</span>}
-                    {c.source && <span style={{ fontSize: '11px', padding: '2px 8px', borderRadius: '5px', background: 'rgba(245,170,68,0.1)', color: C.orange }}>{c.source}</span>}
-                  </div>
+                  )}
                 </div>
               )
             })}
           </div>
-        )}
 
-        {activeClientId && (
-          <ClientDetail
-            clientId={activeClientId}
-            onBack={() => { setActiveClientId(null); setView('clients') }}
-            onClientUpdate={refreshClients}
-          />
+          <div style={{ padding: '12px 14px', borderTop: `1px solid ${C.border}` }}>
+            <Btn v="primary" style={{ width: '100%' }} onClick={() => setModal('newClient')}>+ nuovo cliente</Btn>
+          </div>
+        </div>
+
+        {/* MAIN */}
+        <div className="crm-main" style={{ padding: '28px 32px', overflowY: 'auto', maxHeight: '100vh' }}>
+
+          {view === 'dashboard' && !activeClientId && <DashboardView />}
+
+          {view === 'projects' && !activeClientId && (
+            <ProjectsView clients={clients} onRefresh={refreshClients} />
+          )}
+
+          {view === 'clients' && !activeClientId && (
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px' }}>
+                <h1 style={{ fontSize: '22px', fontWeight: 700 }}>Clienti</h1>
+                <Btn v="primary" onClick={() => setModal('newClient')}>+ nuovo</Btn>
+              </div>
+              <input value={search} onChange={e => setSearch(e.target.value)} placeholder="cerca…"
+                style={{ width: '100%', padding: '9px 14px', fontSize: '13px', border: `1px solid ${C.border}`, borderRadius: '9px', background: C.bg3, color: C.off, marginBottom: '14px', fontFamily: 'inherit', boxSizing: 'border-box' }} />
+              {filtered.length === 0 && <div style={{ textAlign: 'center', padding: '40px', color: C.muted }}>{search ? 'nessun risultato' : 'Nessun cliente ancora.'}</div>}
+              {filtered.map(c => {
+                const totalBudget = (c.projects || []).reduce((a, p) => a + (p.budget || 0), 0)
+                const activeP = (c.projects || []).filter(p => p.status !== 'Chiuso').length
+                const toInvoice = (c.projects || []).filter(p => p.billing_status === 'Da fatturare').length
+                return (
+                  <div key={c.id} onClick={() => { setActiveClientId(c.id); setView('detail') }}
+                    style={{ background: C.bg2, border: `1px solid ${C.border}`, borderRadius: '12px', padding: '16px 20px', marginBottom: '10px', cursor: 'pointer' }}
+                    onMouseEnter={e => (e.currentTarget.style.borderColor = C.orange)}
+                    onMouseLeave={e => (e.currentTarget.style.borderColor = C.border)}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '10px', marginBottom: '10px' }}>
+                      <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                        <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(245,170,68,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', fontWeight: 700, color: C.orange, flexShrink: 0 }}>{ini(c.name)}</div>
+                        <div>
+                          <div style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>{c.name}</div>
+                          <div style={{ fontSize: '12px', color: C.muted }}>{c.company || '—'}</div>
+                        </div>
+                      </div>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: C.orange }}>{fm(totalBudget)}</div>
+                    </div>
+                    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+                      <span style={{ fontSize: '12px', color: C.muted }}>{(c.projects || []).length} progett{(c.projects || []).length === 1 ? 'o' : 'i'}</span>
+                      {activeP > 0 && <span style={{ fontSize: '11px', padding: '2px 8px', borderRadius: '5px', background: C.purplebg, color: C.purple }}>{activeP} attiv{activeP === 1 ? 'o' : 'i'}</span>}
+                      {toInvoice > 0 && <span style={{ fontSize: '11px', padding: '2px 8px', borderRadius: '5px', background: C.amberbg, color: C.amber }}>🟡 {toInvoice} da fatturare</span>}
+                      {c.source && <span style={{ fontSize: '11px', padding: '2px 8px', borderRadius: '5px', background: 'rgba(245,170,68,0.1)', color: C.orange }}>{c.source}</span>}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+
+          {activeClientId && (
+            <ClientDetail
+              clientId={activeClientId}
+              onBack={() => { setActiveClientId(null); setView('clients') }}
+              onClientUpdate={refreshClients}
+            />
+          )}
+        </div>
+
+        {/* MODAL NUOVO CLIENTE */}
+        {modal === 'newClient' && (
+          <Modal title="Nuovo cliente" onClose={() => setModal(null)}>
+            <ClientForm onSave={handleNewClient} onCancel={() => setModal(null)} loading={loading} />
+          </Modal>
         )}
       </div>
 
-      {/* MODAL NUOVO CLIENTE */}
-      {modal === 'newClient' && (
-        <Modal title="Nuovo cliente" onClose={() => setModal(null)}>
-          <ClientForm onSave={handleNewClient} onCancel={() => setModal(null)} loading={loading} />
-        </Modal>
-      )}
-    </div>
+      {/* ── MOBILE BOTTOM NAV ── */}
+      <div className="crm-bottom-nav" style={{
+        display: 'none', position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 200,
+        background: C.bg2, borderTop: `1px solid ${C.border}`,
+        padding: '8px 0 calc(8px + env(safe-area-inset-bottom))',
+      }}>
+        {[
+          { id: 'dashboard', icon: '▦', label: 'Home' },
+          { id: 'clients', icon: '◉', label: 'Clienti' },
+          { id: 'projects', icon: '◈', label: 'Progetti' },
+        ].map(item => {
+          const isActive = view === item.id && !activeClientId
+          return (
+            <button key={item.id} onClick={() => { setView(item.id as 'dashboard' | 'clients' | 'projects'); setActiveClientId(null) }}
+              style={{ flex: 1, background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px', padding: '4px 0', color: isActive ? C.orange : C.muted, fontFamily: 'inherit' }}>
+              <span style={{ fontSize: '20px', lineHeight: 1 }}>{item.icon}</span>
+              <span style={{ fontSize: '10px', fontWeight: isActive ? 700 : 400 }}>{item.label}</span>
+            </button>
+          )
+        })}
+        <button onClick={() => setModal('newClient')}
+          style={{ flex: 1, background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px', padding: '4px 0', color: C.orange, fontFamily: 'inherit' }}>
+          <span style={{ fontSize: '22px', lineHeight: 1, fontWeight: 700 }}>＋</span>
+          <span style={{ fontSize: '10px', fontWeight: 700 }}>Nuovo</span>
+        </button>
+      </div>
+    </>
   )
 }
