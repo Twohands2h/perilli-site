@@ -907,7 +907,6 @@ export default function CrmShell({ initialClients, initialView }: Props) {
       return new Date(a.deadline).getTime() - new Date(b.deadline).getTime()
     })
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
 
   return (
     <>
