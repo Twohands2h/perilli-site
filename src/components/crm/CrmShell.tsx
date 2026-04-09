@@ -335,7 +335,7 @@ function NewProjectModal({ clients, onClose, onCreated }: {
         {mode === 'existing' && (
           <div>
             {clients.length === 0
-              ? <div style={{ fontSize: '13px', color: C.muted, padding: '8px 0' }}>Nessun cliente ancora — usa "Nuovo cliente"</div>
+              ? <div style={{ fontSize: '13px', color: C.muted, padding: '8px 0' }}>Nessun cliente ancora — usa il tab Nuovo cliente</div>
               : <>
                 <Inp
                   value={clientSearch}
