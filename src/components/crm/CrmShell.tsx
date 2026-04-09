@@ -353,7 +353,7 @@ function DashboardView() {
     setLoading(false)
   }
 
-  useEffect(() => { loadStats(year) }, [])
+  useEffect(() => { loadStats(year) }, [year]) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading || !stats) return <div style={{ padding: '40px', textAlign: 'center', color: C.muted }}>caricamento…</div>
 
@@ -429,7 +429,7 @@ function DashboardView() {
         <div>
           <SL>Top clienti per valore</SL>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-            {topClients.slice(0, 6).map((c: { client_id: string; name: string; total: number; projects: number }, i: number) => {
+            {topClients.slice(0, 6).map((c: { client_id: string; name: string; total: number; projects: number }) => {
               const pct = totalValue > 0 ? Math.round((c.total / totalValue) * 100) : 0
               return (
                 <div key={c.client_id} style={{ background: C.bg2, border: `1px solid ${C.border}`, borderRadius: '8px', padding: '10px 12px' }}>
@@ -718,7 +718,7 @@ function ClientDetail({ clientId, onBack, onClientUpdate }: { clientId: string; 
     if (res.ok) setClient(await res.json())
   }
 
-  useEffect(() => { loadClient() }, [])
+  useEffect(() => { loadClient() }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleSaveClient(data: ClientFormData) {
     setLoading(true)
@@ -812,7 +812,7 @@ function ClientDetail({ clientId, onBack, onClientUpdate }: { clientId: string; 
         )}
 
         {client.projects?.map(p => (
-          <div key={p.id} onClick={() => { const res = fetch(`/api/crm/projects/${p.id}`).then(r => r.json()).then(d => setActiveProject(d)) }}
+          <div key={p.id} onClick={() => { fetch(`/api/crm/projects/${p.id}`).then(r => r.json()).then(d => setActiveProject(d)) }}
             style={{ background: C.bg3, border: `1px solid ${C.border}`, borderRadius: '10px', padding: '14px 16px', marginBottom: '8px', cursor: 'pointer', transition: 'border-color 0.15s' }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = C.orange)}
             onMouseLeave={e => (e.currentTarget.style.borderColor = C.border)}>
@@ -897,7 +897,6 @@ export default function CrmShell({ initialClients, initialView }: Props) {
   }
 
   const filtered = search ? clients.filter(c => `${c.name}${c.company}`.toLowerCase().includes(search.toLowerCase())) : clients
-  const activeClients = clients.filter(c => (c.projects || []).some(p => p.status !== 'Chiuso'))
 
   // Sidebar pipeline: tutti i progetti attivi ordinati per scadenza
   const pipelineItems = clients
@@ -984,7 +983,6 @@ export default function CrmShell({ initialClients, initialView }: Props) {
             {filtered.map(c => {
               const totalBudget = (c.projects || []).reduce((a, p) => a + (p.budget || 0), 0)
               const activeP = (c.projects || []).filter(p => p.status !== 'Chiuso').length
-              const closedP = (c.projects || []).filter(p => p.status === 'Chiuso').length
               const toInvoice = (c.projects || []).filter(p => p.billing_status === 'Da fatturare').length
               return (
                 <div key={c.id} onClick={() => { setActiveClientId(c.id); setView('detail') }}
