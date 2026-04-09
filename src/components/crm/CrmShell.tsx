@@ -256,10 +256,167 @@ function ProjectForm({ init, onSave, onCancel, loading }: { init?: Partial<Proje
 }
 
 
+
+// ─── NEW PROJECT MODAL (with client create/select) ────────────────────────────
+function NewProjectModal({ clients, onClose, onCreated }: {
+  clients: CrmClient[]
+  onClose: () => void
+  onCreated: (clientId: string, projectId: string) => void
+}) {
+  const [mode, setMode] = useState<'existing' | 'new'>('existing')
+  const [clientId, setClientId] = useState(clients[0]?.id || '')
+  const [clientSearch, setClientSearch] = useState('')
+  const [newClient, setNewClient] = useState<ClientFormData>({ name: '', company: '', email: '', phone: '', source: undefined, notes: '' })
+  const [project, setProject] = useState<ProjectFormData>({
+    title: '', service: '', budget: '', deadline: '',
+    status: 'Lead', brief: '', next_action: '', first_contact: '',
+  })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const setNC = (k: keyof ClientFormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    setNewClient(p => ({ ...p, [k]: e.target.value }))
+  const setP = (k: keyof ProjectFormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    setProject(p => ({ ...p, [k]: e.target.value }))
+
+  const filteredClients = clientSearch
+    ? clients.filter(c => `${c.name}${c.company}`.toLowerCase().includes(clientSearch.toLowerCase()))
+    : clients
+
+  async function handleSave() {
+    if (!project.title.trim()) { setError('Il titolo del progetto è obbligatorio'); return }
+    if (mode === 'existing' && !clientId) { setError('Seleziona un cliente'); return }
+    if (mode === 'new' && !newClient.name.trim()) { setError('Il nome del cliente è obbligatorio'); return }
+    setLoading(true); setError('')
+
+    let finalClientId = clientId
+
+    // Create new client if needed
+    if (mode === 'new') {
+      const cRes = await fetch('/api/crm/clients', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newClient),
+      })
+      if (!cRes.ok) { setError('Errore nella creazione del cliente'); setLoading(false); return }
+      const cData = await cRes.json()
+      finalClientId = cData.id
+    }
+
+    // Create project
+    const pRes = await fetch(`/api/crm/clients/${finalClientId}/projects`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(project),
+    })
+    if (!pRes.ok) { setError('Errore nella creazione del progetto'); setLoading(false); return }
+    const pData = await pRes.json()
+    onCreated(finalClientId, pData.id)
+    setLoading(false)
+  }
+
+  const tabStyle = (active: boolean): React.CSSProperties => ({
+    flex: 1, padding: '8px', fontSize: '13px', fontWeight: active ? 700 : 400,
+    border: `1px solid ${active ? C.orange : C.border}`,
+    borderRadius: '8px', background: active ? 'rgba(245,170,68,0.12)' : 'transparent',
+    color: active ? C.orange : C.muted, cursor: 'pointer', fontFamily: 'inherit',
+  })
+
+  return (
+    <Modal title="Nuovo progetto" onClose={onClose} wide>
+      {/* Client selector */}
+      <div style={{ marginBottom: '16px' }}>
+        <label style={labelSt}>Cliente</label>
+        <div style={{ display: 'flex', gap: '8px', marginBottom: '10px' }}>
+          <button style={tabStyle(mode === 'existing')} onClick={() => setMode('existing')}>Cliente esistente</button>
+          <button style={tabStyle(mode === 'new')} onClick={() => setMode('new')}>+ Nuovo cliente</button>
+        </div>
+
+        {mode === 'existing' && (
+          <div>
+            {clients.length === 0
+              ? <div style={{ fontSize: '13px', color: C.muted, padding: '8px 0' }}>Nessun cliente ancora — usa "Nuovo cliente"</div>
+              : <>
+                <Inp
+                  value={clientSearch}
+                  onChange={e => setClientSearch(e.target.value)}
+                  placeholder="Cerca cliente..."
+                  style={{ marginBottom: '8px' }}
+                />
+                <div style={{ maxHeight: '160px', overflowY: 'auto', border: `1px solid ${C.border}`, borderRadius: '8px' }}>
+                  {filteredClients.map(c => (
+                    <div key={c.id} onClick={() => setClientId(c.id)}
+                      style={{ padding: '9px 12px', cursor: 'pointer', background: clientId === c.id ? 'rgba(245,170,68,0.12)' : 'transparent', borderBottom: `1px solid ${C.border}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <div>
+                        <div style={{ fontSize: '13px', fontWeight: 600, color: clientId === c.id ? C.orange : C.off }}>{c.name}</div>
+                        {c.company && <div style={{ fontSize: '11px', color: C.muted }}>{c.company}</div>}
+                      </div>
+                      {clientId === c.id && <span style={{ color: C.orange, fontSize: '16px' }}>✓</span>}
+                    </div>
+                  ))}
+                </div>
+              </>
+            }
+          </div>
+        )}
+
+        {mode === 'new' && (
+          <div style={{ background: C.bg3, borderRadius: '8px', padding: '12px 14px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+              <Field label="Nome *"><Inp value={newClient.name} onChange={setNC('name')} placeholder="Mario Rossi" /></Field>
+              <Field label="Azienda"><Inp value={newClient.company} onChange={setNC('company')} placeholder="Agenzia X" /></Field>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+              <Field label="Email"><Inp type="email" value={newClient.email} onChange={setNC('email')} placeholder="mario@..." /></Field>
+              <Field label="Telefono"><Inp value={newClient.phone} onChange={setNC('phone')} placeholder="+39 ..." /></Field>
+            </div>
+            <Field label="Come mi ha trovato">
+              <Sel value={newClient.source || ''} onChange={setNC('source')}>
+                <option value="">— seleziona —</option>
+                {SOURCES.map(s => <option key={s}>{s}</option>)}
+              </Sel>
+            </Field>
+          </div>
+        )}
+      </div>
+
+      <div style={{ height: '1px', background: C.border, margin: '4px 0 16px' }} />
+
+      {/* Project fields */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+        <Field label="Titolo progetto *"><Inp value={project.title} onChange={setP('title')} placeholder="es. Video istituzionale 2026" /></Field>
+        <Field label="Servizio"><Inp value={project.service} onChange={setP('service')} placeholder="es. VFX + Color Grading" /></Field>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+        <Field label="Budget (€)"><Inp type="number" value={project.budget?.toString() || ''} onChange={setP('budget')} placeholder="5000" /></Field>
+        <Field label="Scadenza"><Inp type="date" value={project.deadline} onChange={setP('deadline')} /></Field>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+        <Field label="Stato">
+          <Sel value={project.status} onChange={setP('status')}>
+            {PROJECT_STATUSES.map(s => <option key={s}>{s}</option>)}
+          </Sel>
+        </Field>
+        <Field label="Prossima azione"><Inp value={project.next_action} onChange={setP('next_action')} placeholder="es. Inviare preventivo" /></Field>
+      </div>
+      <Field label="Brief"><Ta value={project.brief} onChange={setP('brief')} placeholder="Descrivi il progetto..." /></Field>
+
+      {error && <div style={{ fontSize: '12px', color: C.red, marginBottom: '8px' }}>{error}</div>}
+
+      <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end', paddingTop: '14px', borderTop: `1px solid ${C.border}` }}>
+        <Btn onClick={onClose}>annulla</Btn>
+        <Btn v="primary" onClick={handleSave} disabled={loading}>{loading ? 'creazione…' : 'crea progetto'}</Btn>
+      </div>
+    </Modal>
+  )
+}
+
 // ─── PROJECTS VIEW (tutti i progetti, tutti i clienti) ────────────────────────
-function ProjectsView({ clients, onRefresh }: { clients: CrmClient[]; onRefresh: () => void }) {
+function ProjectsView({ clients, onRefresh, onNavigate }: { clients: CrmClient[]; onRefresh: () => void; onNavigate: (clientId: string, projectId: string) => void }) {
   const [filter, setFilter] = useState<ProjectStatus | 'Tutti'>('Tutti')
   const [billingFilter, setBillingFilter] = useState<BillingStatus | 'Tutti'>('Tutti')
+  const [sortBy, setSortBy] = useState<'recenti' | 'scadenza' | 'budget'>('recenti')
+  const [showNewProject, setShowNewProject] = useState(false)
 
   const allProjects = clients.flatMap(c =>
     (c.projects || []).map(p => ({ ...p, client_name: c.name, client_id: c.id }))
@@ -275,9 +432,14 @@ function ProjectsView({ clients, onRefresh }: { clients: CrmClient[]; onRefresh:
   })
 
   const sorted = [...filtered].sort((a, b) => {
-    if (!a.deadline && !b.deadline) return 0
-    if (!a.deadline) return 1; if (!b.deadline) return -1
-    return new Date(a.deadline).getTime() - new Date(b.deadline).getTime()
+    if (sortBy === 'budget') return (b.budget || 0) - (a.budget || 0)
+    if (sortBy === 'scadenza') {
+      if (!a.deadline && !b.deadline) return 0
+      if (!a.deadline) return 1; if (!b.deadline) return -1
+      return new Date(a.deadline).getTime() - new Date(b.deadline).getTime()
+    }
+    // recenti: più recente prima
+    return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
   })
 
   const filterBtnStyle = (active: boolean): React.CSSProperties => ({
@@ -291,7 +453,10 @@ function ProjectsView({ clients, onRefresh }: { clients: CrmClient[]; onRefresh:
     <div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px', flexWrap: 'wrap', gap: '10px' }}>
         <h1 style={{ fontSize: '22px', fontWeight: 700 }}>Progetti</h1>
-        <span style={{ fontSize: '13px', color: C.muted }}>{sorted.length} progett{sorted.length === 1 ? 'o' : 'i'}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <span style={{ fontSize: '13px', color: C.muted }}>{sorted.length} progett{sorted.length === 1 ? 'o' : 'i'}</span>
+          <Btn v="primary" onClick={() => setShowNewProject(true)}>+ nuovo progetto</Btn>
+        </div>
       </div>
 
       {/* Filtri stato workflow */}
@@ -302,16 +467,37 @@ function ProjectsView({ clients, onRefresh }: { clients: CrmClient[]; onRefresh:
       </div>
 
       {/* Filtri fatturazione */}
-      <div style={{ display: 'flex', gap: '7px', flexWrap: 'wrap', marginBottom: '18px' }}>
+      <div style={{ display: 'flex', gap: '7px', flexWrap: 'wrap', marginBottom: '10px' }}>
         {(['Tutti', ...BILLING_STATUSES] as (BillingStatus | 'Tutti')[]).map(s => (
           <button key={s} style={filterBtnStyle(billingFilter === s)} onClick={() => setBillingFilter(s)}>{s}</button>
         ))}
       </div>
+      {/* Ordinamento */}
+      <div style={{ display: 'flex', gap: '7px', alignItems: 'center', marginBottom: '18px' }}>
+        <span style={{ fontSize: '11px', color: C.muted }}>Ordina:</span>
+        {(['recenti', 'scadenza', 'budget'] as const).map(s => (
+          <button key={s} style={filterBtnStyle(sortBy === s)} onClick={() => setSortBy(s)}>{s}</button>
+        ))}
+      </div>
 
+      {showNewProject && (
+        <NewProjectModal
+          clients={clients}
+          onClose={() => setShowNewProject(false)}
+          onCreated={async (clientId, projectId) => {
+            await onRefresh()
+            setShowNewProject(false)
+            onNavigate(clientId, projectId)
+          }}
+        />
+      )}
       {sorted.length === 0 && <div style={{ textAlign: 'center', padding: '40px', color: C.muted, fontSize: '13px' }}>nessun progetto con questi filtri</div>}
 
       {sorted.map(p => (
-        <div key={p.id} style={{ background: C.bg2, border: `1px solid ${C.border}`, borderRadius: '11px', padding: '14px 18px', marginBottom: '8px' }}>
+        <div key={p.id} onClick={() => onNavigate(p.client_id, p.id)}
+          style={{ background: C.bg2, border: `1px solid ${C.border}`, borderRadius: '11px', padding: '14px 18px', marginBottom: '8px', cursor: 'pointer', transition: 'border-color 0.15s' }}
+          onMouseEnter={e => (e.currentTarget.style.borderColor = C.orange)}
+          onMouseLeave={e => (e.currentTarget.style.borderColor = C.border)}>
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '10px', marginBottom: '8px' }}>
             <div>
               <div style={{ fontSize: '14px', fontWeight: 700, color: '#fff' }}>{p.title}</div>
@@ -320,10 +506,12 @@ function ProjectsView({ clients, onRefresh }: { clients: CrmClient[]; onRefresh:
             <div style={{ display: 'flex', gap: '7px', alignItems: 'center', flexShrink: 0, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
               <ProjectStatusBadge status={p.status as ProjectStatus} />
               {p.status === 'Chiuso' && (
-                <BillingPill
-                  project={p as CrmProject}
-                  onUpdate={onRefresh}
-                />
+                <div onClick={e => e.stopPropagation()}>
+                  <BillingPill
+                    project={p as CrmProject}
+                    onUpdate={onRefresh}
+                  />
+                </div>
               )}
             </div>
           </div>
@@ -341,7 +529,7 @@ function ProjectsView({ clients, onRefresh }: { clients: CrmClient[]; onRefresh:
 }
 
 // ─── DASHBOARD VIEW ───────────────────────────────────────────────────────────
-function DashboardView() {
+function DashboardView({ onNavigate }: { onNavigate: (clientId: string, projectId: string) => void }) {
   const [stats, setStats] = useState<Record<string, unknown> | null>(null)
   const [year, setYear] = useState(new Date().getFullYear().toString())
   const [loading, setLoading] = useState(true)
@@ -471,7 +659,10 @@ function DashboardView() {
       <SL>Pipeline attiva</SL>
       {activeProjects.length === 0 && <div style={{ textAlign: 'center', padding: '20px', color: C.muted, fontSize: '13px' }}>nessun progetto attivo</div>}
       {activeProjects.map((p: CrmProject & { client_name: string }) => (
-        <div key={p.id} style={{ background: C.bg2, border: `1px solid ${C.border}`, borderRadius: '10px', padding: '12px 16px', marginBottom: '7px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div key={p.id} onClick={() => onNavigate(p.client_id, p.id)}
+          style={{ background: C.bg2, border: `1px solid ${C.border}`, borderRadius: '10px', padding: '12px 16px', marginBottom: '7px', display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}
+          onMouseEnter={e => (e.currentTarget.style.borderColor = C.orange)}
+          onMouseLeave={e => (e.currentTarget.style.borderColor = C.border)}>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: '14px', fontWeight: 700, color: C.off }}>{p.title}</div>
             <div style={{ fontSize: '12px', color: C.muted, marginTop: '2px' }}>{p.client_name}{p.service ? ' · ' + p.service : ''}</div>
@@ -706,7 +897,7 @@ function ProjectDetail({
 }
 
 // ─── CLIENT DETAIL VIEW ───────────────────────────────────────────────────────
-function ClientDetail({ clientId, onBack, onClientUpdate }: { clientId: string; onBack: () => void; onClientUpdate: () => void }) {
+function ClientDetail({ clientId, initialProjectId, onBack, onClientUpdate }: { clientId: string; initialProjectId?: string | null; onBack: () => void; onClientUpdate: () => void }) {
   const [client, setClient] = useState<CrmClient | null>(null)
   const [activeProject, setActiveProject] = useState<CrmProject | null>(null)
   const [modal, setModal] = useState<'editClient' | 'newProject' | null>(null)
@@ -715,7 +906,14 @@ function ClientDetail({ clientId, onBack, onClientUpdate }: { clientId: string; 
 
   async function loadClient() {
     const res = await fetch(`/api/crm/clients/${clientId}`)
-    if (res.ok) setClient(await res.json())
+    if (res.ok) {
+      setClient(await res.json())
+      // Auto-open project if coming from Projects view
+      if (initialProjectId) {
+        const pRes = await fetch(`/api/crm/projects/${initialProjectId}`)
+        if (pRes.ok) setActiveProject(await pRes.json())
+      }
+    }
   }
 
   useEffect(() => { loadClient() }, []) // eslint-disable-line react-hooks/exhaustive-deps
@@ -874,6 +1072,7 @@ export default function CrmShell({ initialClients, initialView }: Props) {
   const [clients, setClients] = useState<CrmClient[]>(initialClients)
   const [view, setView] = useState<'dashboard' | 'clients' | 'projects' | 'detail'>(initialView)
   const [activeClientId, setActiveClientId] = useState<string | null>(null)
+  const [activeProjectId, setActiveProjectId] = useState<string | null>(null)
   const [modal, setModal] = useState<'newClient' | null>(null)
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
@@ -897,15 +1096,6 @@ export default function CrmShell({ initialClients, initialView }: Props) {
   }
 
   const filtered = search ? clients.filter(c => `${c.name}${c.company}`.toLowerCase().includes(search.toLowerCase())) : clients
-
-  // Sidebar pipeline: tutti i progetti attivi ordinati per scadenza
-  const pipelineItems = clients
-    .flatMap(c => (c.projects || []).filter(p => p.status !== 'Chiuso').map(p => ({ ...p, client_name: c.name, client_id: c.id })))
-    .sort((a, b) => {
-      if (!a.deadline && !b.deadline) return 0
-      if (!a.deadline) return 1; if (!b.deadline) return -1
-      return new Date(a.deadline).getTime() - new Date(b.deadline).getTime()
-    })
 
 
   return (
@@ -939,7 +1129,7 @@ export default function CrmShell({ initialClients, initialView }: Props) {
 
           {/* Stats mini */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', padding: '10px 14px', borderBottom: `1px solid ${C.border}` }}>
-            {[{ n: clients.length, l: 'clienti' }, { n: pipelineItems.length, l: 'attivi' }].map(s => (
+            {[{ n: clients.length, l: 'clienti' }, { n: clients.flatMap(c => c.projects || []).filter(p => p.status !== 'Chiuso').length, l: 'attivi' }].map(s => (
               <div key={s.l} style={{ background: C.bg3, borderRadius: '7px', padding: '8px 10px' }}>
                 <div style={{ fontSize: '20px', fontWeight: 700 }}>{s.n}</div>
                 <div style={{ fontSize: '10px', color: C.muted, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{s.l}</div>
@@ -957,26 +1147,7 @@ export default function CrmShell({ initialClients, initialView }: Props) {
             ))}
           </div>
 
-          {/* Pipeline */}
-          <div style={{ fontSize: '10px', color: C.muted, textTransform: 'uppercase', letterSpacing: '0.07em', padding: '10px 14px 4px' }}>Pipeline</div>
-          <div style={{ flex: 1, overflowY: 'auto', padding: '4px 8px' }}>
-            {pipelineItems.length === 0 && <div style={{ padding: '10px', fontSize: '12px', color: C.muted }}>nessun progetto attivo</div>}
-            {pipelineItems.map(p => {
-              const diff = deadlineDiff(p.deadline)
-              return (
-                <div key={p.id} onClick={() => { setActiveClientId(p.client_id); setView('detail') }}
-                  style={{ padding: '8px 10px', borderRadius: '7px', cursor: 'pointer', marginBottom: '1px', background: activeClientId === p.client_id ? 'rgba(245,170,68,0.1)' : 'transparent', borderLeft: activeClientId === p.client_id ? `3px solid ${C.orange}` : '3px solid transparent' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#fff' }}>{p.title}</div>
-                  <div style={{ fontSize: '11px', color: C.muted, marginTop: '1px' }}>{p.client_name}</div>
-                  {diff !== null && (
-                    <div style={{ fontSize: '10px', marginTop: '2px', color: diff < 0 ? C.red : diff <= 7 ? C.amber : C.muted }}>
-                      {diff < 0 ? `⚠ scad. ${fd(p.deadline)}` : diff <= 7 ? `⏰ ${diff}gg` : `📅 ${fd(p.deadline)}`}
-                    </div>
-                  )}
-                </div>
-              )
-            })}
-          </div>
+          <div style={{ flex: 1 }} />
 
           <div style={{ padding: '12px 14px', borderTop: `1px solid ${C.border}` }}>
             <Btn v="primary" style={{ width: '100%' }} onClick={() => setModal('newClient')}>+ nuovo cliente</Btn>
@@ -986,10 +1157,18 @@ export default function CrmShell({ initialClients, initialView }: Props) {
         {/* MAIN */}
         <div className="crm-main" style={{ padding: '28px 32px', overflowY: 'auto', maxHeight: '100vh' }}>
 
-          {view === 'dashboard' && !activeClientId && <DashboardView />}
+          {view === 'dashboard' && !activeClientId && <DashboardView onNavigate={(clientId, projectId) => {
+            setActiveProjectId(projectId)
+            setActiveClientId(clientId)
+            setView('detail')
+          }} />}
 
           {view === 'projects' && !activeClientId && (
-            <ProjectsView clients={clients} onRefresh={refreshClients} />
+            <ProjectsView clients={clients} onRefresh={refreshClients} onNavigate={(clientId, projectId) => {
+              setActiveProjectId(projectId)
+              setActiveClientId(clientId)
+              setView('detail')
+            }} />
           )}
 
           {view === 'clients' && !activeClientId && (
@@ -1006,7 +1185,7 @@ export default function CrmShell({ initialClients, initialView }: Props) {
                 const activeP = (c.projects || []).filter(p => p.status !== 'Chiuso').length
                 const toInvoice = (c.projects || []).filter(p => p.billing_status === 'Da fatturare').length
                 return (
-                  <div key={c.id} onClick={() => { setActiveClientId(c.id); setView('detail') }}
+                  <div key={c.id} onClick={() => { setActiveProjectId(null); setActiveClientId(c.id); setView('detail') }}
                     style={{ background: C.bg2, border: `1px solid ${C.border}`, borderRadius: '12px', padding: '16px 20px', marginBottom: '10px', cursor: 'pointer' }}
                     onMouseEnter={e => (e.currentTarget.style.borderColor = C.orange)}
                     onMouseLeave={e => (e.currentTarget.style.borderColor = C.border)}>
@@ -1035,7 +1214,8 @@ export default function CrmShell({ initialClients, initialView }: Props) {
           {activeClientId && (
             <ClientDetail
               clientId={activeClientId}
-              onBack={() => { setActiveClientId(null); setView('clients') }}
+              initialProjectId={activeProjectId}
+              onBack={() => { setActiveClientId(null); setActiveProjectId(null); setView(activeProjectId ? 'projects' : 'clients') }}
               onClientUpdate={refreshClients}
             />
           )}
