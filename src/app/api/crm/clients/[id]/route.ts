@@ -8,7 +8,7 @@ function unauth() {
   return NextResponse.json({ error: 'Non autorizzato' }, { status: 401 })
 }
 
-// GET /api/crm/clients/[id] — dettaglio cliente con file e log
+// GET /api/crm/clients/[id] — cliente con tutti i progetti
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
   if (!isAuthenticatedFromRequest(req)) return unauth()
 
@@ -20,15 +20,16 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
 
   if (error) return NextResponse.json({ error: error.message }, { status: 404 })
 
-  const [{ data: files }, { data: logs }] = await Promise.all([
-    supabase.from('crm_files').select('*').eq('client_id', params.id).order('created_at', { ascending: false }),
-    supabase.from('crm_logs').select('*').eq('client_id', params.id).order('log_date', { ascending: false }),
-  ])
+  const { data: projects } = await supabase
+    .from('crm_projects')
+    .select('*')
+    .eq('client_id', params.id)
+    .order('created_at', { ascending: false })
 
-  return NextResponse.json({ ...client, files: files || [], logs: logs || [] })
+  return NextResponse.json({ ...client, projects: projects || [] })
 }
 
-// PATCH /api/crm/clients/[id] — aggiorna cliente
+// PATCH /api/crm/clients/[id] — aggiorna anagrafica cliente
 export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
   if (!isAuthenticatedFromRequest(req)) return unauth()
 
@@ -36,18 +37,17 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   const { data, error } = await supabase
     .from('crm_clients')
     .update({
-      name:          body.name,
-      company:       body.company || null,
-      email:         body.email || null,
-      phone:         body.phone || null,
-      service:       body.service || null,
-      source:        body.source || null,
-      budget:        body.budget ? Number(body.budget) : null,
-      deadline:      body.deadline || null,
-      status:        body.status,
-      next_action:   body.next_action || null,
-      first_contact: body.first_contact || null,
-      brief:         body.brief || null,
+      name: body.name,
+      company: body.company || null,
+      email: body.email || null,
+      phone: body.phone || null,
+      source: body.source || null,
+      notes: body.notes || null,
+      vat_number: body.vat_number || null,
+      sdi_code: body.sdi_code || null,
+      pec: body.pec || null,
+      address: body.address || null,
+      website: body.website || null,
     })
     .eq('id', params.id)
     .select()
@@ -57,11 +57,11 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   return NextResponse.json(data)
 }
 
-// DELETE /api/crm/clients/[id] — elimina cliente (cascade su file e log)
+// DELETE /api/crm/clients/[id] — elimina cliente e tutti i progetti/file
 export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
   if (!isAuthenticatedFromRequest(req)) return unauth()
 
-  // Elimina anche i file da Storage se presenti
+  // Elimina file da Storage
   const { data: files } = await supabase
     .from('crm_files')
     .select('storage_path')
