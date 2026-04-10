@@ -36,223 +36,218 @@ export const posts: BlogPost[] = [
             en: 'Rewake — Slate interface showing Scene, Shot, Take structure for AI film projects'
         },
         contentIt: `<p><em>Aprile 2026</em></p>
-     
-    <p>C'è un momento preciso in cui un progetto AI smette di essere eccitante e diventa un problema. Non quando la generazione fallisce. Il momento è quando torni a un progetto dopo dieci giorni e non capisci più niente.</p>
-     
-    <p>Quale era il prompt approvato per lo shot 2.3? Quale reference aveva definito la luce interna? Perché avevi scartato proprio quell'immagine o quel video? Le risposte esistevano. Esistevano nella sessione di due settimane fa, nella chat di Runway, nella cartella con quaranta file chiamati <code>output_v2_FINAL_usethis.png</code>. Adesso non esistono più.</p>
-     
-    <p>Il problema non è che i file spariscono. I file sono tutti lì. Il problema è che si perde il contesto — e senza contesto, il progetto diventa illeggibile.</p>
-     
-    <p>Per organizzare un progetto film AI senza perdere continuità servono quattro cose:</p>
-     
-    <ul class="list-disc pl-6 space-y-1 my-4">
-      <li>una struttura gerarchica stabile: Scena → Shot → Take</li>
-      <li>un collegamento permanente tra prompt, reference e output</li>
-      <li>note decisionali che spiegano perché un take è stato scelto o scartato</li>
-      <li>un sistema che preservi queste relazioni nel tempo, non solo i file</li>
-    </ul>
-     
-    <p>Il resto di questo articolo spiega perché, e come.</p>
-     
-    <h2>Il caos è il default, non l'eccezione</h2>
-     
-    <p>Quando lavori con strumenti AI su un progetto narrativo — un cortometraggio, uno spot, una serie — generi molto più di quello che usi. Per ogni shot che finisce nel film, ci sono spesso otto, dieci, quindici take scartati. Ognuno prodotto con un prompt diverso, una reference diversa, un seed diverso. Ognuno valutato e abbandonato per una ragione che all'epoca era ovvia.</p>
-     
-    <p>Runway non sa che lo shot 2.3 appartiene alla Scena 2. Kling non sa che hai usato una reference pensata su una luce alla Storaro o Richardson. Midjourney non sa perché quel personaggio ha i capelli grigi e non bianchi. Questi strumenti generano. Non ricordano.</p>
-     
-    <p>Il risultato è quello che chiamo il problema della leggibilità nel tempo. I file ci sono. La struttura creativa del progetto — i perché, le decisioni, le direzioni visive stabilite — non c'è più.</p>
-     
-    <h2>Perché le soluzioni ovvie non bastano</h2>
-     
-    <p><strong>Le cartelle numerate</strong> funzionano finché il progetto è piccolo. Il file <code>shot_2.3_take_4_selected.mp4</code> è lì — ma non sai quale prompt lo ha generato, quale reference lo aveva guidato, perché era stato preferito al take 3. Il file sopravvive. La memoria della decisione no.</p>
-     
-    <p><strong>Notion</strong> può contenere scene, shot, prompt, reference. Ma non preserva davvero le relazioni tra di loro. Non capisce la differenza tra un take e uno shot. Organizza note. Non preserva memoria cinematografica.</p>
-     
-    <p><strong>La chat history</strong> come archivio prompt è il workaround più comune — ed è lineare, non cercabile per struttura del film, e vulnerabile: il giorno in cui quella sessione si perde, perdi tutto. Soprattutto, non ha nessun concetto di scena, shot o take.</p>
-     
-    <p>Il pattern comune: questi strumenti archiviano file e informazioni. Non preservano le relazioni tra scena, shot, take, prompt, reference, output e decisione creativa.</p>
-     
-    <h2>Il sistema minimo per organizzare un film AI</h2>
-     
-    <p>Dopo mesi di lavoro su progetti AI con Runway, Kling, Veo e Midjourney, ho consolidato un sistema che funziona. Non richiede tool specifici per iniziare — richiede disciplina strutturale.</p>
-     
-    <ol class="list-decimal pl-6 space-y-3 my-4">
-      <li><strong>Struttura gerarchica prima di generare.</strong> Definisci le scene e gli shot del progetto prima di aprire qualsiasi tool. Scena 01, Scena 02 — con una descrizione breve per ognuna. Ogni shot ha un numero (1.1, 1.2, 2.1) e un'intenzione visiva chiara.</li>
-      <li><strong>Separa input e output.</strong> Il prompt e la reference sono input. Il file generato è output. Devono restare connessi — non in cartelle separate, non in tab diverse del browser, non in app diverse senza collegamento.</li>
-      <li><strong>Ogni take deve portare con sé il suo contesto.</strong> Prompt, reference, output e una nota breve: perché questo take è stato generato, cosa lo differenzia dal precedente, perché è stato approvato o scartato. Una riga è sufficiente. L'assenza di quella riga costa ore quando torni al progetto.</li>
-      <li><strong>Non usare la chat history come archivio centrale.</strong> La chat è uno strumento di generazione. L'archivio del film è un'altra cosa. Se sono la stessa cosa, il giorno in cui la chat si azzera perdi la memoria del progetto.</li>
-      <li><strong>Usa un sistema che preservi relazioni, non solo file.</strong> La differenza tra un archivio e un sistema di memoria è questa: l'archivio sa dove è il file. Il sistema di memoria sa perché quel file esiste, a quale shot appartiene, quale prompt lo ha prodotto, e cosa è stato deciso su di esso.</li>
-    </ol>
-     
-    <h2>La struttura che tiene tutto insieme: Scena → Shot → Take</h2>
-     
-    <p>Un film è fatto di scene. Le scene sono fatte di shot. Ogni shot viene prodotto attraverso più tentativi — i take. Dentro ogni take ci sono quattro elementi che devono restare connessi: il prompt che lo ha generato, la reference che lo ha guidato, l'output prodotto, la decisione editoriale che spiega perché è stato scelto o scartato.</p>
-     
-    <p>Quando questi elementi restano connessi al take specifico, allo shot specifico, alla scena specifica — il progetto rimane leggibile nel tempo. Quando si disconnettono, il progetto diventa un archivio tecnicamente completo e praticamente illeggibile.</p>
-     
-    <p>A quel punto il problema non è più trovare un altro tool di generazione. È avere un sistema che preservi il contesto del progetto.</p>
-     
-    <h2>Per mettere in pratica questa struttura ho costruito Rewake</h2>
-     
-    <p><a href="https://rewake.studio?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Rewake</a> è un sistema di memoria cinematografica per progetti AI narrativi. Non è un generatore — continui a usare Runway, Kling, Veo, Midjourney, ComfyUI. Non è un moodboard né un tool di project management. È un workspace strutturato attorno alla gerarchia del film — Progetto → Scena → Shot → Take — dove ogni prompt, reference, output e decisione resta connesso agli altri.</p>
-     
-    <p>In pratica: costruisci la struttura in Rewake prima di generare. Poi lavori nel tuo tool di elezione. Quando hai un output, lo porti nel take corretto. Il prompt resta attaccato a quel take. La reference resta collegata allo shot. La nota decisionale resta registrata con il take selezionato come Final Visual.</p>
-     
-    <figure class="my-8">
-      <a href="/images/blog/rewake-ai-film-workspace.webp" data-lightbox="rewake-workspace" class="block cursor-zoom-in">
-        <img src="/images/blog/rewake-ai-film-workspace.webp" alt="Rewake workspace — Take con prompt, reference e output connessi" class="w-full rounded-lg" loading="lazy" />
-      </a>
-      <figcaption class="text-sm text-text-secondary mt-2 mb-8">Il workspace di un singolo Take: prompt completo, reference visive collegate — storyboard e character sheet — e output generato, tutto connesso nello stesso contesto. Dopo settimane, il take è ancora completamente leggibile.</figcaption>
-    </figure>
-     
-    <h2>Un esempio reale: Tempus Fugit</h2>
-     
-    <p>Sto lavorando su <em>Tempus Fugit</em>, un cortometraggio AI ambientato in un'orologeria. La Scena 2 — INT. OROLOGERIA — ha quattro shot. Lo shot 2.1 è un POV dall'angolo anteriore destro del laboratorio: il protagonista al tavolo di lavoro, luce del mattino che filtra tra gli ingranaggi.</p>
-     
-    <p>Per questo shot ho generato quattro take con Seedance 2.0. Il take 3 era quello giusto — la luce era corretta e il movimento del personaggio aveva il peso giusto. L'ho marcato come Final Visual con una nota: "Luce del mattino filtrata tra ingranaggi e polvere. Atmosfera sospesa. Movimento lento e misurato."</p>
-     
-    <p>Quel prompt, quella reference del character sheet, quella nota — sono dentro il take 3, dentro lo shot 2.1, dentro la Scena 2. Tra un mese, quando dovrò generare varianti, il contesto è lì. Non da ricostruire.</p>
-     
-    <figure class="my-8">
-      <a href="/images/blog/rewake-ai-film-organization-hero.webp" data-lightbox="rewake-slate" class="block cursor-zoom-in">
-        <img src="/images/blog/rewake-ai-film-organization-hero.webp" alt="Rewake Slate view — struttura Scene e Shot di un progetto film AI" class="w-full rounded-lg" loading="lazy" />
-      </a>
-      <figcaption class="text-sm text-text-secondary mt-2 mb-8">La Slate view di Rewake con la struttura Scene → Shot del progetto. Ogni shot mostra i contenuti generati con il loro stato, così il progetto resta navigabile anche dopo molte sessioni di lavoro.</figcaption>
-    </figure>
-     
-    <h2>Per chi è utile — e per chi non lo è</h2>
-     
-    <p>Rewake è utile se stai lavorando su un progetto narrativo con più scene e shot — un cortometraggio, uno spot strutturato, una serie AI, un videoclip con continuità visiva da mantenere. È utile se il tuo workflow coinvolge più sessioni di generazione nel tempo, magari con strumenti diversi.</p>
-     
-    <p>Non è il tool giusto se hai bisogno solo di un archivio, un moodboard, o uno strumento di task management. Se generi singole immagini senza contesto narrativo, probabilmente la struttura che Rewake fornisce è eccessiva.</p>
-     
-    <p>La domanda che distingue chi ne ha bisogno da chi no: quando torni a un progetto AI dopo due settimane, capisci ancora cosa avevi deciso e perché? Se la risposta è "non sempre" — Rewake è costruito per quel problema.</p>
-     
-    <h2>Il problema non sono i file</h2>
-     
-    <p>I tool di generazione migliorano ogni mese. Il problema della continuità no — perché non è un problema tecnico di generazione, è un problema strutturale di come si gestisce la memoria creativa di un progetto. La velocità di generazione moltiplica il caos se non hai un sistema che lo contiene. La struttura Scene → Shot → Take non è una convenzione da cinema tradizionale: è la risposta pratica a come si mantiene leggibile nel tempo qualcosa che si costruisce in sessioni multiple, con strumenti diversi, su archi temporali lunghi.</p>
-     
-    <p>Se il progetto resta leggibile nel tempo, lavori meglio. Se perde contesto, ricominci ogni volta da capo.</p>
-     
-    <div class="flex justify-center my-6">
-      <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" target="_blank" rel="noopener">
-        <img src="/images/rewake-logo.webp" alt="Rewake — Your Film Memory" class="h-14 opacity-90 hover:opacity-100 transition-opacity" loading="lazy" />
-      </a>
-    </div>
-     
-    <p>Rewake è in beta privata. Se stai lavorando su un progetto AI e riconosci il problema, puoi <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">richiedere l'accesso sul sito</a>. Ogni richiesta è valutata personalmente.</p>
-     
-    
-     
-    < p > There is a precise moment when an AI project stops being exciting and becomes a problem.Not when generation fails.The moment is when you return to a project after ten days and no longer understand anything.</p>
 
-    < p > What was the approved prompt for shot 2.3 ? Which reference had defined the interior light ? Why had you discarded that specific image or video ? The answers existed.They existed in the session from two weeks ago, in the Runway chat, in the folder with forty files named < code > output_v2_FINAL_usethis.png < /code>. Now they are gone.</p >
+<p>C'è un momento preciso in cui un progetto AI smette di essere eccitante e diventa un problema. Non quando la generazione fallisce. Il momento è quando torni a un progetto dopo dieci giorni e non capisci più niente.</p>
 
-        <p>The problem is not that files disappear.The files are all there.The problem is that context is lost — and without context, the project becomes unreadable.</p>
+<p>Quale era il prompt approvato per lo shot 2.3? Quale reference aveva definito la luce interna? Perché avevi scartato proprio quell'immagine o quel video? Le risposte esistevano. Esistevano nella sessione di due settimane fa, nella chat di Runway, nella cartella con quaranta file chiamati <code>output_v2_FINAL_usethis.png</code>. Adesso non esistono più.</p>
 
-            < p > To organize an AI film project without losing continuity, you need four things: </p>
+<p>Il problema non è che i file spariscono. I file sono tutti lì. Il problema è che si perde il contesto — e senza contesto, il progetto diventa illeggibile.</p>
 
-                < ul class="list-disc pl-6 space-y-1 my-4" >
-                    <li>a stable hierarchical structure: Scene → Shot → Take </li>
-                        < li > a permanent link between prompt, reference and output </li>
-                            < li > decision notes that explain why a take was chosen or discarded </li>
-                                < li > a system that preserves these relationships over time, not just the files </li>
-                                    </ul>
+<p>Per organizzare un progetto film AI senza perdere continuità servono quattro cose:</p>
 
-                                    < p > The rest of this article explains why, and how.</p>
+<ul class="list-disc pl-6 space-y-1 my-4">
+  <li>una struttura gerarchica stabile: Scena → Shot → Take</li>
+  <li>un collegamento permanente tra prompt, reference e output</li>
+  <li>note decisionali che spiegano perché un take è stato scelto o scartato</li>
+  <li>un sistema che preservi queste relazioni nel tempo, non solo i file</li>
+</ul>
 
-                                        < h2 > Chaos is the default, not the exception </h2>
+<p>Il resto di questo articolo spiega perché, e come.</p>
 
-                                            < p > When you work with AI tools on a narrative project — a short film, a commercial, a series — you generate far more than you use.For every shot that ends up in the film, there are often eight, ten, fifteen discarded takes.Each produced with a different prompt, a different reference, a different seed.Each evaluated and abandoned for a reason that was obvious at the time.</p>
+<h2>Il caos è il default, non l'eccezione</h2>
 
-                                                < p > Runway does not know that shot 2.3 belongs to Scene 2. Kling does not know you used a reference built around a Storaro or Richardson light.Midjourney does not know why that character has grey hair and not white.These tools generate.They do not remember.</p>
+<p>Quando lavori con strumenti AI su un progetto narrativo — un cortometraggio, uno spot, una serie — generi molto più di quello che usi. Per ogni shot che finisce nel film, ci sono spesso otto, dieci, quindici take scartati. Ognuno prodotto con un prompt diverso, una reference diversa, un seed diverso. Ognuno valutato e abbandonato per una ragione che all'epoca era ovvia.</p>
 
-                                                    < p > The result is what I call the readability - over - time problem.The files are there.The creative structure of the project — the whys, the decisions, the established visual directions — is not.</p>
+<p>Runway non sa che lo shot 2.3 appartiene alla Scena 2. Kling non sa che hai usato una reference pensata su una luce alla Storaro o Richardson. Midjourney non sa perché quel personaggio ha i capelli grigi e non bianchi. Questi strumenti generano. Non ricordano.</p>
 
-                                                        < h2 > Why the obvious solutions are not enough </h2>
+<p>Il risultato è quello che chiamo il problema della leggibilità nel tempo. I file ci sono. La struttura creativa del progetto — i perché, le decisioni, le direzioni visive stabilite — non c'è più.</p>
 
-                                                            < p > <strong>Numbered folders < /strong> work while the project is small. The file <code>shot_2.3_take_4_selected.mp4</code > is there — but you do not know which prompt generated it, which reference guided it, why it was preferred over take 3. The file survives.The memory of the decision does not.</p>
+<h2>Perché le soluzioni ovvie non bastano</h2>
 
-                                                                < p > <strong>Notion < /strong> can hold scenes, shots, prompts, references. But it does not really preserve the relationships between them. It does not understand the difference between a take and a shot. It organizes notes. It does not preserve cinematic memory.</p >
+<p><strong>Le cartelle numerate</strong> funzionano finché il progetto è piccolo. Il file <code>shot_2.3_take_4_selected.mp4</code> è lì — ma non sai quale prompt lo ha generato, quale reference lo aveva guidato, perché era stato preferito al take 3. Il file sopravvive. La memoria della decisione no.</p>
 
-                                                                <p><strong>Chat history < /strong> as a prompt archive is the most common workaround — and it is linear, not searchable by film structure, and vulnerable: the day that session is lost, you lose everything. More importantly, it has no concept of scene, shot or take.</p >
+<p><strong>Notion</strong> può contenere scene, shot, prompt, reference. Ma non preserva davvero le relazioni tra di loro. Non capisce la differenza tra un take e uno shot. Organizza note. Non preserva memoria cinematografica.</p>
 
-                                                                    <p>The common pattern: these tools store files and information.They do not preserve the relationships between scene, shot, take, prompt, reference, output and creative decision.</p>
+<p><strong>La chat history</strong> come archivio prompt è il workaround più comune — ed è lineare, non cercabile per struttura del film, e vulnerabile: il giorno in cui quella sessione si perde, perdi tutto. Soprattutto, non ha nessun concetto di scena, shot o take.</p>
 
-                                                                        < h2 > The minimum system for organizing an AI film </h2>
+<p>Il pattern comune: questi strumenti archiviano file e informazioni. Non preservano le relazioni tra scena, shot, take, prompt, reference, output e decisione creativa.</p>
 
-                                                                            < p > After months working on AI projects with Runway, Kling, Veo and Midjourney, I have consolidated a system that works.It does not require specific tools to start — it requires structural discipline.</p>
+<h2>Il sistema minimo per organizzare un film AI</h2>
 
-                                                                                < ol class="list-decimal pl-6 space-y-3 my-4" >
-                                                                                    <li><strong>Hierarchical structure before generating.< /strong> Define the scenes and shots of the project before opening any tool. Scene 01, Scene 02 — with a short description for each. Every shot has a number (1.1, 1.2, 2.1) and a clear visual intention.</li >
-                                                                                        <li><strong>Separate input and output.< /strong> The prompt and the reference are inputs. The generated file is output. They must stay connected — not in separate folders, not in different browser tabs, not in different apps with no link between them.</li >
-                                                                                            <li><strong>Every take must carry its context with it.< /strong> Prompt, reference, output and a brief note: why this take was generated, what differentiates it from the previous one, why it was approved or discarded. One line is enough. The absence of that line costs hours when you return to the project.</li >
-                                                                                            <li><strong>Do not use chat history as the central archive.< /strong> Chat is a generation tool. The film archive is something else. If they are the same thing, the day the chat resets you lose the project's memory.</li >
-                                                                                                <li><strong>Use a system that preserves relationships, not just files.< /strong> The difference between an archive and a memory system: an archive knows where the file is. A memory system knows why that file exists, which shot it belongs to, which prompt produced it, and what was decided about it.</li >
-                                                                                                    </ol>
+<p>Dopo mesi di lavoro su progetti AI con Runway, Kling, Veo e Midjourney, ho consolidato un sistema che funziona. Non richiede tool specifici per iniziare — richiede disciplina strutturale.</p>
 
-                                                                                                    < h2 > The structure that holds everything together: Scene → Shot → Take </h2>
+<ol class="list-decimal pl-6 space-y-3 my-4">
+  <li><strong>Struttura gerarchica prima di generare.</strong> Definisci le scene e gli shot del progetto prima di aprire qualsiasi tool. Scena 01, Scena 02 — con una descrizione breve per ognuna. Ogni shot ha un numero (1.1, 1.2, 2.1) e un'intenzione visiva chiara.</li>
+  <li><strong>Separa input e output.</strong> Il prompt e la reference sono input. Il file generato è output. Devono restare connessi — non in cartelle separate, non in tab diverse del browser, non in app diverse senza collegamento.</li>
+  <li><strong>Ogni take deve portare con sé il suo contesto.</strong> Prompt, reference, output e una nota breve: perché questo take è stato generato, cosa lo differenzia dal precedente, perché è stato approvato o scartato. Una riga è sufficiente. L'assenza di quella riga costa ore quando torni al progetto.</li>
+  <li><strong>Non usare la chat history come archivio centrale.</strong> La chat è uno strumento di generazione. L'archivio del film è un'altra cosa. Se sono la stessa cosa, il giorno in cui la chat si azzera perdi la memoria del progetto.</li>
+  <li><strong>Usa un sistema che preservi relazioni, non solo file.</strong> La differenza tra un archivio e un sistema di memoria è questa: l'archivio sa dove è il file. Il sistema di memoria sa perché quel file esiste, a quale shot appartiene, quale prompt lo ha prodotto, e cosa è stato deciso su di esso.</li>
+</ol>
 
-                                                                                                        < p > A film is made of scenes.Scenes are made of shots.Each shot is produced through multiple attempts — takes.Inside each take there are four elements that must stay connected: the prompt that generated it, the reference that guided it, the output produced, the editorial decision that explains why it was chosen or discarded.</p>
+<h2>La struttura che tiene tutto insieme: Scena → Shot → Take</h2>
 
-                                                                                                            < p > When these elements stay connected to the specific take, the specific shot, the specific scene — the project remains readable over time.When they disconnect, the project becomes a technically complete and practically unreadable archive.</p>
+<p>Un film è fatto di scene. Le scene sono fatte di shot. Ogni shot viene prodotto attraverso più tentativi — i take. Dentro ogni take ci sono quattro elementi che devono restare connessi: il prompt che lo ha generato, la reference che lo ha guidato, l'output prodotto, la decisione editoriale che spiega perché è stato scelto o scartato.</p>
 
-                                                                                                                < figure class="my-8" >
-                                                                                                                    <img src="/images/blog/rewake-ai-film-organization-hero.webp" alt = "Rewake Slate view — Scene and Shot structure of an AI film project" class="w-full rounded-lg" loading = "lazy" />
-                                                                                                                        <figcaption class="text-sm text-text-secondary mt-2" > The Slate view with the Scene → Shot structure of the project.Each shot shows its generated takes with their status — approved, in progress, discarded.The project stays navigable regardless of how many generation sessions have taken place.</figcaption>
-                                                                                                                            </figure>
+<p>Quando questi elementi restano connessi al take specifico, allo shot specifico, alla scena specifica — il progetto rimane leggibile nel tempo. Quando si disconnettono, il progetto diventa un archivio tecnicamente completo e praticamente illeggibile.</p>
 
-                                                                                                                            < p > At that point the problem is no longer finding another generation tool.It is having a system that preserves the context of the project.</p>
+<p>A quel punto il problema non è più trovare un altro tool di generazione. È avere un sistema che preservi il contesto del progetto.</p>
 
-                                                                                                                                < h2 > To put this structure into practice, I built Rewake </h2>
+<h2>Per mettere in pratica questa struttura ho costruito Rewake</h2>
 
-                                                                                                                                    < p > <a href="https://rewake.studio?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target = "_blank" rel = "noopener" > Rewake < /a> is a cinematic memory system for narrative AI projects. It is not a generator — you continue using Runway, Kling, Veo, Midjourney, ComfyUI. It is not a moodboard or a project management tool. It is a workspace structured around the hierarchy of the film — Project → Scene → Shot → Take — where every prompt, reference, output and decision stays connected to the others.</p >
+<p><a href="https://rewake.studio?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Rewake</a> è un sistema di memoria cinematografica per progetti AI narrativi. Non è un generatore — continui a usare Runway, Kling, Veo, Midjourney, ComfyUI. Non è un moodboard né un tool di project management. È un workspace strutturato attorno alla gerarchia del film — Progetto → Scena → Shot → Take — dove ogni prompt, reference, output e decisione resta connesso agli altri.</p>
 
-                                                                                                                                        <p>In practice: you build the structure in Rewake before generating.Then you work in your tool of choice.When you have an output, you bring it into the correct take.The prompt stays attached to that take.The reference stays linked to the shot.The decision note stays recorded with the take selected as Final Visual.</p>
+<p>In pratica: costruisci la struttura in Rewake prima di generare. Poi lavori nel tuo tool di elezione. Quando hai un output, lo porti nel take corretto. Il prompt resta attaccato a quel take. La reference resta collegata allo shot. La nota decisionale resta registrata con il take selezionato come Final Visual.</p>
 
-                                                                                                                                            < figure class="my-8" >
-                                                                                                                                                <a href="/images/blog/rewake-ai-film-workspace.webp" data - lightbox="rewake-workspace" class="block cursor-zoom-in" >
-                                                                                                                                                    <img src="/images/blog/rewake-ai-film-workspace.webp" alt = "Rewake workspace — Take with prompt, reference and output connected" class="w-full rounded-lg" loading = "lazy" />
-                                                                                                                                                        </a>
-                                                                                                                                                        < figcaption class="text-sm text-text-secondary mt-2 mb-8" > The workspace of a single Take: full prompt, linked visual references — storyboard and character sheet — and generated output, all connected in the same context.After weeks, the take is still completely readable.</figcaption>
-                                                                                                                                                            </figure>
+<figure class="my-8">
+  <a href="/images/blog/rewake-ai-film-workspace.webp" data-lightbox="rewake-workspace" class="block cursor-zoom-in">
+    <img src="/images/blog/rewake-ai-film-workspace.webp" alt="Rewake workspace — Take con prompt, reference e output connessi" class="w-full rounded-lg" loading="lazy" />
+  </a>
+  <figcaption class="text-sm text-text-secondary mt-2 mb-8">Il workspace di un singolo Take: prompt completo, reference visive collegate — storyboard e character sheet — e output generato, tutto connesso nello stesso contesto. Dopo settimane, il take è ancora completamente leggibile.</figcaption>
+</figure>
 
-                                                                                                                                                            < h2 > A real example: Tempus Fugit </h2>
+<h2>Un esempio reale: Tempus Fugit</h2>
 
-                                                                                                                                                                < p > I am working on < em > Tempus Fugit < /em>, an AI short film set in a clockmaker's workshop. Scene 2 — INT. CLOCKMAKER'S SHOP — has four shots. Shot 2.1 is a POV from the front-right corner of the workshop: the protagonist at the worktable, morning light filtering through gears.</p >
+<p>Sto lavorando su <em>Tempus Fugit</em>, un cortometraggio AI ambientato in un'orologeria. La Scena 2 — INT. OROLOGERIA — ha quattro shot. Lo shot 2.1 è un POV dall'angolo anteriore destro del laboratorio: il protagonista al tavolo di lavoro, luce del mattino che filtra tra gli ingranaggi.</p>
 
-                                                                                                                                                                    <p>For this shot I generated four takes with Seedance 2.0.Take 3 was right — the light was correct and the character's movement had the right weight. I marked it as Final Visual with a note: "Morning light filtered through gears and dust. Suspended atmosphere. Slow, measured movement."</p>
+<p>Per questo shot ho generato quattro take con Seedance 2.0. Il take 3 era quello giusto — la luce era corretta e il movimento del personaggio aveva il peso giusto. L'ho marcato come Final Visual con una nota: "Luce del mattino filtrata tra ingranaggi e polvere. Atmosfera sospesa. Movimento lento e misurato."</p>
 
-                                                                                                                                                                        < p > That prompt, that character sheet reference, that note — they are inside take 3, inside shot 2.1, inside Scene 2. In a month, when I need to generate variants, the context is there.Nothing to reconstruct.</p>
+<p>Quel prompt, quella reference del character sheet, quella nota — sono dentro il take 3, dentro lo shot 2.1, dentro la Scena 2. Tra un mese, quando dovrò generare varianti, il contesto è lì. Non da ricostruire.</p>
 
-                                                                                                                                                                            < figure class="my-8" >
-                                                                                                                                                                                <a href="/images/blog/rewake-ai-film-organization-hero.webp" data - lightbox="rewake-slate" class="block cursor-zoom-in" >
-                                                                                                                                                                                    <img src="/images/blog/rewake-ai-film-organization-hero.webp" alt = "Rewake Slate view — Scene and Shot structure of an AI film project" class="w-full rounded-lg" loading = "lazy" />
-                                                                                                                                                                                        </a>
-                                                                                                                                                                                        < figcaption class="text-sm text-text-secondary mt-2 mb-8" > Rewake's Slate view with the Scene → Shot structure of the project. Each shot shows its generated content with its status, so the project stays navigable even after many working sessions.</figcaption>
-                                                                                                                                                                                            </figure>
+<figure class="my-8">
+  <a href="/images/blog/rewake-ai-film-organization-hero.webp" data-lightbox="rewake-slate" class="block cursor-zoom-in">
+    <img src="/images/blog/rewake-ai-film-organization-hero.webp" alt="Rewake Slate view — struttura Scene e Shot di un progetto film AI" class="w-full rounded-lg" loading="lazy" />
+  </a>
+  <figcaption class="text-sm text-text-secondary mt-2 mb-8">La Slate view di Rewake con la struttura Scene → Shot del progetto. Ogni shot mostra i contenuti generati con il loro stato, così il progetto resta navigabile anche dopo molte sessioni di lavoro.</figcaption>
+</figure>
 
-                                                                                                                                                                                            < h2 > Who it is useful for — and who it is not </h2>
+<h2>Per chi è utile — e per chi non lo è</h2>
 
-                                                                                                                                                                                                < p > Rewake is useful if you are working on a narrative project with multiple scenes and shots — a short film, a structured commercial, an AI series, a music video with visual continuity to maintain.It is useful if your workflow involves multiple generation sessions over time, possibly with different tools.</p>
+<p>Rewake è utile se stai lavorando su un progetto narrativo con più scene e shot — un cortometraggio, uno spot strutturato, una serie AI, un videoclip con continuità visiva da mantenere. È utile se il tuo workflow coinvolge più sessioni di generazione nel tempo, magari con strumenti diversi.</p>
 
-                                                                                                                                                                                                    < p > It is not the right tool if you only need an archive, a moodboard, or a task management tool.If you generate single images without narrative context, the structure Rewake provides is probably more than you need.</p>
+<p>Non è il tool giusto se hai bisogno solo di un archivio, un moodboard, o uno strumento di task management. Se generi singole immagini senza contesto narrativo, probabilmente la struttura che Rewake fornisce è eccessiva.</p>
 
-                                                                                                                                                                                                        < p > The question that distinguishes who needs it from who does not: when you return to an AI project after two weeks, do you still understand what you had decided and why ? If the answer is "not always" — Rewake is built for that problem.</p>
+<p>La domanda che distingue chi ne ha bisogno da chi no: quando torni a un progetto AI dopo due settimane, capisci ancora cosa avevi deciso e perché? Se la risposta è "non sempre" — Rewake è costruito per quel problema.</p>
 
-                                                                                                                                                                                                            < h2 > The problem is not the files </h2>
+<h2>Il problema non sono i file</h2>
 
-                                                                                                                                                                                                                < p > Generation tools improve every month.The continuity problem does not — because it is not a technical generation problem, it is a structural problem of how you manage the creative memory of a project.Generation speed multiplies chaos if you do not have a system that contains it.The Scene → Shot → Take structure is not a convention borrowed from traditional cinema: it is the practical answer to how you keep something readable over time when it is built across multiple sessions, with different tools, over long timelines.</p>
+<p>I tool di generazione migliorano ogni mese. Il problema della continuità no — perché non è un problema tecnico di generazione, è un problema strutturale di come si gestisce la memoria creativa di un progetto. La velocità di generazione moltiplica il caos se non hai un sistema che lo contiene. La struttura Scene → Shot → Take non è una convenzione da cinema tradizionale: è la risposta pratica a come si mantiene leggibile nel tempo qualcosa che si costruisce in sessioni multiple, con strumenti diversi, su archi temporali lunghi.</p>
 
-                                                                                                                                                                                                                    < p > If the project stays readable over time, you work better.If it loses context, you start over every time.</p>
+<p>Se il progetto resta leggibile nel tempo, lavori meglio. Se perde contesto, ricominci ogni volta da capo.</p>
 
-                                                                                                                                                                                                                        < div class="flex justify-center my-6" >
-                                                                                                                                                                                                                            <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" target = "_blank" rel = "noopener" >
-                                                                                                                                                                                                                                <img src="/images/rewake-logo.webp" alt = "Rewake — Your Film Memory" class="h-14 opacity-90 hover:opacity-100 transition-opacity" loading = "lazy" />
-                                                                                                                                                                                                                                    </a>
-                                                                                                                                                                                                                                    </div>
+<div class="flex justify-center my-6">
+  <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" target="_blank" rel="noopener">
+    <img src="/images/rewake-logo.webp" alt="Rewake — Your Film Memory" class="h-14 opacity-90 hover:opacity-100 transition-opacity" loading="lazy" />
+  </a>
+</div>
 
-                                                                                                                                                                                                                                    < p > Rewake is in private beta.If you are working on an AI project and recognize the problem, you can < a href = "https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target = "_blank" rel = "noopener" > request access on the site < /a>. Every application is reviewed personally.</p > `,
+<p>Rewake è in beta privata. Se stai lavorando su un progetto AI e riconosci il problema, puoi <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">richiedere l'accesso sul sito</a>. Ogni richiesta è valutata personalmente.</p>`,
+
+        contentEn: `<p><em>April 2026</em></p>
+
+<p>There is a precise moment when an AI project stops being exciting and becomes a problem. Not when generation fails. The moment is when you return to a project after ten days and no longer understand anything.</p>
+
+<p>What was the approved prompt for shot 2.3? Which reference had defined the interior light? Why had you discarded that specific image or video? The answers existed. They existed in the session from two weeks ago, in the Runway chat, in the folder with forty files named <code>output_v2_FINAL_usethis.png</code>. Now they are gone.</p>
+
+<p>The problem is not that files disappear. The files are all there. The problem is that context is lost — and without context, the project becomes unreadable.</p>
+
+<p>To organize an AI film project without losing continuity, you need four things:</p>
+
+<ul class="list-disc pl-6 space-y-1 my-4">
+  <li>a stable hierarchical structure: Scene → Shot → Take</li>
+  <li>a permanent link between prompt, reference and output</li>
+  <li>decision notes that explain why a take was chosen or discarded</li>
+  <li>a system that preserves these relationships over time, not just the files</li>
+</ul>
+
+<p>The rest of this article explains why, and how.</p>
+
+<h2>Chaos is the default, not the exception</h2>
+
+<p>When you work with AI tools on a narrative project — a short film, a commercial, a series — you generate far more than you use. For every shot that ends up in the film, there are often eight, ten, fifteen discarded takes. Each produced with a different prompt, a different reference, a different seed. Each evaluated and abandoned for a reason that was obvious at the time.</p>
+
+<p>Runway does not know that shot 2.3 belongs to Scene 2. Kling does not know you used a reference built around a Storaro or Richardson light. Midjourney does not know why that character has grey hair and not white. These tools generate. They do not remember.</p>
+
+<p>The result is what I call the readability-over-time problem. The files are there. The creative structure of the project — the whys, the decisions, the established visual directions — is not.</p>
+
+<h2>Why the obvious solutions are not enough</h2>
+
+<p><strong>Numbered folders</strong> work while the project is small. The file <code>shot_2.3_take_4_selected.mp4</code> is there — but you do not know which prompt generated it, which reference guided it, why it was preferred over take 3. The file survives. The memory of the decision does not.</p>
+
+<p><strong>Notion</strong> can hold scenes, shots, prompts, references. But it does not really preserve the relationships between them. It does not understand the difference between a take and a shot. It organizes notes. It does not preserve cinematic memory.</p>
+
+<p><strong>Chat history</strong> as a prompt archive is the most common workaround — and it is linear, not searchable by film structure, and vulnerable: the day that session is lost, you lose everything. More importantly, it has no concept of scene, shot or take.</p>
+
+<p>The common pattern: these tools store files and information. They do not preserve the relationships between scene, shot, take, prompt, reference, output and creative decision.</p>
+
+<h2>The minimum system for organizing an AI film</h2>
+
+<p>After months working on AI projects with Runway, Kling, Veo and Midjourney, I have consolidated a system that works. It does not require specific tools to start — it requires structural discipline.</p>
+
+<ol class="list-decimal pl-6 space-y-3 my-4">
+  <li><strong>Hierarchical structure before generating.</strong> Define the scenes and shots of the project before opening any tool. Scene 01, Scene 02 — with a short description for each. Every shot has a number (1.1, 1.2, 2.1) and a clear visual intention.</li>
+  <li><strong>Separate input and output.</strong> The prompt and the reference are inputs. The generated file is output. They must stay connected — not in separate folders, not in different browser tabs, not in different apps with no link between them.</li>
+  <li><strong>Every take must carry its context with it.</strong> Prompt, reference, output and a brief note: why this take was generated, what differentiates it from the previous one, why it was approved or discarded. One line is enough. The absence of that line costs hours when you return to the project.</li>
+  <li><strong>Do not use chat history as the central archive.</strong> Chat is a generation tool. The film archive is something else. If they are the same thing, the day the chat resets you lose the project's memory.</li>
+  <li><strong>Use a system that preserves relationships, not just files.</strong> The difference between an archive and a memory system: an archive knows where the file is. A memory system knows why that file exists, which shot it belongs to, which prompt produced it, and what was decided about it.</li>
+</ol>
+
+<h2>The structure that holds everything together: Scene → Shot → Take</h2>
+
+<p>A film is made of scenes. Scenes are made of shots. Each shot is produced through multiple attempts — takes. Inside each take there are four elements that must stay connected: the prompt that generated it, the reference that guided it, the output produced, the editorial decision that explains why it was chosen or discarded.</p>
+
+<p>When these elements stay connected to the specific take, the specific shot, the specific scene — the project remains readable over time. When they disconnect, the project becomes a technically complete and practically unreadable archive.</p>
+
+<p>At that point the problem is no longer finding another generation tool. It is having a system that preserves the context of the project.</p>
+
+<h2>To put this structure into practice, I built Rewake</h2>
+
+<p><a href="https://rewake.studio?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Rewake</a> is a cinematic memory system for narrative AI projects. It is not a generator — you continue using Runway, Kling, Veo, Midjourney, ComfyUI. It is not a moodboard or a project management tool. It is a workspace structured around the hierarchy of the film — Project → Scene → Shot → Take — where every prompt, reference, output and decision stays connected to the others.</p>
+
+<p>In practice: you build the structure in Rewake before generating. Then you work in your tool of choice. When you have an output, you bring it into the correct take. The prompt stays attached to that take. The reference stays linked to the shot. The decision note stays recorded with the take selected as Final Visual.</p>
+
+<figure class="my-8">
+  <a href="/images/blog/rewake-ai-film-workspace.webp" data-lightbox="rewake-workspace" class="block cursor-zoom-in">
+    <img src="/images/blog/rewake-ai-film-workspace.webp" alt="Rewake workspace — Take with prompt, reference and output connected" class="w-full rounded-lg" loading="lazy" />
+  </a>
+  <figcaption class="text-sm text-text-secondary mt-2 mb-8">The workspace of a single Take: full prompt, linked visual references — storyboard and character sheet — and generated output, all connected in the same context. After weeks, the take is still completely readable.</figcaption>
+</figure>
+
+<h2>A real example: Tempus Fugit</h2>
+
+<p>I am working on <em>Tempus Fugit</em>, an AI short film set in a clockmaker's workshop. Scene 2 — INT. CLOCKMAKER'S SHOP — has four shots. Shot 2.1 is a POV from the front-right corner of the workshop: the protagonist at the worktable, morning light filtering through gears.</p>
+
+<p>For this shot I generated four takes with Seedance 2.0. Take 3 was right — the light was correct and the character's movement had the right weight. I marked it as Final Visual with a note: "Morning light filtered through gears and dust. Suspended atmosphere. Slow, measured movement."</p>
+
+<p>That prompt, that character sheet reference, that note — they are inside take 3, inside shot 2.1, inside Scene 2. In a month, when I need to generate variants, the context is there. Nothing to reconstruct.</p>
+
+<figure class="my-8">
+  <a href="/images/blog/rewake-ai-film-organization-hero.webp" data-lightbox="rewake-slate" class="block cursor-zoom-in">
+    <img src="/images/blog/rewake-ai-film-organization-hero.webp" alt="Rewake Slate view — Scene and Shot structure of an AI film project" class="w-full rounded-lg" loading="lazy" />
+  </a>
+  <figcaption class="text-sm text-text-secondary mt-2 mb-8">Rewake's Slate view with the Scene → Shot structure of the project. Each shot shows its generated content with its status, so the project stays navigable even after many working sessions.</figcaption>
+</figure>
+
+<h2>Who it is useful for — and who it is not</h2>
+
+<p>Rewake is useful if you are working on a narrative project with multiple scenes and shots — a short film, a structured commercial, an AI series, a music video with visual continuity to maintain. It is useful if your workflow involves multiple generation sessions over time, possibly with different tools.</p>
+
+<p>It is not the right tool if you only need an archive, a moodboard, or a task management tool. If you generate single images without narrative context, the structure Rewake provides is probably more than you need.</p>
+
+<p>The question that distinguishes who needs it from who does not: when you return to an AI project after two weeks, do you still understand what you had decided and why? If the answer is "not always" — Rewake is built for that problem.</p>
+
+<h2>The problem is not the files</h2>
+
+<p>Generation tools improve every month. The continuity problem does not — because it is not a technical generation problem, it is a structural problem of how you manage the creative memory of a project. Generation speed multiplies chaos if you do not have a system that contains it. The Scene → Shot → Take structure is not a convention borrowed from traditional cinema: it is the practical answer to how you keep something readable over time when it is built across multiple sessions, with different tools, over long timelines.</p>
+
+<p>If the project stays readable over time, you work better. If it loses context, you start over every time.</p>
+
+<div class="flex justify-center my-6">
+  <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" target="_blank" rel="noopener">
+    <img src="/images/rewake-logo.webp" alt="Rewake — Your Film Memory" class="h-14 opacity-90 hover:opacity-100 transition-opacity" loading="lazy" />
+  </a>
+</div>
+
+<p>Rewake is in private beta. If you are working on an AI project and recognize the problem, you can <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">request access on the site</a>. Every application is reviewed personally.</p>`,
     },
     {
         slug: 'ai-vs-vfx-tradizionale-come-scegliere',
