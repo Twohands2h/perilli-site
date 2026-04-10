@@ -8,6 +8,7 @@ import AnimateOnScroll from '@/components/AnimateOnScroll';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
 import type { BlogPost } from '@/data/posts';
 import { getPostSlug } from '@/lib/data';
+import { useEffect, useRef } from 'react';
 
 export default function BlogPostView({
     post,
@@ -18,10 +19,42 @@ export default function BlogPostView({
 }) {
     const locale = useLocale();
     const isIt = locale === 'it';
+    const contentRef = useRef<HTMLDivElement>(null);
 
     const title = isIt ? post.titleIt : post.titleEn;
     const content = isIt ? post.contentIt : post.contentEn;
     const currentSlug = getPostSlug(post, locale);
+
+    // Lightbox per immagini con data-lightbox
+    useEffect(() => {
+        const container = contentRef.current;
+        if (!container) return;
+
+        const triggers = container.querySelectorAll<HTMLAnchorElement>('[data-lightbox]');
+
+        const handleClick = (e: MouseEvent) => {
+            e.preventDefault();
+            const trigger = e.currentTarget as HTMLAnchorElement;
+            const src = trigger.getAttribute('href');
+            if (!src) return;
+
+            const overlay = document.createElement('div');
+            overlay.style.cssText =
+                'position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
+
+            const img = document.createElement('img');
+            img.src = src;
+            img.style.cssText =
+                'max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 0 60px rgba(0,0,0,0.8);';
+
+            overlay.appendChild(img);
+            overlay.addEventListener('click', () => document.body.removeChild(overlay));
+            document.body.appendChild(overlay);
+        };
+
+        triggers.forEach(t => t.addEventListener('click', handleClick));
+        return () => triggers.forEach(t => t.removeEventListener('click', handleClick));
+    }, [content]);
 
     return (
         <article>
@@ -84,7 +117,11 @@ export default function BlogPostView({
 
             <section className="pb-10 md:pb-16 lg:pb-24">
                 <div className="section-container">
-                    <div className="max-w-3xl mx-auto prose-custom" dangerouslySetInnerHTML={{ __html: content }} />
+                    <div
+                        ref={contentRef}
+                        className="max-w-3xl mx-auto prose-custom"
+                        dangerouslySetInnerHTML={{ __html: content }}
+                    />
                 </div>
             </section>
 
@@ -126,14 +163,21 @@ export default function BlogPostView({
                             {isIt ? 'Hai un progetto in mente?' : 'Have a project in mind?'}
                         </h2>
                         <p className="text-text-secondary max-w-xl mx-auto mb-10 text-sm md:text-base">
-                            {isIt ? 'Se questo articolo ti ha dato spunti utili e vuoi capire come applicarli al tuo progetto, raccontami di cosa hai bisogno.'
+                            {isIt
+                                ? 'Se questo articolo ti ha dato spunti utili e vuoi capire come applicarli al tuo progetto, raccontami di cosa hai bisogno.'
                                 : "If this article gave you useful ideas and you want to understand how to apply them to your project, tell me what you need."}
                         </p>
                     </AnimateOnScroll>
                     <AnimateOnScroll delay={100}>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link href={isIt ? '/contatti' : '/en/contact'} className="btn-primary">{isIt ? 'Parliamone' : "Let\u0027s talk"}<ArrowRight size={16} /></Link>
-                            <a href="https://calendly.com/pieroperilli-info/30min" target="_blank" rel="noopener noreferrer" className="btn-secondary"><Calendar size={16} />{isIt ? 'Prenota una call' : 'Book a call'}</a>
+                            <Link href={isIt ? '/contatti' : '/en/contact'} className="btn-primary">
+                                {isIt ? 'Parliamone' : "Let's talk"}
+                                <ArrowRight size={16} />
+                            </Link>
+                            <a href="https://calendly.com/pieroperilli-info/30min" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                                <Calendar size={16} />
+                                {isIt ? 'Prenota una call' : 'Book a call'}
+                            </a>
                         </div>
                     </AnimateOnScroll>
                 </div>
