@@ -30,7 +30,7 @@ export const posts: BlogPost[] = [
     category: 'ai',
     categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
     keywordTarget: 'organizzare progetto film AI prompt reference continuità',
-    thumbnail: '/images/blog/rewake-ai-film-organization-hero.webp',
+    thumbnail: '/images/blog/rewake-ai-film-workspace.webp',
     thumbnailAlt: {
       it: 'Rewake — interfaccia Slate con struttura Scene, Shot, Take per progetti film AI',
       en: 'Rewake — Slate interface showing Scene, Shot, Take structure for AI film projects'
@@ -103,10 +103,10 @@ export const posts: BlogPost[] = [
 <p>In pratica: costruisci la struttura in Rewake prima di generare. Poi lavori nel tuo tool di elezione. Quando hai un output, lo porti nel take corretto. Il prompt resta attaccato a quel take. La reference resta collegata allo shot. La nota decisionale resta registrata con il take selezionato come Final Visual.</p>
 
 <figure class="my-8">
-<a href="/images/blog/rewake-ai-film-workspace.webp" data-lightbox="rewake-workspace" class="block cursor-zoom-in">
-<img src="/images/blog/rewake-ai-film-workspace.webp" alt="Rewake workspace — Take con prompt, reference e output connessi" class="w-full rounded-lg" loading="lazy" />
+<a href="/images/blog/rewake-ai-film-organization-hero.webp" data-lightbox="rewake-slate" class="block cursor-zoom-in">
+<img src="/images/blog/rewake-ai-film-organization-hero.webp" alt="Rewake Slate view — struttura Scene e Shot di un progetto film AI" class="w-full rounded-lg" loading="lazy" />
 </a>
-<figcaption class="text-sm text-text-secondary mt-2 mb-8">Il workspace di un singolo Take: prompt completo, reference visive collegate — storyboard e character sheet — e output generato, tutto connesso nello stesso contesto. Dopo settimane, il take è ancora completamente leggibile.</figcaption>
+<figcaption class="text-sm text-text-secondary mt-2 mb-8">La Slate view di Rewake con la struttura Scene → Shot del progetto. Ogni shot mostra i contenuti generati con il loro stato, così il progetto resta navigabile anche dopo molte sessioni di lavoro.</figcaption>
 </figure>
 
 <h2>Un esempio reale: Tempus Fugit</h2>
@@ -118,11 +118,12 @@ export const posts: BlogPost[] = [
 <p>Quel prompt, quella reference del character sheet, quella nota — sono dentro il take 3, dentro lo shot 2.1, dentro la Scena 2. Tra un mese, quando dovrò generare varianti, il contesto è lì. Non da ricostruire.</p>
 
 <figure class="my-8">
-<a href="/images/blog/rewake-ai-film-organization-hero.webp" data-lightbox="rewake-slate" class="block cursor-zoom-in">
-<img src="/images/blog/rewake-ai-film-organization-hero.webp" alt="Rewake Slate view — struttura Scene e Shot di un progetto film AI" class="w-full rounded-lg" loading="lazy" />
+<a href="/images/blog/rewake-ai-film-workspace.webp" data-lightbox="rewake-workspace" class="block cursor-zoom-in">
+<img src="/images/blog/rewake-ai-film-workspace.webp" alt="Rewake workspace — Take con prompt, reference e output connessi" class="w-full rounded-lg" loading="lazy" />
 </a>
-<figcaption class="text-sm text-text-secondary mt-2 mb-8">La Slate view di Rewake con la struttura Scene → Shot del progetto. Ogni shot mostra i contenuti generati con il loro stato, così il progetto resta navigabile anche dopo molte sessioni di lavoro.</figcaption>
+<figcaption class="text-sm text-text-secondary mt-2 mb-8">Il workspace di un singolo Take: prompt completo, reference visive collegate — storyboard e character sheet — e output generato, tutto connesso nello stesso contesto. Dopo settimane, il take è ancora completamente leggibile.</figcaption>
 </figure>
+
 
 <h2>Per chi è utile — e per chi non lo è</h2>
 
