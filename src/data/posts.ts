@@ -1,56 +1,58 @@
 export interface BlogPost {
-    slug: string;
-    slugEn: string;
-    titleIt: string;
-    titleEn: string;
-    excerptIt: string;
-    excerptEn: string;
-    date: string;
-    draft?: boolean;
-    readingTime: number;
-    category: string;
-    categoryLabel: { it: string; en: string };
-    keywordTarget: string;
-    thumbnail: string;
-    thumbnailAlt: { it: string; en: string };
-    contentIt: string;
-    contentEn: string;
+  slug: string;
+  slugEn: string;
+  titleIt: string;
+  titleEn: string;
+  excerptIt: string;
+  excerptEn: string;
+  date: string;
+  draft?: boolean;
+  readingTime: number;
+  category: string;
+  categoryLabel: { it: string; en: string };
+  keywordTarget: string;
+  thumbnail: string;
+  thumbnailAlt: { it: string; en: string };
+  contentIt: string;
+  contentEn: string;
 }
 
 export const posts: BlogPost[] = [
-    {
-        slug: 'organizzare-progetto-film-ai-prompt-reference-continuita',
-        slugEn: 'how-to-organize-ai-film-project-prompts-references-continuity',
-        titleIt: 'Come organizzare un progetto film AI senza perdere prompt, take e decisioni',
-        titleEn: 'How to organize an AI film project without losing prompts, takes and decisions',
-        excerptIt: 'Il problema non è archiviare i file. È conservare la memoria delle decisioni. Dopo mesi di lavoro su progetti AI con Runway, Kling e Veo, ecco la struttura che funziona — e perché cartelle, Notion e chat history non bastano.',
-        excerptEn: 'The problem is not storing files. It is preserving the memory of decisions. After months working on AI projects with Runway, Kling and Veo, here is the structure that works — and why folders, Notion and chat history are not enough.',
-        date: '2026-04-11',
-        readingTime: 12,
-        category: 'ai',
-        categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
-        keywordTarget: 'organizzare progetto film AI prompt reference continuità',
-        thumbnail: '/images/blog/rewake-ai-film-organization-hero.webp',
-        thumbnailAlt: {
-            it: 'Rewake — interfaccia Slate con struttura Scene, Shot, Take per progetti film AI',
-            en: 'Rewake — Slate interface showing Scene, Shot, Take structure for AI film projects'
-        },
-        contentIt: `<p><em>Aprile 2026</em></p>
+  {
+    slug: 'organizzare-progetto-film-ai-prompt-reference-continuita',
+    slugEn: 'how-to-organize-ai-film-project-prompts-references-continuity',
+    titleIt: 'Come organizzare un progetto film AI senza perdere prompt, take e decisioni',
+    titleEn: 'How to organize an AI film project without losing prompts, takes and decisions',
+    excerptIt: 'Il problema non è archiviare i file. È conservare la memoria delle decisioni. Dopo mesi di lavoro su progetti AI con Runway, Kling e Veo, ecco la struttura che funziona — e perché cartelle, Notion e chat history non bastano.',
+    excerptEn: 'The problem is not storing files. It is preserving the memory of decisions. After months working on AI projects with Runway, Kling and Veo, here is the structure that works — and why folders, Notion and chat history are not enough.',
+    date: '2026-04-11',
+    readingTime: 12,
+    category: 'ai',
+    categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
+    keywordTarget: 'organizzare progetto film AI prompt reference continuità',
+    thumbnail: '/images/blog/rewake-ai-film-organization-hero.webp',
+    thumbnailAlt: {
+      it: 'Rewake — interfaccia Slate con struttura Scene, Shot, Take per progetti film AI',
+      en: 'Rewake — Slate interface showing Scene, Shot, Take structure for AI film projects'
+    },
+    contentIt: `<p><em>Aprile 2026</em></p>
 
 <p>C'è un momento preciso in cui un progetto AI smette di essere eccitante e diventa un problema. Non quando la generazione fallisce. Il momento è quando torni a un progetto dopo dieci giorni e non capisci più niente.</p>
 
-<p>Quale era il prompt approvato per lo shot 2.3? Quale reference aveva definito la luce interna? Perché avevi scartato proprio quell'immagine o quel video? Le risposte esistevano. Esistevano nella sessione di due settimane fa, nella chat di Runway, nella cartella con quaranta file chiamati <code>output_v2_FINAL_usethis.png</code>. Adesso non esistono più.</p>
+<p>Quale era il prompt approvato per lo shot 2.3? Quale reference aveva definito la luce interna? Perché avevi scartato proprio quell'immagine o quel video? Le risposte esistevano. Esistevano nella sessione di due settimane fa, nella chat di Gemini, nella cartella con quaranta file chiamati <code>output_v2_FINAL_usethis.png</code>. Adesso non esistono più.</p>
 
 <p>Il problema non è che i file spariscono. I file sono tutti lì. Il problema è che si perde il contesto — e senza contesto, il progetto diventa illeggibile.</p>
 
 <p>Per organizzare un progetto film AI senza perdere continuità servono quattro cose:</p>
 
 <ul class="list-disc pl-6 space-y-1 my-4">
-  <li>una struttura gerarchica stabile: Scena → Shot → Take</li>
-  <li>un collegamento permanente tra prompt, reference e output</li>
-  <li>note decisionali che spiegano perché un take è stato scelto o scartato</li>
-  <li>un sistema che preservi queste relazioni nel tempo, non solo i file</li>
+<li>una struttura gerarchica stabile: Scena → Shot → Take</li>
+<li>un collegamento permanente tra prompt, reference e output</li>
+<li>note decisionali che spiegano perché un take è stato scelto o scartato</li>
+<li>un sistema che preservi queste relazioni nel tempo, non solo i file</li>
 </ul>
+
+<p>In pratica, è anche il problema di come salvare i prompt, organizzare gli output e fare in modo che il contesto di una sessione resti attaccato all'immagine o al video che ne è uscito.</p>
 
 <p>Il resto di questo articolo spiega perché, e come.</p>
 
@@ -72,16 +74,18 @@ export const posts: BlogPost[] = [
 
 <p>Il pattern comune: questi strumenti archiviano file e informazioni. Non preservano le relazioni tra scena, shot, take, prompt, reference, output e decisione creativa.</p>
 
+<p>Molti workaround nascono proprio da qui: rinominare cartelle, salvare prompt in file separati, tenere metadata e output vicini. Il problema è che questi sistemi archiviano materiale, ma raramente conservano davvero il contesto creativo del progetto.</p>
+
 <h2>Il sistema minimo per organizzare un film AI</h2>
 
 <p>Dopo mesi di lavoro su progetti AI con Runway, Kling, Veo e Midjourney, ho consolidato un sistema che funziona. Non richiede tool specifici per iniziare — richiede disciplina strutturale.</p>
 
 <ol class="list-decimal pl-6 space-y-3 my-4">
-  <li><strong>Struttura gerarchica prima di generare.</strong> Definisci le scene e gli shot del progetto prima di aprire qualsiasi tool. Scena 01, Scena 02 — con una descrizione breve per ognuna. Ogni shot ha un numero (1.1, 1.2, 2.1) e un'intenzione visiva chiara.</li>
-  <li><strong>Separa input e output.</strong> Il prompt e la reference sono input. Il file generato è output. Devono restare connessi — non in cartelle separate, non in tab diverse del browser, non in app diverse senza collegamento.</li>
-  <li><strong>Ogni take deve portare con sé il suo contesto.</strong> Prompt, reference, output e una nota breve: perché questo take è stato generato, cosa lo differenzia dal precedente, perché è stato approvato o scartato. Una riga è sufficiente. L'assenza di quella riga costa ore quando torni al progetto.</li>
-  <li><strong>Non usare la chat history come archivio centrale.</strong> La chat è uno strumento di generazione. L'archivio del film è un'altra cosa. Se sono la stessa cosa, il giorno in cui la chat si azzera perdi la memoria del progetto.</li>
-  <li><strong>Usa un sistema che preservi relazioni, non solo file.</strong> La differenza tra un archivio e un sistema di memoria è questa: l'archivio sa dove è il file. Il sistema di memoria sa perché quel file esiste, a quale shot appartiene, quale prompt lo ha prodotto, e cosa è stato deciso su di esso.</li>
+<li><strong>Struttura gerarchica prima di generare.</strong> Definisci le scene e gli shot del progetto prima di aprire qualsiasi tool. Scena 01, Scena 02 — con una descrizione breve per ognuna. Ogni shot ha un numero (1.1, 1.2, 2.1) e un'intenzione visiva chiara.</li>
+<li><strong>Separa input e output.</strong> Il prompt e la reference sono input. Il file generato è output. Devono restare connessi — non in cartelle separate, non in tab diverse del browser, non in app diverse senza collegamento.</li>
+<li><strong>Ogni take deve portare con sé il suo contesto.</strong> Prompt, reference, output e una nota breve: perché questo take è stato generato, cosa lo differenzia dal precedente, perché è stato approvato o scartato. Una riga è sufficiente. L'assenza di quella riga costa ore quando torni al progetto.</li>
+<li><strong>Non usare la chat history come archivio centrale.</strong> La chat è uno strumento di generazione. L'archivio del film è un'altra cosa. Se sono la stessa cosa, il giorno in cui la chat si azzera perdi la memoria del progetto.</li>
+<li><strong>Usa un sistema che preservi relazioni, non solo file.</strong> La differenza tra un archivio e un sistema di memoria è questa: l'archivio sa dove è il file. Il sistema di memoria sa perché quel file esiste, a quale shot appartiene, quale prompt lo ha prodotto, e cosa è stato deciso su di esso.</li>
 </ol>
 
 <h2>La struttura che tiene tutto insieme: Scena → Shot → Take</h2>
@@ -99,10 +103,10 @@ export const posts: BlogPost[] = [
 <p>In pratica: costruisci la struttura in Rewake prima di generare. Poi lavori nel tuo tool di elezione. Quando hai un output, lo porti nel take corretto. Il prompt resta attaccato a quel take. La reference resta collegata allo shot. La nota decisionale resta registrata con il take selezionato come Final Visual.</p>
 
 <figure class="my-8">
-  <a href="/images/blog/rewake-ai-film-workspace.webp" data-lightbox="rewake-workspace" class="block cursor-zoom-in">
-    <img src="/images/blog/rewake-ai-film-workspace.webp" alt="Rewake workspace — Take con prompt, reference e output connessi" class="w-full rounded-lg" loading="lazy" />
-  </a>
-  <figcaption class="text-sm text-text-secondary mt-2 mb-8">Il workspace di un singolo Take: prompt completo, reference visive collegate — storyboard e character sheet — e output generato, tutto connesso nello stesso contesto. Dopo settimane, il take è ancora completamente leggibile.</figcaption>
+<a href="/images/blog/rewake-ai-film-workspace.webp" data-lightbox="rewake-workspace" class="block cursor-zoom-in">
+<img src="/images/blog/rewake-ai-film-workspace.webp" alt="Rewake workspace — Take con prompt, reference e output connessi" class="w-full rounded-lg" loading="lazy" />
+</a>
+<figcaption class="text-sm text-text-secondary mt-2 mb-8">Il workspace di un singolo Take: prompt completo, reference visive collegate — storyboard e character sheet — e output generato, tutto connesso nello stesso contesto. Dopo settimane, il take è ancora completamente leggibile.</figcaption>
 </figure>
 
 <h2>Un esempio reale: Tempus Fugit</h2>
@@ -114,10 +118,10 @@ export const posts: BlogPost[] = [
 <p>Quel prompt, quella reference del character sheet, quella nota — sono dentro il take 3, dentro lo shot 2.1, dentro la Scena 2. Tra un mese, quando dovrò generare varianti, il contesto è lì. Non da ricostruire.</p>
 
 <figure class="my-8">
-  <a href="/images/blog/rewake-ai-film-organization-hero.webp" data-lightbox="rewake-slate" class="block cursor-zoom-in">
-    <img src="/images/blog/rewake-ai-film-organization-hero.webp" alt="Rewake Slate view — struttura Scene e Shot di un progetto film AI" class="w-full rounded-lg" loading="lazy" />
-  </a>
-  <figcaption class="text-sm text-text-secondary mt-2 mb-8">La Slate view di Rewake con la struttura Scene → Shot del progetto. Ogni shot mostra i contenuti generati con il loro stato, così il progetto resta navigabile anche dopo molte sessioni di lavoro.</figcaption>
+<a href="/images/blog/rewake-ai-film-organization-hero.webp" data-lightbox="rewake-slate" class="block cursor-zoom-in">
+<img src="/images/blog/rewake-ai-film-organization-hero.webp" alt="Rewake Slate view — struttura Scene e Shot di un progetto film AI" class="w-full rounded-lg" loading="lazy" />
+</a>
+<figcaption class="text-sm text-text-secondary mt-2 mb-8">La Slate view di Rewake con la struttura Scene → Shot del progetto. Ogni shot mostra i contenuti generati con il loro stato, così il progetto resta navigabile anche dopo molte sessioni di lavoro.</figcaption>
 </figure>
 
 <h2>Per chi è utile — e per chi non lo è</h2>
@@ -135,29 +139,31 @@ export const posts: BlogPost[] = [
 <p>Se il progetto resta leggibile nel tempo, lavori meglio. Se perde contesto, ricominci ogni volta da capo.</p>
 
 <div class="flex justify-center my-6">
-  <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" target="_blank" rel="noopener">
-    <img src="/images/rewake-logo.webp" alt="Rewake — Your Film Memory" class="h-14 opacity-90 hover:opacity-100 transition-opacity" loading="lazy" />
-  </a>
+<a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" target="_blank" rel="noopener">
+<img src="/images/rewake-logo.webp" alt="Rewake — Your Film Memory" class="h-14 opacity-90 hover:opacity-100 transition-opacity" loading="lazy" />
+</a>
 </div>
 
 <p>Rewake è in beta privata. Se stai lavorando su un progetto AI e riconosci il problema, puoi <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">richiedere l'accesso sul sito</a>. Ogni richiesta è valutata personalmente.</p>`,
 
-        contentEn: `<p><em>April 2026</em></p>
+    contentEn: `<p><em>April 2026</em></p>
 
 <p>There is a precise moment when an AI project stops being exciting and becomes a problem. Not when generation fails. The moment is when you return to a project after ten days and no longer understand anything.</p>
 
-<p>What was the approved prompt for shot 2.3? Which reference had defined the interior light? Why had you discarded that specific image or video? The answers existed. They existed in the session from two weeks ago, in the Runway chat, in the folder with forty files named <code>output_v2_FINAL_usethis.png</code>. Now they are gone.</p>
+<p>What was the approved prompt for shot 2.3? Which reference had defined the interior light? Why had you discarded that specific image or video? The answers existed. They existed in the session from two weeks ago, in the Gemini chat, in the folder with forty files named <code>output_v2_FINAL_usethis.png</code>. Now they are gone.</p>
 
 <p>The problem is not that files disappear. The files are all there. The problem is that context is lost — and without context, the project becomes unreadable.</p>
 
 <p>To organize an AI film project without losing continuity, you need four things:</p>
 
 <ul class="list-disc pl-6 space-y-1 my-4">
-  <li>a stable hierarchical structure: Scene → Shot → Take</li>
-  <li>a permanent link between prompt, reference and output</li>
-  <li>decision notes that explain why a take was chosen or discarded</li>
-  <li>a system that preserves these relationships over time, not just the files</li>
+<li>a stable hierarchical structure: Scene → Shot → Take</li>
+<li>a permanent link between prompt, reference and output</li>
+<li>decision notes that explain why a take was chosen or discarded</li>
+<li>a system that preserves these relationships over time, not just the files</li>
 </ul>
+
+<p>In practice, it is also the problem of how to save prompts, organize outputs and make sure that the context of a session stays attached to the image or video that came out of it.</p>
 
 <p>The rest of this article explains why, and how.</p>
 
@@ -179,16 +185,18 @@ export const posts: BlogPost[] = [
 
 <p>The common pattern: these tools store files and information. They do not preserve the relationships between scene, shot, take, prompt, reference, output and creative decision.</p>
 
+<p>Many workarounds come from exactly this place: renaming folders, saving prompts in separate files, keeping metadata and outputs close together. The problem is that these systems store material, but rarely preserve the actual creative context of the project.</p>
+
 <h2>The minimum system for organizing an AI film</h2>
 
 <p>After months working on AI projects with Runway, Kling, Veo and Midjourney, I have consolidated a system that works. It does not require specific tools to start — it requires structural discipline.</p>
 
 <ol class="list-decimal pl-6 space-y-3 my-4">
-  <li><strong>Hierarchical structure before generating.</strong> Define the scenes and shots of the project before opening any tool. Scene 01, Scene 02 — with a short description for each. Every shot has a number (1.1, 1.2, 2.1) and a clear visual intention.</li>
-  <li><strong>Separate input and output.</strong> The prompt and the reference are inputs. The generated file is output. They must stay connected — not in separate folders, not in different browser tabs, not in different apps with no link between them.</li>
-  <li><strong>Every take must carry its context with it.</strong> Prompt, reference, output and a brief note: why this take was generated, what differentiates it from the previous one, why it was approved or discarded. One line is enough. The absence of that line costs hours when you return to the project.</li>
-  <li><strong>Do not use chat history as the central archive.</strong> Chat is a generation tool. The film archive is something else. If they are the same thing, the day the chat resets you lose the project's memory.</li>
-  <li><strong>Use a system that preserves relationships, not just files.</strong> The difference between an archive and a memory system: an archive knows where the file is. A memory system knows why that file exists, which shot it belongs to, which prompt produced it, and what was decided about it.</li>
+<li><strong>Hierarchical structure before generating.</strong> Define the scenes and shots of the project before opening any tool. Scene 01, Scene 02 — with a short description for each. Every shot has a number (1.1, 1.2, 2.1) and a clear visual intention.</li>
+<li><strong>Separate input and output.</strong> The prompt and the reference are inputs. The generated file is output. They must stay connected — not in separate folders, not in different browser tabs, not in different apps with no link between them.</li>
+<li><strong>Every take must carry its context with it.</strong> Prompt, reference, output and a brief note: why this take was generated, what differentiates it from the previous one, why it was approved or discarded. One line is enough. The absence of that line costs hours when you return to the project.</li>
+<li><strong>Do not use chat history as the central archive.</strong> Chat is a generation tool. The film archive is something else. If they are the same thing, the day the chat resets you lose the project's memory.</li>
+<li><strong>Use a system that preserves relationships, not just files.</strong> The difference between an archive and a memory system: an archive knows where the file is. A memory system knows why that file exists, which shot it belongs to, which prompt produced it, and what was decided about it.</li>
 </ol>
 
 <h2>The structure that holds everything together: Scene → Shot → Take</h2>
@@ -206,10 +214,10 @@ export const posts: BlogPost[] = [
 <p>In practice: you build the structure in Rewake before generating. Then you work in your tool of choice. When you have an output, you bring it into the correct take. The prompt stays attached to that take. The reference stays linked to the shot. The decision note stays recorded with the take selected as Final Visual.</p>
 
 <figure class="my-8">
-  <a href="/images/blog/rewake-ai-film-workspace.webp" data-lightbox="rewake-workspace" class="block cursor-zoom-in">
-    <img src="/images/blog/rewake-ai-film-workspace.webp" alt="Rewake workspace — Take with prompt, reference and output connected" class="w-full rounded-lg" loading="lazy" />
-  </a>
-  <figcaption class="text-sm text-text-secondary mt-2 mb-8">The workspace of a single Take: full prompt, linked visual references — storyboard and character sheet — and generated output, all connected in the same context. After weeks, the take is still completely readable.</figcaption>
+<a href="/images/blog/rewake-ai-film-workspace.webp" data-lightbox="rewake-workspace" class="block cursor-zoom-in">
+<img src="/images/blog/rewake-ai-film-workspace.webp" alt="Rewake workspace — Take with prompt, reference and output connected" class="w-full rounded-lg" loading="lazy" />
+</a>
+<figcaption class="text-sm text-text-secondary mt-2 mb-8">The workspace of a single Take: full prompt, linked visual references — storyboard and character sheet — and generated output, all connected in the same context. After weeks, the take is still completely readable.</figcaption>
 </figure>
 
 <h2>A real example: Tempus Fugit</h2>
@@ -221,10 +229,10 @@ export const posts: BlogPost[] = [
 <p>That prompt, that character sheet reference, that note — they are inside take 3, inside shot 2.1, inside Scene 2. In a month, when I need to generate variants, the context is there. Nothing to reconstruct.</p>
 
 <figure class="my-8">
-  <a href="/images/blog/rewake-ai-film-organization-hero.webp" data-lightbox="rewake-slate" class="block cursor-zoom-in">
-    <img src="/images/blog/rewake-ai-film-organization-hero.webp" alt="Rewake Slate view — Scene and Shot structure of an AI film project" class="w-full rounded-lg" loading="lazy" />
-  </a>
-  <figcaption class="text-sm text-text-secondary mt-2 mb-8">Rewake's Slate view with the Scene → Shot structure of the project. Each shot shows its generated content with its status, so the project stays navigable even after many working sessions.</figcaption>
+<a href="/images/blog/rewake-ai-film-organization-hero.webp" data-lightbox="rewake-slate" class="block cursor-zoom-in">
+<img src="/images/blog/rewake-ai-film-organization-hero.webp" alt="Rewake Slate view — Scene and Shot structure of an AI film project" class="w-full rounded-lg" loading="lazy" />
+</a>
+<figcaption class="text-sm text-text-secondary mt-2 mb-8">Rewake's Slate view with the Scene → Shot structure of the project. Each shot shows its generated content with its status, so the project stays navigable even after many working sessions.</figcaption>
 </figure>
 
 <h2>Who it is useful for — and who it is not</h2>
@@ -242,28 +250,28 @@ export const posts: BlogPost[] = [
 <p>If the project stays readable over time, you work better. If it loses context, you start over every time.</p>
 
 <div class="flex justify-center my-6">
-  <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" target="_blank" rel="noopener">
-    <img src="/images/rewake-logo.webp" alt="Rewake — Your Film Memory" class="h-14 opacity-90 hover:opacity-100 transition-opacity" loading="lazy" />
-  </a>
+<a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" target="_blank" rel="noopener">
+<img src="/images/rewake-logo.webp" alt="Rewake — Your Film Memory" class="h-14 opacity-90 hover:opacity-100 transition-opacity" loading="lazy" />
+</a>
 </div>
 
 <p>Rewake is in private beta. If you are working on an AI project and recognize the problem, you can <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">request access on the site</a>. Every application is reviewed personally.</p>`,
-    },
-    {
-        slug: 'ai-vs-vfx-tradizionale-come-scegliere',
-        slugEn: 'ai-vs-traditional-vfx-how-to-choose',
-        titleIt: 'Come scelgo tra AI e VFX tradizionale per ogni shot',
-        titleEn: 'How I choose between AI and traditional VFX for every shot',
-        excerptIt: 'Non è una questione di AI contro VFX. È sapere quando usare cosa. Dopo 20 anni di post-produzione e un anno di AI generativa, ecco come decido.',
-        excerptEn: "It's not AI versus VFX. It's knowing when to use what. After 20 years of post-production and a year of generative AI, here's how I decide.",
-        date: '2026-03-01',
-        readingTime: 7,
-        category: 'ai',
-        categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
-        keywordTarget: 'AI vs VFX tradizionale',
-        thumbnail: '/images/blog/ai-vs-vfx-tradizionale-come-scegliere-workflow.jpg',
-        thumbnailAlt: { it: 'AI vs VFX tradizionale - come scegliere', en: 'AI vs traditional VFX - how to choose' },
-        contentIt: `< h2 > La domanda che mi fanno tutti </h2>
+  },
+  {
+    slug: 'ai-vs-vfx-tradizionale-come-scegliere',
+    slugEn: 'ai-vs-traditional-vfx-how-to-choose',
+    titleIt: 'Come scelgo tra AI e VFX tradizionale per ogni shot',
+    titleEn: 'How I choose between AI and traditional VFX for every shot',
+    excerptIt: 'Non è una questione di AI contro VFX. È sapere quando usare cosa. Dopo 20 anni di post-produzione e un anno di AI generativa, ecco come decido.',
+    excerptEn: "It's not AI versus VFX. It's knowing when to use what. After 20 years of post-production and a year of generative AI, here's how I decide.",
+    date: '2026-03-01',
+    readingTime: 7,
+    category: 'ai',
+    categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
+    keywordTarget: 'AI vs VFX tradizionale',
+    thumbnail: '/images/blog/ai-vs-vfx-tradizionale-come-scegliere-workflow.jpg',
+    thumbnailAlt: { it: 'AI vs VFX tradizionale - come scegliere', en: 'AI vs traditional VFX - how to choose' },
+    contentIt: `< h2 > La domanda che mi fanno tutti </h2>
     < p > "Ma con l'AI, i VFX tradizionali servono ancora?" Me lo chiedono registi, producer, agenzie.La risposta è sì — ma non per tutto.E non come prima.</p>
         < p > Uso strumenti di AI generativa(Runway, Veo, Kling) ogni giorno, accanto a After Effects, Nuke e 3ds Max.Non ho sostituito uno con l'altro. Ho aggiunto strumenti alla cassetta degli attrezzi. La scelta dipende dalla shot, dal progetto, dal budget e dal risultato che serve.</p>
             < p > Ecco come decido concretamente.</p>
@@ -290,7 +298,7 @@ export const posts: BlogPost[] = [
                                                                             < h2 > La regola che applico </h2>
                                                                                 < p > Non è complicata: <strong>se il risultato AI è al 90 % di qualità in un decimo del tempo, uso l'AI e porto quel 90% al 100% con gli strumenti tradizionali.</strong> Se il risultato AI è al 60%, uso direttamente i VFX tradizionali. La capacità di giudicare dove siamo su quella scala è ciò che fa la differenza — e viene solo dall'esperienza.</p>`,
 
-        contentEn: `<h2>The question everyone asks me</h2>
+    contentEn: `<h2>The question everyone asks me</h2>
   <p>"With AI, are traditional VFX still needed?" Directors, producers, agencies all ask me this. The answer is yes — but not for everything. And not like before.</p>
   <p>I use generative AI tools (Runway, Veo, Kling) every day, alongside After Effects, Nuke and 3ds Max. I haven't replaced one with the other. I've added tools to the toolbox. The choice depends on the shot, the project, the budget and the result needed.</p>
   <p>Here's how I actually decide.</p>
@@ -316,22 +324,22 @@ export const posts: BlogPost[] = [
   
   <h2>The rule I apply</h2>
   <p>It's not complicated: <strong>if the AI result is at 90% quality in a tenth of the time, I use AI and bring that 90% to 100% with traditional tools.</strong> If the AI result is at 60%, I go straight to traditional VFX. The ability to judge where we are on that scale is what makes the difference — and it only comes from experience.</p>`,
-    },
-    {
-        slug: 'vfx-cinema-indipendente-guida-workflow',
-        slugEn: 'vfx-independent-film-workflow-guide',
-        titleIt: 'VFX per cinema indipendente: guida completa al workflow',
-        titleEn: 'VFX for independent cinema: complete workflow guide',
-        excerptIt: 'Come ottenere effetti visivi credibili con budget contenuti. Dalla pianificazione sul set alla consegna finale, il workflow che uso per i film indipendenti.',
-        excerptEn: 'How to achieve credible visual effects on tight budgets. From on-set planning to final delivery, the workflow I use for independent films.',
-        date: '2026-03-08',
-        readingTime: 9,
-        category: 'vfx',
-        categoryLabel: { it: 'VFX', en: 'VFX' },
-        keywordTarget: 'VFX cinema indipendente',
-        thumbnail: '/images/blog/vfx-cinema-indipendente-workflow-completo.jpg',
-        thumbnailAlt: { it: 'VFX per cinema indipendente - workflow completo', en: 'VFX for independent cinema - complete workflow' },
-        contentIt: `<h2>Il VFX nel cinema indipendente non è un lusso</h2>
+  },
+  {
+    slug: 'vfx-cinema-indipendente-guida-workflow',
+    slugEn: 'vfx-independent-film-workflow-guide',
+    titleIt: 'VFX per cinema indipendente: guida completa al workflow',
+    titleEn: 'VFX for independent cinema: complete workflow guide',
+    excerptIt: 'Come ottenere effetti visivi credibili con budget contenuti. Dalla pianificazione sul set alla consegna finale, il workflow che uso per i film indipendenti.',
+    excerptEn: 'How to achieve credible visual effects on tight budgets. From on-set planning to final delivery, the workflow I use for independent films.',
+    date: '2026-03-08',
+    readingTime: 9,
+    category: 'vfx',
+    categoryLabel: { it: 'VFX', en: 'VFX' },
+    keywordTarget: 'VFX cinema indipendente',
+    thumbnail: '/images/blog/vfx-cinema-indipendente-workflow-completo.jpg',
+    thumbnailAlt: { it: 'VFX per cinema indipendente - workflow completo', en: 'VFX for independent cinema - complete workflow' },
+    contentIt: `<h2>Il VFX nel cinema indipendente non è un lusso</h2>
   <p>C'è un pregiudizio diffuso: gli effetti visivi sono roba da blockbuster. Servono milioni di budget e centinaia di artisti. È falso. Alcuni dei VFX più efficaci che ho realizzato erano per cortometraggi e film indipendenti con budget minuscoli.</p>
   <p>La differenza non è nei soldi — è nella pianificazione. Un VFX ben pianificato su un film indipendente costa una frazione di uno improvvisato su una produzione ricca. E il risultato può essere identico.</p>
   <p>In questa guida condivido il workflow che uso quando lavoro con produzioni indipendenti. Non è teoria — è quello che faccio ogni giorno.</p>
@@ -365,7 +373,7 @@ export const posts: BlogPost[] = [
   <p>Il costo vero di VFX non pianificati è molto più alto: shot impossibili da salvare, tempi raddoppiati, compromessi sulla qualità che si vedono sullo schermo.</p>
   <p>Il mio consiglio: coinvolgimi in pre-produzione. Costa poco (spesso solo una consulenza) e fa risparmiare molto in post. Scopri i miei <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">servizi VFX</a> o guarda il caso studio <a href="/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a> per vedere questo workflow in azione.</p>`,
 
-        contentEn: `<h2>VFX in independent cinema isn't a luxury</h2>
+    contentEn: `<h2>VFX in independent cinema isn't a luxury</h2>
   <p>There's a widespread prejudice: visual effects are blockbuster stuff. You need millions in budget and hundreds of artists. It's false. Some of the most effective VFX I've done were for short films and independent features with tiny budgets.</p>
   <p>The difference isn't money — it's planning. Well-planned VFX on an indie film costs a fraction of improvised ones on a rich production. And the result can be identical.</p>
   <p>In this guide I share the workflow I use when working with independent productions. This isn't theory — it's what I do every day.</p>
@@ -398,22 +406,22 @@ export const posts: BlogPost[] = [
   <p>An indie film with 20-30 medium-complexity VFX shots (clean-up, set extension, basic compositing) requires roughly 3-4 weeks of work. Less than you'd think — especially if pre-production was done right.</p>
   <p>The real cost of unplanned VFX is much higher: unsalvageable shots, doubled timelines, quality compromises that show on screen.</p>
   <p>My advice: involve me in pre-production. It costs little (often just a consultation) and saves a lot in post. Check out my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX services</a> or see the <a href="/en/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a> case study to see this workflow in action.</p>`,
-    },
-    {
-        slug: 'color-grading-film-davinci-resolve-workflow',
-        slugEn: 'color-grading-film-davinci-resolve-workflow',
-        titleIt: 'Color Grading per film: il mio workflow in DaVinci Resolve',
-        titleEn: 'Color Grading for film: my DaVinci Resolve workflow',
-        excerptIt: 'Dal LOG al look finale: come lavoro il colore su un film. Il processo che uso come colorist certificato DaVinci Resolve, dalla prima correzione al delivery.',
-        excerptEn: 'From LOG to final look: how I work color on a film. The process I use as a certified DaVinci Resolve colorist, from first correction to delivery.',
-        date: '2026-03-15',
-        readingTime: 8,
-        category: 'post',
-        categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
-        keywordTarget: 'color grading film DaVinci Resolve',
-        thumbnail: '/images/blog/color-grading-film-davinci-resolve-workflow-professionale.jpg',
-        thumbnailAlt: { it: 'Color grading cinematografico in DaVinci Resolve', en: 'Cinematic color grading in DaVinci Resolve' },
-        contentIt: `<h2>Il colore non è decorazione</h2>
+  },
+  {
+    slug: 'color-grading-film-davinci-resolve-workflow',
+    slugEn: 'color-grading-film-davinci-resolve-workflow',
+    titleIt: 'Color Grading per film: il mio workflow in DaVinci Resolve',
+    titleEn: 'Color Grading for film: my DaVinci Resolve workflow',
+    excerptIt: 'Dal LOG al look finale: come lavoro il colore su un film. Il processo che uso come colorist certificato DaVinci Resolve, dalla prima correzione al delivery.',
+    excerptEn: 'From LOG to final look: how I work color on a film. The process I use as a certified DaVinci Resolve colorist, from first correction to delivery.',
+    date: '2026-03-15',
+    readingTime: 8,
+    category: 'post',
+    categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
+    keywordTarget: 'color grading film DaVinci Resolve',
+    thumbnail: '/images/blog/color-grading-film-davinci-resolve-workflow-professionale.jpg',
+    thumbnailAlt: { it: 'Color grading cinematografico in DaVinci Resolve', en: 'Cinematic color grading in DaVinci Resolve' },
+    contentIt: `<h2>Il colore non è decorazione</h2>
   <p>C'è un malinteso diffuso sul color grading: molti lo considerano l'ultimo passaggio, il "filtro" da applicare quando tutto il resto è finito. Non è così. Il colore è narrazione. Definisce il tono emotivo di ogni scena, guida l'occhio dello spettatore, separa i piani temporali, distingue i personaggi.</p>
   <p>Lavoro come colorist certificato DaVinci Resolve da diversi anni, su film, documentari e spot. In questo articolo condivido il workflow che applico su un progetto cinematografico — non la teoria, ma quello che faccio concretamente quando un regista mi consegna il girato.</p>
   
@@ -452,7 +460,7 @@ export const posts: BlogPost[] = [
   <p>Il master finale dipende dalla destinazione: DCP per il cinema (P3 D65, gamma 2.6), Rec.709 per broadcast e streaming, HDR se richiesto (PQ o HLG). DaVinci gestisce tutto nativamente, incluse le versioni multiple per piattaforme diverse.</p>
   <p>Se il film ha VFX, il grading e i VFX si parlano in continuazione — ed è qui che gestire entrambi fa risparmiare settimane. Non devo esportare shot, mandarle al VFX artist, aspettare il ritorno, rifare il match. È già tutto allineato. Scopri di più sui miei servizi di <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> e <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a>.</p>`,
 
-        contentEn: `<h2>Color isn't decoration</h2>
+    contentEn: `<h2>Color isn't decoration</h2>
   <p>There's a widespread misconception about color grading: many consider it the last step, the "filter" to apply when everything else is done. It's not. Color is storytelling. It defines the emotional tone of every scene, guides the viewer's eye, separates time planes, distinguishes characters.</p>
   <p>I've been working as a DaVinci Resolve certified colorist for several years, on films, documentaries and commercials. In this article I share the workflow I apply on a cinematic project — not theory, but what I actually do when a director delivers footage.</p>
   
@@ -490,22 +498,22 @@ export const posts: BlogPost[] = [
   <h2>Phase 7: Delivery</h2>
   <p>The final master depends on destination: DCP for cinema (P3 D65, gamma 2.6), Rec.709 for broadcast and streaming, HDR if required (PQ or HLG). DaVinci handles everything natively, including multiple versions for different platforms.</p>
   <p>If the film has VFX, the grade and VFX are in constant conversation — and this is where managing both saves weeks. I don't need to export shots, send them to the VFX artist, wait for returns, redo the match. It's already aligned. Learn more about my <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> and <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a> services.</p>`,
-    },
-    {
-        slug: 'breakdown-vfx-along-came-ruby',
-        slugEn: 'vfx-breakdown-along-came-ruby',
-        titleIt: 'Breakdown VFX: Along Came Ruby — effetti visivi e pipeline con un colorist di Hollywood',
-        titleEn: 'VFX Breakdown: Along Came Ruby — visual effects and pipeline with a Hollywood colorist',
-        excerptIt: 'Come ho creato gli effetti dello spaziotempo per un cortometraggio sci-fi, lavorando in DaVinci Cloud con Walter Volpatto — il colorist di Star Wars, Dunkirk e Megalopolis.',
-        excerptEn: 'How I created the spacetime effects for a sci-fi short film, working in DaVinci Cloud with Walter Volpatto — the colorist behind Star Wars, Dunkirk and Megalopolis.',
-        date: '2026-03-22',
-        readingTime: 9,
-        category: 'vfx',
-        categoryLabel: { it: 'VFX Breakdown', en: 'VFX Breakdown' },
-        keywordTarget: 'VFX breakdown cortometraggio',
-        thumbnail: '/images/blog/breakdown-vfx-along-came-ruby-effetto-spazio-temporale.jpg',
-        thumbnailAlt: { it: 'Breakdown VFX Along Came Ruby - effetto spazio-temporale', en: 'VFX breakdown Along Came Ruby - space-time effect' },
-        contentIt: `<h2>Il progetto e il team</h2>
+  },
+  {
+    slug: 'breakdown-vfx-along-came-ruby',
+    slugEn: 'vfx-breakdown-along-came-ruby',
+    titleIt: 'Breakdown VFX: Along Came Ruby — effetti visivi e pipeline con un colorist di Hollywood',
+    titleEn: 'VFX Breakdown: Along Came Ruby — visual effects and pipeline with a Hollywood colorist',
+    excerptIt: 'Come ho creato gli effetti dello spaziotempo per un cortometraggio sci-fi, lavorando in DaVinci Cloud con Walter Volpatto — il colorist di Star Wars, Dunkirk e Megalopolis.',
+    excerptEn: 'How I created the spacetime effects for a sci-fi short film, working in DaVinci Cloud with Walter Volpatto — the colorist behind Star Wars, Dunkirk and Megalopolis.',
+    date: '2026-03-22',
+    readingTime: 9,
+    category: 'vfx',
+    categoryLabel: { it: 'VFX Breakdown', en: 'VFX Breakdown' },
+    keywordTarget: 'VFX breakdown cortometraggio',
+    thumbnail: '/images/blog/breakdown-vfx-along-came-ruby-effetto-spazio-temporale.jpg',
+    thumbnailAlt: { it: 'Breakdown VFX Along Came Ruby - effetto spazio-temporale', en: 'VFX breakdown Along Came Ruby - space-time effect' },
+    contentIt: `<h2>Il progetto e il team</h2>
 <p><a href="https://www.youtube.com/watch?v=_TWrVQ-43uk" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a> è un cortometraggio sci-fi diretto da <a href="https://www.imdb.com/name/nm5388996/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Riccardo Suriano</a>, girato a Sacramento e ambientato in un mondo post-apocalittico. Ruby, una ragazza di 18 anni, attraversa un paesaggio devastato in cerca del fratello. Durante il viaggio incontra una donna anziana misteriosa — e scopre che passato e futuro sono più vicini di quanto pensasse.</p>
 <p>Collaboro con Riccardo da tempo. Su questo progetto ho curato gli effetti visivi. La color è stata fatta da <a href="https://www.imdb.com/name/nm2164371/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Walter Volpatto</a> — colorist di Hollywood con crediti su Star Wars: The Last Jedi, Dunkirk, Megalopolis, Green Book, Interstellar. Membro dell'Academy, consulente del Science and Technology Council. La fotografia è di Joey Katches, il montaggio di Bryan A. Mackenzie.</p>
 <p>Se ho avuto l'opportunità di lavorare con Walter, il merito è di Riccardo. La sua visione per il film e il suo standard qualitativo hanno portato a costruire un team di quel calibro anche su un cortometraggio indipendente.</p>
@@ -549,7 +557,7 @@ export const posts: BlogPost[] = [
 <p>Scopri i miei <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">servizi VFX</a> o il mio approccio alla <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione integrata</a>.</p>
 <p><strong>Crediti:</strong> Regia <a href="https://www.imdb.com/name/nm5388996/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Riccardo Suriano</a> — Fotografia Joey Katches — Color <a href="https://www.imdb.com/name/nm2164371/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Walter Volpatto</a> — VFX Piero Perilli — Montaggio Bryan A. Mackenzie — Con Alexandra Boulas e Liz Kastner.</p>`,
 
-        contentEn: `<h2>The project and the team</h2>
+    contentEn: `<h2>The project and the team</h2>
 <p><a href="https://www.youtube.com/watch?v=_TWrVQ-43uk" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a> is a sci-fi short film directed by <a href="https://www.imdb.com/name/nm5388996/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Riccardo Suriano</a>, shot in Sacramento and set in a post-apocalyptic world. Ruby, an 18-year-old, crosses a devastated landscape searching for her brother. Along the way she meets a mysterious elderly woman — and discovers that past and future are closer than she thought.</p>
 <p>I've been collaborating with Riccardo for a long time. On this project I handled the visual effects. Color grading was done by <a href="https://www.imdb.com/name/nm2164371/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Walter Volpatto</a> — a Hollywood colorist with credits on Star Wars: The Last Jedi, Dunkirk, Megalopolis, Green Book, Interstellar. An Academy Member and consultant to the Science and Technology Council. Cinematography by Joey Katches, editing by Bryan A. Mackenzie.</p>
 <p>If I had the opportunity to work with Walter, the credit goes to Riccardo. His vision for the film and his quality standards led to building a team of that caliber even on an independent short.</p>
@@ -592,22 +600,22 @@ export const posts: BlogPost[] = [
 <p>The film is available on <a href="https://www.youtube.com/watch?v=_TWrVQ-43uk" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">YouTube</a> and <a href="https://filmshortage.com/dailyshortpicks/along-came-ruby/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Film Shortage</a>. You can see my work in the <a href="/en/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">portfolio case study</a>.</p>
 <p>Learn more about my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX services</a> or my approach to <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">integrated post-production</a>.</p>
 <p><strong>Credits:</strong> Director <a href="https://www.imdb.com/name/nm5388996/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Riccardo Suriano</a> — Cinematography Joey Katches — Color <a href="https://www.imdb.com/name/nm2164371/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Walter Volpatto</a> — VFX Piero Perilli — Editor Bryan A. Mackenzie — Starring Alexandra Boulas and Liz Kastner.</p>`,
-    },
-    {
-        slug: 'animazione-3d-prodotto-presentazione-cinematografica',
-        slugEn: '3d-product-animation-cinematic-presentation',
-        titleIt: 'Animazione 3D di prodotto: come presentare oggetti in modo cinematografico',
-        titleEn: '3D product animation: how to present objects cinematically',
-        excerptIt: 'Dal briefing al render finale. Come trasformo un oggetto fisico in un protagonista visivo con animazione 3D, illuminazione cinematografica e ambienti costruiti su misura.',
-        excerptEn: 'From briefing to final render. How I transform a physical object into a visual protagonist with 3D animation, cinematic lighting and custom-built environments.',
-        date: '2026-03-10',
-        readingTime: 8,
-        category: '3d',
-        categoryLabel: { it: 'Animazione 3D', en: '3D Animation' },
-        keywordTarget: 'animazione 3D prodotto',
-        thumbnail: '/images/portfolio/jor-liaison-colosseo-anelli-3d.webp',
-        thumbnailAlt: { it: 'Animazione 3D gioielli \u2014 JOR Collezione Liaison', en: '3D jewelry animation \u2014 JOR Liaison Collection' },
-        contentIt: `<h2>L\u2019oggetto come protagonista</h2>
+  },
+  {
+    slug: 'animazione-3d-prodotto-presentazione-cinematografica',
+    slugEn: '3d-product-animation-cinematic-presentation',
+    titleIt: 'Animazione 3D di prodotto: come presentare oggetti in modo cinematografico',
+    titleEn: '3D product animation: how to present objects cinematically',
+    excerptIt: 'Dal briefing al render finale. Come trasformo un oggetto fisico in un protagonista visivo con animazione 3D, illuminazione cinematografica e ambienti costruiti su misura.',
+    excerptEn: 'From briefing to final render. How I transform a physical object into a visual protagonist with 3D animation, cinematic lighting and custom-built environments.',
+    date: '2026-03-10',
+    readingTime: 8,
+    category: '3d',
+    categoryLabel: { it: 'Animazione 3D', en: '3D Animation' },
+    keywordTarget: 'animazione 3D prodotto',
+    thumbnail: '/images/portfolio/jor-liaison-colosseo-anelli-3d.webp',
+    thumbnailAlt: { it: 'Animazione 3D gioielli \u2014 JOR Collezione Liaison', en: '3D jewelry animation \u2014 JOR Liaison Collection' },
+    contentIt: `<h2>L\u2019oggetto come protagonista</h2>
 <p>Quando un brand mi chiede un video di prodotto in 3D, la prima cosa che dico \u00E8: non stiamo facendo un catalogo. Un oggetto animato in 3D deve raccontare una storia \u2014 deve avere un ambiente, una luce, un movimento che comunichi qualcosa di pi\u00F9 delle sue specifiche tecniche.</p>
 <p>La differenza tra un render di prodotto e un\u2019<a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">animazione 3D cinematografica</a> \u00E8 la stessa che c\u2019\u00E8 tra una foto prodotto su sfondo bianco e una campagna pubblicitaria: entrambe mostrano lo stesso oggetto, ma una lo presenta, l\u2019altra lo fa desiderare.</p>
 
@@ -635,7 +643,7 @@ export const posts: BlogPost[] = [
 <p>Disegni tecnici o file CAD dell\u2019oggetto (se disponibili), foto di riferimento del prodotto reale, un\u2019idea del tono che vuoi comunicare (lusso, tecnico, giocoso, istituzionale), la destinazione del video (social, sito web, fiera, spot TV) e la durata indicativa.</p>
 <p>Da l\u00EC costruisco una proposta con storyboard, tempistiche e costi. Il mio approccio \u00E8 diretto: un unico referente che gestisce modellazione, animazione, illuminazione e color grading in un <a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow integrato</a>. Meno passaggi, pi\u00F9 coerenza, tempi pi\u00F9 rapidi.</p>`,
 
-        contentEn: `<h2>The object as protagonist</h2>
+    contentEn: `<h2>The object as protagonist</h2>
 <p>When a brand asks me for a 3D product video, the first thing I say is: we\u2019re not making a catalogue. A 3D animated object must tell a story \u2014 it needs an environment, lighting, movement that communicates something beyond its technical specifications.</p>
 <p>The difference between a product render and a <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">cinematic 3D animation</a> is the same as between a product photo on white background and an advertising campaign: both show the same object, but one presents it, the other makes you want it.</p>
 
@@ -662,22 +670,22 @@ export const posts: BlogPost[] = [
 <p>If you\u2019re considering a 3D animation for your product, here\u2019s what I need for an accurate quote:</p>
 <p>Technical drawings or CAD files of the object (if available), reference photos of the actual product, an idea of the tone you want to communicate (luxury, technical, playful, institutional), the video\u2019s destination (social, website, trade fair, TV spot) and approximate duration.</p>
 <p>From there I build a proposal with storyboard, timeline and costs. My approach is direct: a single point of contact managing modeling, animation, lighting and color grading in an <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">integrated workflow</a>. Fewer handoffs, more coherence, faster turnaround.</p>`,
-    },
-    {
-        slug: 'motion-graphics-spot-istituzionali-tratto-continuo-2d',
-        slugEn: 'motion-graphics-institutional-spots-line-animation-2d',
-        titleIt: 'Motion graphics per spot istituzionali: dal tratto continuo all\u2019animazione 2.5D',
-        titleEn: 'Motion graphics for institutional spots: from line animation to 2.5D',
-        excerptIt: 'Come trasformo temi complessi in racconti visivi chiari e coinvolgenti. Due approcci diversi \u2014 tratto continuo e animazione 2.5D \u2014 per due clienti istituzionali.',
-        excerptEn: 'How I transform complex topics into clear, engaging visual stories. Two different approaches \u2014 continuous line and 2.5D animation \u2014 for two institutional clients.',
-        date: '2026-03-15',
-        readingTime: 7,
-        category: 'motion',
-        categoryLabel: { it: 'Motion Graphics', en: 'Motion Graphics' },
-        keywordTarget: 'motion graphics spot istituzionale',
-        thumbnail: '/images/portfolio/pmi-abbiamo-cura-di-te-animazione.webp',
-        thumbnailAlt: { it: 'Motion graphics PMI \u2014 animazione tratto continuo', en: 'PMI motion graphics \u2014 continuous line animation' },
-        contentIt: `<h2>Il problema di sempre: rendere interessante ci\u00F2 che \u00E8 complesso</h2>
+  },
+  {
+    slug: 'motion-graphics-spot-istituzionali-tratto-continuo-2d',
+    slugEn: 'motion-graphics-institutional-spots-line-animation-2d',
+    titleIt: 'Motion graphics per spot istituzionali: dal tratto continuo all\u2019animazione 2.5D',
+    titleEn: 'Motion graphics for institutional spots: from line animation to 2.5D',
+    excerptIt: 'Come trasformo temi complessi in racconti visivi chiari e coinvolgenti. Due approcci diversi \u2014 tratto continuo e animazione 2.5D \u2014 per due clienti istituzionali.',
+    excerptEn: 'How I transform complex topics into clear, engaging visual stories. Two different approaches \u2014 continuous line and 2.5D animation \u2014 for two institutional clients.',
+    date: '2026-03-15',
+    readingTime: 7,
+    category: 'motion',
+    categoryLabel: { it: 'Motion Graphics', en: 'Motion Graphics' },
+    keywordTarget: 'motion graphics spot istituzionale',
+    thumbnail: '/images/portfolio/pmi-abbiamo-cura-di-te-animazione.webp',
+    thumbnailAlt: { it: 'Motion graphics PMI \u2014 animazione tratto continuo', en: 'PMI motion graphics \u2014 continuous line animation' },
+    contentIt: `<h2>Il problema di sempre: rendere interessante ci\u00F2 che \u00E8 complesso</h2>
 <p>Bonus fiscali, welfare aziendale, procedure burocratiche. Ogni azienda e istituzione ha messaggi importanti da comunicare che per\u00F2 \u2014 diciamolo \u2014 non sono esattamente avvincenti. Il testo scritto non basta, il video parlato annoia. La <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a> risolve questo problema: trasforma concetti astratti in immagini che si seguono con piacere.</p>
 <p>In questo articolo racconto due progetti dove ho affrontato la stessa sfida \u2014 comunicare un tema istituzionale \u2014 con due approcci visivi completamente diversi.</p>
 
@@ -705,7 +713,7 @@ export const posts: BlogPost[] = [
 <p>Lo storyboard viene prima di tutto. Non parto mai dall\u2019animazione \u2014 parto dalla struttura narrativa. Poi definisco lo stile: illustrativo, geometrico, tipografico, misto? Dipende dal brand, dal target, dal canale di distribuzione. Solo dopo passo all\u2019animazione vera e propria in After Effects, dove il ritmo e il timing fanno la differenza tra un video che si guarda e uno che si subisce.</p>
 <p>La <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> finale \u2014 color, sound design, export ottimizzato per ogni piattaforma \u2014 chiude il ciclo in un <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow integrato</a> dove tutto passa per le stesse mani.</p>`,
 
-        contentEn: `<h2>The eternal problem: making complex things interesting</h2>
+    contentEn: `<h2>The eternal problem: making complex things interesting</h2>
 <p>Tax bonuses, corporate welfare, bureaucratic procedures. Every company and institution has important messages to communicate that \u2014 let\u2019s be honest \u2014 aren\u2019t exactly thrilling. Written text isn\u2019t enough, talking-head videos bore people. <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Motion graphics</a> solves this problem: it transforms abstract concepts into images people actually enjoy watching.</p>
 <p>In this article I share two projects where I faced the same challenge \u2014 communicating an institutional topic \u2014 with two completely different visual approaches.</p>
 
@@ -732,22 +740,22 @@ export const posts: BlogPost[] = [
 <p>Every project starts with a question: what is the single thing the viewer must understand at the end of the video? From there I build the story backwards.</p>
 <p>Storyboard comes first. I never start from animation \u2014 I start from narrative structure. Then I define the style: illustrative, geometric, typographic, mixed? It depends on the brand, the target, the distribution channel. Only then do I move to actual animation in After Effects, where rhythm and timing make the difference between a video you watch and one you endure.</p>
 <p>Final <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> \u2014 color, sound design, optimized export for each platform \u2014 closes the cycle in an <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">integrated workflow</a> where everything passes through the same hands.</p>`,
-    },
-    {
-        slug: 'vfx-compositing-integrare-elementi-3d-scene-reali',
-        slugEn: 'vfx-compositing-integrating-3d-elements-real-scenes',
-        titleIt: 'VFX compositing: integrare elementi 3D in scene reali',
-        titleEn: 'VFX compositing: integrating 3D elements into real scenes',
-        excerptIt: 'Come integro elementi tridimensionali in riprese live mantenendo credibilit\u00E0 totale. Due progetti diversi \u2014 meduse bioluminescenti e mascheramenti invisibili \u2014 stesso principio: l\u2019effetto migliore \u00E8 quello che non si nota.',
-        excerptEn: 'How I integrate three-dimensional elements into live footage while maintaining total believability. Two different projects \u2014 bioluminescent jellyfish and invisible masking \u2014 same principle: the best effect is the one you don\u2019t notice.',
-        date: '2026-03-20',
-        readingTime: 7,
-        category: 'vfx',
-        categoryLabel: { it: 'VFX', en: 'VFX' },
-        keywordTarget: 'compositing VFX elementi 3D',
-        thumbnail: '/images/portfolio/om-floating-ufficio-meduse-compositing.webp',
-        thumbnailAlt: { it: 'VFX compositing \u2014 meduse 3D in scena reale', en: 'VFX compositing \u2014 3D jellyfish in real scene' },
-        contentIt: `<h2>L\u2019effetto invisibile</h2>
+  },
+  {
+    slug: 'vfx-compositing-integrare-elementi-3d-scene-reali',
+    slugEn: 'vfx-compositing-integrating-3d-elements-real-scenes',
+    titleIt: 'VFX compositing: integrare elementi 3D in scene reali',
+    titleEn: 'VFX compositing: integrating 3D elements into real scenes',
+    excerptIt: 'Come integro elementi tridimensionali in riprese live mantenendo credibilit\u00E0 totale. Due progetti diversi \u2014 meduse bioluminescenti e mascheramenti invisibili \u2014 stesso principio: l\u2019effetto migliore \u00E8 quello che non si nota.',
+    excerptEn: 'How I integrate three-dimensional elements into live footage while maintaining total believability. Two different projects \u2014 bioluminescent jellyfish and invisible masking \u2014 same principle: the best effect is the one you don\u2019t notice.',
+    date: '2026-03-20',
+    readingTime: 7,
+    category: 'vfx',
+    categoryLabel: { it: 'VFX', en: 'VFX' },
+    keywordTarget: 'compositing VFX elementi 3D',
+    thumbnail: '/images/portfolio/om-floating-ufficio-meduse-compositing.webp',
+    thumbnailAlt: { it: 'VFX compositing \u2014 meduse 3D in scena reale', en: 'VFX compositing \u2014 3D jellyfish in real scene' },
+    contentIt: `<h2>L\u2019effetto invisibile</h2>
 <p>Il compositing \u00E8 il cuore degli <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a>. \u00C8 il processo di combinare elementi diversi \u2014 riprese live, modelli 3D, matte painting, particelle \u2014 in un\u2019unica immagine che sembra reale. La parola chiave \u00E8 \u201Csembra\u201D: il compositing riuscito \u00E8 quello che lo spettatore non nota.</p>
 <p>In vent\u2019anni di lavoro su film, spot e produzioni di ogni tipo, ho sviluppato un principio semplice: <strong>non \u00E8 la complessit\u00E0 dell\u2019effetto che conta, \u00E8 la credibilit\u00E0 dell\u2019integrazione.</strong> Un elemento 3D perfettamente renderizzato ma mal integrato \u00E8 peggio di un effetto semplice che si fonde nella scena.</p>
 
@@ -776,7 +784,7 @@ export const posts: BlogPost[] = [
 <p>Il compositing entra in gioco ogni volta che la ripresa da sola non basta. Pu\u00F2 essere spettacolare \u2014 creature fantastiche, ambienti impossibili, esplosioni \u2014 o pu\u00F2 essere silenzioso: rimuovere un cavo, estendere un set, sostituire un cielo. In entrambi i casi, il principio resta lo stesso: l\u2019integrazione deve essere impeccabile.</p>
 <p>Se hai un progetto che richiede <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a> \u2014 che siano visibili o invisibili \u2014 parliamone. Vent\u2019anni di esperienza significano sapere esattamente cosa \u00E8 possibile, cosa \u00E8 realistico nei tempi e nel budget, e come arrivarci nel modo pi\u00F9 efficiente.</p>`,
 
-        contentEn: `<h2>The invisible effect</h2>
+    contentEn: `<h2>The invisible effect</h2>
 <p>Compositing is the heart of <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a>. It\u2019s the process of combining different elements \u2014 live footage, 3D models, matte paintings, particles \u2014 into a single image that looks real. The key word is \u201Clooks\u201D: successful compositing is the kind the viewer doesn\u2019t notice.</p>
 <p>In twenty years of work on films, commercials and productions of every kind, I\u2019ve developed a simple principle: <strong>it\u2019s not the complexity of the effect that matters, it\u2019s the believability of the integration.</strong> A perfectly rendered 3D element that\u2019s poorly integrated is worse than a simple effect that blends into the scene.</p>
 
@@ -804,22 +812,22 @@ export const posts: BlogPost[] = [
 <h2>When compositing is needed</h2>
 <p>Compositing comes into play whenever the footage alone isn\u2019t enough. It can be spectacular \u2014 fantastic creatures, impossible environments, explosions \u2014 or it can be silent: removing a cable, extending a set, replacing a sky. In both cases, the principle remains the same: integration must be flawless.</p>
 <p>If you have a project that requires <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a> \u2014 whether visible or invisible \u2014 let\u2019s talk. Twenty years of experience mean knowing exactly what\u2019s possible, what\u2019s realistic within time and budget, and how to get there most efficiently.</p>`,
-    },
-    {
-        slug: 'come-vfx-artist-usa-ai-workflow-2026',
-        slugEn: 'how-vfx-artist-uses-ai-workflow-2026',
-        titleIt: 'Come un VFX artist usa l\u2019AI nel 2026: il mio workflow quotidiano',
-        titleEn: 'How a VFX artist uses AI in 2026: my daily workflow',
-        excerptIt: 'Non \u00E8 teoria. \u00C8 quello che faccio ogni giorno. Dove l\u2019AI entra nel mio lavoro, dove non entra, e perch\u00E9 vent\u2019anni di post-produzione sono il vero vantaggio competitivo nell\u2019era dell\u2019intelligenza artificiale.',
-        excerptEn: 'This isn\u2019t theory. It\u2019s what I do every day. Where AI enters my work, where it doesn\u2019t, and why twenty years of post-production are the real competitive advantage in the age of artificial intelligence.',
-        date: '2026-03-25',
-        readingTime: 8,
-        category: 'ai',
-        categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
-        keywordTarget: 'VFX artist AI workflow 2026',
-        thumbnail: '/images/portfolio/roche-jingle-ai-sciatore-slalom.webp',
-        thumbnailAlt: { it: 'VFX artist e AI — workflow professionale 2026', en: 'VFX artist and AI — professional workflow 2026' },
-        contentIt: `<h2>La domanda sbagliata e quella giusta</h2>
+  },
+  {
+    slug: 'come-vfx-artist-usa-ai-workflow-2026',
+    slugEn: 'how-vfx-artist-uses-ai-workflow-2026',
+    titleIt: 'Come un VFX artist usa l\u2019AI nel 2026: il mio workflow quotidiano',
+    titleEn: 'How a VFX artist uses AI in 2026: my daily workflow',
+    excerptIt: 'Non \u00E8 teoria. \u00C8 quello che faccio ogni giorno. Dove l\u2019AI entra nel mio lavoro, dove non entra, e perch\u00E9 vent\u2019anni di post-produzione sono il vero vantaggio competitivo nell\u2019era dell\u2019intelligenza artificiale.',
+    excerptEn: 'This isn\u2019t theory. It\u2019s what I do every day. Where AI enters my work, where it doesn\u2019t, and why twenty years of post-production are the real competitive advantage in the age of artificial intelligence.',
+    date: '2026-03-25',
+    readingTime: 8,
+    category: 'ai',
+    categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
+    keywordTarget: 'VFX artist AI workflow 2026',
+    thumbnail: '/images/portfolio/roche-jingle-ai-sciatore-slalom.webp',
+    thumbnailAlt: { it: 'VFX artist e AI — workflow professionale 2026', en: 'VFX artist and AI — professional workflow 2026' },
+    contentIt: `<h2>La domanda sbagliata e quella giusta</h2>
 <p>\u201CL\u2019AI sostituir\u00E0 i VFX artist?\u201D \u00C8 la domanda che sento da due anni. La risposta breve \u00E8 no. La risposta lunga \u00E8 che la domanda stessa \u00E8 sbagliata. Quella giusta \u00E8: come cambia il lavoro di un <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX artist</a> quando ha a disposizione strumenti di AI generativa?</p>
 <p>Uso Runway, Veo, Kling e altri strumenti di <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a> ogni giorno. Non come esperimento \u2014 come parte del mio workflow produttivo reale, per clienti reali, con deadline reali. Ecco cosa ho imparato.</p>
 
@@ -845,7 +853,7 @@ export const posts: BlogPost[] = [
 <p>Ma il principio non cambia: servir\u00E0 sempre qualcuno che sappia cosa fare con questi strumenti. Qualcuno con l\u2019esperienza per giudicare, dirigere, raffinare. Il mercato non cerca \u201Chi sa usare Runway\u201D \u2014 cerca chi sa produrre un risultato professionale usando tutti gli strumenti disponibili, AI inclusa.</p>
 <p>Io mi sono posizionato l\u00EC. Non come \u201CAI artist\u201D ma come professionista con vent\u2019anni di esperienza che ha integrato l\u2019AI nel proprio workflow prima degli altri. Ed \u00E8 esattamente la figura che il mercato sta cercando.</p>`,
 
-        contentEn: `<h2>The wrong question and the right one</h2>
+    contentEn: `<h2>The wrong question and the right one</h2>
 <p>\u201CWill AI replace VFX artists?\u201D It\u2019s the question I\u2019ve been hearing for two years. The short answer is no. The long answer is that the question itself is wrong. The right one is: how does a <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX artist\u2019s</a> work change when generative AI tools are available?</p>
 <p>I use Runway, Veo, Kling and other <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a> tools every day. Not as an experiment \u2014 as part of my real production workflow, for real clients, with real deadlines. Here\u2019s what I\u2019ve learned.</p>
 
@@ -870,23 +878,23 @@ export const posts: BlogPost[] = [
 <p>The tools improve every month. Runway Gen-4, Veo, Kling \u2014 every release closes gaps that seemed insurmountable six months earlier. Temporal coherence improves, camera control improves, output quality rises.</p>
 <p>But the principle doesn\u2019t change: someone who knows what to do with these tools will always be needed. Someone with the experience to judge, direct, refine. The market isn\u2019t looking for \u201Csomeone who can use Runway\u201D \u2014 it\u2019s looking for someone who can produce a professional result using all available tools, AI included.</p>
 <p>That\u2019s where I\u2019ve positioned myself. Not as an \u201CAI artist\u201D but as a professional with twenty years of experience who integrated AI into his workflow before others. And it\u2019s exactly the figure the market is looking for.</p>`,
-    },
-    // ====== POST 9: Green Screen Professionale ======
-    {
-        slug: 'green-screen-professionale-guida-definitiva',
-        slugEn: 'professional-green-screen-definitive-guide',
-        titleIt: 'Green screen professionale: la guida definitiva per risultati cinematografici',
-        titleEn: 'Professional green screen: the definitive guide for cinematic results',
-        excerptIt: 'Il green screen non è premere un bottone. È illuminazione, distanza, tessuto, spill suppression e ore di compositing. Dopo centinaia di shot, ecco cosa fa la differenza tra un chroma key amatoriale e uno invisibile.',
-        excerptEn: 'Green screen isn\'t pressing a button. It\'s lighting, distance, fabric, spill suppression and hours of compositing. After hundreds of shots, here\'s what makes the difference between amateur and invisible chroma keying.',
-        date: '2026-04-01',
-        readingTime: 9,
-        category: 'vfx',
-        categoryLabel: { it: 'VFX', en: 'VFX' },
-        keywordTarget: 'green screen professionale guida',
-        thumbnail: '/images/portfolio/doppelganger-scacchi-compositing-finale.webp',
-        thumbnailAlt: { it: 'Green screen professionale — compositing scena scacchi', en: 'Professional green screen — chess scene compositing' },
-        contentIt: `<h2>Il problema non è il green screen. È come lo usi.</h2>
+  },
+  // ====== POST 9: Green Screen Professionale ======
+  {
+    slug: 'green-screen-professionale-guida-definitiva',
+    slugEn: 'professional-green-screen-definitive-guide',
+    titleIt: 'Green screen professionale: la guida definitiva per risultati cinematografici',
+    titleEn: 'Professional green screen: the definitive guide for cinematic results',
+    excerptIt: 'Il green screen non è premere un bottone. È illuminazione, distanza, tessuto, spill suppression e ore di compositing. Dopo centinaia di shot, ecco cosa fa la differenza tra un chroma key amatoriale e uno invisibile.',
+    excerptEn: 'Green screen isn\'t pressing a button. It\'s lighting, distance, fabric, spill suppression and hours of compositing. After hundreds of shots, here\'s what makes the difference between amateur and invisible chroma keying.',
+    date: '2026-04-01',
+    readingTime: 9,
+    category: 'vfx',
+    categoryLabel: { it: 'VFX', en: 'VFX' },
+    keywordTarget: 'green screen professionale guida',
+    thumbnail: '/images/portfolio/doppelganger-scacchi-compositing-finale.webp',
+    thumbnailAlt: { it: 'Green screen professionale — compositing scena scacchi', en: 'Professional green screen — chess scene compositing' },
+    contentIt: `<h2>Il problema non è il green screen. È come lo usi.</h2>
 <p>Ogni settimana ricevo materiale girato su green screen che dovrebbe essere "facile da scontornare". Quasi mai lo è. Il problema non è lo strumento — è che la catena di lavoro dal set al compositing finale ha anelli deboli che nessuno ha controllato.</p>
 <p>Ho lavorato su centinaia di shot in chroma key: spot per <a href="/portfolio/gucci-kids" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Gucci Kids</a>, <a href="/portfolio/floverr" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">campagne prodotto come Floverr</a>, videoclip, film. In ogni progetto, la qualità del risultato finale si decide prima ancora di accendere la camera.</p>
 
@@ -917,7 +925,7 @@ export const posts: BlogPost[] = [
 <h2>La regola d'oro</h2>
 <p>Ogni ora investita sul set per un green screen fatto bene risparmia dieci ore in post-produzione. Lo ripeto a ogni produzione: datemi un fondale uniforme, un soggetto a distanza, un codec decente — e vi restituisco un compositing invisibile. Datemi un green screen improvvisato — e preparatevi a pagare il doppio in post.</p>`,
 
-        contentEn: `<h2>The problem isn't the green screen. It's how you use it.</h2>
+    contentEn: `<h2>The problem isn't the green screen. It's how you use it.</h2>
 <p>Every week I receive footage shot on green screen that should be "easy to key." It almost never is. The problem isn't the tool — it's that the chain from set to final compositing has weak links that nobody checked.</p>
 <p>I've worked on hundreds of chroma key shots: commercials for <a href="/en/portfolio/gucci-kids" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Gucci Kids</a>, <a href="/en/portfolio/floverr" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">product campaigns like Floverr</a>, music videos, films. In every project, the quality of the final result is decided before the camera even turns on.</p>
 
@@ -947,23 +955,23 @@ export const posts: BlogPost[] = [
 
 <h2>The golden rule</h2>
 <p>Every hour invested on set for a proper green screen saves ten hours in post-production. I say it to every production: give me a uniform backdrop, a subject at distance, a decent codec — and I'll return invisible compositing. Give me an improvised green screen — and prepare to pay double in post.</p>`,
-    },
-    // ====== POST 10: Post-produzione workflow integrato ======
-    {
-        slug: 'post-produzione-video-workflow-integrato-risparmio',
-        slugEn: 'video-post-production-integrated-workflow-savings',
-        titleIt: 'Post-produzione video: perché un workflow integrato ti fa risparmiare tempo e budget',
-        titleEn: 'Video post-production: why an integrated workflow saves you time and budget',
-        excerptIt: 'Montaggio a uno, color a un altro, VFX a un terzo. Tre professionisti, tre passaggi di mano, tre possibilità di errore. Oppure un unico flusso di lavoro dove tutto è sotto controllo. Ecco perché cambia tutto.',
-        excerptEn: 'Editing to one person, color to another, VFX to a third. Three professionals, three handoffs, three chances for error. Or a single workflow where everything is under control. Here\'s why it changes everything.',
-        date: '2026-04-08',
-        readingTime: 7,
-        category: 'post',
-        categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
-        keywordTarget: 'post produzione video workflow integrato',
-        thumbnail: '/images/portfolio/frangiamore/frangiamore-sylvio-giardina-hero.webp',
-        thumbnailAlt: { it: 'Post-produzione video — workflow integrato Frangiamore', en: 'Video post-production — integrated workflow Frangiamore' },
-        contentIt: `<h2>Il collo di bottiglia che nessuno vede</h2>
+  },
+  // ====== POST 10: Post-produzione workflow integrato ======
+  {
+    slug: 'post-produzione-video-workflow-integrato-risparmio',
+    slugEn: 'video-post-production-integrated-workflow-savings',
+    titleIt: 'Post-produzione video: perché un workflow integrato ti fa risparmiare tempo e budget',
+    titleEn: 'Video post-production: why an integrated workflow saves you time and budget',
+    excerptIt: 'Montaggio a uno, color a un altro, VFX a un terzo. Tre professionisti, tre passaggi di mano, tre possibilità di errore. Oppure un unico flusso di lavoro dove tutto è sotto controllo. Ecco perché cambia tutto.',
+    excerptEn: 'Editing to one person, color to another, VFX to a third. Three professionals, three handoffs, three chances for error. Or a single workflow where everything is under control. Here\'s why it changes everything.',
+    date: '2026-04-08',
+    readingTime: 7,
+    category: 'post',
+    categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
+    keywordTarget: 'post produzione video workflow integrato',
+    thumbnail: '/images/portfolio/frangiamore/frangiamore-sylvio-giardina-hero.webp',
+    thumbnailAlt: { it: 'Post-produzione video — workflow integrato Frangiamore', en: 'Video post-production — integrated workflow Frangiamore' },
+    contentIt: `<h2>Il collo di bottiglia che nessuno vede</h2>
 <p>La post-produzione tradizionale funziona così: il montatore monta, passa il progetto al colorist che fa il grading, poi il progetto va al VFX artist per gli effetti, poi torna al montatore per il conform, poi magari torna al colorist per aggiustamenti. Ogni passaggio è un export, un upload, una riunione, una possibilità di errore.</p>
 <p>Ho visto progetti dove il 30% del tempo totale di post-produzione se ne andava nei passaggi di mano tra professionisti. Non nel lavoro creativo — nella logistica.</p>
 
@@ -993,7 +1001,7 @@ export const posts: BlogPost[] = [
 <h2>La domanda giusta non è "quanto costa"</h2>
 <p>La domanda giusta è: quante persone stanno toccando il mio progetto, e ogni passaggio di mano sta aggiungendo valore o solo complessità? Se la risposta è "complessità", un workflow integrato è la soluzione.</p>`,
 
-        contentEn: `<h2>The bottleneck nobody sees</h2>
+    contentEn: `<h2>The bottleneck nobody sees</h2>
 <p>Traditional post-production works like this: the editor cuts, passes the project to the colorist for grading, then the project goes to the VFX artist for effects, then back to the editor for conform, then maybe back to the colorist for adjustments. Every handoff is an export, an upload, a meeting, a chance for error.</p>
 <p>I've seen projects where 30% of total post-production time went to handoffs between professionals. Not creative work — logistics.</p>
 
@@ -1022,23 +1030,23 @@ export const posts: BlogPost[] = [
 
 <h2>The right question isn't "how much does it cost"</h2>
 <p>The right question is: how many people are touching my project, and is each handoff adding value or just complexity? If the answer is "complexity," an integrated workflow is the solution.</p>`,
-    },
-    // ====== POST 11: AI Video Generation 2026 ======
-    {
-        slug: 'ai-video-generation-2026-cosa-funziona',
-        slugEn: 'ai-video-generation-2026-what-actually-works',
-        titleIt: 'AI video generation nel 2026: cosa funziona davvero (e cosa no)',
-        titleEn: 'AI video generation in 2026: what actually works (and what doesn\'t)',
-        excerptIt: 'Runway Gen-4, Veo, Kling, Sora, Seedance 2.0, Higgsfield, Nano Banana — li uso tutti nel mio lavoro quotidiano. Ecco una mappa onesta di cosa produce risultati professionali e dove stiamo andando. Aggiornato a marzo 2026.',
-        excerptEn: 'After 20 years in VFX and post-production, I use Runway, Veo, Kling and Seedance daily on real client projects. An honest breakdown of what AI video can actually deliver at professional level in 2026 — and where human expertise still makes the difference.',
-        date: '2026-03-04',
-        readingTime: 10,
-        category: 'ai',
-        categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
-        keywordTarget: 'AI video generation 2026',
-        thumbnail: '/images/blog/ai-video-generation-2026-hero.webp',
-        thumbnailAlt: { it: 'AI video generation 2026 — dettaglio guanto da un video generato con Veo', en: 'AI video generation 2026 — glove detail from a Veo-generated video' },
-        contentIt: `<p><em>Ultimo aggiornamento: Marzo 2026</em></p>
+  },
+  // ====== POST 11: AI Video Generation 2026 ======
+  {
+    slug: 'ai-video-generation-2026-cosa-funziona',
+    slugEn: 'ai-video-generation-2026-what-actually-works',
+    titleIt: 'AI video generation nel 2026: cosa funziona davvero (e cosa no)',
+    titleEn: 'AI video generation in 2026: what actually works (and what doesn\'t)',
+    excerptIt: 'Runway Gen-4, Veo, Kling, Sora, Seedance 2.0, Higgsfield, Nano Banana — li uso tutti nel mio lavoro quotidiano. Ecco una mappa onesta di cosa produce risultati professionali e dove stiamo andando. Aggiornato a marzo 2026.',
+    excerptEn: 'After 20 years in VFX and post-production, I use Runway, Veo, Kling and Seedance daily on real client projects. An honest breakdown of what AI video can actually deliver at professional level in 2026 — and where human expertise still makes the difference.',
+    date: '2026-03-04',
+    readingTime: 10,
+    category: 'ai',
+    categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
+    keywordTarget: 'AI video generation 2026',
+    thumbnail: '/images/blog/ai-video-generation-2026-hero.webp',
+    thumbnailAlt: { it: 'AI video generation 2026 — dettaglio guanto da un video generato con Veo', en: 'AI video generation 2026 — glove detail from a Veo-generated video' },
+    contentIt: `<p><em>Ultimo aggiornamento: Marzo 2026</em></p>
 
 <p>Il mercato dell'AI video generation è esploso. Ogni mese esce un nuovo modello, ogni settimana qualcuno dichiara che "il cinema tradizionale è morto". Uso questi strumenti ogni giorno nel mio <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow di AI video production</a> per clienti reali. Ecco cosa funziona davvero nel 2026, senza proclami.</p>
 
@@ -1072,7 +1080,7 @@ export const posts: BlogPost[] = [
 <p>Tra due anni, il controllo frame-by-frame sarà lo standard. Tra tre, la distinzione tra "girato" e "generato" sarà irrilevante per il 90% delle applicazioni.</p>
 <p>Ma il principio non cambia: servirà sempre qualcuno con l'occhio, l'esperienza e il gusto per dirigere questi strumenti. Non "usarli" — dirigerli. Come un regista dirige una troupe, un professionista esperto dirige l'AI. E il risultato è incomparabilmente diverso.</p>`,
 
-        contentEn: `<p><em>Last updated: March 2026</em></p>
+    contentEn: `<p><em>Last updated: March 2026</em></p>
 
 <p>The AI video generation market has exploded. Every month a new model drops, every week someone declares "traditional cinema is dead." I use these tools daily in my <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production workflow</a> for real clients. Here's what actually works in 2026, without proclamations.</p>
 
@@ -1105,23 +1113,23 @@ export const posts: BlogPost[] = [
 <p>The pace has accelerated compared to six months ago. Seedance 2.0 has shown that realistic human motion is within reach — in one year character coherence will be solved. Platforms like Higgsfield are transforming AI video from isolated individual tools into complete production ecosystems. Nano Banana 2 has made reference frame generation instant and nearly free.</p>
 <p>In two years, frame-by-frame control will be standard. In three, the distinction between "shot" and "generated" will be irrelevant for 90% of applications.</p>
 <p>But the principle doesn't change: someone with the eye, experience and taste to direct these tools will always be needed. Not "use them" — direct them. Like a director directs a crew, an experienced professional directs AI. And the result is incomparably different.</p>`,
-    },
-    // ====== POST 12: Cortometraggi AI futuro ======
-    {
-        slug: 'cortometraggi-ai-futuro-opportunita-registi',
-        slugEn: 'ai-short-films-future-opportunities-directors',
-        titleIt: 'Il futuro dei cortometraggi AI: opportunità per registi e producer nel 2026',
-        titleEn: 'The future of AI short films: opportunities for directors and producers in 2026',
-        excerptIt: 'I festival stanno aprendo categorie AI. I brand cercano contenuti AI-native. Il budget di un corto AI è una frazione di uno tradizionale. Ecco perché questo è il momento giusto per registi e producer.',
-        excerptEn: 'Festivals are opening AI categories. Brands want AI-native content. An AI short\'s budget is a fraction of a traditional one. Here\'s why this is the right moment for directors and producers.',
-        date: '2026-04-22',
-        readingTime: 7,
-        category: 'ai',
-        categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
-        keywordTarget: 'cortometraggi AI futuro',
-        thumbnail: '/images/portfolio/doppelganger-compositing-stazione-hero.webp',
-        thumbnailAlt: { it: 'Cortometraggi AI — futuro produzione cinematografica', en: 'AI short films — future of film production' },
-        contentIt: `<h2>Un nuovo mercato, adesso</h2>
+  },
+  // ====== POST 12: Cortometraggi AI futuro ======
+  {
+    slug: 'cortometraggi-ai-futuro-opportunita-registi',
+    slugEn: 'ai-short-films-future-opportunities-directors',
+    titleIt: 'Il futuro dei cortometraggi AI: opportunità per registi e producer nel 2026',
+    titleEn: 'The future of AI short films: opportunities for directors and producers in 2026',
+    excerptIt: 'I festival stanno aprendo categorie AI. I brand cercano contenuti AI-native. Il budget di un corto AI è una frazione di uno tradizionale. Ecco perché questo è il momento giusto per registi e producer.',
+    excerptEn: 'Festivals are opening AI categories. Brands want AI-native content. An AI short\'s budget is a fraction of a traditional one. Here\'s why this is the right moment for directors and producers.',
+    date: '2026-04-10',
+    readingTime: 7,
+    category: 'ai',
+    categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
+    keywordTarget: 'cortometraggi AI futuro',
+    thumbnail: '/images/portfolio/doppelganger-compositing-stazione-hero.webp',
+    thumbnailAlt: { it: 'Cortometraggi AI — futuro produzione cinematografica', en: 'AI short films — future of film production' },
+    contentIt: `<h2>Un nuovo mercato, adesso</h2>
 <p>Nei primi mesi del 2026, tre cose sono successe simultaneamente: i principali festival internazionali hanno creato categorie dedicate ai cortometraggi AI, i brand hanno iniziato a commissionare contenuti AI-native per le loro campagne, e i costi di produzione di un corto AI sono scesi sotto la soglia dei 5.000 euro per un prodotto di qualità professionale.</p>
 <p>Per registi e producer, questo apre un mercato che un anno fa non esisteva.</p>
 
@@ -1153,7 +1161,7 @@ export const posts: BlogPost[] = [
 <h2>Il momento è adesso</h2>
 <p>Tra due anni il mercato sarà saturo. Ora è il momento in cui qualità e visione fanno la differenza, perché la competizione è ancora bassa e la domanda è alta. Registi e producer che investono ora nella comprensione di questo linguaggio — e si alleano con professionisti che sanno trasformarlo in prodotto — hanno un vantaggio temporale significativo.</p>`,
 
-        contentEn: `<h2>A new market, right now</h2>
+    contentEn: `<h2>A new market, right now</h2>
 <p>In the first months of 2026, three things happened simultaneously: major international festivals created dedicated categories for AI short films, brands started commissioning AI-native content for their campaigns, and production costs for an AI short dropped below 5,000 euros for professional-quality output.</p>
 <p>For directors and producers, this opens a market that didn't exist a year ago.</p>
 
@@ -1184,7 +1192,7 @@ export const posts: BlogPost[] = [
 
 <h2>The moment is now</h2>
 <p>In two years the market will be saturated. Now is when quality and vision make the difference, because competition is still low and demand is high. Directors and producers who invest now in understanding this language — and ally with professionals who can turn it into product — have a significant time advantage.</p>`,
-    },
+  },
 ];
 
 /**
@@ -1194,13 +1202,13 @@ export const posts: BlogPost[] = [
  * When moving to ISR or server rendering, add: && p.date <= now
  */
 export function getPublishedPosts(): BlogPost[] {
-    return posts.filter((p) => !p.draft);
+  return posts.filter((p) => !p.draft);
 }
 
 export function getPost(slug: string): BlogPost | undefined {
-    return posts.find((p) => p.slug === slug || p.slugEn === slug);
+  return posts.find((p) => p.slug === slug || p.slugEn === slug);
 }
 
 export function getPostSlug(post: BlogPost, locale: string): string {
-    return locale === 'en' ? post.slugEn : post.slug;
+  return locale === 'en' ? post.slugEn : post.slug;
 }
