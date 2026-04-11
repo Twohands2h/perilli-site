@@ -107,6 +107,11 @@ const nextConfig = {
       { source: '/jon-martin-house-collection-voli/', destination: '/portfolio', permanent: true },
       { source: '/valtur-vita-da-gatto', destination: '/portfolio', permanent: true },
       { source: '/valtur-vita-da-gatto/', destination: '/portfolio', permanent: true },
+      {
+        source: '/ai-film',
+        destination: 'https://pieroperilli.com/blog/organizzare-progetto-film-ai-prompt-reference-continuita?utm_source=linkedin&utm_medium=social&utm_campaign=rewake_article_launch&utm_content=piero_post_01',
+        permanent: false,
+      },
     ];
   },
 };
