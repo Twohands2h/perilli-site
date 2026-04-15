@@ -1,9 +1,8 @@
 // src/app/api/crm/prospects/[id]/route.ts
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/crm/supabase'
+import { supabase } from '@/lib/crm/supabase'
 
 export async function GET(_: NextRequest, { params }: { params: { id: string } }) {
-  const supabase = createClient()
   const { data, error } = await supabase
     .from('prospects')
     .select(`*, logs:prospect_logs(*)`)
@@ -15,7 +14,6 @@ export async function GET(_: NextRequest, { params }: { params: { id: string } }
 }
 
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
-  const supabase = createClient()
   const body = await req.json()
   const { data, error } = await supabase
     .from('prospects')
@@ -29,7 +27,6 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 }
 
 export async function DELETE(_: NextRequest, { params }: { params: { id: string } }) {
-  const supabase = createClient()
   const { error } = await supabase
     .from('prospects')
     .delete()
