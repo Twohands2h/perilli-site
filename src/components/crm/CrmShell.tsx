@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import ProspectsView from '@/components/crm/ProspectsView'
 import type {
   CrmClient, CrmProject, CrmFile, CrmLog,
   ClientFormData, ProjectFormData,
@@ -1070,7 +1071,7 @@ interface Props { initialClients: CrmClient[]; initialView: 'dashboard' | 'clien
 export default function CrmShell({ initialClients, initialView }: Props) {
   const router = useRouter()
   const [clients, setClients] = useState<CrmClient[]>(initialClients)
-  const [view, setView] = useState<'dashboard' | 'clients' | 'projects' | 'detail'>(initialView)
+  const [view, setView] = useState<'dashboard' | 'clients' | 'projects' | 'detail' | 'prospects'>(initialView)
   const [activeClientId, setActiveClientId] = useState<string | null>(null)
   const [activeProjectId, setActiveProjectId] = useState<string | null>(null)
   const [modal, setModal] = useState<'newClient' | null>(null)
@@ -1139,8 +1140,8 @@ export default function CrmShell({ initialClients, initialView }: Props) {
 
           {/* Nav */}
           <div style={{ padding: '8px 8px', borderBottom: `1px solid ${C.border}` }}>
-            {[{ id: 'dashboard', label: 'Dashboard' }, { id: 'clients', label: 'Tutti i clienti' }, { id: 'projects', label: 'Progetti' }].map(item => (
-              <div key={item.id} onClick={() => { setView(item.id as 'dashboard' | 'clients' | 'projects'); setActiveClientId(null) }}
+            {[{ id: 'dashboard', label: 'Dashboard' }, { id: 'clients', label: 'Tutti i clienti' }, { id: 'projects', label: 'Progetti' }, { id: 'prospects', label: 'Prospects 🌍' }].map(item => (
+              <div key={item.id} onClick={() => { setView(item.id as 'dashboard' | 'clients' | 'projects' | 'prospects'); setActiveClientId(null) }}
                 style={{ padding: '8px 10px', borderRadius: '7px', cursor: 'pointer', fontSize: '13px', fontWeight: 500, marginBottom: '2px', background: view === item.id && !activeClientId ? 'rgba(245,170,68,0.15)' : 'transparent', color: view === item.id && !activeClientId ? C.orange : C.off }}>
                 {item.label}
               </div>
@@ -1170,6 +1171,8 @@ export default function CrmShell({ initialClients, initialView }: Props) {
               setView('detail')
             }} />
           )}
+
+          {view === 'prospects' && !activeClientId && <ProspectsView />}
 
           {view === 'clients' && !activeClientId && (
             <div>
@@ -1239,10 +1242,11 @@ export default function CrmShell({ initialClients, initialView }: Props) {
           { id: 'dashboard', icon: '▦', label: 'Home' },
           { id: 'clients', icon: '◉', label: 'Clienti' },
           { id: 'projects', icon: '◈', label: 'Progetti' },
+          { id: 'prospects', icon: '🌍', label: 'Prospects' },
         ].map(item => {
           const isActive = view === item.id && !activeClientId
           return (
-            <button key={item.id} onClick={() => { setView(item.id as 'dashboard' | 'clients' | 'projects'); setActiveClientId(null) }}
+            <button key={item.id} onClick={() => { setView(item.id as 'dashboard' | 'clients' | 'projects' | 'prospects'); setActiveClientId(null) }}
               style={{ flex: 1, background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px', padding: '4px 0', color: isActive ? C.orange : C.muted, fontFamily: 'inherit' }}>
               <span style={{ fontSize: '20px', lineHeight: 1 }}>{item.icon}</span>
               <span style={{ fontSize: '10px', fontWeight: isActive ? 700 : 400 }}>{item.label}</span>

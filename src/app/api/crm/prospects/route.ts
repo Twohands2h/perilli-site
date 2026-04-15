@@ -1,0 +1,28 @@
+// src/app/api/crm/prospects/route.ts
+import { NextRequest, NextResponse } from 'next/server'
+import { createClient } from '@/lib/crm/supabase'
+
+export async function GET() {
+  const supabase = createClient()
+  const { data, error } = await supabase
+    .from('prospects')
+    .select(`*, logs:prospect_logs(*)`)
+    .order('tier', { ascending: true })
+    .order('agency_name', { ascending: true })
+
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+  return NextResponse.json(data)
+}
+
+export async function POST(req: NextRequest) {
+  const supabase = createClient()
+  const body = await req.json()
+  const { data, error } = await supabase
+    .from('prospects')
+    .insert(body)
+    .select()
+    .single()
+
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+  return NextResponse.json(data)
+}
