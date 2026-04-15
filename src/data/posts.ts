@@ -18,6 +18,7 @@ export interface BlogPost {
 }
 
 export const posts: BlogPost[] = [
+
   {
     slug: 'organizzare-progetto-film-ai-prompt-reference-continuita',
     slugEn: 'how-to-organize-ai-film-project-prompts-references-continuity',
@@ -257,6 +258,164 @@ export const posts: BlogPost[] = [
 </div>
 
 <p>Rewake is in private beta. If you are working on an AI project and recognize the problem, you can <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">request access on the site</a>. Every application is reviewed personally.</p>`,
+  },
+  // ARTICOLO POST PRODUZIONE SPOT — pronto per src/data/posts.ts
+  // Inserire dopo l'articolo Rewake nell'array posts[]
+  // Thumbnail da creare: /images/blog/post-produzione-spot-pubblicitari-workflow.webp
+  // Usare uno screenshot del progetto PMI come immagine hero
+
+  {
+    slug: 'post-produzione-spot-pubblicitari-la-fase-che-decide-tutto',
+    slugEn: 'post-production-advertising-spots-the-phase-that-decides-everything',
+    titleIt: 'Post produzione video per spot pubblicitari: la fase che decide tutto',
+    titleEn: 'Post production for advertising spots: the phase that decides everything',
+    excerptIt: 'La post produzione non è la fase finale di uno spot. È spesso quella che decide tutto — il tono, il ritmo, l\'identità visiva. Dopo 20 anni di lavoro su spot istituzionali e campagne pubblicitarie, ecco come funziona davvero.',
+    excerptEn: 'Post production is not the final phase of a spot. It is often the phase that decides everything — tone, rhythm, visual identity. After 20 years working on institutional spots and advertising campaigns, here is how it really works.',
+    date: '2026-04-14',
+    readingTime: 11,
+    category: 'post-produzione',
+    categoryLabel: { it: 'Post Produzione', en: 'Post Produzione' },
+    keywordTarget: 'post produzione spot pubblicitario workflow costi',
+    thumbnail: '/images/portfolio/pmi-abbiamo-cura-di-te-animazione.webp',
+    thumbnailAlt: {
+      it: 'Post produzione spot pubblicitari — workflow professionale Roma',
+      en: 'Post production advertising spots — professional workflow Rome'
+    },
+    contentIt: `<p><em>Aprile 2026</em></p>
+
+<p>Quando un art director parla di uno spot, parla quasi sempre delle riprese. La location, la troupe, il cast, la giornata di set. La post produzione viene menzionata quasi come una nota a piè di pagina — "poi ci pensiamo dopo".</p>
+
+<p>Dopo vent'anni di lavoro su spot istituzionali, campagne pubblicitarie e video di prodotto, posso dire che questa è l'inversione di priorità più comune e più costosa del settore. La post produzione non è la fase in cui si sistema quello che è stato girato. È la fase in cui si decide cosa diventa davvero lo spot.</p>
+
+<h2>Il set produce materiale. La post produzione produce il video.</h2>
+
+<p>Questa distinzione sembra ovvia ma non lo è. Sul set si catturano immagini — buone, spesso ottime. Ma quelle immagini non hanno ancora ritmo, non hanno coerenza cromatica, non hanno il respiro emotivo che fa funzionare uno spot di trenta secondi. Tutto questo nasce in post.</p>
+
+<p>Il montaggio decide il ritmo narrativo — dove accelerare, dove respirare, quale inquadratura porta lo spettatore esattamente dove vuoi che arrivi. Il color grading decide il tono emotivo — se la storia è calda o fredda, se il prodotto sembra lussuoso o accessibile, se il brand comunica autorità o vicinanza. I VFX e la motion graphics decidono cosa è possibile mostrare — quello che non si può girare, quello che costerebbe dieci volte tanto sul set, quello che esiste solo nella testa del creativo.</p>
+
+<p>Un direttore della fotografia esperto lo sa: il set è la metà del lavoro. L'altra metà è quello che succede dopo.</p>
+
+<h2>Il caso in cui il set non esiste</h2>
+
+<p>L'esempio più estremo di questo principio è un progetto in cui il set non c'è stato affatto. Per il progetto <a href="/portfolio/pmi-abbiamo-cura-di-te" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">PMI — Abbiamo Cura di Te</a>, un video istituzionale per una campagna ministeriale, non c'è stato nessun set. Nessuna ripresa, nessuna troupe, nessuna location. Il brief del cliente era una frase: raccontare una storia emozionante su un ciclo di vita, con l'immagine vaga di un albero da cui cadono frutti.</p>
+
+<p>Dieci giorni per trasformare quella frase in un concept visivo, un racconto e uno stile grafico. Sette giorni per realizzare il video in motion graphics con la tecnica del tratto continuo — un flusso di disegno animato che attraversa ogni scena senza interruzioni, dove la sfida principale non era tecnica ma compositiva: trovare i legami tra le scene in modo che ogni transizione fosse bella quanto la scena stessa.</p>
+
+<p>Il risultato è un video che non ha un solo frame girato in camera. Esiste interamente in post produzione. È anche il progetto che mostra più chiaramente cosa significa avere la post produzione al centro del processo creativo, non alla fine.</p>
+
+<h2>Le fasi che nessuno spiega nel preventivo</h2>
+
+<p>Quando un'agenzia riceve un preventivo di post produzione, vede di solito tre voci: montaggio, color grading, sound design. Questa lista è corretta ma incompleta — e la parte che manca è spesso quella che determina il risultato finale.</p>
+
+<p><strong>Il conforming.</strong> Prima del montaggio creativo, il materiale girato deve essere organizzato, sincronizzato e preparato per il lavoro. Su una giornata di riprese con due camere e audio separato, il conforming può richiedere quattro o cinque ore di lavoro invisibile che non appare mai nel preventivo ma che, se mancasse, renderebbe il montaggio impossibile.</p>
+
+<p><strong>La supervisione VFX in pre-produzione.</strong> Ogni effetto visivo che verrà aggiunto in post deve essere pianificato prima delle riprese — angoli di camera, illuminazione del set, marcatori per il tracking. Quando questa supervisione non c'è, il VFX artist lavora su materiale che non è stato girato pensando alla post produzione, e i costi triplicano.</p>
+
+<p><strong>Il color roundtrip.</strong> Nei progetti che coinvolgono un colorist esterno — come il lavoro su <a href="/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a>, dove ho collaborato con Walter Volpatto via DaVinci Cloud — il materiale deve essere preparato in uscita, inviato, ricevuto e reintegrato nel progetto di montaggio. Questa gestione tecnica non è creativa ma è indispensabile, e richiede competenza specifica su codec, color space e flussi di consegna.</p>
+
+<p><strong>Il delivery multi-formato.</strong> Uno spot finito non è un file. È una famiglia di file — versione TV in 16:9, versione social in 9:16 e 1:1, versione con sottotitoli aperti, versione con sottotitoli chiusi, versione senza audio per autoplay, versione con audio per pre-roll. Su una campagna media di mezzo livello, il delivery può richiedere quindici o venti versioni diverse dello stesso spot. Se non è stato pianificato prima del montaggio, ogni versione richiede lavoro aggiuntivo.</p>
+
+<h2>Dove si nascondono i costi che nessuno ti dice</h2>
+
+<p>I costi della post produzione che compaiono nei preventivi sono quelli prevedibili. Quelli che fanno esplodere i budget sono i costi che nessuno pianifica perché nessuno ne ha parlato prima.</p>
+
+<p><strong>Le revisioni non strutturate.</strong> Il sistema di revisione più comune nelle agenzie è ancora l'email con screenshot allegati e commenti tipo "questo colore non va bene" o "questo montaggio sembra lento". Ogni ciclo di revisione gestito così produce un nuovo round di lavoro invece di convergere verso il risultato finale. Su un progetto con tre cicli di revisione non strutturati, il tempo effettivo di lavoro può raddoppiare rispetto al preventivo.</p>
+
+<p><strong>Il cambio di brief in post produzione.</strong> Il brief cambia in produzione — succede sempre. Ma quando il brief cambia dopo che il montaggio è già approvato, o dopo che il color grading è completato, il costo di quel cambiamento è esponenziale. Ogni modifica a monte invalida il lavoro fatto a valle.</p>
+
+<p><strong>La mancanza di materiale.</strong> Il girato non copre le necessità del montaggio. Mancano insert, manca una reazione, manca il cutaway che permette di cambiare il ritmo in un punto specifico. In questi casi si procede con quello che c'è — e il risultato lo si vede.</p>
+
+<p>La soluzione a tutti e tre questi problemi è la stessa: avere il professionista di post produzione nel processo creativo fin dall'inizio, non chiamarlo quando il set è già smontato.</p>
+
+<h2>Cosa cambia con l'AI — e cosa non cambia</h2>
+
+<p>L'AI ha cambiato alcune fasi specifiche della post produzione di uno spot. L'ha fatto in modo reale, non teorico.</p>
+
+<p>Per certi elementi ambientali — cieli, sfondi, estensioni di set — la generazione AI produce materiale di qualità broadcast in una frazione del tempo che richiederebbe il compositing tradizionale. Per il prototyping visivo in fase di pre-produzione, posso mostrare a un regista o a un art director come apparirà un effetto prima di girare una sola inquadratura. Per la creazione di varianti creative — lo stesso spot con tre tonalità emotive diverse — il workflow AI accelera la fase di esplorazione in modo significativo.</p>
+
+<p>Quello che non cambia: il giudizio. Sapere quale variante funziona e perché. Sapere quando un output AI è utilizzabile e quando non lo è. Sapere come integrare materiale generato con materiale girato in modo che il confine non si veda. Questo non è un problema tecnico. È un problema di occhio e di esperienza — e si accumula in anni, non in settimane.</p>
+
+<p>Il progetto <a href="/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Roche Jingle AI</a> è un esempio di questo equilibrio: un video con qualità broadcast realizzato interamente con strumenti AI generativi, ma dove ogni clip generata è passata per un workflow di post produzione tradizionale — color correction, stabilizzazione, compositing, grading. Il modello ha generato il materiale. La post produzione lo ha trasformato in un prodotto consegnabile.</p>
+
+<h2>Come valutare un professionista di post produzione prima di ingaggiarlo</h2>
+
+<p>La domanda giusta non è "quanto costa la post produzione?" La domanda giusta è "chi fa la post produzione capisce questo progetto prima ancora che io gli spieghi il brief?"</p>
+
+<p>Un professionista senior di post produzione, guardando uno spot o leggendo un brief, dovrebbe essere in grado di identificare le criticità prima ancora che diventino problemi. Dovrebbe chiederti del piano di supervisione VFX, non solo del numero di effetti. Dovrebbe chiederti del sistema di revisione, non solo della deadline. Dovrebbe chiederti dei formati di consegna prima del montaggio, non dopo.</p>
+
+<p>Se non fa queste domande, probabilmente le risponderà con un extra a fine progetto.</p>
+
+<p>Il vantaggio di lavorare con un workflow integrato — dove VFX, montaggio, color e motion graphics sono gestiti dallo stesso professionista — è che queste domande non si perdono nei passaggi di mano tra specialisti diversi. Il costo nascosto della frammentazione non è solo economico. È di coerenza creativa: ogni passaggio introduce un'interpretazione, e tre interpretazioni diverse dello stesso brief producono un risultato che assomiglia al brief di nessuno.</p>
+
+<p>Se stai lavorando su un progetto che ha post produzione complessa — VFX, motion graphics, color, o semplicemente molte versioni da consegnare — <a href="/contatti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">raccontami di cosa hai bisogno</a>. Il modo migliore per capire se posso aiutarti è parlarne prima che il set sia già prenotato.</p>`,
+
+    contentEn: `<p><em>April 2026</em></p>
+
+<p>When an art director talks about a spot, they almost always talk about the shoot. The location, the crew, the cast, the day on set. Post production gets mentioned almost as a footnote — "we'll deal with that later."</p>
+
+<p>After twenty years working on institutional spots, advertising campaigns and product videos, I can say this is the most common and most expensive inversion of priorities in the industry. Post production is not the phase where you fix what was shot. It is the phase where you decide what the spot actually becomes.</p>
+
+<h2>The set produces material. Post production produces the video.</h2>
+
+<p>This distinction seems obvious but it is not. On set you capture images — good ones, often excellent ones. But those images do not yet have rhythm, do not have chromatic coherence, do not have the emotional breathing that makes a thirty-second spot work. All of that is born in post.</p>
+
+<p>The edit decides the narrative rhythm — where to accelerate, where to breathe, which shot takes the viewer exactly where you want them. The color grade decides the emotional tone — whether the story is warm or cold, whether the product looks luxurious or accessible, whether the brand communicates authority or closeness. The VFX and motion graphics decide what is possible to show — what cannot be filmed, what would cost ten times more on set, what exists only in the creative's head.</p>
+
+<p>An experienced director of photography knows this: the set is half the work. The other half is what happens after.</p>
+
+<h2>The case where the set does not exist</h2>
+
+<p>The most extreme example of this principle is a project where the set did not exist at all. For the project <a href="/en/portfolio/pmi-abbiamo-cura-di-te" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">PMI — Abbiamo Cura di Te</a>, an institutional video for a ministerial campaign, there was no set. No shooting, no crew, no location. The client brief was one sentence: tell an emotional story about a life cycle, with the vague image of a tree from which fruit falls.</p>
+
+<p>Ten days to transform that sentence into a visual concept, a narrative and a graphic style. Seven days to realize the video in motion graphics using the continuous line technique — a flow of animated drawing that passes through every scene without interruption, where the main challenge was not technical but compositional: finding the connections between scenes so that every transition was as beautiful as the scene itself.</p>
+
+<p>The result is a video that does not have a single frame shot on camera. It exists entirely in post production. It is also the project that most clearly shows what it means to have post production at the center of the creative process, not at the end of it.</p>
+
+<h2>The phases nobody explains in the quote</h2>
+
+<p>When an agency receives a post production quote, they typically see three line items: editing, color grading, sound design. This list is correct but incomplete — and the missing part is often what determines the final result.</p>
+
+<p><strong>Conforming.</strong> Before creative editing, the shot material must be organized, synchronized and prepared for work. On a single shooting day with two cameras and separate audio, conforming can require four or five hours of invisible work that never appears in the quote but that, if missing, would make editing impossible.</p>
+
+<p><strong>VFX supervision in pre-production.</strong> Every visual effect that will be added in post must be planned before the shoot — camera angles, set lighting, tracking markers. When this supervision is absent, the VFX artist works on material that was not shot with post production in mind, and costs triple.</p>
+
+<p><strong>The color roundtrip.</strong> In projects involving an external colorist — like the work on <a href="/en/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a>, where I collaborated with Walter Volpatto via DaVinci Cloud — the material must be prepared for output, sent, received and reintegrated into the editing project. This technical management is not creative but it is indispensable, and requires specific competence in codecs, color spaces and delivery workflows.</p>
+
+<p><strong>Multi-format delivery.</strong> A finished spot is not a file. It is a family of files — TV version in 16:9, social version in 9:16 and 1:1, open subtitles version, closed subtitles version, no-audio version for autoplay, audio version for pre-roll. On a mid-level media campaign, delivery can require fifteen or twenty different versions of the same spot. If this was not planned before editing, each version requires additional work.</p>
+
+<h2>Where the costs nobody tells you are hidden</h2>
+
+<p>The post production costs that appear in quotes are the predictable ones. The ones that blow up budgets are the costs nobody plans for because nobody discussed them beforehand.</p>
+
+<p><strong>Unstructured revisions.</strong> The most common revision system in agencies is still email with attached screenshots and comments like "this color is not right" or "this edit feels slow." Every revision cycle managed this way produces a new round of work instead of converging on the final result. On a project with three unstructured revision cycles, the actual working time can double compared to the quote.</p>
+
+<p><strong>Brief changes in post production.</strong> The brief changes during production — it always does. But when the brief changes after the edit is already approved, or after color grading is complete, the cost of that change is exponential. Every modification upstream invalidates the work done downstream.</p>
+
+<p><strong>Missing material.</strong> The footage does not cover the editing needs. Inserts are missing, a reaction is missing, the cutaway that allows a rhythm change at a specific point is missing. In these cases you proceed with what you have — and the result shows it.</p>
+
+<p>The solution to all three of these problems is the same: have the post production professional in the creative process from the beginning, not called in after the set has been struck.</p>
+
+<h2>What changes with AI — and what does not</h2>
+
+<p>AI has changed specific phases of spot post production. It has done so in a real way, not a theoretical one.</p>
+
+<p>For certain environmental elements — skies, backgrounds, set extensions — AI generation produces broadcast-quality material in a fraction of the time that traditional compositing would require. For visual prototyping in pre-production, I can show a director or art director how an effect will look before a single frame is shot. For creative variants — the same spot with three different emotional tones — the AI workflow significantly accelerates the exploration phase.</p>
+
+<p>What does not change: judgment. Knowing which variant works and why. Knowing when AI output is usable and when it is not. Knowing how to integrate generated material with filmed material so the boundary does not show. This is not a technical problem. It is a problem of eye and experience — and it accumulates over years, not weeks.</p>
+
+<p>The <a href="/en/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Roche Jingle AI</a> project is an example of this balance: a broadcast-quality video made entirely with AI generative tools, but where every generated clip passed through a traditional post production workflow — color correction, stabilization, compositing, grading. The model generated the material. Post production transformed it into a deliverable product.</p>
+
+<h2>How to evaluate a post production professional before engaging them</h2>
+
+<p>The right question is not "how much does post production cost?" The right question is "does the person doing post production understand this project before I even explain the brief?"</p>
+
+<p>A senior post production professional, looking at a spot or reading a brief, should be able to identify the critical points before they become problems. They should ask about the VFX supervision plan, not just the number of effects. They should ask about the revision system, not just the deadline. They should ask about delivery formats before editing, not after.</p>
+
+<p>If they do not ask these questions, they will probably answer them with an extra charge at the end of the project.</p>
+
+<p>The advantage of working with an integrated workflow — where VFX, editing, color and motion graphics are managed by the same professional — is that these questions do not get lost in handoffs between different specialists. The hidden cost of fragmentation is not only economic. It is one of creative coherence: every handoff introduces an interpretation, and three different interpretations of the same brief produce a result that resembles nobody's brief.</p>
+
+<p>If you are working on a project with complex post production — VFX, motion graphics, color, or simply many versions to deliver — <a href="/en/contact" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">tell me what you need</a>. The best way to understand if I can help you is to talk before the set is already booked.</p>`,
   },
   {
     slug: 'ai-vs-vfx-tradizionale-come-scegliere',
