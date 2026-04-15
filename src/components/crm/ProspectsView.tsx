@@ -265,12 +265,13 @@ function ProspectForm({ initial, onSave, onCancel, loading }: {
 }
 
 // ─── LOG FORM ─────────────────────────────────────────────────────────────────
-function LogForm({ onSave, onCancel, loading }: {
+function LogForm({ onSave, onCancel, loading, initial }: {
   onSave: (data: Partial<ProspectLog>) => void
   onCancel: () => void
   loading?: boolean
+  initial?: Partial<ProspectLog>
 }) {
-  const [d, setD] = useState<Partial<ProspectLog>>({ log_type: 'Email inviata', log_date: today() })
+  const [d, setD] = useState<Partial<ProspectLog>>(initial || { log_type: 'Email inviata', log_date: today() })
   const set = (k: keyof ProspectLog, v: unknown) => setD(prev => ({ ...prev, [k]: v }))
 
   return (
@@ -312,7 +313,8 @@ function ProspectDetail({ prospectId, onBack, onUpdate }: {
 }) {
   const [prospect, setProspect] = useState<Prospect | null>(null)
   const [loading, setLoading] = useState(true)
-  const [modal, setModal] = useState<'edit' | 'log' | null>(null)
+  const [modal, setModal] = useState<'edit' | 'log' | 'editLog' | null>(null)
+  const [editingLog, setEditingLog] = useState<ProspectLog | null>(null)
   const [saving, setSaving] = useState(false)
 
   const load = useCallback(async () => {
@@ -344,6 +346,24 @@ function ProspectDetail({ prospectId, onBack, onUpdate }: {
     })
     setSaving(false)
     setModal(null)
+    load()
+  }
+
+  async function handleEditLog(logId: string, data: Partial<ProspectLog>) {
+    setSaving(true)
+    await fetch(`/api/crm/prospects/${prospectId}/logs/${logId}`, {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    setSaving(false)
+    setModal(null)
+    setEditingLog(null)
+    load()
+  }
+
+  async function handleDeleteLog(logId: string) {
+    if (!confirm('Eliminare questo log?')) return
+    await fetch(`/api/crm/prospects/${prospectId}/logs/${logId}`, { method: 'DELETE' })
     load()
   }
 
@@ -490,6 +510,10 @@ function ProspectDetail({ prospectId, onBack, onUpdate }: {
             </div>
             {log.text && <div style={{ fontSize: '13px', color: C.off, lineHeight: 1.5, marginBottom: log.outcome ? '6px' : 0 }}>{log.text}</div>}
             {log.outcome && <div style={{ fontSize: '12px', color: C.muted, fontStyle: 'italic' }}>Esito: {log.outcome}</div>}
+            <div style={{ display: 'flex', gap: '6px', marginTop: '8px' }}>
+              <Btn sz="sm" onClick={() => { setEditingLog(log); setModal('editLog') }}>Modifica</Btn>
+              <Btn v="danger" sz="sm" onClick={() => handleDeleteLog(log.id)}>Elimina</Btn>
+            </div>
           </div>
         )
       })}
@@ -504,6 +528,16 @@ function ProspectDetail({ prospectId, onBack, onUpdate }: {
       {modal === 'log' && (
         <Modal title="Aggiungi log" onClose={() => setModal(null)}>
           <LogForm onSave={handleLog} onCancel={() => setModal(null)} loading={saving} />
+        </Modal>
+      )}
+      {modal === 'editLog' && editingLog && (
+        <Modal title="Modifica log" onClose={() => { setModal(null); setEditingLog(null) }}>
+          <LogForm
+            initial={editingLog}
+            onSave={(data) => handleEditLog(editingLog.id, data)}
+            onCancel={() => { setModal(null); setEditingLog(null) }}
+            loading={saving}
+          />
         </Modal>
       )}
     </div>
