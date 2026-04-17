@@ -1,4 +1,5 @@
-import { MetadataRoute } from 'next';
+// src/app/robots.ts
+import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,9 +7,19 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/studio/'],
+        disallow: [
+          '/api/',
+          '/_next/',
+          '/_vercel/',
+          '/studio/',
+          '/crm/',
+          '/garanzia/',
+          '/grazie',
+          '/en/thank-you',
+        ],
       },
     ],
     sitemap: 'https://pieroperilli.com/sitemap.xml',
+    host: 'https://pieroperilli.com',
   };
 }
