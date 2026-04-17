@@ -1,35 +1,140 @@
 /**
  * Schema.org JSON-LD Markup Components
- * 
- * PersonSchema + LocalBusinessSchema → layout.tsx (global)
+ *
+ * PersonSchema + LocalBusinessSchema → layout.tsx (global, every page)
+ * WebSiteSchema → page.tsx (homepage only)
  * ServiceSchema → service pages
  * VideoObjectSchema → portfolio projects with video
  * ArticleSchema → blog posts
  * BreadcrumbSchema → all pages except homepage
+ * FAQSchema → service pages / FAQ-rich content
+ * SpeakableSchema → voice assistants + AI answer engines
  */
+
+// Shared entity IDs so Google can link Person ↔ Business as the same real-world entity
+const PERSON_ID = 'https://pieroperilli.com/#person';
+const BUSINESS_ID = 'https://pieroperilli.com/#business';
+const PROFILE_IMAGE =
+  'https://pieroperilli.com/images/piero-perilli-vfx-artist-artigiano-digitale-roma.jpg';
 
 // ── PERSON ──────────────────────────────────────────────────
 export function PersonSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': PERSON_ID,
     name: 'Piero Perilli',
+    givenName: 'Piero',
+    familyName: 'Perilli',
     url: 'https://pieroperilli.com',
-    image: 'https://pieroperilli.com/images/piero-perilli-vfx-artist.jpg',
-    jobTitle: 'VFX Artist & Post Production Supervisor',
+    image: PROFILE_IMAGE,
+    jobTitle: 'VFX Artist e Artigiano Digitale',
     description:
-      'Artigiano digitale con oltre 20 anni di esperienza in VFX, motion graphics, color grading e post-produzione video. Base Roma.',
+      "VFX Artist con oltre 20 anni di esperienza in post-produzione per cinema, advertising e brand. Specializzato in VFX, motion graphics, animazione 3D, color grading e AI video production. Unisce la precisione artigianale dell'orologiaio all'integrazione di strumenti di intelligenza artificiale nel workflow professionale.",
+    telephone: '+39-392-018-7759',
+    email: 'info@pieroperilli.com',
+    nationality: { '@type': 'Country', name: 'Italy' },
+    knowsLanguage: ['it', 'en'],
+    homeLocation: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Roma',
+        addressRegion: 'Lazio',
+        addressCountry: 'IT',
+      },
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Roma',
+      addressRegion: 'Lazio',
+      addressCountry: 'IT',
+    },
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: 'VFX Artist e Motion Graphics Designer',
+      occupationalCategory: '27-1014.00', // ONET: Multimedia Artists and Animators
+    },
     knowsAbout: [
       'Visual Effects (VFX)',
+      'VFX compositing',
+      'Green screen e chroma keying',
       'Motion Graphics',
+      'Animazione 3D',
+      'Character animation',
       'Color Grading',
-      '3D Animation',
-      'Video Post Production',
-      'AI Video Production',
-      'Compositing',
       'DaVinci Resolve',
       'After Effects',
+      '3ds Max',
+      'ZBrush',
       'Unreal Engine',
+      'Character Creator',
+      'tyFlow',
+      'AI Video Production',
+      'Runway',
+      'Google Veo',
+      'Kling AI',
+      'Higgsfield',
+      'Post-produzione cinematografica',
+      'Post-produzione advertising',
+      'Set extension',
+      'Motion tracking',
+      'Simulazioni particellari',
+    ],
+    hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        name: 'DaVinci Resolve Certified — Color Correction',
+        credentialCategory: 'certification',
+      },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        name: 'DaVinci Resolve Certified — Fusion',
+        credentialCategory: 'certification',
+      },
+    ],
+    workExample: [
+      {
+        '@type': 'Movie',
+        name: 'I Am Curious Johnny',
+        director: { '@type': 'Person', name: 'Julien Temple' },
+        sameAs: 'https://www.imdb.com/title/tt35450650/',
+      },
+      {
+        '@type': 'Movie',
+        name: 'Floverr',
+        sameAs: 'https://www.imdb.com/title/tt36724898/',
+      },
+      {
+        '@type': 'Movie',
+        name: 'Non Tutto È Perduto',
+        sameAs: 'https://www.imdb.com/title/tt31173315/',
+      },
+      {
+        '@type': 'Movie',
+        name: 'A mamma non piace',
+        sameAs: 'https://www.imdb.com/title/tt38095764/',
+      },
+      {
+        '@type': 'TVSeries',
+        name: 'Radio Caterina',
+        sameAs: 'https://www.imdb.com/title/tt29257837/',
+      },
+      {
+        '@type': 'Movie',
+        name: 'Along Came Ruby',
+        sameAs: 'https://www.imdb.com/title/tt28106482/',
+      },
+      {
+        '@type': 'Movie',
+        name: 'Isole',
+        sameAs: 'https://www.imdb.com/it/title/tt5429970/',
+      },
+      {
+        '@type': 'Movie',
+        name: 'Frangiamore',
+        sameAs: 'https://www.imdb.com/it/title/tt13472468/',
+      },
     ],
     sameAs: [
       'https://www.imdb.com/it/name/nm3859505/',
@@ -37,16 +142,7 @@ export function PersonSchema() {
       'https://www.instagram.com/pieroperilli/',
       'https://www.behance.net/pieroperilli',
     ],
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Piero Perilli — Artigiano Digitale',
-      url: 'https://pieroperilli.com',
-    },
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Roma',
-      addressCountry: 'IT',
-    },
+    worksFor: { '@id': BUSINESS_ID },
   };
 
   return (
@@ -57,18 +153,25 @@ export function PersonSchema() {
   );
 }
 
-// ── LOCAL BUSINESS ──────────────────────────────────────────
+// ── LOCAL BUSINESS / PROFESSIONAL SERVICE ───────────────────
 export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Piero Perilli — VFX & Post Produzione Video',
+    '@id': BUSINESS_ID,
+    name: 'Piero Perilli — VFX, Motion Graphics e Post Produzione',
+    alternateName: 'Piero Perilli — Artigiano Digitale',
     url: 'https://pieroperilli.com',
-    image: 'https://pieroperilli.com/images/piero-perilli-vfx-artist.jpg',
+    image: PROFILE_IMAGE,
+    logo: 'https://pieroperilli.com/images/logo-white.png',
     description:
-      'Servizi professionali di VFX, motion graphics, color grading, animazione 3D e post-produzione video a Roma.',
-    telephone: '+393920187759',
-    email: 'pieroperilli.info@gmail.com',
+      'Studio freelance di post-produzione video a Roma: VFX, motion graphics, animazione 3D, color grading e AI video production. Un unico interlocutore dal concept al master finale per agenzie, produzioni cinematografiche e brand.',
+    telephone: '+39-392-018-7759',
+    email: 'info@pieroperilli.com',
+    priceRange: '€€€',
+    vatID: 'IT10343871009',
+    founder: { '@id': PERSON_ID },
+    provider: { '@id': PERSON_ID },
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Roma',
@@ -81,23 +184,86 @@ export function LocalBusinessSchema() {
       longitude: 12.4964,
     },
     areaServed: [
-      { '@type': 'City', name: 'Roma' },
-      { '@type': 'Country', name: 'Italia' },
+      { '@type': 'Country', name: 'Italy' },
+      { '@type': 'Place', name: 'Europa' },
     ],
     serviceType: [
-      'Visual Effects (VFX)',
+      'Visual Effects',
       'Motion Graphics',
-      'Color Grading',
-      'Video Post Production',
-      '3D Animation',
+      'Animazione 3D',
+      'Post Produzione Video',
       'AI Video Production',
+      'Color Grading',
+      'Compositing',
     ],
-    priceRange: '€€€',
-    openingHours: 'Mo-Fr 09:00-18:00',
-    founder: {
-      '@type': 'Person',
-      name: 'Piero Perilli',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servizi di Post-Produzione Video',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Visual Effects (VFX)',
+            description:
+              'Compositing, green screen, set extension, motion tracking, effetti particellari e clean-up per cinema, advertising e digital content.',
+            url: 'https://pieroperilli.com/vfx',
+            provider: { '@id': BUSINESS_ID },
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Motion Graphics',
+            description:
+              'Animazioni grafiche, infografiche animate, titoli, loghi animati ed elementi UI per brand, campagne e contenuti digitali.',
+            url: 'https://pieroperilli.com/motion-graphics',
+            provider: { '@id': BUSINESS_ID },
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Animazione 3D',
+            description:
+              'Modellazione, texturing, lighting, rendering e animazione 3D di prodotti, personaggi e ambienti per cinema, pubblicità e presentazione aziendale.',
+            url: 'https://pieroperilli.com/animazione-3d',
+            provider: { '@id': BUSINESS_ID },
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Post Produzione Video',
+            description:
+              'Montaggio, color grading e finishing professionale in DaVinci Resolve per cinema, TV e digital. Workflow integrato con VFX e motion graphics.',
+            url: 'https://pieroperilli.com/post-produzione',
+            provider: { '@id': BUSINESS_ID },
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'AI Video Production',
+            description:
+              'Generazione video con AI (Runway, Google Veo, Kling, Higgsfield) integrata nel workflow professionale di post-produzione. Strumenti potenziati da oltre 20 anni di esperienza visiva.',
+            url: 'https://pieroperilli.com/ai-video',
+            provider: { '@id': BUSINESS_ID },
+          },
+        },
+      ],
     },
+    openingHours: 'Mo-Fr 09:00-18:00',
+    sameAs: [
+      'https://www.imdb.com/it/name/nm3859505/',
+      'https://www.linkedin.com/in/piero-perilli-26b26658/',
+      'https://www.instagram.com/pieroperilli/',
+      'https://www.behance.net/pieroperilli',
+    ],
   };
 
   return (
@@ -123,12 +289,11 @@ export function ServiceSchema({ name, description, url, image }: ServiceSchemaPr
     name,
     description,
     url: `https://pieroperilli.com${url}`,
-    provider: {
-      '@type': 'Person',
-      name: 'Piero Perilli',
-      url: 'https://pieroperilli.com',
-    },
-    areaServed: { '@type': 'Country', name: 'Italia' },
+    provider: { '@id': PERSON_ID },
+    areaServed: [
+      { '@type': 'Country', name: 'Italy' },
+      { '@type': 'Place', name: 'Europa' },
+    ],
     ...(image && { image }),
   };
 
@@ -170,11 +335,7 @@ export function VideoObjectSchema({
     ...(duration && { duration }),
     ...(contentUrl && { contentUrl }),
     ...(embedUrl && { embedUrl }),
-    author: {
-      '@type': 'Person',
-      name: 'Piero Perilli',
-      url: 'https://pieroperilli.com',
-    },
+    author: { '@id': PERSON_ID },
   };
 
   return (
@@ -215,16 +376,8 @@ export function ArticleSchema({
     ...(dateModified && { dateModified }),
     ...(image && { image }),
     ...(keywords && { keywords: keywords.join(', ') }),
-    author: {
-      '@type': 'Person',
-      name: 'Piero Perilli',
-      url: 'https://pieroperilli.com',
-    },
-    publisher: {
-      '@type': 'Person',
-      name: 'Piero Perilli',
-      url: 'https://pieroperilli.com',
-    },
+    author: { '@id': PERSON_ID },
+    publisher: { '@id': BUSINESS_ID },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `https://pieroperilli.com${url}`,
@@ -239,7 +392,7 @@ export function ArticleSchema({
   );
 }
 
-// ── FAQ PAGE (for AI/LLM discoverability) ──────────────────
+// ── FAQ PAGE (AI/LLM discoverability) ──────────────────────
 interface FAQItem {
   question: string;
   answer: string;
@@ -249,7 +402,7 @@ export function FAQSchema({ faqs }: { faqs: FAQItem[] }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -267,8 +420,14 @@ export function FAQSchema({ faqs }: { faqs: FAQItem[] }) {
   );
 }
 
-// ── SPEAKABLE (voice assistants + AI answer engines) ────────
-export function SpeakableSchema({ url, cssSelectors = ['h1', '.speakable'] }: { url: string; cssSelectors?: string[] }) {
+// ── SPEAKABLE (voice assistants + AI answer engines) ───────
+export function SpeakableSchema({
+  url,
+  cssSelectors = ['h1', '.speakable'],
+}: {
+  url: string;
+  cssSelectors?: string[];
+}) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -286,6 +445,8 @@ export function SpeakableSchema({ url, cssSelectors = ['h1', '.speakable'] }: { 
     />
   );
 }
+
+// ── BREADCRUMB ─────────────────────────────────────────────
 interface BreadcrumbItem {
   name: string;
   url: string;

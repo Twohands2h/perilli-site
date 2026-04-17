@@ -11,14 +11,16 @@ function WebSiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': 'https://pieroperilli.com/#website',
     name: 'Piero Perilli — Artigiano Digitale',
+    alternateName: 'Piero Perilli',
     url: 'https://pieroperilli.com',
-    description: 'VFX, motion graphics, color grading e post-produzione video a Roma. Artigiano digitale con 20+ anni di esperienza.',
+    description:
+      'VFX, motion graphics, color grading e post-produzione video a Roma. Artigiano digitale con 20+ anni di esperienza.',
     inLanguage: ['it-IT', 'en'],
-    publisher: {
-      '@type': 'Person',
-      name: 'Piero Perilli',
-    },
+    // Links the website to the same real-world Person entity declared in layout.tsx
+    publisher: { '@id': 'https://pieroperilli.com/#person' },
+    copyrightHolder: { '@id': 'https://pieroperilli.com/#person' },
   };
   return (
     <script
