@@ -14,7 +14,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
     it: [
       {
         question: 'Quanto costa un VFX artist a Roma?',
-        answer: 'Per uno shot di media complessità il costo parte da €2.500, comprensivo di compositing, tracking e color adjustment. Progetti più articolati con set extension, green screen e integrazione CGI possono raggiungere €15.000 o più. Fornisco sempre un preventivo dettagliato e gratuito dopo aver analizzato materiale girato e briefing.',
+        answer: 'Il costo dipende interamente dal tipo di intervento. Un clean-up o una rimozione oggetti semplice può partire da €300-500 a shot, un compositing con green screen e tracking si colloca tra €800 e €2.500 a seconda della complessità, mentre sequenze articolate con set extension e integrazione CGI possono richiedere €3.000-15.000 o più. Fornisco sempre un preventivo dettagliato e gratuito dopo aver analizzato il materiale girato e il briefing.',
       },
       {
         question: 'Che differenza c\'è tra VFX e CGI?',
@@ -36,7 +36,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
     en: [
       {
         question: 'How much does a VFX artist cost in Rome, Italy?',
-        answer: 'For a medium-complexity shot, costs start from €2,500, including compositing, tracking and color adjustment. More articulated projects with set extension, green screen and CGI integration can reach €15,000 or more. I always provide a detailed free quote after reviewing footage and brief.',
+        answer: 'Cost depends entirely on the type of work. A simple clean-up or object removal can start from €300-500 per shot, a compositing with green screen and tracking ranges between €800 and €2,500 depending on complexity, while articulated sequences with set extension and CGI integration can require €3,000-15,000 or more. I always provide a detailed free quote after reviewing footage and brief.',
       },
       {
         question: 'What is the difference between VFX and CGI?',
@@ -61,7 +61,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
     it: [
       {
         question: 'Quanto costa un video in motion graphics per un brand?',
-        answer: 'Un\'animazione motion graphics standard di 30-60 secondi parte da €2.500, inclusi concept, storyboard, design custom e animazione. Progetti più complessi con voiceover, 3D integrato o formati multipli possono raggiungere €8.000 o più. Il costo dipende da durata, numero di revisioni e complessità degli elementi animati. Fornisco sempre un preventivo dettagliato.',
+        answer: 'Un\'animazione motion graphics parte da €1.500 per un video breve di 15-30 secondi pensato per social o piccoli brand, e sale a €2.500-5.000 per animazioni standard di 30-60 secondi con concept, storyboard e design custom. Progetti complessi con voiceover, 3D integrato o formati multipli possono raggiungere €8.000 o più. Il costo dipende da durata, complessità degli elementi animati e numero di revisioni. Fornisco sempre un preventivo dettagliato.',
       },
       {
         question: 'Che differenza c\'è tra motion graphics e animazione?',
@@ -79,7 +79,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
     en: [
       {
         question: 'How much does a motion graphics video cost for a brand?',
-        answer: 'A standard 30-60 second motion graphics animation starts from €2,500, including concept, storyboard, custom design and animation. More complex projects with voiceover, integrated 3D or multiple format deliveries can reach €8,000 or more. Cost depends on duration, number of revisions and complexity of animated elements. I always provide a detailed quote.',
+        answer: 'Motion graphics animations start from €1,500 for a short 15-30 second video designed for social media or small brands, rising to €2,500-5,000 for standard 30-60 second animations with concept, storyboard and custom design. Complex projects with voiceover, integrated 3D or multiple format deliveries can reach €8,000 or more. Cost depends on duration, complexity of animated elements and number of revisions. I always provide a detailed quote.',
       },
       {
         question: 'What is the difference between motion graphics and animation?',
@@ -202,7 +202,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'Quanto costa un progetto AI video production?',
-        answer: 'Un progetto AI completo con VFX integrato, post-produzione professionale e mastering parte da €5.000. Il prezzo riflette il workflow ibrido — generazione AI dirigetta, selezione e iterazione degli output, compositing con footage reale, color grading e finishing. Non è un "video generato con l\'AI", è un video prodotto professionalmente che usa l\'AI come uno degli strumenti. Progetti più ampi con serie di contenuti possono superare €15.000.',
+        answer: 'Un progetto AI completo con VFX integrato, post-produzione professionale e mastering parte da €5.000. Il prezzo riflette il workflow ibrido — generazione AI diretta, selezione e iterazione degli output, compositing con footage reale, color grading e finishing. Non è un "video generato con l\'AI", è un video prodotto professionalmente che usa l\'AI come uno degli strumenti. Progetti più ampi con serie di contenuti possono superare €15.000.',
       },
       {
         question: 'Che strumenti AI usi per la produzione video?',
