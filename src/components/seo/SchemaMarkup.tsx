@@ -97,42 +97,73 @@ export function PersonSchema() {
       {
         '@type': 'Movie',
         name: 'I Am Curious Johnny',
+        image:
+          'https://m.media-amazon.com/images/M/MV5BNzk4YmFhM2QtYjQ1Ny00ZjQ5LWFlZTAtZGNmM2JiZWRkNGMzXkEyXkFqcGc@._V1_.jpg',
+        dateCreated: '2025',
         director: { '@type': 'Person', name: 'Julien Temple' },
         sameAs: 'https://www.imdb.com/title/tt35450650/',
       },
       {
         '@type': 'Movie',
         name: 'Floverr',
+        image:
+          'https://m.media-amazon.com/images/M/MV5BZWExMzJkZmUtYWI1Ni00ZjBmLWEwNDQtOTViYjI2ZTI1ODI5XkEyXkFqcGc@._V1_UY580_CR149,0,392,580_.jpg',
+        dateCreated: '2026',
+        director: { '@type': 'Person', name: 'Anita Udeep' },
         sameAs: 'https://www.imdb.com/title/tt36724898/',
       },
       {
         '@type': 'Movie',
         name: 'Non Tutto È Perduto',
+        image:
+          'https://m.media-amazon.com/images/M/MV5BOWI0NTE3ZTMtYWEzMS00YzZlLTg4YmItN2Y5NDM5OTdiZmUxXkEyXkFqcGc@._V1_UY580_CR9,0,392,580_.jpg',
+        dateCreated: '2023',
+        director: { '@type': 'Person', name: 'Francesco Bellomo' },
         sameAs: 'https://www.imdb.com/title/tt31173315/',
       },
       {
         '@type': 'Movie',
         name: 'A mamma non piace',
+        image:
+          'https://m.media-amazon.com/images/M/MV5BMTJkNjg3MWMtOTA0MS00MWQ3LWE4YmMtZWJmZjk4NzI2ZWQ2XkEyXkFqcGc@._V1_UY580_CR7,0,392,580_.jpg',
+        dateCreated: '2025',
+        director: { '@type': 'Person', name: 'Gianni Leacche' },
         sameAs: 'https://www.imdb.com/title/tt38095764/',
       },
       {
         '@type': 'TVSeries',
         name: 'Radio Caterina',
+        image:
+          'https://m.media-amazon.com/images/M/MV5BYzdhNzI4MmQtNWVhNy00MDEwLWE0OTQtZjAyZWMxOTUzZmNiXkEyXkFqcGc@._V1_UY580_CR7,0,392,580_.jpg',
+        dateCreated: '2023',
+        director: { '@type': 'Person', name: 'David Orlandelli' },
         sameAs: 'https://www.imdb.com/title/tt29257837/',
       },
       {
         '@type': 'Movie',
         name: 'Along Came Ruby',
+        image:
+          'https://m.media-amazon.com/images/M/MV5BODNmZDExMTItYTBjOC00OWFkLTk1MTEtOWU0MmI0YWI3MjA3XkEyXkFqcGc@._V1_UX392_CR0,0,392,580_.jpg',
+        dateCreated: '2024',
+        director: { '@type': 'Person', name: 'Riccardo Suriano' },
         sameAs: 'https://www.imdb.com/title/tt28106482/',
       },
       {
         '@type': 'Movie',
         name: 'Isole',
+        image:
+          'https://m.media-amazon.com/images/M/MV5BODkzODcyMTctMGVkYS00YmE2LWFmM2MtNjZiNmY2OWJhNDBiXkEyXkFqcGc@._V1_UY580_CR179,0,392,580_.jpg',
+        dateCreated: '2016',
+        director: { '@type': 'Person', name: 'Valerio de Berardinis' },
         sameAs: 'https://www.imdb.com/it/title/tt5429970/',
       },
       {
         '@type': 'Movie',
         name: 'Frangiamore',
+        image:
+          'https://m.media-amazon.com/images/M/MV5BNjMxNWE3ZTktOWY3Mi00YjJiLWJiYmUtNmU4YzMzOGZlMTE4XkEyXkFqcGc@._V1_UY580_CR319,0,392,580_.jpg',
+        dateCreated: '2020',
+        director: { '@type': 'Person', name: 'Sylvio Giardina' },
         sameAs: 'https://www.imdb.com/it/title/tt13472468/',
       },
     ],
