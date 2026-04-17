@@ -14,7 +14,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
     it: [
       {
         question: 'Quanto costa un VFX artist a Roma?',
-        answer: 'Il costo dipende dalla complessità del progetto. Un singolo shot con compositing base parte da poche centinaia di euro, mentre un progetto complesso con set extension, tracking 3D e green screen può richiedere un investimento più significativo. Offro sempre un preventivo gratuito dopo aver analizzato il materiale e il briefing.',
+        answer: 'Per uno shot di media complessità il costo parte da €2.500, comprensivo di compositing, tracking e color adjustment. Progetti più articolati con set extension, green screen e integrazione CGI possono raggiungere €15.000 o più. Fornisco sempre un preventivo dettagliato e gratuito dopo aver analizzato materiale girato e briefing.',
       },
       {
         question: 'Che differenza c\'è tra VFX e CGI?',
@@ -36,7 +36,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
     en: [
       {
         question: 'How much does a VFX artist cost in Rome, Italy?',
-        answer: 'Costs depend on project complexity. A single basic compositing shot starts from a few hundred euros, while complex projects with set extension, 3D tracking and green screen require a more significant investment. I always provide a free quote after reviewing the footage and brief.',
+        answer: 'For a medium-complexity shot, costs start from €2,500, including compositing, tracking and color adjustment. More articulated projects with set extension, green screen and CGI integration can reach €15,000 or more. I always provide a detailed free quote after reviewing footage and brief.',
       },
       {
         question: 'What is the difference between VFX and CGI?',
@@ -61,7 +61,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
     it: [
       {
         question: 'Quanto costa un video in motion graphics per un brand?',
-        answer: 'Un video motion graphics per brand varia in base a durata e complessità. Un\'animazione di 30 secondi per social parte da circa €800-1.500, mentre un video corporate di 60-90 secondi con storyboard personalizzato e animazioni complesse può costare €2.000-5.000. Fornisco sempre un preventivo dettagliato.',
+        answer: 'Un\'animazione motion graphics standard di 30-60 secondi parte da €2.500, inclusi concept, storyboard, design custom e animazione. Progetti più complessi con voiceover, 3D integrato o formati multipli possono raggiungere €8.000 o più. Il costo dipende da durata, numero di revisioni e complessità degli elementi animati. Fornisco sempre un preventivo dettagliato.',
       },
       {
         question: 'Che differenza c\'è tra motion graphics e animazione?',
@@ -69,17 +69,17 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'Quanto tempo serve per realizzare un video motion graphics?',
-        answer: 'I tempi variano da 1 a 4 settimane. Un\'animazione semplice per social (15-30 secondi) richiede circa una settimana. Un video corporate con storyboard, voiceover e animazioni complesse richiede 2-4 settimane. La fase di concept e approvazione del cliente spesso incide più della produzione vera e propria.',
+        answer: 'I tempi variano da 2 a 4 settimane per un\'animazione professionale con concept, storyboard, design e animazione finale. Un video corporate con voiceover e animazioni complesse può richiedere 4-6 settimane. La fase di approvazione del concept con il cliente spesso incide più della produzione vera e propria, per questo raccomando di pianificare con anticipo.',
       },
       {
         question: 'Realizzi motion graphics per spot televisivi?',
-        answer: 'Sì, ho realizzato motion graphics per spot TV e campagne pubblicitarie per brand di primo livello. Lavoro con le specifiche tecniche richieste dai broadcaster e con i formati necessari per ogni piattaforma di distribuzione.',
+        answer: 'Sì, ho realizzato motion graphics per spot TV e campagne pubblicitarie per brand di primo livello, da Gucci a RAI. Lavoro con le specifiche tecniche richieste dai broadcaster (consegne broadcast, versioni multiple formato, safe area, sottotitoli) e con tutti i formati necessari per ogni piattaforma di distribuzione.',
       },
     ],
     en: [
       {
         question: 'How much does a motion graphics video cost for a brand?',
-        answer: 'A brand motion graphics video varies by duration and complexity. A 30-second social animation starts from approximately €800-1,500, while a 60-90 second corporate video with custom storyboard and complex animations can cost €2,000-5,000. I always provide a detailed quote.',
+        answer: 'A standard 30-60 second motion graphics animation starts from €2,500, including concept, storyboard, custom design and animation. More complex projects with voiceover, integrated 3D or multiple format deliveries can reach €8,000 or more. Cost depends on duration, number of revisions and complexity of animated elements. I always provide a detailed quote.',
       },
       {
         question: 'What is the difference between motion graphics and animation?',
@@ -87,11 +87,11 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'How long does it take to create a motion graphics video?',
-        answer: 'Timelines range from 1 to 4 weeks. A simple social animation (15-30 seconds) takes about one week. A corporate video with storyboard, voiceover and complex animations requires 2-4 weeks. The concept and client approval phase often takes longer than actual production.',
+        answer: 'Timelines range from 2 to 4 weeks for a professional animation with concept, storyboard, design and final animation. A corporate video with voiceover and complex animations may take 4-6 weeks. The concept approval phase with the client often takes longer than actual production, so I recommend planning in advance.',
       },
       {
         question: 'Do you create motion graphics for TV commercials?',
-        answer: 'Yes, I have created motion graphics for TV spots and advertising campaigns for top-tier brands. I work with broadcaster technical specifications and delivery formats for every distribution platform.',
+        answer: 'Yes, I have created motion graphics for TV spots and advertising campaigns for top-tier brands, from Gucci to RAI. I work with broadcaster technical specifications (broadcast delivery, multiple format versions, safe areas, subtitles) and all delivery formats for every distribution platform.',
       },
     ],
   },
@@ -100,7 +100,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
     it: [
       {
         question: 'Quanto costa un\'animazione 3D di prodotto?',
-        answer: 'Un\'animazione 3D di prodotto parte da circa €1.500-3.000 per un video di 15-30 secondi con modellazione, texturing, illuminazione e rendering. Progetti più complessi con ambienti, character o simulazioni fisiche possono superare i €5.000. Il costo dipende dalla complessità del modello e dalla durata dell\'animazione.',
+        answer: 'Un\'animazione 3D di prodotto parte da €3.000 per un video di 15-30 secondi, comprensivo di modellazione, texturing, illuminazione, animazione e rendering fotorealistico. Progetti più complessi con ambienti, character animation o simulazioni fisiche (come il progetto Guerciotti 60 Anni) possono superare €8.000. Il costo dipende dalla complessità del modello e dalla durata dell\'animazione.',
       },
       {
         question: 'Che software usi per l\'animazione 3D?',
@@ -118,7 +118,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
     en: [
       {
         question: 'How much does a 3D product animation cost?',
-        answer: 'A 3D product animation starts from approximately €1,500-3,000 for a 15-30 second video including modeling, texturing, lighting and rendering. More complex projects with environments, characters or physics simulations can exceed €5,000. Cost depends on model complexity and animation duration.',
+        answer: 'A 3D product animation starts from €3,000 for a 15-30 second video, including modeling, texturing, lighting, animation and photorealistic rendering. More complex projects with environments, character animation or physics simulations (like the Guerciotti 60 Years project) can exceed €8,000. Cost depends on model complexity and animation duration.',
       },
       {
         question: 'What software do you use for 3D animation?',
@@ -142,8 +142,16 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
         answer: 'La post-produzione video comprende tutto ciò che avviene dopo le riprese: montaggio, color grading, sound design, effetti visivi, titolazione, conforming e mastering. Nel mio workflow integrato gestisco tutte queste fasi in un unico flusso, senza passaggi di mano tra professionisti diversi. Questo riduce tempi e costi mantenendo la coerenza creativa.',
       },
       {
-        question: 'Quanto costa il color grading professionale?',
-        answer: 'Il color grading professionale per uno spot pubblicitario va dagli 800 ai 1.200 euro. Per un cortometraggio si parte da 3.000 fino a 5.000 euro a seconda della complessità. Per un lungometraggio il costo non è quantificabile senza analizzare il progetto — dipende dal genere, dal numero di scene e dalla look richiesta. Si può lavorare anche a giornata. Lavoro con DaVinci Resolve (certificato), lo standard dell\'industria cinematografica.',
+        question: 'Quanto costa la post-produzione di uno spot pubblicitario?',
+        answer: 'La post-produzione completa di uno spot pubblicitario parte da €1.500, comprensiva di montaggio, color grading e mastering nei formati richiesti. Il color grading singolo per spot va da €800 a €1.200. Per un cortometraggio si parte da €3.000, per un lungometraggio il costo richiede un\'analisi dedicata — dipende da genere, numero di scene e look richiesto. Si può lavorare anche a giornata.',
+      },
+      {
+        question: 'Quanto tempo serve per la post-produzione di un progetto video?',
+        answer: 'Uno spot pubblicitario richiede 1-2 settimane di post-produzione, un cortometraggio 3-6 settimane, un documentario 6-10 settimane. Il tempo effettivo dipende da qualità del girato, numero di versioni richieste e complessità del color grading. Lavoro con deadline di festival, broadcast e campagne pubblicitarie, pianificando il flusso per rispettarle.',
+      },
+      {
+        question: 'Sei certificato DaVinci Resolve per il color grading?',
+        answer: 'Sì, sono certificato Blackmagic Design per DaVinci Resolve, lo standard professionale per il color grading cinematografico, sia per Color Correction che per Fusion. Questa certificazione garantisce padronanza tecnica completa del software, capacità di gestire workflow cinematografici complessi (LOG footage, HDR, DCP) e rispetto degli standard broadcast e di distribuzione cinema.',
       },
       {
         question: 'Perché scegliere un workflow integrato invece di specialisti separati?',
@@ -160,8 +168,16 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
         answer: 'Video post-production includes everything after filming: editing, color grading, sound design, visual effects, titling, conforming and mastering. In my integrated workflow I handle all these phases in a single pipeline, without handoffs between different professionals. This reduces time and costs while maintaining creative coherence.',
       },
       {
-        question: 'How much does professional color grading cost?',
-        answer: 'Professional color grading for a commercial ranges from €800 to €1,200. For a short film, expect €3,000 to €5,000 depending on complexity. For a feature film, costs cannot be estimated without analyzing the project — it depends on genre, number of scenes and the required look. Day rates are also available. I work with DaVinci Resolve (certified), the cinema industry standard.',
+        question: 'How much does commercial spot post-production cost?',
+        answer: 'Complete post-production for a commercial spot starts from €1,500, including editing, color grading and mastering in required formats. Standalone color grading for a spot ranges from €800 to €1,200. Short films start from €3,000, feature films require dedicated analysis — cost depends on genre, scene count and required look. Day rates are also available.',
+      },
+      {
+        question: 'How long does post-production take for a video project?',
+        answer: 'A commercial spot requires 1-2 weeks of post-production, a short film 3-6 weeks, a documentary 6-10 weeks. Actual time depends on footage quality, number of versions required and color grading complexity. I work with festival, broadcast and advertising campaign deadlines, planning the pipeline to meet them.',
+      },
+      {
+        question: 'Are you DaVinci Resolve certified for color grading?',
+        answer: 'Yes, I am Blackmagic Design certified for DaVinci Resolve, the professional standard for cinematic color grading, both for Color Correction and Fusion. This certification ensures complete technical mastery of the software, ability to manage complex cinema workflows (LOG footage, HDR, DCP) and compliance with broadcast and cinema distribution standards.',
       },
       {
         question: 'Why choose an integrated workflow instead of separate specialists?',
@@ -185,8 +201,8 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
         answer: 'No, non completamente — almeno non oggi. L\'AI genera clip di qualità crescente ma ha limiti: coerenza tra shot, controllo preciso del movimento, qualità dei dettagli umani. Il vero vantaggio sta nel workflow ibrido: l\'AI accelera alcune fasi e apre possibilità creative nuove, ma servono competenza ed esperienza per dirigere il risultato. Senza occhio professionale, l\'output AI resta amatoriale.',
       },
       {
-        question: 'Quanto costa un video realizzato con AI?',
-        answer: 'I costi sono generalmente inferiori alla produzione tradizionale perché si eliminano set, troupe e attrezzature. Un video commerciale di 30-60 secondi realizzato con workflow ibrido AI + post-produzione tradizionale parte da €1.000-3.000. Il risparmio principale è nei tempi: quello che prima richiedeva settimane ora si può realizzare in giorni.',
+        question: 'Quanto costa un progetto AI video production?',
+        answer: 'Un progetto AI completo con VFX integrato, post-produzione professionale e mastering parte da €5.000. Il prezzo riflette il workflow ibrido — generazione AI dirigetta, selezione e iterazione degli output, compositing con footage reale, color grading e finishing. Non è un "video generato con l\'AI", è un video prodotto professionalmente che usa l\'AI come uno degli strumenti. Progetti più ampi con serie di contenuti possono superare €15.000.',
       },
       {
         question: 'Che strumenti AI usi per la produzione video?',
@@ -207,8 +223,8 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
         answer: 'No, not completely — at least not today. AI generates increasingly good clips but has limitations: shot-to-shot consistency, precise motion control, human detail quality. The real advantage is in hybrid workflows: AI accelerates certain phases and opens new creative possibilities, but expertise and experience are needed to direct the output. Without a professional eye, AI output remains amateur.',
       },
       {
-        question: 'How much does an AI-produced video cost?',
-        answer: 'Costs are generally lower than traditional production since you eliminate sets, crew and equipment. A 30-60 second commercial video using a hybrid AI + traditional post-production workflow starts from €1,000-3,000. The main saving is time: what previously took weeks can now be done in days.',
+        question: 'How much does an AI video production project cost?',
+        answer: 'A complete AI project with integrated VFX, professional post-production and mastering starts from €5,000. The price reflects the hybrid workflow — directed AI generation, output selection and iteration, compositing with real footage, color grading and finishing. It is not an "AI-generated video", it is a professionally produced video that uses AI as one of many tools. Larger projects with content series can exceed €15,000.',
       },
       {
         question: 'What AI tools do you use for video production?',
