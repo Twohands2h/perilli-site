@@ -25,6 +25,7 @@ const nextConfig = {
       { source: '/garanzia', destination: '/garanzia/index.html', permanent: false },
       { source: '/garanzia/ads', destination: '/garanzia/ads/index.html', permanent: false },
       { source: '/garanzia/spot2', destination: '/garanzia/spot2/index.html', permanent: false },
+      { source: '/garanzia/spot3', destination: '/garanzia/spot3/index.html', permanent: false },
       // === Redirect 301 da vecchie pagine WordPress / Adobe Portfolio ===
 
       // Pagine servizio
