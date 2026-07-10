@@ -80,7 +80,22 @@ const contentIT = {
     },
   ],
 
-  tools: ['Runway Gen-3', 'Veo 3.1', 'Kling AI', 'Midjourney', 'ComfyUI', 'After Effects', 'DaVinci Resolve', 'Unreal Engine 5'],
+  highlight: {
+    label: 'IL METODO',
+    title: 'Mi sono costruito lo strumento che non esisteva',
+    text: `<p>Una produzione AI genera centinaia di clip, prompt, reference e versioni. Il vero problema non è generare — è mantenere il controllo: quale prompt ha prodotto quale shot, quale reference definisce quale personaggio, quale versione è quella approvata.</p>
+<p>Per questo ho costruito <strong class="text-text-primary">Rewake</strong>, un film memory system per l'AI filmmaking: scene, shot, take, prompt e decisioni restano collegati in un unico sistema, e il progetto rimane leggibile nel tempo — anche a distanza di mesi.</p>
+<p>Per chi mi affida un progetto AI significa una cosa concreta: produzione ordinata, coerenza tra le shot, versioni sotto controllo. È la mentalità dell'artigiano: se lo strumento non esiste, te lo costruisci.</p>`,
+    logo: '/images/services/rewake-logo.webp',
+    logoAlt: 'Rewake — Your Film Memory',
+    image: '/images/services/rewake-film-memory-system-ai-filmmaking.webp',
+    imageAlt: 'Workspace di Rewake: storyboard, reference del personaggio, prompt e output video collegati in un unico sistema',
+    linkText: 'Scopri Rewake',
+    linkUrl: 'https://rewake.studio?utm_source=pieroperilli.com&utm_medium=referral&utm_campaign=ai-video',
+    linkEvent: 'rewake_click',
+  },
+
+  tools: ['Runway Gen-3', 'Veo 3.1', 'Kling AI', 'Midjourney', 'ComfyUI', 'Rewake', 'After Effects', 'DaVinci Resolve', 'Unreal Engine 5'],
 
   recentWorkTitle: 'Progetti AI Video',
   recentWork: [
@@ -156,7 +171,22 @@ const contentEN = {
     },
   ],
 
-  tools: ['Runway Gen-3', 'Veo 3.1', 'Kling AI', 'Midjourney', 'ComfyUI', 'After Effects', 'DaVinci Resolve', 'Unreal Engine 5'],
+  highlight: {
+    label: 'THE METHOD',
+    title: "I built the tool that didn't exist",
+    text: `<p>An AI production generates hundreds of clips, prompts, references and versions. The real problem isn't generating — it's staying in control: which prompt produced which shot, which reference defines which character, which version is the approved one.</p>
+<p>That's why I built <strong class="text-text-primary">Rewake</strong>, a film memory system for AI filmmaking: scenes, shots, takes, prompts and decisions stay connected in one system, and the project stays readable over time — even months later.</p>
+<p>For anyone who brings me an AI project, this means something concrete: organized production, consistency across shots, versions under control. It's the craftsman's mindset: if the tool doesn't exist, you build it.</p>`,
+    logo: '/images/services/rewake-logo.webp',
+    logoAlt: 'Rewake — Your Film Memory',
+    image: '/images/services/rewake-film-memory-system-ai-filmmaking.webp',
+    imageAlt: 'Rewake workspace: storyboard, character reference, prompt and video output connected in one system',
+    linkText: 'Discover Rewake',
+    linkUrl: 'https://rewake.studio?utm_source=pieroperilli.com&utm_medium=referral&utm_campaign=ai-video',
+    linkEvent: 'rewake_click',
+  },
+
+  tools: ['Runway Gen-3', 'Veo 3.1', 'Kling AI', 'Midjourney', 'ComfyUI', 'Rewake', 'After Effects', 'DaVinci Resolve', 'Unreal Engine 5'],
 
   recentWorkTitle: 'AI Video Projects',
   recentWork: [

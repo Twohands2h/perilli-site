@@ -8,7 +8,7 @@
 - **Motion Graphics:** Brand animations, campaign graphics, title sequences, infographics, animated logos
 - **3D Animation:** Product visualization, character animation, digital environments, Unreal Engine 5, tyFlow simulations
 - **Video Post-Production:** Editing, color grading (DaVinci Resolve certified), finishing, conforming, mastering
-- **AI Video Production:** Hybrid AI + traditional workflow using Runway, Veo, Kling AI, guided by 20 years of VFX experience
+- **AI Video Production:** Hybrid AI + traditional workflow using Runway, Veo, Kling AI, guided by 20 years of VFX experience. Creator of Rewake (rewake.studio), a film memory system for organizing AI film productions
 
 ## Competitive Advantage
 

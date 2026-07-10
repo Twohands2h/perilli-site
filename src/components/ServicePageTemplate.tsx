@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import { ArrowRight, Calendar, MessageCircle, ChevronDown } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
+import TrackedLink from '@/components/TrackedLink';
 
 import FAQAccordion from '@/components/FAQAccordion';
 
@@ -33,6 +34,19 @@ interface WorkItem {
   link?: string;
 }
 
+interface HighlightBox {
+  label: string;
+  title: string;
+  text: string;
+  logo?: string;
+  logoAlt?: string;
+  image?: string;
+  imageAlt?: string;
+  linkText?: string;
+  linkUrl?: string;
+  linkEvent?: string;
+}
+
 interface ServicePageProps {
   sectionLabel: string;
   h1: string;
@@ -46,6 +60,7 @@ interface ServicePageProps {
   services: ServiceDetail[];
   approachTitle: string;
   pillars: Pillar[];
+  highlight?: HighlightBox;
   recentWorkTitle?: string;
   recentWork?: WorkItem[];
   tools?: string[];
@@ -120,7 +135,7 @@ function ServiceAccordion({ services }: { services: ServiceDetail[] }) {
 
 export default function ServicePageTemplate({
   sectionLabel, h1, heroSubtitle, introTitle, introText, introImage, introImageAlt, introVideo,
-  servicesTitle, services: serviceDetails, approachTitle, pillars,
+  servicesTitle, services: serviceDetails, approachTitle, pillars, highlight,
   recentWorkTitle, recentWork, tools, ctaTitle, ctaSubtitle, ctaText, faqs, faqTitle,
 }: ServicePageProps) {
   const locale = useLocale();
@@ -196,37 +211,6 @@ export default function ServicePageTemplate({
         </div>
       </section>
 
-      {/* === MID-PAGE CTA — centered === */}
-      <section className="py-10 md:py-14 border-t border-border">
-        <div className="section-container text-center">
-          <AnimateOnScroll>
-            <p className="text-text-secondary text-sm md:text-base mb-5">
-              {locale === 'it'
-                ? 'Hai un progetto che richiede questo tipo di lavoro?'
-                : 'Have a project that needs this kind of work?'}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link
-                href={locale === 'it' ? '/contatti' : '/en/contact'}
-                className="btn-primary w-full sm:w-auto justify-center"
-              >
-                {locale === 'it' ? 'Parliamone' : "Let's talk"}
-                <ArrowRight size={14} />
-              </Link>
-              <a
-                href="https://calendly.com/pieroperilli-info/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary w-full sm:w-auto justify-center"
-              >
-                <Calendar size={14} />
-                {locale === 'it' ? 'Prenota call' : 'Book a call'}
-              </a>
-            </div>
-          </AnimateOnScroll>
-        </div>
-      </section>
-
       {/* === APPROACH PILLARS — mobile: stack, md: 3 cols === */}
       <section className="py-12 md:py-20 lg:py-24 border-t border-border bg-surface">
         <div className="section-container">
@@ -252,6 +236,68 @@ export default function ServicePageTemplate({
           </div>
         </div>
       </section>
+
+      {/* === HIGHLIGHT BOX (opzionale — es. Rewake su AI Video) === */}
+      {highlight && (
+        <section className="py-10 md:py-16 lg:py-20 border-t border-border">
+          <div className="section-container">
+            <AnimateOnScroll>
+              <div className="relative rounded-lg border border-accent/25 bg-surface p-6 md:p-10 lg:p-12 overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(245,170,68,0.05)_0%,_transparent_55%)]" aria-hidden="true" />
+                <div className={`relative grid grid-cols-1 ${highlight.image ? 'lg:grid-cols-2' : ''} gap-8 lg:gap-12 items-center`}>
+                  <div className="max-w-3xl">
+                    <p className="section-title">{highlight.label}</p>
+                    {highlight.logo && (
+                      <Image
+                        src={highlight.logo}
+                        alt={highlight.logoAlt || highlight.label}
+                        width={582}
+                        height={166}
+                        className="h-9 md:h-11 w-auto mb-4 md:mb-5"
+                      />
+                    )}
+                    <h2
+                      className="font-bold text-text-primary mb-4 md:mb-5"
+                      style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)', lineHeight: '1.15' }}
+                    >
+                      {highlight.title}
+                    </h2>
+                    <div
+                      className="text-text-secondary text-sm leading-relaxed space-y-3 md:space-y-4"
+                      dangerouslySetInnerHTML={{ __html: highlight.text }}
+                    />
+                    {highlight.linkUrl && highlight.linkText && (
+                      <div className="mt-6 md:mt-8">
+                        <TrackedLink
+                          href={highlight.linkUrl}
+                          eventName={highlight.linkEvent || 'highlight_click'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors duration-300 text-sm font-semibold uppercase tracking-wider"
+                        >
+                          {highlight.linkText}
+                          <ArrowRight size={14} />
+                        </TrackedLink>
+                      </div>
+                    )}
+                  </div>
+                  {highlight.image && (
+                    <div className="relative aspect-video rounded-lg overflow-hidden border border-border-light/60 bg-background">
+                      <Image
+                        src={highlight.image}
+                        alt={highlight.imageAlt || highlight.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+      )}
 
       {/* === RECENT WORK === */}
       {recentWork && recentWork.length > 0 && (

@@ -71,6 +71,7 @@ Hybrid AI + traditional post-production workflow:
 - AI-assisted rotoscoping and background generation
 - Creative direction for AI video projects (short films, series, commercials)
 - Quality control: knowing when AI output is sufficient and when manual intervention is needed
+- Structured production management with Rewake (rewake.studio) — a film memory system for AI filmmaking that Piero built himself: scenes, shots, takes, prompts and decisions stay connected across the whole project
 
 **Key differentiator:** The combination of AI tool proficiency with 20 years of traditional VFX experience ensures outputs that are professional-grade, not amateur.
 **Tools:** Runway, Veo (Google), Kling AI, Midjourney (for concepts)
