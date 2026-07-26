@@ -20,6 +20,209 @@ export interface BlogPost {
 export const posts: BlogPost[] = [
 
   {
+    slug: 'ai-act-video-ai-obblighi-2026',
+    slugEn: 'eu-ai-act-video-ai-transparency',
+    titleIt: 'AI Act e video generati con l\'AI: cosa cambia dal 2 agosto 2026 per brand e agenzie',
+    titleEn: 'The EU AI Act and AI-Generated Video: What Changes on August 2, 2026 for Brands and Agencies',
+    excerptIt: 'Dal 2 agosto 2026 scattano gli obblighi di trasparenza dell\'AI Act per i deepfake. Ma non tutto quello che passa per l\'AI va etichettato: dove passa il confine, chi è responsabile e come gestisco la conformità in produzione.',
+    excerptEn: "From August 2, 2026, the EU AI Act's transparency obligations apply to deepfakes. But not everything AI touches needs a label: where the line sits, who is responsible, and how I handle compliance in production.",
+    date: '2026-07-26',
+    readingTime: 9,
+    category: 'ai',
+    categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
+    keywordTarget: 'AI Act video AI obblighi trasparenza 2026',
+    thumbnail: '/images/blog/ai-act-video-ai-trasparenza-2026.webp',
+    thumbnailAlt: {
+      it: 'AI Act 2026 — obblighi di trasparenza per i video generati con AI',
+      en: 'EU AI Act 2026 — transparency obligations for AI-generated video'
+    },
+    contentIt: `<p><em>Aggiornato al 24 luglio 2026</em></p>
+
+<p>Il 2 agosto 2026 entrano in applicazione gli obblighi di trasparenza dell'articolo 50 dell'AI Act, il regolamento europeo sull'intelligenza artificiale (Regolamento UE 2024/1689). Per chi produce o commissiona video, il punto centrale è questo: i contenuti generati o manipolati con l'AI che rientrano nella definizione di deepfake vanno dichiarati in modo percepibile.</p>
+
+<p>Attenzione alla formulazione, perché è qui che si gioca tutto: non tutto quello che passa per l'AI va etichettato. Ma quello che va etichettato, va etichettato bene — e capire dove passa il confine è una valutazione da fare prima di andare online, non dopo.</p>
+
+<p>Il 20 luglio la Commissione europea ha pubblicato le <a href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-transparency-ai-generated-content" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">linee guida definitive</a> per l'applicazione della norma, quindi il quadro operativo adesso c'è. Niente panico: serve metodo. E il metodo è il mio mestiere.</p>
+
+<h2>Cosa dice davvero l'articolo 50</h2>
+
+<p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">L'articolo 50</a> prevede due obblighi distinti, per due soggetti diversi.</p>
+
+<p><strong>Il primo riguarda chi sviluppa gli strumenti.</strong> I fornitori di sistemi di AI generativa devono marcare gli output sintetici in un formato leggibile dalle macchine. Tra le soluzioni già utilizzate dal mercato ci sono watermark invisibili (come SynthID di Google), metadati di provenienza e sistemi crittografici basati su standard di content provenance. La norma però non impone una singola tecnologia: chiede soluzioni efficaci, interoperabili, robuste e affidabili, per quanto tecnicamente possibile. Nel normale workflow di produzione questo obbligo grava sul fornitore del sistema, non sulla produzione che si limita a utilizzarlo.</p>
+
+<p><strong>Il secondo riguarda chi usa quegli strumenti.</strong> Quando un contenuto costituisce un deepfake ai sensi della norma, chi lo utilizza deve dichiararne la natura artificiale in modo percepibile dalle persone. (Esiste anche un obbligo separato per i testi generati dall'AI su materie di interesse pubblico privi di adeguato controllo editoriale — ma non è il nostro campo, e non lo tratto qui.)</p>
+
+<p>E qui la definizione conta. Le linee guida indicano <strong>tre criteri cumulativi</strong> perché un contenuto sia considerato deepfake: deve avere un elevato livello di somiglianza con il soggetto simulato; deve riguardare qualcosa che esiste, può plausibilmente esistere o avrebbe potuto esistere; e deve poter apparire falsamente autentico o veritiero allo spettatore. Il terzo criterio non è astratto: dipende anche dal contesto di pubblicazione, dal messaggio del contenuto e dalle aspettative del pubblico.</p>
+
+<p>La catena corretta, quindi, non è "video AI, dunque etichetta". È: video generato o manipolato con l'AI → valutazione dei tre criteri e del contesto → eventuale qualificazione come deepfake → modalità di dichiarazione proporzionata.</p>
+
+<h2>"Quindi il mio spot è un deepfake?"</h2>
+
+<p>È la domanda che si stanno facendo tutti, ed è quella giusta. La risposta non è automatica.</p>
+
+<p>Se il video contiene persone, luoghi o situazioni fotorealistiche che lo spettatore potrebbe ragionevolmente interpretare come riprese autentiche, il contenuto può rientrare nella definizione di deepfake. Non basta però che sia realistico: contano anche il soggetto rappresentato, il messaggio, il contesto di diffusione e le aspettative del pubblico. Per questo la valutazione va fatta progetto per progetto.</p>
+
+<p>Le linee guida fanno un esempio che chi lavora in post-produzione apprezzerà: sfondi generati, effetti speciali e lavorazioni tecniche inseriti in una normale produzione cinematografica potrebbero non apparire falsamente autentici, proprio perché il pubblico non li interpreta come documentazione del reale. Vent'anni di VFX mi hanno insegnato la stessa cosa da un altro punto di vista: tra lo spettatore e l'opera c'è un patto, e quel patto fa parte del contesto.</p>
+
+<p>C'è poi un regime specifico per i deepfake che fanno parte di opere manifestamente artistiche, creative, satiriche o di fiction: la dichiarazione resta dovuta, ma può avvenire in una forma che non ostacoli la fruizione dell'opera — tipicamente nei titoli di coda, nella descrizione, nella scheda del progetto.</p>
+
+<p>E la pubblicità? Sta nel mezzo: è opera creativa, ma è anche comunicazione commerciale rivolta al pubblico. Non esiste una soluzione grafica unica valida per ogni progetto. La scelta prudente è prevedere una dichiarazione chiara ma proporzionata, valutando il formato, il contesto di diffusione e la natura creativa dell'opera. Con un punto fermo: come regola generale, la dichiarazione deve essere percepibile al più tardi alla prima esposizione dello spettatore. Le modalità meno invasive — come una nota nei crediti in coda — sono riservate ai casi in cui il regime delle opere creative è effettivamente applicabile.</p>
+
+<h2>Chi è responsabile</h2>
+
+<p>La norma distingue tra fornitori, cioè chi sviluppa e mette a disposizione il sistema, e deployer, cioè la persona o l'organizzazione che lo utilizza sotto la propria autorità. In una produzione video il deployer può essere l'agenzia, la casa di produzione, il professionista o il cliente, a seconda di chi controlla concretamente l'utilizzo degli strumenti. Per questo responsabilità, tracciabilità e modalità di dichiarazione vanno definite anche contrattualmente — prima che il progetto parta, non alla consegna.</p>
+
+<p>Un equivoco da chiarire subito: il watermark automatico dello strumento non ti mette a posto. La marcatura tecnica e la dichiarazione percepibile sono due obblighi distinti. E c'è un dettaglio che pochi hanno notato: per i sistemi già immessi sul mercato prima del 2 agosto 2026, il <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj/ita" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Regolamento UE 2026/1744</a> concede ai fornitori fino al 2 dicembre 2026 per adeguare la marcatura tecnica — ma l'obbligo di dichiarazione per i deepfake resta applicabile dal 2 agosto. Anche se il tuo strumento non marca ancora gli output, la valutazione la devi fare lo stesso.</p>
+
+<p>Le violazioni dell'articolo 50 possono comportare sanzioni fino a 15 milioni di euro o, per le imprese, fino al 3% del fatturato mondiale annuo, se superiore. Per le PMI si applicano criteri e limiti proporzionati, incluso il valore più basso tra importo assoluto e percentuale. Ma per chi lavora seriamente il punto non è la multa: le piattaforme hanno già i loro sistemi di etichettatura attivi, e i clienti più strutturati inizieranno a chiedere garanzie di conformità direttamente nei brief.</p>
+
+<h2>Cosa NON cambia</h2>
+
+<p>Tre punti fermi, per togliere di mezzo le paure inutili.</p>
+
+<p>Nessun obbligo retroattivo per i contenuti <strong>generati</strong> prima del 2 agosto 2026. La Commissione incoraggia la dichiarazione volontaria quando è possibile e appropriata, ma non è un obbligo.</p>
+
+<p>L'AI di supporto non è il bersaglio della norma. Correzioni, pulizia del girato, ritocchi standard: l'editing ordinario resta editing ordinario. Il perimetro riguarda i contenuti generati o manipolati in modo sostanziale che possono apparire autentici.</p>
+
+<p>E soprattutto: l'articolo 50 non vieta la produzione di video con l'AI. Introduce obblighi di trasparenza in determinati casi. Restano naturalmente in vigore le regole che esistevano già — privacy, diritto d'immagine, proprietà intellettuale, disciplina della pubblicità — che con l'AI Act non spariscono.</p>
+
+<h2>Come lo gestisco in produzione</h2>
+
+<p>Qui parlo da chi produce, non da giurista. In vent'anni di post-produzione ho imparato che le regole nuove diventano gestibili quando il lavoro ha un metodo. Queste sono le cinque abitudini che aiutano a impostare un progetto AI in modo conforme, documentabile e verificabile, senza sacrificare un millimetro dell'idea creativa.</p>
+
+<ol class="list-decimal pl-6 space-y-3 my-4">
+<li><strong>La trasparenza si decide nel brief — e nel contratto.</strong> Chi è il deployer, chi risponde della dichiarazione, dove va, che forma ha, come convive con la direzione creativa. Se lo decidi dopo, la stai appiccicando; se lo decidi prima, la stai disegnando.</li>
+<li><strong>Traccio ogni shot.</strong> Quali inquadrature sono generate, con quale modello, in quale versione. Un log di produzione che a fine lavoro risponde in cinque minuti alla domanda dell'ufficio legale del cliente: "cosa è AI e cosa no?". Sembra burocrazia, è precisione — la stessa che serve per gestire le revisioni.</li>
+<li><strong>Scelgo strumenti che marcano gli output e preservo, quando possibile, le informazioni di provenienza.</strong> La pipeline di post-produzione conta: ricompressioni, transcodifiche ed export possono compromettere metadati o altre forme di marcatura tecnica. Non sempre è possibile conservarle integralmente, ma verificarne il comportamento fa parte di una pipeline responsabile — ed è il tipo di attenzione che distingue un fornitore da un partner.</li>
+<li><strong>Coordino la dichiarazione nel video e le etichette delle piattaforme.</strong> I sistemi nativi di YouTube, Meta o TikTok sono un livello aggiuntivo di trasparenza, non necessariamente un sostituto della dichiarazione incorporata nel contenuto. Per prudenza operativa, progetto la dichiarazione in modo che continui ad avere senso anche quando il video viene scaricato, incorporato o ricondiviso altrove.</li>
+<li><strong>Nei progetti ibridi delimito il perimetro.</strong> Girato reale più shot generati è il caso più frequente nelle produzioni vere — è il territorio in cui lavoro ogni giorno, ed è quello dove la valutazione shot per shot serve di più. La dichiarazione deve riflettere la realtà del progetto: né nascondere l'AI, né gonfiarla.</li>
+</ol>
+
+<p>È lo stesso approccio che racconto in <a href="/blog/ai-vs-vfx-tradizionale-come-scegliere" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Come scelgo tra AI e VFX tradizionale per ogni shot</a>: la decisione tecnica e quella di trasparenza nascono nello stesso momento, davanti allo stesso storyboard. E in progetti come <a href="/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Doppelganger</a>, dove l'AI era parte del concept dichiarato fin dall'inizio, la trasparenza non ha tolto nulla — ha aggiunto credibilità.</p>
+
+<h2>Il punto vero</h2>
+
+<p>La trasparenza non è una tassa sulla creatività. Il pubblico reagisce male all'AI nascosta e scoperta dopo, non all'AI dichiarata bene. Un'etichetta pensata con cura comunica una cosa precisa: dietro questo lavoro c'è qualcuno che sa quello che fa.</p>
+
+<p>Chi lavora con metodo, in fondo, era pronto prima che diventasse legge. La tracciabilità degli shot, la cura dei metadati, la coerenza tra contenuto e piattaforme: non nascono dall'AI Act, nascono da come si lavora quando si lavora bene.</p>
+
+<p>Una precisazione doverosa: non sono un avvocato, e per i casi specifici serve un legale. Quello che posso garantire è la parte di produzione — impostare un progetto video con l'AI perché sia preparato fin dall'origine a rispettare gli obblighi di trasparenza, senza che l'idea ne paghi il prezzo.</p>
+
+<p><strong>Hai un progetto video con l'AI in partenza e vuoi impostarlo bene dal primo giorno? <a href="/contatti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Parliamone</a>.</strong> Oppure dai un'occhiata a come lavoro nella pagina <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI Video Production</a>.</p>
+
+<h2>Domande rapide</h2>
+
+<p><strong>Tutti i video fotorealistici generati con l'AI sono deepfake?</strong></p>
+<p>No, non automaticamente. Vanno valutati la somiglianza con soggetti esistenti o plausibili, il rischio che appaiano autentici e il contesto nel quale vengono mostrati. I tre criteri devono valere insieme.</p>
+
+<p><strong>Devo etichettare i video AI generati prima del 2 agosto 2026?</strong></p>
+<p>No. Non c'è obbligo retroattivo per i contenuti generati prima di quella data. La Commissione incoraggia la dichiarazione volontaria quando è possibile e appropriata.</p>
+
+<p><strong>Uno spot in animazione dichiaratamente stilizzata va etichettato?</strong></p>
+<p>Se nessuno può ragionevolmente scambiarlo per riprese autentiche, difficilmente soddisfa i tre criteri del deepfake e l'obbligo dell'articolo 50 non dovrebbe scattare. Se invece il contenuto costituisce comunque un deepfake inserito in un'opera creativa, la dichiarazione può essere resa in una forma che non interferisca con la fruizione, per esempio nei crediti o nella descrizione.</p>
+
+<p><strong>Se uso l'AI solo per pulizia, ritocchi o rotoscoping?</strong></p>
+<p>L'editing di supporto non è il bersaglio della norma. Il perimetro riguarda i contenuti generati o manipolati in modo sostanziale che possono apparire autentici.</p>
+
+<p><strong>Quali sono le sanzioni?</strong></p>
+<p>Fino a 15 milioni di euro o, per le imprese, fino al 3% del fatturato mondiale annuo. Per le PMI si applicano criteri e limiti proporzionati, incluso il valore più basso tra importo assoluto e percentuale. Nella pratica, la pressione arriverà prima dalle piattaforme e dagli uffici legali dei clienti che dalle autorità.</p>
+
+<p>Per i casi particolari, il riferimento più immediato sono le <a href="https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">FAQ ufficiali della Commissione</a>, aggiornate regolarmente.</p>`,
+    contentEn: `<p><em>Updated July 24, 2026</em></p>
+
+<p>On August 2, 2026, the transparency obligations of Article 50 of the AI Act — the European regulation on artificial intelligence (Regulation (EU) 2024/1689) — become applicable. For anyone producing or commissioning video, the core point is this: AI-generated or AI-manipulated content that falls under the regulation's definition of a deepfake must carry a perceivable disclosure.</p>
+
+<p>Read that carefully, because the wording is where everything happens: not everything the AI touches needs a label. But what does need one, needs to be done properly — and figuring out where the line sits is an assessment worth making before you go live, not after.</p>
+
+<p>On July 20 the European Commission published its <a href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-transparency-ai-generated-content" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">final guidelines</a> on how the rules apply, so the operational picture is now clear. No need to panic — you need a method. And method happens to be my trade.</p>
+
+<h2>What Article 50 actually says</h2>
+
+<p><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Article 50</a> sets out two distinct obligations, for two different players.</p>
+
+<p><strong>The first concerns the people who build the tools.</strong> Providers of generative AI systems must mark synthetic outputs in a machine-readable format. Solutions already in use across the market include invisible watermarks (such as Google's SynthID), provenance metadata and cryptographic methods based on content provenance standards. The regulation, however, does not mandate any single technology: it requires solutions that are effective, interoperable, robust and reliable, as far as technically feasible. In a standard production workflow, this obligation sits with the system provider — not with the production that simply uses the tool.</p>
+
+<p><strong>The second concerns the people who use those tools.</strong> When a piece of content qualifies as a deepfake under the regulation, whoever deploys it must disclose its artificial nature in a way people can perceive. (There is also a separate obligation covering AI-generated text on matters of public interest published without adequate editorial control — but that is not our field, and I won't cover it here.)</p>
+
+<p>And here the definition matters. The guidelines set out <strong>three cumulative criteria</strong> for content to qualify as a deepfake: it must bear a high degree of resemblance to the subject it simulates; it must depict something that exists, could plausibly exist or could have existed; and it must be capable of falsely appearing authentic or truthful to the viewer. That third criterion is not abstract: it also depends on the context of publication, the message of the content and the expectations of the audience.</p>
+
+<p>So the correct chain is not "AI video, therefore label." It is: AI-generated or manipulated video → assessment of the three criteria and the context → possible qualification as a deepfake → proportionate form of disclosure.</p>
+
+<h2>"So is my ad a deepfake?"</h2>
+
+<p>It's the question everyone is asking right now, and it's the right one. The answer is not automatic.</p>
+
+<p>If your video contains photorealistic people, places or situations that a viewer could reasonably interpret as authentic footage, the content may fall under the deepfake definition. But realism alone is not enough: the subject depicted, the message, the context of distribution and the audience's expectations all count. That's why the assessment has to be made project by project.</p>
+
+<p>The guidelines offer an example anyone in post production will appreciate: generated backdrops, special effects and technical work embedded in a normal film production may not falsely appear authentic, precisely because the audience doesn't read them as documentation of reality. Twenty years of VFX taught me the same thing from the other side: there's a pact between the viewer and the work, and that pact is part of the context.</p>
+
+<p>There is also a specific regime for deepfakes that form part of evidently artistic, creative, satirical or fictional works: the disclosure is still required, but it can take a form that doesn't get in the way of experiencing the work — typically the end credits, the description, the project page.</p>
+
+<p>And advertising? It sits in the middle: a commercial is a creative work, but it's also commercial communication aimed at the public. There is no single graphic solution that fits every project. The prudent approach is to plan a clear but proportionate disclosure, weighing the format, the context of distribution and the creative nature of the work. With one fixed point: as a general rule, the disclosure must be perceivable at the latest at the viewer's first exposure. Less intrusive options — such as a note in the end credits — are reserved for cases where the creative-works regime genuinely applies.</p>
+
+<h2>Who is responsible</h2>
+
+<p>The regulation distinguishes between providers — those who develop and supply the system — and deployers, meaning the person or organisation using it under their own authority. In a video production, the deployer might be the agency, the production company, the professional or the client, depending on who actually controls how the tools are used. That's why responsibility, traceability and the form of disclosure should also be defined contractually — before the project starts, not at delivery.</p>
+
+<p>One misconception worth clearing up straight away: the tool's automatic watermark does not cover you. Machine-readable marking and perceivable disclosure are two separate obligations. And there's a detail few have noticed: for systems already placed on the market before August 2, 2026, <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Regulation (EU) 2026/1744</a> gives providers until December 2, 2026 to bring their technical marking into line — but the disclosure obligation for deepfakes remains applicable from August 2. Even if your tool doesn't mark its outputs yet, the assessment is still yours to make.</p>
+
+<p>Violations of Article 50 can carry fines of up to €15 million or, for companies, up to 3% of total worldwide annual turnover, whichever is higher. For SMEs, proportionate criteria and caps apply, including the lower of the absolute amount and the percentage. But for anyone working seriously, the fine is not the point: platforms already have their AI labelling systems live, and the more structured clients will start asking for compliance guarantees directly in the brief.</p>
+
+<h2>What does NOT change</h2>
+
+<p>Three fixed points, to clear away the unnecessary fears.</p>
+
+<p>No retroactive obligation for content <strong>generated</strong> before August 2, 2026. The Commission encourages voluntary disclosure where possible and appropriate, but it is not required.</p>
+
+<p>Assistive AI is not the target of the rule. Corrections, cleanup, standard retouching: ordinary editing remains ordinary editing. The scope covers content that is generated, or substantially manipulated, in a way that can appear authentic.</p>
+
+<p>And above all: Article 50 does not prohibit producing video with AI. It introduces transparency obligations in defined cases. The rules that already existed — privacy, image rights, intellectual property, advertising law — naturally remain in force; the AI Act does not make them disappear.</p>
+
+<h2>How I handle it in production</h2>
+
+<p>I'm speaking here as someone who produces, not as a lawyer. Twenty years in post production have taught me that new rules become manageable when the work has a method. These are the five habits that help set up an AI project in a way that is compliant, documentable and verifiable — without sacrificing a millimetre of the creative idea.</p>
+
+<ol class="list-decimal pl-6 space-y-3 my-4">
+<li><strong>Transparency is decided in the brief — and in the contract.</strong> Who the deployer is, who answers for the disclosure, where it goes, what form it takes, how it lives alongside the creative direction. Decide it afterwards and you're bolting it on; decide it upfront and you're designing it in.</li>
+<li><strong>I track every shot.</strong> Which shots are generated, with which model, in which version. A production log that, at the end of the job, answers the client's legal team in five minutes: "what's AI and what isn't?". It looks like paperwork; it's precision — the same precision you need to manage revisions.</li>
+<li><strong>I choose tools that mark their outputs, and I preserve provenance information where possible.</strong> The post production pipeline matters: re-compressions, transcodes and exports can compromise metadata or other forms of technical marking. It's not always possible to preserve them fully, but verifying how your pipeline behaves is part of working responsibly — and it's the kind of attention that separates a supplier from a partner.</li>
+<li><strong>I coordinate the in-video disclosure with platform labels.</strong> The native systems on YouTube, Meta or TikTok are an additional layer of transparency, not necessarily a substitute for a disclosure embedded in the content itself. As a matter of operational prudence, I design the disclosure so it still makes sense when the video is downloaded, embedded or reshared elsewhere.</li>
+<li><strong>On hybrid projects, I map the perimeter.</strong> Real footage plus generated shots is the most common scenario in actual productions — it's the territory I work in every day, and it's where shot-by-shot assessment matters most. The disclosure has to reflect the reality of the project: neither hiding the AI nor inflating it.</li>
+</ol>
+
+<p>It's the same approach I describe in <a href="/en/blog/ai-vs-traditional-vfx-how-to-choose" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">How I choose between AI and traditional VFX for every shot</a>: the technical decision and the transparency decision are born at the same moment, in front of the same storyboard. And on projects like <a href="/en/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Doppelganger</a>, where AI was part of the declared concept from day one, transparency took nothing away — it added credibility.</p>
+
+<h2>The real point</h2>
+
+<p>Transparency is not a tax on creativity. Audiences react badly to AI that was hidden and discovered later — not to AI that was declared well. A carefully designed label communicates one precise thing: there is someone behind this work who knows what they're doing.</p>
+
+<p>Those who work with a method were, in a sense, ready before it became law. Shot-level traceability, care for metadata, consistency between content and platforms: these don't come from the AI Act. They come from how you work when you work properly.</p>
+
+<p>One necessary note: I am not a lawyer, and specific cases call for legal counsel. What I can guarantee is the production side — setting up an AI video project so it's prepared from the outset to meet its transparency obligations, without the idea paying the price.</p>
+
+<p><strong>Got an AI video project about to start, and want it set up right from day one? <a href="/en/contact" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Let's talk</a>.</strong> Or take a look at how I work on the <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI Video Production</a> page.</p>
+
+<h2>Quick answers</h2>
+
+<p><strong>Is every photorealistic AI-generated video a deepfake?</strong></p>
+<p>No, not automatically. What has to be assessed is the resemblance to existing or plausible subjects, the risk of the content appearing authentic, and the context in which it is shown. All three criteria must hold together.</p>
+
+<p><strong>Do I need to label AI videos generated before August 2, 2026?</strong></p>
+<p>No. There is no retroactive obligation for content generated before that date. The Commission encourages voluntary disclosure where possible and appropriate.</p>
+
+<p><strong>Does a deliberately stylised animated ad need a label?</strong></p>
+<p>If no one could reasonably mistake it for authentic footage, it is unlikely to meet the three deepfake criteria, and the Article 50 obligation should not apply. If the content does constitute a deepfake embedded in a creative work, the disclosure can take a form that doesn't interfere with the work — for example in the credits or the description.</p>
+
+<p><strong>What if I only use AI for cleanup, retouching or rotoscoping?</strong></p>
+<p>Assistive editing is not the target of the rule. The scope covers content that is generated, or substantially manipulated, in a way that can appear authentic.</p>
+
+<p><strong>What are the penalties?</strong></p>
+<p>Up to €15 million or, for companies, up to 3% of total worldwide annual turnover. For SMEs, proportionate criteria and caps apply, including the lower of the absolute amount and the percentage. In practice, the pressure will come from platforms and clients' legal departments before it comes from the authorities.</p>
+
+<p>For edge cases, the most immediate reference is the <a href="https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Commission's official FAQ</a>, which is updated regularly.</p>`,
+  },
+
+  {
     slug: 'organizzare-progetto-film-ai-prompt-reference-continuita',
     slugEn: 'how-to-organize-ai-film-project-prompts-references-continuity',
     titleIt: 'Come organizzare un progetto film AI senza perdere prompt, take e decisioni',
@@ -431,32 +634,32 @@ export const posts: BlogPost[] = [
     keywordTarget: 'AI vs VFX tradizionale',
     thumbnail: '/images/blog/ai-vs-vfx-tradizionale-come-scegliere-workflow.jpg',
     thumbnailAlt: { it: 'AI vs VFX tradizionale - come scegliere', en: 'AI vs traditional VFX - how to choose' },
-    contentIt: `< h2 > La domanda che mi fanno tutti </h2>
-    < p > "Ma con l'AI, i VFX tradizionali servono ancora?" Me lo chiedono registi, producer, agenzie.La risposta è sì — ma non per tutto.E non come prima.</p>
-        < p > Uso strumenti di AI generativa(Runway, Veo, Kling) ogni giorno, accanto a After Effects, Nuke e 3ds Max.Non ho sostituito uno con l'altro. Ho aggiunto strumenti alla cassetta degli attrezzi. La scelta dipende dalla shot, dal progetto, dal budget e dal risultato che serve.</p>
-            < p > Ecco come decido concretamente.</p>
+    contentIt: `<h2>La domanda che mi fanno tutti</h2>
+<p>"Ma con l'AI, i VFX tradizionali servono ancora?" Me lo chiedono registi, producer, agenzie. La risposta è sì — ma non per tutto. E non come prima.</p>
+<p>Uso strumenti di AI generativa (Runway, Veo, Kling) ogni giorno, accanto a After Effects, Nuke e 3ds Max. Non ho sostituito uno con l'altro. Ho aggiunto strumenti alla cassetta degli attrezzi. La scelta dipende dalla shot, dal progetto, dal budget e dal risultato che serve.</p>
+<p>Ecco come decido concretamente.</p>
 
-                < h2 > Quando scelgo l'AI</h2>
-                    < p > <strong>Concept e pre - visualizzazione.< /strong> Devo esplorare dieci direzioni creative per un regista? L'AI genera varianti in ore, non settimane. Posso mostrare tre look diversi per una scena prima ancora di girare un frame. Per chi deve presentare un'idea a un cliente o a un finanziatore, questo cambia tutto.</p >
-                        <p><strong>Elementi ambientali e sfondi.< /strong> Cieli, paesaggi, texture organiche — l'AI produce materiale di base eccellente che poi raffino in compositing. Un cielo drammatico generato con AI e integrato in una ripresa reale può essere indistinguibile da uno stock di altissima gamma.</p >
-                            <p><strong>Contenuti social e digital con tempi stretti.< /strong> Quando il budget è contenuto e la destinazione è Instagram o un sito web, l'AI permette di produrre contenuti visivamente ricchi a una frazione del costo tradizionale.</p >
-                                <p><strong>Progetti narrativi sperimentali.< /strong> Cortometraggi e concept interamente AI-generated. Un nuovo territorio creativo dove l'esperienza cinematografica tradizionale è il vero differenziale — perché l'AI genera frame, ma non racconta storie. Quello lo fai tu.</p >
+<h2>Quando scelgo l'AI</h2>
+<p><strong>Concept e pre-visualizzazione.</strong> Devo esplorare dieci direzioni creative per un regista? L'AI genera varianti in ore, non settimane. Posso mostrare tre look diversi per una scena prima ancora di girare un frame. Per chi deve presentare un'idea a un cliente o a un finanziatore, questo cambia tutto.</p>
+<p><strong>Elementi ambientali e sfondi.</strong> Cieli, paesaggi, texture organiche — l'AI produce materiale di base eccellente che poi raffino in compositing. Un cielo drammatico generato con AI e integrato in una ripresa reale può essere indistinguibile da uno stock di altissima gamma.</p>
+<p><strong>Contenuti social e digital con tempi stretti.</strong> Quando il budget è contenuto e la destinazione è Instagram o un sito web, l'AI permette di produrre contenuti visivamente ricchi a una frazione del costo tradizionale.</p>
+<p><strong>Progetti narrativi sperimentali.</strong> Cortometraggi e concept interamente AI-generated. Un nuovo territorio creativo dove l'esperienza cinematografica tradizionale è il vero differenziale — perché l'AI genera frame, ma non racconta storie. Quello lo fai tu.</p>
 
-                                    <h2>Quando scelgo i VFX tradizionali </h2>
-                                        < p > <strong>Integrazione con riprese live.< /strong> Devo inserire un elemento 3D in una ripresa reale con camera in movimento? Serve camera tracking preciso, lighting match, compositing multilayer. L'AI non fa questo — non ancora, e quando lo farà, servirà comunque qualcuno che sappia valutare se il risultato è credibile.</p >
-                                            <p><strong>Controllo al pixel.< /strong> Spot pubblicitari per brand di lusso, film per il cinema, qualsiasi progetto dove ogni frame deve essere perfetto. L'AI produce output con artefatti sottili che un pubblico distratto non nota, ma un direttore creativo sì. Quando serve perfezione, servo io con i miei strumenti tradizionali.</p >
-                                                <p><strong>Coerenza su sequenze lunghe.< /strong> L'AI fatica a mantenere coerenza visiva tra shot consecutive — stesso personaggio, stessa luce, stesso ambiente. Per una sequenza narrativa di 30 secondi o più, il workflow tradizionale è ancora più affidabile e spesso più veloce.</p >
-                                                    <p><strong>Rotoscoping e clean - up.< /strong> Rimuovere un microfono dal frame, isolare un soggetto frame-by-frame, eliminare riflessi. Lavoro di precisione dove l'AI aiuta (Runway ha un buon auto-roto) ma non sostituisce l'occhio.</p >
+<h2>Quando scelgo i VFX tradizionali</h2>
+<p><strong>Integrazione con riprese live.</strong> Devo inserire un elemento 3D in una ripresa reale con camera in movimento? Serve camera tracking preciso, lighting match, compositing multilayer. L'AI non fa questo — non ancora, e quando lo farà, servirà comunque qualcuno che sappia valutare se il risultato è credibile.</p>
+<p><strong>Controllo al pixel.</strong> Spot pubblicitari per brand di lusso, film per il cinema, qualsiasi progetto dove ogni frame deve essere perfetto. L'AI produce output con artefatti sottili che un pubblico distratto non nota, ma un direttore creativo sì. Quando serve perfezione, servo io con i miei strumenti tradizionali.</p>
+<p><strong>Coerenza su sequenze lunghe.</strong> L'AI fatica a mantenere coerenza visiva tra shot consecutive — stesso personaggio, stessa luce, stesso ambiente. Per una sequenza narrativa di 30 secondi o più, il workflow tradizionale è ancora più affidabile e spesso più veloce.</p>
+<p><strong>Rotoscoping e clean-up.</strong> Rimuovere un microfono dal frame, isolare un soggetto frame-by-frame, eliminare riflessi. Lavoro di precisione dove l'AI aiuta (Runway ha un buon auto-roto) ma non sostituisce l'occhio.</p>
 
-                                                        <h2>E quando li combino </h2>
-                                                            < p > Questa è la parte interessante — e il motivo per cui il profilo ibrido è il più forte sul mercato.</p>
-                                                                < p > Un progetto recente: il regista voleva un cielo apocalittico per una scena esterna.Soluzione tradizionale: matte painting in Photoshop, proiezione 3D, compositing in Nuke.Tempo stimato: due giorni.Soluzione ibrida: ho generato 20 varianti di cielo con AI, selezionato la migliore, poi l'ho raffinata in After Effects — color match, integrazione con la ripresa, correzione artefatti. Tempo reale: quattro ore. Risultato identico.</p>
-                                                                    < p > L'AI ha fatto il lavoro "pesante" (generare la base), l'esperienza ha fatto il lavoro "intelligente"(selezionare, raffinare, integrare).Questo è il workflow del futuro — ed è già il mio presente.</p>
+<h2>E quando li combino</h2>
+<p>Questa è la parte interessante — e il motivo per cui il profilo ibrido è il più forte sul mercato.</p>
+<p>Un progetto recente: il regista voleva un cielo apocalittico per una scena esterna. Soluzione tradizionale: matte painting in Photoshop, proiezione 3D, compositing in Nuke. Tempo stimato: due giorni. Soluzione ibrida: ho generato 20 varianti di cielo con AI, selezionato la migliore, poi l'ho raffinata in After Effects — color match, integrazione con la ripresa, correzione artefatti. Tempo reale: quattro ore. Risultato identico.</p>
+<p>L'AI ha fatto il lavoro "pesante" (generare la base), l'esperienza ha fatto il lavoro "intelligente" (selezionare, raffinare, integrare). Questo è il workflow del futuro — ed è già il mio presente.</p>
 
-                                                                        < p > Se vuoi capire meglio come funzionano i miei < a href = "/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" > effetti visivi tradizionali < /a> o il mio approccio alla <a href="/ai - video" class="text - accent underline underline - offset - 2 hover: text - text - primary transition - colors">produzione video con AI</a>, ho pagine dedicate a entrambi.</p>
+<p>Se vuoi capire meglio come funzionano i miei <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi tradizionali</a> o il mio approccio alla <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">produzione video con AI</a>, ho pagine dedicate a entrambi.</p>
 
-                                                                            < h2 > La regola che applico </h2>
-                                                                                < p > Non è complicata: <strong>se il risultato AI è al 90 % di qualità in un decimo del tempo, uso l'AI e porto quel 90% al 100% con gli strumenti tradizionali.</strong> Se il risultato AI è al 60%, uso direttamente i VFX tradizionali. La capacità di giudicare dove siamo su quella scala è ciò che fa la differenza — e viene solo dall'esperienza.</p>`,
+<h2>La regola che applico</h2>
+<p>Non è complicata: <strong>se il risultato AI è al 90% di qualità in un decimo del tempo, uso l'AI e porto quel 90% al 100% con gli strumenti tradizionali.</strong> Se il risultato AI è al 60%, uso direttamente i VFX tradizionali. La capacità di giudicare dove siamo su quella scala è ciò che fa la differenza — e viene solo dall'esperienza.</p>`,
 
     contentEn: `<h2>The question everyone asks me</h2>
   <p>"With AI, are traditional VFX still needed?" Directors, producers, agencies all ask me this. The answer is yes — but not for everything. And not like before.</p>
