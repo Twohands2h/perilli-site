@@ -202,7 +202,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'Quanto costa un progetto AI video production?',
-        answer: 'Un progetto AI completo con VFX integrato, post-produzione professionale e mastering parte da €5.000. Il prezzo riflette il workflow ibrido — generazione AI diretta, selezione e iterazione degli output, compositing con footage reale, color grading e finishing. Non è un "video generato con l\'AI", è un video prodotto professionalmente che usa l\'AI come uno degli strumenti. Progetti più ampi con serie di contenuti possono superare €15.000.',
+        answer: 'Un progetto AI completo con VFX integrato, post-produzione professionale e mastering parte da €5.000. Il prezzo riflette il workflow ibrido — generazione AI diretta, selezione e iterazione degli output, compositing con footage reale, color grading e finishing. Non è un "video generato con l\'AI", è un video prodotto professionalmente che usa l\'AI come uno degli strumenti. Progetti più ampi con serie di contenuti possono superare €15.000. Le lavorazioni su commessa per fiction e lungometraggio seguono un percorso diverso: si parte da look development e test sugli shot rappresentativi, e il preventivo viene costruito su numero di inquadrature, complessità, requisiti di pipeline e consegna. Non è un listino.',
       },
       {
         question: 'Che strumenti AI usi per la produzione video?',
@@ -210,7 +210,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'Posso usare l\'AI per creare un cortometraggio o una serie?',
-        answer: 'Sì, il mercato dei cortometraggi e delle serie AI è in rapida crescita. La sfida principale è mantenere coerenza visiva e narrativa tra le scene. Qui entra in gioco l\'esperienza: chi ha 20 anni di montaggio e regia sa costruire ritmo, continuità e storytelling anche con materiale generato dall\'AI. È esattamente il tipo di progetto in cui il mio profilo ibrido dà il massimo valore.',
+        answer: 'Sì, il mercato dei cortometraggi e delle serie AI è in rapida crescita. La sfida principale è mantenere coerenza visiva e narrativa tra le scene. Qui entra in gioco l\'esperienza: chi ha vent\'anni di post-produzione, montaggio e VFX sa costruire ritmo, continuità e storytelling anche con materiale generato dall\'AI. È esattamente il tipo di progetto in cui il mio profilo ibrido dà il massimo valore.',
       },
     ],
     en: [
@@ -224,7 +224,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'How much does an AI video production project cost?',
-        answer: 'A complete AI project with integrated VFX, professional post-production and mastering starts from €5,000. The price reflects the hybrid workflow — directed AI generation, output selection and iteration, compositing with real footage, color grading and finishing. It is not an "AI-generated video", it is a professionally produced video that uses AI as one of many tools. Larger projects with content series can exceed €15,000.',
+        answer: 'A complete AI project with integrated VFX, professional post-production and mastering starts from €5,000. The price reflects the hybrid workflow — directed AI generation, output selection and iteration, compositing with real footage, color grading and finishing. It is not an "AI-generated video", it is a professionally produced video that uses AI as one of many tools. Larger projects with content series can exceed €15,000. Commissioned work for scripted and feature projects follows a different route: it starts with look development and representative shot tests, and the quote is built on shot count, complexity, pipeline and delivery requirements. It is not a list price.',
       },
       {
         question: 'What AI tools do you use for video production?',
@@ -232,7 +232,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'Can I use AI to create a short film or series?',
-        answer: 'Yes, the market for AI short films and series is growing rapidly. The main challenge is maintaining visual and narrative consistency between scenes. This is where experience matters: someone with 20 years of editing and directing knows how to build rhythm, continuity and storytelling even with AI-generated material. It is exactly the type of project where my hybrid profile delivers the most value.',
+        answer: 'Yes, the market for AI short films and series is growing rapidly. The main challenge is maintaining visual and narrative consistency between scenes. This is where experience matters: someone with twenty years of post-production, editing and VFX knows how to build rhythm, continuity and storytelling even with AI-generated material. It is exactly the type of project where my hybrid profile delivers the most value.',
       },
     ],
   },
