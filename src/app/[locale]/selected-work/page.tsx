@@ -1,3 +1,4 @@
+import { unstable_setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
 /**
@@ -16,11 +17,9 @@ const BASE_URL = "https://pieroperilli.com";
 
 type Props = { params: { locale: string } };
 
-export function generateStaticParams() {
-  return [{ locale: "it" }, { locale: "en" }];
-}
-
-export function generateMetadata({ params: { locale } }: Props): Metadata {
+export async function generateMetadata({
+  params: { locale },
+}: Props): Promise<Metadata> {
   const en = locale === "en";
   const path = en ? "/en/selected-work" : "/selected-work";
 
@@ -72,6 +71,7 @@ const BODY =
 const CAP = "text-sm text-text-muted leading-relaxed max-w-2xl mt-4 md:mt-5";
 
 export default function SelectedWorkPage({ params: { locale } }: Props) {
+  unstable_setRequestLocale(locale);
   const t = locale === "en" ? copy.en : copy.it;
 
   return (
