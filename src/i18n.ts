@@ -24,6 +24,7 @@ export const pathnames = {
     en: '/post-production',
   },
   '/ai-video': '/ai-video',
+  '/selected-work': '/selected-work',
   '/portfolio': '/portfolio',
   '/blog': '/blog',
   '/contatti': {

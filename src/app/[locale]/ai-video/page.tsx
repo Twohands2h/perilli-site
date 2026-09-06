@@ -26,18 +26,19 @@ const contentIT = {
 
   introTitle: 'L\'AI non Sostituisce l\'Esperienza. La Moltiplica.',
   introText: `<p>Tutti possono generare un video con l'AI. Pochi sanno quando il risultato è sufficiente, quando serve intervento manuale e come combinare i due. Questa è la differenza tra un video "generato dall'AI" e un video professionale che usa l'AI come strumento.</p>
-<p>Integro Runway, Veo, Kling e gli strumenti di generazione video AI nel mio <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow VFX</a> e di <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> — lo stesso workflow con cui lavoro su film e spot da vent'anni. L'AI produce la materia prima, l'esperienza la trasforma in un risultato che funziona davvero.</p>
+<p>Integro Runway, Veo, Kling, Seedance 2.5 e gli strumenti di generazione video AI nel mio <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow VFX</a> e di <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a> — lo stesso workflow con cui lavoro su film e spot da vent'anni. L'AI produce la materia prima, l'esperienza la trasforma in un risultato che funziona davvero.</p>
 <p>Il mio vantaggio è il contesto. Venti anni di post-produzione significano sapere come deve apparire un'immagine finale, quali artefatti sono accettabili e quali no, come integrare output AI con riprese reali, come mantenere coerenza visiva tra shot generate. Questo know-how non si improvvisa.</p>`,
   introImage: '/images/services/ai-video-production-workflow-professionale-roma.jpg',
   introImageAlt: 'AI video production — workflow professionale con intelligenza artificiale, Roma',
-  introVideo: '/videos/ai-video-showreel.mp4',
+  introVideo: '/videos/showreel-ai.mp4',
+  introVideoPoster: '/images/ai-video/showreel-ai-poster.webp',
 
   servicesTitle: 'Come uso l\'AI nella produzione video',
   services: [
     {
       name: 'Generazione Video',
       tag: 'Da Prompt e Reference',
-      description: `<p>Creo sequenze video partendo da descrizioni testuali, immagini di riferimento o storyboard. Seleziono lo strumento più adatto al risultato richiesto — Runway per il controllo, Veo per la qualità cinematografica, Kling per le scene dinamiche. Scrivere un prompt efficace richiede conoscenza cinematografica: sapere come descrivere un'inquadratura, un movimento di camera, un tipo di luce in termini che l'AI interpreta correttamente.</p>`,
+      description: `<p>Creo sequenze partendo da descrizioni, immagini di riferimento, storyboard o footage esistente. La scelta del modello viene dopo: prima vengono inquadratura, ottica, movimento, luce, continuità e funzione narrativa dello shot.</p>`,
     },
     {
       name: 'Workflow Ibrido',
@@ -83,7 +84,7 @@ const contentIT = {
   highlight: {
     label: 'IL METODO',
     title: 'Mi sono costruito lo strumento che non esisteva',
-    text: `<p>Una produzione AI genera centinaia di clip, prompt, reference e versioni. Il vero problema non è generare — è mantenere il controllo: quale prompt ha prodotto quale shot, quale reference definisce quale personaggio, quale versione è quella approvata.</p>
+    text: `<p>Quel registro non lo tengo a mano. Su una produzione con centinaia di clip, reference e versioni, tenerlo a mano significa perdere la relazione fra ciò che è stato generato e ciò che è stato approvato.</p>
 <p>Per questo ho costruito <strong class="text-text-primary">Rewake</strong>, un film memory system per l'AI filmmaking: scene, shot, take, prompt e decisioni restano collegati in un unico sistema, e il progetto rimane leggibile nel tempo — anche a distanza di mesi.</p>
 <p>Per chi mi affida un progetto AI significa una cosa concreta: produzione ordinata, coerenza tra le shot, versioni sotto controllo. È la mentalità dell'artigiano: se lo strumento non esiste, te lo costruisci.</p>`,
     logo: '/images/services/rewake-logo.webp',
@@ -95,12 +96,46 @@ const contentIT = {
     linkEvent: 'rewake_click',
   },
 
-  tools: ['Runway Gen-3', 'Veo 3.1', 'Kling AI', 'Midjourney', 'ComfyUI', 'Rewake', 'After Effects', 'DaVinci Resolve', 'Unreal Engine 5'],
+  // ---- BLOCCHI NUOVI ----------------------------------------------------
+  //
+  // BREAKDOWN: il video di questa pagina è INDIPENDENTE da quello di
+  // /selected-work. Per cambiarlo basta sostituire `video` e `poster` qui
+  // sotto. Stringa vuota in `video` = sezione non renderizzata, nessun
+  // player rotto. Ricordati di farlo in ENTRAMBE le lingue.
+
+  breakdown: {
+    title: 'Breakdown',
+    text: 'Cosa c\'era prima, cosa è stato generato, cosa è stato compositato. La parte che non si vede è quella che decide se un\'inquadratura regge dentro un montaggio.',
+    video: '/videos/breakdown-ai.mp4',
+    poster: '/images/ai-video/breakdown-ai-poster.webp',
+  },
+
+  identity: {
+    title: 'Tenuta dell\'identità',
+    text: 'Stesso soggetto attraverso angoli, focali e schemi di luce diversi.',
+    caption: 'La coerenza di un volto non si valuta su una singola immagine ma attraverso una sequenza. Per persone reali lavoro solo su asset autorizzati e sulla pipeline concordata con la produzione.',
+    // Array vuoto = sezione non renderizzata. Componente pronto, nessun placeholder.
+    images: [] as string[],
+  },
+
+  method: {
+    title: 'Come lavoro',
+    items: [
+      { label: 'Look development', text: 'Prima di produrre una sequenza definisco uno o più shot target: composizione, ottica, luce, movimento, texture e continuità con le inquadrature adiacenti. Si approva il linguaggio visivo prima di scalare la produzione.' },
+      { label: 'Produzione per famiglie di shot', text: 'Gli shot non vengono trattati come clip isolate. Li raggruppo per personaggio, ambiente, schema luce o problema tecnico, così reference e decisioni restano coerenti.' },
+      { label: 'Tracciabilità', text: 'Ogni inquadratura mantiene il proprio storico di reference, prompt, versioni e decisioni approvate.' },
+      { label: 'VFX e finishing', text: 'L\'output generativo è materiale di partenza. Compositing, cleanup, integrazione con live action, color match e finishing vengono trattati come qualunque altro shot di post-produzione.' },
+      { label: 'Delivery', text: 'Consegna nel formato concordato con la pipeline del progetto, più viewing copy. Il formato di conform viene scelto per preservare il lavoro successivo di compositing, colore e finalizzazione, non per attribuire alla sorgente generativa informazioni che non possiede.' },
+      { label: 'Round', text: 'Note consolidate da un solo referente. Una variazione sullo stesso shot è una nota; un cambio di angolo, ambiente o costume è una rigenerazione, e si tratta come inquadratura nuova. Il numero di round inclusi si definisce a preventivo.' },
+    ],
+  },
+
+  tools: ['Runway', 'Veo', 'Kling', 'Seedance', 'ComfyUI', 'Rewake', 'Nuke', 'After Effects', 'DaVinci Resolve', 'Unreal Engine'],
 
   recentWorkTitle: 'Progetti AI Video',
   recentWork: [
-    { title: 'Roche — Jingle natalizio AI-generated', link: '/portfolio/roche-jingle-ai' },
-    { title: 'Doppelganger — Campagna AI per Bando 2025', link: '/portfolio/doppelganger' },
+    { title: 'Roche — Jingle Milano Cortina', link: '/portfolio/roche-jingle-ai' },
+    { title: 'Doppelganger — Campagna AI', link: '/portfolio/doppelganger' },
     { title: '📖 Leggi: Come scelgo tra AI e VFX tradizionale per ogni shot', link: '/blog/ai-vs-vfx-tradizionale-come-scegliere' },
     { title: '📖 Leggi: Come un VFX artist usa l\'AI nel 2026', link: '/blog/come-vfx-artist-usa-ai-workflow-2026' },
   ],
@@ -117,18 +152,19 @@ const contentEN = {
 
   introTitle: "AI Doesn't Replace Experience. It Multiplies It.",
   introText: `<p>Anyone can generate a video with AI. Few know when the result is good enough, when manual work is needed and how to combine both. This is the difference between an "AI-generated video" and a professional video that uses AI as a tool.</p>
-<p>I integrate Runway, Veo, Kling and AI video generation tools into my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> and <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> workflow — the same workflow I've used on films and commercials for twenty years. AI produces the raw material, experience transforms it into a result that actually works.</p>
+<p>I integrate Runway, Veo, Kling, Seedance 2.5 and AI video generation tools into my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> and <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a> workflow — the same workflow I've used on films and commercials for twenty years. AI produces the raw material, experience transforms it into a result that actually works.</p>
 <p>My advantage is context. Twenty years of post-production mean knowing how a final image should look, which artifacts are acceptable and which aren't, how to integrate AI output with real footage, how to maintain visual coherence between generated shots. This know-how can't be improvised.</p>`,
   introImage: '/images/services/ai-video-production-workflow-professionale-roma.jpg',
   introImageAlt: 'AI video production — professional workflow with artificial intelligence, Rome Italy',
-  introVideo: '/videos/ai-video-showreel.mp4',
+  introVideo: '/videos/showreel-ai.mp4',
+  introVideoPoster: '/images/ai-video/showreel-ai-poster.webp',
 
   servicesTitle: 'How I use AI in video production',
   services: [
     {
       name: 'Video Generation',
       tag: 'From Prompts & References',
-      description: `<p>I create video sequences from text descriptions, reference images or storyboards. I select the tool best suited to the required result — Runway for control, Veo for cinematic quality, Kling for dynamic scenes. Writing an effective prompt requires cinematographic knowledge: knowing how to describe a shot, camera movement, lighting type in terms AI can interpret correctly.</p>`,
+      description: `<p>I build sequences from descriptions, reference images, storyboards or existing footage. The choice of model comes afterwards: framing, lens, movement, light, continuity and the narrative function of the shot come first.</p>`,
     },
     {
       name: 'Hybrid Workflow',
@@ -174,7 +210,7 @@ const contentEN = {
   highlight: {
     label: 'THE METHOD',
     title: "I built the tool that didn't exist",
-    text: `<p>An AI production generates hundreds of clips, prompts, references and versions. The real problem isn't generating — it's staying in control: which prompt produced which shot, which reference defines which character, which version is the approved one.</p>
+    text: `<p>I don't keep that record by hand. On a production with hundreds of clips, references and versions, keeping it by hand means losing the link between what was generated and what was approved.</p>
 <p>That's why I built <strong class="text-text-primary">Rewake</strong>, a film memory system for AI filmmaking: scenes, shots, takes, prompts and decisions stay connected in one system, and the project stays readable over time — even months later.</p>
 <p>For anyone who brings me an AI project, this means something concrete: organized production, consistency across shots, versions under control. It's the craftsman's mindset: if the tool doesn't exist, you build it.</p>`,
     logo: '/images/services/rewake-logo.webp',
@@ -186,12 +222,45 @@ const contentEN = {
     linkEvent: 'rewake_click',
   },
 
-  tools: ['Runway Gen-3', 'Veo 3.1', 'Kling AI', 'Midjourney', 'ComfyUI', 'Rewake', 'After Effects', 'DaVinci Resolve', 'Unreal Engine 5'],
+  // ---- NEW BLOCKS -------------------------------------------------------
+  //
+  // BREAKDOWN: il video di questa pagina è INDIPENDENTE da quello di
+  // /selected-work. Per cambiarlo basta sostituire `video` e `poster` qui
+  // sotto. Stringa vuota in `video` = sezione non renderizzata, nessun
+  // player rotto. Ricordati di farlo in ENTRAMBE le lingue.
+
+  breakdown: {
+    title: 'Breakdown',
+    text: 'What was there, what was generated, what was composited. The part you do not usually see is the part that decides whether a shot holds inside a cut.',
+    video: '/videos/breakdown-ai.mp4',
+    poster: '/images/ai-video/breakdown-ai-poster.webp',
+  },
+
+  identity: {
+    title: 'Identity consistency',
+    text: 'The same subject across different angles, lenses and lighting setups.',
+    caption: 'Identity consistency is not judged on a single image but across a sequence. For real people I work only from authorised assets and within the pipeline agreed with production.',
+    images: [] as string[],
+  },
+
+  method: {
+    title: 'How I work',
+    items: [
+      { label: 'Look development', text: 'Before producing a sequence I define one or more target shots: composition, lens, light, movement, texture and continuity with the adjacent shots. The visual language is approved before production scales.' },
+      { label: 'Production by shot families', text: 'Shots are not treated as isolated clips. I group them by character, environment, lighting setup or technical problem, so references and decisions stay consistent.' },
+      { label: 'Traceability', text: 'Every shot keeps its own history of references, prompts, versions and approved decisions.' },
+      { label: 'VFX and finishing', text: 'Generative output is starting material. Compositing, cleanup, live-action integration, colour match and finishing are treated like any other post-production shot.' },
+      { label: 'Delivery', text: 'Delivery in the format agreed with the project pipeline, plus a viewing copy. The conform format is chosen to preserve the compositing, colour and finishing work that follows, not to attribute information to the generative source that it does not have.' },
+      { label: 'Rounds', text: 'Notes consolidated through a single contact. A variation on the same shot is a note; a change of angle, environment or wardrobe is a regeneration, and is treated as a new shot. The number of rounds included is set in the quote.' },
+    ],
+  },
+
+  tools: ['Runway', 'Veo', 'Kling', 'Seedance', 'ComfyUI', 'Rewake', 'Nuke', 'After Effects', 'DaVinci Resolve', 'Unreal Engine'],
 
   recentWorkTitle: 'AI Video Projects',
   recentWork: [
-    { title: 'Roche — AI-generated Christmas jingle', link: '/en/portfolio/roche-jingle-ai' },
-    { title: 'Doppelganger — AI Campaign for Bando 2025', link: '/en/portfolio/doppelganger' },
+    { title: 'Roche — Milano Cortina jingle', link: '/en/portfolio/roche-jingle-ai' },
+    { title: 'Doppelganger — AI campaign', link: '/en/portfolio/doppelganger' },
     { title: '📖 Read: How I choose between AI and traditional VFX for every shot', link: '/en/blog/ai-vs-traditional-vfx-how-to-choose' },
     { title: '📖 Read: How a VFX artist uses AI in 2026', link: '/en/blog/how-vfx-artist-uses-ai-workflow-2026' },
   ],

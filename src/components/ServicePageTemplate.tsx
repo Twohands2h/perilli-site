@@ -47,6 +47,25 @@ interface HighlightBox {
   linkEvent?: string;
 }
 
+interface BreakdownBlock {
+  title: string;
+  text: string;
+  video: string;
+  poster?: string;
+}
+
+interface IdentityBlock {
+  title: string;
+  text: string;
+  caption: string;
+  images: string[];
+}
+
+interface MethodBlock {
+  title: string;
+  items: { label: string; text: string }[];
+}
+
 interface ServicePageProps {
   sectionLabel: string;
   h1: string;
@@ -56,11 +75,15 @@ interface ServicePageProps {
   introImage?: string;
   introImageAlt?: string;
   introVideo?: string;
+  introVideoPoster?: string;
   servicesTitle: string;
   services: ServiceDetail[];
   approachTitle: string;
   pillars: Pillar[];
   highlight?: HighlightBox;
+  breakdown?: BreakdownBlock;
+  identity?: IdentityBlock;
+  method?: MethodBlock;
   recentWorkTitle?: string;
   recentWork?: WorkItem[];
   tools?: string[];
@@ -134,8 +157,9 @@ function ServiceAccordion({ services }: { services: ServiceDetail[] }) {
 }
 
 export default function ServicePageTemplate({
-  sectionLabel, h1, heroSubtitle, introTitle, introText, introImage, introImageAlt, introVideo,
+  sectionLabel, h1, heroSubtitle, introTitle, introText, introImage, introImageAlt, introVideo, introVideoPoster,
   servicesTitle, services: serviceDetails, approachTitle, pillars, highlight,
+  breakdown, identity, method,
   recentWorkTitle, recentWork, tools, ctaTitle, ctaSubtitle, ctaText, faqs, faqTitle,
 }: ServicePageProps) {
   const locale = useLocale();
@@ -181,7 +205,7 @@ export default function ServicePageTemplate({
               </div>
               {introVideo ? (
                 <div className="relative aspect-video rounded-lg overflow-hidden bg-black">
-                  <video controls preload="metadata" className="w-full h-full object-cover" playsInline>
+                  <video controls preload="metadata" poster={introVideoPoster} className="w-full h-full object-cover" playsInline>
                     <source src={introVideo} type="video/mp4" />
                   </video>
                 </div>
@@ -194,6 +218,37 @@ export default function ServicePageTemplate({
           </AnimateOnScroll>
         </div>
       </section>
+
+      {/* === BREAKDOWN (opzionale — es. AI Video) === */}
+      {breakdown && breakdown.video && (
+        <section className="py-10 md:py-16 lg:py-20 border-t border-border">
+          <div className="section-container">
+            <AnimateOnScroll>
+              <h2
+                className="font-bold text-text-primary mb-4 md:mb-5"
+                style={{ fontSize: 'clamp(1.25rem, 3vw, 2.25rem)', lineHeight: '1.12' }}
+              >
+                {breakdown.title}
+              </h2>
+              <p className="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mb-6 md:mb-8">
+                {breakdown.text}
+              </p>
+              <div className="relative aspect-video rounded-lg overflow-hidden bg-black">
+                <video
+                  controls
+                  preload="metadata"
+                  poster={breakdown.poster}
+                  className="w-full h-full object-cover"
+                  playsInline
+                  aria-label={breakdown.title}
+                >
+                  <source src={breakdown.video} type="video/mp4" />
+                </video>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+      )}
 
       {/* === SERVICE DETAILS — Accordion === */}
       <section className="py-10 md:py-16 lg:py-20 border-t border-border">
@@ -236,6 +291,70 @@ export default function ServicePageTemplate({
           </div>
         </div>
       </section>
+
+      {/* === IDENTITY CONSISTENCY (opzionale) — non renderizza senza immagini === */}
+      {identity && identity.images.length > 0 && (
+        <section className="py-10 md:py-16 lg:py-20 border-t border-border">
+          <div className="section-container">
+            <AnimateOnScroll>
+              <h2
+                className="font-bold text-text-primary mb-4 md:mb-5"
+                style={{ fontSize: 'clamp(1.25rem, 3vw, 2.25rem)', lineHeight: '1.12' }}
+              >
+                {identity.title}
+              </h2>
+              <p className="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl">
+                {identity.text}
+              </p>
+
+              <div className="mt-6 md:mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-3">
+                {identity.images.map((src, i) => (
+                  <div key={i} className="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface">
+                    <Image
+                      src={src}
+                      alt={`${identity.title} — ${i + 1}/${identity.images.length}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 45vw, (max-width: 768px) 30vw, 20vw"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-5 md:mt-6 max-w-2xl border-l-2 border-accent/60 pl-4 md:pl-5 text-xs md:text-sm text-text-muted leading-relaxed">
+                {identity.caption}
+              </p>
+            </AnimateOnScroll>
+          </div>
+        </section>
+      )}
+
+      {/* === METHOD (opzionale) — deve stare PRIMA di highlight === */}
+      {method && method.items.length > 0 && (
+        <section className="py-12 md:py-20 lg:py-24 border-t border-border bg-surface">
+          <div className="section-container">
+            <AnimateOnScroll>
+              <h2
+                className="font-bold text-text-primary mb-8 md:mb-12"
+                style={{ fontSize: 'clamp(1.125rem, 2.5vw, 1.75rem)' }}
+              >
+                {method.title}
+              </h2>
+            </AnimateOnScroll>
+
+            <dl className="border-t border-border/40">
+              {method.items.map((m, i) => (
+                <AnimateOnScroll key={i} delay={i * 60}>
+                  <div className="py-5 md:py-6 border-b border-border/40 md:grid md:grid-cols-[15rem_1fr] md:gap-8">
+                    <dt className="text-sm md:text-base font-bold text-text-primary">{m.label}</dt>
+                    <dd className="mt-2 md:mt-0 text-xs md:text-sm text-text-secondary leading-relaxed">{m.text}</dd>
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
 
       {/* === HIGHLIGHT BOX (opzionale — es. Rewake su AI Video) === */}
       {highlight && (
