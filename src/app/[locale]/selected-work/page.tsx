@@ -1,4 +1,5 @@
 import { unstable_setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 /**
@@ -58,11 +59,50 @@ export async function generateMetadata({
   };
 }
 
-/* Interruttori: a true quando il media esiste in /public.
-   Un blocco vuoto su una pagina mandata a una produzione costa
-   più di una sezione assente. */
-const VFX_REEL_READY = false;
-const REWAKE_SHOT_READY = false;
+/* ======================================================================
+   MEDIA — l'unico punto da modificare per aggiungere o cambiare video.
+
+   Regola: `src` vuoto = sezione (o video della scheda) non renderizzata.
+   Nessun player rotto, nessun rettangolo nero. Riempi il percorso e
+   la sezione compare da sola.
+
+   Poster: generali con lo script in COSA-COPIARE.md, oppure
+   ffmpeg -i video.mp4 -frames:v 1 -vf scale=1920:-2 -quality 82 poster.webp
+   ====================================================================== */
+const MEDIA = {
+  showreel: {
+    src: "/videos/showreel-ai.mp4",
+    poster: "/images/selected-work/showreel-ai-poster.webp",
+    duration: "1'19\"",
+  },
+  breakdown: {
+    // File dedicato a questa pagina: /ai-video usa breakdown-ai.mp4.
+    // Le due pagine non condividono piu nessun media.
+    src: "/videos/breakdown-selected-work.mp4",
+    poster: "/images/selected-work/breakdown-selected-work-poster.webp",
+    duration: "", // aggiorna quando hai il file definitivo
+  },
+  vfxReel: {
+    src: "/videos/vfx-reel.mp4",
+    poster: "/images/selected-work/vfx-reel-poster.webp",
+    duration: "", // vuoto = a destra del titolo compare "20+ anni"
+  },
+  // Schede lavori
+  stanza247: {
+    src: "/videos/stanza-247.mp4",
+    poster: "/images/selected-work/stanza-247-poster.webp",
+  },
+  roche: {
+    src: "/videos/roche.mp4",
+    poster: "/images/selected-work/roche-poster.webp",
+  },
+  caffo: {
+    src: "/videos/caffo.mp4",
+    poster: "/images/selected-work/caffo-poster.webp",
+  },
+  // Rewake: stessi asset già usati su /ai-video
+  rewakeImage: "/images/services/rewake-film-memory-system-ai-filmmaking.webp",
+} as const;
 
 const H2 = "font-bold text-text-primary mb-4 md:mb-5";
 const H2_STYLE = { fontSize: "clamp(1.25rem, 3vw, 2.25rem)", lineHeight: 1.12 };
@@ -96,30 +136,24 @@ export default function SelectedWorkPage({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <MediaSection
-        title="AI Film Reel"
-        meta="1'19&quot;"
-        src="/videos/showreel-ai.mp4"
-        poster="/images/selected-work/showreel-ai-poster.webp"
-        caption={t.reelCap}
-      />
-
-      <MediaSection
-        title="AI + VFX Breakdown"
-        meta="1'33&quot;"
-        src="/videos/breakdown-ai.mp4"
-        poster="/images/selected-work/breakdown-ai-poster.webp"
-        caption={t.breakdownCap}
-        surface
-      />
-
-      {VFX_REEL_READY ? (
+      {MEDIA.showreel.src ? (
         <MediaSection
-          title="VFX Reel"
-          meta={t.vfxMeta}
-          src="/videos/vfx-reel.mp4"
-          poster="/images/selected-work/vfx-reel-poster.webp"
-          caption={t.vfxCap}
+          title="AI Film Reel"
+          meta={MEDIA.showreel.duration}
+          src={MEDIA.showreel.src}
+          poster={MEDIA.showreel.poster}
+          caption={t.reelCap}
+        />
+      ) : null}
+
+      {MEDIA.breakdown.src ? (
+        <MediaSection
+          title="AI Breakdown"
+          meta={MEDIA.breakdown.duration}
+          src={MEDIA.breakdown.src}
+          poster={MEDIA.breakdown.poster}
+          caption={t.breakdownCap}
+          surface
         />
       ) : null}
 
@@ -136,17 +170,17 @@ export default function SelectedWorkPage({ params: { locale } }: Props) {
                 key={w.title}
                 className={w.full ? "md:col-span-2" : undefined}
               >
-                {w.src ? (
+                {MEDIA[w.id].src ? (
                   <div className="relative aspect-video rounded-lg overflow-hidden bg-black mb-4 md:mb-5">
                     <video
                       controls
                       preload="metadata"
-                      poster={w.poster}
-                      className="w-full h-full object-cover"
+                      poster={MEDIA[w.id].poster}
+                      className="w-full h-full object-contain"
                       playsInline
                       aria-label={w.title}
                     >
-                      <source src={w.src} type="video/mp4" />
+                      <source src={MEDIA[w.id].src} type="video/mp4" />
                     </video>
                   </div>
                 ) : null}
@@ -190,21 +224,52 @@ export default function SelectedWorkPage({ params: { locale } }: Props) {
               </a>
             </div>
 
-            {REWAKE_SHOT_READY ? (
-              <div className="relative rounded-lg overflow-hidden bg-black border border-border">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/selected-work/rewake-workspace.jpg"
-                  alt="Rewake — workspace di produzione"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            ) : null}
+            <div className="relative aspect-video rounded-lg overflow-hidden bg-background border border-border-light/60">
+              <Image
+                src={MEDIA.rewakeImage}
+                alt={t.rewakeImageAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>
+
+      {/* VFX tradizionali — testo a sinistra, video a destra */}
+      {MEDIA.vfxReel.src ? (
+        <section className="py-10 md:py-16 lg:py-20 border-t border-border">
+          <div className="section-container">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div>
+                <h2 className={H2} style={H2_STYLE}>
+                  {t.vfxTitle}
+                </h2>
+                <p className="text-sm md:text-base text-text-secondary leading-relaxed">
+                  {t.vfxCap}
+                </p>
+                <p className="mt-4 text-xs md:text-sm text-text-muted">
+                  {t.vfxMeta}
+                </p>
+              </div>
+
+              <div className="relative aspect-video rounded-lg overflow-hidden bg-black">
+                <video
+                  controls
+                  preload="metadata"
+                  poster={MEDIA.vfxReel.poster}
+                  className="w-full h-full object-contain"
+                  playsInline
+                  aria-label={t.vfxTitle}
+                >
+                  <source src={MEDIA.vfxReel.src} type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* Contatti */}
       <section className="py-10 md:py-16 lg:py-20 border-t border-border">
@@ -229,16 +294,6 @@ export default function SelectedWorkPage({ params: { locale } }: Props) {
                 className="text-text-secondary hover:text-accent"
               >
                 +39 392 018 7759
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://calendly.com/pieroperilli-info/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-secondary hover:text-accent"
-              >
-                Calendly
               </a>
             </li>
             <li>
@@ -297,7 +352,7 @@ function MediaSection({
             controls
             preload="metadata"
             poster={poster}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             playsInline
             aria-label={title}
           >
@@ -314,94 +369,98 @@ function MediaSection({
 const copy = {
   it: {
     eyebrow: "Lavori selezionati",
-    heroTitle: "Immagini che devono reggere dentro un film.",
+    // Alternative: "Scene che sopravvivono al montaggio." /
+    // "Scene costruite per il film, non per il reel."
+    heroTitle: "Immagini che appartengono a un film.",
     heroBody:
       "Oltre vent’anni di VFX e post-produzione. Oggi integro il generativo nello stesso processo: look development, continuità, compositing e finishing.",
     reelCap:
       "Sequenze narrative, continuità di personaggio, integrazione con live action e VFX generativi.",
     breakdownCap:
       "Cosa c’era prima, cosa è stato generato, cosa è stato compositato. La parte che non si vede è quella che decide se un’inquadratura regge dentro un montaggio.",
+    vfxTitle: "VFX tradizionali",
     vfxMeta: "20+ anni",
     vfxCap:
       "Compositing, cleanup, tracking, integrazione CG, environment e finishing. Il mestiere prima dello strumento generativo.",
     worksTitle: "Lavori",
     works: [
       {
+        id: "caffo" as const,
+        title: "CAFFO 1915 — Vecchio Amaro del Capo",
+        kicker: "Generativo dentro una pipeline VFX",
+        body: "Live action, compositing di prodotto, VFX del liquido, folla ed elementi rigenerati. Il generativo come materiale controllabile dentro la lavorazione, non come sostituto della lavorazione.",
+        full: true,
+      },
+      {
+        id: "stanza247" as const,
         title: "Stanza 247",
         kicker: "Cortometraggio AI · in lavorazione",
         body: "Thriller psicologico sviluppato come produzione narrativa continua: personaggio ricorrente, location persistente, fotografia e continuità da inquadratura a inquadratura. Sceneggiatura IT/EN, shot list, project bible e playbook di produzione documentati prima della generazione.",
-        full: true,
-        src: "",
-        poster: "",
+        full: false,
       },
       {
+        id: "roche" as const,
         title: "Roche — Jingle Milano Cortina",
         kicker: "Persone reali · fotografie come sorgente",
         body: "Dipendenti reali ricostruiti da fotografie e mantenuti riconoscibili dentro scene completamente nuove. Il problema non era generare, ma tenere l’identità attraverso inquadrature diverse e scartare tutto il resto.",
         full: false,
-        src: "",
-        poster: "",
-      },
-      {
-        title: "CAFFO 1915 — Vecchio Amaro del Capo",
-        kicker: "Generativo dentro una pipeline VFX",
-        body: "Live action, compositing di prodotto, VFX del liquido, folla ed elementi rigenerati. Il generativo come materiale controllabile dentro la lavorazione, non come sostituto della lavorazione.",
-        full: false,
-        src: "",
-        poster: "",
       },
     ],
     rewake1:
       "Una produzione narrativa in AI accumula centinaia di clip, reference e versioni. Quel registro non lo tengo a mano: tenerlo a mano significa perdere la relazione fra ciò che è stato generato e ciò che è stato approvato.",
     rewake2:
       "Ho costruito Rewake mentre producevo i miei film. Tiene collegati scene, shot, take, reference, prompt e decisioni approvate per tutta la lavorazione.",
+    rewakeImageAlt:
+      "Workspace di Rewake: storyboard, reference del personaggio, prompt e output video collegati in un unico sistema",
     contactTitle: "Contatti",
     contactBody: "Per una call o per ricevere materiale aggiuntivo.",
     foot: "Pagina non indicizzata. Materiale selezionato per visione professionale.",
   },
   en: {
     eyebrow: "Selected work",
-    heroTitle: "Images that have to hold inside a film.",
+    // Alternatives: "Scenes that survive the cut." /
+    // "Scenes built for the film, not for the reel."
+    heroTitle: "Images that belong in a film.",
     heroBody:
       "More than twenty years in VFX and post-production. Today I integrate generative work into the same process: look development, continuity, compositing and finishing.",
     reelCap:
       "Narrative sequences, character continuity, live-action integration and generative VFX.",
     breakdownCap:
       "What was there, what was generated, what was composited. The part you do not usually see is the part that decides whether a shot holds inside a cut.",
+    vfxTitle: "Traditional VFX",
     vfxMeta: "20+ years",
     vfxCap:
       "Compositing, cleanup, tracking, CG integration, environments and finishing. The craft before generative tools.",
     worksTitle: "Work",
     works: [
       {
+        id: "caffo" as const,
+        title: "CAFFO 1915 — Vecchio Amaro del Capo",
+        kicker: "Generative inside a VFX pipeline",
+        body: "Live action, product compositing, liquid VFX, crowd work and regenerated elements. Generative material as a controllable part of the process, not a replacement for it.",
+        full: true,
+      },
+      {
+        id: "stanza247" as const,
         title: "Stanza 247",
         kicker: "AI short film · work in progress",
         body: "Psychological thriller developed as a continuous narrative production: recurring character, persistent location, cinematography and shot-to-shot continuity. Screenplay IT/EN, shot list, project bible and production playbook documented before generation.",
-        full: true,
-        src: "",
-        poster: "",
+        full: false,
       },
       {
+        id: "roche" as const,
         title: "Roche — Milano Cortina Jingle",
         kicker: "Real people · photographs as source",
         body: "Real employees reconstructed from photographic references and kept recognisable across entirely new scenes. The problem wasn’t generating, but holding the identity across different shots and discarding everything else.",
         full: false,
-        src: "",
-        poster: "",
-      },
-      {
-        title: "CAFFO 1915 — Vecchio Amaro del Capo",
-        kicker: "Generative inside a VFX pipeline",
-        body: "Live action, product compositing, liquid VFX, crowd work and regenerated elements. Generative material as a controllable part of the process, not a replacement for it.",
-        full: false,
-        src: "",
-        poster: "",
       },
     ],
     rewake1:
       "A narrative AI production accumulates hundreds of clips, references and versions. I don’t keep that record by hand: keeping it by hand means losing the link between what was generated and what was approved.",
     rewake2:
       "I built Rewake while producing my own films. It keeps scenes, shots, takes, references, prompts and approved decisions connected throughout production.",
+    rewakeImageAlt:
+      "Rewake workspace: storyboard, character reference, prompt and video output connected in one system",
     contactTitle: "Contact",
     contactBody: "For a call or additional material.",
     foot: "Non-indexed page. Selected material for professional viewing.",
