@@ -28,7 +28,10 @@ function buildAlternates(itUrl: string, enUrl: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  // NOTA lastmod: per pagine statiche e portfolio NON dichiariamo lastModified.
+  // Prima era new Date() (data del deploy), quindi cambiava su 72 URL a ogni build
+  // e Google impara a ignorarlo. Un lastmod va messo solo se è una data vera:
+  // gli articoli blog usano post.date.
 
   const staticPages = [
     { path: '/',                priority: 1.0, changeFrequency: 'weekly'  as const },
@@ -46,20 +49,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages — IT + EN entries, each with full hreflang alternates
   const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) => {
     const itUrl = `${BASE_URL}${page.path}`;
-    const enUrl = `${BASE_URL}/en${getEnPath(page.path)}`;
+    // Home EN: '/en' (non '/en/'), coerente con il redirect del server e con il canonical
+    const enUrl = page.path === '/' ? `${BASE_URL}/en` : `${BASE_URL}/en${getEnPath(page.path)}`;
     const alternates = buildAlternates(itUrl, enUrl);
 
     return [
       {
         url: itUrl,
-        lastModified,
         changeFrequency: page.changeFrequency,
         priority: page.priority,
         alternates,
       },
       {
         url: enUrl,
-        lastModified,
         changeFrequency: page.changeFrequency,
         priority: page.priority,
         alternates,
@@ -76,14 +78,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
       {
         url: itUrl,
-        lastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.7,
         alternates,
       },
       {
         url: enUrl,
-        lastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.7,
         alternates,

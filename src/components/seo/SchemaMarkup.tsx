@@ -347,6 +347,16 @@ interface VideoObjectSchemaProps {
   embedUrl?: string;
 }
 
+// Google richiede uploadDate in formato ISO 8601 completo (YYYY-MM-DD).
+// I dati portfolio hanno solo l'anno ('2024'): lo portiamo a '2024-01-01'.
+// Una data già completa viene lasciata invariata.
+function toIsoDate(value: string): string {
+  const v = (value || '').trim();
+  if (/^\d{4}$/.test(v)) return `${v}-01-01`;
+  if (/^\d{4}-\d{2}$/.test(v)) return `${v}-01`;
+  return v;
+}
+
 export function VideoObjectSchema({
   name,
   description,
@@ -362,7 +372,7 @@ export function VideoObjectSchema({
     name,
     description,
     thumbnailUrl,
-    uploadDate,
+    uploadDate: toIsoDate(uploadDate),
     ...(duration && { duration }),
     ...(contentUrl && { contentUrl }),
     ...(embedUrl && { embedUrl }),

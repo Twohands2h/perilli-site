@@ -40,6 +40,12 @@ const nextConfig = {
       { source: '/servizio-assistente-digitale', destination: '/ai-video', permanent: true },
       { source: '/servizio-assistente-digitale/', destination: '/ai-video', permanent: true },
 
+      // 404 segnalati da Search Console (vecchie pagine WordPress)
+      { source: '/dit-fotografico', destination: '/post-produzione', permanent: true },
+      { source: '/dit-fotografico/', destination: '/post-produzione', permanent: true },
+      { source: '/betya', destination: '/portfolio', permanent: true },
+      { source: '/betya/', destination: '/portfolio', permanent: true },
+
       // Progetti portfolio — con equivalente nel nuovo sito
       { source: '/wonderalba', destination: '/portfolio/wonder-alba', permanent: true },
       { source: '/wonderalba/', destination: '/portfolio/wonder-alba', permanent: true },
@@ -49,8 +55,8 @@ const nextConfig = {
       { source: '/guerciotti/', destination: '/portfolio/guerciotti-60-anni', permanent: true },
       { source: '/doppelganger', destination: '/portfolio/doppelganger', permanent: true },
       { source: '/doppelganger/', destination: '/portfolio/doppelganger', permanent: true },
-      { source: '/stalking', destination: '/portfolio/stalking', permanent: true },
-      { source: '/stalking/', destination: '/portfolio/stalking', permanent: true },
+      { source: '/stalking', destination: '/portfolio/stalking-spot', permanent: true },
+      { source: '/stalking/', destination: '/portfolio/stalking-spot', permanent: true },
       { source: '/pmi-abbiamo-cura-di-te', destination: '/portfolio/pmi', permanent: true },
       { source: '/pmi-abbiamo-cura-di-te/', destination: '/portfolio/pmi', permanent: true },
       { source: '/ipotesi-metaverso', destination: '/portfolio/ipotesi-metaverso', permanent: true },
@@ -59,8 +65,8 @@ const nextConfig = {
       { source: '/isole-islands/', destination: '/portfolio/isole', permanent: true },
       { source: '/klinamenorion', destination: '/portfolio/klinamen-orion', permanent: true },
       { source: '/klinamenorion/', destination: '/portfolio/klinamen-orion', permanent: true },
-      { source: '/black-hole-tale', destination: '/portfolio/black-hole-tale', permanent: true },
-      { source: '/black-hole-tale/', destination: '/portfolio/black-hole-tale', permanent: true },
+      { source: '/black-hole-tale', destination: '/portfolio', permanent: true },
+      { source: '/black-hole-tale/', destination: '/portfolio', permanent: true },
       { source: '/doppelganger-ss-2019', destination: '/portfolio/doppelganger', permanent: true },
       { source: '/doppelganger-ss-2019/', destination: '/portfolio/doppelganger', permanent: true },
 
@@ -101,8 +107,8 @@ const nextConfig = {
       { source: '/babingtons/', destination: '/portfolio/babingtons', permanent: true },
       { source: '/projects', destination: '/portfolio', permanent: true },
       { source: '/projects/', destination: '/portfolio', permanent: true },
-      { source: '/acea-bonus-idrico', destination: '/portfolio/bonus-idrico-acea-acqua', permanent: true },
-      { source: '/acea-bonus-idrico/', destination: '/portfolio/bonus-idrico-acea-acqua', permanent: true },
+      { source: '/acea-bonus-idrico', destination: '/portfolio/bonus-idrico-acea', permanent: true },
+      { source: '/acea-bonus-idrico/', destination: '/portfolio/bonus-idrico-acea', permanent: true },
       { source: '/gucci-kids', destination: '/portfolio/gucci-kids', permanent: true },
       { source: '/gucci-kids/', destination: '/portfolio/gucci-kids', permanent: true },
       { source: '/jon-martin-house-collection-voli', destination: '/portfolio', permanent: true },

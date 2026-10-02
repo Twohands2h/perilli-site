@@ -57,7 +57,10 @@ export function getLocalizedHref(itPath: string, locale: string): string {
     }
   }
   
-  // No localized slug — just add /en/ prefix
+  // No localized slug — just add /en/ prefix.
+  // Home: '/en' senza slash finale (il server fa redirect 308 da '/en/' a '/en',
+  // quindi canonical, hreflang e sitemap devono usare direttamente '/en').
+  if (itPath === '/') return '/en';
   return '/en' + itPath;
 }
 
