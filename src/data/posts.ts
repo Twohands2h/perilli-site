@@ -500,7 +500,7 @@ export const posts: BlogPost[] = [
 
 <h2>Il caso in cui il set non esiste</h2>
 
-<p>L'esempio più estremo di questo principio è un progetto in cui il set non c'è stato affatto. Per il progetto <a href="/portfolio/pmi-abbiamo-cura-di-te" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">PMI — Abbiamo Cura di Te</a>, un video istituzionale per una campagna ministeriale, non c'è stato nessun set. Nessuna ripresa, nessuna troupe, nessuna location. Il brief del cliente era una frase: raccontare una storia emozionante su un ciclo di vita, con l'immagine vaga di un albero da cui cadono frutti.</p>
+<p>L'esempio più estremo di questo principio è un progetto in cui il set non c'è stato affatto. Per il progetto <a href="/portfolio/pmi" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">PMI — Abbiamo Cura di Te</a>, un video istituzionale per una campagna ministeriale, non c'è stato nessun set. Nessuna ripresa, nessuna troupe, nessuna location. Il brief del cliente era una frase: raccontare una storia emozionante su un ciclo di vita, con l'immagine vaga di un albero da cui cadono frutti.</p>
 
 <p>Dieci giorni per trasformare quella frase in un concept visivo, un racconto e uno stile grafico. Sette giorni per realizzare il video in motion graphics con la tecnica del tratto continuo — un flusso di disegno animato che attraversa ogni scena senza interruzioni, dove la sfida principale non era tecnica ma compositiva: trovare i legami tra le scene in modo che ogni transizione fosse bella quanto la scena stessa.</p>
 
@@ -568,7 +568,7 @@ export const posts: BlogPost[] = [
 
 <h2>The case where the set does not exist</h2>
 
-<p>The most extreme example of this principle is a project where the set did not exist at all. For the project <a href="/en/portfolio/pmi-abbiamo-cura-di-te" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">PMI — Abbiamo Cura di Te</a>, an institutional video for a ministerial campaign, there was no set. No shooting, no crew, no location. The client brief was one sentence: tell an emotional story about a life cycle, with the vague image of a tree from which fruit falls.</p>
+<p>The most extreme example of this principle is a project where the set did not exist at all. For the project <a href="/en/portfolio/pmi" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">PMI — Abbiamo Cura di Te</a>, an institutional video for a ministerial campaign, there was no set. No shooting, no crew, no location. The client brief was one sentence: tell an emotional story about a life cycle, with the vague image of a tree from which fruit falls.</p>
 
 <p>Ten days to transform that sentence into a visual concept, a narrative and a graphic style. Seven days to realize the video in motion graphics using the continuous line technique — a flow of animated drawing that passes through every scene without interruption, where the main challenge was not technical but compositional: finding the connections between scenes so that every transition was as beautiful as the scene itself.</p>
 

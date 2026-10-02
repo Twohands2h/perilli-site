@@ -164,7 +164,7 @@ const contentEN = {
     { title: 'PMI Abbiamo Cura di Te — continuous stroke animation', link: '/en/portfolio/pmi' },
     { title: 'Babingtons 125th Anniversary — animated illustrations and compositing', link: '/en/portfolio/babingtons' },
     { title: 'Bonus Idrico Acea — 2.5D animation', link: '/en/portfolio/bonus-idrico-acea' },
-    { title: '📖 Read: Motion graphics for institutional commercials', link: '/en/blog/motion-graphics-institutional-commercials-continuous-stroke-2d' },
+    { title: '📖 Read: Motion graphics for institutional commercials', link: '/en/blog/motion-graphics-institutional-spots-line-animation-2d' },
   ],
   ctaTitle: 'Ready to give voice',
   ctaSubtitle: 'to your design?',
