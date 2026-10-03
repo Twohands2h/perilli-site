@@ -48,6 +48,11 @@ const contentIT = {
       description: `<p>Il colore è emozione. Definisco il look visivo del tuo progetto per creare atmosfere uniche per film, documentari e spot pubblicitari, rafforzando la narrazione. Il mio lavoro parte dalla correzione tecnica per garantire coerenza e pulizia dell'immagine, per poi passare alla creazione di uno stile cromatico che serva la storia ed esalti la fotografia.</p>
 <p>Il mio processo inizia dal dialogo con il regista o il direttore della fotografia: capiamo insieme la direzione emotiva del progetto, creiamo delle reference, poi sviluppo il look che diventa la firma visiva del film. Lavoro con footage in LOG da tutte le principali camere cinema — ARRI, RED, Sony Venice, Blackmagic — e gestisco workflow HDR quando richiesto.</p>`,
     },
+    {
+      name: 'Finishing e Mastering',
+      tag: 'Dalla timeline al master finale',
+      description: `<p>Chiusura tecnica del progetto, versioning e master finali per cinema, broadcast e digitale. Per Non tutto è perduto ho curato anche il mastering DCP per l’uscita in sala, oltre a montaggio e color.</p>`,
+    },
   ],
 
   approachTitle: 'Un dialogo tra tecnica e visione',
@@ -71,10 +76,10 @@ const contentIT = {
 
   recentWorkTitle: 'Ultimi lavori di post-produzione',
   recentWork: [
+    { title: 'Non tutto è perduto — lungometraggio di Francesco Bellomo: montaggio, color e mastering DCP', link: '/portfolio/non-tutto-e-perduto' },
     { title: 'Radio Caterina — di David Orlandelli per History Channel', link: '/portfolio/radio-caterina' },
     { title: 'Breaking dalla strada alle olimpiadi — di Fabrizio Silvestri per RAI Documentari', link: '/portfolio/breaking-olimpiadi' },
-    { title: 'I Am Curious Johnny — di Julian Temple', link: 'https://www.imdb.com/it/title/tt35450650/' },
-    { title: 'Non tutto è perduto — di Francesco Bellomo — Film Cinema', link: 'https://www.imdb.com/it/title/tt31173315/' },
+    { title: 'Sylvio Giardina — fashion film Haute Couture Summer 2022, regia Tania Alineri: montaggio e color correction', link: '/portfolio/giardina-haute-couture-summer-22' },
     { title: 'Vetrya — video corporate, regia Daniele Fiore', link: '/portfolio/vetrya' },
     { title: 'Save the Children — spot campagna nazionale', link: '/portfolio/save-the-children' },
     { title: '📖 Leggi: Color Grading per film — il mio workflow DaVinci Resolve', link: '/blog/color-grading-film-davinci-resolve-workflow' },
@@ -116,6 +121,11 @@ const contentEN = {
       description: `<p>Color is emotion. I define your project's visual look to create unique atmospheres for films, documentaries and commercials, strengthening the narrative. My work starts from technical correction to ensure image coherence and cleanliness, then moves to creating a chromatic style that serves the story and enhances the cinematography.</p>
 <p>My process begins with dialogue with the director or DP: together we understand the project's emotional direction, create references, then I develop the look that becomes the film's visual signature. I work with LOG footage from all major cinema cameras — ARRI, RED, Sony Venice, Blackmagic — and manage HDR workflows when required.</p>`,
     },
+    {
+      name: 'Finishing and Mastering',
+      tag: 'From timeline to final master',
+      description: `<p>Final technical delivery, versioning and masters for cinema, broadcast and digital. On Non tutto è perduto I also handled DCP mastering for the theatrical release, alongside editing and color.</p>`,
+    },
   ],
 
   approachTitle: 'A dialogue between technique and vision',
@@ -139,10 +149,10 @@ const contentEN = {
 
   recentWorkTitle: 'Recent post-production work',
   recentWork: [
+    { title: 'Non tutto è perduto — feature film by Francesco Bellomo: editing, color and DCP mastering', link: '/en/portfolio/non-tutto-e-perduto' },
     { title: 'Radio Caterina — by David Orlandelli for History Channel', link: '/en/portfolio/radio-caterina' },
-    { title: 'Breaking from the street to the Olympics — by Fabrizio Silvestri for RAI', link: 'https://www.raiplay.it/programmi/breakingdallastradaalleolimpiadi' },
-    { title: 'I Am Curious Johnny — by Julian Temple', link: 'https://www.imdb.com/it/title/tt35450650/' },
-    { title: 'Non tutto è perduto — by Francesco Bellomo — Theatrical', link: 'https://www.imdb.com/it/title/tt31173315/' },
+    { title: 'Breaking from the street to the Olympics — by Fabrizio Silvestri for RAI Documentari', link: '/en/portfolio/breaking-olimpiadi' },
+    { title: 'Sylvio Giardina — Haute Couture Summer 2022 fashion film, directed by Tania Alineri: editing and color correction', link: '/en/portfolio/giardina-haute-couture-summer-22' },
     { title: 'Vetrya — corporate video, directed by Daniele Fiore', link: '/en/portfolio/vetrya' },
     { title: 'Save the Children — national campaign commercial', link: '/en/portfolio/save-the-children' },
     { title: '📖 Read: Color Grading for film — my DaVinci Resolve workflow', link: '/en/blog/color-grading-film-davinci-resolve-workflow' },

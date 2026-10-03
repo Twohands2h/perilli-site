@@ -559,7 +559,7 @@ export const posts: BlogPost[] = [
 
 <p>Il vantaggio di lavorare con un workflow integrato — dove VFX, montaggio, color e motion graphics sono gestiti dallo stesso professionista — è che queste domande non si perdono nei passaggi di mano tra specialisti diversi. Il costo nascosto della frammentazione non è solo economico. È di coerenza creativa: ogni passaggio introduce un'interpretazione, e tre interpretazioni diverse dello stesso brief producono un risultato che assomiglia al brief di nessuno.</p>
 
-<p>Se stai lavorando su un progetto che ha post produzione complessa — VFX, motion graphics, color, o semplicemente molte versioni da consegnare — <a href="/contatti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">raccontami di cosa hai bisogno</a>. Il modo migliore per capire se posso aiutarti è parlarne prima che il set sia già prenotato.</p>`,
+<p>Se stai lavorando su un progetto che ha <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post produzione complessa</a> — VFX, motion graphics, color, o semplicemente molte versioni da consegnare — <a href="/contatti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">raccontami di cosa hai bisogno</a>. Il modo migliore per capire se posso aiutarti è parlarne prima che il set sia già prenotato.</p>`,
 
     contentEn: `<p><em>April 2026</em></p>
 
@@ -627,7 +627,7 @@ export const posts: BlogPost[] = [
 
 <p>The advantage of working with an integrated workflow — where VFX, editing, color and motion graphics are managed by the same professional — is that these questions do not get lost in handoffs between different specialists. The hidden cost of fragmentation is not only economic. It is one of creative coherence: every handoff introduces an interpretation, and three different interpretations of the same brief produce a result that resembles nobody's brief.</p>
 
-<p>If you are working on a project with complex post production — VFX, motion graphics, color, or simply many versions to deliver — <a href="/en/contact" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">tell me what you need</a>. The best way to understand if I can help you is to talk before the set is already booked.</p>`,
+<p>If you are working on a project with <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">complex post production</a> — VFX, motion graphics, color, or simply many versions to deliver — <a href="/en/contact" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">tell me what you need</a>. The best way to understand if I can help you is to talk before the set is already booked.</p>`,
   },
   {
     slug: 'ai-vs-vfx-tradizionale-come-scegliere',
