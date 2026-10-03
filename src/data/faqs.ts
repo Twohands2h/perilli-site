@@ -73,7 +73,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'Realizzi motion graphics per spot televisivi?',
-        answer: 'Sì, ho realizzato motion graphics per spot TV e campagne pubblicitarie per brand di primo livello, da Gucci a RAI. Lavoro con le specifiche tecniche richieste dai broadcaster (consegne broadcast, versioni multiple formato, safe area, sottotitoli) e con tutti i formati necessari per ogni piattaforma di distribuzione.',
+        answer: 'Sì. Ho realizzato motion graphics per Enel, Poste Italiane e Ferrari, oltre a spot istituzionali come il Bonus Idrico di Acea Acqua. Lavoro con le specifiche tecniche richieste dai broadcaster — consegne broadcast, versioni multiple, safe area e sottotitoli — e con i formati necessari per ogni piattaforma di distribuzione.',
       },
     ],
     en: [
@@ -91,7 +91,7 @@ export const serviceFAQs: Record<string, Record<'it' | 'en', FAQ[]>> = {
       },
       {
         question: 'Do you create motion graphics for TV commercials?',
-        answer: 'Yes, I have created motion graphics for TV spots and advertising campaigns for top-tier brands, from Gucci to RAI. I work with broadcaster technical specifications (broadcast delivery, multiple format versions, safe areas, subtitles) and all delivery formats for every distribution platform.',
+        answer: 'Yes. I have created motion graphics for Enel, Poste Italiane and Ferrari, as well as institutional spots such as the Bonus Idrico campaign for Acea Acqua. I work with broadcaster technical specifications — broadcast delivery, multiple versions, safe areas and subtitles — and with the formats required for each distribution platform.',
       },
     ],
   },
