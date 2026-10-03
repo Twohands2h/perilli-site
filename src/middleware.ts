@@ -36,6 +36,10 @@ const intlMiddleware = createMiddleware({
   defaultLocale,
   localePrefix: 'as-needed',
   localeDetection: false,
+  // Hreflang gestiti solo nell'HTML (generateMetadata + lib/seo.ts).
+  // L'header HTTP Link automatico di next-intl calcolava l'alternate EN sul pathname IT
+  // (es. /en/chi-sono invece di /en/about) → URL in redirect e due set hreflang incoerenti.
+  alternateLinks: false,
 });
 
 export default function middleware(request: NextRequest) {
