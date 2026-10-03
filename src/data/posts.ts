@@ -485,8 +485,8 @@ export const posts: BlogPost[] = [
     excerptEn: 'Post production is not the final phase of a spot. It is often the phase that decides everything — tone, rhythm, visual identity. After 20 years working on institutional spots and advertising campaigns, here is how it really works.',
     date: '2026-04-14',
     readingTime: 11,
-    category: 'post-produzione',
-    categoryLabel: { it: 'Post Produzione', en: 'Post Produzione' },
+    category: 'post',
+    categoryLabel: { it: 'Post Produzione', en: 'Post Production' },
     keywordTarget: 'post produzione spot pubblicitario workflow costi',
     thumbnail: '/images/portfolio/pmi-abbiamo-cura-di-te-animazione.webp',
     thumbnailAlt: {
@@ -521,7 +521,7 @@ export const posts: BlogPost[] = [
 
 <p><strong>Il conforming.</strong> Prima del montaggio creativo, il materiale girato deve essere organizzato, sincronizzato e preparato per il lavoro. Su una giornata di riprese con due camere e audio separato, il conforming può richiedere quattro o cinque ore di lavoro invisibile che non appare mai nel preventivo ma che, se mancasse, renderebbe il montaggio impossibile.</p>
 
-<p><strong>La supervisione VFX in pre-produzione.</strong> Ogni effetto visivo che verrà aggiunto in post deve essere pianificato prima delle riprese — angoli di camera, illuminazione del set, marcatori per il tracking. Quando questa supervisione non c'è, il VFX artist lavora su materiale che non è stato girato pensando alla post produzione, e i costi triplicano.</p>
+<p><strong>La <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">supervisione VFX</a> in pre-produzione.</strong> Ogni effetto visivo che verrà aggiunto in post deve essere pianificato prima delle riprese — angoli di camera, illuminazione del set, marcatori per il tracking. Quando questa supervisione non c'è, il VFX artist lavora su materiale che non è stato girato pensando alla post produzione, e i costi triplicano.</p>
 
 <p><strong>Il color roundtrip.</strong> Nei progetti che coinvolgono un colorist esterno — come il lavoro su <a href="/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a>, dove ho collaborato con Walter Volpatto via DaVinci Cloud — il materiale deve essere preparato in uscita, inviato, ricevuto e reintegrato nel progetto di montaggio. Questa gestione tecnica non è creativa ma è indispensabile, e richiede competenza specifica su codec, color space e flussi di consegna.</p>
 
@@ -589,7 +589,7 @@ export const posts: BlogPost[] = [
 
 <p><strong>Conforming.</strong> Before creative editing, the shot material must be organized, synchronized and prepared for work. On a single shooting day with two cameras and separate audio, conforming can require four or five hours of invisible work that never appears in the quote but that, if missing, would make editing impossible.</p>
 
-<p><strong>VFX supervision in pre-production.</strong> Every visual effect that will be added in post must be planned before the shoot — camera angles, set lighting, tracking markers. When this supervision is absent, the VFX artist works on material that was not shot with post production in mind, and costs triple.</p>
+<p><strong><a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX supervision</a> in pre-production.</strong> Every visual effect that will be added in post must be planned before the shoot — camera angles, set lighting, tracking markers. When this supervision is absent, the VFX artist works on material that was not shot with post production in mind, and costs triple.</p>
 
 <p><strong>The color roundtrip.</strong> In projects involving an external colorist — like the work on <a href="/en/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a>, where I collaborated with Walter Volpatto via DaVinci Cloud — the material must be prepared for output, sent, received and reintegrated into the editing project. This technical management is not creative but it is indispensable, and requires specific competence in codecs, color spaces and delivery workflows.</p>
 

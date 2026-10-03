@@ -87,12 +87,31 @@ const contentIT = {
     },
   ],
 
+  method: {
+    title: 'VFX per spot, cinema e produzioni',
+    items: [
+      {
+        label: 'Spot pubblicitari e campagne',
+        text: 'VFX per spot TV e campagne, dal compositing green screen all’integrazione di elementi 3D nel girato. Per lo spot Stalking del Ministero delle Pari Opportunità ho costruito e integrato la gabbia 3D che imprigiona la vittima. Per Gucci Kids ho seguito il compositing di uno spot girato interamente in green screen.',
+      },
+      {
+        label: 'Cinema e documentari',
+        text: 'Effetti visivi per cortometraggi, film e documentari, dalla singola inquadratura alla supervisione VFX. Tra i lavori: Along Came Ruby, I Am Curious Johnny di Julien Temple, disponibile su Prime Video, e Floverr, su cui ho seguito la supervisione VFX.',
+      },
+      {
+        label: 'Agenzie e produzioni',
+        text: 'Lavoro come partner VFX da Roma e da remoto in tutta Italia, mantenendo diretto il rapporto creativo e tecnico durante tutto il progetto. Quando serve, lo stesso workflow integra VFX, montaggio e color.',
+      },
+    ],
+  },
+
   recentWorkTitle: 'Progetti VFX recenti',
   recentWork: [
     { title: 'Along Came Ruby — cortometraggio, VFX complessi', link: '/portfolio/along-came-ruby' },
-    { title: 'I Am Curious Johnny — di Julian Temple, VFX e clean-up', link: 'https://www.imdb.com/it/title/tt35450650/' },
+    { title: 'Stalking — spot TV per il Ministero delle Pari Opportunità, VFX e gabbia 3D', link: '/portfolio/stalking-spot' },
+    { title: 'I Am Curious Johnny — di Julien Temple, VFX e clean-up', link: '/portfolio/i-am-curious-johnny' },
     { title: 'Floverr — film in produzione, supervisione VFX', link: '/portfolio/floverr' },
-    { title: 'Gucci Kids — compositing green screen per campagna Gucci', link: '/portfolio/gucci-kids' },
+    { title: 'Gucci Kids — compositing green screen per lo spot della campagna Gucci Kids', link: '/portfolio/gucci-kids' },
     { title: '📖 Leggi: VFX per cinema indipendente — guida al workflow', link: '/blog/vfx-cinema-indipendente-guida-workflow' },
     { title: '📖 Leggi: Breakdown VFX di Along Came Ruby', link: '/blog/breakdown-vfx-along-came-ruby' },
     { title: '📖 Leggi: VFX compositing — integrare elementi 3D in scene reali', link: '/blog/vfx-compositing-integrare-elementi-3d-scene-reali' },
@@ -176,9 +195,10 @@ const contentEN = {
   recentWorkTitle: 'Recent VFX projects',
   recentWork: [
     { title: 'Along Came Ruby — short film, complex VFX', link: '/en/portfolio/along-came-ruby' },
-    { title: 'I Am Curious Johnny — Julian Temple, VFX and clean-up', link: 'https://www.imdb.com/it/title/tt35450650/' },
+    { title: 'Stalking — TV commercial for the Italian Ministry of Equal Opportunities, VFX and 3D cage', link: '/en/portfolio/stalking-spot' },
+    { title: 'I Am Curious Johnny — Julien Temple, VFX and clean-up', link: '/en/portfolio/i-am-curious-johnny' },
     { title: 'Floverr — film in production, VFX supervision', link: '/en/portfolio/floverr' },
-    { title: 'Gucci Kids — green screen compositing for Gucci campaign', link: '/en/portfolio/gucci-kids' },
+    { title: 'Gucci Kids — green screen compositing for the Gucci Kids campaign spot', link: '/en/portfolio/gucci-kids' },
     { title: '📖 Read: VFX for independent cinema — workflow guide', link: '/en/blog/vfx-independent-film-workflow-guide' },
     { title: '📖 Read: VFX Breakdown of Along Came Ruby', link: '/en/blog/vfx-breakdown-along-came-ruby' },
     { title: '📖 Read: VFX compositing — integrating 3D elements in real scenes', link: '/en/blog/vfx-compositing-integrating-3d-elements-real-scenes' },
