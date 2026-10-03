@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: { locale: string; s
     const ogBase = getPageOpenGraph(`/blog/${post.slug}`, params.locale);
 
     return {
-        title: `${isIt ? post.titleIt : post.titleEn} | Piero Perilli`,
-        description: isIt ? post.excerptIt : post.excerptEn,
+        title: `${isIt ? (post.seoTitleIt ?? post.titleIt) : (post.seoTitleEn ?? post.titleEn)} | Piero Perilli`,
+        description: isIt ? (post.metaDescriptionIt ?? post.excerptIt) : (post.metaDescriptionEn ?? post.excerptEn),
         alternates: getPageAlternates(`/blog/${post.slug}`, params.locale),
         openGraph: {
             ...ogBase,

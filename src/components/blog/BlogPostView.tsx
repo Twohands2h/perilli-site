@@ -60,9 +60,10 @@ export default function BlogPostView({
         <article>
             <ArticleSchema
                 headline={title}
-                description={isIt ? post.excerptIt : post.excerptEn}
+                description={isIt ? (post.metaDescriptionIt ?? post.excerptIt) : (post.metaDescriptionEn ?? post.excerptEn)}
                 url={`${isIt ? '' : '/en'}/blog/${currentSlug}`}
                 datePublished={post.date}
+                dateModified={post.dateModified}
                 image={`https://pieroperilli.com${post.thumbnail}`}
                 keywords={post.keywordTarget ? post.keywordTarget.split(',').map(k => k.trim()) : undefined}
             />

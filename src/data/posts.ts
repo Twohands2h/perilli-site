@@ -3,9 +3,18 @@ export interface BlogPost {
   slugEn: string;
   titleIt: string;
   titleEn: string;
+  /** SEO title opzionale, SENZA " | Piero Perilli" (il suffisso lo aggiunge il layout). Fallback: titleIt/titleEn. */
+  seoTitleIt?: string;
+  seoTitleEn?: string;
   excerptIt: string;
   excerptEn: string;
+  /** Meta description opzionale (usata anche come description dell'ArticleSchema). Fallback: excerptIt/excerptEn. */
+  metaDescriptionIt?: string;
+  metaDescriptionEn?: string;
+  /** Data di pubblicazione → datePublished. Non va cambiata quando si aggiorna l'articolo. */
   date: string;
+  /** Data dell'ultimo aggiornamento sostanziale (YYYY-MM-DD) → dateModified + lastmod sitemap. */
+  dateModified?: string;
   draft?: boolean;
   readingTime: number;
   category: string;
@@ -1398,84 +1407,366 @@ export const posts: BlogPost[] = [
   {
     slug: 'ai-video-generation-2026-cosa-funziona',
     slugEn: 'ai-video-generation-2026-what-actually-works',
-    titleIt: 'AI video generation nel 2026: cosa funziona davvero (e cosa no)',
-    titleEn: 'AI video generation in 2026: what actually works (and what doesn\'t)',
-    excerptIt: 'Runway Gen-4, Veo, Kling, Sora, Seedance 2.0, Higgsfield, Nano Banana — li uso tutti nel mio lavoro quotidiano. Ecco una mappa onesta di cosa produce risultati professionali e dove stiamo andando. Aggiornato a marzo 2026.',
-    excerptEn: 'After 20 years in VFX and post-production, I use Runway, Veo, Kling and Seedance daily on real client projects. An honest breakdown of what AI video can actually deliver at professional level in 2026 — and where human expertise still makes the difference.',
+    titleIt: 'AI video nel 2026: cosa funziona davvero — aggiornamento ottobre',
+    titleEn: 'AI video generation in 2026: what actually works — October update',
+    seoTitleIt: 'AI Video nel 2026: cosa funziona davvero',
+    seoTitleEn: 'AI Video Generation 2026: October Update',
+    excerptIt: 'Un bilancio pratico sull’AI video a ottobre 2026: Seedance, Veo, Runway, Kling, Higgsfield, Magnific e Nano Banana nel mio workflow reale di produzione.',
+    excerptEn: 'A practical October 2026 look at AI video: Seedance, Veo, Runway, Kling, Higgsfield, Magnific and Nano Banana in my real production workflow.',
+    metaDescriptionIt: 'Aggiornato a ottobre 2026: il mio utilizzo reale di Seedance 2.5, Veo 3.1, Runway Gen-4.5, Kling, Higgsfield, Magnific e Nano Banana 2.',
+    metaDescriptionEn: 'Updated October 2026: a VFX artist’s real-world take on Seedance 2.5, Veo 3.1, Runway Gen-4.5, Kling, Higgsfield, Magnific and Nano Banana 2.',
     date: '2026-03-04',
-    readingTime: 10,
+    dateModified: '2026-10-03',
+    readingTime: 13,
     category: 'ai',
     categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
     keywordTarget: 'AI video generation 2026',
     thumbnail: '/images/blog/ai-video-generation-2026-hero.webp',
     thumbnailAlt: { it: 'AI video generation 2026 — dettaglio guanto da un video generato con Veo', en: 'AI video generation 2026 — glove detail from a Veo-generated video' },
-    contentIt: `<p><em>Ultimo aggiornamento: Marzo 2026</em></p>
+    contentIt: `<p><em>Aggiornato a ottobre 2026</em></p>
+<p>Dopo vent’anni di VFX e post-produzione, oggi utilizzo l’intelligenza artificiale generativa all’interno di produzioni reali, non come esperimento separato dal resto del lavoro.</p>
+<p>La situazione cambia molto velocemente. Gli strumenti che avrei consigliato sei mesi fa non sono necessariamente quelli che sceglierei oggi e alcuni problemi che all’inizio del 2026 sembravano strutturali hanno già cambiato forma.</p>
+<p>Questa quindi non vuole essere una classifica definitiva dei modelli AI video.</p>
+<p>È una fotografia pratica di dove siamo arrivati a ottobre 2026: cosa utilizzo realmente, dove funziona meglio ogni strumento, dove continua a rompersi il processo e perché <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">produrre video con l’AI</a> significa sempre meno trovare “il modello migliore” e sempre più sapere scegliere e dirigere gli strumenti giusti.</p>
 
-<p>Il mercato dell'AI video generation è esploso. Ogni mese esce un nuovo modello, ogni settimana qualcuno dichiara che "il cinema tradizionale è morto". Uso questi strumenti ogni giorno nel mio <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">workflow di AI video production</a> per clienti reali. Ecco cosa funziona davvero nel 2026, senza proclami.</p>
+<h2>Cosa è cambiato da marzo 2026</h2>
+<p>Molto.</p>
+<p>Seedance è passato dalla versione 2.0 alla 2.5 ed è diventato decisamente più interessante per lavori narrativi, sequenze più lunghe e produzioni costruite attraverso reference.</p>
+<p>Runway ha superato Gen-4 con Gen-4.5.</p>
+<p>Veo 3.1 e Flow hanno reso l’ecosistema Google molto più completo.</p>
+<p>Higgsfield e Magnific sono diventate anche due delle piattaforme che utilizzo più frequentemente, seppure con funzioni differenti. Higgsfield è sempre più interessante per manipolazione video e workflow basati su diversi modelli, mentre Magnific è diventato uno dei miei ambienti principali per generazione e preparazione delle immagini, refinement, upscale, reference e accesso a più modelli all’interno dello stesso processo produttivo.</p>
+<p>Anche Nano Banana 2 è ormai una parte fondamentale del mio workflow sulle immagini.</p>
+<p>Sora, invece, che compariva nella prima versione di questo articolo, non fa più parte del confronto: nel corso del 2026 <a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">OpenAI ha dismesso il prodotto e successivamente anche la relativa API</a>.</p>
+<p>Ma il cambiamento più importante non è il numero di versione di un modello.</p>
+<p>All’inizio dell’anno la domanda era spesso:</p>
+<p><em>L’AI riesce a generare una buona inquadratura?</em></p>
+<p>Oggi la domanda più utile è:</p>
+<p><em>Riesco a controllare quell’inquadratura abbastanza bene da utilizzarla all’interno di una sequenza?</em></p>
+<p>È un livello di difficoltà completamente diverso.</p>
 
-<h2>Gli strumenti che uso e come li giudico</h2>
-<p><strong>Runway Gen-4.</strong> Il più affidabile per lavoro professionale. Il controllo sulla camera è il migliore in circolazione: pan, tilt, zoom, dolly — risposte coerenti e prevedibili. Lo uso per generare elementi ambientali, sfondi e sequenze dove serve controllo preciso sul movimento. Il punto debole resta la coerenza sui volti umani in sequenze lunghe — dopo 4-5 secondi i lineamenti iniziano a derivare.</p>
-<p><strong>Veo (Google).</strong> Qualità visiva impressionante — i frame singoli sono spesso indistinguibili da footage reale. L'ho usato tanto per <a href="/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">il progetto Roche</a>, dove serviva un look broadcast su un budget che non avrebbe coperto nemmeno una giornata di troupe tradizionale. Il limite: meno controllo sulla camera rispetto a Runway e tempi di generazione più lunghi. Lo scelgo quando la priorità è la qualità del singolo frame, non la controllabilità del movimento. Lo uso direttamente da Google AI Studio — non da Flow o piattaforme terze — perché il controllo è maggiore e la resa è migliore. Costa, costa tanto, ma funziona meglio.</p>
-<p><strong>Kling AI.</strong> Eccellente per il movimento di soggetti umani — camminate, gesti, espressioni facciali. Dove Runway e Veo producono movimenti rigidi sui corpi umani, Kling genera fluidità naturale. Lo uso quando il protagonista del video è una persona in movimento. Un esempio concreto: per una sequenza di camminata in un progetto recente, Runway produceva un passo meccanico. Kling ha generato un'andatura credibile al secondo tentativo.</p>
-<p><strong>Sora (OpenAI).</strong> Potente sulla qualità cinematografica e sulla comprensione delle fisiche reali — acqua, fumo, luce che rimbalza. Ma il workflow è meno flessibile per la produzione professionale: meno parametri di controllo, meno prevedibilità nel risultato. Lo uso per concept e pre-visualizzazione più che per output finali.</p>
-<p><strong>Seedance 2.0 (ByteDance).</strong> Il nuovo arrivato che ha fatto rumore — a ragione. Il motion dei soggetti umani è il più realistico che abbia visto: peso, gravità, fisica credibile su corpi in movimento. I personaggi corrono, cadono, combattono con una naturalezza che gli altri modelli ancora non raggiungono. Il sistema multi-shot mantiene coerenza visiva tra clip diverse, e il lip-sync nativo con audio integrato apre possibilità interessanti per contenuti narrativi. I limiti sono concreti: la risoluzione nativa è 720p — l'upscaling con Topaz Video è eclatante e lo uso spesso, ma il punto di partenza resta un limite reale, soprattutto su schermi grandi dove gli artefatti si vedono. L'accesso fuori dalla Cina passa per piattaforme terze, e la censura sui volti reali è aggressiva. Per ora lo uso per previsualization e contenuti social dove il realismo del movimento conta più della risoluzione. Ma tengo d'occhio ogni aggiornamento — quando arriverà il 1080p nativo, le cose cambieranno.</p>
-<p><strong>Higgsfield.</strong> Più che un singolo modello, è una piattaforma che aggrega i migliori — Sora 2, Kling, Veo 3.1 — sotto un'unica interfaccia con controlli cinematografici. Il Cinema Studio permette di impostare movimenti di camera specifici (dolly, tracking, steadicam) e il sistema di preset replica la grammatica del cinema reale. Il generatore interno non è il più forte, ma il valore è nel workflow: scegli il modello giusto per ogni shot, applichi i controlli, e lavori in un ambiente unico senza saltare tra cinque piattaforme diverse. Per chi produce volumi alti di contenuti — social, advertising, varianti creative — è un moltiplicatore di efficienza.</p>
-<p><strong>Per i frame di riferimento: Nano Banana e Midjourney.</strong> Il frame chiave — l'immagine di partenza che guida la generazione video — è il passaggio più importante del workflow. Il 90% della qualità del video finale si decide qui. Midjourney resta un riferimento per qualità estetica, soprattutto su atmosfere cinematografiche e illuminazione. Ma Nano Banana 2 di Google ha cambiato la partita: genera immagini di qualità Pro a velocità istantanea, mantiene la consistenza del personaggio su più immagini, e rende testo leggibile — un punto debole storico di tutti i generatori. Lo uso sempre più spesso per iterare velocemente sulle direzioni creative: dieci varianti in cinque minuti, scelgo le migliori, e da lì passo alla generazione video.</p>
+<h2>Il mio approccio attuale: non esiste il miglior modello AI video</h2>
+<p>Non credo nell’idea di scegliere una piattaforma e costringere ogni inquadratura a passare attraverso quella.</p>
+<p>Modelli diversi risolvono problemi diversi.</p>
+<p>All’interno della stessa produzione posso utilizzare un sistema per generare o ricostruire la reference iniziale, un altro per la performance, un altro ancora per un determinato movimento di macchina e un altro per modificare un video già esistente.</p>
+<p>Poi tutto torna all’interno di una pipeline tradizionale di VFX, montaggio e color.</p>
+<p>Piattaforme come Magnific e Higgsfield sono particolarmente utili proprio perché consentono di muoversi tra modelli e operazioni differenti senza considerare ogni generazione come un esperimento isolato.</p>
+<p>La competenza sta sempre di più nel sapere <strong>quale modello e quale piattaforma utilizzare per una determinata inquadratura</strong>.</p>
+<h3>Seedance 2.5</h3>
+<p>Seedance è attualmente uno degli strumenti che trovo più interessanti per il lavoro narrativo.</p>
+<p>Il miglioramento più importante non riguarda semplicemente la qualità delle immagini.</p>
+<p>Riguarda il rapporto tra reference, movimento, continuità e costruzione dell’inquadratura.</p>
+<p><a href="https://seed.bytedance.com/en/seedance2_5" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Seedance 2.5</a> permette di lavorare con più riferimenti visivi e con sequenze più lunghe, e questo cambia il modo in cui posso costruire una scena.</p>
+<p>Invece di cercare di descrivere un intero mondo dentro un prompt, posso fornire poche reference molto precise con ruoli chiari:</p>
+<p>questa definisce il personaggio;</p>
+<p>questa definisce la stanza;</p>
+<p>questa definisce il frame di partenza.</p>
+<p>È un processo molto più vicino alla regia che al semplice prompting.</p>
+<p>Sul personaggio la fisicità può essere molto convincente: peso del corpo, esitazione, camminata, piccoli gesti, reazioni.</p>
+<p>I risultati migliori arrivano spesso mantenendo l’azione lineare e una sola idea chiara di macchina da presa, invece di chiedere al modello di risolvere contemporaneamente dieci problemi diversi.</p>
+<p>Il punto debole rimane la continuità assoluta.</p>
+<p>La consistenza del personaggio è migliorata molto, ma una vera produzione non riguarda soltanto il volto.</p>
+<p>Ci sono abiti, proporzioni, oggetti, geometria dell’ambiente, direzione della luce, raccordi e decine di dettagli che devono sopravvivere da un’inquadratura all’altra.</p>
+<p>Questo continua a richiedere supervisione.</p>
+<h3>Veo 3.1 e Google Flow</h3>
+<p><a href="https://deepmind.google/models/veo/" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Veo</a> rimane estremamente forte quando contano qualità dell’immagine e plausibilità fotografica.</p>
+<p>Alcuni frame generati possono arrivare sorprendentemente vicini a una fotografia reale, soprattutto quando l’immagine di partenza è già stata costruita bene.</p>
+<p>Anche l’ecosistema Google è diventato molto più interessante come ambiente di filmmaking e non semplicemente come generatore text-to-video.</p>
+<p>Controllo del primo e ultimo frame, reference, audio e gli strumenti disponibili attraverso <a href="https://flow.google.com/" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Flow</a> rendono Veo molto più flessibile rispetto a qualche mese fa.</p>
+<p>Continuo però a non considerarlo una soluzione universale.</p>
+<p>Quando serve una performance molto specifica o un particolare comportamento fisico, un altro modello può rispondere meglio.</p>
+<p>Ma quando l’obiettivo è un’immagine cinematografica pulita, con luce e atmosfera credibili, Veo resta uno degli strumenti che provo per primi.</p>
+<h3>Runway Gen-4.5</h3>
+<p>Runway rimane uno degli ambienti più maturi per generazione controllata.</p>
+<p><a href="https://runway.com/research/introducing-runway-gen-4.5" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Gen-4.5</a> ha migliorato aderenza al prompt, movimento e comprensione di azioni più complesse.</p>
+<p>Quello che continuo ad apprezzare maggiormente di Runway è però la logica produttiva che esiste intorno al modello.</p>
+<p>L’iterazione è veloce, i controlli sono chiari e la piattaforma si adatta bene a un workflow organizzato per shot.</p>
+<p>Tendo a utilizzarlo quando voglio una relazione abbastanza prevedibile tra immagine di riferimento, movimento descritto e macchina da presa.</p>
+<p>Questo non significa che produca sempre il frame più bello.</p>
+<p>Significa che, nella situazione giusta, posso arrivare a un risultato utilizzabile con meno deviazioni casuali.</p>
+<p>In produzione è una differenza importante.</p>
+<h3>Kling</h3>
+<p><a href="https://kling.ai/app/" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Kling</a> continua a essere interessante quando il movimento umano è centrale.</p>
+<p>Camminate, meccanica del corpo, gestualità e performance possono risultare meno rigidi rispetto ad alcuni modelli concorrenti.</p>
+<p>Non lo considero una regola.</p>
+<p>Il comportamento dei modelli cambia continuamente e l’immagine di partenza influenza moltissimo il risultato.</p>
+<p>Ma quando un’inquadratura fallisce perché il personaggio sembra animato in modo troppo meccanico, Kling continua a essere una delle alternative che provo.</p>
+<p>Anche per questo confrontare i modelli utilizzando semplicemente lo stesso prompt ha un’utilità limitata.</p>
+<p>Un modello può essere complessivamente meno forte e contemporaneamente essere quello giusto per una determinata inquadratura.</p>
+<h3>Higgsfield e Genjutsu</h3>
+<p>Higgsfield è diventata una delle piattaforme che utilizzo frequentemente perché il suo valore non è più limitato alla semplice generazione.</p>
+<p>La cosa interessante è la possibilità di affrontare uno shot attraverso operazioni differenti.</p>
+<p><a href="https://higgsfield.ai/genjutsu" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Genjutsu</a> ne è un buon esempio.</p>
+<p>Invece di generare necessariamente una nuova inquadratura da zero, posso partire da un video esistente e trasferire movimento o sostituire elementi specifici mantenendo struttura temporale e movimento originali.</p>
+<p>È un cambiamento concettuale importante.</p>
+<p>Nel lavoro VFX può essere molto più utile modificare una performance esistente che chiedere a un modello AI di ricrearla completamente.</p>
+<p>Se performance o movimento di macchina sono già corretti, preservare quella struttura e modificare soltanto ciò che serve può ridurre enormemente il numero di tentativi.</p>
+<p>Non è comunque una sostituzione automatica del compositing.</p>
+<p>Bordi difficili, volti, occlusioni e interazioni richiedono ancora grande attenzione.</p>
+<p>Ma la direzione è importante: il video generativo sta passando dalla pura generazione alla <strong>manipolazione dello shot</strong>.</p>
+<p>Ed è qualcosa di molto più interessante per la post-produzione reale.</p>
+<h3>Magnific</h3>
+<p><a href="https://www.magnific.com/" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Magnific</a> è un’altra piattaforma diventata centrale nel mio workflow, anche se la utilizzo in maniera differente rispetto a Higgsfield.</p>
+<p>Una parte fondamentale del mio lavoro avviene sull’immagine che precede il video.</p>
+<p>Preparazione delle reference, generazione dell’immagine, ricostruzione, refinement, upscale, qualità delle texture e consistenza sono determinanti per costruire correttamente un’inquadratura.</p>
+<p>La qualità dell’immagine di partenza influenza praticamente tutto ciò che accade dopo.</p>
+<p>Magnific è utile perché permette di lavorare attraverso modelli e operazioni differenti all’interno dello stesso ambiente, senza considerare generazione, editing e miglioramento dell’immagine come fasi completamente separate.</p>
+<p>Uno dei suoi ruoli più importanti, nel mio workflow, è proprio quello intermedio tra concept e generazione finale del video.</p>
+<p>Posso partire da un’immagine generata, correggerne la struttura, migliorare dettagli specifici, ricostruire texture, sviluppare variazioni o fare upscale prima di utilizzare quell’immagine come reference per un modello video.</p>
+<p>Questo passaggio è importante perché i modelli video tendono a ereditare sia i punti di forza sia gli errori dell’immagine iniziale.</p>
+<p>Se la reference è debole, lo shot è già compromesso prima ancora di iniziare a muoversi.</p>
+<p>Per questo Magnific, nel mio workflow, non è semplicemente un upscaler.</p>
+<p>È parte del processo di <strong>preparazione di un frame produttivo controllato</strong>.</p>
+<p>È inoltre utile come ambiente multi-modello: poter scegliere lo strumento più adatto al singolo problema è sempre più importante rispetto a pretendere che un solo modello risolva tutto.</p>
+<p>Ed è proprio per questo che utilizzo regolarmente sia Magnific sia Higgsfield.</p>
+<p>Hanno aree di sovrapposizione, ma risolvono parti differenti dello stesso problema produttivo.</p>
+<h3>Nano Banana 2</h3>
+<p>Per me oggi generazione di immagini e generazione video sono due parti dello stesso processo.</p>
+<p>La reference iniziale determina una parte enorme del risultato finale.</p>
+<p>Se volto, abiti, proporzioni, luce o ambiente sono sbagliati nella reference, il modello video parte già da uno shot compromesso.</p>
+<p><a href="https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Nano Banana 2</a> è diventato uno degli strumenti che utilizzo maggiormente in questa fase.</p>
+<p>Il suo vantaggio non è semplicemente quello di produrre immagini gradevoli.</p>
+<p>È la capacità di lavorare in maniera iterativa con reference, preservare i soggetti e ricostruire un’immagine seguendo indicazioni precise.</p>
+<p>Questo lo rende particolarmente utile per character sheet, correzione di frame produttivi, sviluppo di punti macchina alternativi o preparazione dell’immagine esatta che voglio successivamente animare.</p>
+<p>Sempre più spesso passo più tempo a progettare correttamente la reference e meno tempo a cercare di salvare una generazione sbagliata dopo.</p>
+<p>È un workflow molto più efficiente.</p>
 
-<h2>Cosa funziona per la produzione professionale</h2>
-<p><strong>Concept e pre-visualizzazione.</strong> Qui l'AI è già insostituibile. Un regista mi chiede di esplorare dieci direzioni creative? Genero varianti visive in ore, non giorni. Per <a href="/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Doppelganger</a> l'AI ha generato l'intera base visiva del progetto — un lavoro che in pre-produzione tradizionale avrebbe richiesto settimane di storyboard e concept art.</p>
-<p><strong>Elementi ambientali e sfondi.</strong> Cieli, paesaggi, ambienti fantastici — l'AI produce materiale eccellente che poi integro nel compositing con tecniche tradizionali di <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a>. La chiave è non usare il materiale AI così com'è: serve sempre un intervento di integrazione per farlo vivere nella scena.</p>
-<p><strong>Contenuti completamente AI-generated.</strong> Per progetti dove il budget non permette una produzione tradizionale, l'AI produce risultati professionali. <a href="/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Il progetto Roche</a> ne è la dimostrazione: un video completo con qualità broadcast, realizzato interamente con strumenti AI e poi rifinito in <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a>. Il cliente ha avuto il risultato che voleva, a una frazione del costo di una produzione tradizionale.</p>
-<p><strong>Prototyping per pitch commerciali.</strong> Un'agenzia deve vendere un concept a un cliente? Invece di un mood board statico, consegno un video concept AI in pochi giorni. La differenza nel tasso di approvazione è enorme: il cliente vede il risultato, non lo immagina.</p>
+<h2>Cosa funziona realmente in una produzione professionale</h2>
+<h3>Previsualizzazione e sviluppo creativo</h3>
+<p>Questa parte non è più sperimentale.</p>
+<p>L’AI è estremamente efficace per esplorare idee prima di impegnare un budget di produzione tradizionale.</p>
+<p>Un regista o un’agenzia possono vedere un vero concept in movimento invece di interpretare soltanto un moodboard.</p>
+<p>La differenza principale è la velocità di iterazione.</p>
+<p>Si possono verificare inquadrature, atmosfera, casting, costume, location e perfino ipotesi di montaggio prima di girare.</p>
+<p>Per pitch e sviluppo creativo è già un vantaggio produttivo enorme.</p>
+<h3>Live action + AI</h3>
+<p>È una delle aree che trovo più interessanti.</p>
+<p>L’idea che AI video significhi necessariamente sostituire le riprese è troppo semplice.</p>
+<p>Spesso la soluzione migliore è girare realmente ciò che l’AI ha difficoltà a riprodurre in maniera precisa — una performance, un prodotto, un’interazione fisica, un volto specifico — e generare o modificare ciò che gli sta intorno.</p>
+<p>Può voler dire estendere una location, cambiare ambiente, creare un’inquadratura troppo costosa da realizzare in modo tradizionale oppure trasformare parti selezionate di materiale già girato.</p>
+<p>Il vantaggio economico esiste, ma produzione AI non significa produzione gratuita.</p>
+<p>Alcuni costi tradizionali vengono sostituiti da tempo di generazione, iterazione, lavoro specialistico, crediti delle piattaforme, VFX e post-produzione.</p>
+<p>La domanda corretta non è:</p>
+<p>“Quanto possiamo eliminare grazie all’AI?”</p>
+<p>Ma:</p>
+<p>“Quali parti di questa produzione ha più senso risolvere con l’AI?”</p>
+<h3>Sequenze completamente generate</h3>
+<p>Possono funzionare molto bene quando il linguaggio visivo viene progettato tenendo conto dei punti di forza della tecnologia.</p>
+<p>Quello che generalmente non funziona è fingere che un film interamente generato possa essere affrontato esattamente come un set tradizionale.</p>
+<p><a href="/blog/organizzare-progetto-film-ai-prompt-reference-continuita" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">La continuità deve essere progettata dall’inizio</a>.</p>
+<p>I personaggi devono avere reference precise.</p>
+<p>Gli ambienti devono avere master.</p>
+<p>La luce deve seguire regole.</p>
+<p>Gli oggetti devono essere controllati.</p>
+<p>Le inquadrature devono essere pensate come parti dello stesso sistema visivo.</p>
+<p>Senza questa disciplina ogni clip può essere bella singolarmente mentre la sequenza nel suo insieme non funziona.</p>
+<h3>Elementi VFX e inquadrature impossibili</h3>
+<p>L’AI generativa può essere molto efficace anche come ulteriore fonte di materiale dentro una <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">pipeline VFX tradizionale</a>.</p>
+<p>Background, ambienti, elementi atmosferici, estensioni, elementi sostitutivi e concept shot complessi possono beneficiarne.</p>
+<p>Ma raramente considero il risultato grezzo come il master finale.</p>
+<p>È materiale.</p>
+<p>A volte materiale molto buono, ma comunque materiale che deve essere integrato nello shot.</p>
 
-<h2>Cosa non funziona (ancora)</h2>
-<p><strong>Coerenza di personaggio.</strong> Stessa persona, stesso volto, stessi vestiti per trenta secondi di video. Nessuno strumento lo fa in modo affidabile — Seedance 2.0 ha fatto passi avanti con il multi-shot, ma non siamo ancora alla coerenza totale. Servono workaround — face swap, compositing, generazione frame-by-frame con riferimento — e tutti richiedono ore di lavoro manuale. È il problema numero uno dell'AI video oggi.</p>
-<p><strong>Testo leggibile.</strong> L'AI genera testo nei video come un ubriaco scrive sulla lavagna. Per qualsiasi contenuto con testo on-screen — titoli, lower thirds, sottopancia — serve ancora <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a> tradizionale. Nano Banana 2 ha risolto il problema sulle immagini statiche, ma nel video siamo ancora lontani.</p>
-<p><strong>Interazione soggetto-oggetto precisa.</strong> Una mano che afferra un oggetto specifico, un dito che preme un bottone, un prodotto manipolato da mani umane. L'AI produce artefatti evidenti — dita che si fondono, oggetti che fluttuano, prese impossibili. Per video di prodotto con interazione umana, serve <a href="/animazione-3d" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">animazione 3D</a> tradizionale.</p>
-<p><strong>Audio sincronizzato.</strong> Lipsync, suoni ambientali coerenti, Foley — l'audio generato da AI è ancora primitivo per standard professionali. Seedance 2.0 ha il lip-sync nativo più avanzato, ma per una produzione seria il video AI va ancora abbinato a una produzione audio separata. Non esistono scorciatoie qui.</p>
+<h2>Cosa continua a non funzionare in modo affidabile</h2>
+<h3>Continuità tra le inquadrature</h3>
+<p>Rimane il problema centrale, anche se la situazione è molto migliorata.</p>
+<p>La questione non è più semplicemente mantenere lo stesso volto.</p>
+<p>Una sequenza reale richiede lo stesso personaggio, gli stessi vestiti, la stessa stanza, gli stessi oggetti, luce coerente, geografia corretta e continuità dell’azione.</p>
+<p>Una bella inquadratura è relativamente facile.</p>
+<p>Venti inquadrature che appartengono allo stesso film sono un altro problema.</p>
+<h3>Interazioni fisiche precise</h3>
+<p>Mani e oggetti sono migliorati, ma rimangono tra le prime cose che controllo.</p>
+<p>Aprire un meccanismo specifico, impugnare correttamente un prodotto, utilizzare un attrezzo, toccare un’altra persona o manipolare qualcosa con precisione meccanica può ancora tradire molto rapidamente la generazione.</p>
+<p>Quando l’interazione è importante per la storia o per il prodotto, preferisco risolverla in maniera controllata invece di sperare che il modello la interpreti correttamente.</p>
+<h3>Testi all’interno del video</h3>
+<p>Le immagini statiche sono migliorate enormemente.</p>
+<p>Nel video il discorso è differente.</p>
+<p>Loghi, packaging, interfacce, cartelli e testi leggibili che devono rimanere esatti durante l’intero shot continuano a essere gestiti meglio con grafica o compositing tradizionali quando la precisione è importante.</p>
+<h3>Audio come audio finale di produzione</h3>
+<p>L’audio generativo nativo sta progredendo rapidamente.</p>
+<p>È già utile per idee, sound design temporaneo e in alcuni casi per dialoghi o ambienti sorprendentemente convincenti.</p>
+<p>Ma continuo a distinguere tra:</p>
+<p>“il modello ha generato dell’audio”</p>
+<p>e</p>
+<p>“il film ha un audio finito”.</p>
+<p>Dialoghi precisi, Foley, continuità degli ambienti, musica, mix e delivery rimangono discipline produttive autonome.</p>
 
-<h2>Il fattore che nessuno menziona: il post-processing</h2>
-<p>Ecco la verità che i demo reel degli strumenti AI non mostrano: il video AI grezzo non è mai il video finale. Mai. Ogni clip generata passa per il mio workflow di post-produzione — color correction, stabilizzazione, pulizia artefatti, compositing con elementi reali, grading per coerenza con il resto del progetto. Il video che vedi nello showreel dello strumento e il video che consegno al cliente sono due cose diverse.</p>
-<p>Questo è il motivo per cui vent'anni di esperienza in post-produzione sono il mio vero vantaggio competitivo nell'era dell'AI. Chiunque può generare un video. Pochissimi sanno trasformarlo in un prodotto professionale.</p>
+<h2>La parte che continua a fare la differenza: la post-produzione</h2>
+<p>Questo non è cambiato.</p>
+<p>La generazione AI grezza non è il master finale.</p>
+<p>Ogni progetto serio continua a beneficiare di montaggio, pulizia degli artefatti, eventuale stabilizzazione, compositing, color correction, grading, sound design e controllo tecnico finale.</p>
+<p>Ma soprattutto qualcuno deve decidere quale generazione sia realmente utilizzabile.</p>
+<p>L’AI può produrre dieci varianti plausibili molto velocemente.</p>
+<p>Non significa che siano dieci buone inquadrature.</p>
+<p>L’occhio che sceglie una performance, nota un’ombra sbagliata, individua un errore di continuità o capisce che un movimento di macchina non funzionerà in montaggio continua a essere parte fondamentale del processo.</p>
+<p>Dopo vent’anni di <a href="/post-produzione" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-produzione</a>, è qui che vedo una delle differenze maggiori tra generare semplicemente video AI e produrre realmente con l’AI.</p>
 
-<h2>Dove andiamo</h2>
-<p>Il ritmo è accelerato rispetto a sei mesi fa. Seedance 2.0 ha dimostrato che il realismo del motion umano è a portata — tra un anno la coerenza dei personaggi sarà risolta. Piattaforme come Higgsfield stanno trasformando l'AI video da singoli strumenti isolati a ecosistemi di produzione completi. Nano Banana 2 ha reso la generazione di frame di riferimento istantanea e quasi gratuita.</p>
-<p>Tra due anni, il controllo frame-by-frame sarà lo standard. Tra tre, la distinzione tra "girato" e "generato" sarà irrilevante per il 90% delle applicazioni.</p>
-<p>Ma il principio non cambia: servirà sempre qualcuno con l'occhio, l'esperienza e il gusto per dirigere questi strumenti. Non "usarli" — dirigerli. Come un regista dirige una troupe, un professionista esperto dirige l'AI. E il risultato è incomparabilmente diverso.</p>`,
+<h2>AI video a ottobre 2026: la mia conclusione</h2>
+<p>L’AI video continua a migliorare a una velocità impressionante, ma credo che finalmente il discorso intorno a questi strumenti stia diventando più realistico.</p>
+<p>Lo sviluppo importante non è che un modello abbia “vinto”.</p>
+<p>È che gli strumenti stanno diventando sufficientemente specializzati da permettere di costruire intorno a loro una vera pipeline produttiva.</p>
+<p>Seedance può risolvere una determinata performance.</p>
+<p>Veo può risolvere un’immagine differente.</p>
+<p>Runway può offrirmi il controllo necessario per un particolare movimento di macchina.</p>
+<p>Kling può gestire meglio un movimento del corpo.</p>
+<p>Higgsfield può permettermi di manipolare una ripresa esistente invece di rigenerarla.</p>
+<p>Magnific può aiutarmi a costruire e rifinire il frame produttivo che rende possibile lo shot.</p>
+<p>Nano Banana 2 può risolvere una reference o una ricostruzione particolarmente difficile.</p>
+<p>Poi VFX e post-produzione tradizionali mettono insieme tutti questi elementi.</p>
+<p>È così che vedo oggi il filmmaking professionale con AI:</p>
+<p><strong>non come sostituzione del filmmaking, ma come un nuovo livello produttivo all’interno del filmmaking.</strong></p>
+<p>E in questo momento sapere combinare questi strumenti vale molto più che essere fedeli a uno solo di loro.</p>`,
 
-    contentEn: `<p><em>Last updated: March 2026</em></p>
+    contentEn: `<p><em>Updated October 2026</em></p>
+<p>After 20 years in VFX and post-production, I now use generative AI as part of real production workflows, not as a separate experiment.</p>
+<p>The situation changes fast. The tools I would have recommended six months ago are not necessarily the ones I would choose today, and some of the problems that looked fundamental at the beginning of 2026 have already changed shape.</p>
+<p>So this is not a definitive ranking of AI video models. It is a practical snapshot of where things stand in October 2026: what I actually use, what each tool is good at, where it still breaks, and why professional <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a> is increasingly about choosing and directing the right tools rather than finding one model that does everything.</p>
 
-<p>The AI video generation market has exploded. Every month a new model drops, every week someone declares "traditional cinema is dead." I use these tools daily in my <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production workflow</a> for real clients. Here's what actually works in 2026, without proclamations.</p>
+<h2>What changed since March 2026</h2>
+<p>A lot.</p>
+<p>Seedance has moved from 2.0 to 2.5 and has become much more relevant for long-form, reference-driven work. Runway has moved beyond Gen-4 to Gen-4.5. Veo 3.1 and Flow have made Google's ecosystem much more complete.</p>
+<p>Higgsfield and Magnific have also become two of the platforms I use most frequently, although for different reasons. Higgsfield is increasingly useful for video manipulation and model-driven production workflows, while Magnific has become one of my main environments for image generation, refinement, upscaling, references and access to different generative models inside the same production process.</p>
+<p>Nano Banana 2 has also become a fundamental part of my image workflow.</p>
+<p>And Sora, which was included in the first version of this article, is no longer part of the comparison: <a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">OpenAI discontinued the Sora product and API</a> during 2026.</p>
+<p>The biggest change, though, is not a model number.</p>
+<p>At the beginning of the year the question was often: <em>Can AI generate a convincing shot?</em></p>
+<p>Today the more useful question is: <em>Can I control that shot well enough to use it inside a sequence?</em></p>
+<p>That is a much higher bar.</p>
 
-<h2>The tools I use and how I judge them</h2>
-<p><strong>Runway Gen-4.</strong> The most reliable for professional work. Camera control is the best available: pan, tilt, zoom, dolly — coherent and predictable responses. I use it for generating environmental elements, backgrounds and sequences where precise movement control is needed. The weak point remains face coherence in long sequences — after 4-5 seconds the features start to drift.</p>
-<p><strong>Veo (Google).</strong> Impressive visual quality — individual frames are often indistinguishable from real footage. I used it a lot for <a href="/en/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">the Roche project</a>, where we needed a broadcast look on a budget that wouldn't have covered even one day of traditional crew. The limitation: less camera control than Runway and longer generation times. I choose it when the priority is single-frame quality, not movement controllability. I use it directly from Google AI Studio — not from Flow or third-party platforms — because the control is greater and the output is better. It's expensive, very expensive, but it works better.</p>
-<p><strong>Kling AI.</strong> Excellent for human subject movement — walks, gestures, facial expressions. Where Runway and Veo produce rigid body movements, Kling generates natural fluidity. I use it when the video protagonist is a person in motion. A concrete example: for a walking sequence in a recent project, Runway produced a mechanical stride. Kling generated a believable gait on the second attempt.</p>
-<p><strong>Sora (OpenAI).</strong> Powerful on cinematic quality and real physics understanding — water, smoke, bouncing light. But the workflow is less flexible for professional production: fewer control parameters, less predictability in the result. I use it for concept and pre-visualization more than final output.</p>
-<p><strong>Seedance 2.0 (ByteDance).</strong> The newcomer that made noise — for good reason. Human subject motion is the most realistic I've seen: weight, gravity, believable physics on moving bodies. Characters run, fall, fight with a naturalness other models still can't match. The multi-shot system maintains visual coherence across different clips, and native lip-sync with integrated audio opens interesting possibilities for narrative content. The limits are concrete: native resolution is 720p — upscaling with Topaz Video is stunning and I use it often, but the starting point remains a real limitation, especially on large screens where artifacts show. Access outside China goes through third-party platforms, and censorship on real faces is aggressive. For now I use it for previsualization and social content where motion realism matters more than resolution. But I'm watching every update — when native 1080p arrives, things will change.</p>
-<p><strong>Higgsfield.</strong> More than a single model, it's a platform that aggregates the best — Sora 2, Kling, Veo 3.1 — under a single interface with cinematic controls. Cinema Studio lets you set specific camera movements (dolly, tracking, steadicam) and the preset system replicates real cinema grammar. The internal generator isn't the strongest, but the value is in the workflow: choose the right model for each shot, apply controls, and work in a single environment without jumping between five different platforms. For those producing high volumes of content — social, advertising, creative variants — it's an efficiency multiplier.</p>
-<p><strong>For reference frames: Nano Banana and Midjourney.</strong> The key frame — the starting image that guides video generation — is the most important step in the workflow. 90% of the final video's quality is decided here. Midjourney remains a reference for aesthetic quality, especially for cinematic atmospheres and lighting. But Google's Nano Banana 2 has changed the game: it generates Pro-quality images at instant speed, maintains character consistency across multiple images, and renders readable text — a historic weak point of all generators. I use it increasingly to iterate quickly on creative directions: ten variants in five minutes, pick the best, and from there move to video generation.</p>
+<h2>My current approach: there is no best AI video model</h2>
+<p>I don't believe in choosing one platform and forcing every shot through it.</p>
+<p>Different models solve different problems.</p>
+<p>For a professional project I may use one system to generate or rebuild the reference frame, another for the performance, another for a specific camera movement, another to modify an existing video, and then finish everything through a conventional VFX, editing and color pipeline.</p>
+<p>Platforms such as Magnific and Higgsfield are useful partly because they let me move between different models and different kinds of operations without treating every generation as an isolated experiment.</p>
+<p>The skill is increasingly in knowing <strong>which model and which platform to use for which shot</strong>.</p>
+<h3>Seedance 2.5</h3>
+<p>Seedance is currently one of the tools I find most interesting for narrative work.</p>
+<p>What has improved most is not simply image quality. It is the relationship between references, movement, continuity and shot construction.</p>
+<p><a href="https://seed.bytedance.com/en/seedance2_5" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Seedance 2.5</a> can work with multiple visual references and longer sequences, which changes the way I approach a scene. Instead of trying to describe an entire world inside a prompt, I can give the model a small number of very precise references with clear roles: this defines the character, this defines the room, this defines the starting frame.</p>
+<p>That is much closer to directing than to prompting.</p>
+<p>For character-driven material, the physicality can be excellent: weight, hesitation, walking, small gestures, reactions. The best results often come from keeping the action linear and the camera idea simple rather than asking the model to solve ten things at once.</p>
+<p>The weak point is still absolute continuity.</p>
+<p>Character consistency has improved considerably, but a professional sequence is not only a face. It is wardrobe, proportions, props, room geometry, lighting direction, screen direction and dozens of small details that must survive from shot to shot.</p>
+<p>That still requires supervision.</p>
+<h3>Veo 3.1 and Google Flow</h3>
+<p><a href="https://deepmind.google/models/veo/" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Veo</a> remains extremely strong when visual quality and photographic plausibility matter.</p>
+<p>Some generated frames can sit surprisingly close to real photography, particularly when the starting image is already well designed.</p>
+<p>The Google ecosystem has also become more useful as a filmmaking environment rather than simply a text-to-video generator. First and last frame control, references, audio and the tools available through <a href="https://flow.google.com/" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Flow</a> make Veo much more flexible than it was earlier in the year.</p>
+<p>I still don't approach it as a universal solution.</p>
+<p>When I need a very specific performance or a particular type of physical movement, another model may respond better. But when the target is a polished, cinematic image with convincing light and atmosphere, Veo remains one of the tools I test early.</p>
+<h3>Runway Gen-4.5</h3>
+<p>Runway remains one of the most mature environments for controlled generation.</p>
+<p><a href="https://runway.com/research/introducing-runway-gen-4.5" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Gen-4.5</a> has improved prompt adherence, movement and the ability to understand more complex sequences of events.</p>
+<p>What I value most about Runway is still the production logic around the model. Iterating is fast, controls are clear and the platform fits naturally into a shot-based workflow.</p>
+<p>I tend to use it when I need a predictable relationship between the reference image, the described movement and the camera.</p>
+<p>That does not mean it always produces the most beautiful frame. It means that in the right situation I can get to a usable result with fewer random detours.</p>
+<p>In production, that matters.</p>
+<h3>Kling</h3>
+<p><a href="https://kling.ai/app/" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Kling</a> continues to be useful when human movement is central to the shot.</p>
+<p>Walking, body mechanics, gestures and performances can feel less rigid than with some competing models.</p>
+<p>I don't treat this as a rule — model behaviour changes constantly and the source image has a huge influence — but when a shot is failing because the person feels mechanically animated, Kling is still one of the alternatives I test.</p>
+<p>This is also why comparing AI models using one identical prompt is only partially useful.</p>
+<p>A model can be weaker overall and still be the right tool for one particular shot.</p>
+<h3>Higgsfield and Genjutsu</h3>
+<p>Higgsfield has become one of the platforms I use frequently because it is increasingly useful beyond simple generation.</p>
+<p>The value is not only access to different models, but the possibility of approaching the shot through different operations.</p>
+<p><a href="https://higgsfield.ai/genjutsu" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Genjutsu</a> is a good example.</p>
+<p>Instead of necessarily generating a new shot from zero, I can start from an existing video and transfer motion or replace specific elements while preserving the underlying timing and movement.</p>
+<p>That is a significant conceptual shift.</p>
+<p>For VFX work, modifying an existing performance can be much more useful than asking an AI model to recreate that performance from scratch.</p>
+<p>If the performance or camera movement is already correct, preserving that structure and changing only what needs to change can save enormous amounts of iteration.</p>
+<p>It is still not a magic replacement for compositing. Difficult edges, faces, occlusions and interactions have to be watched carefully. But the direction is important: generative video is moving from pure generation toward <strong>shot manipulation</strong>.</p>
+<p>That is much more relevant to real post-production.</p>
+<h3>Magnific</h3>
+<p><a href="https://www.magnific.com/" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Magnific</a> is another platform that has become central to my workflow, although I use it differently from Higgsfield.</p>
+<p>I use it extensively around the image that comes before the video.</p>
+<p>Reference preparation, image generation, reconstruction, refinement, upscaling, texture quality and consistency are all critical when building a shot.</p>
+<p>The quality of the starting image influences almost everything that comes afterwards.</p>
+<p>Magnific is useful because it lets me work across different models and operations inside the same environment rather than treating image generation, editing and enhancement as completely separate stages.</p>
+<p>For me, one of its most useful roles is between concept and final video generation.</p>
+<p>I may start from a generated image, correct its structure, improve specific details, rebuild textures, create alternative interpretations or upscale it before using that image as the reference for a video model.</p>
+<p>That workflow matters because video models tend to inherit both the strengths and the mistakes of the starting image.</p>
+<p>If the reference is weak, the video is already compromised before it moves.</p>
+<p>Magnific is therefore not just an upscaler in my workflow. It is part of the process of <strong>preparing a controlled production frame</strong>.</p>
+<p>It is also useful as an aggregation and workflow environment: being able to choose between different models depending on the task is increasingly more valuable than expecting one image or video model to solve everything.</p>
+<p>This is one of the reasons I use both Magnific and Higgsfield regularly. They overlap in some areas, but they solve different parts of the production problem.</p>
+<h3>Nano Banana 2</h3>
+<p>For me, image generation is now inseparable from AI video generation.</p>
+<p>The reference frame determines an enormous part of the final result.</p>
+<p>If the face, clothing, proportions, lighting or environment are wrong in the reference, the video model is already starting from a compromised shot.</p>
+<p><a href="https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Nano Banana 2</a> has become one of the tools I use most for this stage.</p>
+<p>Its real advantage is not simply generating attractive images. It is the ability to work iteratively with references, preserve subjects and reconstruct an image while following precise instructions.</p>
+<p>That makes it particularly useful for building character sheets, correcting a production frame, developing alternative camera angles or preparing the exact image I want to animate.</p>
+<p>I increasingly spend more time designing the reference correctly and less time trying to rescue a bad generation afterwards.</p>
+<p>That is a much more efficient workflow.</p>
 
-<h2>What works for professional production</h2>
-<p><strong>Concept and pre-visualization.</strong> Here AI is already irreplaceable. A director asks me to explore ten creative directions? I generate visual variants in hours, not days. For <a href="/en/portfolio/doppelganger" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Doppelganger</a> AI generated the project's entire visual base — work that in traditional pre-production would have required weeks of storyboarding and concept art.</p>
-<p><strong>Environmental elements and backgrounds.</strong> Skies, landscapes, fantastic environments — AI produces excellent material I then integrate in compositing with traditional <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> techniques. The key is never using AI material as-is: it always needs integration work to make it live in the scene.</p>
-<p><strong>Fully AI-generated content.</strong> For projects where the budget doesn't allow traditional production, AI produces professional results. <a href="/en/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">The Roche project</a> demonstrates this: a complete video with broadcast quality, entirely made with AI tools then refined in <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a>. The client got the result they wanted, at a fraction of the cost of traditional production.</p>
-<p><strong>Prototyping for commercial pitches.</strong> An agency needs to sell a concept to a client? Instead of a static mood board, I deliver an AI video concept in a few days. The difference in approval rate is huge: the client sees the result, they don't have to imagine it.</p>
+<h2>What actually works in professional production</h2>
+<h3>Previsualization and creative development</h3>
+<p>This is no longer experimental.</p>
+<p>AI is extremely effective for exploring ideas before committing a traditional production budget.</p>
+<p>A director or agency can look at an actual moving concept instead of interpreting a mood board.</p>
+<p>The important difference is speed of iteration.</p>
+<p>You can test framing, atmosphere, casting direction, wardrobe, locations and even editing ideas before shooting anything.</p>
+<p>For pitches and creative development, that is already a major production advantage.</p>
+<h3>Hybrid live action + AI</h3>
+<p>This is one of the areas I find most interesting.</p>
+<p>The assumption that AI video means replacing the shoot is too simplistic.</p>
+<p>Often the better solution is to capture the things AI struggles to reproduce precisely — performance, a product, a physical interaction, a specific face — and generate or modify everything around them.</p>
+<p>That can mean extending a location, changing an environment, creating a shot that would be disproportionately expensive to film traditionally, or transforming selected parts of existing footage.</p>
+<p>The economic advantage exists, but AI production is not free production.</p>
+<p>You are replacing some traditional costs with generation time, iteration, specialist work, computing or platform credits, VFX and post-production.</p>
+<p>The right question is not “How much can AI eliminate?”</p>
+<p>It is “Which parts of this production make more sense to solve with AI?”</p>
+<h3>Fully generated sequences</h3>
+<p>These can now work very well when the visual language is designed around the strengths of the technology.</p>
+<p>What usually fails is pretending that an entirely generated film can be approached exactly like a conventional shoot.</p>
+<p>You have to <a href="/en/blog/how-to-organize-ai-film-project-prompts-references-continuity" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">design for continuity from the beginning</a>.</p>
+<p>Characters need defined references. Locations need masters. Lighting needs rules. Props need to be tracked. Shots need to be conceived as part of the same visual system.</p>
+<p>Without that discipline, every clip can look good individually while the sequence falls apart.</p>
+<h3>VFX elements and impossible shots</h3>
+<p>Generative AI can also be very effective as another source of material inside a <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">conventional VFX pipeline</a>.</p>
+<p>Backgrounds, environments, atmospheric elements, extensions, replacement elements and difficult concept shots can all benefit from it.</p>
+<p>But I rarely consider the raw generated output finished.</p>
+<p>It is material.</p>
+<p>Sometimes very good material, but still material that has to be integrated into the shot.</p>
 
-<h2>What doesn't work (yet)</h2>
-<p><strong>Character coherence.</strong> Same person, same face, same clothes for thirty seconds of video. No tool does this reliably — Seedance 2.0 has made strides with multi-shot, but we're not at total coherence yet. Workarounds are needed — face swap, compositing, frame-by-frame generation with reference — and all require hours of manual work. It's the number one problem in AI video today.</p>
-<p><strong>Readable text.</strong> AI generates text in video like a drunk writes on a blackboard. For any content with on-screen text — titles, lower thirds, name straps — traditional <a href="/en/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a> is still needed. Nano Banana 2 solved the problem for still images, but in video we're still far off.</p>
-<p><strong>Precise subject-object interaction.</strong> A hand gripping a specific object, a finger pressing a button, a product manipulated by human hands. AI produces obvious artifacts — fingers merging, objects floating, impossible grips. For product videos with human interaction, traditional <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">3D animation</a> is needed.</p>
-<p><strong>Synchronized audio.</strong> Lipsync, coherent ambient sounds, Foley — AI-generated audio is still primitive by professional standards. Seedance 2.0 has the most advanced native lip-sync, but for serious production AI video still needs to be paired with separate audio production. There are no shortcuts here.</p>
+<h2>What still doesn't work reliably</h2>
+<h3>Continuity across a sequence</h3>
+<p>This remains the central problem, although it is much better than it was.</p>
+<p>The question is no longer simply whether a model can maintain a face.</p>
+<p>A real sequence needs the same character, the same clothes, the same room, the same object placement, coherent light, correct geography and continuity of action.</p>
+<p>One beautiful shot is easy.</p>
+<p>Twenty shots that belong to the same film are something else.</p>
+<h3>Precise physical interactions</h3>
+<p>Hands and objects are better, but they remain one of the first things I inspect.</p>
+<p>Opening a specific mechanism, gripping a product correctly, using a tool, touching another person or manipulating something with mechanical precision can still expose the generation very quickly.</p>
+<p>When the interaction is important to the story or the product, I prefer to solve it deliberately rather than hope the model gets it right.</p>
+<h3>Text inside video</h3>
+<p>Still images have improved enormously.</p>
+<p>Video is another matter.</p>
+<p>Logos, packaging, interface elements, signage and readable text that need to remain exact throughout a moving shot are still better handled with conventional graphics or compositing when accuracy matters.</p>
+<h3>Audio as final production audio</h3>
+<p>Native AI audio has progressed quickly.</p>
+<p>It is already useful for ideas, temporary sound design and in some cases surprisingly convincing generated dialogue or ambience.</p>
+<p>But I still separate the idea of “the model generated audio” from “the film has finished audio”.</p>
+<p>Precise dialogue, Foley, ambience continuity, music, mix and delivery standards remain a production discipline of their own.</p>
 
-<h2>The factor nobody mentions: post-processing</h2>
-<p>Here's the truth that AI tool demo reels don't show: raw AI video is never the final video. Never. Every generated clip goes through my post-production workflow — color correction, stabilization, artifact cleanup, compositing with real elements, grading for coherence with the rest of the project. The video you see in the tool's showreel and the video I deliver to the client are two different things.</p>
-<p>This is why twenty years of post-production experience are my real competitive advantage in the AI era. Anyone can generate a video. Very few know how to transform it into a professional product.</p>
+<h2>The part that still makes the difference: post-production</h2>
+<p>This has not changed.</p>
+<p>Raw AI generation is not the final master.</p>
+<p>Every serious project still benefits from editing, artifact cleanup, stabilization where needed, compositing, color correction, grading, sound work and a final technical pass.</p>
+<p>More importantly, someone has to decide which generation is actually usable.</p>
+<p>AI can produce ten plausible variations very quickly. That does not mean all ten are good shots.</p>
+<p>The eye that chooses the performance, notices the wrong shadow, catches the continuity error or understands that the camera movement is fighting the edit is still part of the job.</p>
+<p>After twenty years in <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a>, this is where I see the biggest difference between simply generating AI video and producing with AI.</p>
 
-<h2>Where we're heading</h2>
-<p>The pace has accelerated compared to six months ago. Seedance 2.0 has shown that realistic human motion is within reach — in one year character coherence will be solved. Platforms like Higgsfield are transforming AI video from isolated individual tools into complete production ecosystems. Nano Banana 2 has made reference frame generation instant and nearly free.</p>
-<p>In two years, frame-by-frame control will be standard. In three, the distinction between "shot" and "generated" will be irrelevant for 90% of applications.</p>
-<p>But the principle doesn't change: someone with the eye, experience and taste to direct these tools will always be needed. Not "use them" — direct them. Like a director directs a crew, an experienced professional directs AI. And the result is incomparably different.</p>`,
+<h2>AI video in October 2026: my conclusion</h2>
+<p>AI video is getting better very fast, but I think the conversation around it is finally becoming more realistic.</p>
+<p>The important development is not that one model has “won”.</p>
+<p>It is that the tools are becoming specialized enough to build a real production pipeline around them.</p>
+<p>Seedance may solve one type of performance. Veo may solve another image. Runway may give me the control I need for a particular camera move. Kling may handle a body movement better. Higgsfield may let me manipulate an existing take instead of regenerating it. Magnific may help me build and refine the production frame that makes the shot possible. Nano Banana 2 may solve a difficult reference or reconstruction problem.</p>
+<p>Then conventional VFX and post-production bring those pieces together.</p>
+<p>That is how I currently see professional AI filmmaking: <strong>not as a replacement for filmmaking, but as a new production layer inside it.</strong></p>
+<p>And right now, knowing how to combine these tools is far more valuable than being loyal to any one of them.</p>`,
   },
   // ====== POST 12: Cortometraggi AI futuro ======
   {

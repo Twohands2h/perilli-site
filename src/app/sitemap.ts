@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // NOTA lastmod: per pagine statiche e portfolio NON dichiariamo lastModified.
   // Prima era new Date() (data del deploy), quindi cambiava su 72 URL a ogni build
   // e Google impara a ignorarlo. Un lastmod va messo solo se è una data vera:
-  // gli articoli blog usano post.date.
+  // gli articoli blog usano post.dateModified se presente, altrimenti post.date.
 
   const staticPages = [
     { path: '/',                priority: 1.0, changeFrequency: 'weekly'  as const },
@@ -96,7 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const itUrl = `${BASE_URL}/blog/${post.slug}`;
     const enUrl = `${BASE_URL}/en/blog/${post.slugEn}`;
     const alternates = buildAlternates(itUrl, enUrl);
-    const postDate = new Date(post.date);
+    const postDate = new Date(post.dateModified ?? post.date);
 
     return [
       {
