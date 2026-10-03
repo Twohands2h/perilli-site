@@ -455,7 +455,7 @@ export const projects: Project[] = [
         solutionEn: 'I managed the entire <a href="/en/post-production" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">post-production</a>: editing, color grading in DaVinci Resolve and <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX</a> work. The grading plays on desaturated, earthy palettes \u2014 the island, the sea, the stone. The editing alternates slow, contemplative rhythms with sharper cuts in moments of tension.',
         resultIt: 'Selezionato al Festival di Cannes 2016 (Court M\u00E9trage). Selezionato a CinemadaMare e Cerano Film.',
         resultEn: 'Selected at the Cannes Film Festival 2016 (Court M\u00E9trage). Selected at CinemadaMare and Cerano Film.',
-        imdbLink: 'https://www.imdb.com/title/tt6058478/',
+        imdbLink: 'https://www.imdb.com/title/tt5429970/',
         contentBlocks: [
             {
                 type: 'video-mp4',
@@ -486,8 +486,8 @@ export const projects: Project[] = [
             },
             {
                 type: 'text',
-                textIt: '**Crediti**\nRegia: Valerio de Berardinis\nFotografia, VFX, Montaggio, Color: Piero Perilli\nGrafiche: Riccardo Bizziccari\nMusica: Paolo Pecorelli\nProduzione: MM Productions\n\nSelezione Festival di Cannes 2016 (Court M\u00E9trage) \u2014 CinemadaMare \u2014 Cerano Film\n<a href="https://www.imdb.com/title/tt6058478/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>',
-                textEn: '**Credits**\nDirector: Valerio de Berardinis\nCinematography, VFX, Editing, Color: Piero Perilli\nGraphics: Riccardo Bizziccari\nMusic: Paolo Pecorelli\nProduction: MM Productions\n\nCannes Film Festival 2016 selection (Court M\u00E9trage) \u2014 CinemadaMare \u2014 Cerano Film\n<a href="https://www.imdb.com/title/tt6058478/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>'
+                textIt: '**Crediti**\nRegia: Valerio de Berardinis\nFotografia, VFX, Montaggio, Color: Piero Perilli\nGrafiche: Riccardo Bizziccari\nMusica: Paolo Pecorelli\nProduzione: MM Productions\n\nSelezione Festival di Cannes 2016 (Court M\u00E9trage) \u2014 CinemadaMare \u2014 Cerano Film\n<a href="https://www.imdb.com/title/tt5429970/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>',
+                textEn: '**Credits**\nDirector: Valerio de Berardinis\nCinematography, VFX, Editing, Color: Piero Perilli\nGraphics: Riccardo Bizziccari\nMusic: Paolo Pecorelli\nProduction: MM Productions\n\nCannes Film Festival 2016 selection (Court M\u00E9trage) \u2014 CinemadaMare \u2014 Cerano Film\n<a href="https://www.imdb.com/title/tt5429970/" target="_blank" rel="noopener" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">IMDB</a>'
             }
         ],
     },
