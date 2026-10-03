@@ -46,6 +46,11 @@ const contentIT = {
       imageAlt: 'Product visualization 3D e simulazione tyFlow per Guerciotti',
     },
     {
+      name: 'Modellazione 3D',
+      tag: 'Dal disegno tecnico al modello pronto per render e animazione',
+      description: `<p>Costruisco modelli 3D partendo da file CAD, disegni tecnici o reference, curando topologia, UV, texturing e materiali. Il modello viene preparato per animazione, product visualization o integrazione in ambienti real-time, come nei progetti Guerciotti e JOR.</p>`,
+    },
+    {
       name: 'Simulazioni 3D',
       tag: 'Fenomeni Fisici',
       description: `<p>Ricreo fenomeni fisici e processi complessi attraverso simulazioni 3D. Fiamme, fumo, fluidi, distruzioni, sistemi particellari. Uso tyFlow in 3ds Max e Niagara in Unreal Engine per simulazioni fisicamente accurate o stilizzate. Il progetto Guerciotti, ad esempio, ha richiesto spline animate e simulazioni di fiamme che richiamano il processo di saldatura artigianale. Queste simulazioni si integrano naturalmente nel workflow di <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a> e <a href="/motion-graphics" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">motion graphics</a>.</p>`,
@@ -85,8 +90,8 @@ const contentIT = {
   recentWorkTitle: 'Progetti di animazione recenti',
   recentWork: [
     { title: 'Guerciotti 60 Anni — telaio carbonio, animazione 3D fotorealistica', link: '/portfolio/guerciotti-60-anni' },
-    { title: 'JOR Collezione Liaison — gioielli 3D in Unreal Engine 5', link: '/portfolio/jor' },
-    { title: 'GRAnROMA Fresia — render architettonico 3D per centro commerciale', link: '/portfolio/granroma-fresia' },
+    { title: 'JOR Liaison — gioielli modellati dai disegni tecnici, in un ambiente 3D realizzato in Unreal Engine 5 e ispirato alla Roma classica', link: '/portfolio/jor' },
+    { title: 'Wonder Alba — personaggio 3D fotorealistico per Medlogix, animazione e motion capture real-time in Unreal Engine 5', link: '/portfolio/wonder-alba' },
     { title: 'Klinamen Orion — animazione 3D particellare', link: '/portfolio/klinamen-orion' },
     { title: '📖 Leggi: Animazione 3D di prodotto — presentazione cinematografica', link: '/blog/animazione-3d-prodotto-presentazione-cinematografica' },
   ],
@@ -120,6 +125,11 @@ const contentEN = {
       description: `<p>I present your product in the most effective and captivating way. An example is the <a href="/en/portfolio/guerciotti-60-anni" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Guerciotti 60 Anni</a> project, where I animated a carbon frame from spline to photorealistic render. I create photorealistic renders and 3D animations showing its design, features and functionality from every angle — ideal for commercials, marketing campaigns, e-commerce and product launches. Products are modeled from technical drawings or photos, textured with realistic materials, lit and animated to show every detail.</p>`,
       image: '/images/services/product-visualization-3d-simulazione-tyflow-guerciotti.jpg',
       imageAlt: '3D product visualization and tyFlow simulation for Guerciotti',
+    },
+    {
+      name: '3D Modeling',
+      tag: 'From technical drawings to animation-ready 3D models',
+      description: `<p>I build 3D models from CAD files, technical drawings or references, handling topology, UVs, texturing and materials. Models are prepared for animation, product visualization or real-time environments, as in the Guerciotti and JOR projects.</p>`,
     },
     {
       name: '3D Simulations',
@@ -161,8 +171,8 @@ const contentEN = {
   recentWorkTitle: 'Recent animation projects',
   recentWork: [
     { title: 'Guerciotti 60 Years — carbon frame, photorealistic 3D animation', link: '/en/portfolio/guerciotti-60-anni' },
-    { title: 'JOR Liaison Collection — 3D jewelry in Unreal Engine 5', link: '/en/portfolio/jor' },
-    { title: 'GRAnROMA Fresia — 3D architectural render for shopping center', link: '/en/portfolio/granroma-fresia' },
+    { title: 'JOR Liaison — jewelry modeled from technical drawings, in a 3D environment built in Unreal Engine 5 and inspired by classical Rome', link: '/en/portfolio/jor' },
+    { title: 'Wonder Alba — photorealistic 3D character for Medlogix, animation and real-time motion capture in Unreal Engine 5', link: '/en/portfolio/wonder-alba' },
     { title: 'Klinamen Orion — 3D particle animation', link: '/en/portfolio/klinamen-orion' },
     { title: '📖 Read: 3D product animation — cinematic presentation', link: '/en/blog/3d-product-animation-cinematic-presentation' },
   ],
