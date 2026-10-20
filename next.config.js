@@ -19,9 +19,25 @@ const nextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      // Pagine di revisione clienti: fuori dagli indici anche a livello HTTP,
+      // e nessun Referer verso siti terzi (il link contiene il token d'accesso).
+      {
+        source: '/review/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive, noimageindex' },
+          { key: 'Referrer-Policy', value: 'same-origin' },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       // === Pagine proposta clienti ===
+      // Link breve per il cliente → pagina di revisione (temporaneo: si può ripuntare alla v2)
+      { source: '/artsitepark', destination: '/review/art-site-park-phd8du', permanent: false },
+      { source: '/artsitepark/', destination: '/review/art-site-park-phd8du', permanent: false },
       { source: '/garanzia', destination: '/garanzia/index.html', permanent: false },
       { source: '/garanzia/ads', destination: '/garanzia/ads/index.html', permanent: false },
       { source: '/garanzia/spot2', destination: '/garanzia/spot2/index.html', permanent: false },

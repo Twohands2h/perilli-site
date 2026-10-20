@@ -106,6 +106,8 @@ export function getAltLocaleHref(pathname: string, currentLocale: string): strin
   if (currentLocale === 'it') {
     // IT → EN: strip /it prefix if present (Next.js internal routing)
     const cleanPath = pathname.replace(/^\/it(\/|$)/, '/$1').replace(/^\/\//, '/') || '/';
+    // Pagine di revisione clienti: esistono solo in italiano → EN porta alla home inglese.
+    if (cleanPath.startsWith('/review/')) return '/en';
     return toEnPath(cleanPath);
   } else {
     // EN → IT: strip /en, convert EN slugs to IT slugs

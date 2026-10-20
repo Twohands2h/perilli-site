@@ -40,7 +40,8 @@ export default function LanguageSuggestion() {
     sessionStorage.setItem('lang-suggestion-dismissed', 'true');
   };
 
-  if (!show) return null;
+  // Pagine di revisione clienti: solo IT, nessun suggerimento lingua.
+  if (!show || /^\/(it\/)?review\//.test(pathname)) return null;
 
   const altHref = getAltLocaleHref(pathname, locale);
   const isIt = locale === 'it';
