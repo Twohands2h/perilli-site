@@ -62,6 +62,8 @@ export default function ReviewPage({ params }: Props) {
 
   const [current, ...previous] = review.versions
   const label = `${review.project} ${current.id}`
+  // Dalla v2 in poi la pagina si presenta come aggiornamento.
+  const isUpdate = current.id !== 'v1'
 
   const subject = `${review.project} ${current.id} — note`
   const body = [
@@ -78,7 +80,7 @@ export default function ReviewPage({ params }: Props) {
   const meta = [
     { k: 'Cliente', v: review.client },
     { k: 'Versione', v: `${current.id} · ${current.name}` },
-    { k: 'Consegna', v: formatDate(current.date) },
+    { k: isUpdate ? 'Aggiornata il' : 'Consegna', v: formatDate(current.date) },
     { k: 'Durata', v: current.duration },
   ]
 
@@ -108,6 +110,12 @@ export default function ReviewPage({ params }: Props) {
 
       {/* 2 · Player + capitoli */}
       <section className="mt-10">
+        {isUpdate ? (
+          <p className="mb-4 inline-flex items-center gap-2.5 rounded-sm border border-accent/30 bg-accent-muted px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+            Nuova versione · aggiornata il {formatDate(current.date)}
+          </p>
+        ) : null}
         <ReviewPlayer
           src={current.stream}
           poster={current.poster}
