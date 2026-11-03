@@ -44,7 +44,7 @@ export type Review = {
 }
 
 // Stesso file per streaming e download: ?download=1 forza il salvataggio.
-const ASP_V2 = `${MEDIA_BASE}/ArtSitePark_v02.mp4`
+const ASP_V3 = `${MEDIA_BASE}/ArtSitePark_v03.mp4`
 
 export const reviews: Review[] = [
   {
@@ -56,25 +56,25 @@ export const reviews: Review[] = [
 
     versions: [
       {
-        id: 'v2',
-        name: 'Seconda stesura',
-        date: '2026-10-26',
-        duration: '3:14',
-        stream: ASP_V2,
-        poster: '/images/review/art-site-park/art-site-park-v2-poster.webp',
+        id: 'v3',
+        name: 'Terza stesura',
+        date: '2026-11-03',
+        duration: '3:13',
+        stream: ASP_V3,
+        poster: '/images/review/art-site-park/art-site-park-v3-poster.webp',
         downloads: [
           {
             label: 'Video HD',
             spec: 'MP4 H.264 · 1920×1080 · 24 fps · stereo',
-            size: '231 MB',
-            url: `${ASP_V2}?download=1`,
+            size: '73 MB',
+            url: `${ASP_V3}?download=1`,
           },
         ],
       },
     ],
 
     intro: [
-      'Questa è la seconda stesura del film: la struttura, il ritmo della salita e il trattamento di ogni mondo, dal mare all’involucro.',
+      'Questa è la terza stesura del film: la struttura, il ritmo della salita e il trattamento di ogni mondo, dal mare all’involucro.',
       'Color, sound design, animazioni e titoli sono ancora in lavorazione. In questa fase ci interessa la direzione: se il viaggio funziona, se i murales restano protagonisti, se il passaggio da un piano all’altro è fluido.',
     ],
 
