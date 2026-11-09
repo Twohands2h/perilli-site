@@ -38,6 +38,8 @@ const nextConfig = {
       // Link breve per il cliente → pagina di revisione (temporaneo: si può ripuntare alla v2)
       { source: '/artsitepark', destination: '/review/art-site-park-phd8du', permanent: false },
       { source: '/artsitepark/', destination: '/review/art-site-park-phd8du', permanent: false },
+      { source: '/evolve', destination: '/review/leggende-del-biscione-o397b9', permanent: false },
+      { source: '/evolve/', destination: '/review/leggende-del-biscione-o397b9', permanent: false },
       { source: '/garanzia', destination: '/garanzia/index.html', permanent: false },
       { source: '/garanzia/ads', destination: '/garanzia/ads/index.html', permanent: false },
       { source: '/garanzia/spot2', destination: '/garanzia/spot2/index.html', permanent: false },
