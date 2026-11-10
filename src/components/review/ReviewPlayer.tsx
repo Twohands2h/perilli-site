@@ -13,6 +13,8 @@ type Props = {
   slug: string
   versionId: string
   chapters: ReviewChapter[]
+  /** Titolo sopra l'elenco dei capitoli (es. 'Cosa è cambiato dalla V2'). Facoltativo. */
+  chaptersTitle?: string
 }
 
 /** mm:ss:ff — il formato con cui il cliente può indicare un punto preciso. */
@@ -32,6 +34,7 @@ export default function ReviewPlayer({
   slug,
   versionId,
   chapters,
+  chaptersTitle,
 }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [time, setTime] = useState(0)
@@ -118,8 +121,11 @@ export default function ReviewPlayer({
         </button>
       </div>
 
+      {chapters.length > 0 && chaptersTitle ? (
+        <h2 className="section-title mt-14 md:mt-16">{chaptersTitle}</h2>
+      ) : null}
       {chapters.length > 0 ? (
-        <ol className="mt-10 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <ol className={`${chaptersTitle ? '' : 'mt-10 '}grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-3`}>
           {chapters.map((c, i) => {
             const clickable = c.time !== null
             const inner = (
@@ -130,7 +136,7 @@ export default function ReviewPlayer({
                   </span>
                   {clickable ? (
                     <span className="font-mono text-xs tabular-nums text-text-muted">
-                      {toTimecode(c.time as number, fps).slice(0, 5)}
+                      {toTimecode(c.time as number, fps)}
                     </span>
                   ) : null}
                 </span>

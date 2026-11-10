@@ -160,6 +160,7 @@ export default function ReviewPage({ params }: Props) {
             slug={review.slug}
             versionId={current.id}
             chapters={review.chapters}
+            chaptersTitle={review.chaptersTitle}
           />
         )}
       </section>
@@ -251,10 +252,13 @@ export default function ReviewPage({ params }: Props) {
         </section>
       ) : (
         <section className="relative mt-16 overflow-hidden rounded-lg border border-accent/25 bg-surface p-6 md:mt-20 md:p-10 lg:p-12">
-          <h2 className="text-display-sm font-bold text-text-primary">Le tue note</h2>
+          <h2 className="text-display-sm font-bold text-text-primary">
+            {review.addressPlural ? 'Le vostre note' : 'Le tue note'}
+          </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary">
-            Metti in pausa sul punto che ti interessa, copia il timecode e incollalo nella mail
-            accanto alla nota. Se preferisci, guardiamo il film insieme in una call.
+            {review.addressPlural
+              ? 'Mettete in pausa sul punto che vi interessa, copiate il timecode e incollatelo nella mail accanto alla nota. Se preferite, guardiamo il video insieme in una call.'
+              : 'Metti in pausa sul punto che ti interessa, copia il timecode e incollalo nella mail accanto alla nota. Se preferisci, guardiamo il film insieme in una call.'}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <TrackedLink

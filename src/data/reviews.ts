@@ -56,6 +56,10 @@ export type Review = {
   versions: ReviewVersion[] // la prima è quella corrente (in confronto: tutte correnti)
   intro: string[]
   chapters: ReviewChapter[]
+  /** Titolo sopra i capitoli. Se manca, l'elenco compare senza titolo. */
+  chaptersTitle?: string
+  /** La pagina si rivolge a un gruppo (agenzia): testi al "voi" invece che al "tu". */
+  addressPlural?: boolean
   confidentiality: string
   /** Attiva la modalità confronto tra le versioni. */
   compare?: {
@@ -67,8 +71,7 @@ export type Review = {
 
 // Stesso file per streaming e download: ?download=1 forza il salvataggio.
 const ASP_V3 = `${MEDIA_BASE}/ArtSitePark_v03.mp4`
-const AR_V1 = `${MEDIA_BASE}/AR_Leggende_spot15_v1.mp4`
-const AR_V2 = `${MEDIA_BASE}/AR_Leggende_spot15_v2.mp4`
+const AR_V3 = `${MEDIA_BASE}/AR_Leggende_spot15_v3.mp4`
 
 export const reviews: Review[] = [
   {
@@ -118,84 +121,74 @@ export const reviews: Review[] = [
   },
 
   // ── Evolve · Mondadori & Alfa Romeo — spot 15″ (link breve: /evolve) ──
+  // V1/V2 erano due montaggi a confronto (modalità `compare`): Evolve ha scelto la V2.
+  // Dalla V3 si prosegue su una sola linea.
   {
     slug: 'leggende-del-biscione-o397b9',
     project: 'Le Leggende del Biscione',
     subtitle: 'Mondadori & Alfa Romeo · spot 15″',
     client: 'Evolve',
     fps: 24,
+    addressPlural: true,
 
     versions: [
       {
-        id: 'V1',
-        name: 'Senza dito',
-        summary:
-          'Le prime auto si presentano da sole. La mano entra al quinto secondo, sulla portiera della Duetto: c’è più attesa prima di capire che sono miniature.',
-        date: '2026-11-09',
+        id: 'V3',
+        name: 'Sulle vostre note',
+        date: '2026-11-10',
         duration: '0:15',
-        stream: AR_V1,
-        poster: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-v1-poster.webp',
+        stream: AR_V3,
+        poster: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-v3-poster.webp',
         downloads: [
           {
             label: 'Video HD',
             spec: 'MP4 H.264 · 1920×1080 · 24 fps · stereo',
             size: '22 MB',
-            url: `${AR_V1}?download=1`,
-          },
-        ],
-      },
-      {
-        id: 'V2',
-        name: 'Con il dito',
-        summary:
-          'Un dito sfiora la carrozzeria già dal secondo taglio, come nello storyboard: la scala delle miniature si legge subito.',
-        date: '2026-11-09',
-        duration: '0:15',
-        stream: AR_V2,
-        poster: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-v2-poster.webp',
-        downloads: [
-          {
-            label: 'Video HD',
-            spec: 'MP4 H.264 · 1920×1080 · 24 fps · stereo',
-            size: '22 MB',
-            url: `${AR_V2}?download=1`,
+            url: `${AR_V3}?download=1`,
           },
         ],
       },
     ],
-
-    compare: {
-      // Verificato a frame (24 fps): fuori da questi due tratti i montaggi sono identici,
-      // audio compreso.
-      differences: [
-        {
-          title: 'Tagli 2 e 3 · i primi dettagli di carrozzeria',
-          from: 0.96, // 00:00:23
-          to: 2.41, // 00:02:09
-          byVersion: {
-            V1: 'Nessuna mano in campo: le carrozzerie si mostrano da sole.',
-            V2: 'Un dito sfiora la carrozzeria in entrambi i tagli.',
-          },
-        },
-        {
-          title: 'Taglio 5 · le parti apribili',
-          from: 5.13, // 00:05:03
-          to: 6.12, // 00:06:02
-          byVersion: {
-            V1: 'La mano apre la portiera della Duetto. È la prima volta che entra in campo.',
-            V2: 'La Giulia GTAm con la portiera già aperta, senza mano. La mano torna nel taglio dopo, sul cofano.',
-          },
-        },
-      ],
-    },
 
     intro: [
-      'Due montaggi dello spot da 15″ per il lancio in edicola. Musica, voce ed endboard sono identici: cambiano due momenti, meno di tre secondi in tutto.',
-      'La differenza è quando lo spettatore scopre che sta guardando delle miniature. Nella V1 lo scopre più tardi, e l’attesa dura più a lungo. Nella V2 lo capisce dal primo dettaglio, grazie al dito che sfiora la carrozzeria.',
-      'Sono due modi di raccontare la stessa sorpresa. La scelta la lascio a voi.',
+      'Questa è la V3. Riparte dalla V2, il montaggio con il dito che avete scelto, e integra le vostre osservazioni.',
+      'I tagli sono gli stessi della V2: le modifiche sono tutte dentro le inquadrature e nel packshot. Le trovate elencate sotto il player, ciascuna con il punto del film in cui vederla.',
     ],
 
-    chapters: [],
+    // Le note di Evolve sulla V2, nell'ordine della loro mail, una per voce. Il timecode porta al punto in cui si vede la modifica.
+    chaptersTitle: 'Cosa è cambiato dalla V2',
+    chapters: [
+      {
+        title: 'Mani e unghie',
+        note: 'Più curate in tutte le inquadrature con la mano.',
+        time: 0.96, // 00:00:23 — primo dito sulla carrozzeria
+      },
+      {
+        title: 'Chiusura della teca',
+        note: 'La Duetto si posa sulla pedana e solo dopo entra la mano a chiudere la teca.',
+        time: 7.55, // 00:07:13 — inizio del finale
+      },
+      {
+        title: 'Fasci luminosi',
+        note: 'Più discreti nel finale: restano una traccia di luce, non sono più protagonisti.',
+        time: 8.0, // 00:08:00
+      },
+      {
+        title: 'Proporzione della mano',
+        note: 'Ingrandita rispetto alle miniature, per rendere leggibile la scala 1:24.',
+        time: 10.0, // 00:10:00 — la mano entra sulla teca
+      },
+      {
+        title: 'Packshot',
+        note: 'Logo Alfa Romeo e note legali, dal layout aggiornato.',
+        time: 13.25, // 00:13:06 — entra il logo
+      },
+      {
+        title: 'Nota sull’AI',
+        note: '«Contenuto modificato con sistemi di Intelligenza Artificiale» in alto a destra, per tutta la durata.',
+        time: 0,
+      },
+    ],
 
     ogImage: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-og.jpg',
 
