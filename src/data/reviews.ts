@@ -71,7 +71,8 @@ export type Review = {
 
 // Stesso file per streaming e download: ?download=1 forza il salvataggio.
 const ASP_V3 = `${MEDIA_BASE}/ArtSitePark_v03.mp4`
-const AR_V3 = `${MEDIA_BASE}/AR_Leggende_spot15_v3.mp4`
+// v3b: V3 con la nota sul marchio Alfa Romeo. Nome nuovo perché Blob tiene in cache 30 giorni.
+const AR_V3 = `${MEDIA_BASE}/AR_Leggende_spot15_v3b.mp4`
 
 export const reviews: Review[] = [
   {
@@ -135,7 +136,7 @@ export const reviews: Review[] = [
       {
         id: 'V3',
         name: 'Sulle vostre note',
-        date: '2026-11-10',
+        date: '2026-11-11',
         duration: '0:15',
         stream: AR_V3,
         poster: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-v3-poster.webp',
@@ -184,8 +185,8 @@ export const reviews: Review[] = [
         time: 13.25, // 00:13:06 — entra il logo
       },
       {
-        title: 'Nota sull’AI',
-        note: '«Contenuto modificato con sistemi di Intelligenza Artificiale» in alto a destra, per tutta la durata.',
+        title: 'Nota sull’AI e marchio',
+        note: '«Contenuto modificato con sistemi di Intelligenza Artificiale» in alto a destra e la nota sul marchio Alfa Romeo lungo il bordo destro, per tutta la durata.',
         time: 0,
       },
     ],
