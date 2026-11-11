@@ -70,7 +70,7 @@ export type Review = {
 }
 
 // Stesso file per streaming e download: ?download=1 forza il salvataggio.
-const ASP_V3 = `${MEDIA_BASE}/ArtSitePark_v03.mp4`
+const ASP_V4 = `${MEDIA_BASE}/ArtSitePark_v04.mp4`
 // v3b: V3 con la nota sul marchio Alfa Romeo. Nome nuovo perché Blob tiene in cache 30 giorni.
 const AR_V3 = `${MEDIA_BASE}/AR_Leggende_spot15_v3b.mp4`
 
@@ -84,26 +84,26 @@ export const reviews: Review[] = [
 
     versions: [
       {
-        id: 'v3',
-        name: 'Terza stesura',
-        date: '2026-11-03',
+        id: 'v4',
+        name: 'Quarta stesura',
+        date: '2026-11-11',
         duration: '3:13',
-        stream: ASP_V3,
-        poster: '/images/review/art-site-park/art-site-park-v3-poster.webp',
+        stream: ASP_V4,
+        poster: '/images/review/art-site-park/art-site-park-v4-poster.webp',
         downloads: [
           {
             label: 'Video HD',
             spec: 'MP4 H.264 · 1920×1080 · 24 fps · stereo',
-            size: '73 MB',
-            url: `${ASP_V3}?download=1`,
+            size: '262 MB',
+            url: `${ASP_V4}?download=1`,
           },
         ],
       },
     ],
 
     intro: [
-      'Questa è la terza stesura del film: la struttura, il ritmo della salita e il trattamento di ogni mondo, dal mare all’involucro.',
-      'Color, sound design, animazioni e titoli sono ancora in lavorazione. In questa fase ci interessa la direzione: se il viaggio funziona, se i murales restano protagonisti, se il passaggio da un piano all’altro è fluido.',
+      'Questa è la quarta stesura del film, ormai vicina alla versione definitiva. Rispetto alla precedente si aggiungono le animazioni, rifinite a mano in post-produzione su ogni mondo, dal mare all’involucro.',
+      'Il finale è ancora in lavorazione. In questa fase ci interessa lo sguardo sul film nel suo insieme: se il ritmo regge fino in fondo, se i murales restano protagonisti, se il passaggio da un piano all’altro è fluido.',
     ],
 
 
