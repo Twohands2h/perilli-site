@@ -70,7 +70,7 @@ export type Review = {
 }
 
 // Stesso file per streaming e download: ?download=1 forza il salvataggio.
-const ASP_V4 = `${MEDIA_BASE}/ArtSitePark_v04.mp4`
+const ASP_V5 = `${MEDIA_BASE}/ArtSitePark_v05.mp4`
 const AR_V4 = `${MEDIA_BASE}/AR_Leggende_spot15_v4.mp4`
 
 export const reviews: Review[] = [
@@ -83,26 +83,26 @@ export const reviews: Review[] = [
 
     versions: [
       {
-        id: 'v4',
-        name: 'Quarta stesura',
-        date: '2026-11-11',
-        duration: '3:13',
-        stream: ASP_V4,
-        poster: '/images/review/art-site-park/art-site-park-v4-poster.webp',
+        id: 'v5',
+        name: 'Quinta stesura',
+        date: '2026-11-16',
+        duration: '3:07',
+        stream: ASP_V5,
+        poster: '/images/review/art-site-park/art-site-park-v5-poster.webp',
         downloads: [
           {
             label: 'Video HD',
             spec: 'MP4 H.264 · 1920×1080 · 24 fps · stereo',
-            size: '262 MB',
-            url: `${ASP_V4}?download=1`,
+            size: '256 MB',
+            url: `${ASP_V5}?download=1`,
           },
         ],
       },
     ],
 
     intro: [
-      'Questa è la quarta stesura del film, ormai vicina alla versione definitiva. Rispetto alla precedente si aggiungono le animazioni, rifinite a mano in post-produzione su ogni mondo, dal mare all’involucro.',
-      'Il finale è ancora in lavorazione. In questa fase ci interessa lo sguardo sul film nel suo insieme: se il ritmo regge fino in fondo, se i murales restano protagonisti, se il passaggio da un piano all’altro è fluido.',
+      'Questa è la quinta stesura del film, ormai vicina alla versione definitiva. Rispetto alla precedente il film è più asciutto e il finale è completo: nella ripresa dal drone su Le Fornaci compaiono i quattro animali che accompagnano il viaggio.',
+      'In questa fase ci interessa lo sguardo sul film nel suo insieme: se il ritmo regge fino in fondo, se i murales restano protagonisti, se il finale chiude il viaggio.',
     ],
 
 
