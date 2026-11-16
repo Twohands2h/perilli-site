@@ -71,8 +71,7 @@ export type Review = {
 
 // Stesso file per streaming e download: ?download=1 forza il salvataggio.
 const ASP_V4 = `${MEDIA_BASE}/ArtSitePark_v04.mp4`
-// v3b: V3 con la nota sul marchio Alfa Romeo. Nome nuovo perché Blob tiene in cache 30 giorni.
-const AR_V3 = `${MEDIA_BASE}/AR_Leggende_spot15_v3b.mp4`
+const AR_V4 = `${MEDIA_BASE}/AR_Leggende_spot15_v4.mp4`
 
 export const reviews: Review[] = [
   {
@@ -123,7 +122,7 @@ export const reviews: Review[] = [
 
   // ── Evolve · Mondadori & Alfa Romeo — spot 15″ (link breve: /evolve) ──
   // V1/V2 erano due montaggi a confronto (modalità `compare`): Evolve ha scelto la V2.
-  // Dalla V3 si prosegue su una sola linea.
+  // V3 = note dell'agenzia sulla V2. V4 = finale rifatto sul layout aggiornato dell'agenzia.
   {
     slug: 'leggende-del-biscione-o397b9',
     project: 'Le Leggende del Biscione',
@@ -134,60 +133,45 @@ export const reviews: Review[] = [
 
     versions: [
       {
-        id: 'V3',
-        name: 'Sulle vostre note',
-        date: '2026-11-11',
+        id: 'V4',
+        name: 'Nuovo finale',
+        date: '2026-11-16',
         duration: '0:15',
-        stream: AR_V3,
-        poster: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-v3-poster.webp',
+        stream: AR_V4,
+        poster: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-v4-poster.webp',
         downloads: [
           {
             label: 'Video HD',
             spec: 'MP4 H.264 · 1920×1080 · 24 fps · stereo',
             size: '22 MB',
-            url: `${AR_V3}?download=1`,
+            url: `${AR_V4}?download=1`,
           },
         ],
       },
     ],
 
     intro: [
-      'Questa è la V3. Riparte dalla V2, il montaggio con il dito che avete scelto, e integra le vostre osservazioni.',
-      'I tagli sono gli stessi della V2: le modifiche sono tutte dentro le inquadrature e nel packshot. Le trovate elencate sotto il player, ciascuna con il punto del film in cui vederla.',
+      'Questa è la V4. Il montaggio è quello della V3: cambia il finale, rifatto sul layout aggiornato che mi avete mandato, e si aggiornano le note in sovrimpressione.',
+      'Le modifiche sono elencate sotto il player, ciascuna con il punto del film in cui vederla.',
     ],
 
-    // Le note di Evolve sulla V2, nell'ordine della loro mail, una per voce. Il timecode porta al punto in cui si vede la modifica.
-    chaptersTitle: 'Cosa è cambiato dalla V2',
+    // Differenze V3b → V4, verificate a frame: fino a 00:07:16 cambiano solo le sovrimpressioni.
+    chaptersTitle: 'Cosa è cambiato dalla V3',
     chapters: [
       {
-        title: 'Mani e unghie',
-        note: 'Più curate in tutte le inquadrature con la mano.',
-        time: 0.96, // 00:00:23 — primo dito sulla carrozzeria
-      },
-      {
-        title: 'Chiusura della teca',
-        note: 'La Duetto si posa sulla pedana e solo dopo entra la mano a chiudere la teca.',
-        time: 7.55, // 00:07:13 — inizio del finale
-      },
-      {
-        title: 'Fasci luminosi',
-        note: 'Più discreti nel finale: restano una traccia di luce, non sono più protagonisti.',
-        time: 8.0, // 00:08:00
-      },
-      {
-        title: 'Proporzione della mano',
-        note: 'Ingrandita rispetto alle miniature, per rendere leggibile la scala 1:24.',
-        time: 10.0, // 00:10:00 — la mano entra sulla teca
-      },
-      {
         title: 'Packshot',
-        note: 'Logo Alfa Romeo e note legali, dal layout aggiornato.',
-        time: 13.25, // 00:13:06 — entra il logo
+        note: 'Rifatto sul nuovo layout: logo Alfa Romeo Collection, «La prima uscita 1600 Spider Duetto (1966)», prezzo Modello + Fascicolo a € 16,99, rimando a mondadoricollection.it, «In edicola con TV Sorrisi e Canzoni» e note legali reimpaginate.',
+        time: 11.34, // 00:11:08 — entrano le grafiche
+      },
+      {
+        title: 'Tempi del finale',
+        note: 'Il fascicolo entra prima, mentre la mano chiude la teca.',
+        time: 10.84, // 00:10:20 — entra il fascicolo
       },
       {
         title: 'Nota sull’AI e marchio',
-        note: '«Contenuto modificato con sistemi di Intelligenza Artificiale» in alto a destra e la nota sul marchio Alfa Romeo lungo il bordo destro, per tutta la durata.',
-        time: 0,
+        note: 'La nota sull’AI è in maiuscolo, più leggibile anche sulle mani. La nota sul marchio Alfa Romeo passa sul bordo sinistro.',
+        time: 6.25, // 00:06:06 — nota sull'AI sopra il dito
       },
     ],
 
