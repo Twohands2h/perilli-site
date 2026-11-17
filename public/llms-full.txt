@@ -89,6 +89,7 @@ Hybrid AI + traditional post-production workflow:
 - **Non Tutto è Perduto** — Post-production and VFX
 
 ### Brand & Advertising
+- **Vecchio Amaro del Capo — “Capo That Moment” (2026)** — VFX artist on a commercial aired on Rai and Mediaset: traditional VFX (tracking, label replacement, compositing) combined with generative AI on a live-action shoot
 - **Gucci Kids** — Post-production for luxury fashion brand
 - **Save the Children** — Video production for international NGO
 - **Babingtons** — Motion graphics and video production
@@ -106,6 +107,7 @@ Hybrid AI + traditional post-production workflow:
 - **Radio Caterina** — Animated graphics for radio show
 
 ### AI Video Production
+- **Vecchio Amaro del Capo** — Hybrid commercial: generative AI used selectively inside a traditional VFX and compositing pipeline
 - **Roche Jingle AI** — Commercial produced with AI generative tools
 - **JOR (Liaison)** — AI-assisted video production
 
@@ -115,7 +117,7 @@ Hybrid AI + traditional post-production workflow:
 
 ### VFX
 **Q: How much does a VFX artist cost in Rome, Italy?**
-A: Costs depend on project complexity. A single basic compositing shot starts from a few hundred euros, while complex projects with set extension, 3D tracking and green screen require a more significant investment. Free quotes provided after reviewing footage and brief.
+A: Cost depends entirely on the type of work. A simple clean-up or object removal can start from €300-500 per shot, a compositing with green screen and tracking ranges between €800 and €2,500 depending on complexity, while articulated sequences with set extension and CGI integration can require €3,000-15,000 or more. I always provide a detailed free quote after reviewing footage and brief.
 
 **Q: What is the difference between VFX and CGI?**
 A: VFX encompasses all post-production image manipulation (compositing, green screen, rotoscoping, tracking). CGI is a subset specifically about fully computer-generated elements like 3D models. Piero's workflow integrates both.
@@ -125,11 +127,11 @@ A: Based in Rome but regularly works remotely with clients across Italy and inte
 
 ### Motion Graphics
 **Q: How much does a motion graphics video cost for a brand?**
-A: A 30-second social animation starts from approximately €800-1,500. A 60-90 second corporate video with custom storyboard ranges €2,000-5,000.
+A: Motion graphics animations start from €1,500 for a short 15-30 second video designed for social media or small brands, rising to €2,500-5,000 for standard 30-60 second animations with concept, storyboard and custom design. Complex projects with voiceover, integrated 3D or multiple format deliveries can reach €8,000 or more. Cost depends on duration, complexity of animated elements and number of revisions. I always provide a detailed quote.
 
 ### 3D Animation
 **Q: How much does a 3D product animation cost?**
-A: Starting from €1,500-3,000 for a 15-30 second video including modeling, texturing, lighting and rendering. More complex projects can exceed €5,000.
+A: A 3D product animation starts from €3,000 for a 15-30 second video, including modeling, texturing, lighting, animation and photorealistic rendering. More complex projects with environments, character animation or physics simulations (like the Guerciotti 60 Years project) can exceed €8,000. Cost depends on model complexity and animation duration.
 
 ### Post-Production
 **Q: Why choose an integrated workflow instead of separate specialists?**
@@ -143,7 +145,7 @@ A: Color grading for a commercial ranges from €800 to €1,200. For a short fi
 A: Not completely. AI accelerates certain phases and opens new possibilities, but professional expertise is needed to direct the output. Without a trained eye, AI output remains amateur. The best results come from hybrid workflows.
 
 **Q: How much does an AI-produced video cost?**
-A: Generally lower than traditional production (no sets, crew, equipment needed). A 30-60 second commercial with hybrid AI + post-production workflow starts from €1,000-3,000.
+A: A complete AI project with integrated VFX, professional post-production and mastering starts from €5,000. The price reflects the hybrid workflow — directed AI generation, output selection and iteration, compositing with real footage, color grading and finishing. It is not an "AI-generated video", it is a professionally produced video that uses AI as one of many tools. Larger projects with content series can exceed €15,000. Commissioned work for scripted and feature projects follows a different route: it starts with look development and representative shot tests, and the quote is built on shot count, complexity, pipeline and delivery requirements. It is not a list price.
 
 ---
 

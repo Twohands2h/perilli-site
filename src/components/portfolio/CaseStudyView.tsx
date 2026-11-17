@@ -118,6 +118,15 @@ function BlockRenderer({ block, locale, vm, lightbox }: {
 
     switch (block.type) {
         case 'text':
+            if (block.caption) {
+                // Didascalia: testo piccolo, stretto sotto il media precedente (annulla parte dello space-y della sezione)
+                return (
+                    <div className="section-container -mt-3 md:-mt-5 lg:-mt-7">
+                        <p className="max-w-3xl text-text-muted text-xs md:text-sm leading-relaxed [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-2"
+                            dangerouslySetInnerHTML={{ __html: isIt ? block.textIt : block.textEn }} />
+                    </div>
+                );
+            }
             return (
                 <div className="section-container">
                     <div className="max-w-3xl">
@@ -238,6 +247,14 @@ function BlockRenderer({ block, locale, vm, lightbox }: {
                     </div>
                 </div>
             );
+        case 'heading':
+            return (
+                <div className="section-container pt-4 md:pt-6">
+                    <h2 className="max-w-3xl font-bold text-text-primary" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)', lineHeight: '1.2' }}>
+                        {isIt ? block.textIt : block.textEn}
+                    </h2>
+                </div>
+            );
         default:
             return null;
     }
@@ -292,6 +309,14 @@ export default function CaseStudyView({
                     embedUrl={block.platform === 'youtube' ? `https://www.youtube.com/embed/${block.embedId}` : `https://player.vimeo.com/video/${block.embedId}`} />
             ))}
 
+            {project.contentBlocks?.filter((b): b is Extract<ContentBlock, { type: 'video-mp4' }> => b.type === 'video-mp4' && !!b.uploadDate).map((block, i) => (
+                <VideoObjectSchema key={`video-mp4-schema-${i}`} name={block.title ? `${title} — ${block.title}` : title}
+                    description={(isIt ? block.descriptionIt : block.descriptionEn) || (isIt ? project.briefingIt : project.briefingEn)}
+                    thumbnailUrl={`https://pieroperilli.com${block.poster || project.thumbnail}`}
+                    uploadDate={block.uploadDate!} duration={block.duration}
+                    contentUrl={`https://pieroperilli.com${block.url}`} />
+            ))}
+
             {/* Sticky breadcrumb */}
             <div className="sticky top-16 md:top-20 z-40 bg-background/90 backdrop-blur-md border-b border-border/30">
                 <div className="section-container py-3">
@@ -326,11 +351,30 @@ export default function CaseStudyView({
                 <div className="section-container">
                     <AnimateOnScroll>
                         <div className="relative aspect-video rounded-lg overflow-hidden bg-surface">
-                            <Image src={project.heroImage} alt={title} fill className="object-cover" sizes="100vw" priority />
+                            <Image src={project.heroImage} alt={(isIt ? project.heroAlt?.it : project.heroAlt?.en) || title} fill className="object-cover" sizes="100vw" priority />
                         </div>
                     </AnimateOnScroll>
                 </div>
             </section>
+
+            {/* In breve (opzionale) */}
+            {project.summary && project.summary.length > 0 && (
+                <section className="pb-2 md:pb-4">
+                    <div className="section-container">
+                        <div className="max-w-3xl py-6 md:py-8 border-t border-border">
+                            <h2 className="text-xs font-bold uppercase tracking-[0.15em] text-accent mb-4">{isIt ? 'In breve' : 'In brief'}</h2>
+                            <dl className="grid grid-cols-1 sm:grid-cols-[minmax(0,11rem)_1fr] gap-x-6 gap-y-2 text-sm md:text-base">
+                                {project.summary.map((row, i) => (
+                                    <div key={i} className="contents">
+                                        <dt className="text-text-muted">{isIt ? row.labelIt : row.labelEn}</dt>
+                                        <dd className="text-text-secondary mb-2 sm:mb-0">{isIt ? row.valueIt : row.valueEn}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* Case study text */}
             <section className="pb-6 md:pb-10 lg:pb-14">

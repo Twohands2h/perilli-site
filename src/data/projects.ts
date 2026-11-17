@@ -2,11 +2,12 @@ export type ProjectCategory = 'vfx' | 'motion' | 'animation' | 'post' | 'ai';
 
 // Content blocks for rich project pages (Behance-style)
 export type ContentBlock =
-    | { type: 'text'; textIt: string; textEn: string }
+    | { type: 'text'; textIt: string; textEn: string; caption?: boolean } // caption: didascalia breve, stretta sotto il media precedente
     | { type: 'image'; src: string; alt: { it: string; en: string }; fullWidth?: boolean }
     | { type: 'gallery'; images: { src: string; alt: { it: string; en: string } }[]; columns?: 2 | 3 | 4 }
     | { type: 'video'; embedId: string; platform: 'youtube' | 'vimeo'; title?: string }
-    | { type: 'video-mp4'; url: string; poster?: string; title?: string }
+    | { type: 'video-mp4'; url: string; poster?: string; title?: string; uploadDate?: string; duration?: string; descriptionIt?: string; descriptionEn?: string } // con uploadDate → VideoObject JSON-LD
+    | { type: 'heading'; textIt: string; textEn: string } // H2 descrittivo dentro i content block
     | { type: 'video-loop'; url: string; poster?: string; title?: string }
     | { type: 'video-loop-gallery'; videos: { url: string; title?: string }[]; columns?: number; title?: string };
 
@@ -43,9 +44,97 @@ export interface Project {
     contentBlocks?: ContentBlock[];
     // External links
     imdbLink?: string;
+    // SEO opzionale per progetto (fallback: formula generica in layout.tsx)
+    seoTitleIt?: string;
+    seoTitleEn?: string;
+    metaDescriptionIt?: string;
+    metaDescriptionEn?: string;
+    // Blocco "In breve" opzionale (dl), dopo la hero
+    summary?: { labelIt: string; labelEn: string; valueIt: string; valueEn: string }[];
 }
 
 export const projects: Project[] = [
+    // ──────────────────── VECCHIO AMARO DEL CAPO (v0.9.18) ────────────────────
+    {
+        slug: 'vecchio-amaro-del-capo',
+        titleIt: 'Vecchio Amaro del Capo — Capo That Moment',
+        titleEn: 'Vecchio Amaro del Capo — Capo That Moment',
+        category: 'vfx',
+        categoryLabel: { it: 'VFX & AI', en: 'VFX & AI' },
+        client: 'Gruppo Caffo 1915',
+        year: '2026',
+        role: 'VFX Artist',
+        thumbnail: '/images/portfolio/vecchio-amaro-del-capo-capo-that-moment-protagonista-thumb.webp',
+        thumbnailAlt: { it: 'Spot Vecchio Amaro del Capo 2026: la protagonista fa il segno della C — VFX e AI', en: 'Vecchio Amaro del Capo 2026 commercial: the lead makes the C sign — VFX and AI' },
+        heroImage: '/images/portfolio/vecchio-amaro-del-capo-capo-that-moment-protagonista-hero.webp',
+        heroAlt: { it: '«Capo That Moment»: la protagonista dello spot Vecchio Amaro del Capo fa il segno della C', en: '“Capo That Moment”: the lead of the Vecchio Amaro del Capo commercial makes the C sign' },
+        images: [
+            { src: '/images/portfolio/vecchio-amaro-del-capo-drone-girato-vs-rigenerato-ai.webp', alt: { it: 'Ripresa con il drone su Pizzo: girato originale e versione rigenerata in AI', en: 'Drone shot over Pizzo: original footage and AI-regenerated version' } },
+            { src: '/images/portfolio/vecchio-amaro-del-capo-packshot-frame-zero.webp', alt: { it: 'Frame zero del packshot finale Vecchio Amaro del Capo sulla marina', en: 'Frame zero of the final Vecchio Amaro del Capo packshot on the marina' } },
+        ],
+        tools: ['After Effects', 'Mocha', 'ComfyUI', 'Magnific', 'Higgsfield', 'Runway', 'Rewake'],
+        seoTitleIt: 'Vecchio Amaro del Capo: VFX e AI — Capo That Moment | Piero Perilli',
+        seoTitleEn: 'Vecchio Amaro del Capo: VFX & AI Case Study | Piero Perilli',
+        metaDescriptionIt: 'Caso studio dello spot «Capo That Moment» di Vecchio Amaro del Capo: 18 shot tra AI generativa, tracking e compositing VFX tradizionale.',
+        metaDescriptionEn: 'Case study of the Vecchio Amaro del Capo “Capo That Moment” commercial: 18 shots combining generative AI with traditional tracking and VFX compositing.',
+        summary: [
+            { labelIt: 'Campagna', labelEn: 'Campaign', valueIt: '«Capo That Moment», Vecchio Amaro del Capo (Gruppo Caffo 1915)', valueEn: '“Capo That Moment”, Vecchio Amaro del Capo (Gruppo Caffo 1915)' },
+            { labelIt: 'Messa in onda', labelEn: 'Broadcast', valueIt: 'Estate 2026, Rai e Mediaset', valueEn: 'Summer 2026, Rai and Mediaset' },
+            { labelIt: 'Ruolo', labelEn: 'Role', valueIt: 'VFX Artist', valueEn: 'VFX Artist' },
+            { labelIt: 'Workflow', labelEn: 'Workflow', valueIt: 'Produzione video ibrida: live action, AI generativa, VFX tradizionali', valueEn: 'Hybrid video production: live action, generative AI, traditional VFX' },
+            { labelIt: 'Il mio intervento', labelEn: 'My part', valueIt: '18 shot in 12 giorni, circa 650 asset', valueEn: '18 shots in 12 days, around 650 assets' },
+            { labelIt: 'Con l’AI', labelEn: 'With AI', valueIt: 'Liquidi, riprese aeree, elementi di scena, packshot da frame zero', valueEn: 'Liquids, aerial shots, scene elements, packshot from a frame zero' },
+            { labelIt: 'In metodo tradizionale', labelEn: 'Traditional methods', valueIt: 'Etichette e prodotto, bicchieri del packshot, insegne', valueEn: 'Labels and product, packshot glasses, signage' },
+        ],
+        briefingIt: 'Il mio lavoro da VFX artist su «Capo That Moment», lo spot estate 2026 di Vecchio Amaro del Capo, girato a Pizzo e andato in onda su Rai e Mediaset. Il regista Marco De Aguilar mi ha coinvolto già in pre-produzione. La domanda era precisa: come girare, sapendo che la post sarebbe stata molto stretta, e se fosse possibile chiuderla combinando metodo tradizionale e AI, valutando anche il 3D.',
+        briefingEn: 'My work as a VFX artist on “Capo That Moment”, the summer 2026 commercial for Vecchio Amaro del Capo, shot in Pizzo and aired on Rai and Mediaset. Director Marco De Aguilar brought me in during pre-production with a precise question: how to shoot, knowing post would be very tight, and whether it could be finished by combining traditional methods and AI, with 3D also on the table.',
+        challengeIt: 'I miei diciotto shot, da chiudere in pochi giorni dentro le tre settimane di post dello spot. In più c’era un vincolo che in uno spot di prodotto non si negozia: bottiglia, etichetta e bicchieri devono essere esattamente quelli del Cliente, in ogni fotogramma.<br /><br />Ed è proprio lì che la generazione AI è più debole. Un modello può restituire un liquido credibile o rigenerare una ripresa aerea, ma riscrive i testi delle etichette, non garantisce che il prodotto resti il prodotto. Per questo non si poteva scegliere un metodo solo.',
+        challengeEn: 'My eighteen shots, to be finished in a few days within the commercial’s three weeks of post. On top of that, a constraint that is not negotiable in a product commercial: the bottle, the label and the glasses must be exactly the client’s, in every frame.<br /><br />That is exactly where AI generation is weakest. A model can deliver believable liquid or regenerate an aerial shot, but it rewrites the text on labels — it cannot guarantee that the product stays the product. That is why a single method was never an option.',
+        solutionIt: 'Il lavoro è cominciato prima del set. Con il regista abbiamo pianificato le riprese in funzione della post. Il casting è reale, e per i personaggi principali abbiamo fatto uno shooting dedicato: viste a 360°, dettagli del volto, espressioni. Così avevamo il materiale per rigenerarli in AI, se fosse servito.<br /><br />Con le riprese di tutto lo spot concentrate in quattro giorni, abbiamo deciso di girare i versamenti senza liquido, per non rischiare di sporcare abiti e tavole apparecchiate, e di affidare quei momenti alla post.<br /><br />In post ho deciso shot per shot, elemento per elemento, cosa affidare alla <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">generazione AI</a> e cosa tenere in tracking e <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">compositing VFX</a> tradizionali. Il breakdown qui sotto lo mostra.<br /><br />Lo shot più difficile è stato il packshot finale: la marina vista dal basso, con la gente in festa. Sono partito da immagini di riferimento della sola marina vuota. Ho sostituito in metodo tradizionale tutti i bicchieri per renderli coerenti con il prodotto, poi ho passato giorni sul frame zero, l’immagine da cui parte la generazione, perché fosse il più reale possibile. A video generato, ho corretto le etichette del packshot per restituire esattamente il prodotto del Cliente.<br /><br />Lo spot è stato poi declinato per Vecchio Amaro del Capo Red Hot Edition. Anche qui niente generazione: tracking e sostituzione delle etichette, shot per shot.',
+        solutionEn: 'The work started before the shoot. With the director we planned the shoot around post. The casting is real, and for the main characters we did a dedicated shoot: 360° views, facial details, expressions. That gave us the material to regenerate them with AI if it was ever needed.<br /><br />With the whole shoot packed into four days, we decided to shoot the pours without liquid, so there was no risk of staining wardrobe or set tables, and to leave those moments to post.<br /><br />In post I decided shot by shot, element by element, what to hand to <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI generation</a> and what to keep in traditional tracking and <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX compositing</a>. The breakdown below shows it.<br /><br />The hardest shot was the final packshot: the marina seen from below, with people celebrating. I started from reference images of the empty marina. I replaced every glass with traditional methods to match the product, then spent days on the frame zero, the image the generation starts from, to make it as real as possible. Once the video was generated, I corrected the packshot labels to show exactly the client’s product.<br /><br />The commercial was then adapted for Vecchio Amaro del Capo Red Hot Edition. No generation here either: label tracking and replacement, shot by shot.',
+        resultIt: 'Uno spot in cui si vedono la Calabria, le persone e il prodotto, non la tecnica. Per la mia parte, diciotto shot in dodici giorni, con circa 650 asset tra immagini e video.<br /><br />L’AI ha lavorato dove dava un vantaggio reale: liquidi, riprese aeree, elementi di scena. Il metodo tradizionale ha tenuto tutto ciò che richiedeva controllo assoluto: prodotto, etichette, packshot, insegne.',
+        resultEn: 'A commercial where you see Calabria, the people and the product, not the technique. On my side, eighteen shots in twelve days, with around 650 image and video assets.<br /><br />AI worked where it gave a real advantage: liquids, aerial shots, scene elements. Traditional methods held everything that needed absolute control: product, labels, packshot, signage.',
+        contentBlocks: [
+            { type: 'video-mp4', url: '/videos/caffo.mp4', poster: '/images/portfolio/vecchio-amaro-del-capo-spot-bottiglia-ghiacciata-poster.webp', title: 'Spot', uploadDate: '2026-06-26T00:00:00+02:00', duration: 'PT59S', descriptionIt: 'Spot estate 2026 di Vecchio Amaro del Capo, «Capo That Moment», girato a Pizzo e andato in onda su Rai e Mediaset. Piero Perilli ha lavorato come VFX artist, tra AI generativa, tracking e compositing.', descriptionEn: 'Summer 2026 commercial for Vecchio Amaro del Capo, “Capo That Moment”, shot in Pizzo and aired on Rai and Mediaset. Piero Perilli worked as VFX artist, combining generative AI, tracking and compositing.' },
+            { type: 'text', textIt: 'Seicentocinquanta asset in dodici giorni non si gestiscono a memoria. Al decimo giorno sono arrivate modifiche su shot realizzati il secondo giorno, già approvati. In Rewake, per ogni shot c’erano l’immagine di riferimento, il prompt, la piattaforma e il modello usati. Sono ripartito da lì invece di cercare tra Magnific, ComfyUI, Higgsfield e Runway: una modifica, non una ricerca.<br /><br /><a href="https://rewake.studio?utm_source=pieroperilli.com&amp;utm_medium=referral&amp;utm_campaign=portfolio-amaro" target="_blank" rel="noopener">Scopri Rewake</a>', textEn: 'Six hundred and fifty assets in twelve days cannot be managed from memory. On day ten, changes came in on shots made on day two and already approved. In Rewake, each shot had its reference image, prompt, platform and model on record. I picked up from there instead of searching through Magnific, ComfyUI, Higgsfield and Runway: a change, not a search.<br /><br /><a href="https://rewake.studio?utm_source=pieroperilli.com&amp;utm_medium=referral&amp;utm_campaign=portfolio-amaro" target="_blank" rel="noopener">Discover Rewake</a>' },
+            { type: 'text', textIt: 'Cliente: Gruppo Caffo 1915<br />Agenzia: PubliOne<br />Direzione creativa: Paolo Ferrigno<br />Art direction: Marco Russo<br />Produzione: DOGODOT, a vision by Daitona<br />Regia: Marco De Aguilar<br />VFX Director Supervisor: Oscar Martínez<br />VFX Art Director &amp; Technical Supervisor: Pau Cierre<br />Post-produzione video: Alliance Artists AI<br />VFX Artist: Piero Perilli<br /><br />Strumenti del mio intervento: After Effects e Mocha per tracking, compositing e insegne. ComfyUI, Magnific, Higgsfield e Runway per la generazione. Rewake per la tracciabilità della produzione.', textEn: 'Client: Gruppo Caffo 1915<br />Agency: PubliOne<br />Creative direction: Paolo Ferrigno<br />Art direction: Marco Russo<br />Production: DOGODOT, a vision by Daitona<br />Director: Marco De Aguilar<br />VFX Director Supervisor: Oscar Martínez<br />VFX Art Director &amp; Technical Supervisor: Pau Cierre<br />Video post-production: Alliance Artists AI<br />VFX Artist: Piero Perilli<br /><br />Tools on my part: After Effects and Mocha for tracking, compositing and signage. ComfyUI, Magnific, Higgsfield and Runway for generation. Rewake for production traceability.' },
+            { type: 'heading', textIt: 'Cosa è stato generato con l’AI e cosa è rimasto VFX tradizionale', textEn: 'What was generated with AI and what stayed traditional VFX' },
+            { type: 'video-mp4', url: '/videos/portfolio/vecchio-amaro-del-capo-breakdown-vfx-ai.mp4', poster: '/images/portfolio/vecchio-amaro-del-capo-drone-girato-vs-rigenerato-ai.webp', title: 'Breakdown VFX / AI', uploadDate: '2026-11-17T12:00:00+01:00', duration: 'PT34S', descriptionIt: 'Breakdown VFX/AI dello spot «Capo That Moment» di Vecchio Amaro del Capo: riprese con il drone rigenerate in AI, freezer da green screen, versamenti con liquido generato e compositing, versione Red Hot Edition con etichette sostituite in tracking.', descriptionEn: 'VFX/AI breakdown of the Vecchio Amaro del Capo “Capo That Moment” commercial: drone shots regenerated with AI, green-screen freezer, pours with generated liquid and compositing, Red Hot Edition version with labels replaced by tracking.' },
+            { type: 'text', caption: true, textIt: 'Il breakdown: cosa è stato girato, cosa è stato generato, cosa è stato compositato.', textEn: 'The breakdown: what was shot, what was generated, what was composited.' },
+            { type: 'image', src: '/images/portfolio/vecchio-amaro-del-capo-drone-girato-vs-rigenerato-ai.webp', alt: { it: 'Ripresa con il drone su Pizzo: girato originale a sinistra, versione rigenerata in AI a destra', en: 'Drone shot over Pizzo: original footage on the left, AI-regenerated version on the right' } },
+            { type: 'text', caption: true, textIt: 'Riprese con il drone: il girato originale, a sinistra, usato come traccia per la versione rigenerata in AI, a destra, con la luce del tramonto e le luminarie della festa.', textEn: 'Drone footage: the original plate, left, used as the guide for the AI-regenerated version, right, with sunset light and festival lights.' },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/vecchio-amaro-del-capo-freezer-green-screen-originale.webp', alt: { it: 'Scena del freezer girata in green screen — originale', en: 'Freezer scene shot on green screen — original' } },
+                    { src: '/images/portfolio/vecchio-amaro-del-capo-freezer-rigenerato-ai.webp', alt: { it: 'Scena del freezer rigenerata in AI con bottiglie ghiacciate', en: 'Freezer scene regenerated with AI, with frozen bottles' } },
+                ], columns: 2
+            },
+            { type: 'text', caption: true, textIt: 'Il freezer: dal girato in green screen alla versione rigenerata in AI.', textEn: 'The freezer: from the green-screen plate to the AI-regenerated version.' },
+            {
+                type: 'video-loop-gallery', videos: [
+                    { url: '/videos/portfolio/vecchio-amaro-del-capo-versamento-girato-loop.mp4' },
+                    { url: '/videos/portfolio/vecchio-amaro-del-capo-versamento-liquido-ai-loop.mp4' },
+                ], columns: 2
+            },
+            { type: 'text', caption: true, textIt: 'I versamenti: a sinistra il girato, senza liquido. A destra la generazione AI del liquido, poi integrata in compositing.', textEn: 'The pours: left, the plate shot without liquid. Right, the AI generation of the liquid, then composited into the plate.' },
+            {
+                type: 'gallery', images: [
+                    { src: '/images/portfolio/vecchio-amaro-del-capo-versamento-amaro-classico.webp', alt: { it: 'Versamento con Vecchio Amaro del Capo classico — liquido generato in AI', en: 'Pour with classic Vecchio Amaro del Capo — AI-generated liquid' } },
+                    { src: '/images/portfolio/vecchio-amaro-del-capo-versamento-red-hot-edition.webp', alt: { it: 'Stesso versamento nella versione Red Hot Edition — etichetta sostituita in tracking', en: 'Same pour in the Red Hot Edition version — label replaced with tracking' } },
+                ], columns: 2
+            },
+            { type: 'text', caption: true, textIt: 'La versione Red Hot Edition: stesso shot, etichetta sostituita in tracking per il nuovo prodotto.', textEn: 'The Red Hot Edition version: same shot, label replaced with tracking for the new product.' },
+            {
+                type: 'video-loop-gallery', videos: [
+                    { url: '/videos/portfolio/vecchio-amaro-del-capo-freezer-rigenerato-ai-loop.mp4' },
+                    { url: '/videos/portfolio/vecchio-amaro-del-capo-inserto-macro-ai-loop.mp4' },
+                ], columns: 2
+            },
+            { type: 'text', caption: true, textIt: 'Due generazioni del progetto: il freezer rigenerato dal girato e un inserto macro.', textEn: 'Two generations from the project: the freezer regenerated from the plate, and a macro insert.' },
+            { type: 'image', src: '/images/portfolio/vecchio-amaro-del-capo-packshot-frame-zero.webp', alt: { it: 'Frame zero del packshot finale: bottiglia Vecchio Amaro del Capo e bicchieri sulla marina al tramonto', en: 'Frame zero of the final packshot: Vecchio Amaro del Capo bottle and glasses on the marina at sunset' }, fullWidth: true },
+            { type: 'text', caption: true, textIt: 'Il frame zero del packshot finale, costruito partendo da immagini di riferimento della marina vuota.', textEn: 'The frame zero of the final packshot, built from reference images of the empty marina.' },
+        ],
+    },
     {
         slug: 'along-came-ruby',
         titleIt: 'Along Came Ruby',
