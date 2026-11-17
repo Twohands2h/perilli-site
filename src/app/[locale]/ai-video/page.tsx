@@ -134,6 +134,7 @@ const contentIT = {
 
   recentWorkTitle: 'Progetti AI Video',
   recentWork: [
+    { title: 'Vecchio Amaro del Capo — Spot Capo That Moment', link: '/portfolio/vecchio-amaro-del-capo' },
     { title: 'Roche — Jingle Milano Cortina', link: '/portfolio/roche-jingle-ai' },
     { title: 'Doppelganger — Campagna AI', link: '/portfolio/doppelganger' },
     { title: '📖 Leggi: Come scelgo tra AI e VFX tradizionale per ogni shot', link: '/blog/ai-vs-vfx-tradizionale-come-scegliere' },
@@ -259,6 +260,7 @@ const contentEN = {
 
   recentWorkTitle: 'AI Video Projects',
   recentWork: [
+    { title: 'Vecchio Amaro del Capo — Capo That Moment commercial', link: '/en/portfolio/vecchio-amaro-del-capo' },
     { title: 'Roche — Milano Cortina jingle', link: '/en/portfolio/roche-jingle-ai' },
     { title: 'Doppelganger — AI campaign', link: '/en/portfolio/doppelganger' },
     { title: '📖 Read: How I choose between AI and traditional VFX for every shot', link: '/en/blog/ai-vs-traditional-vfx-how-to-choose' },
