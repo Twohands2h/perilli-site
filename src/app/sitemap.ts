@@ -44,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/portfolio',       priority: 0.8, changeFrequency: 'weekly'  as const },
     { path: '/blog',            priority: 0.8, changeFrequency: 'weekly'  as const },
     { path: '/contatti',        priority: 0.7, changeFrequency: 'monthly' as const },
+    { path: '/stanza-247',      priority: 0.6, changeFrequency: 'monthly' as const },
   ];
 
   // Static pages — IT + EN entries, each with full hreflang alternates

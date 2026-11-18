@@ -8,6 +8,34 @@ import Link from 'next/link';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 import type { Project } from '@/data/projects';
 
+/**
+ * Scheda "speciale" che non è un case study: porta a una pagina propria
+ * (es. il cortometraggio /stanza-247). Non entra in `projects`, quindi niente
+ * /portfolio/[slug], sitemap o prev/next: compare solo in questa griglia.
+ */
+export interface PortfolioFeature {
+  key: string;
+  href: { it: string; en: string };
+  thumbnail: string;
+  thumbnailAlt: { it: string; en: string };
+  category: string;
+  categoryLabel: { it: string; en: string };
+  title: { it: string; en: string };
+  meta: { it: string; en: string };
+  position: number;
+}
+
+type GridItem = {
+  key: string;
+  href: string;
+  thumbnail: string;
+  thumbnailVideo?: string;
+  alt: string;
+  label: string;
+  title: string;
+  meta: string;
+};
+
 interface CategoryFilter {
   key: string;
   labelIt: string;
@@ -17,9 +45,11 @@ interface CategoryFilter {
 export default function PortfolioGrid({
   projects,
   categories,
+  features = [],
 }: {
   projects: Project[];
   categories: readonly CategoryFilter[];
+  features?: PortfolioFeature[];
 }) {
   const locale = useLocale();
   const isIt = locale === 'it';
@@ -34,6 +64,29 @@ export default function PortfolioGrid({
   const filtered = activeFilter === 'all'
     ? projects
     : projects.filter((p) => p.category === activeFilter);
+
+  const items: GridItem[] = filtered.map((project) => ({
+    key: project.slug,
+    href: `${isIt ? '' : '/en'}/portfolio/${project.slug}`,
+    thumbnail: project.thumbnail,
+    thumbnailVideo: project.thumbnailVideo,
+    alt: isIt ? project.thumbnailAlt.it : project.thumbnailAlt.en,
+    label: isIt ? project.categoryLabel.it : project.categoryLabel.en,
+    title: isIt ? project.titleIt : project.titleEn,
+    meta: `${project.client} — ${project.year}`,
+  }));
+  for (const f of features) {
+    if (activeFilter !== 'all' && f.category !== activeFilter) continue;
+    items.splice(Math.min(f.position, items.length), 0, {
+      key: f.key,
+      href: isIt ? f.href.it : f.href.en,
+      thumbnail: f.thumbnail,
+      alt: isIt ? f.thumbnailAlt.it : f.thumbnailAlt.en,
+      label: isIt ? f.categoryLabel.it : f.categoryLabel.en,
+      title: isIt ? f.title.it : f.title.en,
+      meta: isIt ? f.meta.it : f.meta.en,
+    });
+  }
 
   return (
     <article>
@@ -93,25 +146,25 @@ export default function PortfolioGrid({
       <section className="pb-14 md:pb-20 lg:pb-28">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
-            {filtered.map((project, i) => (
-              <AnimateOnScroll key={project.slug} delay={i * 80}>
+            {items.map((item, i) => (
+              <AnimateOnScroll key={item.key} delay={i * 80}>
                 <Link
-                  href={`${isIt ? '' : '/en'}/portfolio/${project.slug}`}
+                  href={item.href}
                   className="group block relative aspect-[16/10] rounded-lg overflow-hidden bg-surface"
                 >
-                  {project.thumbnailVideo ? (
+                  {item.thumbnailVideo ? (
                     <VideoThumbnail
-                      src={project.thumbnail}
-                      videoSrc={project.thumbnailVideo}
-                      alt={isIt ? project.thumbnailAlt.it : project.thumbnailAlt.en}
+                      src={item.thumbnail}
+                      videoSrc={item.thumbnailVideo}
+                      alt={item.alt}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : (
                     <SafeImage
-                      src={project.thumbnail}
-                      alt={isIt ? project.thumbnailAlt.it : project.thumbnailAlt.en}
+                      src={item.thumbnail}
+                      alt={item.alt}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -123,13 +176,13 @@ export default function PortfolioGrid({
 
                   <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 lg:p-8">
                     <span className="text-xs font-semibold uppercase tracking-wider text-accent mb-2 block">
-                      {isIt ? project.categoryLabel.it : project.categoryLabel.en}
+                      {item.label}
                     </span>
                     <h2 className="text-lg md:text-xl font-bold text-text-primary mb-1">
-                      {isIt ? project.titleIt : project.titleEn}
+                      {item.title}
                     </h2>
                     <p className="text-xs text-text-muted">
-                      {project.client} — {project.year}
+                      {item.meta}
                     </p>
                   </div>
 

@@ -89,8 +89,9 @@ const MEDIA = {
   },
   // Schede lavori
   stanza247: {
-    src: "/videos/stanza-247.mp4",
-    poster: "/images/selected-work/stanza-247-poster.webp",
+    // Solo il trailer: il film completo resta privato (screener) per i festival.
+    src: "/videos/stanza-247-trailer.mp4",
+    poster: "/images/films/stanza-247/stanza-247-trailer-poster.webp",
   },
   roche: {
     src: "/videos/roche.mp4",
@@ -194,6 +195,14 @@ export default function SelectedWorkPage({ params: { locale } }: Props) {
                 <p className="text-xs md:text-sm text-text-secondary leading-relaxed">
                   {w.body}
                 </p>
+                {"href" in w ? (
+                  <a
+                    href={w.href}
+                    className="mt-3 inline-block text-xs md:text-sm text-accent underline-offset-4 hover:underline"
+                  >
+                    {w.hrefLabel} →
+                  </a>
+                ) : null}
               </article>
             ))}
           </div>
@@ -394,7 +403,9 @@ const copy = {
       {
         id: "stanza247" as const,
         title: "Stanza 247",
-        kicker: "Cortometraggio AI · in lavorazione",
+        kicker: "Cortometraggio AI · 2026 · trailer",
+        href: "/stanza-247",
+        hrefLabel: "Pagina del film",
         body: "Thriller psicologico sviluppato come produzione narrativa continua: personaggio ricorrente, location persistente, fotografia e continuità da inquadratura a inquadratura. Sceneggiatura IT/EN, shot list, project bible e playbook di produzione documentati prima della generazione.",
         full: false,
       },
@@ -443,7 +454,9 @@ const copy = {
       {
         id: "stanza247" as const,
         title: "Stanza 247",
-        kicker: "AI short film · work in progress",
+        kicker: "AI short film · 2026 · trailer",
+        href: "/en/stanza-247",
+        hrefLabel: "Film page",
         body: "Psychological thriller developed as a continuous narrative production: recurring character, persistent location, cinematography and shot-to-shot continuity. Screenplay IT/EN, shot list, project bible and production playbook documented before generation.",
         full: false,
       },
