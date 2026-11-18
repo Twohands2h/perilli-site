@@ -5,7 +5,7 @@ import SafeImage from '@/components/SafeImage';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Calendar } from 'lucide-react';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
-import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
+import { ArticleSchema, BreadcrumbSchema, FAQSchema } from '@/components/seo/SchemaMarkup';
 import type { BlogPost } from '@/data/posts';
 import { getPostSlug } from '@/lib/data';
 import { useEffect, useRef } from 'react';
@@ -65,8 +65,9 @@ export default function BlogPostView({
                 datePublished={post.date}
                 dateModified={post.dateModified}
                 image={`https://pieroperilli.com${post.thumbnail}`}
-                keywords={post.keywordTarget ? post.keywordTarget.split(',').map(k => k.trim()) : undefined}
+                keywords={(isIt ? post.keywordTarget : (post.keywordTargetEn ?? post.keywordTarget))?.split(',').map(k => k.trim())}
             />
+            {(isIt ? post.faqIt : post.faqEn)?.length ? <FAQSchema faqs={(isIt ? post.faqIt : post.faqEn)!} /> : null}
             <BreadcrumbSchema items={[
                 { name: 'Home', url: isIt ? '/' : '/en' },
                 { name: 'Blog', url: isIt ? '/blog' : '/en/blog' },

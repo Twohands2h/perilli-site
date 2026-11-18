@@ -133,6 +133,7 @@ export const projects: Project[] = [
             { type: 'text', caption: true, textIt: 'Due generazioni del progetto: il freezer rigenerato dal girato e un inserto macro.', textEn: 'Two generations from the project: the freezer regenerated from the plate, and a macro insert.' },
             { type: 'image', src: '/images/portfolio/vecchio-amaro-del-capo-packshot-frame-zero.webp', alt: { it: 'Frame zero del packshot finale: bottiglia Vecchio Amaro del Capo e bicchieri sulla marina al tramonto', en: 'Frame zero of the final packshot: Vecchio Amaro del Capo bottle and glasses on the marina at sunset' }, fullWidth: true },
             { type: 'text', caption: true, textIt: 'Il frame zero del packshot finale, costruito partendo da immagini di riferimento della marina vuota.', textEn: 'The frame zero of the final packshot, built from reference images of the empty marina.' },
+            { type: 'text', textIt: 'Cosa abbiamo deciso prima del set per rendere possibile questa post l’ho raccontato in <a href="/blog/spot-pubblicitari-ai-vfx-produzione-ibrida" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Spot pubblicitari con AI e VFX: cosa cambia sul set di una produzione ibrida</a>.', textEn: 'What we decided before the shoot to make this post possible is in <a href="/en/blog/ai-vfx-commercials-hybrid-production-on-set" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI and VFX in commercials: what changes on set in a hybrid production</a>.' },
         ],
     },
     {

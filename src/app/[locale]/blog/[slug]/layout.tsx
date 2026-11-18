@@ -16,21 +16,33 @@ export async function generateMetadata({ params }: { params: { locale: string; s
 
     const ogBase = getPageOpenGraph(`/blog/${post.slug}`, params.locale);
 
+    const seoTitle = `${isIt ? (post.seoTitleIt ?? post.titleIt) : (post.seoTitleEn ?? post.titleEn)} | Piero Perilli`;
+    const seoDescription = isIt ? (post.metaDescriptionIt ?? post.excerptIt) : (post.metaDescriptionEn ?? post.excerptEn);
+    const image = {
+        url: `https://pieroperilli.com${post.thumbnail}`,
+        width: 1200,
+        height: 630,
+        alt: isIt ? post.thumbnailAlt.it : post.thumbnailAlt.en,
+    };
+
     return {
-        title: `${isIt ? (post.seoTitleIt ?? post.titleIt) : (post.seoTitleEn ?? post.titleEn)} | Piero Perilli`,
-        description: isIt ? (post.metaDescriptionIt ?? post.excerptIt) : (post.metaDescriptionEn ?? post.excerptEn),
+        title: { absolute: seoTitle },
+        description: seoDescription,
         alternates: getPageAlternates(`/blog/${post.slug}`, params.locale),
         openGraph: {
             ...ogBase,
             type: 'article',
-            images: [
-                {
-                    url: `https://pieroperilli.com${post.thumbnail}`,
-                    width: 1200,
-                    height: 630,
-                    alt: isIt ? post.thumbnailAlt.it : post.thumbnailAlt.en,
-                },
-            ],
+            title: seoTitle,
+            description: seoDescription,
+            publishedTime: post.date,
+            ...(post.dateModified && { modifiedTime: post.dateModified }),
+            images: [image],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: seoTitle,
+            description: seoDescription,
+            images: [image.url],
         },
     };
 }

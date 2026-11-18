@@ -20,13 +20,266 @@ export interface BlogPost {
   category: string;
   categoryLabel: { it: string; en: string };
   keywordTarget: string;
+  keywordTargetEn?: string; // keyword EN per lo schema Article (fallback: keywordTarget)
   thumbnail: string;
   thumbnailAlt: { it: string; en: string };
   contentIt: string;
   contentEn: string;
+  // FAQ opzionali: stesso testo della sezione FAQ visibile nel contenuto → FAQPage JSON-LD
+  faqIt?: { question: string; answer: string }[];
+  faqEn?: { question: string; answer: string }[];
 }
 
 export const posts: BlogPost[] = [
+  {
+    slug: 'spot-pubblicitari-ai-vfx-produzione-ibrida',
+    slugEn: 'ai-vfx-commercials-hybrid-production-on-set',
+    titleIt: 'Spot pubblicitari con AI e VFX: cosa cambia sul set di una produzione ibrida',
+    titleEn: 'AI and VFX in commercials: what changes on set in a hybrid production',
+    seoTitleIt: 'VFX e AI per spot pubblicitari: cosa cambia sul set',
+    seoTitleEn: 'VFX and AI for commercials: what changes on set',
+    excerptIt: 'La scelta tra girare, generare e compositare non si fa in post: si fa prima del set. Cosa ho chiesto alla produzione di acquisire per la post dello spot di Vecchio Amaro del Capo, e perché ha funzionato.',
+    excerptEn: 'The choice between shooting, generating and compositing isn\'t made in post: it\'s made before the shoot. What I asked the production to capture for the post of the Vecchio Amaro del Capo commercial, and why it worked.',
+    metaDescriptionIt: 'Cosa girare quando la post userà AI generativa e VFX: prodotto, plate, cast, versamenti. Il caso dello spot Vecchio Amaro del Capo.',
+    metaDescriptionEn: 'What to shoot when post will use generative AI and VFX: product, plates, cast, pours. The Vecchio Amaro del Capo commercial as a case study.',
+    date: '2026-11-18',
+    readingTime: 7,
+    category: 'ai',
+    categoryLabel: { it: 'AI & VFX', en: 'AI & VFX' },
+    keywordTarget: 'spot pubblicitari AI VFX, produzione video ibrida, VFX per spot pubblicitari',
+    keywordTargetEn: 'AI commercials, VFX for commercials, hybrid video production',
+    thumbnail: '/images/blog/spot-pubblicitari-ai-vfx-versamento-liquido-ai.webp',
+    thumbnailAlt: {
+      it: 'Versamento di Vecchio Amaro del Capo nello spot «Capo That Moment»: il liquido è generato in AI e integrato in compositing sul girato',
+      en: 'A Vecchio Amaro del Capo pour from the “Capo That Moment” commercial: the liquid is AI-generated and composited into the live-action plate'
+    },
+    faqIt: [
+      { question: 'Cos\'è una produzione video ibrida?', answer: 'Una produzione che combina riprese dal vero, AI generativa e VFX tradizionali, scegliendo il metodo shot per shot. Lo spot è girato. Alcuni elementi vengono generati e integrati in compositing, mentre prodotto, etichette e tutto ciò che richiede controllo assoluto restano al metodo tradizionale.' },
+      { question: 'Quando va coinvolto il VFX artist in uno spot con AI?', answer: 'In pre-produzione, quando si scrive la lista riprese. È lì che si decide cosa girare, cosa generare e quali riferimenti servono. Su Vecchio Amaro del Capo il regista mi ha coinvolto prima delle riprese.' },
+      { question: 'L\'AI può generare il prodotto in uno spot pubblicitario?', answer: 'Può generarlo, ma riscrive i testi delle etichette e non garantisce che il prodotto resti identico. Per questo bottiglie, etichette e bicchieri si riprendono dal vero e, dove serve, l\'etichetta originale si reinserisce in tracking.' },
+      { question: 'Come si usano attori reali negli shot generati con l\'AI?', answer: 'Con uno shooting di riferimento dedicato (viste a 360°, dettagli del volto, espressioni) e le liberatorie del cast. Così gli shot generati restano ancorati agli attori scelti per la campagna. Che le liberatorie coprano questo uso va verificato con la produzione.' },
+    ],
+    faqEn: [
+      { question: 'What is a hybrid video production?', answer: 'A production that combines live-action footage, generative AI and traditional VFX, choosing the method shot by shot. The commercial is shot. Some elements are generated and composited in, while the product, labels and anything that needs absolute control stay with traditional methods.' },
+      { question: 'When should the VFX artist be brought into a commercial that uses AI?', answer: 'In pre-production, while the shot list is being written. That is where you decide what to shoot, what to generate and which references you need. On Vecchio Amaro del Capo the director brought me in before the shoot.' },
+      { question: 'Can AI generate the product in a commercial?', answer: 'It can, but it rewrites the text on labels and cannot guarantee the product stays identical. That is why bottles, labels and glasses are shot for real and, where needed, the original label is tracked back in.' },
+      { question: 'How do you use real actors in AI-generated shots?', answer: 'With a dedicated reference shoot (360° views, facial details, expressions) and the cast\'s releases. That keeps the generated shots anchored to the actors chosen for the campaign. Whether the releases cover this use is something to check with the production.' },
+    ],
+    contentIt: `<p>«Possiamo farlo con l'AI?» è la domanda con cui oggi si apre quasi ogni preventivo. Quella che conta arriva prima, ed è un'altra: cosa dobbiamo girare, sapendo che una parte dello spot sarà generata?</p>
+
+<p>In una produzione ibrida la risposta a questa domanda decide la post. Se il set è stato pensato per quello che verrà dopo, la post integra. Se non lo è stato, la post rincorre. In questo articolo racconto cosa cambia sul set partendo da un caso concreto: «Capo That Moment», <a href="/portfolio/vecchio-amaro-del-capo" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">lo spot estate 2026 di Vecchio Amaro del Capo</a>, su cui ho lavorato come VFX artist.</p>
+
+<h2>Cos'è una produzione video ibrida</h2>
+
+<p>Una produzione video ibrida combina riprese dal vero, AI generativa e VFX tradizionali nello stesso progetto, scegliendo il metodo shot per shot. Non è uno spot «fatto con l'AI»: è uno spot girato, in cui alcuni elementi vengono generati e poi integrati in compositing, mentre tutto ciò che richiede controllo assoluto resta al metodo tradizionale.</p>
+
+<p>Come decido, shot per shot, cosa affidare a ciascun metodo l'ho raccontato in <a href="/blog/ai-vs-vfx-tradizionale-come-scegliere" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Come scelgo tra AI e VFX tradizionale per ogni shot</a>. Qui mi interessa il passaggio precedente: quello che succede prima che la post cominci.</p>
+
+<h2>In una produzione ibrida la post comincia prima del set</h2>
+
+<p>Su Amaro del Capo il regista, Marco De Aguilar, mi ha coinvolto in pre-produzione. Sul set non c'ero. La sua domanda era precisa: come girare, sapendo che la post sarebbe stata stretta, e se fosse possibile chiuderla combinando metodo tradizionale e AI.</p>
+
+<p>Con quattro giorni di riprese per tutto lo spot e otto giorni previsti per la post dei miei diciotto shot, qualunque cosa mancasse sul set sarebbe diventata un problema in post. La risposta alla domanda del regista è diventata una lista di riprese.</p>
+
+<h2>Cosa si gira diversamente quando la post userà l'AI</h2>
+
+<p>Quattro richieste, tutte nate dalla stessa domanda: cosa servirà a me, o al modello, per non dover inventare?</p>
+
+<h3>Il prodotto vero, sempre</h3>
+
+<p>Bottiglie e bicchieri originali, ripresi sul set. Un modello generativo può restituire un liquido credibile o rigenerare una ripresa aerea, ma riscrive i testi delle etichette. In uno spot di prodotto basta una lettera sbagliata e lo shot non si può usare. Il prodotto reale serve due volte: come riferimento per la generazione, e come base per il tracking quando l'etichetta generata va sostituita con quella vera.</p>
+
+<h3>Girare senza quello che verrà generato</h3>
+
+<p>I versamenti sono stati girati senza liquido. È stata prima di tutto una scelta di set: niente abiti o tavole apparecchiate da sistemare tra un ciak e l'altro. In cambio abbiamo fotografato il liquido in tanti versamenti diversi, da usare come riferimento. In post ogni versamento dello spot è stato generato e integrato in compositing nella scena girata.</p>
+
+<figure class="post-figure">
+<div class="post-figure-pair">
+<a href="/images/portfolio/vecchio-amaro-del-capo-freezer-green-screen-originale.webp" data-lightbox="freezer-originale"><img src="/images/portfolio/vecchio-amaro-del-capo-freezer-green-screen-originale.webp" alt="Scena del freezer girata in green screen — originale" width="1920" height="1080" loading="lazy" /></a>
+<a href="/images/portfolio/vecchio-amaro-del-capo-freezer-rigenerato-ai.webp" data-lightbox="freezer-ai"><img src="/images/portfolio/vecchio-amaro-del-capo-freezer-rigenerato-ai.webp" alt="Scena del freezer rigenerata in AI con bottiglie ghiacciate" width="1920" height="1080" loading="lazy" /></a>
+</div>
+<figcaption>Stesso principio sul freezer: il girato in green screen e la versione rigenerata in AI a partire da quel girato.</figcaption>
+</figure>
+
+<h3>Le location, anche vuote</h3>
+
+<p>I plate degli ambienti, cioè le location riprese senza azione, sono il materiale da cui partono estensioni, rigenerazioni e frame zero, l'immagine da cui parte una generazione. Per le riprese con il drone, il girato originale è diventato la traccia da cui rigenerare la scena con un'altra luce e l'atmosfera della festa. Il packshot finale, la marina vista dal basso con la gente in festa, l'ho costruito partendo da immagini di riferimento della marina vuota. Poi ho sostituito i bicchieri in metodo tradizionale e, a video generato, corretto le etichette.</p>
+
+<figure class="post-figure">
+<a href="/images/portfolio/vecchio-amaro-del-capo-drone-girato-vs-rigenerato-ai.webp" data-lightbox="drone"><img src="/images/portfolio/vecchio-amaro-del-capo-drone-girato-vs-rigenerato-ai.webp" alt="Ripresa con il drone su Pizzo: girato originale a sinistra, versione rigenerata in AI a destra" width="1920" height="1080" loading="lazy" /></a>
+<figcaption>Le riprese con il drone: a sinistra il girato originale, usato come traccia; a destra la versione rigenerata in AI, con la luce del tramonto e le luminarie della festa.</figcaption>
+</figure>
+
+<h3>Il cast come riferimento</h3>
+
+<p>Per i personaggi principali abbiamo fatto uno shooting dedicato: viste a 360°, dettagli del volto, espressioni. Questo materiale è servito come riferimento per alcuni shot generati a partire dagli attori del cast e poi integrati nello spot. E ha risolto un problema che con l'AI si sottovaluta: le persone che compaiono in quegli shot sono attori con la loro liberatoria. In questo modo gli shot generati restano ancorati agli attori realmente scelti per la campagna, evitando di introdurre volti estranei al cast.</p>
+
+<h2>Cosa non si affida alla generazione</h2>
+
+<p>Prodotto, etichette, insegne. Dove la generazione alterava i testi, ho sostituito le etichette con quelle originali in tracking. Alcune insegne le ho inserite in After Effects e Mocha. Quando lo spot è stato declinato per la Red Hot Edition, il cambio di prodotto l'ho fatto interamente con tracking e sostituzione delle etichette, shot per shot.</p>
+
+<p>La regola è semplice da dire: l'AI lavora dove dà un vantaggio reale, il metodo tradizionale tiene tutto ciò che richiede controllo assoluto.</p>
+
+<h2>La post ibrida produce più materiale del set</h2>
+
+<p>Diciotto shot, dodici giorni, circa 650 asset tra immagini e video. Gli otto giorni previsti sono diventati dodici: siamo riusciti a ottenere quattro giorni in più sulla consegna.</p>
+
+<p>Al decimo giorno sono arrivate modifiche su shot realizzati il secondo giorno, già approvati. In una produzione è normale. Il problema è ritrovare come era stato fatto quello shot, tra quattro piattaforme (Magnific, ComfyUI, Higgsfield, Runway) e centinaia di versioni.</p>
+
+<p>Per questo uso <a href="https://rewake.studio?utm_source=pieroperilli.com&amp;utm_medium=referral&amp;utm_campaign=blog-produzione-ibrida" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Rewake</a>, uno strumento che ho costruito per tenere collegati, shot per shot, immagine di riferimento, prompt, piattaforma e modello. Al decimo giorno sapevo da dove ripartire: una modifica, non una ricerca. Come organizzo un progetto di questo tipo l'ho spiegato in <a href="/blog/organizzare-progetto-film-ai-prompt-reference-continuita" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Come organizzare un progetto film AI senza perdere prompt, take e decisioni</a>.</p>
+
+<p>Dopo cinque giorni, in produzione avevano cominciato a chiamarmi «Master Jedi Perilli». Pensavano avessi i superpoteri. Avevo solo un archivio in ordine: i superpoteri, se c'erano, erano di Rewake.</p>
+
+<h2>Cosa chiedere prima di girare uno spot con AI e VFX</h2>
+
+<p>Se stai preparando uno spot con una post ibrida, questa è la lista che userei di nuovo. A lavoro finito non l'ho corretta: ha funzionato così com'era.</p>
+
+<ol>
+<li>Coinvolgi chi farà la post quando si scrive la lista riprese, non dopo il montaggio.</li>
+<li>Decidi shot per shot cosa sarà girato, cosa generato e cosa compositato, e scrivilo nella lista.</li>
+<li>Riprendi il prodotto vero: bottiglie, etichette, bicchieri originali.</li>
+<li>Riprendi le location vuote: i plate servono a estensioni, rigenerazioni e frame zero.</li>
+<li>Fotografa i riferimenti di ciò che verrà generato. Per noi, il liquido in tanti versamenti.</li>
+<li>Fai uno shooting di riferimento del cast (viste a 360°, volto, espressioni) e verifica con la produzione che le liberatorie coprano anche questo uso.</li>
+<li>Valuta cosa conviene non girare: i versamenti a secco hanno semplificato il set.</li>
+<li>Pianifica la post su numeri veri, con spazio per le modifiche tardive e un sistema per ritrovare come è stato fatto ogni shot.</li>
+</ol>
+
+<h2>L'AI fa risparmiare?</h2>
+
+<p>Su alcune voci sì. Un versamento generato evita di sistemare abiti e tavole tra un ciak e l'altro. Una ripresa aerea rigenerata cambia luce e atmosfera senza un nuovo volo. Ma il lavoro non sparisce: si sposta dal set alla post, nella preparazione dei riferimenti, nelle generazioni scartate, nel compositing e nelle correzioni. Per questo un preventivo serio si fa sugli shot, non sui crediti delle piattaforme.</p>
+
+<h2>Il metodo, prima degli strumenti</h2>
+
+<p>Gli strumenti cambiano ogni pochi mesi. Quello che ha reso possibile questo spot non è stato un modello: è stata una lista di riprese pensata per la post e decisa con il regista prima del set. Il case study completo, con il breakdown di cosa è stato girato, generato e compositato, è qui: <a href="/portfolio/vecchio-amaro-del-capo" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Vecchio Amaro del Capo — Capo That Moment</a>.</p>
+
+<p>Se stai preparando uno spot e vuoi capire cosa girare per la post, <a href="/contatti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">parliamone prima del sopralluogo</a>. Qui trovi come lavoro sui <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX per spot pubblicitari</a> e sulla <a href="/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">produzione video con AI</a>.</p>
+
+<h2>Domande frequenti</h2>
+
+<h3>Cos'è una produzione video ibrida?</h3>
+
+<p>Una produzione che combina riprese dal vero, AI generativa e VFX tradizionali, scegliendo il metodo shot per shot. Lo spot è girato. Alcuni elementi vengono generati e integrati in compositing, mentre prodotto, etichette e tutto ciò che richiede controllo assoluto restano al metodo tradizionale.</p>
+
+<h3>Quando va coinvolto il VFX artist in uno spot con AI?</h3>
+
+<p>In pre-produzione, quando si scrive la lista riprese. È lì che si decide cosa girare, cosa generare e quali riferimenti servono. Su Vecchio Amaro del Capo il regista mi ha coinvolto prima delle riprese.</p>
+
+<h3>L'AI può generare il prodotto in uno spot pubblicitario?</h3>
+
+<p>Può generarlo, ma riscrive i testi delle etichette e non garantisce che il prodotto resti identico. Per questo bottiglie, etichette e bicchieri si riprendono dal vero e, dove serve, l'etichetta originale si reinserisce in tracking.</p>
+
+<h3>Come si usano attori reali negli shot generati con l'AI?</h3>
+
+<p>Con uno shooting di riferimento dedicato (viste a 360°, dettagli del volto, espressioni) e le liberatorie del cast. Così gli shot generati restano ancorati agli attori scelti per la campagna. Che le liberatorie coprano questo uso va verificato con la produzione.</p>`,
+    contentEn: `<p>"Can we do it with AI?" is the question that opens almost every quote request these days. The one that matters comes earlier, and it is a different one: what do we need to shoot, knowing that part of the commercial will be generated?</p>
+
+<p>In a hybrid production, the answer to that question decides the post. If the shoot was planned for what comes after, post integrates. If it wasn't, post plays catch-up. In this article I look at what changes on set through a real case: "Capo That Moment", <a href="/en/portfolio/vecchio-amaro-del-capo" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">the summer 2026 commercial for Vecchio Amaro del Capo</a>, which I worked on as a VFX artist.</p>
+
+<h2>What a hybrid video production is</h2>
+
+<p>A hybrid video production combines live-action footage, generative AI and traditional VFX in the same project, choosing the method shot by shot. It is not a commercial "made with AI": it is a commercial that was shot, where some elements are generated and then composited in, while anything that needs absolute control stays with traditional methods.</p>
+
+<p>How I decide, shot by shot, which method to use is covered in <a href="/en/blog/ai-vs-traditional-vfx-how-to-choose" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">How I choose between AI and traditional VFX for every shot</a>. Here I am interested in the step before that: what happens before post begins.</p>
+
+<h2>In a hybrid production, post starts before the shoot</h2>
+
+<p>On Amaro del Capo, director Marco De Aguilar brought me in during pre-production. I wasn't on set. His question was precise: how to shoot, knowing post would be tight, and whether it could be finished by combining traditional methods and AI.</p>
+
+<p>With four shoot days for the whole commercial and eight days planned for the post on my eighteen shots, anything missing from the shoot would have become a problem in post. The answer to the director's question became a shot list.</p>
+
+<h2>What you shoot differently when post will use AI</h2>
+
+<p>Four requests, all coming from the same question: what will I, or the model, need so that nothing has to be invented?</p>
+
+<h3>The real product, always</h3>
+
+<p>Original bottles and glasses, shot on set. A generative model can deliver believable liquid or regenerate an aerial shot, but it rewrites the text on labels. In a product commercial a single wrong letter makes the shot unusable. The real product does two jobs: it is the reference for generation, and the base for tracking when a generated label has to be replaced with the real one.</p>
+
+<h3>Shoot without what will be generated</h3>
+
+<p>The pours were shot without liquid. It was a set decision first: no wardrobe or set tables to fix between takes. In exchange, we photographed the liquid in many different pours to use as reference. In post, every pour in the commercial was generated and composited into the live-action shot.</p>
+
+<figure class="post-figure">
+<div class="post-figure-pair">
+<a href="/images/portfolio/vecchio-amaro-del-capo-freezer-green-screen-originale.webp" data-lightbox="freezer-originale"><img src="/images/portfolio/vecchio-amaro-del-capo-freezer-green-screen-originale.webp" alt="Freezer scene shot on green screen — original" width="1920" height="1080" loading="lazy" /></a>
+<a href="/images/portfolio/vecchio-amaro-del-capo-freezer-rigenerato-ai.webp" data-lightbox="freezer-ai"><img src="/images/portfolio/vecchio-amaro-del-capo-freezer-rigenerato-ai.webp" alt="Freezer scene regenerated with AI, with frozen bottles" width="1920" height="1080" loading="lazy" /></a>
+</div>
+<figcaption>Same principle on the freezer: the green-screen plate and the version regenerated with AI from that plate.</figcaption>
+</figure>
+
+<h3>The locations, empty too</h3>
+
+<p>Environment plates, meaning the locations shot without action, are the material that extensions, regenerations and frame zeros start from (a frame zero is the image a generation starts from). For the drone shots, the original footage became the guide to regenerate the scene with different light and the atmosphere of the festival. I built the final packshot, the marina seen from below with people celebrating, starting from reference images of the empty marina. Then I replaced the glasses with traditional methods and, once the video was generated, corrected the labels.</p>
+
+<figure class="post-figure">
+<a href="/images/portfolio/vecchio-amaro-del-capo-drone-girato-vs-rigenerato-ai.webp" data-lightbox="drone"><img src="/images/portfolio/vecchio-amaro-del-capo-drone-girato-vs-rigenerato-ai.webp" alt="Drone shot over Pizzo: original footage on the left, AI-regenerated version on the right" width="1920" height="1080" loading="lazy" /></a>
+<figcaption>The drone footage: left, the original plate, used as the guide; right, the AI-regenerated version, with sunset light and festival lights.</figcaption>
+</figure>
+
+<h3>The cast as reference</h3>
+
+<p>For the main characters we did a dedicated shoot: 360° views, facial details, expressions. That material served as reference for some shots generated from the cast's actors and then composited into the commercial. It also solved a problem that is easy to underestimate with AI: the people in those shots are actors who signed a release. That keeps the generated shots anchored to the actors actually chosen for the campaign, without bringing in faces from outside the cast.</p>
+
+<h2>What you don't hand to generation</h2>
+
+<p>Product, labels, signage. Where generation altered the text, I replaced the labels with the original ones through tracking. Some signs I added in After Effects and Mocha. When the commercial was adapted for the Red Hot Edition, I did the whole product change with tracking and label replacement, shot by shot.</p>
+
+<p>The rule is simple to state: AI works where it gives a real advantage, traditional methods hold everything that needs absolute control.</p>
+
+<h2>Hybrid post produces more material than the shoot</h2>
+
+<p>Eighteen shots, twelve days, around 650 image and video assets. The eight planned days became twelve: we managed to get four extra days on the delivery.</p>
+
+<p>On day ten, changes came in on shots made on day two and already approved. In a production that is normal. The problem is finding how that shot was made, across four platforms (Magnific, ComfyUI, Higgsfield, Runway) and hundreds of versions.</p>
+
+<p>That is why I use <a href="https://rewake.studio?utm_source=pieroperilli.com&amp;utm_medium=referral&amp;utm_campaign=blog-produzione-ibrida" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">Rewake</a>, a tool I built to keep the reference image, prompt, platform and model linked, shot by shot. On day ten I knew where to pick up from: a change, not a search. How I organise a project like this is explained in <a href="/en/blog/how-to-organize-ai-film-project-prompts-references-continuity" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">How to organise an AI film project without losing prompts, takes and decisions</a>.</p>
+
+<p>After five days, the production team had started calling me "Master Jedi Perilli". They thought I had superpowers. All I had was a tidy archive: the superpowers, if any, belonged to Rewake.</p>
+
+<h2>What to ask for before shooting a commercial with AI and VFX</h2>
+
+<p>If you are preparing a commercial with hybrid post, this is the list I would use again. I didn't change it once the job was done: it worked as it was.</p>
+
+<ol>
+<li>Bring in whoever will do the post while the shot list is being written, not after the edit.</li>
+<li>Decide shot by shot what will be shot, generated and composited, and write it into the list.</li>
+<li>Shoot the real product: original bottles, labels and glasses.</li>
+<li>Shoot the locations empty: plates feed extensions, regenerations and frame zeros.</li>
+<li>Photograph references for whatever will be generated. For us, the liquid in many pours.</li>
+<li>Do a reference shoot of the cast (360° views, face, expressions) and check with the production that the releases also cover this use.</li>
+<li>Consider what is better left unshot: dry pours made the shoot simpler.</li>
+<li>Plan post on real numbers, with room for late changes and a system to find how every shot was made.</li>
+</ol>
+
+<h2>Does AI save money?</h2>
+
+<p>On some items, yes. A generated pour saves fixing wardrobe and tables between takes. A regenerated aerial shot changes light and atmosphere without another flight. But the work doesn't disappear: it moves from the shoot to post, into preparing references, discarded generations, compositing and corrections. That is why a serious quote is built on shots, not on platform credits.</p>
+
+<h2>Method before tools</h2>
+
+<p>Tools change every few months. What made this commercial possible wasn't a model: it was a shot list designed for post and agreed with the director before the shoot. The full case study, with the breakdown of what was shot, generated and composited, is here: <a href="/en/portfolio/vecchio-amaro-del-capo" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Vecchio Amaro del Capo — Capo That Moment</a>.</p>
+
+<p>If you are preparing a commercial and want to work out what to shoot for post, <a href="/en/contact" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">let's talk before the location scout</a>. Here is how I work on <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX for commercials</a> and <a href="/en/ai-video" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">AI video production</a>.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>What is a hybrid video production?</h3>
+
+<p>A production that combines live-action footage, generative AI and traditional VFX, choosing the method shot by shot. The commercial is shot. Some elements are generated and composited in, while the product, labels and anything that needs absolute control stay with traditional methods.</p>
+
+<h3>When should the VFX artist be brought into a commercial that uses AI?</h3>
+
+<p>In pre-production, while the shot list is being written. That is where you decide what to shoot, what to generate and which references you need. On Vecchio Amaro del Capo the director brought me in before the shoot.</p>
+
+<h3>Can AI generate the product in a commercial?</h3>
+
+<p>It can, but it rewrites the text on labels and cannot guarantee the product stays identical. That is why bottles, labels and glasses are shot for real and, where needed, the original label is tracked back in.</p>
+
+<h3>How do you use real actors in AI-generated shots?</h3>
+
+<p>With a dedicated reference shoot (360° views, facial details, expressions) and the cast's releases. That keeps the generated shots anchored to the actors chosen for the campaign. Whether the releases cover this use is something to check with the production.</p>`,
+  },
 
   {
     slug: 'ai-act-video-ai-obblighi-2026',
