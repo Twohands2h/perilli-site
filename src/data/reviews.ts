@@ -71,7 +71,7 @@ export type Review = {
 
 // Stesso file per streaming e download: ?download=1 forza il salvataggio.
 const ASP_V5 = `${MEDIA_BASE}/ArtSitePark_v05.mp4`
-const AR_V5 = `${MEDIA_BASE}/AR_Leggende_spot15_v5.mp4`
+const AR_V6 = `${MEDIA_BASE}/AR_Leggende_spot15_v6.mp4`
 
 export const reviews: Review[] = [
   {
@@ -123,7 +123,7 @@ export const reviews: Review[] = [
   // ── Evolve · Mondadori & Alfa Romeo — spot 15″ (link breve: /evolve) ──
   // V1/V2 erano due montaggi a confronto (modalità `compare`): Evolve ha scelto la V2.
   // V3 = note dell'agenzia sulla V2. V4 = finale rifatto sul layout aggiornato dell'agenzia.
-  // V5 = badge scala 1:24, più luce, pop del prezzo nel packshot.
+  // V5 = badge scala 1:24, più luce, pop del prezzo nel packshot. V6 = loghi rifatti (75, 8C, Giulia).
   {
     slug: 'leggende-del-biscione-o397b9',
     project: 'Le Leggende del Biscione',
@@ -134,31 +134,37 @@ export const reviews: Review[] = [
 
     versions: [
       {
-        id: 'V5',
-        name: 'Scala, luce e prezzo',
+        id: 'V6',
+        name: 'Loghi',
         date: '2026-11-19',
         duration: '0:15',
-        stream: AR_V5,
-        poster: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-v5-poster.webp',
+        stream: AR_V6,
+        poster: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-v6-poster.webp',
         downloads: [
           {
             label: 'Video HD',
             spec: 'MP4 H.264 · 1920×1080 · 24 fps · stereo',
             size: '22 MB',
-            url: `${AR_V5}?download=1`,
+            url: `${AR_V6}?download=1`,
           },
         ],
       },
     ],
 
     intro: [
-      'Questa è la V5. Montaggio e finale sono quelli della V4: ho aggiunto l’indicazione della scala, dato più luce allo spot e messo in evidenza il prezzo nel packshot.',
+      'Questa è la V6. Rispetto alla V5 ho rifatto i loghi sulle auto, che ora si leggono come sui modelli veri. Restano le modifiche della V5: indicazione della scala, più luce e prezzo in evidenza.',
       'Le modifiche sono elencate sotto il player, ciascuna con il punto del film in cui vederla.',
     ],
 
-    // Differenze V4 → V5, verificate a frame: stessi tagli, stesso finale.
+    // V6 su V5, verificato a frame: stessi tagli e stesso audio; cambiano i loghi (75, 8C, Giulia) e la luce sulla 75.
+    // Le voci della V5 restano perché Evolve le vede insieme.
     chaptersTitle: 'Cosa è cambiato dalla V4',
     chapters: [
+      {
+        title: 'Loghi',
+        note: 'Novità della V6: rifatti lo scudetto Alfa Romeo sulla calandra della 75, la scritta «8C Competizione» sulla fiancata e il triangolino a scacchi sul parafango della Giulia, compreso il suo riflesso sulla portiera.',
+        time: 0.96, // 00:00:23 — calandra della 75
+      },
       {
         title: 'Scala 1:24',
         note: 'Il badge «Scala 1:24» entra sui cinque modelli in fila e resta fino al taglio.',
@@ -166,7 +172,7 @@ export const reviews: Review[] = [
       },
       {
         title: 'Più luce',
-        note: 'Più luce sulle carrozzerie e sui riflessi, soprattutto dai cinque modelli al cofano.',
+        note: 'Più luce sulle carrozzerie e sui riflessi, dai cinque modelli al cofano. Nella V6 anche sull’inquadratura della 75.',
         time: 2.42, // 00:02:10 — i cinque modelli
       },
       {
