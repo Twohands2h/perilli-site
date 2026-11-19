@@ -1,22 +1,14 @@
 'use client';
 
-import { useEffect } from 'react';
 import { useLocale } from 'next-intl';
 import { CheckCircle, ArrowLeft, Calendar, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
-import { trackEvent } from '@/components/AnalyticsScripts';
 
 export default function ThankYouContent() {
   const locale = useLocale();
   const isIt = locale === 'it';
 
-  useEffect(() => {
-    // Fire GA4 conversion event
-    trackEvent('form_submit', {
-      form_name: 'contact',
-      page_location: window.location.href,
-    });
-  }, []);
+  // La richiesta viene contata dal server (generate_lead in /api/contact), anche senza consenso ai cookie.
 
   return (
     <section className="pt-24 pb-16 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32">

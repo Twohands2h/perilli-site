@@ -29,6 +29,7 @@ export default function TrackedLink({
     <a
       href={href}
       onClick={handleClick}
+      data-ga-event={eventName}
       className={className}
       target={target}
       rel={rel}

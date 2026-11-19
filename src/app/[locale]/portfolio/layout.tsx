@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { getPageAlternates, getPageOpenGraph } from '@/lib/seo';
-import { BreadcrumbSchema } from '@/components/seo/SchemaMarkup';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
     return locale === 'it' ? {
@@ -16,15 +15,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     };
 }
 
-export default function PortfolioLayout({ children, params: { locale } }: { children: React.ReactNode; params: { locale: string } }) {
-    const isIt = locale === 'it';
-    return (
-        <>
-            <BreadcrumbSchema items={[
-                { name: 'Home', url: isIt ? '/' : '/en' },
-                { name: 'Portfolio', url: isIt ? '/portfolio' : '/en/portfolio' },
-            ]} />
-            {children}
-        </>
-    );
+export default function PortfolioLayout({ children }: { children: React.ReactNode; params: { locale: string } }) {
+    // Il breadcrumb Home > Portfolio sta nella pagina indice: qui si sommava a quello delle pagine interne
+    return <>{children}</>;
 }
