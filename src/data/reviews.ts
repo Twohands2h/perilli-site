@@ -71,7 +71,7 @@ export type Review = {
 
 // Stesso file per streaming e download: ?download=1 forza il salvataggio.
 const ASP_V5 = `${MEDIA_BASE}/ArtSitePark_v05.mp4`
-const AR_V4 = `${MEDIA_BASE}/AR_Leggende_spot15_v4.mp4`
+const AR_V5 = `${MEDIA_BASE}/AR_Leggende_spot15_v5.mp4`
 
 export const reviews: Review[] = [
   {
@@ -123,6 +123,7 @@ export const reviews: Review[] = [
   // ── Evolve · Mondadori & Alfa Romeo — spot 15″ (link breve: /evolve) ──
   // V1/V2 erano due montaggi a confronto (modalità `compare`): Evolve ha scelto la V2.
   // V3 = note dell'agenzia sulla V2. V4 = finale rifatto sul layout aggiornato dell'agenzia.
+  // V5 = badge scala 1:24, più luce, pop del prezzo nel packshot.
   {
     slug: 'leggende-del-biscione-o397b9',
     project: 'Le Leggende del Biscione',
@@ -133,45 +134,45 @@ export const reviews: Review[] = [
 
     versions: [
       {
-        id: 'V4',
-        name: 'Nuovo finale',
-        date: '2026-11-16',
+        id: 'V5',
+        name: 'Scala, luce e prezzo',
+        date: '2026-11-19',
         duration: '0:15',
-        stream: AR_V4,
-        poster: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-v4-poster.webp',
+        stream: AR_V5,
+        poster: '/images/review/alfa-romeo-leggende/alfa-romeo-leggende-v5-poster.webp',
         downloads: [
           {
             label: 'Video HD',
             spec: 'MP4 H.264 · 1920×1080 · 24 fps · stereo',
             size: '22 MB',
-            url: `${AR_V4}?download=1`,
+            url: `${AR_V5}?download=1`,
           },
         ],
       },
     ],
 
     intro: [
-      'Questa è la V4. Il montaggio è quello della V3: cambia il finale, rifatto sul layout aggiornato che mi avete mandato, e si aggiornano le note in sovrimpressione.',
+      'Questa è la V5. Montaggio e finale sono quelli della V4: ho aggiunto l’indicazione della scala, dato più luce allo spot e messo in evidenza il prezzo nel packshot.',
       'Le modifiche sono elencate sotto il player, ciascuna con il punto del film in cui vederla.',
     ],
 
-    // Differenze V3b → V4, verificate a frame: fino a 00:07:16 cambiano solo le sovrimpressioni.
-    chaptersTitle: 'Cosa è cambiato dalla V3',
+    // Differenze V4 → V5, verificate a frame: stessi tagli, stesso finale.
+    chaptersTitle: 'Cosa è cambiato dalla V4',
     chapters: [
       {
-        title: 'Packshot',
-        note: 'Rifatto sul nuovo layout: logo Alfa Romeo Collection, «La prima uscita 1600 Spider Duetto (1966)», prezzo Modello + Fascicolo a € 16,99, rimando a mondadoricollection.it, «In edicola con TV Sorrisi e Canzoni» e note legali reimpaginate.',
-        time: 11.34, // 00:11:08 — entrano le grafiche
+        title: 'Scala 1:24',
+        note: 'Il badge «Scala 1:24» entra sui cinque modelli in fila e resta fino al taglio.',
+        time: 4.05, // 00:04:01
       },
       {
-        title: 'Tempi del finale',
-        note: 'Il fascicolo entra prima, mentre la mano chiude la teca.',
-        time: 10.84, // 00:10:20 — entra il fascicolo
+        title: 'Più luce',
+        note: 'Più luce sulle carrozzerie e sui riflessi, soprattutto dai cinque modelli al cofano.',
+        time: 2.42, // 00:02:10 — i cinque modelli
       },
       {
-        title: 'Nota sull’AI e marchio',
-        note: 'La nota sull’AI è in maiuscolo, più leggibile anche sulle mani. La nota sul marchio Alfa Romeo passa sul bordo sinistro.',
-        time: 6.25, // 00:06:06 — nota sull'AI sopra il dito
+        title: 'Prezzo',
+        note: 'Il riquadro «Modello + Fascicolo a € 16,99» si ingrandisce con un pop prima di fermarsi nel packshot.',
+        time: 13.3, // 00:13:07 — subito prima del pop
       },
     ],
 
