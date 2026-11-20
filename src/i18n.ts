@@ -42,6 +42,8 @@ export default getRequestConfig(async ({ locale }) => {
   if (!locales.includes(locale as Locale)) notFound();
 
   return {
+    // next-intl 3.22+ vuole la lingua anche nel valore restituito (prima dava un avviso in produzione)
+    locale: locale as Locale,
     messages: (await import(`./messages/${locale}.json`)).default,
   };
 });

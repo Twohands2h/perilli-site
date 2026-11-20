@@ -7,13 +7,13 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return locale === 'it' ? {
-    title: 'VFX e Effetti Visivi Roma | Piero Perilli',
-    description: 'VFX artist a Roma con 20+ anni di esperienza. Compositing, green screen, set extension e tracking per cinema, spot e produzioni digitali.',
+    title: 'VFX per spot pubblicitari e cinema a Roma | Piero Perilli',
+    description: 'Partner VFX per agenzie e produzioni, da Roma in tutta Italia: compositing, green screen, set extension e AI integrata per spot pubblicitari e cinema.',
     alternates: getPageAlternates('/vfx', locale),
     openGraph: getPageOpenGraph('/vfx', locale),
   } : {
-    title: 'VFX & Visual Effects Rome | Piero Perilli',
-    description: 'VFX artist in Rome with 20+ years of experience. Compositing, green screen, set extension and tracking for film, commercials and digital productions.',
+    title: 'VFX for Commercials and Film in Rome, Italy | Piero Perilli',
+    description: 'VFX partner for agencies and productions, from Rome across Italy and abroad: compositing, green screen, set extension and integrated AI for commercials and film.',
     alternates: getPageAlternates('/vfx', locale),
     openGraph: getPageOpenGraph('/vfx', locale),
   };
@@ -21,7 +21,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 const contentIT = {
   sectionLabel: 'VFX',
-  h1: 'Effetti Visivi (VFX) per Cinema e Spot — Roma',
+  h1: 'VFX per spot pubblicitari e cinema — Roma',
   heroSubtitle: 'Effetti visivi creativi e realistici per cinema, advertising e digital content.',
 
   introTitle: 'Effetti Visivi che Trasformano la Tua Visione in Realtà.',
@@ -88,11 +88,11 @@ const contentIT = {
   ],
 
   method: {
-    title: 'VFX per spot, cinema e produzioni',
+    title: 'VFX per spot pubblicitari, cinema e produzioni',
     items: [
       {
         label: 'Spot pubblicitari e campagne',
-        text: 'VFX per spot TV e campagne, dal compositing green screen all’integrazione di elementi 3D nel girato. Per lo spot Stalking del Ministero delle Pari Opportunità ho costruito e integrato la gabbia 3D che imprigiona la vittima. Per Gucci Kids ho seguito il compositing di uno spot girato interamente in green screen.',
+        text: 'VFX per spot TV e campagne, dal compositing green screen all’integrazione di elementi 3D nel girato, fino alla produzione ibrida con AI generativa. Per lo spot Vecchio Amaro del Capo ho unito VFX tradizionali e AI sul girato originale. Per lo spot Stalking del Ministero delle Pari Opportunità ho costruito e integrato la gabbia 3D che imprigiona la vittima. Per Gucci Kids ho seguito il compositing di uno spot girato interamente in green screen.',
       },
       {
         label: 'Cinema e documentari',
@@ -107,11 +107,13 @@ const contentIT = {
 
   recentWorkTitle: 'Progetti VFX recenti',
   recentWork: [
+    { title: 'Vecchio Amaro del Capo — spot con produzione ibrida, VFX e AI sul girato', link: '/portfolio/vecchio-amaro-del-capo' },
     { title: 'Along Came Ruby — cortometraggio, VFX complessi', link: '/portfolio/along-came-ruby' },
     { title: 'Stalking — spot TV per il Ministero delle Pari Opportunità, VFX e gabbia 3D', link: '/portfolio/stalking-spot' },
     { title: 'I Am Curious Johnny — di Julien Temple, VFX e clean-up', link: '/portfolio/i-am-curious-johnny' },
     { title: 'Floverr — film in produzione, supervisione VFX', link: '/portfolio/floverr' },
     { title: 'Gucci Kids — compositing green screen per lo spot della campagna Gucci Kids', link: '/portfolio/gucci-kids' },
+    { title: '📖 Leggi: Spot pubblicitari con AI e VFX — cosa cambia sul set', link: '/blog/spot-pubblicitari-ai-vfx-produzione-ibrida' },
     { title: '📖 Leggi: VFX per cinema indipendente — guida al workflow', link: '/blog/vfx-cinema-indipendente-guida-workflow' },
     { title: '📖 Leggi: Breakdown VFX di Along Came Ruby', link: '/blog/breakdown-vfx-along-came-ruby' },
     { title: '📖 Leggi: VFX compositing — integrare elementi 3D in scene reali', link: '/blog/vfx-compositing-integrare-elementi-3d-scene-reali' },
@@ -126,7 +128,7 @@ const contentIT = {
 
 const contentEN = {
   sectionLabel: 'VFX',
-  h1: 'Visual Effects (VFX) for Film and Commercials — Rome, Italy',
+  h1: 'VFX for Commercials and Film — Rome, Italy',
   heroSubtitle: 'Creative and realistic visual effects for cinema, advertising and digital content.',
 
   introTitle: 'Visual Effects that Transform Your Vision into Reality.',
@@ -194,11 +196,13 @@ const contentEN = {
 
   recentWorkTitle: 'Recent VFX projects',
   recentWork: [
+    { title: 'Vecchio Amaro del Capo — commercial with hybrid production, VFX and AI on live-action footage', link: '/en/portfolio/vecchio-amaro-del-capo' },
     { title: 'Along Came Ruby — short film, complex VFX', link: '/en/portfolio/along-came-ruby' },
     { title: 'Stalking — TV commercial for the Italian Ministry of Equal Opportunities, VFX and 3D cage', link: '/en/portfolio/stalking-spot' },
     { title: 'I Am Curious Johnny — Julien Temple, VFX and clean-up', link: '/en/portfolio/i-am-curious-johnny' },
     { title: 'Floverr — film in production, VFX supervision', link: '/en/portfolio/floverr' },
     { title: 'Gucci Kids — green screen compositing for the Gucci Kids campaign spot', link: '/en/portfolio/gucci-kids' },
+    { title: '📖 Read: AI and VFX in commercials — what changes on set', link: '/en/blog/ai-vfx-commercials-hybrid-production-on-set' },
     { title: '📖 Read: VFX for independent cinema — workflow guide', link: '/en/blog/vfx-independent-film-workflow-guide' },
     { title: '📖 Read: VFX Breakdown of Along Came Ruby', link: '/en/blog/vfx-breakdown-along-came-ruby' },
     { title: '📖 Read: VFX compositing — integrating 3D elements in real scenes', link: '/en/blog/vfx-compositing-integrating-3d-elements-real-scenes' },
@@ -221,8 +225,8 @@ export default function VFXPage({ params: { locale } }: { params: { locale: stri
       <ServiceSchema
         name={isIt ? 'Effetti Visivi (VFX) Professionali' : 'Professional Visual Effects (VFX)'}
         description={isIt
-          ? 'Compositing, green screen, set extension, tracking e clean-up per cinema, spot e digital. Roma, Italia.'
-          : 'Compositing, green screen, set extension, tracking and clean-up for cinema, commercials and digital. Rome, Italy.'}
+          ? 'Compositing, green screen, set extension, tracking, clean-up e AI integrata per spot pubblicitari, cinema e digital. Roma, Italia.'
+          : 'Compositing, green screen, set extension, tracking, clean-up and integrated AI for commercials, film and digital. Rome, Italy.'}
         url={isIt ? '/vfx' : '/en/vfx'}
       />
       <BreadcrumbSchema items={[

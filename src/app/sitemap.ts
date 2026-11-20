@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { projects } from '@/data/projects';
 import { getPublishedPosts } from '@/data/posts';
+import { pageLastModified } from '@/data/lastModified';
 
 const BASE_URL = 'https://pieroperilli.com';
 
@@ -28,10 +29,10 @@ function buildAlternates(itUrl: string, enUrl: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // NOTA lastmod: per pagine statiche e portfolio NON dichiariamo lastModified.
-  // Prima era new Date() (data del deploy), quindi cambiava su 72 URL a ogni build
-  // e Google impara a ignorarlo. Un lastmod va messo solo se è una data vera:
-  // gli articoli blog usano post.dateModified se presente, altrimenti post.date.
+  // NOTA lastmod: si dichiara solo una data vera, mai new Date() (prima cambiava su 72 URL
+  // a ogni build e Google impara a ignorarlo). Gli articoli blog usano post.dateModified
+  // se presente, altrimenti post.date. Pagine statiche e case study hanno un lastmod solo se
+  // compaiono in src/data/lastModified.ts. Lo stesso dato decide cosa IndexNow segnala a Bing.
 
   const staticPages = [
     { path: '/',                priority: 1.0, changeFrequency: 'weekly'  as const },
@@ -53,16 +54,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Home EN: '/en' (non '/en/'), coerente con il redirect del server e con il canonical
     const enUrl = page.path === '/' ? `${BASE_URL}/en` : `${BASE_URL}/en${getEnPath(page.path)}`;
     const alternates = buildAlternates(itUrl, enUrl);
+    const modified = pageLastModified[page.path];
+    const lastModified = modified ? { lastModified: new Date(modified) } : {};
 
     return [
       {
         url: itUrl,
+        ...lastModified,
         changeFrequency: page.changeFrequency,
         priority: page.priority,
         alternates,
       },
       {
         url: enUrl,
+        ...lastModified,
         changeFrequency: page.changeFrequency,
         priority: page.priority,
         alternates,
@@ -75,16 +80,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const itUrl = `${BASE_URL}/portfolio/${project.slug}`;
     const enUrl = `${BASE_URL}/en/portfolio/${project.slug}`;
     const alternates = buildAlternates(itUrl, enUrl);
+    const modified = pageLastModified[`/portfolio/${project.slug}`];
+    const lastModified = modified ? { lastModified: new Date(modified) } : {};
 
     return [
       {
         url: itUrl,
+        ...lastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.7,
         alternates,
       },
       {
         url: enUrl,
+        ...lastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.7,
         alternates,

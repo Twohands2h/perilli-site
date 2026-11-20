@@ -611,7 +611,10 @@ export const posts: BlogPost[] = [
 </a>
 </div>
 
-<p>Rewake è in beta privata. Se stai lavorando su un progetto AI e riconosci il problema, puoi <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">richiedere l'accesso sul sito</a>. Ogni richiesta è valutata personalmente.</p>`,
+<p>Rewake è in beta privata. Se stai lavorando su un progetto AI e riconosci il problema, puoi <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">richiedere l'accesso sul sito</a>. Ogni richiesta è valutata personalmente.</p>
+
+<p>Se stai producendo un corto o uno spot con l'AI e ti serve qualcuno che tenga insieme continuità, post-produzione e finishing, guarda come ho lavorato su <a href="/stanza-247" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Stanza 247</a>, il mio corto thriller realizzato in AI, e sullo spot <a href="/portfolio/vecchio-amaro-del-capo" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Vecchio Amaro del Capo</a>, dove AI generativa e VFX lavorano sul girato. Se il tuo progetto è simile, <a href="/contatti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">scrivimi</a>.</p>
+`,
 
     contentEn: `<p><em>April 2026</em></p>
 
@@ -722,7 +725,10 @@ export const posts: BlogPost[] = [
 </a>
 </div>
 
-<p>Rewake is in private beta. If you are working on an AI project and recognize the problem, you can <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">request access on the site</a>. Every application is reviewed personally.</p>`,
+<p>Rewake is in private beta. If you are working on an AI project and recognize the problem, you can <a href="https://rewake.studio/beta?utm_source=pieroperilli&utm_medium=blog&utm_campaign=ai-film-organization" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors" target="_blank" rel="noopener">request access on the site</a>. Every application is reviewed personally.</p>
+
+<p>If you're producing a short film or a commercial with AI and need someone to hold continuity, post-production and finishing together, see how I worked on <a href="/en/stanza-247" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Stanza 247</a>, my psychological thriller short made with AI, and on the <a href="/en/portfolio/vecchio-amaro-del-capo" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Vecchio Amaro del Capo</a> commercial, where generative AI and VFX work on live-action footage. If your project is similar, <a href="/en/contact" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">get in touch</a>.</p>
+`,
   },
   // ARTICOLO POST PRODUZIONE SPOT — pronto per src/data/posts.ts
   // Inserire dopo l'articolo Rewake nell'array posts[]
@@ -996,7 +1002,10 @@ export const posts: BlogPost[] = [
   <h2>Quanto costa davvero</h2>
   <p>Un film indipendente con 20-30 shot VFX di complessità media (clean-up, set extension, compositing base) richiede indicativamente 3-4 settimane di lavoro. Meno di quanto si pensi — soprattutto se la pre-produzione è stata fatta bene.</p>
   <p>Il costo vero di VFX non pianificati è molto più alto: shot impossibili da salvare, tempi raddoppiati, compromessi sulla qualità che si vedono sullo schermo.</p>
-  <p>Il mio consiglio: coinvolgimi in pre-produzione. Costa poco (spesso solo una consulenza) e fa risparmiare molto in post. Scopri i miei <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">servizi VFX</a> o guarda il caso studio <a href="/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a> per vedere questo workflow in azione.</p>`,
+  <p>Il mio consiglio: coinvolgimi in pre-produzione. Costa poco (spesso solo una consulenza) e fa risparmiare molto in post. Scopri i miei <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">servizi VFX</a> o guarda il caso studio <a href="/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a> per vedere questo workflow in azione.</p>
+
+<p>Un altro esempio è <a href="/portfolio/floverr" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Floverr</a>, il film di cui ho seguito la supervisione VFX. Se hai un film in pre-produzione, <a href="/contatti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">scrivimi</a>: guardiamo insieme la sceneggiatura e capiamo quali shot hanno bisogno di VFX prima di arrivare sul set.</p>
+`,
 
     contentEn: `<h2>VFX in independent cinema isn't a luxury</h2>
   <p>There's a widespread prejudice: visual effects are blockbuster stuff. You need millions in budget and hundreds of artists. It's false. Some of the most effective VFX I've done were for short films and independent features with tiny budgets.</p>
@@ -1030,7 +1039,10 @@ export const posts: BlogPost[] = [
   <h2>What it actually costs</h2>
   <p>An indie film with 20-30 medium-complexity VFX shots (clean-up, set extension, basic compositing) requires roughly 3-4 weeks of work. Less than you'd think — especially if pre-production was done right.</p>
   <p>The real cost of unplanned VFX is much higher: unsalvageable shots, doubled timelines, quality compromises that show on screen.</p>
-  <p>My advice: involve me in pre-production. It costs little (often just a consultation) and saves a lot in post. Check out my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX services</a> or see the <a href="/en/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a> case study to see this workflow in action.</p>`,
+  <p>My advice: involve me in pre-production. It costs little (often just a consultation) and saves a lot in post. Check out my <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">VFX services</a> or see the <a href="/en/portfolio/along-came-ruby" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Along Came Ruby</a> case study to see this workflow in action.</p>
+
+<p>Another example is <a href="/en/portfolio/floverr" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Floverr</a>, the film on which I handled VFX supervision. If you have a film in pre-production, <a href="/en/contact" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">get in touch</a>: we can go through the script together and figure out which shots need VFX before you get on set.</p>
+`,
   },
   {
     slug: 'color-grading-film-davinci-resolve-workflow',
@@ -1407,7 +1419,10 @@ export const posts: BlogPost[] = [
 
 <h2>Quando serve il compositing</h2>
 <p>Il compositing entra in gioco ogni volta che la ripresa da sola non basta. Pu\u00F2 essere spettacolare \u2014 creature fantastiche, ambienti impossibili, esplosioni \u2014 o pu\u00F2 essere silenzioso: rimuovere un cavo, estendere un set, sostituire un cielo. In entrambi i casi, il principio resta lo stesso: l\u2019integrazione deve essere impeccabile.</p>
-<p>Se hai un progetto che richiede <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a> \u2014 che siano visibili o invisibili \u2014 parliamone. Vent\u2019anni di esperienza significano sapere esattamente cosa \u00E8 possibile, cosa \u00E8 realistico nei tempi e nel budget, e come arrivarci nel modo pi\u00F9 efficiente.</p>`,
+<p>Se hai un progetto che richiede <a href="/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">effetti visivi</a> \u2014 che siano visibili o invisibili \u2014 parliamone. Vent\u2019anni di esperienza significano sapere esattamente cosa \u00E8 possibile, cosa \u00E8 realistico nei tempi e nel budget, e come arrivarci nel modo pi\u00F9 efficiente.</p>
+
+<p>Due esempi: nello spot <a href="/portfolio/stalking-spot" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Stalking</a> ho costruito e integrato in 3D la gabbia che imprigiona la vittima; nello spot <a href="/portfolio/vecchio-amaro-del-capo" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Vecchio Amaro del Capo</a> ho sostituito i bicchieri con metodo tradizionale e corretto in tracking le etichette delle bottiglie. Per un preventivo o una consulenza sul tuo progetto, <a href="/contatti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">scrivimi</a>.</p>
+`,
 
     contentEn: `<h2>The invisible effect</h2>
 <p>Compositing is the heart of <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a>. It\u2019s the process of combining different elements \u2014 live footage, <a href="/en/3d-animation" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">3D models</a>, matte paintings, particles \u2014 into a single image that looks real. The key word is \u201Clooks\u201D: successful compositing is the kind the viewer doesn\u2019t notice.</p>
@@ -1436,7 +1451,10 @@ export const posts: BlogPost[] = [
 
 <h2>When compositing is needed</h2>
 <p>Compositing comes into play whenever the footage alone isn\u2019t enough. It can be spectacular \u2014 fantastic creatures, impossible environments, explosions \u2014 or it can be silent: removing a cable, extending a set, replacing a sky. In both cases, the principle remains the same: integration must be flawless.</p>
-<p>If you have a project that requires <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a> \u2014 whether visible or invisible \u2014 let\u2019s talk. Twenty years of experience mean knowing exactly what\u2019s possible, what\u2019s realistic within time and budget, and how to get there most efficiently.</p>`,
+<p>If you have a project that requires <a href="/en/vfx" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">visual effects</a> \u2014 whether visible or invisible \u2014 let\u2019s talk. Twenty years of experience mean knowing exactly what\u2019s possible, what\u2019s realistic within time and budget, and how to get there most efficiently.</p>
+
+<p>Two examples: in the <a href="/en/portfolio/stalking-spot" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Stalking</a> commercial I built and integrated in 3D the cage that traps the victim; in the <a href="/en/portfolio/vecchio-amaro-del-capo" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Vecchio Amaro del Capo</a> commercial I replaced the glasses with traditional methods and corrected the bottle labels through tracking. For a quote or advice on your project, <a href="/en/contact" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">get in touch</a>.</p>
+`,
   },
   {
     slug: 'come-vfx-artist-usa-ai-workflow-2026',
@@ -1548,7 +1566,10 @@ export const posts: BlogPost[] = [
 <p>La mia previsione: tra due anni l'AI ridurrà significativamente il bisogno di green screen per molte applicazioni. Ma per lavoro ad alta qualità — <a href="/portfolio/stalking-spot" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">spot istituzionali</a>, film, pubblicità di lusso — la ripresa controllata su fondale resterà lo standard.</p>
 
 <h2>La regola d'oro</h2>
-<p>Ogni ora investita sul set per un green screen fatto bene risparmia dieci ore in post-produzione. Lo ripeto a ogni produzione: datemi un fondale uniforme, un soggetto a distanza, un codec decente — e vi restituisco un compositing invisibile. Datemi un green screen improvvisato — e preparatevi a pagare il doppio in post.</p>`,
+<p>Ogni ora investita sul set per un green screen fatto bene risparmia dieci ore in post-produzione. Lo ripeto a ogni produzione: datemi un fondale uniforme, un soggetto a distanza, un codec decente — e vi restituisco un compositing invisibile. Datemi un green screen improvvisato — e preparatevi a pagare il doppio in post.</p>
+
+<p>Due esempi dal mio lavoro: per <a href="/portfolio/gucci-kids" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Gucci Kids</a> ho seguito il compositing di uno spot girato interamente in green screen; nello spot <a href="/portfolio/vecchio-amaro-del-capo" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Vecchio Amaro del Capo</a> la scena del freezer è stata girata in green screen e poi rigenerata in AI a partire da quel girato (il prima e dopo è nel case study). Se stai preparando un set con green screen, <a href="/contatti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">coinvolgimi prima delle riprese</a>: è lì che si risparmia.</p>
+`,
 
     contentEn: `<h2>The problem isn't the green screen. It's how you use it.</h2>
 <p>Every week I receive footage shot on green screen that should be "easy to key." It almost never is. The problem isn't the tool — it's that the chain from set to final compositing has weak links that nobody checked.</p>
@@ -1579,7 +1600,10 @@ export const posts: BlogPost[] = [
 <p>My prediction: in two years AI will significantly reduce the need for green screen in many applications. But for high-quality work — <a href="/en/portfolio/stalking-spot" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">institutional commercials</a>, films, luxury advertising — controlled backdrop shooting will remain the standard.</p>
 
 <h2>The golden rule</h2>
-<p>Every hour invested on set for a proper green screen saves ten hours in post-production. I say it to every production: give me a uniform backdrop, a subject at distance, a decent codec — and I'll return invisible compositing. Give me an improvised green screen — and prepare to pay double in post.</p>`,
+<p>Every hour invested on set for a proper green screen saves ten hours in post-production. I say it to every production: give me a uniform backdrop, a subject at distance, a decent codec — and I'll return invisible compositing. Give me an improvised green screen — and prepare to pay double in post.</p>
+
+<p>Two examples from my work: for <a href="/en/portfolio/gucci-kids" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Gucci Kids</a> I handled the compositing of a commercial shot entirely on green screen; in the <a href="/en/portfolio/vecchio-amaro-del-capo" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Vecchio Amaro del Capo</a> commercial, the freezer scene was shot on green screen and then regenerated with AI from that footage (the before and after is in the case study). If you're preparing a green screen shoot, <a href="/en/contact" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">bring me in before the shoot</a>: that's where the savings are.</p>
+`,
   },
   // ====== POST 10: Post-produzione workflow integrato ======
   {
@@ -1624,7 +1648,10 @@ export const posts: BlogPost[] = [
 <p>Per <a href="/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Roche</a> ho creato un intero video con AI generativa e poi ho gestito tutto il finishing in post-produzione. Un progetto che in un workflow frammentato avrebbe coinvolto quattro o cinque professionisti.</p>
 
 <h2>La domanda giusta non è "quanto costa"</h2>
-<p>La domanda giusta è: quante persone stanno toccando il mio progetto, e ogni passaggio di mano sta aggiungendo valore o solo complessità? Se la risposta è "complessità", un workflow integrato è la soluzione.</p>`,
+<p>La domanda giusta è: quante persone stanno toccando il mio progetto, e ogni passaggio di mano sta aggiungendo valore o solo complessità? Se la risposta è "complessità", un workflow integrato è la soluzione.</p>
+
+<p>Se vuoi capire se un workflow integrato fa al caso del tuo progetto, guarda il <a href="/portfolio" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">portfolio</a> o <a href="/contatti" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">scrivimi</a>: ti dico come lo imposterei, con tempi e passaggi.</p>
+`,
 
     contentEn: `<h2>The bottleneck nobody sees</h2>
 <p>Traditional post-production works like this: the editor cuts, passes the project to the colorist for grading, then the project goes to the VFX artist for effects, then back to the editor for conform, then maybe back to the colorist for adjustments. Every handoff is an export, an upload, a meeting, a chance for error.</p>
@@ -1654,7 +1681,10 @@ export const posts: BlogPost[] = [
 <p>For <a href="/en/portfolio/roche-jingle-ai" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">Roche</a> I created an entire video with generative AI then managed all the finishing in post-production. A project that in a fragmented workflow would have involved four or five professionals.</p>
 
 <h2>The right question isn't "how much does it cost"</h2>
-<p>The right question is: how many people are touching my project, and is each handoff adding value or just complexity? If the answer is "complexity," an integrated workflow is the solution.</p>`,
+<p>The right question is: how many people are touching my project, and is each handoff adding value or just complexity? If the answer is "complexity," an integrated workflow is the solution.</p>
+
+<p>If you want to know whether an integrated workflow suits your project, take a look at the <a href="/en/portfolio" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">portfolio</a> or <a href="/en/contact" class="text-accent underline underline-offset-2 hover:text-text-primary transition-colors">get in touch</a>: I'll tell you how I would set it up, with timelines and steps.</p>
+`,
   },
   // ====== POST 11: AI Video Generation 2026 ======
   {
