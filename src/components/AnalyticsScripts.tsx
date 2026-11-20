@@ -14,6 +14,10 @@ const CLARITY_PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'XXXXXX
 const PRODUCTION_HOST = 'pieroperilli.com';
 // Aree private: mai misurate.
 const PRIVATE_PATH = /^\/(en\/)?(crm|studio)(\/|$)/;
+// Pagine di revisione dei clienti: restano in GA (eventi review), ma Clarity non le registra.
+// Clarity serve a capire come si muove chi valuta di lavorare con me; le revisioni dei clienti
+// erano un terzo delle pagine viste e quasi tutti i "clic a vuoto".
+const CLARITY_EXCLUDED_PATH = /^\/(en\/)?review(\/|$)/;
 // Per escludere il proprio browser: aprire una volta https://pieroperilli.com/?pp_noga=1
 // (per riattivare: ?pp_noga=0). Vale per quel browser, finché non si cancellano i dati del sito.
 const OPT_OUT_KEY = 'pp_noga';
@@ -171,11 +175,29 @@ export default function AnalyticsScripts() {
   }, [consented]);
 
   // ── Microsoft Clarity ─────────────────────────────────────
+  // Il banner chiede il consenso per le statistiche, non per la pubblicità: a Clarity si
+  // passa il via per i suoi cookie (_clck, _clsk), che legano le pagine di una stessa visita,
+  // e non per MUID (cookie pubblicitario Microsoft). Senza questo segnale, per chi visita
+  // dall'Europa Clarity conta ogni pagina come una visita a sé: pagine per sessione sempre 1,
+  // nessun utente di ritorno, nessun percorso tra le pagine.
   useEffect(() => {
-    if (!consented) return;
+    if (!consented) {
+      // Consenso revocato dopo il caricamento: Clarity cancella i suoi cookie
+      // e torna alla modalità senza cookie.
+      if (typeof window !== 'undefined' && window.clarity) {
+        window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+      }
+      return;
+    }
     if (CLARITY_PROJECT_ID === 'XXXXXXXXXX') return; // ID non configurato
     if (!trackingAllowed()) return;
-    if (document.getElementById('clarity-script')) return;
+    if (CLARITY_EXCLUDED_PATH.test(window.location.pathname)) return;
+
+    const consentSignal = { ad_Storage: 'denied', analytics_Storage: 'granted' };
+    if (document.getElementById('clarity-script')) {
+      window.clarity?.('consentv2', consentSignal);
+      return;
+    }
 
     const clarityScript = document.createElement('script');
     clarityScript.id = 'clarity-script';
@@ -187,6 +209,9 @@ export default function AnalyticsScripts() {
       })(window,document,"clarity","script","${CLARITY_PROJECT_ID}");
     `;
     document.head.appendChild(clarityScript);
+    // Lo script qui sopra crea subito la coda window.clarity: il segnale viene letto
+    // appena Clarity finisce di caricarsi.
+    window.clarity?.('consentv2', consentSignal);
   }, [consented]);
 
   return null;
